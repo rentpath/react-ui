@@ -2,34 +2,31 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-export default class Button extends PureComponent {
+export default class Text extends PureComponent {
   static propTypes = {
-    size: PropTypes.string,
-    color: PropTypes.string,
+    tag: PropTypes.string,
     theme: PropTypes.object,
   }
 
   static defaultProps = {
+    tag: 'div',
     theme: {},
   }
 
   render() {
     const {
-      size,
-      color,
+      tag: Tag,
       theme,
       className,
       ...props
     } = this.props
 
     return (
-      <button
+      <Tag
         {...props}
         className={classNames(
           className,
-          theme.Button,
-          theme[`Button-${color}`],
-          theme[`Button-${size}`],
+          theme.Text,
         )}
       />
     )
