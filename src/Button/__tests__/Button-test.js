@@ -1,7 +1,14 @@
 import React from 'react'
 import { expect } from 'chai'
 import { shallow } from 'enzyme'
+import { keyMirror } from 'utils'
 import Button from '../Button'
+
+const theme = keyMirror([
+  'Button',
+  'Button-small',
+  'Button-primary',
+])
 
 describe('Button', () => {
   it('renders a button', () => {
@@ -11,26 +18,26 @@ describe('Button', () => {
 
   it('passes through props', () => {
     const wrapper = shallow(<Button id="foo" />)
-    expect(wrapper.find('#foo')).to.have.length(1)
+    expect(wrapper.find('button').prop('id')).to.equal('foo')
   })
 
   it('applies a custom className', () => {
-    const wrapper = shallow(<Button className="bar" />)
-    expect(wrapper.find('.bar')).to.have.length(1)
+    const wrapper = shallow(<Button className="button" />)
+    expect(wrapper.find('button').prop('className')).to.equal('button')
   })
 
-  it('applies a `button` className', () => {
-    const wrapper = shallow(<Button styles={{ button: 'foo' }} />)
-    expect(wrapper.find('.foo')).to.have.length(1)
+  it('applies a theme className', () => {
+    const wrapper = shallow(<Button theme={theme} />)
+    expect(wrapper.find('button').prop('className')).to.include('Button')
   })
 
-  it('applies a `color` className', () => {
-    const wrapper = shallow(<Button styles={{ primary: 'foo' }} color="primary" />)
-    expect(wrapper.find('.foo')).to.have.length(1)
+  it('applies a theme color className', () => {
+    const wrapper = shallow(<Button theme={theme} color="primary" />)
+    expect(wrapper.find('button').prop('className')).to.include('Button-primary')
   })
 
-  it('applies a `size` className', () => {
-    const wrapper = shallow(<Button styles={{ small: 'bar' }} size="small" />)
-    expect(wrapper.find('.bar')).to.have.length(1)
+  it('applies a theme size className', () => {
+    const wrapper = shallow(<Button theme={theme} size="small" />)
+    expect(wrapper.find('button').prop('className')).to.include('Button-small')
   })
 })
