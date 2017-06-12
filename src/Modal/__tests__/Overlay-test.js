@@ -43,7 +43,7 @@ describe('Modal/Overlay', () => {
       wrapper = shallow(
         <Overlay onClick={onClick}>
           <div id='child'></div>
-        </Overlay>
+        </Overlay>,
       )
 
       node = wrapper.first().node

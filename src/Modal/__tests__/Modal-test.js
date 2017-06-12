@@ -11,7 +11,7 @@ describe('Modal/Modal', () => {
       <Modal
         theme={theme}
         onClose={() => { }}
-      />
+      />,
     )
 
     it('adds `styles` prop from theme to the root node', () => {

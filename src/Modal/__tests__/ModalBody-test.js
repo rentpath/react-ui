@@ -59,7 +59,7 @@ describe('Modal/ModalBody', () => {
       <ModalBody
         CloseButton={component}
         onClose={() => { }}
-      />
+      />,
     )
 
     it('renders the prop as a component', () => {
