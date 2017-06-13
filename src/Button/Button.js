@@ -1,4 +1,5 @@
-import React, { PureComponent, PropTypes } from 'react'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 export default class Button extends PureComponent {
@@ -18,7 +19,7 @@ export default class Button extends PureComponent {
       color,
       styles,
       className,
-      ...props,
+      ...props
     } = this.props
 
     return (

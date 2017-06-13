@@ -4,6 +4,7 @@
   "rules": {
     "semi": [2, "never"],
     "arrow-parens": [2, "as-needed"],
+    "no-underscore-dangle": [0],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
@@ -11,6 +12,16 @@
   "plugins": [
     "react"
   ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "src"
+        ]
+      }
+    }
+  },
   "env": {
     "mocha": true,
     "browser": true,
