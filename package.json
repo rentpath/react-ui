@@ -1,16 +1,17 @@
 {
   "name": "react-ui",
   "version": "0.0.1",
-  "main": "index.js",
   "license": "MIT",
+  "private": true,
   "scripts": {
-    "clean": "rm -rf lib",
-    "build": "babel -d lib src",
-    "build:watch": "yarn run build -- --watch",
-    "test": "NODE_PATH=./src NODE_ENV=development mocha --compilers js:babel-core/register --recursive",
+    "clean": "lerna run clean --yes",
+    "build": "lerna run build",
+    "test": "NODE_PATH=./packages NODE_ENV=development mocha --compilers js:babel-core/register --recursive",
     "test:watch": "yarn run test -- --watch",
-    "lint": "eslint src",
-    "lint:fix": "yarn run lint -- --fix"
+    "lint": "eslint packages",
+    "lint:fix": "yarn run lint -- --fix",
+    "postinstall": "lerna bootstrap",
+    "prepublish": "lerna run clean --yes && lerna run build"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
@@ -28,23 +29,17 @@
     "enzyme": "^2.7.1",
     "eslint": "^3.18.0",
     "eslint-config-airbnb-base": "^11.1.1",
-    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-react": "^6.10.3",
     "jsdom": "^9.12.0",
     "jsdom-global": "^2.1.1",
+    "lerna": "^2.0.0-rc.5",
     "mocha": "^3.2.0",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "sinon": "^2.1.0",
     "sinon-chai": "^2.10.0"
-  },
-  "dependencies": {
-    "babel-runtime": "^6.23.0",
-    "classnames": "^2.2.5",
-    "form-serialize": "^0.7.1",
-    "prop-types": "^15.5.10",
-    "react-themed": "3.1.0"
   },
   "peerDependencies": {
     "react": "^15.4.2"

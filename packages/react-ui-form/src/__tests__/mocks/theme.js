@@ -1,4 +1,4 @@
-import { keyMirror } from 'utils'
+import { keyMirror } from 'react-ui-utils'
 
 export default keyMirror([
   'Form',

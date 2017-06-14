@@ -2,9 +2,9 @@ import React, { Component, createElement } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classNames from 'classnames'
-import { parseArgs, randomId } from '../utils'
+import { parseArgs, randomId } from 'react-ui-utils'
+import { Text } from 'react-ui-text'
 import Label from './Label'
-import { Text } from '../Text'
 import controls from './controls'
 
 @themed('Field', {
