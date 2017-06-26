@@ -7,7 +7,7 @@ import { Text } from 'react-ui-text'
 import Label from './Label'
 import controls from './controls'
 
-@themed('Field', {
+@themed(/^Field/, {
   pure: true,
 })
 

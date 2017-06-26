@@ -4,7 +4,7 @@ import themed from 'react-themed'
 import classNames from 'classnames'
 import serializeForm from 'form-serialize'
 
-@themed('Form', {
+@themed(['Form'], {
   pure: true,
 })
 

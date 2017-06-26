@@ -1,8 +1,13 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import themed from 'react-themed'
 
-export default class Button extends PureComponent {
+@themed(/^Button/, {
+  pure: true,
+})
+
+export default class Button extends Component {
   static propTypes = {
     size: PropTypes.string,
     color: PropTypes.string,

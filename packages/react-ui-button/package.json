@@ -1,12 +1,12 @@
 {
-  "name": "react-ui-button",
-  "version": "0.0.1",
+  "name": "@rentpath/react-ui-button",
+  "version": "0.0.0",
   "main": "lib/index.js",
   "license": "MIT",
   "private": true,
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "babel --ignore node_modules -d lib src",
+    "build": "babel --ignore __tests__ -d lib src",
     "build:watch": "yarn run build -- --watch"
   },
   "devDependencies": {
@@ -23,8 +23,8 @@
     "babel-runtime": "^6.23.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.10",
-    "react-themed": "3.1.0",
-    "react-ui-utils": "0.0.1"
+    "react-themed": "3.2.0",
+    "@rentpath/react-ui-utils": "0.0.1"
   },
   "peerDependencies": {
     "react": "^15.4.2"

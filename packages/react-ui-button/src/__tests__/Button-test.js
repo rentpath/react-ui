@@ -2,7 +2,9 @@ import React from 'react'
 import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import { keyMirror } from 'react-ui-utils'
-import Button from '../Button'
+import ThemedButton from '../Button'
+
+const Button = ThemedButton.WrappedComponent
 
 const theme = keyMirror([
   'Button',
