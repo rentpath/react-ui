@@ -1,7 +1,7 @@
 import React from 'react'
 import { expect } from 'chai'
 import { shallow } from 'enzyme'
-import { keyMirror } from 'utils'
+import { keyMirror } from 'react-ui-utils'
 import Button from '../Button'
 
 const theme = keyMirror([
