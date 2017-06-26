@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import themed from 'react-themed'
 
-@themed('Select', {
+@themed(/^Select/, {
   pure: true,
 })
 

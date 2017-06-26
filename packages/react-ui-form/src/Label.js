@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classNames from 'classnames'
 
-@themed('Label', {
+@themed(/^Label/, {
   pure: true,
 })
 
