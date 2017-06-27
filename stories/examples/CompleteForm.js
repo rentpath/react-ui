@@ -1,0 +1,29 @@
+import React from 'react'
+import { FormTheme } from '../theme'
+import { Text } from '../../packages/react-ui-text'
+import { Form, Field } from '../../packages/react-ui-form'
+
+export default (
+  <Form theme={FormTheme}>
+    <Text theme={FormTheme}>Generic Form</Text>
+    <Field
+      label="Name"
+      placeholder="Enter name"
+      theme={FormTheme}
+    />
+    <Field
+      theme={FormTheme}
+      type="select"
+      label="Priority"
+      options={[
+        { label: 'Low', value: 'low' },
+        { label: 'High', value: 'high' },
+      ]}
+    />
+    <Field
+      theme={FormTheme}
+      type="textarea"
+      label="Comments"
+    />
+  </Form>
+)
