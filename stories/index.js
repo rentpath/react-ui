@@ -27,12 +27,10 @@ storiesOf('Field', module)
   .addWithInfo('default', 'Default field is text input', () => DefaultField)
   .addWithInfo('with type select', 'Field with prop type set to select', () => SelectField)
 
-//storiesOf('Modal', module)
+// storiesOf('Modal', module)
 //  .add('default', () => DefaultModal)
 //  .add('with no overlay click', () => ModalNoOverlayClose)
 
 storiesOf('Text', module)
   .addWithInfo('default', 'Default themed text', () => Text)
-
-
 

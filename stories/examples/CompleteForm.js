@@ -1,10 +1,7 @@
 import React from 'react'
 import { FormTheme } from '../theme'
-import {
-  Text,
-  Form,
-  Field,
-} from '../../src'
+import { Text } from '../../packages/react-ui-text'
+import { Form, Field } from '../../packages/react-ui-form'
 
 export default (
   <Form theme={FormTheme}>
@@ -20,7 +17,7 @@ export default (
       label="Priority"
       options={[
         { label: 'Low', value: 'low' },
-        { label: 'High', value: 'high' }
+        { label: 'High', value: 'high' },
       ]}
     />
     <Field

@@ -1,5 +1,5 @@
 export {
-  default as CompleteForm
+  default as CompleteForm,
 } from './CompleteForm'
 
 export {
@@ -10,7 +10,7 @@ export {
 } from './Button'
 
 export {
-  default as Text
+  default as Text,
 } from './Text'
 
 export {

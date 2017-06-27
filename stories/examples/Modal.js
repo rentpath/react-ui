@@ -1,7 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { ModalTheme } from '../theme'
-import { Modal, ModalBody, Overlay } from '../../src'
+import { Modal } from '../../packages/react-ui-modal'
 
 export const DefaultModal = (
   <Modal

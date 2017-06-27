@@ -1,6 +1,6 @@
 import React from 'react'
 import { TextTheme } from '../theme'
-import { Text } from '../../src'
+import { Text } from '../../packages/react-ui-text'
 
 export default (
   <Text
