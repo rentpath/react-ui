@@ -1,4 +1,3 @@
-src
-test/
 yarn.lock
-*-test.js
+src
+__tests__
