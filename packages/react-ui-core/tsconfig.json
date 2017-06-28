@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["es2015", "dom", "es2017.object"],
+    "outDir": "./lib",
+    "target": "es2015",
+    "jsx": "react",
+    "allowJs": true,
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "pretty": true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "**/__tests__/*"
+  ]
+}
