@@ -4,7 +4,7 @@ import {
   Text,
   Form,
   Field,
-} from '../../src'
+} from 'react-ui-core/src'
 
 export default (
   <Form theme={FormTheme}>

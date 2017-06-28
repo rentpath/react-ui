@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 import { configure, setAddon } from '@storybook/react'
 import infoAddon from '@storybook/addon-info'
 import { setOptions } from '@storybook/addon-options'

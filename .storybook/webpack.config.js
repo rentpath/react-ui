@@ -26,5 +26,13 @@ module.exports = (storybookBaseConfig, configType) => {
     ]
   })
 
+  storybookBaseConfig.resolve = {
+    modules: [
+      'node_modules',
+      'packages',
+    ]
+  }
+
+
   return storybookBaseConfig
 }

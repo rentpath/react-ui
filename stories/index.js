@@ -33,6 +33,3 @@ storiesOf('Field', module)
 
 storiesOf('Text', module)
   .addWithInfo('default', 'Default themed text', () => Text)
-
-
-

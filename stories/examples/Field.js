@@ -1,6 +1,6 @@
 import React from 'react'
 import { FieldTheme } from '../theme'
-import { Field } from '../../src'
+import { Field } from 'react-ui-core/src'
 
 export const SelectField = (
   <Field

@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "es2015",
+    "react",
+  ],
+  "plugins": [
+    ["transform-runtime", {
+      helpers: false,
+      polyfill: false,
+      regenerator: true
+    }],
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "babel-plugin-transform-object-rest-spread"
+  ]
+}
