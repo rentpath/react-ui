@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "main": "lib/index.js",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "clean": "rm -rf lib",
     "build": "babel --ignore __tests__ -d lib src",
