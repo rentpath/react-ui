@@ -1,0 +1,19 @@
+Button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-style: none;
+  font-weight: bold;
+}
+
+.Button-red {
+  background: #ff0000;
+  color: #fff;
+}
+
+.Button-large {
+  height: 80px;
+}
+
+.Button-small {
+  padding: 4px 10px;
+}
