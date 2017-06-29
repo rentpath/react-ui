@@ -1,18 +1,12 @@
 import * as React from 'react'
 import * as classNames from 'classnames'
-import themed from 'react-themed'
 
 interface Props {
-  
-  /**
-   * The size modifier.
-   */
-  size?: string,
 
   /**
-   * The color modifier.
+   * The tag type.
    */
-  color?: string,
+  tag?: string,
 
   /**
    * The theme to apply.
@@ -30,32 +24,27 @@ interface Props {
   [propName: string]: any
 }
 
-@themed(/^Button/, {
-  pure: true,
-})
-export default class Button extends React.PureComponent<Props, {}> {
+export default class Text extends React.PureComponent<Props, {}> {
 
   static defaultProps = {
+    tag: 'div',
     theme: {},
   }
 
   render() {
     const {
-      size,
-      color,
+      tag: Tag,
       theme,
       className,
       ...props
     } = this.props
 
     return (
-      <button
+      <Tag
         {...props}
         className={classNames(
           className,
-          theme.Button,
-          theme[`Button-${color}`],
-          theme[`Button-${size}`],
+          theme.Text,
         )}
       />
     )
