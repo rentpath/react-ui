@@ -1,22 +1,38 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import * as React from 'react'
+import * as classNames from 'classnames'
 import themed from 'react-themed'
+
+interface Props {
+  /**
+   * The input theme.
+   */
+  theme?: React.CSSProperties,
+
+  /**
+   * Additional child nodes to render
+   */
+  children?: React.ReactNode,
+
+  /**
+   * The input classname.
+   */
+  className?: string,
+
+  /**
+   * Additional props.
+   */
+  [propName: string]: any
+}
+
+type OptionsArray = Array<{value: string, label: string}>
+
 
 @themed(/^Select/, {
   pure: true,
 })
 
-export default class Select extends Component {
-  static propTypes = {
-    theme: PropTypes.object,
-    className: PropTypes.string,
-    children: PropTypes.node,
-    options: PropTypes.arrayOf(PropTypes.shape({
-      value: PropTypes.string,
-      label: PropTypes.string,
-    })),
-  }
+export default class Select extends React.Component<Props, {}> {
+
 
   static defaultProps = {
     theme: {},

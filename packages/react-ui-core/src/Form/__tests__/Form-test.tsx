@@ -1,14 +1,14 @@
-import React from 'react'
+import * as React from 'react'
 import { expect } from 'chai'
-import sinon from 'sinon'
+import * as sinon from 'sinon'
 import { shallow } from 'enzyme'
 import ThemedForm from '../Form'
 import theme from './mocks/theme'
 
-const Form = ThemedForm.WrappedComponent
+const Form = (ThemedForm as any).WrappedComponent
 
 describe('Form/Form', () => {
-  const setup = props => {
+  const setup = (props?: Object) => {
     const wrapper = shallow(
       <Form {...props} />,
     )
@@ -47,14 +47,14 @@ describe('Form/Form', () => {
       const onSubmit = sinon.spy()
       const { wrapper } = setup({ onSubmit })
       wrapper.find('form').simulate('submit', { preventDefault: spy })
-      expect(spy).to.have.been.called()
+      expect(spy).to.have.been.called
     })
 
     it('calls a onSubmit callback', () => {
       const onSubmit = sinon.spy()
       const { wrapper } = setup({ onSubmit })
       wrapper.find('form').simulate('submit', { preventDefault })
-      expect(onSubmit).to.have.been.called()
+      expect(onSubmit).to.have.been.called
     })
 
     context('when "serialize" is true', () => {

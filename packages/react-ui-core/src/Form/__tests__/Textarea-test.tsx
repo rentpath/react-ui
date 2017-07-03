@@ -1,10 +1,10 @@
-import React from 'react'
+import * as React from 'react'
 import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import ThemedTextarea from '../Textarea'
 import theme from './mocks/theme'
 
-const Textarea = ThemedTextarea.WrappedComponent
+const Textarea = (ThemedTextarea as any).WrappedComponent
 
 describe('Form/Textarea', () => {
   it('renders a textarea element', () => {

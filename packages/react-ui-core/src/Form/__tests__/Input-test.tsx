@@ -1,10 +1,10 @@
-import React from 'react'
+import * as React from 'react'
 import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import ThemedInput from '../Input'
 import theme from './mocks/theme'
 
-const Input = ThemedInput.WrappedComponent
+const Input = (ThemedInput as any).WrappedComponent
 
 describe('Form/Input', () => {
   it('renders an input element', () => {
