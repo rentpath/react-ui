@@ -14,7 +14,7 @@ interface Props {
   className?: string,
 
   /**
-   * Callback on modal close.
+   * onClick handler.
    */
   onClick?: Function,
 

@@ -20,7 +20,7 @@ interface Props {
   theme?: React.CSSProperties,
 
   /**
-   * The input classname.
+   * The button classname.
    */
   className?: string,
 
