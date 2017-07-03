@@ -1,22 +1,43 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 import Overlay from './Overlay'
 import ModalBody from './ModalBody'
 
-export default class Modal extends PureComponent {
-  static propTypes = {
-    theme: PropTypes.object,
-    onClose: PropTypes.func,
-    closeOnOverlayClick: PropTypes.bool,
-  }
+interface Props {
 
+  /**
+   * The theme to apply.
+   */
+  theme?: React.CSSProperties,
+
+  /**
+   * The input classname.
+   */
+  className?: string,
+
+  /**
+   * Callback on modal close.
+   */
+  onClose?: Function,
+
+  /**
+   * The tag type.
+   */
+  closeOnOverlayClick?: boolean,
+
+  /**
+   * Additional props.
+   */
+  [propName: string]: any
+}
+
+export default class Modal extends React.PureComponent<Props, {}> {
   static defaultProps = {
     theme: {},
     closeOnOverlayClick: true,
   }
 
   static childContextTypes = {
-    theme: PropTypes.object,
+    theme: React.PropTypes.object,
   }
 
   getChildContext() {

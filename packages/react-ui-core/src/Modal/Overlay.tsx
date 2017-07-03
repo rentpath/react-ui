@@ -1,17 +1,36 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import * as React from 'react'
+import * as classNames from 'classnames'
 
-export default class Overlay extends PureComponent {
-  static propTypes = {
-    className: PropTypes.string,
-    onClick: PropTypes.func,
-    styles: PropTypes.object,
-  }
+interface Props {
+
+  /**
+   * The styles to apply.
+   */
+  styles?: React.CSSProperties,
+
+  /**
+   * The input classname.
+   */
+  className?: string,
+
+  /**
+   * Callback on modal close.
+   */
+  onClick?: Function,
+
+  /**
+   * Additional props.
+   */
+  [propName: string]: any
+}
+
+export default class Overlay extends React.PureComponent<Props, {}> {
 
   static defaultProps = {
     styles: {},
   }
+
+  overlay: React.ReactNode
 
   constructor(props) {
     super(props)

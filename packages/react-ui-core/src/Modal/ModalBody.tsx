@@ -1,14 +1,30 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import * as React from 'react'
+import * as classNames from 'classnames'
 
-export default class ModalBody extends PureComponent {
-  static propTypes = {
-    theme: PropTypes.object,
-    className: PropTypes.string,
-    onClose: PropTypes.func,
-  }
+interface Props {
 
+  /**
+   * The theme to apply.
+   */
+  theme?: React.CSSProperties,
+
+  /**
+   * The input classname.
+   */
+  className?: string,
+
+  /**
+   * Callback on modal close.
+   */
+  onClose?: Function,
+
+  /**
+   * Additional props.
+   */
+  [propName: string]: any
+}
+
+export default class ModalBody extends React.PureComponent<Props, {}> {
   static defaultProps = {
     theme: {},
   }
