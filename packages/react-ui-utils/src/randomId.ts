@@ -13,6 +13,7 @@ const randomStr = () => (
  * @param {string} [prefix] An optional prefix.
  * @return {string}
  */
-export default prefix => (
-  `${prefix || randomStr()}-${Math.floor(Math.random() * 0xFFFF)}`.replace(/[^a-z0-9-_]/gi)
+export default (prefix?: string) => (
+  //`${prefix || randomStr()}-${Math.floor(Math.random() * 0xFFFF)}`.replace(/[^a-z0-9-_]/gi)
+  `${prefix || randomStr()}-${Math.floor(Math.random() * 0xFFFF)}`.replace(/[^a-z0-9-_]/gi, '')
 )
