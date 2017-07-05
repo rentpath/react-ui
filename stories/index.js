@@ -12,6 +12,8 @@ import {
   ButtonSmall,
   DefaultModal,
   ModalNoOverlayClose,
+  FilterPanel,
+  RangeSlider,
 } from './examples'
 
 storiesOf('Button', module)
@@ -22,6 +24,10 @@ storiesOf('Button', module)
 
 storiesOf('Form', module)
   .addWithInfo('complete form', 'Form with multiple components added', () => CompleteForm)
+  .addWithInfo('Filter Panel', 'Form with multiple components added', () => FilterPanel)
+
+storiesOf('RangeSlider', module)
+  .addWithInfo('examples', 'slider input', () => RangeSlider)
 
 storiesOf('Field', module)
   .addWithInfo('default', 'Default field is text input', () => DefaultField)
