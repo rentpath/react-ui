@@ -32,6 +32,7 @@ export {
 export {
   DefaultField,
   SelectField,
+  CheckboxField,
 } from './Field'
 
 export {

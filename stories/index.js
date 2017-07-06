@@ -6,6 +6,7 @@ import {
   Text,
   DefaultField,
   SelectField,
+  CheckboxField,
   DefaultButton,
   ButtonWithColor,
   ButtonLarge,
@@ -38,6 +39,7 @@ storiesOf('RangeSlider', module)
 storiesOf('Field', module)
   .addWithInfo('default', 'Default field is text input', () => DefaultField)
   .addWithInfo('with type select', 'Field with prop type set to select', () => SelectField)
+  .addWithInfo('with type checkbox', 'Field with prop type set to checkbox', () => CheckboxField)
 
 //storiesOf('Modal', module)
 //  .add('default', () => DefaultModal)

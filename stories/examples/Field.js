@@ -21,3 +21,11 @@ export const DefaultField = (
     theme={FieldTheme}
   />
 )
+
+export const CheckboxField = (
+  <Field
+    theme={FieldTheme}
+    type="checkbox"
+    label="Option"
+  />
+)

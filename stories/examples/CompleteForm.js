@@ -28,5 +28,10 @@ export default (
       type="textarea"
       label="Comments"
     />
+    <Field
+      theme={FormTheme}
+      type="checkbox"
+      label="Option"
+    />
   </Form>
 )
