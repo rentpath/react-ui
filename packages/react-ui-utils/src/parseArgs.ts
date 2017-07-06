@@ -10,11 +10,11 @@ import compose from './composeProps'
  * @return {array}
  */
 export default (
-  value,
-  component,
-  props,
+  value?: any,
+  component?: Function,
+  props?: any,
 ) => {
-  const args = []
+  const args: any[] = []
 
   if (typeof value === 'function') {
     args.push(value, props)

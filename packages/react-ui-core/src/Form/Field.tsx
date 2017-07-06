@@ -1,110 +1,103 @@
-import React, { Component, createElement } from 'react'
+import * as React from 'react'
+import * as classNames from 'classnames'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
-import classNames from 'classnames'
+
 import { parseArgs, randomId } from '@rentpath/react-ui-utils'
 import { Text } from '../Text'
 import Label from './Label'
 import controls from './controls'
 
-@themed(/^Field/, {
+interface Props {
+  /**
+   * The input id.
+   */
+  id?: string,
+
+  /**
+   * The type of input to render, e.g. "text" or "select".
+   */
+  type?: string,
+
+  /**
+   * The input name.
+   */
+  name?: string,
+
+  /**
+   * The theme to apply.
+   */
+  theme?: React.CSSProperties,
+
+  /**
+   * Additional child nodes to render
+   */
+  children?: React.ReactNode,
+
+  /**
+   * The input classname.
+   */
+  className?: string,
+
+  /**
+   * Callback for input blur.
+   */
+  onBlur?: Function,
+
+  /**
+   * Callback for input focus.
+   */
+  onFocus?: Function,
+
+  /**
+   * Invalidates the field if set to true.
+   */
+  invalid?: boolean,
+
+  /**
+   * Disables the field if set to true.
+   */
+  disabled?: boolean,
+
+  /**
+   * Configures the wrapping div element.
+   */
+  container?: object | Function,
+
+  /**
+   * Adds/configures a label element.
+   */
+  label?: string | object | Function,
+
+  /**
+   * Configures the input element.
+   */
+  input?: Function,
+
+  /**
+   * Adds/configures a error element.
+   */
+  error?: string | object | Function,
+
+  /**
+   * Adds/configures a hint element.
+   */
+  hint?: string | object | Function,
+
+  /**
+   * Additional props.
+   */
+  [propName: string]: any
+}
+
+interface State {
+  focused: boolean
+}
+
+@themed('Field', {
   pure: true,
 })
-
-export default class Field extends Component {
-  static propTypes = {
-    /**
-     * The input id.
-     */
-    id: PropTypes.string,
-
-    /**
-     * The type of input to render, e.g. "text" or "select".
-     */
-    type: PropTypes.string,
-
-    /**
-     * The input name.
-     */
-    name: PropTypes.string,
-
-    /**
-     * The theme to apply.
-     */
-    theme: PropTypes.object,
-
-    /**
-     * Additional child nodes to render
-     */
-    children: PropTypes.node,
-
-    /**
-     * The input classname.
-     */
-    className: PropTypes.string,
-
-    /**
-     * Callback for input blur.
-     */
-    onBlur: PropTypes.func,
-
-    /**
-     * Callback for input focus.
-     */
-    onFocus: PropTypes.func,
-
-    /**
-     * Invalidates the field if set to true.
-     */
-    invalid: PropTypes.bool,
-
-    /**
-     * Disables the field if set to true.
-     */
-    disabled: PropTypes.bool,
-
-    /**
-     * Configures the wrapping div element.
-     */
-    container: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.func,
-    ]),
-
-    /**
-     * Adds/configures a label element.
-     */
-    label: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.object,
-      PropTypes.func,
-    ]),
-
-    /**
-     * Configures the input element.
-     */
-    input: PropTypes.oneOfType([
-      PropTypes.func,
-    ]),
-
-    /**
-     * Adds/configures a error element.
-     */
-    error: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.object,
-      PropTypes.func,
-    ]),
-
-    /**
-     * Adds/configures a hint element.
-     */
-    hint: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.object,
-      PropTypes.func,
-    ]),
-  }
+export default class Field extends React.Component<Props, State> {
 
   static defaultProps = {
     theme: {},
@@ -113,6 +106,9 @@ export default class Field extends Component {
   state = {
     focused: false,
   }
+
+  _uniqueId: string = undefined
+  input: React.ReactNode
 
   get uniqueId() {
     return this._uniqueId || (this._uniqueId = randomId(this.props.name))
@@ -176,7 +172,7 @@ export default class Field extends Component {
       hint: null,
     }
 
-    props.input = createElement(input || controls[type] || controls.text, {
+    props.input = React.createElement(input || controls[type] || controls.text, ({
       id: inputId,
       ref: el => { this.input = el },
       type,
@@ -185,21 +181,21 @@ export default class Field extends Component {
       onBlur: this.handleInputBlur,
       onFocus: this.handleInputFocus,
       ...rest,
-    })
+    } as any))
 
     if (label) {
-      props.label = createElement(...parseArgs(label, Label, {
+      props.label = React.createElement.apply(React, parseArgs(label, Label, {
         htmlFor: inputId,
         className: theme.Label,
       }))
     }
 
     if (error) {
-      props.error = createElement(...parseArgs(error, Text, {
+      props.error = React.createElement.apply(React, parseArgs(error, Text, {
         className: theme.Field_error,
       }))
     } else if (hint) {
-      props.hint = createElement(...parseArgs(hint, Text, {
+      props.hint = React.createElement.apply(React, parseArgs(hint, Text, {
         className: theme.Field_hint,
       }))
     }

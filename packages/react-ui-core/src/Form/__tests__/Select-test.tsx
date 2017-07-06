@@ -1,10 +1,10 @@
-import React from 'react'
+import * as React from 'react'
 import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import ThemedSelect from '../Select'
 import theme from './mocks/theme'
 
-const Select = ThemedSelect.WrappedComponent
+const Select = (ThemedSelect as any).WrappedComponent
 
 describe('Form/Select', () => {
   it('renders a select element', () => {

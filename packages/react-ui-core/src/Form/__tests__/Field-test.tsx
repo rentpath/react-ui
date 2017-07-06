@@ -1,14 +1,14 @@
-import React from 'react'
+import * as React from 'react'
 import { expect } from 'chai'
-import sinon from 'sinon'
+import * as sinon from 'sinon'
 import { mount } from 'enzyme'
 import ThemedField from '../Field'
 import theme from './mocks/theme'
 
-const Field = ThemedField.WrappedComponent
+const Field = (ThemedField as any).WrappedComponent
 
 describe('Form/Field', () => {
-  const setup = props => {
+  const setup = (props?: Object) => {
     const wrapper = mount(
       <Field type="text" {...props} />,
     )
@@ -46,7 +46,7 @@ describe('Form/Field', () => {
   context('when "id" is undefined', () => {
     it('generates a random input ID', () => {
       const { wrapper } = setup()
-      expect(wrapper.find('input').prop('id')).to.not.be.empty()
+      expect(wrapper.find('input').prop('id')).to.not.be.empty
     })
   })
 
@@ -223,7 +223,7 @@ describe('Form/Field', () => {
       const onFocus = sinon.spy()
       const { wrapper } = setup({ onFocus })
       wrapper.find('input').simulate('focus')
-      expect(onFocus).to.have.been.called()
+      expect(onFocus).to.have.been.called
     })
   })
 
@@ -244,7 +244,7 @@ describe('Form/Field', () => {
       const onBlur = sinon.spy()
       const { wrapper } = setup({ onBlur })
       wrapper.find('input').simulate('blur')
-      expect(onBlur).to.have.been.called()
+      expect(onBlur).to.have.been.called
     })
   })
 })

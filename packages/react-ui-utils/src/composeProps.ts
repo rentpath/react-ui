@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import * as classNames from 'classnames'
 
 /**
  * Merges react component props, using regular
@@ -9,15 +9,15 @@ import classNames from 'classnames'
  * @param {...object} items The source objects.
  * @return {object}
  */
-export default (target, ...items) => {
+export default (target: object, ...items) => {
   if (!items.length) {
     return target
   }
 
   const classnames = []
 
-  if (target.className) {
-    classnames.push(target.className)
+  if ((target as any).className) {
+    classnames.push((target as any).className)
   }
 
   items.reduce((acc, props) => {
@@ -31,7 +31,7 @@ export default (target, ...items) => {
   }, target)
 
   if (classnames.length > 1) {
-    target.className = classNames(...classnames) // eslint-disable-line no-param-reassign
+    (target as any).className = classNames(...classnames) // eslint-disable-line no-param-reassign
   }
 
   return target

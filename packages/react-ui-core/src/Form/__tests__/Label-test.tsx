@@ -1,10 +1,10 @@
-import React from 'react'
+import * as React from 'react'
 import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import ThemedLabel from '../Label'
 import theme from './mocks/theme'
 
-const Label = ThemedLabel.WrappedComponent
+const Label = (ThemedLabel as any).WrappedComponent
 
 describe('Form/Label', () => {
   it('renders a label element', () => {

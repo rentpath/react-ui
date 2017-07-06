@@ -1,45 +1,55 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 import themed from 'react-themed'
-import classNames from 'classnames'
-import serializeForm from 'form-serialize'
+import * as classNames from 'classnames'
+import * as serializeForm from 'form-serialize'
+
+interface Props {
+  /**
+   * The theme to apply.
+   */
+  theme?: React.CSSProperties,
+
+  /**
+   * The form action.
+   */
+  action?: string,
+
+  /**
+   * The form method.
+   */
+  method?: string,
+
+  /**
+   * Enables browser validation when false.
+   */
+  noValidate?: boolean,
+
+  /**
+   * Submit callback.
+   */
+  onSubmit?: Function,
+
+  /**
+   * Serializes form data when true.
+   */
+  serialize?: boolean,
+
+  /**
+   * The input classname.
+   */
+  className?: string,
+
+  /**
+   * Additional props.
+   */
+  [propName: string]: any
+}
 
 @themed(['Form'], {
   pure: true,
 })
 
-export default class Form extends Component {
-  static propTypes = {
-    /**
-     * The theme to apply.
-     */
-    theme: PropTypes.object,
-
-    /**
-     * The form action.
-     */
-    action: PropTypes.string,
-
-    /**
-     * The form method.
-     */
-    method: PropTypes.string,
-
-    /**
-     * Enables browser validation when false.
-     */
-    noValidate: PropTypes.bool,
-
-    /**
-     * Submit callback.
-     */
-    onSubmit: PropTypes.func,
-
-    /**
-     * Serializes form data when true.
-     */
-    serialize: PropTypes.bool,
-  }
+export default class Form extends React.Component<Props, {}> {
 
   static defaultProps = {
     theme: {},

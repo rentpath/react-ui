@@ -1,17 +1,29 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import * as React from 'react'
+import * as classNames from 'classnames'
 import themed from 'react-themed'
+
+interface Props {
+  /**
+   * The input theme.
+   */
+  theme?: React.CSSProperties,
+
+  /**
+   * The input classname.
+   */
+  className?: string,
+
+  /**
+   * Additional props.
+   */
+  [propName: string]: any
+}
 
 @themed(/^Textarea/, {
   pure: true,
 })
 
-export default class Textarea extends Component {
-  static propTypes = {
-    theme: PropTypes.object,
-    className: PropTypes.string,
-  }
+export default class Textarea extends React.Component<Props, {}> {
 
   static defaultProps = {
     theme: {},
