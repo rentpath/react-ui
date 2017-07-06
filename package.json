@@ -10,7 +10,7 @@
     "lint:fix": "lerna run lint:fix",
     "postinstall": "lerna bootstrap",
     "prepublish": "lerna run clean --yes && lerna run build",
-    "storybook": "start-storybook -p 6006 -c .storybook",
+    "storybook": "lerna run build && start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { ButtonTheme } from '../theme'
-import { Button }  from 'react-ui-core/src/Button'
+import { Button }  from 'react-ui-core/lib/Button'
 
 export const DefaultButton = (
   <Button
