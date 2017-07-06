@@ -1,4 +1,5 @@
 --timeout 5000
 --require ./test/setup.ts
 --require ts-node/register
+--compilers ts:ts-node/register
 src/**/__tests__/**/*.ts

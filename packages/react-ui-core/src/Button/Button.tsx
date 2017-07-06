@@ -3,7 +3,7 @@ import * as classNames from 'classnames'
 import themed from 'react-themed'
 
 interface Props {
-  
+
   /**
    * The size modifier.
    */

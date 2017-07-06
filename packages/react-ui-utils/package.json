@@ -7,12 +7,13 @@
     "clean": "rm -rf lib",
     "build": "tsc",
     "build:watch": "yarn run build -- --watch",
-    "test": "NODE_PATH=./packages NODE_ENV=development mocha --compilers ts:ts-node/register --recursive",
+    "test": "NODE_PATH=./packages NODE_ENV=development mocha --recursive",
     "test:watch": "yarn run test -- --watch",
     "lint": "eslint src",
     "lint:fix": "yarn run lint -- --fix"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.0",
     "@types/node": "^8.0.7",
     "@types/mocha": "^2.2.41",
     "@types/sinon": "^2.3.2",
@@ -30,7 +31,6 @@
     "typescript": "^2.3.4"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "@types/classnames": "^2.2.0"
+    "classnames": "^2.2.5"
   }
 }
