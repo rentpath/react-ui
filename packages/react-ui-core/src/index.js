@@ -13,6 +13,7 @@ export {
   Input,
   Textarea,
   Select,
+  RangeSlider,
 } from './Form'
 
 export {
