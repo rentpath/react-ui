@@ -14,6 +14,8 @@ import {
   ModalNoOverlayClose,
   FilterPanel,
   RangeSlider,
+  Grid,
+  ResponsiveTemplate,
 } from './examples'
 
 storiesOf('Button', module)
@@ -21,6 +23,10 @@ storiesOf('Button', module)
   .addWithInfo('with color', 'Button with color prop added', () => ButtonWithColor)
   .addWithInfo('small', 'Small button with size prop set', () => ButtonSmall)
   .addWithInfo('large', 'Large button with size prop set', () => ButtonLarge)
+
+storiesOf('Layout', module)
+  .addWithInfo('Grid', 'grids rows and columns using flexbox', () => Grid)
+  .addWithInfo('Responsive template', 'responsive template using flexbox', () => ResponsiveTemplate)
 
 storiesOf('Form', module)
   .addWithInfo('complete form', 'Form with multiple components added', () => CompleteForm)

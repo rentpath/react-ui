@@ -1,3 +1,5 @@
+export { default as GridTheme } from './Grid.css'
+export { default as ResponsiveTheme } from './Responsive.css'
 export { default as TextTheme } from './Text.css'
 export { default as FormTheme } from './Form.css'
 export { default as FilterPanelTheme } from './FilterPanel.css'

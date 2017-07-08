@@ -1,0 +1,82 @@
+@media screen and (max-width: 768px) {
+  :global .hideOnSmall {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :global .hideOnLarge {
+    display: none;
+  }
+}
+
+.code {
+  padding: 2rem;
+  background: black;
+  color: white;
+  width: 80%;
+  display:block;
+  margin: 0 auto;
+}
+
+.row, .rowFixed {
+  background: #007fff;
+  min-height: 1rem;
+  padding: 20px;
+}
+
+.rowFixed {
+  flex: 0 0 500px;
+  width: 500px;
+}
+
+.col {
+  border: 1px solid #fff;
+  background:blue;
+  padding: 5px;
+  color: #fff;
+}
+
+.col.fixed {
+  flex: 0 0 230px;
+}
+
+.col span {
+  color: #fff;
+}
+
+.tall {
+  min-height: 50px;
+}
+
+.menu {
+  text-align: right;
+  margin: 0;
+}
+
+.menu li {
+  list-style: none;
+  display: inline;
+  padding-left: 10px;
+}
+
+.hamburger {
+  height: 10px;
+  width: 10px;
+}
+
+.result {
+  border: 1px solid white;
+  padding: 10px;
+  min-width: 175px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.adUnit {
+  height: 50px;
+  border: 1px dashed white;
+  padding: 10px;
+  min-width: 50%;
+  margin: 0 auto;
+}
