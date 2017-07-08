@@ -7,7 +7,7 @@
     "clean": "rm -rf lib",
     "build": "babel --ignore __tests__ -d lib src",
     "build:watch": "yarn run build -- --watch",
-    "test": "NODE_PATH=./packages NODE_ENV=development mocha --compilers js:babel-core/register --recursive",
+    "test": "NODE_PATH=./packages NODE_ENV=development mocha src/**/__tests__/**/*.js",
     "test:watch": "yarn run test -- --watch",
     "lint": "eslint src",
     "lint:fix": "yarn run lint -- --fix"
