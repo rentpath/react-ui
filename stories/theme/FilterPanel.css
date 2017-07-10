@@ -29,3 +29,22 @@
   margin: 0 8px;
   flex: 4;
 }
+
+.FieldGroup {
+  width: 100%;
+}
+
+.FieldGroup-label {
+  width: 100%;
+  text-align: center;
+}
+
+.FieldGroup-column {
+  width: 50%;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.FieldGroup-column label {
+  float: left;
+}
