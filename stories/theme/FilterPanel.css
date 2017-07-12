@@ -30,21 +30,21 @@
   flex: 4;
 }
 
-.FieldGroup {
+.FieldSet {
   width: 100%;
 }
 
-.FieldGroup-label {
+.FieldSet-legend {
   width: 100%;
   text-align: center;
 }
 
-.FieldGroup-column {
+.FieldSet-column {
   width: 50%;
   white-space: nowrap;
   display: inline-block;
 }
 
-.FieldGroup-column label {
+.FieldSet-column label {
   float: left;
 }

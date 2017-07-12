@@ -3,7 +3,7 @@ import {
   Text,
   Form,
   Field,
-  FieldGroup,
+  FieldSet,
 } from 'react-ui-core/src'
 
 import { FilterPanelTheme } from '../theme'
@@ -11,8 +11,8 @@ import { examples as rangeSliderExamples } from './RangeSlider'
 
 const PriceSlider = rangeSliderExamples.withMinMaxStep
 
-const propertyTypeGroup = () => (
-  <FieldGroup
+const propertyTypeSet = () => (
+  <FieldSet
     label="Property Type"
     theme={FilterPanelTheme}
     columns={2}
@@ -21,12 +21,12 @@ const propertyTypeGroup = () => (
     <Field type="checkbox" label="Townhouses" />
     <Field type="checkbox" label="Condos" />
     <Field type="checkbox" label="Houses" />
-  </FieldGroup>
+  </FieldSet>
 )
 
 export default (
   <Form theme={FilterPanelTheme}>
     { PriceSlider }
-    { propertyTypeGroup() }
+    { propertyTypeSet() }
   </Form>
 )

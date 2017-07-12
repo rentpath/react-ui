@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-const FieldGroup = ({ label, children, theme, columns }) => {
+const FieldSet = ({ legend, children, theme, columns }) => {
   let renderedChildren = []
   let fields = Object.values(children)
   const rows = Math.ceil(fields.length / columns)
 
   for (let i = 0; i < rows; i++) {
     renderedChildren.push(
-      <div className={theme['FieldGroup-row']}>
+      <div className={theme['FieldSet-row']}>
         {fields.splice(0, columns).map(child => (
-          <div className={theme['FieldGroup-column']}>
+          <div className={theme['FieldSet-column']}>
             {child}
           </div>
         ))}
@@ -19,22 +19,22 @@ const FieldGroup = ({ label, children, theme, columns }) => {
   }
 
   return (
-    <div className={theme.FieldGroup}>
-      <div className={theme['FieldGroup-label']}>{label}</div>
+    <fieldset className={theme.FieldSet}>
+      <legend className={theme['FieldSet-legend']}>{legend}</legend>
       {renderedChildren}
-    </div>
+    </fieldset>
   )
 }
 
-FieldGroup.propTypes = {
-  label: PropTypes.string,
+FieldSet.propTypes = {
+  legend: PropTypes.string,
   theme: PropTypes.object,
   columns: PropTypes.number,
 }
 
-FieldGroup.defaultProps = {
+FieldSet.defaultProps = {
   theme: {},
   columns: 1,
 }
 
-export default FieldGroup
+export default FieldSet

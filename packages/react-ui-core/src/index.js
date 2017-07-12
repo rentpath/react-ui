@@ -20,7 +20,7 @@ export {
   Textarea,
   Select,
   RangeSlider,
-  FieldGroup,
+  FieldSet,
 } from './Form'
 
 export {
