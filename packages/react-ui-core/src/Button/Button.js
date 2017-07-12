@@ -1,5 +1,6 @@
+// @flow
+
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import themed from 'react-themed'
 
@@ -8,10 +9,11 @@ import themed from 'react-themed'
 })
 
 export default class Button extends Component {
-  static propTypes = {
-    size: PropTypes.string,
-    color: PropTypes.string,
-    theme: PropTypes.object,
+  props: {
+    size: string,
+    color: string,
+    theme: Object,
+    className: string,
   }
 
   static defaultProps = {

@@ -1,0 +1,14 @@
+[ignore]
+./lib
+./node_modules
+./test
+
+[include]
+./src
+
+[libs]
+
+[options]
+esproposal.decorators=ignore
+
+[lints]

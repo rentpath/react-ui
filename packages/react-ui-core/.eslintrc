@@ -1,6 +1,9 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb-base",
+  "extends": [
+    "airbnb-base",
+    "plugin:flowtype/recommended",
+  ],
   "rules": {
     "semi": [2, "never"],
     "arrow-parens": [2, "as-needed"],
@@ -13,7 +16,9 @@
     "react/jsx-uses-vars": 1,
   },
   "plugins": [
-    "react"
+    "react",
+    "flowtype",
+    "jest"
   ],
   "settings": {
     "import/resolver": {
@@ -23,10 +28,15 @@
           "packages"
         ]
       }
+    },
+    "settings": {
+      "flowtype": {
+        "onlyFilesWithFlowAnnotation": true
+      }
     }
   },
   "env": {
-    "mocha": true,
+    "jest/globals": true,
     "browser": true,
     "node": true
   }
