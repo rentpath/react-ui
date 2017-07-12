@@ -22,10 +22,10 @@ export default (
     <h1>Responsive Layout Example</h1>
     <Grid fluid>
       <Row className={theme.row}>
-        <Col className={theme.col} small={10} large={2}>
+        <Col className={theme.col} xs={10} sm={2}>
           LOGO
         </Col>
-        <Col className={theme.col} small={0} large={10}>
+        <Col className={theme.col} xs={0} sm={10}>
           <ul className={theme.menu}>
             <li>link 1</li>
             <li>link 2</li>
@@ -34,7 +34,7 @@ export default (
           </ul>
         </Col>
 
-        <Col className={theme.col} small={2} large={0}>
+        <Col className={theme.col} xs={2} sm={0}>
           <img
             className={theme.hamburger}
             src="https://image.flaticon.com/icons/png/128/56/56763.png"
@@ -43,17 +43,17 @@ export default (
       </Row>
 
       <Row className={theme.row}>
-        <Col className={theme.col} small={0} large={12}>
+        <Col className={theme.col} xs={0} sm={12}>
           this col display on desktop and tablet only
         </Col>
 
-        <Col className={theme.col} small={12} large={0}>
+        <Col className={theme.col} xs={12} sm={0}>
           this col display on phones only
         </Col>
       </Row>
 
       <Row className={theme.row}>
-        <Col className={theme.col} small={12} large={8}>
+        <Col className={theme.col} xs={12} sm={8}>
           {result}
           {result}
           {result}
@@ -61,7 +61,7 @@ export default (
           {result}
         </Col>
 
-      <Col className={theme.col} small={12} large={4}>
+        <Col className={theme.col} xs={12} sm={4}>
           {adUnit}
           {adUnit}
         </Col>

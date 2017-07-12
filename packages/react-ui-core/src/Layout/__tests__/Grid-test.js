@@ -27,32 +27,16 @@ describe('Grid', () => {
       expect(wrapper.props()).to.include(props)
     })
 
-    context('large', () => {
-      it('prop maps to sm, md, lg', () => {
-        const props = { small: 8, large: 12 }
-        const wrapper = setup(props)
-        expect(wrapper.prop('sm')).to.eql(props.large)
-        expect(wrapper.prop('md')).to.eql(props.large)
-        expect(wrapper.prop('lg')).to.eql(props.large)
-      })
-
-      it('with large=0 adds a global className', () => {
-        const props = { large: 0 }
-        const wrapper = setup(props)
-        expect(wrapper.prop('className')).to.eql('hideOnLarge')
-      })
+    it('with sm=0 adds a global className', () => {
+      const props = { sm: 0 }
+      const wrapper = setup(props)
+      expect(wrapper.prop('className')).to.eql('hideOnLarge')
     })
-    context('small', () => {
-      it('prop maps to xs', () => {
-        const props = { small: 8, large: 12 }
-        const wrapper = setup(props)
-        expect(wrapper.prop('xs')).to.eql(props.small)
-      })
-      it('with small=0 adds a global className', () => {
-        const props = { small: 0, large: 10 }
-        const wrapper = setup(props)
-        expect(wrapper.prop('className')).to.eql('hideOnSmall')
-      })
+
+    it('with xs=0 adds a global className', () => {
+      const props = { xs: 0 }
+      const wrapper = setup(props)
+      expect(wrapper.prop('className')).to.eql('hideOnSmall')
     })
   })
 })

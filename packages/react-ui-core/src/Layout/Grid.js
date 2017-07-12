@@ -22,40 +22,23 @@ class Col extends PureComponent {
     md: PropTypes.number,
     // min width of 1200px (large monitors)
     lg: PropTypes.number,
-    // less than 768px (phones)
-    small: PropTypes.number,
-    // more than 768px (anything larger than a phone)
-    large: PropTypes.number,
   }
 
   get mappedProps() {
-    const clonedProps = Object.assign({}, this.props)
     const newProps = {}
 
-    const { small, large } = this.props
+    const { xs, sm } = this.props
 
-    if (typeof small === 'number') {
-      if (small <= 0) {
-        newProps.className = cn(this.props.className, 'hideOnSmall')
-      } else {
-        newProps.xs = small
-      }
+    if (xs <= 0) {
+      newProps.className = cn(this.props.className, 'hideOnSmall')
     }
 
-    if (typeof large === 'number') {
-      if (large <= 0) {
-        newProps.className = cn(this.props.className, 'hideOnLarge')
-      }
-      newProps.sm = large
-      newProps.md = large
-      newProps.lg = large
+    if (sm <= 0) {
+      newProps.className = cn(this.props.className, 'hideOnLarge')
     }
-
-    delete clonedProps.small
-    delete clonedProps.large
 
     return {
-      ...clonedProps,
+      ...this.props,
       ...newProps,
     }
   }
