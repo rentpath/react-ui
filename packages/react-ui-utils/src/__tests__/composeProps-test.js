@@ -1,4 +1,3 @@
-import { expect } from 'chai'
 import composeProps from '../composeProps'
 
 describe('utils/composeProps', () => {
@@ -6,18 +5,18 @@ describe('utils/composeProps', () => {
     const target = {}
     const values = { foo: 'foo' }
     composeProps(target, values)
-    expect(target).to.eql(values)
+    expect(target).toMatchObject(values)
   })
 
   it('returnes the composed target object', () => {
     const target = {}
     const values = { foo: 'foo' }
-    expect(composeProps(target, values)).to.eql(values)
+    expect(composeProps(target, values)).toMatchObject(values)
   })
 
   it('combines "className" values', () => {
     const target = { className: 'foo' }
     const values = { className: 'bar' }
-    expect(composeProps(target, values)).to.eql({ className: 'foo bar' })
+    expect(composeProps(target, values)).toMatchObject({ className: 'foo bar' })
   })
 })
