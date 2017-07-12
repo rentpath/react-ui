@@ -11,6 +11,14 @@ export {
 } from './RangeSlider'
 
 export {
+  default as Grid
+} from './Grid'
+
+export {
+  default as ResponsiveTemplate
+} from './ResponsiveTemplate'
+
+export {
   DefaultButton,
   ButtonWithColor,
   ButtonLarge,
