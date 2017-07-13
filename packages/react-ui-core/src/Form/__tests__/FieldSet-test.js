@@ -9,6 +9,7 @@ const FieldSet = ThemedFieldSet.WrappedComponent
 describe('Form/FieldSet', () => {
   it('renders a fieldset element', () => {
     const wrapper = shallow(<FieldSet />)
+    expect(wrapper.find('fieldset').length).to.equal(1)
   })
 
   it('renders a legend element', () => {
