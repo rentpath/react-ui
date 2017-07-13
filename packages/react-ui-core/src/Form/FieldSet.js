@@ -34,7 +34,7 @@ export default class FieldSet extends PureComponent {
     return (
       <fieldset {...props} className={classnames}>
         {legend && (
-          <legend className={theme['FieldSet-legend']}>
+          <legend className={theme['FieldSet_legend']}>
             {legend}
           </legend>
         )}

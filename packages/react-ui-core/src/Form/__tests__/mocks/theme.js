@@ -10,7 +10,7 @@ export default keyMirror([
   'Field_hint',
   'Field_error',
   'FieldSet',
-  'FieldSet-legend',
+  'FieldSet_legend',
   'Label',
   'Input',
   'Input-text',
