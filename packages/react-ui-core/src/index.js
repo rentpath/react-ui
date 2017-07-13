@@ -29,3 +29,7 @@ export {
   ModalBody,
   Overlay,
 } from './Modal'
+
+export {
+  Collapsible,
+} from './Collapsible'
