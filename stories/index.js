@@ -16,6 +16,7 @@ import {
   RangeSlider,
   Grid,
   ResponsiveTemplate,
+  Collapse,
 } from './examples'
 
 storiesOf('Button', module)
@@ -45,3 +46,6 @@ storiesOf('Field', module)
 
 storiesOf('Text', module)
   .addWithInfo('default', 'Default themed text', () => Text)
+
+storiesOf('Collapse', module)
+  .addWithInfo('default', 'Default themed', () => Collapse)
