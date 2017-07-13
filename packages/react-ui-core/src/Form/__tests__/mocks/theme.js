@@ -9,6 +9,8 @@ export default keyMirror([
   'Field-disabled',
   'Field_hint',
   'Field_error',
+  'FieldSet',
+  'FieldSet-legend',
   'Label',
   'Input',
   'Input-text',

@@ -32,6 +32,7 @@
 
 .FieldSet {
   width: 100%;
+  border: none;
 }
 
 .FieldSet-legend {
@@ -39,12 +40,8 @@
   text-align: center;
 }
 
-.FieldSet-column {
+.propertyTypeColumn {
   width: 50%;
   white-space: nowrap;
   display: inline-block;
-}
-
-.FieldSet-column label {
-  float: left;
 }

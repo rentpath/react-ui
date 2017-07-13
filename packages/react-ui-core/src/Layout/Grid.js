@@ -12,7 +12,7 @@ class Col extends PureComponent {
   // NOTE: add /fleboxgrid/ to css loader webpack config before use
   // https://github.com/roylee0704/react-flexbox-grid#minimal-configuration
 
-  static propTypes: {
+  static propTypes = {
     className: PropTypes.string,
     // less than 768px (phones)
     xs: PropTypes.number,

@@ -1,40 +1,45 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import themed from 'react-themed'
+import classNames from 'classnames'
 
-const FieldSet = ({ legend, children, theme, columns }) => {
-  let renderedChildren = []
-  let fields = Object.values(children)
-  const rows = Math.ceil(fields.length / columns)
+@themed(/^FieldSet/, {
+  pure: true,
+})
 
-  for (let i = 0; i < rows; i++) {
-    renderedChildren.push(
-      <div className={theme['FieldSet-row']}>
-        {fields.splice(0, columns).map(child => (
-          <div className={theme['FieldSet-column']}>
-            {child}
-          </div>
-        ))}
-      </div>
-    )
+export default class FieldSet extends PureComponent {
+  static propTypes = {
+    legend: PropTypes.string,
+    theme: PropTypes.object,
   }
 
-  return (
-    <fieldset className={theme.FieldSet}>
-      <legend className={theme['FieldSet-legend']}>{legend}</legend>
-      {renderedChildren}
-    </fieldset>
-  )
-}
+  static defaultProps = {
+    theme: {},
+  }
 
-FieldSet.propTypes = {
-  legend: PropTypes.string,
-  theme: PropTypes.object,
-  columns: PropTypes.number,
-}
+  render() {
+    const {
+      legend,
+      theme,
+      className,
+      children,
+      ...props
+    } = this.props
 
-FieldSet.defaultProps = {
-  theme: {},
-  columns: 1,
-}
+    const classnames = classNames(
+      className,
+      theme.FieldSet,
+    )
 
-export default FieldSet
+    return (
+      <fieldset {...props} className={classnames}>
+        {legend && (
+          <legend className={theme['FieldSet-legend']}>
+            {legend}
+          </legend>
+        )}
+        {children}
+      </fieldset>
+    )
+  }
+}
