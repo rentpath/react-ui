@@ -41,9 +41,9 @@ storiesOf('Field', module)
   .addWithInfo('with type select', 'Field with prop type set to select', () => SelectField)
   .addWithInfo('with type checkbox', 'Field with prop type set to checkbox', () => CheckboxField)
 
-//storiesOf('Modal', module)
-//  .add('default', () => DefaultModal)
-//  .add('with no overlay click', () => ModalNoOverlayClose)
+storiesOf('Modal', module)
+  .add('default', () => DefaultModal)
+  .add('with no overlay click', () => ModalNoOverlayClose)
 
 storiesOf('Text', module)
   .addWithInfo('default', 'Default themed text', () => Text)
