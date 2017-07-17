@@ -6,20 +6,20 @@
 	display:none;
 }
 
-p {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.collapsible p {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-a {
-    color: deepskyblue;
+.collapsible a {
+  color: deepskyblue;
 }
 
 .alignBottom{
-    display: inline-block;
-    width: 100%;
-    margin-left: 10%;
+  display: inline-block;
+  width: 100%;
+  margin-left: 10%;
 }
 
 .checkboxStyle{

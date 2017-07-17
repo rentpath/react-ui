@@ -1,48 +1,67 @@
-import React, { Component, PropTypes } from 'react';
-import Checkbox from './Checkbox'
+import React, { Component, PropTypes } from 'react'
 
 export default class Collapsible extends Component {
 
-	constructor(props){
-     super(props);
-		 this.toggleItems = this.toggleItems.bind(this);
-     this.state = {
-     	display : false
-     }
-	}
-
-  toggleItems(){
-  	this.setState({
-  		display: !this.state.display
-  	})
+  constructor(props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
+    this.state = {
+      display: false,
+    }
   }
 
-  render(){
-		const {
+  handleClick() {
+    const originalstate = this.state.display
+    if (this.props.handleClick) {
+      this.props.handleClick()
+    }
+    if (this.state.display === originalstate) {
+      this.setState({
+        display: !this.state.display,
+      })
+    }
+  }
+
+  render() {
+    const {
+      id,
       theme,
-      ...props
+      showableItems,
+      nonshowableItems,
+      togglemore,
+      toggleless,
     } = this.props
 
-		var showableItems = this.props.showableItems || [];
-    var nonshowableItems = this.props.nonshowableItems || [];
-    var id = this.props.id || '';
-    var title = this.props.title || 'default';
-    var checkboxStyle = theme.checkboxStyle || '';
-    var toggle = this.props.toggle || 'See all items';
-
-  	return (
-			<div id={id}>
-	      <p><strong>{title}</strong></p>
-	        {showableItems.map(d => ( <Checkbox className={checkboxStyle} label={d} />))}
-	        <div className={this.state.display?theme.show:theme.hide}>
-	          {nonshowableItems.map(d=> ( <Checkbox className={checkboxStyle} label={d} />))}
-	        </div>
-	        <div className={theme.alignBottom}>
-	          <a onClick={this.toggleItems}>
-	            <strong>{this.props.toggle}</strong>
-	          </a>
-	        </div>
-	    </div>
-   	)
+    return (
+      <div id={id} className={theme.collapsible}>
+        {showableItems}
+        <div className={this.state.display ? theme.show : theme.hide}>
+          {nonshowableItems}
+        </div>
+        <div className={theme.alignBottom}>
+          <a onClick={this.handleClick}>
+          <strong>{this.state.display ? toggleless : togglemore}</strong>
+        </a>
+        </div>
+      </div>
+    )
   }
+}
+
+Collapsible.defaultProps = {
+  showableItems: '',
+  nonshowableItems: '',
+  id: '',
+  title: '',
+  togglemore: 'show more',
+  toggleless: 'show less',
+  handleClick: null,
+}
+Collapsible.propTypes = {
+  showableItems: PropTypes.element,
+  nonshowableItems: PropTypes.element,
+  id: PropTypes.string,
+  togglemore: PropTypes.element,
+  toggleless: PropTypes.element,
+  handleClick: PropTypes.func,
 }
