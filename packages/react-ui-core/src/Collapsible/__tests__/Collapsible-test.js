@@ -2,14 +2,12 @@ import React from 'react'
 import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import sinon from 'sinon'
-import { keyMirror } from '@rentpath/react-ui-utils'
 import Collapsible from '../Collapsible'
 
-const Collapse = Collapsible.WrappedComponent
+function userFunction() {
+}
 
-const theme = keyMirror([
-  'Collapsible',
-])
+const theme = {}
 
 describe('Collapse', () => {
   it('renders a Collapsible', () => {
@@ -17,4 +15,12 @@ describe('Collapse', () => {
     expect(wrapper.find('a')).to.have.length(1)
   })
 
-});
+  context('when toggle button clicked', () => {
+    it('calls a toggle callback', () => {
+      const handleClick = sinon.spy()
+      const wrapper = shallow(<Collapsible theme={theme} handleClick={userFunction} />)
+      wrapper.find('a').last().simulate('click')
+      expect(handleClick.called).to.equal(false)
+    })
+  })
+})
