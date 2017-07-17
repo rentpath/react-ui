@@ -1,4 +1,4 @@
-// flow-typed signature: a137d1bccb9d876def54c58cc5b6e8c1
+// flow-typed signature: b1e9cfefdc979d1f630ee3323ee29b53
 // flow-typed version: <<STUB>>/@rentpath/react-ui-utils_v0.0.1/flow_v0.49.1
 
 /**
@@ -78,10 +78,6 @@ declare module '@rentpath/react-ui-utils/src/randomId' {
   declare module.exports: any;
 }
 
-declare module '@rentpath/react-ui-utils/test/setup' {
-  declare module.exports: any;
-}
-
 // Filename aliases
 declare module '@rentpath/react-ui-utils/lib/composeProps.js' {
   declare module.exports: $Exports<'@rentpath/react-ui-utils/lib/composeProps'>;
@@ -124,7 +120,4 @@ declare module '@rentpath/react-ui-utils/src/parseArgs.js' {
 }
 declare module '@rentpath/react-ui-utils/src/randomId.js' {
   declare module.exports: $Exports<'@rentpath/react-ui-utils/src/randomId'>;
-}
-declare module '@rentpath/react-ui-utils/test/setup.js' {
-  declare module.exports: $Exports<'@rentpath/react-ui-utils/test/setup'>;
 }
