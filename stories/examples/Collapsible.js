@@ -1,6 +1,7 @@
 import React from 'react'
 import { CollapsibleTheme } from '../theme'
 import { Collapsible } from 'react-ui-core/src/Collapsible'
+import Checkbox from './Checkbox';
 
 export default class Checkbox extends React.Component {
   render(){
