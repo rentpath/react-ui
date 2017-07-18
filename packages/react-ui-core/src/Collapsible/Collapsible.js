@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import {Button} from '../Button'
 
 export default class Collapsible extends Component {
 
@@ -11,15 +12,12 @@ export default class Collapsible extends Component {
   }
 
   handleClick() {
-    const originalstate = this.state.display
     if (this.props.handleClick) {
       this.props.handleClick()
     }
-    if (this.state.display === originalstate) {
-      this.setState({
-        display: !this.state.display,
-      })
-    }
+    this.setState({
+      display: !this.state.display,
+    })
   }
 
   render() {
@@ -28,8 +26,8 @@ export default class Collapsible extends Component {
       theme,
       showableItems,
       nonshowableItems,
-      togglemore,
-      toggleless,
+      hidden,
+      visible,
     } = this.props
 
     return (
@@ -39,9 +37,9 @@ export default class Collapsible extends Component {
           {nonshowableItems}
         </div>
         <div className={theme.alignBottom}>
-          <a onClick={this.handleClick}>
-          <strong>{this.state.display ? toggleless : togglemore}</strong>
-        </a>
+          <Button onClick={this.handleClick}>
+            <strong>{this.state.display ? hidden : visible}</strong>
+          </Button>
         </div>
       </div>
     )
@@ -53,15 +51,15 @@ Collapsible.defaultProps = {
   nonshowableItems: '',
   id: '',
   title: '',
-  togglemore: 'show more',
-  toggleless: 'show less',
+  hidden: 'show more',
+  visible: 'show less',
   handleClick: null,
 }
 Collapsible.propTypes = {
   showableItems: PropTypes.element,
   nonshowableItems: PropTypes.element,
   id: PropTypes.string,
-  togglemore: PropTypes.element,
-  toggleless: PropTypes.element,
+  hidden: PropTypes.element,
+  visible: PropTypes.element,
   handleClick: PropTypes.func,
 }

@@ -49,5 +49,5 @@ storiesOf('Field', module)
 storiesOf('Text', module)
   .addWithInfo('default', 'Default themed text', () => Text)
 
-storiesOf('Collapse', module)
+storiesOf('Collapsible', module)
   .addWithInfo('default', 'Default themed', () => Collapse)
