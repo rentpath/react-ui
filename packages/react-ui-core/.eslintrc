@@ -13,7 +13,8 @@
     "react/jsx-uses-vars": 1,
   },
   "plugins": [
-    "react"
+    "react",
+    "jest"
   ],
   "settings": {
     "import/resolver": {
@@ -26,7 +27,7 @@
     }
   },
   "env": {
-    "mocha": true,
+    "jest/globals": true,
     "browser": true,
     "node": true
   }
