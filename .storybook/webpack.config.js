@@ -5,7 +5,6 @@ module.exports = (storybookBaseConfig, configType) => {
     test: /\.css$/,
     include: [
       path.resolve(__dirname, '../'),
-      /dist\/flexboxgrid.css/,
     ],
     use: [
       'style-loader',

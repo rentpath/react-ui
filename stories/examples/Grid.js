@@ -1,3 +1,4 @@
+import "react-ui-core/node_modules/flexboxgrid/dist/flexboxgrid.css"
 import { Grid, Row, Col } from "react-ui-core/node_modules/react-flexbox-grid"
 import React from "react"
 import cn from "classnames"
