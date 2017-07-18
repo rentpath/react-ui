@@ -1,6 +1,5 @@
 import React from 'react'
-import { expect } from 'chai'
-import { shallow, mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import ModalFooter from '../ModalFooter'
 
 describe('Modal/ModalFooter', () => {
@@ -12,23 +11,27 @@ describe('Modal/ModalFooter', () => {
     })
 
     it('does not have a `className` on the root node', () => {
-      expect(wrapper.prop('className')).to.equal('')
+      expect(wrapper.prop('className')).toBe('')
     })
 
     it('applies `footer` to `className` on the root node', () => {
       wrapper.setProps({ styles: { footer: 'foo' } })
-      expect(wrapper.prop('className')).to.equal('foo')
+      expect(wrapper.prop('className')).toEqual('foo')
     })
 
     it('applies `className` on the root node', () => {
       wrapper.setProps({ className: 'someName' })
-      expect(wrapper.prop('className')).to.equal('someName')
+      expect(wrapper.prop('className')).toEqual('someName')
     })
 
-    it('applies `footer` and `className` to `className` on the root node', () => {
-      wrapper.setProps({ styles: { footer: 'foo' }, className: 'bar' })
-      const className = wrapper.prop('className')
-      expect(className).to.contain('bar').and.contain('foo')
+    it('applies `footer` to `className` on the root node', () => {
+      wrapper.setProps({ styles: { footer: 'foo' } })
+      expect(wrapper.prop('className')).toEqual('foo')
+    })
+
+    it('applies `className` on the root node', () => {
+      wrapper.setProps({ className: 'bar' })
+      expect(wrapper.prop('className')).toBe('bar')
     })
   })
 
@@ -42,7 +45,7 @@ describe('Modal/ModalFooter', () => {
     const wrapper = shallow(<ModalFooter theme={theme} />)
 
     it('contains Modal theme in styles', () => {
-      expect(wrapper.prop('className')).to.equal('footer')
+      expect(wrapper.prop('className')).toEqual('footer')
     })
   })
 })
