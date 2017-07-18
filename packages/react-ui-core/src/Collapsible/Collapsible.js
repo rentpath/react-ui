@@ -38,7 +38,7 @@ export default class Collapsible extends Component {
         </div>
         <div className={theme.alignBottom}>
           <Button onClick={this.handleClick}>
-            <strong>{this.state.display ? hidden : visible}</strong>
+            <strong>{this.state.display ? visible : hidden}</strong>
           </Button>
         </div>
       </div>
