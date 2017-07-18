@@ -1,7 +1,18 @@
 import React from 'react'
 import { CollapsibleTheme } from '../theme'
 import { Collapsible } from 'react-ui-core/src/Collapsible'
-import Checkbox from './Checkbox';
+
+export default class Checkbox extends React.Component {
+  render(){
+  	return (<div className={this.props.className}>
+              <label><input type="checkbox"
+                name="checkbox"
+                value={this.props.label} />
+                {this.props.label}
+              </label>
+            </div>)
+  }
+}
 
 export default class Checkbox extends React.Component {
   render(){
