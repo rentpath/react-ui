@@ -2,6 +2,7 @@ export {
   Grid,
   Row,
   Col,
+  localizeCss,
 } from './Layout'
 
 export {

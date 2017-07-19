@@ -1,13 +1,22 @@
-import "react-ui-core/node_modules/flexboxgrid/dist/flexboxgrid.css"
-import { Grid, Row, Col } from "react-ui-core/src"
+import styles from "react-ui-core/node_modules/flexboxgrid/dist/flexboxgrid.css"
+import {
+  localizeCss as configureStylesForGrid,
+  Grid,
+  Row,
+  Col
+} from "react-ui-core/src"
+
 import React from "react"
 import cn from "classnames"
 import { ResponsiveTheme as theme } from "../theme"
+
+configureStylesForGrid(styles)
 
 // xs = phone
 // sm = tablet
 // md = desktop
 // lg = large monitors
+
 const result = (
   <div className={theme.result}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in feugiat
