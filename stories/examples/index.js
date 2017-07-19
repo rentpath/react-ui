@@ -30,3 +30,11 @@ export {
   DefaultModal,
   ModalNoOverlayClose,
 } from './Modal'
+
+export {
+  Collapse
+} from './Collapsible'
+
+export {
+  IncrementDecrementFilter
+} from './IncrementDecrementFilter'

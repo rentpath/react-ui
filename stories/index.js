@@ -14,6 +14,9 @@ import {
   ModalNoOverlayClose,
   FilterPanel,
   RangeSlider,
+  Collapse,
+  IncrementDecrementFilter,
+
 } from './examples'
 
 storiesOf('Button', module)
@@ -39,3 +42,9 @@ storiesOf('Field', module)
 
 storiesOf('Text', module)
   .addWithInfo('default', 'Default themed text', () => Text)
+
+storiesOf('Collapse', module)
+  .addWithInfo('default', 'Default themed', () => Collapse)
+
+storiesOf('IncrementDecrementFilter', module)
+  .addWithInfo('default', 'Default themed', () => IncrementDecrementFilter)
