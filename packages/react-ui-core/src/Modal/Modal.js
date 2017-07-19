@@ -5,12 +5,14 @@ import ModalBody from './ModalBody'
 
 export default class Modal extends PureComponent {
   static propTypes = {
+    isOpen: PropTypes.bool,
     theme: PropTypes.object,
     onClose: PropTypes.func,
     closeOnOverlayClick: PropTypes.bool,
   }
 
   static defaultProps = {
+    isOpen: true,
     theme: {},
     closeOnOverlayClick: true,
   }
@@ -29,10 +31,20 @@ export default class Modal extends PureComponent {
   }
 
   render() {
-    const { theme, ...props } = this.props
+    const {
+      isOpen,
+      theme,
+      ...props
+    } = this.props
+
+    const classes = isOpen ? theme.Modal_open : theme.Modal_closed
 
     return (
-      <Overlay onClick={this.overlayClose} styles={theme.Overlay}>
+      <Overlay
+        onClick={this.overlayClose}
+        styles={theme.Overlay}
+        className={classes}
+      >
         <ModalBody theme={theme} {...props} />
       </Overlay>
     )
