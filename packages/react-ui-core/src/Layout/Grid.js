@@ -8,20 +8,23 @@ import {
 
 import cn from 'classnames'
 
-class Col extends PureComponent {
-  // NOTE: add /fleboxgrid/ to css loader webpack config before use
-  // https://github.com/roylee0704/react-flexbox-grid#minimal-configuration
+export const localizeCss = css => {
+  Grid.localCss = css
+  Row.localCss = css
+  FlexCol.localCss = css
+}
 
+class Col extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     // less than 768px (phones)
-    xs: PropTypes.number,
+    xs: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
     // min width of 768px (tablets)
-    sm: PropTypes.number,
+    sm: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
     // min width of 1024px (laptops/desktops)
-    md: PropTypes.number,
+    md: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
     // min width of 1200px (large monitors)
-    lg: PropTypes.number,
+    lg: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
   }
 
   get mappedProps() {

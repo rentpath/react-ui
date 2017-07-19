@@ -1,8 +1,15 @@
-import "react-ui-core/node_modules/flexboxgrid/dist/flexboxgrid.css"
-import { Grid, Row, Col } from "react-ui-core/node_modules/react-flexbox-grid"
+import styles from "react-ui-core/node_modules/flexboxgrid/dist/flexboxgrid.css"
+import {
+  localizeCss as configureStylesForGrid,
+  Grid,
+  Row,
+  Col
+} from "react-ui-core/src"
 import React from "react"
 import cn from "classnames"
 import { GridTheme as theme } from "../theme"
+
+configureStylesForGrid(styles)
 
 export default (
   <Grid fluid>
@@ -25,9 +32,6 @@ export default (
       sm = min width of 768px (tablets portait and landscape, ipad) <br />
       md = min width of 1024px (laptops/desktops)<br />
       lg = min width of 1200px (large monitors) <br />
-      <br /> OR  <br /> <br />
-      small = less than 768px <br />
-      large = more than 768px
     </code>
     <h2>Center</h2>
     <Row className={theme.row} center="xs">
