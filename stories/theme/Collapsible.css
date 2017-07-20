@@ -1,0 +1,30 @@
+.show {
+	display:block;
+}
+
+.hide {
+	display:none;
+}
+
+.collapsible p {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.collapsible a {
+  color: deepskyblue;
+}
+
+.alignBottom{
+  display: inline-block;
+  width: 100%;
+  margin-left: 10%;
+}
+
+.checkboxStyle{
+	width:40%;
+	height:50px;
+	float:left;
+	margin-left:10%;
+}
