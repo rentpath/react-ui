@@ -45,3 +45,9 @@
   white-space: nowrap;
   display: inline-block;
 }
+
+.ModalFooter {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}

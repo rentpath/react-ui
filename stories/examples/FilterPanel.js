@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Button,
   Text,
   Form,
   Field,
@@ -7,6 +8,9 @@ import {
   Grid,
   Row,
   Col,
+  Modal,
+  ModalBody,
+  ModalFooter,
 } from 'react-ui-core/src'
 
 import { FilterPanelTheme } from '../theme'
@@ -57,8 +61,15 @@ const propertyTypeSet = () => (
 )
 
 export default (
-  <Form theme={FilterPanelTheme}>
-    { PriceSlider }
-    { propertyTypeSet() }
-  </Form>
+  <Modal>
+    <ModalBody>
+      <Form theme={FilterPanelTheme}>
+        { PriceSlider }
+        { propertyTypeSet() }
+      </Form>
+    </ModalBody>
+    <ModalFooter className={FilterPanelTheme.ModalFooter}>
+      <Button>Show Apartments</Button>
+    </ModalFooter>
+  </Modal>
 )

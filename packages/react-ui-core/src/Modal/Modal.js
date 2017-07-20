@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Overlay from './Overlay'
-import ModalBody from './ModalBody'
 
 export default class Modal extends PureComponent {
   static propTypes = {
@@ -44,9 +43,8 @@ export default class Modal extends PureComponent {
         onClick={this.overlayClose}
         styles={theme.Overlay}
         className={classes}
-      >
-        <ModalBody theme={theme} {...props} />
-      </Overlay>
+        {...props}
+      />
     )
   }
 }
