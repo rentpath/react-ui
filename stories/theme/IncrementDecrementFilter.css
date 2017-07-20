@@ -1,24 +1,28 @@
-.Container {
+.container {
   max-width: 800px; 
   width: 100%; 
-  display:table; 
+  display: table; 
   margin: auto; 
   margin-bottom: 15px;
 }
-.Label {
-  display:table-cell; 
-  vertical-align:middle;
+
+.label {
+  display: table-cell; 
+  vertical-align: middle;
 }
-.ComponentContainer {
- vertical-align:middle;
- display:table-cell;
- width:400px;
+
+.componentContainer {
+ vertical-align: middle;
+ display: table-cell;
+ width: 400px;
 }
+
 .contentInnards {
  text-align: center;
  width: 20px;
- float:right;
+ float: right;
 }
+
 .circle {
  border: 2px solid #666;
  color: white;   
@@ -26,11 +30,17 @@
  display: table-cell;
  background: #666; 
 }
+
 .title p {
   text-align: center;
-  font-weight: bold;
 }
+
 span.contentInnards {
-    margin-left: 10px;
-    margin-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.count {
+  width:30px;
+  display: inline-block;
 }

@@ -15,8 +15,7 @@ import {
   FilterPanel,
   RangeSlider,
   Collapse,
-  IncrementDecrementFilter,
-
+  IncrementDecrementFilterComponent,
 } from './examples'
 
 storiesOf('Button', module)
@@ -47,4 +46,4 @@ storiesOf('Collapse', module)
   .addWithInfo('default', 'Default themed', () => Collapse)
 
 storiesOf('IncrementDecrementFilter', module)
-  .addWithInfo('default', 'Default themed', () => IncrementDecrementFilter)
+  .addWithInfo('default', 'Default themed', () => IncrementDecrementFilterComponent)

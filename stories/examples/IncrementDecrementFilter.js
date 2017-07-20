@@ -1,56 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import { IncrementDecrementFilterTheme } from '../theme'
 import { action } from '@storybook/addon-actions'
+import IncrementDecrementFilter from 'react-ui-core/src/IncrementDecrementFilter';
 
-export default class IncrementDecrementFilter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: this.props.count
-    }
-    this.increment = this.increment.bind(this);
-    this.decrement = this.decrement.bind(this);
-  }
-  increment(){
-  	let incrementValue = this.state.count + 1;
-    this.setState({
-      count: incrementValue
-    })
-  }
-  decrement(){
-    if(this.state.count>1){
-    let decrementValue = this.state.count - 1;
-    this.setState({
-      count: decrementValue
-    })
-    }
-  }
-  render(){
-     const { count} = this.state;
-     const { theme, label, leftUnit, rightUnit } = this.props;
-      
-  	 return (<div className="Container"> 
-	  <div className="Label">{label}</div>
-	  <div className="ComponentContainer">
-          <span onClick={this.increment} className="contentInnards circle">&#x002B;</span>
-          <span className="contentInnards">{leftUnit}{count}{rightUnit}</span>
-          <span onClick={this.decrement} className="contentInnards circle">&#x002D;</span>
-	  </div>
-	</div>)
-      
-  }
-}
+const count = 3;
+const IncrementDecrementFilterComponent = (
+  <div>
+    <div className='title'>
+    <p>Baths & Bedrooms</p>
+    </div>
+    <IncrementDecrementFilter theme={IncrementDecrementFilterTheme} rightUnit="+" label="Bedrooms" count={count} />
+    <IncrementDecrementFilter theme={IncrementDecrementFilterTheme} rightUnit="+" label="Bathrooms" count={count} />
+    </div>
+)
 
-IncrementDecrementFilter.defaultProps = {
-  theme: {},
-  count: 1,
-  leftUnit: '',
-  rightUnit: ''
-};
-            
-IncrementDecrementFilter.propTypes = {
-  theme: PropTypes.object,
-  count: PropTypes.number,
-  leftUnit: PropTypes.string,
-  rightUnit: PropTypes.string
-};
+export { IncrementDecrementFilterComponent }
