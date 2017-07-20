@@ -1,9 +1,9 @@
 .show {
-	display:block;
+	display: block;
 }
 
 .hide {
-	display:none;
+	display: none;
 }
 
 .collapsible p {
@@ -12,19 +12,19 @@
   margin-bottom: 20px;
 }
 
-.collapsible a {
-  color: deepskyblue;
-}
-
-.alignBottom{
+.alignBottom {
   display: inline-block;
   width: 100%;
   margin-left: 10%;
 }
 
-.checkboxStyle{
-	width:40%;
-	height:50px;
-	float:left;
-	margin-left:10%;
+.checkboxStyle {
+	width: 40%;
+	height: 50px;
+	float: left;
+	margin-left: 10%;
+}
+
+.strong {
+	font-weight: bold;
 }

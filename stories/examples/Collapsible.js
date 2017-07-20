@@ -3,7 +3,7 @@ import { CollapsibleTheme } from '../theme'
 import { Collapsible } from 'react-ui-core/src/Collapsible'
 
 export default class Checkbox extends React.Component {
-  render(){
+  render() {
   	return (<div className={this.props.className}>
               <label><input type="checkbox"
                 name="checkbox"
@@ -15,11 +15,21 @@ export default class Checkbox extends React.Component {
 }
 
 let title = 'Amenities';
-let showableItems = ['Air Conditioning', 'Elevator',
-                    'Laundry Facility', 'Disability Access'];
-let nonshowableItems = ['Dishwasher','Garbage Disposal',
-                      'Island Kitchens','Microwave','Refrigerator',
-                      'Stainless Steel Appliances','Washer/Dryer in Unit',];
+let showableItems = [
+  'Air Conditioning',
+  'Elevator',
+  'Laundry Facility',
+  'Disability Access'
+]
+let nonshowableItems = [
+  'Dishwasher',
+  'Garbage Disposal',
+  'Island Kitchens',
+  'Microwave',
+  'Refrigerator',
+  'Stainless Steel Appliances',
+  'Washer/Dryer in Unit',
+]
 
 const renderItem = (item) => {
   return (
@@ -27,7 +37,7 @@ const renderItem = (item) => {
       className={CollapsibleTheme.checkboxStyle}
       label={item}
     />
-    )
+  )
 }
 
 const myShowableItems = (
@@ -35,27 +45,28 @@ const myShowableItems = (
     <p><strong>{title}</strong></p>
     {showableItems.map(renderItem)}
   </div>
-);
+)
 
 const myNonShowableItems = (
   <div>
     {nonshowableItems.map(renderItem)}
   </div>
-);
+)
 
-function handleChange(){
+function handleChange() {
   console.log('in custom onclick handler')
 }
 
 export const Collapse = (
   <div>
-  <Collapsible
-    showableItems={myShowableItems}
-    nonshowableItems={myNonShowableItems}
-    theme={CollapsibleTheme}
-    hidden='see all amenities'
-    visible='see less amenities'
-    handleClick={handleChange}
-  />
+    <Collapsible
+      showableItems={myShowableItems}
+      nonshowableItems={myNonShowableItems}
+      theme={CollapsibleTheme}
+      hiddenText='see all amenities'
+      visibleText='see less amenities'
+      visible={false}
+      handleClick={handleChange}
+    />
   </div>
 )

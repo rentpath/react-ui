@@ -1,27 +1,29 @@
 import React from 'react'
-import { expect } from 'chai'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import Collapsible from '../Collapsible'
-
-function userFunction() {
-}
 
 const theme = {}
 
-describe('Collapse', () => {
-  it('renders a Collapsible', () => {
-    const wrapper = shallow(<Collapsible theme={theme} />)
-    expect(wrapper.find('a')).to.have.length(1)
+describe('Collapsible', () => {
+  const setup = props => {
+    const wrapper = mount(
+      <Collapsible theme={theme} {...props}/>,
+    )
+    return {
+      wrapper,
+    }
+  }
+  it('renders div elements', () => {
+    const { wrapper } = setup({ theme })
+    expect(wrapper.find('div').length).toBe(3)
   })
-
-  context('when toggle element is clicked', () => {
-    it('expands or contracts', () => {
-      const wrapper = shallow(<Collapsible theme={theme} handleClick={userFunction} />)
-      expect(wrapper.text()).to.contain('more')
-      wrapper.find('a').last().simulate('click')
-      expect(wrapper.text()).to.contain('less')
-      wrapper.find('a').last().simulate('click')
-      expect(wrapper.text()).to.contain('more')
-    })
+  it('contains show more', () => {
+    const { wrapper } = setup({ theme })
+    expect(wrapper.find('button').text()).toContain('more')
+  })
+  it('expands on click and contains show less', () => {
+    const { wrapper } = setup({ theme })
+    wrapper.find('button').simulate('click')
+    expect(wrapper.find('button').text()).toContain('less')
   })
 })

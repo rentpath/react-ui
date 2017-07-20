@@ -1,5 +1,8 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Button } from '../Button'
+
+const noop = () => {}
 
 export default class Collapsible extends Component {
 
@@ -7,14 +10,12 @@ export default class Collapsible extends Component {
     super(props)
     this.handleClick = this.handleClick.bind(this)
     this.state = {
-      display: false,
+      display: this.props.visible,
     }
   }
 
   handleClick() {
-    if (this.props.handleClick) {
-      this.props.handleClick()
-    }
+    this.props.handleClick()
     this.setState({
       display: !this.state.display,
     })
@@ -26,8 +27,8 @@ export default class Collapsible extends Component {
       theme,
       showableItems,
       nonshowableItems,
-      hidden,
-      visible,
+      hiddenText,
+      visibleText,
     } = this.props
 
     return (
@@ -37,8 +38,8 @@ export default class Collapsible extends Component {
           {nonshowableItems}
         </div>
         <div className={theme.alignBottom}>
-          <Button onClick={this.handleClick}>
-            <strong>{this.state.display ? visible : hidden}</strong>
+          <Button className={theme.strong} onClick={this.handleClick}>
+            {this.state.display ? visibleText : hiddenText}
           </Button>
         </div>
       </div>
@@ -51,15 +52,32 @@ Collapsible.defaultProps = {
   nonshowableItems: '',
   id: '',
   title: '',
-  hidden: 'show more',
-  visible: 'show less',
-  handleClick: null,
+  hiddenText: 'show more',
+  visibleText: 'show less',
+  visible: false,
+  handleClick: noop,
 }
 Collapsible.propTypes = {
-  showableItems: PropTypes.element,
-  nonshowableItems: PropTypes.element,
-  id: PropTypes.string,
-  hidden: PropTypes.element,
-  visible: PropTypes.element,
+  showableItems: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
+  nonshowableItems: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
+  id: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
+  hiddenText: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
+  visibleText: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
   handleClick: PropTypes.func,
+  visible: PropTypes.bool,
 }
