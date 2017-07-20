@@ -38,4 +38,5 @@ export {
 export {
   DefaultModal,
   ModalNoOverlayClose,
+  ModalPopup,
 } from './Modal'

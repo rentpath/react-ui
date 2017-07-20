@@ -1,6 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { linkTo } from '@storybook/addon-links'
+import { withKnobs } from '@storybook/addon-knobs'
 import {
   CompleteForm,
   Text,
@@ -13,6 +14,7 @@ import {
   ButtonSmall,
   DefaultModal,
   ModalNoOverlayClose,
+  ModalPopup,
   FilterPanel,
   RangeSlider,
   Grid,
@@ -41,9 +43,11 @@ storiesOf('Field', module)
   .addWithInfo('with type select', 'Field with prop type set to select', () => SelectField)
   .addWithInfo('with type checkbox', 'Field with prop type set to checkbox', () => CheckboxField)
 
-//storiesOf('Modal', module)
-//  .add('default', () => DefaultModal)
-//  .add('with no overlay click', () => ModalNoOverlayClose)
+storiesOf('Modal', module)
+  .addDecorator(withKnobs)
+  .add('default', () => DefaultModal)
+  .add('with no overlay click', () => ModalNoOverlayClose)
+  .add('with popup', ModalPopup)
 
 storiesOf('Text', module)
   .addWithInfo('default', 'Default themed text', () => Text)
