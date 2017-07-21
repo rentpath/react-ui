@@ -40,3 +40,7 @@ export {
   ModalNoOverlayClose,
   ModalPopup,
 } from './Modal'
+
+export {
+  Collapse
+} from './Collapsible'

@@ -30,3 +30,7 @@ export {
   ModalFooter,
   Overlay,
 } from './Modal'
+
+export {
+  Collapsible,
+} from './Collapsible'
