@@ -1,7 +1,9 @@
-.Modal {
+.Modal_open {
+  display: block;
+  width: 100%;
   border: 1px solid #ccc;
 }
 
-.Overlay {
-  background: #000;
+.Modal_closed {
+  display: none;
 }

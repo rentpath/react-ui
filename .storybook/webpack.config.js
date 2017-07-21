@@ -3,7 +3,9 @@ const path = require('path')
 module.exports = (storybookBaseConfig, configType) => {
   storybookBaseConfig.module.rules.push({
     test: /\.css$/,
-    include: path.resolve(__dirname, '../'),
+    include: [
+      path.resolve(__dirname, '../'),
+    ],
     use: [
       'style-loader',
       {

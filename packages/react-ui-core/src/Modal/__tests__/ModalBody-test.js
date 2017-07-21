@@ -1,5 +1,4 @@
 import React from 'react'
-import { expect } from 'chai'
 import { shallow, mount } from 'enzyme'
 import ModalBody from '../ModalBody'
 
@@ -12,28 +11,29 @@ describe('Modal/ModalBody', () => {
     })
 
     it('does not have a `className` on the root node', () => {
-      expect(wrapper.prop('className')).to.equal('')
+      expect(wrapper.prop('className')).toBe('')
     })
 
     it('applies `container` to `className` on the root node', () => {
       wrapper.setProps({ styles: { container: 'foo' } })
-      expect(wrapper.prop('className')).to.equal('foo')
+      expect(wrapper.prop('className')).toEqual('foo')
     })
 
     it('applies `className` on the root node', () => {
       wrapper.setProps({ className: 'someName' })
-      expect(wrapper.prop('className')).to.equal('someName')
+      expect(wrapper.prop('className')).toBe('someName')
     })
 
     it('applies `container` and `className` to `className` on the root node', () => {
       wrapper.setProps({ styles: { container: 'foo' }, className: 'bar' })
       const className = wrapper.prop('className')
-      expect(className).to.contain('bar').and.contain('foo')
+      expect(className).toContain('foo')
+      expect(className).toContain('bar')
     })
 
     it('applies `body` to the `className` in the child body', () => {
       wrapper.setProps({ styles: { body: 'body' } })
-      expect(wrapper.find('div.body').first()).to.have.length(1)
+      expect(wrapper.find('div.body').first()).toHaveLength(1)
     })
   })
 
@@ -48,8 +48,8 @@ describe('Modal/ModalBody', () => {
     const wrapper = shallow(<ModalBody theme={theme} />)
 
     it('contains Modal theme in styles', () => {
-      expect(wrapper.prop('className')).to.equal('container')
-      expect(wrapper.find('div.body').first()).to.have.length(1)
+      expect(wrapper.prop('className')).toBe('container')
+      expect(wrapper.find('div.body').first()).toHaveLength(1)
     })
   })
 
@@ -63,16 +63,16 @@ describe('Modal/ModalBody', () => {
     )
 
     it('renders the prop as a component', () => {
-      expect(wrapper.text()).to.include('CLOSE')
+      expect(wrapper.text()).toContain('CLOSE')
     })
 
     it('sets onClose as a prop on the component', () => {
-      expect(wrapper.childAt(0).prop('onClose')).to.be.instanceof(Function)
+      expect(wrapper.childAt(0).prop('onClose')).toBeInstanceOf(Function)
     })
 
     it('does not render the prop when no prop is passed', () => {
       wrapper.setProps({ CloseButton: undefined })
-      expect(wrapper.text()).to.not.include('CLOSE')
+      expect(wrapper.text()).not.toContain('CLOSE')
     })
   })
 })

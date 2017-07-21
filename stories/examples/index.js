@@ -11,6 +11,14 @@ export {
 } from './RangeSlider'
 
 export {
+  default as Grid
+} from './Grid'
+
+export {
+  default as ResponsiveTemplate
+} from './ResponsiveTemplate'
+
+export {
   DefaultButton,
   ButtonWithColor,
   ButtonLarge,
@@ -24,11 +32,13 @@ export {
 export {
   DefaultField,
   SelectField,
+  CheckboxField,
 } from './Field'
 
 export {
   DefaultModal,
   ModalNoOverlayClose,
+  ModalPopup,
 } from './Modal'
 
 export {

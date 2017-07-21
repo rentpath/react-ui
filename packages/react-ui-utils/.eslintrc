@@ -10,6 +10,9 @@
       "packageDir": "./package.json"
     }]
   },
+  "plugins": [
+    "jest"
+  ],
   "settings": {
     "import/resolver": {
       "node": {
@@ -21,7 +24,7 @@
     }
   },
   "env": {
-    "mocha": true,
+    "jest/globals": true,
     "browser": true,
     "node": true
   }
