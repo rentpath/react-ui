@@ -17,6 +17,8 @@ import {
   ModalPopup,
   FilterPanel,
   RangeSlider,
+  Collapse,
+  IncrementDecrementFilterComponent,
   Grid,
   ResponsiveTemplate,
 } from './examples'
@@ -51,3 +53,9 @@ storiesOf('Modal', module)
 
 storiesOf('Text', module)
   .addWithInfo('default', 'Default themed text', () => Text)
+
+storiesOf('Collapse', module)
+  .addWithInfo('default', 'Default themed', () => Collapse)
+
+storiesOf('IncrementDecrementFilter', module)
+  .addWithInfo('default', 'Default themed', () => IncrementDecrementFilterComponent)
