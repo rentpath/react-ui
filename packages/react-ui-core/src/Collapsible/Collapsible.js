@@ -14,10 +14,6 @@ export default class Collapsible extends Component {
       PropTypes.string,
       PropTypes.element,
     ]),
-    id: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.element,
-    ]),
     hiddenText: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element,
@@ -34,8 +30,6 @@ export default class Collapsible extends Component {
   static defaultProps = {
     showableItems: '',
     nonshowableItems: '',
-    id: '',
-    title: '',
     hiddenText: 'show more',
     visibleText: 'show less',
     visible: false,
@@ -60,7 +54,6 @@ export default class Collapsible extends Component {
 
   render() {
     const {
-      id,
       theme,
       showableItems,
       nonshowableItems,
@@ -69,7 +62,7 @@ export default class Collapsible extends Component {
     } = this.props
 
     return (
-      <div id={id} className={theme.collapsible}>
+      <div className={theme.collapsible}>
         {showableItems}
         <div className={this.state.display ? theme.show : theme.hide}>
           {nonshowableItems}
