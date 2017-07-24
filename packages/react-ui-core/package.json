@@ -7,7 +7,7 @@
     "clean": "rm -rf lib",
     "build": "babel --ignore __tests__ -d lib src",
     "build:watch": "yarn run build -- --watch",
-    "test": "NODE_PATH=./packages NODE_ENV=development mocha --compilers js:babel-core/register --recursive",
+    "test": "jest",
     "test:watch": "yarn run test -- --watch",
     "lint": "eslint src",
     "lint:fix": "yarn run lint -- --fix"
@@ -30,6 +30,7 @@
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-react": "^6.10.3",
+    "jest": "^20.0.4",
     "jsdom": "^9.12.0",
     "jsdom-global": "^2.1.1",
     "mocha": "^3.2.0",
@@ -41,12 +42,12 @@
     "sinon-chai": "^2.10.0"
   },
   "dependencies": {
+    "@rentpath/react-ui-utils": "0.0.1",
     "babel-runtime": "^6.23.0",
     "classnames": "^2.2.5",
     "form-serialize": "^0.7.1",
     "prop-types": "^15.5.10",
-    "react-themed": "3.2.0",
-    "@rentpath/react-ui-utils": "0.0.1"
+    "react-themed": "3.2.0"
   },
   "peerDependencies": {
     "react": "^15.4.2"

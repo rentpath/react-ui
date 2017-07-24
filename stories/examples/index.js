@@ -32,9 +32,5 @@ export {
 } from './Modal'
 
 export {
-  Collapse
-} from './Collapsible'
-
-export {
   IncrementDecrementFilterComponent
 } from './IncrementDecrementFilter'

@@ -31,8 +31,9 @@
  background: #666; 
 }
 
-.title p {
+.title {
   text-align: center;
+  font-weight: bold;
 }
 
 span.contentInnards {
@@ -41,6 +42,6 @@ span.contentInnards {
 }
 
 .count {
-  width:30px;
+  width: 30px;
   display: inline-block;
 }
