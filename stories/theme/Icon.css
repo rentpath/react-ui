@@ -1,0 +1,14 @@
+.Icon {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  color: #000000;
+}
+.Icon-red {
+  background: #ff0000;
+  color: #fff;
+}
+.Icon-blue {
+  background: #0000FF;
+  color: #fff;
+}

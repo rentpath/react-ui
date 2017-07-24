@@ -19,6 +19,12 @@ import {
   RangeSlider,
   Grid,
   ResponsiveTemplate,
+  SettingIcon,
+  SettingWithColor,
+  SettingWithHeightWidth,
+  SearchIcon,
+  SearchWithColor,
+  SearchWithHeightWidth,
 } from './examples'
 
 storiesOf('Button', module)
@@ -51,3 +57,12 @@ storiesOf('Modal', module)
 
 storiesOf('Text', module)
   .addWithInfo('default', 'Default themed text', () => Text)
+
+storiesOf('Icon', module)
+  .addWithInfo('settingDefault', 'Default Setting Icon', () => SettingIcon)
+  .addWithInfo('settingWithColor', 'Setting Icon with color prop added', () => SettingWithColor)
+  .addWithInfo('settingWithHeightWidth', 'Setting Icon heigth width prop added', () => SettingWithHeightWidth)
+  .addWithInfo('searchDefault', 'Default Search Icon', () => SearchIcon)
+  .addWithInfo('searchWithColor', 'Icon with color prop added', () => SearchWithColor)
+  .addWithInfo('searchWithHeightWidth', 'Icon with height width prop added', () => SearchWithHeightWidth)
+

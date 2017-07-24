@@ -30,3 +30,7 @@ export {
   ModalFooter,
   Overlay,
 } from './Modal'
+
+export {
+  Icon,
+} from './Icon'

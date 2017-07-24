@@ -1,21 +1,21 @@
 export {
-  default as CompleteForm
+  default as CompleteForm,
 } from './CompleteForm'
 
 export {
-  default as FilterPanel
+  default as FilterPanel,
 } from './FilterPanel'
 
 export {
-  default as RangeSlider
+  default as RangeSlider,
 } from './RangeSlider'
 
 export {
-  default as Grid
+  default as Grid,
 } from './Grid'
 
 export {
-  default as ResponsiveTemplate
+  default as ResponsiveTemplate,
 } from './ResponsiveTemplate'
 
 export {
@@ -26,7 +26,7 @@ export {
 } from './Button'
 
 export {
-  default as Text
+  default as Text,
 } from './Text'
 
 export {
@@ -40,3 +40,12 @@ export {
   ModalNoOverlayClose,
   ModalPopup,
 } from './Modal'
+
+export {
+  SettingIcon,
+  SettingWithColor,
+  SettingWithHeightWidth,
+  SearchIcon,
+  SearchWithColor,
+  SearchWithHeightWidth,
+} from './Icon'
