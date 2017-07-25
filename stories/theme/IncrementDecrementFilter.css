@@ -1,0 +1,47 @@
+.container {
+  max-width: 800px;
+  width: 100%;
+  display: table;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.label {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.componentContainer {
+  vertical-align: middle;
+  display: table-cell;
+  width: 400px;
+}
+
+.contentInnards {
+  text-align: center;
+  width: 20px;
+  float: right;
+}
+
+.circle {
+  border: 2px solid #666;
+  color: white;
+  border-radius: 50%;
+  display: table-cell;
+  background: #666;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+}
+
+span.contentInnards {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.count {
+  width: 30px;
+  display: inline-block;
+}

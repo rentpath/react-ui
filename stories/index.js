@@ -21,6 +21,7 @@ import {
   ResponsiveTemplate,
   Collapse,
   Map,
+  IncrementDecrementFilterComponent
 } from './examples'
 
 storiesOf('Button', module)
@@ -59,3 +60,6 @@ storiesOf('Collapsible', module)
 
 storiesOf('Map', module)
   .addWithInfo('default', 'Default themed', () => Map)
+
+storiesOf('IncrementDecrementFilter', module)
+  .addWithInfo('default', 'Default themed', () => IncrementDecrementFilterComponent)
