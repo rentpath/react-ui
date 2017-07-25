@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export default class Icon extends Component {
 
   static propTypes = {
-    color: PropTypes.string,
+    fill: PropTypes.string,
     height: PropTypes.number,
     pathD: PropTypes.string.isRequired,
     viewBox: PropTypes.string,
@@ -15,26 +15,13 @@ export default class Icon extends Component {
       PropTypes.object,
     ]),
     width: PropTypes.number,
-    wrapperStyle: PropTypes.oneOfType([
-      PropTypes.array,
-      PropTypes.object,
-    ]),
+    className: PropTypes.string,
   };
 
-  static defaultProps = {
-    color: '#000',
-    size: 30,
-  }
   getIcon() {
-    const { color, height, onClick, size, style, width, pathD, viewBox } = this.props
+    const { pathD } = this.props
     return (
-        <svg
-            fill={color}
-            height={height || size}
-            width={width || size}
-            onClick={onClick}
-            style={style}
-            viewBox={viewBox}>
+        <svg {...this.props} >
             <path
                 d={pathD}
             />
@@ -42,9 +29,9 @@ export default class Icon extends Component {
     )
   }
   render() {
-    const { wrapperStyle } = this.props
-    if (wrapperStyle) {
-      return <div style={wrapperStyle}>{this.getIcon()}</div>
+    const { className } = this.props
+    if (className) {
+      return <div className={className}>{this.getIcon()}</div>
     }
     return this.getIcon()
   }

@@ -5,23 +5,23 @@ import * as pathD from '../utils/pathd'
 import { IconTheme } from '../theme'
 
 export const SettingIcon = (
-    <Icon viewBox="106 -228 512 512" pathD={pathD.SETTINGS}/>
+    <Icon viewBox="106 -228 512 512" height="30" width="30" pathD={pathD.SETTINGS}/>
 )
 
 export const SettingWithColor = (
-    <Icon color="red" viewBox="106 -228 512 512" pathD={pathD.SETTINGS}/>
+    <Icon fill="red" viewBox="106 -228 512 512" height="30" width="30" pathD={pathD.SETTINGS}/>
 )
 
 export const SettingWithHeightWidth = (
-    <Icon height="100" width="100" theme={IconTheme} viewBox="106 -228 512 512"
+    <Icon height="100" width="100" viewBox="106 -228 512 512"
           pathD={pathD.SETTINGS}/>
 )
 
 export const SearchIcon = (
-    <Icon viewBox="106 -228 512 512" pathD={pathD.SEARCH}/>
+    <Icon viewBox="106 -228 512 512" height="30" width="30" pathD={pathD.SEARCH}/>
 )
 export const SearchWithColor = (
-    <Icon color="blue" viewBox="106 -228 512 512" pathD={pathD.SEARCH}/>
+    <Icon fill="blue" height="30" width="30" viewBox="106 -228 512 512" pathD={pathD.SEARCH}/>
 )
 
 export const SearchWithHeightWidth = (
