@@ -26,13 +26,28 @@ export default class IncrementDecrementFilter extends Component {
   render() {
     const { count } = this.state
     const { theme, label, leftUnit, rightUnit, id } = this.props
-    return (<div id={id} className={theme.container}>
-      <div className={theme.label}>{label}</div>
-      <div className={theme.componentContainer}>
-          <span onClick={this.increment} className={`leftUnit ${theme.contentInnards} ${theme.circle}`}>&#x002B;</span>
-          <span className={`${theme.contentInnards} ${theme.count}`}>{`${leftUnit} ${count} ${rightUnit}`}</span>
-          <span onClick={this.decrement} className={`rightUnit ${theme.contentInnards} ${theme.circle}`}>&#x002D;</span>
-      </div>
+    return (
+      <div id={id} className={theme.container}>
+        <div className={theme.label}>
+          {label}
+        </div>
+        <div className={theme.componentContainer}>
+          <span
+            onClick={this.increment}
+            className={`leftUnit ${theme.contentInnards} ${theme.circle}`}
+          >
+            &#x002B;
+          </span>
+          <span
+            className={`${theme.contentInnards} ${theme.count}`}
+          >{`${leftUnit} ${count} ${rightUnit}`}</span>
+          <span
+            onClick={this.decrement}
+            className={`rightUnit ${theme.contentInnards} ${theme.circle}`}
+          >
+            &#x002D;
+          </span>
+        </div>
       </div>
     )
   }
@@ -51,3 +66,4 @@ IncrementDecrementFilter.propTypes = {
   leftUnit: PropTypes.string,
   rightUnit: PropTypes.string,
 }
+
