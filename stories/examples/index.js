@@ -42,10 +42,10 @@ export {
 } from './Modal'
 
 export {
-  SettingIcon,
+  SettingSvg,
   SettingWithColor,
   SettingWithHeightWidth,
-  SearchIcon,
+  SearchSvg,
   SearchWithColor,
   SearchWithHeightWidth,
-} from './Icon'
+} from './Svg'

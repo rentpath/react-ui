@@ -32,5 +32,5 @@ export {
 } from './Modal'
 
 export {
-  Icon,
-} from './Icon'
+  Svg,
+} from './Svg'

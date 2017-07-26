@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export default class Icon extends Component {
+export default class Svg extends Component {
 
   static propTypes = {
     fill: PropTypes.string,
@@ -16,23 +16,14 @@ export default class Icon extends Component {
     ]),
     width: PropTypes.number,
     className: PropTypes.string,
-  };
+  }
 
-  getIcon() {
+  render() {
     const { pathD } = this.props
     return (
-        <svg {...this.props} >
-            <path
-                d={pathD}
-            />
-        </svg>
+      <svg {...this.props} >
+        <path d={pathD} />
+      </svg>
     )
-  }
-  render() {
-    const { className } = this.props
-    if (className) {
-      return <div className={className}>{this.getIcon()}</div>
-    }
-    return this.getIcon()
   }
 }
