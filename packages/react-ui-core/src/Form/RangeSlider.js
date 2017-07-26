@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-// import themed from 'react-themed'
 import InputRange from 'react-input-range'
 
 export default class RangeSlider extends Component {
   static propTypes = {
     theme: PropTypes.object,
     onChange: PropTypes.func,
-    value: PropTypes.number,
+    formatHeader: PropTypes.func,
+    value: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.object,
+    ]),
   }
 
   static defaultProps = {
@@ -33,14 +36,22 @@ export default class RangeSlider extends Component {
       ...props
     } = this.props
 
+    const header = props.formatHeader &&
+      this.state.value.min !== this.state.value.max ?
+      props.formatHeader(this.state.value.min, this.state.value.max)
+      : ''
+
     // https://github.com/davidchin/react-input-range
     return (
-      <InputRange
-        {...props}
-        onChange={this.onChange}
-        value={this.state.value}
-        classNames={theme}
-      />
+      <div>
+        {header}
+        <InputRange
+          {...props}
+          onChange={this.onChange}
+          value={this.state.value}
+          classNames={theme}
+        />
+      </div>
     )
   }
 }

@@ -100,3 +100,9 @@
   width: 100%;
   margin-bottom: 160px;
 }
+
+.textCenter {
+  text-align: center;
+  height: 0.3rem;
+  padding-bottom: 20px;
+}
