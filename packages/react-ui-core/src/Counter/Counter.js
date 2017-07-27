@@ -1,6 +1,8 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
-export default class IncrementDecrementFilter extends Component {
+export default class Counter extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -10,18 +12,10 @@ export default class IncrementDecrementFilter extends Component {
     this.decrement = this.decrement.bind(this)
   }
   increment() {
-    const incrementValue = this.state.count + 1
-    this.setState({
-      count: incrementValue,
-    })
+    this.props.leftOperatorClick(this)
   }
   decrement() {
-    if (this.state.count > 1) {
-      const decrementValue = this.state.count - 1
-      this.setState({
-        count: decrementValue,
-      })
-    }
+    this.props.rightOperatorClick(this)
   }
   render() {
     const { count } = this.state
@@ -34,18 +28,18 @@ export default class IncrementDecrementFilter extends Component {
         <div className={theme.componentContainer}>
           <span
             onClick={this.increment}
-            className={`leftUnit ${theme.contentInnards} ${theme.circle}`}
+            className={classNames('leftUnit', theme.contentInnards, theme.shape)}
           >
-            &#x002B;
+            {this.props.leftOperator}
           </span>
           <span
-            className={`${theme.contentInnards} ${theme.count}`}
+            className={classNames(theme.contentInnards, theme.count)}
           >{`${leftUnit} ${count} ${rightUnit}`}</span>
           <span
             onClick={this.decrement}
-            className={`rightUnit ${theme.contentInnards} ${theme.circle}`}
+            className={classNames('rightUnit', theme.contentInnards, theme.shape)}
           >
-            &#x002D;
+            {this.props.rightOperator}
           </span>
         </div>
       </div>
@@ -53,17 +47,24 @@ export default class IncrementDecrementFilter extends Component {
   }
 }
 
-IncrementDecrementFilter.defaultProps = {
+Counter.defaultProps = {
   theme: {},
   count: 1,
   leftUnit: '',
   rightUnit: '',
+  leftOperatorClick: '',
+  rightOperatorClick: '',
+  leftOperator: <span>?</span>,
+  righttOperator: <span>?</span>,
 }
 
-IncrementDecrementFilter.propTypes = {
+Counter.propTypes = {
+  leftOperator: PropTypes.element,
+  righttOperator: PropTypes.element,
   theme: PropTypes.object,
   count: PropTypes.number,
   leftUnit: PropTypes.string,
   rightUnit: PropTypes.string,
+  leftOperatorClick: PropTypes.func,
+  rightOperatorClick: PropTypes.func,
 }
-

@@ -36,5 +36,5 @@ export {
 } from './Collapsible'
 
 export {
-  IncrementDecrementFilter,
-} from './IncrementDecrementFilter'
+  Counter,
+} from './Counter'

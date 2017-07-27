@@ -50,5 +50,5 @@ export {
 } from './Collapsible'
 
 export {
-  IncrementDecrementFilterComponent,
-} from './IncrementDecrementFilter'
+  CounterComponent,
+} from './Counter'
