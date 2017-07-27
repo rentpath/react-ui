@@ -39,12 +39,28 @@ describe('Counter', () => {
 
   describe('when counter button clicked', () => {
     it('calls a increment callback', () => {
-      const wrapper = shallow(<Counter id='foo' theme={theme} leftOperatorClick={leftOperatorClick} rightOperatorClick={rightOperatorClick} />)
+      const wrapper = shallow(
+          <Counter
+            id='foo'
+            theme={theme}
+            leftOperatorClick={leftOperatorClick}
+            rightOperatorClick={rightOperatorClick}
+          />,
+      )
       wrapper.find('span').first().simulate('click')
       expect(wrapper.state('count')).toEqual(2)
     })
     it('calls a decrement callback', () => {
-      const wrapper = shallow(<Counter id='foo' count={3} theme={theme} count={2} leftOperatorClick={leftOperatorClick} rightOperatorClick={rightOperatorClick} />)
+      const wrapper = shallow(
+          <Counter
+            id='foo'
+            count={3}
+            theme={theme}
+            count={2}
+            leftOperatorClick={leftOperatorClick}
+            rightOperatorClick={rightOperatorClick}
+          />,
+      )
       wrapper.find('span').last().simulate('click')
       expect(wrapper.state('count')).toEqual(1)
     })
