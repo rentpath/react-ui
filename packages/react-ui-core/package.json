@@ -50,6 +50,7 @@
     "babel-plugin-react-css-modules": "^3.0.1",
     "babel-runtime": "^6.23.0",
     "classnames": "^2.2.5",
+    "mapbox-gl": "0.39.1",
     "form-serialize": "^0.7.1",
     "prop-types": "^15.5.10",
     "react-input-range": "1.1.4",

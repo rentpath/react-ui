@@ -42,5 +42,9 @@ export {
 } from './Modal'
 
 export {
+  default as Map
+} from './Map'
+
+export {
   Collapse
 } from './Collapsible'

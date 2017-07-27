@@ -25,6 +25,10 @@ export {
 } from './Form'
 
 export {
+  CustomMap,
+} from './Map'
+
+export {
   Modal,
   ModalBody,
   ModalFooter,

@@ -28,6 +28,25 @@ module.exports = (storybookBaseConfig, configType) => {
     ]
   })
 
+  const jsConfig = {
+    test: /\.js?$/,
+    loader: 'babel-loader',
+    exclude: /node_modules/,
+    options: {
+      presets: [
+        "es2015",
+        "stage-0",
+        "react"
+      ],
+      plugins: [
+        "transform-runtime",
+        "transform-decorators-legacy",
+      ],
+    }
+  }
+
+  // storybookBaseConfig.module.rules.push(jsConfig)
+
   storybookBaseConfig.resolve = {
     modules: [
       'node_modules',
