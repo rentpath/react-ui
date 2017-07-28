@@ -1,4 +1,4 @@
-import './Map.css'
+import '../theme/Map.css'
 import React, { Component } from 'react'
 import { CustomMap } from 'react-ui-core/src'
 
