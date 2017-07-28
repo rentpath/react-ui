@@ -25,7 +25,7 @@ export {
 } from './Form'
 
 export {
-  CustomMap,
+  Mapbox,
 } from './Map'
 
 export {

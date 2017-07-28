@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
 
-export default class CustomMap extends Component {
+export default class Mapbox extends Component {
   static propTypes = {
     size: PropTypes.string,
     color: PropTypes.string,
