@@ -8,14 +8,13 @@ export default class Counter extends Component {
     this.state = {
       count: this.props.count,
     }
-    this.increment = this.increment.bind(this)
-    this.decrement = this.decrement.bind(this)
+    this.onClick = this.onClick.bind(this)
   }
-  increment() {
-    this.props.leftOperatorClick(this)
-  }
-  decrement() {
-    this.props.rightOperatorClick(this)
+  onClick(type) {
+    const count = this.props.onClick(type, this.state.count)
+    this.setState({
+      count,
+    })
   }
   render() {
     const { count } = this.state
@@ -27,7 +26,7 @@ export default class Counter extends Component {
         </div>
         <div className={theme.componentContainer}>
           <span
-            onClick={this.increment}
+            onClick={() => this.onClick('increment')}
             className={classNames('leftUnit', theme.contentInnards, theme.shape)}
           >
             {this.props.leftOperator}
@@ -36,7 +35,7 @@ export default class Counter extends Component {
             className={classNames(theme.contentInnards, theme.count)}
           >{`${leftUnit} ${count} ${rightUnit}`}</span>
           <span
-            onClick={this.decrement}
+            onClick={() => this.onClick('decrement')}
             className={classNames('rightUnit', theme.contentInnards, theme.shape)}
           >
             {this.props.rightOperator}
@@ -52,10 +51,11 @@ Counter.defaultProps = {
   count: 1,
   leftUnit: '',
   rightUnit: '',
-  leftOperatorClick: '',
-  rightOperatorClick: '',
-  leftOperator: <span>?</span>,
-  righttOperator: <span>?</span>,
+  onClick: () => {
+    alert('please add rightOperatorClick handler function')
+  },
+  leftOperator: <span>-</span>,
+  righttOperator: <span>+</span>,
 }
 
 Counter.propTypes = {
@@ -65,6 +65,5 @@ Counter.propTypes = {
   count: PropTypes.number,
   leftUnit: PropTypes.string,
   rightUnit: PropTypes.string,
-  leftOperatorClick: PropTypes.func,
-  rightOperatorClick: PropTypes.func,
+  onClick: PropTypes.func,
 }

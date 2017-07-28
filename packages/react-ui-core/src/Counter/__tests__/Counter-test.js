@@ -3,20 +3,16 @@ import { shallow } from 'enzyme'
 import Counter from '../Counter'
 
 const theme = {}
-const leftOperatorClick = function (component) {
-  const incrementValue = component.state.count + 1
-  component.setState({
-    count: incrementValue,
-  })
-}
-const rightOperatorClick = function (component) {
-  if (component.state.count > 1) {
-    const decrementValue = component.state.count - 1
-    component.setState({
-      count: decrementValue,
-    })
+const onClick = (type, counter) => {
+  let count = counter
+  if (type === 'increment') {
+    count += 1
+  } else {
+    count = count > 1 ? count - 1 : count
   }
+  return count
 }
+
 describe('Counter', () => {
   it('renders a Counter', () => {
     const wrapper = shallow(<Counter theme={theme} />)
@@ -43,8 +39,7 @@ describe('Counter', () => {
           <Counter
             id='foo'
             theme={theme}
-            leftOperatorClick={leftOperatorClick}
-            rightOperatorClick={rightOperatorClick}
+            onClick={onClick}
           />,
       )
       wrapper.find('span').first().simulate('click')
@@ -57,8 +52,7 @@ describe('Counter', () => {
             count={3}
             theme={theme}
             count={2}
-            leftOperatorClick={leftOperatorClick}
-            rightOperatorClick={rightOperatorClick}
+            onClick={onClick}
           />,
       )
       wrapper.find('span').last().simulate('click')
