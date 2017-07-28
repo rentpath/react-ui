@@ -8,6 +8,8 @@ export default class CustomMap extends Component {
     size: PropTypes.string,
     color: PropTypes.string,
     theme: PropTypes.object,
+    token: PropTypes.string,
+    center: PropTypes.array,
   }
 
   static defaultProps = {
@@ -15,11 +17,11 @@ export default class CustomMap extends Component {
   }
 
   componentDidMount() {
-    mapboxgl.accessToken = 'pk.eyJ1IjoibWlrZXdpbGxpYW1zb24iLCJhIjoibzRCYUlGSSJ9.QGvlt6Opm5futGhE5i-1kw';
+    mapboxgl.accessToken = this.props.token
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v9',
-      center: [-74.50, 40],
+      center: this.props.center,
       zoom: 9,
     })
   }
