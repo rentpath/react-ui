@@ -24,7 +24,13 @@ describe('Counter', () => {
     expect(wrapper.prop('id')).toEqual('foo')
   })
   it('passes through props', () => {
-    const wrapper = shallow(<Counter id="foo" theme={theme} count={3} />)
+    const wrapper = shallow(
+        <Counter
+          id="foo"
+          theme={theme}
+          count={3}
+        />,
+    )
     expect(wrapper.state('count')).toEqual(3)
   })
 

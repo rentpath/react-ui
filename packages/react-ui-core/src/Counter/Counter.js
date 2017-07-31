@@ -8,10 +8,10 @@ export default class Counter extends Component {
     this.state = {
       count: this.props.count,
     }
-    this.onClick = this.onClick.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
-  onClick(type) {
-    const count = this.props.onClick(type, this.state.count)
+  handleClick(count) {
+    this.props.handleClick(count)
     this.setState({
       count,
     })
@@ -26,7 +26,7 @@ export default class Counter extends Component {
         </div>
         <div className={theme.componentContainer}>
           <span
-            onClick={() => this.onClick('increment')}
+            onClick={() => this.handleClick(this.state.count + 1)}
             className={classNames('leftUnit', theme.contentInnards, theme.shape)}
           >
             {this.props.leftOperator}
@@ -35,7 +35,7 @@ export default class Counter extends Component {
             className={classNames(theme.contentInnards, theme.count)}
           >{`${leftUnit} ${count} ${rightUnit}`}</span>
           <span
-            onClick={() => this.onClick('decrement')}
+            onClick={() => this.handleClick(this.state.count - 1)}
             className={classNames('rightUnit', theme.contentInnards, theme.shape)}
           >
             {this.props.rightOperator}
@@ -51,7 +51,7 @@ Counter.defaultProps = {
   count: 1,
   leftUnit: '',
   rightUnit: '',
-  onClick: () => {
+  handleClick: () => {
     alert('please add rightOperatorClick handler function')
   },
   leftOperator: <span>-</span>,
@@ -65,5 +65,5 @@ Counter.propTypes = {
   count: PropTypes.number,
   leftUnit: PropTypes.string,
   rightUnit: PropTypes.string,
-  onClick: PropTypes.func,
+  handleClick: PropTypes.func,
 }

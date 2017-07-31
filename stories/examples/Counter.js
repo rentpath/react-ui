@@ -7,14 +7,7 @@ const title = 'title'
 const leftOperator = <span>&#x002B;</span>
 const rightOperator = <span>&#x002D;</span>
 
-const onClick = (type, counter) => {
-  let count = counter
-  if(type == 'increment') {
-    count += 1
-  } else {
-    count = count > 1 ? count - 1 : count
-  }
-return count
+const handleClick = (counter) => {
 }
 const CounterComponent = (
   <div>
@@ -25,7 +18,7 @@ const CounterComponent = (
       theme={CounterTheme}
       leftOperator={leftOperator}
       rightOperator={rightOperator}
-      onClick={onClick}
+      handleClick={handleClick}
       rightUnit='+'
       label='Bedrooms'
       count={count}
@@ -34,7 +27,7 @@ const CounterComponent = (
       theme={CounterTheme}
       leftOperator={leftOperator}
       rightOperator={rightOperator}
-      onClick={onClick}
+      handleClick={handleClick}
       rightUnit='+'
       label='Bathrooms'
       count={count}
