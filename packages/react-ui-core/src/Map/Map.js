@@ -10,6 +10,9 @@ export default class Mapbox extends Component {
     theme: PropTypes.object,
     token: PropTypes.string,
     center: PropTypes.array,
+    style: PropTypes.string,
+    zoom: PropTypes.number,
+    theme: PropTypes.object,
   }
 
   static defaultProps = {
@@ -20,9 +23,10 @@ export default class Mapbox extends Component {
     mapboxgl.accessToken = this.props.token
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v9',
+      style: this.props.style,
       center: this.props.center,
-      zoom: 9,
+      zoom: this.props.zoom,
+      theme: this.props.theme
     })
   }
 
@@ -38,18 +42,14 @@ export default class Mapbox extends Component {
     return (
       <div
         {...props}
-        style={{
-          width: '700px',
-          height: '700px',
-          position: 'absolute',
-          top: 0
-        }}
+        style={{}}
         id="map"
         className={classNames(
           className,
           theme.Map,
           theme[`Map-${color}`],
           theme[`Map-${size}`],
+          theme.map
         )}
       >
       </div>
