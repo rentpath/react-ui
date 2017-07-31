@@ -6,7 +6,6 @@ const count = 3
 const title = 'title'
 const leftOperator = <span>&#x002B;</span>
 const rightOperator = <span>&#x002D;</span>
-
 const handleClick = (counter) => {
 }
 const CounterComponent = (
