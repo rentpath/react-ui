@@ -1,5 +1,5 @@
-import mapTheme from '../theme/Map.css'
 import React, { Component } from 'react'
+import { MapTheme } from '../theme'
 import { Mapbox } from 'react-ui-core/src'
 
 export default (
@@ -10,7 +10,8 @@ export default (
       center={[-84.359, 33.679]}
       style="mapbox://styles/mapbox/streets-v9"
       zoom={9}
-      theme={mapTheme}
+      theme={MapTheme}
+      container="map"
     />
   </div>
 )

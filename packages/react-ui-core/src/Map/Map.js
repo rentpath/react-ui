@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
 
-export default class Mapbox extends Component {
+export default class Mapbox extends PureComponent {
   static propTypes = {
     size: PropTypes.string,
     color: PropTypes.string,
@@ -12,7 +12,7 @@ export default class Mapbox extends Component {
     center: PropTypes.array,
     style: PropTypes.string,
     zoom: PropTypes.number,
-    theme: PropTypes.object,
+    container: PropTypes.string,
   }
 
   static defaultProps = {
@@ -22,7 +22,7 @@ export default class Mapbox extends Component {
   componentDidMount() {
     mapboxgl.accessToken = this.props.token
     const map = new mapboxgl.Map({
-      container: 'map',
+      container: this.props.container,
       style: this.props.style,
       center: this.props.center,
       zoom: this.props.zoom,
@@ -41,12 +41,10 @@ export default class Mapbox extends Component {
 
     return (
       <div
-        {...props}
         style={{}}
         id="map"
         className={classNames(
           className,
-          theme.Map,
           theme[`Map-${color}`],
           theme[`Map-${size}`],
           theme.map
