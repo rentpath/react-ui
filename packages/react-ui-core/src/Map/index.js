@@ -1,2 +1,2 @@
-export { default } from './Map'
-export { default as Mapbox } from './Map'
+export { default } from './Mapbox'
+export { default as Mapbox } from './Mapbox'
