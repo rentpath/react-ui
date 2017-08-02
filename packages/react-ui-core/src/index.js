@@ -25,10 +25,6 @@ export {
 } from './Form'
 
 export {
-  Mapbox,
-} from './Map'
-
-export {
   Modal,
   ModalBody,
   ModalFooter,
