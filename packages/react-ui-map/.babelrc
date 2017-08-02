@@ -8,6 +8,5 @@
     "transform-decorators-legacy",
     "transform-class-properties",
     "babel-plugin-transform-object-rest-spread"
-  ],
-  "ignore": "node_modules",
+  ]
 }

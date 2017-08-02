@@ -20,6 +20,7 @@ import {
   Grid,
   ResponsiveTemplate,
   Collapse,
+  Map,
 } from './examples'
 
 storiesOf('Button', module)
@@ -55,3 +56,6 @@ storiesOf('Text', module)
 
 storiesOf('Collapsible', module)
   .addWithInfo('default', 'Default themed', () => Collapse)
+
+storiesOf('Map', module)
+  .addWithInfo('default', 'Default themed', () => Map)

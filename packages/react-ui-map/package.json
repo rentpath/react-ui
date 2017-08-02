@@ -1,6 +1,6 @@
 {
-  "name": "@rentpath/react-ui-core",
-  "version": "0.0.31",
+  "name": "react-ui-map",
+  "version": "0.0.01",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
@@ -12,14 +12,10 @@
     "lint": "eslint src",
     "lint:fix": "yarn run lint -- --fix"
   },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
-    },
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/mocks/"
-    ]
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.10",
+    "mapbox-gl": "0.39.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -41,20 +37,7 @@
     "jest": "^20.0.4",
     "jest-css-modules": "^1.1.0",
     "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-input-range": "1.1.4",
     "react-test-renderer": "^15.6.1"
-  },
-  "dependencies": {
-    "@rentpath/react-ui-utils": "0.0.1",
-    "babel-plugin-react-css-modules": "^3.0.1",
-    "babel-runtime": "^6.23.0",
-    "classnames": "^2.2.5",
-    "form-serialize": "^0.7.1",
-    "prop-types": "^15.5.10",
-    "react-flexbox-grid": "https://github.com/rentpath/react-flexbox-grid",
-    "react-input-range": "1.1.4",
-    "react-themed": "3.2.0"
   },
   "peerDependencies": {
     "react": "^15.4.2"
