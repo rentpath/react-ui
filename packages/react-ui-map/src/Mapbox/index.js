@@ -47,7 +47,7 @@ export default class Mapbox extends PureComponent {
           className,
           theme[`Map-${color}`],
           theme[`Map-${size}`],
-          theme.map
+          theme.Map
         )}
       >
       </div>
