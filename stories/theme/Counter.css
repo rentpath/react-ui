@@ -1,4 +1,4 @@
-.container {
+.Counter {
   max-width: 800px;
   width: 100%;
   display: table;
@@ -6,24 +6,24 @@
   margin-bottom: 15px;
 }
 
-.label {
+.Counter-label {
   display: table-cell;
   vertical-align: middle;
 }
 
-.componentContainer {
+.Counter-label-active {
   vertical-align: middle;
   display: table-cell;
   width: 400px;
 }
 
-.contentInnards {
+.Counter-content {
   text-align: center;
   width: 20px;
   float: right;
 }
 
-.shape {
+.Counter-shape {
   border: 2px solid #666;
   color: white;
   border-radius: 50%;
@@ -36,12 +36,12 @@
   font-weight: bold;
 }
 
-span.contentInnards {
+span.Counter-content {
   margin-left: 10px;
   margin-right: 10px;
 }
 
-.count {
+.Counter-count-content {
   width: 30px;
   display: inline-block;
 }

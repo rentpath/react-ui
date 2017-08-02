@@ -16,13 +16,9 @@ const onClick = (type, counter) => {
 describe('Counter', () => {
   it('renders a Counter', () => {
     const wrapper = shallow(<Counter theme={theme} />)
-    expect(wrapper.find('.leftUnit')).toHaveLength(1)
+    expect(wrapper.find('.decrementUnit')).toHaveLength(1)
   })
 
-  it('passes through props', () => {
-    const wrapper = shallow(<Counter id="foo" theme={theme} />)
-    expect(wrapper.prop('id')).toEqual('foo')
-  })
   it('passes through props', () => {
     const wrapper = shallow(
         <Counter
@@ -36,7 +32,7 @@ describe('Counter', () => {
 
   it('passes through default count state', () => {
     const wrapper = shallow(<Counter id="foo" theme={theme} />)
-    expect(wrapper.state('count')).toEqual(1)
+    expect(wrapper.state('count')).toEqual(0)
   })
 
   describe('when counter button clicked', () => {
@@ -46,22 +42,22 @@ describe('Counter', () => {
             id='foo'
             theme={theme}
             onClick={onClick}
+            count={1}
           />,
       )
-      wrapper.find('span').first().simulate('click')
+      wrapper.find('span.incrementUnit').first().simulate('click')
       expect(wrapper.state('count')).toEqual(2)
     })
     it('calls a decrement callback', () => {
       const wrapper = shallow(
           <Counter
             id='foo'
-            count={3}
             theme={theme}
             count={2}
             onClick={onClick}
           />,
       )
-      wrapper.find('span').last().simulate('click')
+      wrapper.find('span.decrementUnit').last().simulate('click')
       expect(wrapper.state('count')).toEqual(1)
     })
   })

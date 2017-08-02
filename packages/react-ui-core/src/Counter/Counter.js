@@ -18,27 +18,27 @@ export default class Counter extends Component {
   }
   render() {
     const { count } = this.state
-    const { theme, label, leftUnit, rightUnit, id } = this.props
+    const { theme, label, decrementUnit, incrementUnit } = this.props
     return (
-      <div id={id} className={theme.container}>
-        <div className={theme.label}>
+      <div className={theme.Counter}>
+        <div className={theme['Counter-label']}>
           {label}
         </div>
-        <div className={theme.componentContainer}>
+        <div className={theme['Counter-label-active']}>
           <span
             onClick={() => this.handleClick(this.state.count + 1)}
-            className={classNames('leftUnit', theme.contentInnards, theme.shape)}
+            className={classNames('incrementUnit', theme['Counter-content'], theme['Counter-shape'])}
           >
-            {this.props.leftOperator}
+            {this.props.decrementOperator}
           </span>
           <span
-            className={classNames(theme.contentInnards, theme.count)}
-          >{`${leftUnit} ${count} ${rightUnit}`}</span>
+            className={classNames(theme['Counter-content'], theme['Counter-count-content'], theme['Counter-Shape'])}
+          >{`${decrementUnit} ${count} ${incrementUnit}`}</span>
           <span
             onClick={() => this.handleClick(this.state.count - 1)}
-            className={classNames('rightUnit', theme.contentInnards, theme.shape)}
+            className={classNames('decrementUnit', theme['Counter-content'], theme['Counter-shape'])}
           >
-            {this.props.rightOperator}
+            {this.props.incrementOperator}
           </span>
         </div>
       </div>
@@ -48,22 +48,20 @@ export default class Counter extends Component {
 
 Counter.defaultProps = {
   theme: {},
-  count: 1,
-  leftUnit: '',
-  rightUnit: '',
-  handleClick: () => {
-    alert('please add rightOperatorClick handler function')
-  },
-  leftOperator: <span>-</span>,
-  righttOperator: <span>+</span>,
+  count: 0,
+  decrementUnit: '',
+  incrementUnit: '',
+  handleClick: function noop() {},
+  decrementOperator: <span>-</span>,
+  incrementOperator: <span>+</span>,
 }
 
 Counter.propTypes = {
-  leftOperator: PropTypes.element,
-  righttOperator: PropTypes.element,
+  decrementOperator: PropTypes.element,
+  incrementOperator: PropTypes.element,
   theme: PropTypes.object,
   count: PropTypes.number,
-  leftUnit: PropTypes.string,
-  rightUnit: PropTypes.string,
+  decrementUnit: PropTypes.string,
+  incrementUnit: PropTypes.string,
   handleClick: PropTypes.func,
 }

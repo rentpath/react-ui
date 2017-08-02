@@ -4,8 +4,8 @@ import Counter from 'react-ui-core/src/Counter'
 
 const count = 3
 const title = 'title'
-const leftOperator = <span>&#x002B;</span>
-const rightOperator = <span>&#x002D;</span>
+const decrementOperator = <span>&#x002B;</span>
+const incrementOperator = <span>&#x002D;</span>
 const handleClick = (counter) => {
 }
 const CounterComponent = (
@@ -15,19 +15,19 @@ const CounterComponent = (
     </div>
     <Counter
       theme={CounterTheme}
-      leftOperator={leftOperator}
-      rightOperator={rightOperator}
+      decrementOperator={decrementOperator}
+      incrementOperator={incrementOperator}
       handleClick={handleClick}
-      rightUnit='+'
+      incrementUnit='+'
       label='Bedrooms'
       count={count}
     />
     <Counter
       theme={CounterTheme}
-      leftOperator={leftOperator}
-      rightOperator={rightOperator}
+      decrementOperator={decrementOperator}
+      incrementOperator={incrementOperator}
       handleClick={handleClick}
-      rightUnit='+'
+      incrementUnit='+'
       label='Bathrooms'
       count={count}
     />
