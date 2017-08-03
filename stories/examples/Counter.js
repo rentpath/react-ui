@@ -21,6 +21,7 @@ const CounterComponent = (
       incrementUnit='+'
       label='Bedrooms'
       count={count}
+      changeValue={2}
     />
     <Counter
       theme={CounterTheme}

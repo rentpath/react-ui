@@ -18,7 +18,7 @@ export default class Counter extends Component {
   }
   render() {
     const { count } = this.state
-    const { theme, label, decrementUnit, incrementUnit } = this.props
+    const { theme, label, decrementUnit, incrementUnit, changeValue } = this.props
     return (
       <div className={theme.Counter}>
         <div className={theme['Counter-label']}>
@@ -26,8 +26,9 @@ export default class Counter extends Component {
         </div>
         <div className={theme['Counter-label-active']}>
           <span
-            onClick={() => this.handleClick(this.state.count + 1)}
-            className={classNames('incrementUnit', theme['Counter-content'], theme['Counter-shape'])}
+            role='incrementUnit'
+            onClick={() => this.handleClick(this.state.count + changeValue)}
+            className={classNames(theme['Counter-content'], theme['Counter-shape'])}
           >
             {this.props.decrementOperator}
           </span>
@@ -35,8 +36,9 @@ export default class Counter extends Component {
             className={classNames(theme['Counter-content'], theme['Counter-count-content'], theme['Counter-Shape'])}
           >{`${decrementUnit} ${count} ${incrementUnit}`}</span>
           <span
-            onClick={() => this.handleClick(this.state.count - 1)}
-            className={classNames('decrementUnit', theme['Counter-content'], theme['Counter-shape'])}
+            role='decrementUnit'
+            onClick={() => this.handleClick(this.state.count - changeValue)}
+            className={classNames(theme['Counter-content'], theme['Counter-shape'])}
           >
             {this.props.incrementOperator}
           </span>
@@ -51,9 +53,10 @@ Counter.defaultProps = {
   count: 0,
   decrementUnit: '',
   incrementUnit: '',
-  handleClick: function noop() {},
+  handleClick: () => {},
   decrementOperator: <span>-</span>,
   incrementOperator: <span>+</span>,
+  changeValue: 1,
 }
 
 Counter.propTypes = {
@@ -61,6 +64,7 @@ Counter.propTypes = {
   incrementOperator: PropTypes.element,
   theme: PropTypes.object,
   count: PropTypes.number,
+  changeValue: PropTypes.number,
   decrementUnit: PropTypes.string,
   incrementUnit: PropTypes.string,
   handleClick: PropTypes.func,

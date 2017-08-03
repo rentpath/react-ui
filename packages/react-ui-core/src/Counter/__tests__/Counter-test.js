@@ -16,7 +16,7 @@ const onClick = (type, counter) => {
 describe('Counter', () => {
   it('renders a Counter', () => {
     const wrapper = shallow(<Counter theme={theme} />)
-    expect(wrapper.find('.decrementUnit')).toHaveLength(1)
+    expect(wrapper.find('span[role="decrementUnit"]')).toHaveLength(1)
   })
 
   it('passes through props', () => {
@@ -45,7 +45,7 @@ describe('Counter', () => {
             count={1}
           />,
       )
-      wrapper.find('span.incrementUnit').first().simulate('click')
+      wrapper.find('span[role="incrementUnit"]').first().simulate('click')
       expect(wrapper.state('count')).toEqual(2)
     })
     it('calls a decrement callback', () => {
@@ -57,7 +57,7 @@ describe('Counter', () => {
             onClick={onClick}
           />,
       )
-      wrapper.find('span.decrementUnit').last().simulate('click')
+      wrapper.find('span[role="decrementUnit"]').last().simulate('click')
       expect(wrapper.state('count')).toEqual(1)
     })
   })
