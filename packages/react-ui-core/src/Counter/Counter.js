@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import cn from 'classnames'
 
 export default class Counter extends Component {
   constructor(props) {
@@ -28,17 +28,27 @@ export default class Counter extends Component {
           <span
             role='incrementUnit'
             onClick={() => this.handleClick(this.state.count + changeValue)}
-            className={classNames(theme['Counter-content'], theme['Counter-shape'])}
+            className={cn(
+              theme['Counter-content'],
+              theme['Counter-shape'],
+            )}
           >
             {this.props.decrementOperator}
           </span>
           <span
-            className={classNames(theme['Counter-content'], theme['Counter-count-content'], theme['Counter-Shape'])}
+            className={cn(
+              theme['Counter-content'],
+              theme['Counter-count-content'],
+              theme['Counter-Shape'],
+            )}
           >{`${decrementUnit} ${count} ${incrementUnit}`}</span>
           <span
             role='decrementUnit'
             onClick={() => this.handleClick(this.state.count - changeValue)}
-            className={classNames(theme['Counter-content'], theme['Counter-shape'])}
+            className={cn(
+              theme['Counter-content'],
+              theme['Counter-shape'],
+            )}
           >
             {this.props.incrementOperator}
           </span>

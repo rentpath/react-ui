@@ -6,8 +6,9 @@ const count = 3
 const title = 'title'
 const decrementOperator = <span>&#x002B;</span>
 const incrementOperator = <span>&#x002D;</span>
-const handleClick = (counter) => {
-}
+
+const handleClick = (counter) => {}
+
 const CounterComponent = (
   <div>
     <div className={CounterTheme.title}>
