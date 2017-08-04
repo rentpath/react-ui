@@ -25,7 +25,7 @@ export default class Mapbox extends PureComponent {
   }
 
   static childContextTypes = {
-    map: PropTypes.object.isRequired
+    map: PropTypes.obj
   }
 
   static defaultProps = {

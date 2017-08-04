@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { MapTheme } from '../theme'
-import { Mapbox } from 'react-ui-map/src'
-import MapSource from 'react-ui-map/src'
-import MapLayer from 'react-ui-map/src'
+import { Mapbox, MapSource, MapLayer } from 'react-ui-map/src'
 
 export default (
   <div>

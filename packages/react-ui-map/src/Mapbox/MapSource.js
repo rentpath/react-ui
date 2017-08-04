@@ -1,17 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-MapSource.contextTypes = {
-  map : PropTypes.object.isRequired
-}
-
-MapSource.propTypes = {
-  id: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  layer: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
-}
-
-class MapSource extends React.Component {
+class MapSource extends Component {
   constructor(props) {
     super(props)
   }
@@ -47,4 +36,17 @@ class MapSource extends React.Component {
   }
 }
 
+MapSource.contextTypes = {
+  map : PropTypes.object.isRequired
+}
+
+MapSource.propTypes = {
+  id: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  layer: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
+}
+
 export default MapSource
+
+

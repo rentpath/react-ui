@@ -1,23 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import merge from 'lodash.merge'
 
-MapLayer.contextTypes = {
-  map : PropTypes.object.isRequired
-}
-
-MapLayer.propTypes = {
-  id: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  sourceLayer: PropTypes.string.isRequired,
-  sourceId: PropTypes.string.isRequired,
-  paint: PropTypes.object.isRequired,
-  layout: PropTypes.object.isRequired,
-  before: PropTypes.string.isRequired,
-  layerOpacity: PropTypes.isRequired,
-  layerVisibility: PropTypes.isRequired
-}
-
-class MapLayer extends React.Component {
+class MapLayer extends Component {
   constructor(props) {
     super(props)
   }
@@ -79,6 +63,22 @@ class MapLayer extends React.Component {
   render() {
     return null
   }
+}
+
+MapLayer.contextTypes = {
+  map : PropTypes.object.isRequired
+}
+
+MapLayer.propTypes = {
+  id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  sourceLayer: PropTypes.string.isRequired,
+  sourceId: PropTypes.string.isRequired,
+  paint: PropTypes.object.isRequired,
+  layout: PropTypes.object.isRequired,
+  before: PropTypes.string.isRequired,
+  layerOpacity: PropTypes.number.isRequired,
+  layerVisibility: PropTypes.bool.isRequired
 }
 
 export default MapLayer
