@@ -1,21 +1,25 @@
 import React, { Component } from 'react'
 import { MapTheme } from '../theme'
-import { Mapbox, MapLayer, MapSource } from 'react-ui-map/src'
+import { Mapbox } from 'react-ui-map/src'
+import MapSource from 'react-ui-map/src'
+import MapLayer from 'react-ui-map/src'
 
 export default (
-  <Mapbox
-    token="pk.eyJ1IjoibWlrZXdpbGxpYW1zb24iLCJhIjoibzRCYUlGSSJ9.QGvlt6Opm5futGhE5i-1kw"
-    center={[-84.359, 33.679]}
-    style="mapbox://styles/mapbox/streets-v9"
-    zoom={9}
-    theme={MapTheme}
-    container="map"
-  >
-    <MapSource
-      id="sourceID"
-      url="mapbox://aliceatd2d.1skjaazb"
-      layer="railwayLines-2es0gk">
-      <MapLayer
+  <div>
+    <Mapbox
+      token="pk.eyJ1IjoibWlrZXdpbGxpYW1zb24iLCJhIjoibzRCYUlGSSJ9.QGvlt6Opm5futGhE5i-1kw"
+      center={[-84.359, 33.679]}
+      style="mapbox://styles/mapbox/streets-v9"
+      zoom={9}
+      theme={MapTheme}
+      container="map"
+    >
+      <MapSource
+        id="sourceID"
+        url="mapbox://aliceatd2d.1skjaazb"
+        layer="railwayLines-2es0gk"
+      >
+        <MapLayer
           id="line-layer"
           type="line"
           paint={{
@@ -23,8 +27,8 @@ export default (
           }}
           layerOpacity={0.5}
           layerVisibility={true}
-      />
-      <MapLayer
+        />
+        <MapLayer
           id="fill-layer"
           type="fill"
           paint={{
@@ -32,7 +36,8 @@ export default (
           }}
           layerOpacity={0.5}
           layerVisibility={true}
-      />
-    </MapSource>
-  </Mapbox>
+        />
+      </MapSource>
+    </Mapbox>
+  </div>
 )

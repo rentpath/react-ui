@@ -3,10 +3,6 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
 
-Mapbox.childContextTypes = {
-  map : PropTypes.object.isRequired
-}
-
 export default class Mapbox extends PureComponent {
   constructor(props, context) {
     super(props, context)
@@ -28,12 +24,16 @@ export default class Mapbox extends PureComponent {
     children: PropTypes.object
   }
 
+  static childContextTypes = {
+    map: PropTypes.object.isRequired
+  }
+
   static defaultProps = {
     theme: {},
   }
 
   getChildContext() {
-    return { map : this.state.map }
+    return { map: this.state.map }
   }
 
   componentDidMount() {

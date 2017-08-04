@@ -13,7 +13,7 @@ MapSource.propTypes = {
 
 class MapSource extends React.Component {
   constructor(props) {
-      super(props)
+    super(props)
   }
 
   componentWillMount() {
