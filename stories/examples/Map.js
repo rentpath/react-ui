@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MapTheme } from '../theme'
-import { Mapbox } from 'react-ui-map/src'
+import { Mapbox, MapLayer, MapSource } from 'react-ui-map/src'
 
 export default (
   <Mapbox
@@ -10,5 +10,29 @@ export default (
     zoom={9}
     theme={MapTheme}
     container="map"
-  />
+  >
+    <MapSource
+      id="sourceID"
+      url="mapbox://aliceatd2d.1skjaazb"
+      layer="railwayLines-2es0gk">
+      <MapLayer
+          id="line-layer"
+          type="line"
+          paint={{
+          "line-color": "teal"
+          }}
+          layerOpacity={0.5}
+          layerVisibility={true}
+      />
+      <MapLayer
+          id="fill-layer"
+          type="fill"
+          paint={{
+          "fill-color": "purple"
+          }}
+          layerOpacity={0.5}
+          layerVisibility={true}
+      />
+    </MapSource>
+  </Mapbox>
 )
