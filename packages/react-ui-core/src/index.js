@@ -34,3 +34,7 @@ export {
 export {
   Collapsible,
 } from './Collapsible'
+
+export {
+  Counter,
+} from './Counter'

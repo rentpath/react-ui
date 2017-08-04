@@ -1,0 +1,47 @@
+.Counter {
+  max-width: 800px;
+  width: 100%;
+  display: table;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.Counter-label {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.Counter-label-active {
+  vertical-align: middle;
+  display: table-cell;
+  width: 400px;
+}
+
+.Counter-content {
+  text-align: center;
+  width: 20px;
+  float: right;
+}
+
+.Counter-shape {
+  border: 2px solid #666;
+  color: white;
+  border-radius: 50%;
+  display: table-cell;
+  background: #666;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+}
+
+span.Counter-content {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Counter-count-content {
+  width: 50px;
+  display: inline-block;
+}

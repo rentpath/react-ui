@@ -48,3 +48,7 @@ export {
 export {
   Collapse
 } from './Collapsible'
+
+export {
+  CounterComponent,
+} from './Counter'

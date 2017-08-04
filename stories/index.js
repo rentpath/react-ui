@@ -20,6 +20,7 @@ import {
   Grid,
   ResponsiveTemplate,
   Collapse,
+  CounterComponent,
   Map,
 } from './examples'
 
@@ -56,6 +57,9 @@ storiesOf('Text', module)
 
 storiesOf('Collapsible', module)
   .addWithInfo('default', 'Default themed', () => Collapse)
+
+storiesOf('Counter', module)
+  .addWithInfo('default', 'Default themed', () => CounterComponent)
 
 storiesOf('Map', module)
   .addWithInfo('default', 'Default themed', () => Map)
