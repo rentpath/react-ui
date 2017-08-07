@@ -4,17 +4,34 @@ import { Mapbox } from 'react-ui-map/src'
 
 const mapSourceData = [
   {
-    "id": "museums",
+    "id": "markers",
     source: {
-      "type": 'vector',
-      "url": 'mapbox://mapbox.2opop9hr'
-    }
-  },
-  {
-    "id": "contours",
-    source: {
-      "type": 'vector',
-      "url": 'mapbox://mapbox.mapbox-terrain-v2'
+      "type": "geojson",
+      "data": {
+        "type": "FeatureCollection",
+        "features": [{
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-84.424, 33.779]
+          },
+          "properties": {
+            "title": "Point 1",
+            "marker-symbol": "secondary_marker"
+          }
+        }, {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-84.434, 33.676]
+          },
+          "properties": {
+            "title": "Point 2",
+            "marker-color": "#ff00ff",
+            "marker-symbol": "secondary_marker"
+          }
+        }]
+      }
     }
   }
 ]
@@ -22,41 +39,25 @@ const mapSourceData = [
 const mapLayerData = [
   {
     layer: {
-      'id': 'museums',
-      'type': 'circle',
-      'source': 'museums',
-      'layout': {
-        'visibility': 'visible'
-      },
-      'paint': {
-        'circle-radius': 8,
-        'circle-color': 'rgba(55,148,179,1)'
-      },
-      'source-layer': 'museum-cusco'
-    }
-  },
-  {
-    layer: {
-      'id': 'contours',
-      'type': 'line',
-      'source': 'contours',
-      'source-layer': 'contour',
-      'layout': {
-        'visibility': 'visible',
-        'line-join': 'round',
-        'line-cap': 'round'
-      },
-      'paint': {
-        'line-color': '#877b59',
-        'line-width': 1
+      "id": "markers",
+      "source": "markers",
+      "type": "symbol",
+      "layout": {
+        "icon-image": "{marker-symbol}",
+        "text-field": "{title}",
+        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+        "text-offset": [0, 0.6],
+        "text-anchor": "top"
       }
     }
   }
 ]
 
-const token = "pk.eyJ1IjoibWlrZXdpbGxpYW1zb24iLCJhIjoibzRCYUlGSSJ9.QGvlt6Opm5futGhE5i-1kw"
+// const token = "pk.eyJ1IjoibWlrZXdpbGxpYW1zb24iLCJhIjoibzRCYUlGSSJ9.QGvlt6Opm5futGhE5i-1kw"
+const token = "pk.eyJ1Ijoic21pY2tpZSIsImEiOiJjaWtiM2JkdW0wMDJudnRseTY0NWdrbjFnIn0.WxGYL18BJjWUiNIu-r3MSA"
 const center = [-84.359, 33.679]
-const style = "mapbox://styles/mapbox/streets-v9"
+// const style = "mapbox://styles/mapbox/streets-v9"
+const style = "mapbox://styles/smickie/cikb3fhvi0063cekqns0pk1f1"
 const zoom = 9
 const container = "map"
 

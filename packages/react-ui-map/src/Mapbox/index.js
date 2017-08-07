@@ -54,7 +54,7 @@ export default class Mapbox extends PureComponent {
       if(this.state.map != {map})
         this.setState({ map })
 
-      for (var i = 0; i < sources.length; i++) {
+      for (let i = 0; i < sources.length; i++) {
         map.addSource(sources[i].id, sources[i].source)
         map.addLayer(layers[i].layer)
       }
