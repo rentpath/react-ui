@@ -21,11 +21,13 @@ export default class Mapbox extends PureComponent {
     style: PropTypes.string,
     zoom: PropTypes.number,
     container: PropTypes.string,
-    children: PropTypes.object
+    children: PropTypes.object,
+    sources: PropTypes.object,
+    layers: PropTypes.object,
   }
 
   static childContextTypes = {
-    map: PropTypes.obj
+    map: PropTypes.object
   }
 
   static defaultProps = {
@@ -37,6 +39,8 @@ export default class Mapbox extends PureComponent {
   }
 
   componentDidMount() {
+    const { sources, layers } = this.props
+
     mapboxgl.accessToken = this.props.token
     const map = new mapboxgl.Map({
       container: this.props.container,
@@ -49,6 +53,11 @@ export default class Mapbox extends PureComponent {
     map.on('load', (...args) => {
       if(this.state.map != {map})
         this.setState({ map })
+
+      for (var i = 0; i < sources.length; i++) {
+        map.addSource(sources[i].id, sources[i].source)
+        map.addLayer(layers[i].layer)
+      }
     })
   }
 
