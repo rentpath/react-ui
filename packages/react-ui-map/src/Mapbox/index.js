@@ -21,9 +21,9 @@ export default class Mapbox extends PureComponent {
     style: PropTypes.string,
     zoom: PropTypes.number,
     container: PropTypes.string,
-    children: PropTypes.object,
-    sources: PropTypes.object,
-    layers: PropTypes.object,
+    children: PropTypes.array,
+    sources: PropTypes.array,
+    layers: PropTypes.array,
   }
 
   static childContextTypes = {
@@ -50,14 +50,14 @@ export default class Mapbox extends PureComponent {
       theme: this.props.theme
     })
 
-    map.on('load', (...args) => {
-      if(this.state.map != {map})
-        this.setState({ map })
+    map.on('load', () => {
+      if(this.state.map !== map)
+        this.setState(map)
 
-      for (let i = 0; i < sources.length; i++) {
+      sources.forEach((v, i) => {
         map.addSource(sources[i].id, sources[i].source)
         map.addLayer(layers[i].layer)
-      }
+      })
     })
   }
 
