@@ -51,12 +51,20 @@ export default class Mapbox extends PureComponent {
     })
 
     map.on('load', () => {
-      if(this.state.map !== map)
+      if (this.state.map !== map) {
         this.setState(map)
+      }
 
       sources.forEach((v, i) => {
         map.addSource(sources[i].id, sources[i].source)
         map.addLayer(layers[i].layer)
+      })
+
+      map.on('click', 'markers', function (e) {
+        console.log(e)
+        let features = map.queryRenderedFeatures(e.point)
+        console.log(features)
+        console.log("clicked!")
       })
     })
   }
