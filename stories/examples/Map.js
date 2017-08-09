@@ -13,7 +13,7 @@ const mapSourceData = [
           "type": "Feature",
           "geometry": {
             "type": "Point",
-            "coordinates": [-84.424, 33.779]
+            "coordinates": [-84.424, 33.979]
           },
           "properties": {
             "title": "Point 1",
@@ -23,10 +23,21 @@ const mapSourceData = [
           "type": "Feature",
           "geometry": {
             "type": "Point",
-            "coordinates": [-84.434, 33.676]
+            "coordinates": [-84.534, 33.676]
           },
           "properties": {
             "title": "Point 2",
+            "marker-color": "#ff00ff",
+            "marker-symbol": "secondary_marker"
+          }
+        }, {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-84.234, 33.776]
+          },
+          "properties": {
+            "title": "Point 3",
             "marker-color": "#ff00ff",
             "marker-symbol": "secondary_marker"
           }
@@ -39,7 +50,7 @@ const mapSourceData = [
 const mapLayerData = [
   {
     layer: {
-      "id": "markers",
+      "id": "markers-default",
       "source": "markers",
       "type": "symbol",
       "layout": {
@@ -49,6 +60,21 @@ const mapLayerData = [
         "text-offset": [0, 0.6],
         "text-anchor": "top"
       }
+    }
+  },
+  {
+    layer: {
+      "id": "markers-active",
+      "source": "markers",
+      "type": "symbol",
+      "layout": {
+        "icon-image": "default_marker",
+        "text-field": "{title}",
+        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+        "text-offset": [0, 0.6],
+        "text-anchor": "top"
+      },
+      "filter": ["==", "title", ""]
     }
   }
 ]
