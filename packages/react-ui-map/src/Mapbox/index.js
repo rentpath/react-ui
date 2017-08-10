@@ -10,6 +10,8 @@ export default class Mapbox extends PureComponent {
     this.state = {
       map: null,
     }
+
+    this.handleClick = this.handleClick.bind(this)
   }
 
   static propTypes = {
@@ -22,6 +24,7 @@ export default class Mapbox extends PureComponent {
     zoom: PropTypes.number,
     container: PropTypes.string,
     children: PropTypes.array,
+    boundingBox: PropTypes.array,
   }
 
   static childContextTypes = {
@@ -56,6 +59,12 @@ export default class Mapbox extends PureComponent {
       nextState.map !== this.state.map)
   }
 
+  handleClick() {
+    const { boundingBox } = this.props
+    const { map } = this.state
+    map.fitBounds(boundingBox)
+  }
+
   render() {
     const {
       size,
@@ -68,17 +77,20 @@ export default class Mapbox extends PureComponent {
     const { map } = this.state
 
     return (
-      <div
-        style={{}}
-        id="map"
-        className={classNames(
-          className,
-          theme[`Map-${color}`],
-          theme[`Map-${size}`],
-          theme.Map,
-        )}
-      >
-        {map && children}
+      <div>
+        <div
+          style={{}}
+          id="map"
+          className={classNames(
+            className,
+            theme[`Map-${color}`],
+            theme[`Map-${size}`],
+            theme.Map
+          )}
+        >
+          {map && children}
+        </div>
+        <button className={theme.Button} onClick={this.handleClick}>Fit</button>
       </div>
     )
   }

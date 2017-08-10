@@ -89,6 +89,7 @@ const container = "map"
 
 const defaultMarkerId = "markers-default"
 const activeMarkerId = "markers-active"
+const boundingBox = [[32.958984, -5.353521], [43.50585, 5.615985]]
 
 export default (
   <div>
@@ -99,6 +100,7 @@ export default (
       zoom={zoom}
       theme={MapTheme}
       container={container}
+      boundingBox={boundingBox}
     >
       <LayerInteractions
         defaultMarkerId={defaultMarkerId}
@@ -107,5 +109,7 @@ export default (
       <Source sources={mapSourceData} />
       <Layer layers={mapLayerData} />
     </Mapbox>
+
+    />
   </div>
 )
