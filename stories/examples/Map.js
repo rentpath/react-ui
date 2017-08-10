@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MapTheme } from '../theme'
-import { Mapbox } from 'react-ui-map/src'
+import { Mapbox, ActiveLayer } from 'react-ui-map/src'
 
 const mapSourceData = [
   {
@@ -87,6 +87,9 @@ const style = "mapbox://styles/smickie/cikb3fhvi0063cekqns0pk1f1"
 const zoom = 9
 const container = "map"
 
+const defaultMarkerId = "markers-default"
+const activeMarkerId = "markers-active"
+
 export default (
   <div>
     <Mapbox
@@ -98,6 +101,12 @@ export default (
       container={container}
       sources={mapSourceData}
       layers={mapLayerData}
-    />
+    >
+      <ActiveLayer
+        defaultMarkerId={defaultMarkerId}
+        activeMarkerId={activeMarkerId}
+      >
+      </ActiveLayer>
+    </Mapbox>
   </div>
 )
