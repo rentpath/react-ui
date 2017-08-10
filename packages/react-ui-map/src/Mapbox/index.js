@@ -52,7 +52,7 @@ export default class Mapbox extends PureComponent {
 
     map.on('load', () => {
       if (this.state.map !== map) {
-        this.setState(map)
+        this.setState({ map })
       }
 
       sources.forEach((v, i) => {
@@ -61,18 +61,6 @@ export default class Mapbox extends PureComponent {
 
       layers.forEach((v, i) => {
         map.addLayer(layers[i].layer)
-      })
-
-      map.on('mouseenter', 'markers-default', () => {
-        map.getCanvas().style.cursor = 'pointer';
-      })
-
-      map.on('mouseleave', 'markers-default', () => {
-        map.getCanvas().style.cursor = '';
-      })
-
-      map.on('click', 'markers-default', (e) => {
-        map.setFilter('markers-active', ['==', 'title', e.features[0].properties.title])
       })
     })
   }
