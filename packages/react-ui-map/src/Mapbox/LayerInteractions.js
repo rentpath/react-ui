@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export default class ActiveLayer extends Component {
+export default class LayerInteractions extends Component {
   static propTypes = {
     defaultMarkerId: PropTypes.string,
     activeMarkerId: PropTypes.string,
@@ -17,6 +17,13 @@ export default class ActiveLayer extends Component {
     const { defaultMarkerId, activeMarkerId } = this.props
 
     map.on('click', defaultMarkerId, (e) => {
+      map.flyTo({
+        center: [
+          e.lngLat.lng,
+          e.lngLat.lat
+        ]
+      })
+
       map.setFilter(activeMarkerId, ['==', 'title', e.features[0].properties.title])
     })
   }
