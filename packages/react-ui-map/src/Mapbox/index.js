@@ -52,11 +52,14 @@ export default class Mapbox extends PureComponent {
 
     map.on('load', () => {
       if (this.state.map !== map) {
-        this.setState(map)
+        this.setState({ map })
       }
 
       sources.forEach((v, i) => {
         map.addSource(sources[i].id, sources[i].source)
+      })
+
+      layers.forEach((v, i) => {
         map.addLayer(layers[i].layer)
       })
     })
