@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class LayerInteractions extends Component {
+  constructor(props, context) {
+    super(props, context)
+
+    this.moveToAndFilterMarker = this.moveToAndFilterMarker.bind(this)
+  }
+
   static propTypes = {
     defaultMarkerId: PropTypes.string,
     activeMarkerId: PropTypes.string,
@@ -14,18 +20,23 @@ export default class LayerInteractions extends Component {
 
   componentDidMount() {
     const { map } = this.context
-    const { defaultMarkerId, activeMarkerId } = this.props
+    const { defaultMarkerId } = this.props
 
-    map.on('click', defaultMarkerId, (e) => {
-      map.flyTo({
-        center: [
-          e.lngLat.lng,
-          e.lngLat.lat
-        ]
-      })
+    map.on('click', defaultMarkerId, this.moveToAndFilterMarker)
+  }
 
-      map.setFilter(activeMarkerId, ['==', 'title', e.features[0].properties.title])
+  moveToAndFilterMarker(event) {
+    const { map } = this.context
+    const { activeMarkerId } = this.props
+
+    map.flyTo({
+      center: [
+        event.lngLat.lng,
+        event.lngLat.lat
+      ]
     })
+
+    map.setFilter(activeMarkerId, ['==', 'title', event.features[0].properties.title])
   }
 
   render() {
