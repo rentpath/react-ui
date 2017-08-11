@@ -1,22 +1,24 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export default class MapLayer extends Component {
-  static propTypes = {
-    layers: PropTypes.array
-  }
+export default class Layer extends Component {
+  constructor(props, context) {
+    super(props, context)
 
-  static contextTypes = {
-    map: PropTypes.object
-  }
-
-  componentWillMount() {
     const { map } = this.context
     const { layers } = this.props
 
     for(let value of layers) {
         map.addLayer(value.layer)
     }
+  }
+
+  static propTypes = {
+    layers: PropTypes.array
+  }
+
+  static contextTypes = {
+    map: PropTypes.object
   }
 
   componentWillUnmount() {
