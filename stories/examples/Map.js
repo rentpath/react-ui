@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MapTheme } from '../theme'
-import { Mapbox, LayerInteractions, MapSource, MapLayer } from 'react-ui-map/src'
+import { Mapbox, LayerInteractions, Source, Layer } from 'react-ui-map/src'
 
 const mapSourceData = [
   {
@@ -105,8 +105,8 @@ export default (
         activeMarkerId={activeMarkerId}
       />
     >
-      <MapSource sources={mapSourceData} />
-      <MapLayer layers={mapLayerData} />
+      <Source sources={mapSourceData} />
+      <Layer layers={mapLayerData} />
     </Mapbox>
   </div>
 )

@@ -1,22 +1,24 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export default class MapSource extends Component {
+export default class Source extends Component {
+  constructor(props, context) {
+    super(props, context)
+
+    const { map } = this.context
+    const { sources } = this.props
+
+    for (let value of sources) {
+      map.addSource(value.id, value.source)
+    }
+  }
+
   static propTypes = {
     sources: PropTypes.array,
   }
 
   static contextTypes = {
     map: PropTypes.object
-  }
-
-  componentWillMount() {
-    const { map } = this.context
-    const { sources } = this.props
-
-    for (let value of sources) {
-        map.addSource(value.id, value.source)
-      }
   }
 
   componentWillUnmount() {
