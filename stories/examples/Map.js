@@ -104,7 +104,6 @@ export default (
         defaultMarkerId={defaultMarkerId}
         activeMarkerId={activeMarkerId}
       />
-    >
       <Source sources={mapSourceData} />
       <Layer layers={mapLayerData} />
     </Mapbox>
