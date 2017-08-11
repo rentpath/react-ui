@@ -11,7 +11,6 @@ export default class LayerInteractions extends Component {
   static propTypes = {
     defaultMarkerId: PropTypes.string,
     activeMarkerId: PropTypes.string,
-    children: PropTypes.node
   }
 
   static contextTypes = {
