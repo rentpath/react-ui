@@ -22,6 +22,7 @@ import {
   Collapse,
   CounterComponent,
   Map,
+  DefaultRatings
 } from './examples'
 
 storiesOf('Button', module)
@@ -63,3 +64,7 @@ storiesOf('Counter', module)
 
 storiesOf('Map', module)
   .addWithInfo('default', 'Default themed', () => Map)
+
+
+  storiesOf('Ratings', module)
+    .addWithInfo('default', 'Default themed', () => DefaultRatings)

@@ -1,0 +1,96 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.icon:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.icon svg {
+  width: 1em;
+  height: 1em;
+  float: left;
+}
+
+.icon {
+  fill: currentColor;
+}
+
+.arrowDown svg {
+  height: 0.625em;
+}
+
+.arrowLeft svg,
+.arrowRight svg {
+  height: 1.32em;
+}
+
+.funnel svg {
+  height: 0.7917em;
+}
+
+.heart svg {
+  height: 0.8095238095238095em;
+}
+
+.heart {
+  stroke: currentColor;
+}
+
+.heartEmpty svg {
+  height: 0.8095238095238095em;
+}
+
+.heartEmpty {
+  fill: none;
+  stroke: currentColor;
+}
+
+.list svg {
+  height: 0.7083333333333334em;
+}
+
+.map svg {
+  height: 0.8em;
+}
+
+.menuSmall svg {
+  height: 0.6976em;
+}
+
+.skyline {
+  fill: #343031;
+  margin: 0 0 -2px;
+  width: 100%;
+}
+
+.skyline svg {
+  clear: both;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.visualSearchClose svg {
+  height: 1em;
+}
+
+.crosshair svg {
+  height: 1em;
+}
+
+.slideshow svg {
+  width: 77px;
+  height: 16px;
+  margin-top: 2px;
+  fill: currentColor;
+}
+
+.pencil svg {
+  fill: #d2232a;
+  stroke: none;
+}

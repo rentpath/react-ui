@@ -1,0 +1,54 @@
+.ratingValue {
+  display: none;
+}
+
+.ratings {
+  height: 15px;
+}
+
+.label {
+  font-size: 8px;
+  text-align: center;
+}
+
+.star {
+  width: 10px;
+  display: inline-block;
+  overflow: hidden;
+  fill: #FBC914;
+}
+
+.star svg {
+  width: 10px;
+}
+
+.halfStar {
+  width: 10px;
+  display: inline-block;
+}
+
+.halfStarLeft {
+  width: 5px;
+}
+
+.halfStarLeft svg {
+  width: 10px;
+}
+
+.halfStarRight {
+  width: 5px;
+}
+
+.halfStarRight svg {
+  position: relative;
+  width: 10px;
+  right: 5px;
+}
+
+.label {
+  color: #ffffff;
+}
+
+.reviewLink {
+  text-decoration: none;
+}
