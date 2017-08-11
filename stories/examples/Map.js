@@ -105,8 +105,7 @@ export default (
       <LayerInteractions
         defaultMarkerId={defaultMarkerId}
         activeMarkerId={activeMarkerId}
-      >
-      </LayerInteractions>
+      />
     </Mapbox>
   </div>
 )
