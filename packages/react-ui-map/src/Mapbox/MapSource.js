@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 export default class MapSource extends Component {
   static propTypes = {
     sources: PropTypes.array,
-    children: PropTypes.node
   }
 
   static contextTypes = {
