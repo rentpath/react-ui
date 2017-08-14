@@ -22,7 +22,6 @@ export default class Mapbox extends PureComponent {
     center: PropTypes.array,
     style: PropTypes.string,
     zoom: PropTypes.number,
-    container: PropTypes.string,
     children: PropTypes.array,
     boundingBox: PropTypes.array,
   }
@@ -42,7 +41,7 @@ export default class Mapbox extends PureComponent {
   componentDidMount() {
     mapboxgl.accessToken = this.props.token
     const map = new mapboxgl.Map({
-      container: this.props.container,
+      container: this.refs.map,
       style: this.props.style,
       center: this.props.center,
       zoom: this.props.zoom,
@@ -79,13 +78,12 @@ export default class Mapbox extends PureComponent {
     return (
       <div>
         <div
-          style={{}}
-          id="map"
+          ref="map"
           className={classNames(
             className,
             theme[`Map-${color}`],
             theme[`Map-${size}`],
-            theme.Map
+            theme.Map,
           )}
         >
           {map && children}

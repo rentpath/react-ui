@@ -85,7 +85,6 @@ const center = [-84.359, 33.679]
 // const style = "mapbox://styles/mapbox/streets-v9"
 const style = "mapbox://styles/smickie/cikb3fhvi0063cekqns0pk1f1"
 const zoom = 9
-const container = "map"
 
 const defaultMarkerId = "markers-default"
 const activeMarkerId = "markers-active"
@@ -99,7 +98,6 @@ export default (
       style={style}
       zoom={zoom}
       theme={MapTheme}
-      container={container}
       boundingBox={boundingBox}
     >
       <LayerInteractions
