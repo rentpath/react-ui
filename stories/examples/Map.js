@@ -109,7 +109,5 @@ export default (
       <Source sources={mapSourceData} />
       <Layer layers={mapLayerData} />
     </Mapbox>
-
-    />
   </div>
 )
