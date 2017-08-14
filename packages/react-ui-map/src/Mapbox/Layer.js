@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class Layer extends Component {
@@ -8,29 +8,29 @@ export default class Layer extends Component {
     const { map } = this.context
     const { layers } = this.props
 
-    for(let value of layers) {
-        map.addLayer(value.layer)
-    }
+    layers.forEach(element => {
+      map.addLayer(element.layer)
+    })
   }
 
   static propTypes = {
-    layers: PropTypes.array
+    layers: PropTypes.array,
   }
 
   static contextTypes = {
-    map: PropTypes.object
+    map: PropTypes.object,
   }
 
   componentWillUnmount() {
     const { map } = this.context
     const { layers } = this.props
 
-    for(let value of layers) {
-        map.removeLayer(value.layer)
-    }
+    layers.forEach(element => {
+      map.removeLayer(element.layer)
+    })
   }
 
-  render() {
+  render() {  // eslint-disable-line class-methods-use-this
     return null
   }
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class LayerInteractions extends Component {
@@ -14,7 +14,7 @@ export default class LayerInteractions extends Component {
   }
 
   static contextTypes = {
-    map: PropTypes.object
+    map: PropTypes.object,
   }
 
   componentDidMount() {
@@ -31,14 +31,14 @@ export default class LayerInteractions extends Component {
     map.flyTo({
       center: [
         event.lngLat.lng,
-        event.lngLat.lat
-      ]
+        event.lngLat.lat,
+      ],
     })
 
     map.setFilter(activeMarkerId, ['==', 'title', event.features[0].properties.title])
   }
 
-  render() {
-    return null;
+  render() {  // eslint-disable-line class-methods-use-this
+    return null
   }
 }
