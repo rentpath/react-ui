@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class Source extends Component {
@@ -8,9 +8,9 @@ export default class Source extends Component {
     const { map } = this.context
     const { sources } = this.props
 
-    for (let value of sources) {
-      map.addSource(value.id, value.source)
-    }
+    sources.forEach(element => {
+      map.addSource(element.id, element.source)
+    })
   }
 
   static propTypes = {
@@ -18,19 +18,19 @@ export default class Source extends Component {
   }
 
   static contextTypes = {
-    map: PropTypes.object
+    map: PropTypes.object,
   }
 
   componentWillUnmount() {
     const { map } = this.context
     const { sources } = this.props
 
-    for (let value of sources) {
-        map.removeSource(value.id, value.source)
-    }
+    sources.forEach(element => {
+      map.removeSource(element.id, element.source)
+    })
   }
 
-  render() {
+  render() {  // eslint-disable-line class-methods-use-this
     return null
   }
 }

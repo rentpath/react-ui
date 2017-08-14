@@ -63,7 +63,6 @@ export default class Mapbox extends PureComponent {
       theme,
       className,
       children,
-      ...props
     } = this.props
 
     const { map } = this.state
