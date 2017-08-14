@@ -8,7 +8,7 @@ export default class Mapbox extends PureComponent {
     super(props, context)
 
     this.state = {
-      map: null
+      map: null,
     }
   }
 
@@ -22,12 +22,10 @@ export default class Mapbox extends PureComponent {
     zoom: PropTypes.number,
     container: PropTypes.string,
     children: PropTypes.array,
-    sources: PropTypes.array,
-    layers: PropTypes.array,
   }
 
   static childContextTypes = {
-    map: PropTypes.object
+    map: PropTypes.object,
   }
 
   static defaultProps = {
@@ -39,29 +37,17 @@ export default class Mapbox extends PureComponent {
   }
 
   componentDidMount() {
-    const { sources, layers } = this.props
-
     mapboxgl.accessToken = this.props.token
     const map = new mapboxgl.Map({
       container: this.props.container,
       style: this.props.style,
       center: this.props.center,
       zoom: this.props.zoom,
-      theme: this.props.theme
+      theme: this.props.theme,
     })
 
     map.on('load', () => {
-      if (this.state.map !== map) {
-        this.setState({ map })
-      }
-
-      sources.forEach((v, i) => {
-        map.addSource(sources[i].id, sources[i].source)
-      })
-
-      layers.forEach((v, i) => {
-        map.addLayer(layers[i].layer)
-      })
+      this.setState({ map })
     })
   }
 
@@ -77,7 +63,6 @@ export default class Mapbox extends PureComponent {
       theme,
       className,
       children,
-      ...props
     } = this.props
 
     const { map } = this.state
@@ -90,7 +75,7 @@ export default class Mapbox extends PureComponent {
           className,
           theme[`Map-${color}`],
           theme[`Map-${size}`],
-          theme.Map
+          theme.Map,
         )}
       >
         {map && children}

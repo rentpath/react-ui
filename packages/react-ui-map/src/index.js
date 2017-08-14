@@ -1,3 +1,5 @@
 export { default } from './Mapbox'
 export { default as Mapbox } from './Mapbox'
 export { default as LayerInteractions } from './Mapbox/LayerInteractions'
+export { default as Source } from './Mapbox/Source'
+export { default as Layer } from './Mapbox/Layer'
