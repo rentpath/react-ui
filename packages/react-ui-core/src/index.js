@@ -38,3 +38,8 @@ export {
 export {
   Counter,
 } from './Counter'
+
+export {
+  RatingBar,
+  RatingItem,
+} from './Ratings'
