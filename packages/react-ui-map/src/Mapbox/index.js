@@ -8,7 +8,7 @@ export default class Mapbox extends PureComponent {
     super(props, context)
 
     this.state = {
-      map: null
+      map: null,
     }
   }
 
@@ -27,7 +27,7 @@ export default class Mapbox extends PureComponent {
   }
 
   static childContextTypes = {
-    map: PropTypes.object
+    map: PropTypes.object,
   }
 
   static defaultProps = {
@@ -47,7 +47,7 @@ export default class Mapbox extends PureComponent {
       style: this.props.style,
       center: this.props.center,
       zoom: this.props.zoom,
-      theme: this.props.theme
+      theme: this.props.theme,
     })
 
     map.on('load', () => {
@@ -87,7 +87,7 @@ export default class Mapbox extends PureComponent {
           className,
           theme[`Map-${color}`],
           theme[`Map-${size}`],
-          theme.Map
+          theme.Map,
         )}
       >
         {map && children}
