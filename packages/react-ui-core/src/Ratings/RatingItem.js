@@ -1,15 +1,9 @@
 import React, { Component } from 'react'
 
-// const RatingItem = React.createClass({
-
 export default class RatingItem extends Component {
   render() {
     const {
       width,
-      // height,
-      // clipPath,
-      // backgroundColor,
-      // fillColor,
       index,
     } = this.props
     // console.log("width:",width)
@@ -23,8 +17,8 @@ export default class RatingItem extends Component {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="255"
-          height="240"
+          width="50"
+          height="50"
           viewBox="0 0 51 48"
         >
           <defs>
@@ -39,6 +33,7 @@ export default class RatingItem extends Component {
           <path
             fill={`url(#${id})`}
             stroke="#000"
+            strokeWidth="3"
             d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
           />
         </svg>

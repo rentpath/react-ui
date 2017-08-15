@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import RatingItem from './RatingItem'
-import styles from './RatingBar.css'
 
-// const RatingBar = React.createClass({
+
 export default class RatingBar extends Component {
   render() {
     const { max, rating, clipPath, itemWidth, itemHeight, backgroundColor, fillColor } = this.props
@@ -20,18 +19,12 @@ export default class RatingBar extends Component {
       ratingItems.push(
         <RatingItem
           width={`${val * 100}%`}
-          index={`some_id${Math.random().toFixed(3)}`}
-            // width={(ratingValue || 0)*100}%
-            // clipPath={clipPath}
-            // height={itemHeight}
-            // width={itemWidth}
-            // backgroundColor={backgroundColor}
-            // fillColor={fillColor}
+          // index={`some_id${Math.random().toFixed(3)}`}
+          index={currentRating}
         />)
     }
     return (
       <div className="rating-bar">
-        <p>hello</p>
         {ratingItems}
       </div>
     )
