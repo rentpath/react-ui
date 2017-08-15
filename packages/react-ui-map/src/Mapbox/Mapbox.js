@@ -41,7 +41,7 @@ export default class Mapbox extends PureComponent {
   componentDidMount() {
     mapboxgl.accessToken = this.props.token
     const map = new mapboxgl.Map({
-      container: this.refs.map,
+      container: this.container,
       style: this.props.style,
       center: this.props.center,
       zoom: this.props.zoom,
@@ -78,7 +78,7 @@ export default class Mapbox extends PureComponent {
     return (
       <div>
         <div
-          ref="map"
+          ref={(x) => { this.container = x }}
           className={classNames(
             className,
             theme[`Map-${color}`],
