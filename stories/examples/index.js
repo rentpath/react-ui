@@ -52,3 +52,16 @@ export {
 export {
   CounterComponent,
 } from './Counter'
+
+export {
+  DefaultRatings,
+  FullRatings,
+  FourRatings,
+  ThreeRatings,
+  TwoRatings,
+  OneRatings,
+  ManyRatings,
+  Partial1,
+  Partial2,
+  Partial3,
+} from './Ratings'

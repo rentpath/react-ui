@@ -1,0 +1,15 @@
+.label {
+  color: #4a90e2;
+  font-size: 50px;
+  text-align: center;
+  display: inline;
+  margin-left: 8px;
+}
+
+.ratingcomp {
+  display:inline-block;
+}
+
+.ratingitem {
+  display:inline-block;
+}
