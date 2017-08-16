@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
+import fly from './fly'
 
 export default class Mapbox extends PureComponent {
   constructor(props, context) {
@@ -10,8 +11,6 @@ export default class Mapbox extends PureComponent {
     this.state = {
       map: null,
     }
-
-    this.handleClick = this.handleClick.bind(this)
   }
 
   static propTypes = {
@@ -58,10 +57,9 @@ export default class Mapbox extends PureComponent {
       nextState.map !== this.state.map)
   }
 
-  handleClick() {
-    const { boundingBox } = this.props
+  componentWillReceiveProps(nextProps) {
     const { map } = this.state
-    map.fitBounds(boundingBox)
+    fly(map, nextProps.boundingBox)
   }
 
   render() {
@@ -78,7 +76,7 @@ export default class Mapbox extends PureComponent {
     return (
       <div>
         <div
-          ref={(x) => { this.container = x }}
+          ref={x => { this.container = x }}
           className={classNames(
             className,
             theme[`Map-${color}`],
@@ -88,7 +86,6 @@ export default class Mapbox extends PureComponent {
         >
           {map && children}
         </div>
-        <button className={theme.Button} onClick={this.handleClick}>Fit</button>
       </div>
     )
   }
