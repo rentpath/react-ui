@@ -90,22 +90,36 @@ const defaultMarkerId = "markers-default"
 const activeMarkerId = "markers-active"
 const boundingBox = [[32.958984, -5.353521], [43.50585, 5.615985]]
 
-export default (
-  <div>
-    <Mapbox
-      token={token}
-      center={center}
-      style={style}
-      zoom={zoom}
-      theme={MapTheme}
-      boundingBox={boundingBox}
-    >
-      <LayerInteractions
-        defaultMarkerId={defaultMarkerId}
-        activeMarkerId={activeMarkerId}
-      />
-      <Source sources={mapSourceData} />
-      <Layer layers={mapLayerData} />
-    </Mapbox>
-  </div>
-)
+class MapPage extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <Mapbox
+          token={token}
+          center={center}
+          style={style}
+          zoom={zoom}
+          theme={MapTheme}
+          boundingBox={boundingBox}
+        >
+          <LayerInteractions
+            defaultMarkerId={defaultMarkerId}
+            activeMarkerId={activeMarkerId}
+          />
+          <Source sources={mapSourceData} />
+          <Layer layers={mapLayerData} />
+        </Mapbox>
+      </div>
+    )
+  }
+}
+
+const MapExample = (<MapPage />)
+export { MapExample }
