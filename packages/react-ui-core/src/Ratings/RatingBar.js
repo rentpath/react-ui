@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import RatingItem from './RatingItem'
 import PropTypes from 'prop-types'
+import RatingItem from './RatingItem'
 
 export default class RatingBar extends Component {
   static propTypes= {
