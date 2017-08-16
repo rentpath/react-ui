@@ -1,16 +1,25 @@
 import React, { Component } from 'react'
-import styles from './RatingBar.css'
+import PropTypes from 'prop-types'
+// import styles from './RatingBar.css'
 
 export default class RatingItem extends Component {
+  static propTypes= {
+    theme: PropTypes.object,
+  }
+  static defaultProps = {
+    theme: {},
+  }
+
   render() {
     const {
       width,
       index,
       backgroundColor,
+      theme,
     } = this.props
     const id = `id_${index}`
     return (
-      <div className={styles.ratingitem}>
+      <div className={theme.ratingitem}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="50"

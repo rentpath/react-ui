@@ -22,7 +22,16 @@ import {
   Collapse,
   CounterComponent,
   Map,
-  DefaultRatings
+  DefaultRatings,
+  FullRatings,
+  FourRatings,
+  ThreeRatings,
+  TwoRatings,
+  OneRatings,
+  ManyRatings,
+  Partial1,
+  Partial2,
+  Partial3,
 } from './examples'
 
 storiesOf('Button', module)
@@ -65,6 +74,14 @@ storiesOf('Counter', module)
 storiesOf('Map', module)
   .addWithInfo('default', 'Default themed', () => Map)
 
-
-  storiesOf('Ratings', module)
-    .addWithInfo('default', 'Default themed', () => DefaultRatings)
+storiesOf('Ratings', module)
+  .addWithInfo('default', 'Default themed', () => DefaultRatings)
+  .addWithInfo('5 Rating', '5 Rating', () => FullRatings)
+  .addWithInfo('4 Rating', '4 Rating', () => FourRatings)
+  .addWithInfo('3 Rating', '3 Rating', () => ThreeRatings)
+  .addWithInfo('2 Rating', '2 Rating', () => TwoRatings)
+  .addWithInfo('1 Rating', '1 Rating', () => OneRatings)
+  .addWithInfo('Many Rating', 'Many Rating', () => ManyRatings)
+  .addWithInfo('Partial Rating 1', 'Partial Rating 1', () => Partial1)
+  .addWithInfo('Partial Rating 2', 'Partial Rating 2', () => Partial2)
+  .addWithInfo('Partial Rating 3', 'Partial Rating 3', () => Partial3)

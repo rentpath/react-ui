@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
 import RatingItem from './RatingItem'
-import styles from './RatingBar.css'
+import PropTypes from 'prop-types'
+
 
 
 
 export default class RatingBar extends Component {
+  static propTypes= {
+    theme: PropTypes.object,
+  }
+  static defaultProps = {
+    theme: {},
+  }
+
   render() {
-    const { max, rating, backgroundColor, total } = this.props
+    const { max, rating, backgroundColor, total, theme } = this.props
     const ratingItems = []
     let currentRating = rating
     while (ratingItems.length < max) {
@@ -19,18 +27,13 @@ export default class RatingBar extends Component {
           width={`${val * 100}%`}
           index={currentRating}
           backgroundColor={backgroundColor}
+          theme={theme}
         />)
     }
     return (
-      <div>
       <div className="rating-bar">
-        {ratingItems}
-      </div>
-      <div className="OverallRatings">
-      <div className={styles.label}>
-        (<span>{total}</span> {'Ratings'})
-      </div>
-      </div>
+      <div className={theme.ratingcomp}>{ratingItems}</div>
+      <div className={theme.label}>(<span>{total}</span> {'Ratings'})</div>
       </div>
     )
   }

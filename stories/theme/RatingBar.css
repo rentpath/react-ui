@@ -1,8 +1,3 @@
-.rating-bar {
-  background-color: black;
-}
-
-
 .label {
   color: #4a90e2;
   font-size: 50px;
@@ -11,6 +6,10 @@
   margin-left: 8px;
 }
 
+.ratingcomp {
+  display:inline-block;
+}
+
 .ratingitem {
-  display: inline-block;
+  display:inline-block;
 }
