@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-// import styles from './RatingBar.css'
 
 export default class RatingItem extends Component {
   static propTypes= {

@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import RatingItem from './RatingItem'
 import PropTypes from 'prop-types'
 
-
-
-
 export default class RatingBar extends Component {
   static propTypes= {
     theme: PropTypes.object,
