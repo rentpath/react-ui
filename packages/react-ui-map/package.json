@@ -1,6 +1,6 @@
 {
-  "name": "react-ui-map",
-  "version": "0.0.02",
+  "name": "@rentpath/react-ui-map",
+  "version": "0.0.03",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
