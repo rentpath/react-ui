@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
+import fly from './fly'
 
 export default class Mapbox extends PureComponent {
   constructor(props, context) {
@@ -20,8 +21,8 @@ export default class Mapbox extends PureComponent {
     center: PropTypes.array,
     style: PropTypes.string,
     zoom: PropTypes.number,
-    container: PropTypes.string,
     children: PropTypes.array,
+    boundingBox: PropTypes.array,
   }
 
   static childContextTypes = {
@@ -39,7 +40,7 @@ export default class Mapbox extends PureComponent {
   componentDidMount() {
     mapboxgl.accessToken = this.props.token
     const map = new mapboxgl.Map({
-      container: this.props.container,
+      container: this.container,
       style: this.props.style,
       center: this.props.center,
       zoom: this.props.zoom,
@@ -56,6 +57,13 @@ export default class Mapbox extends PureComponent {
       nextState.map !== this.state.map)
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { map } = this.state
+    if (nextProps.boundingBox) {
+      fly(map, nextProps.boundingBox)
+    }
+  }
+
   render() {
     const {
       size,
@@ -68,17 +76,18 @@ export default class Mapbox extends PureComponent {
     const { map } = this.state
 
     return (
-      <div
-        style={{}}
-        id="map"
-        className={classNames(
-          className,
-          theme[`Map-${color}`],
-          theme[`Map-${size}`],
-          theme.Map,
-        )}
-      >
-        {map && children}
+      <div>
+        <div
+          ref={x => { this.container = x }}
+          className={classNames(
+            className,
+            theme[`Map-${color}`],
+            theme[`Map-${size}`],
+            theme.Map,
+          )}
+        >
+          {map && children}
+        </div>
       </div>
     )
   }

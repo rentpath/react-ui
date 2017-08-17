@@ -21,7 +21,7 @@ import {
   ResponsiveTemplate,
   Collapse,
   CounterComponent,
-  Map,
+  MapExample,
 } from './examples'
 
 storiesOf('Button', module)
@@ -62,4 +62,4 @@ storiesOf('Counter', module)
   .addWithInfo('default', 'Default themed', () => CounterComponent)
 
 storiesOf('Map', module)
-  .addWithInfo('default', 'Default themed', () => Map)
+  .addWithInfo('default', 'Default themed', () => MapExample)

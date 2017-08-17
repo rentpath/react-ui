@@ -85,27 +85,53 @@ const center = [-84.359, 33.679]
 // const style = "mapbox://styles/mapbox/streets-v9"
 const style = "mapbox://styles/smickie/cikb3fhvi0063cekqns0pk1f1"
 const zoom = 9
-const container = "map"
 
 const defaultMarkerId = "markers-default"
 const activeMarkerId = "markers-active"
 
-export default (
-  <div>
-    <Mapbox
-      token={token}
-      center={center}
-      style={style}
-      zoom={zoom}
-      theme={MapTheme}
-      container={container}
-    >
-      <LayerInteractions
-        defaultMarkerId={defaultMarkerId}
-        activeMarkerId={activeMarkerId}
-      />
-      <Source sources={mapSourceData} />
-      <Layer layers={mapLayerData} />
-    </Mapbox>
-  </div>
-)
+class MapPage extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      boundingBox: [],
+    }
+
+    this.fitBounds = this.fitBounds.bind(this)
+  }
+
+  fitBounds() {
+    this.setState({boundingBox: [[32.958984, -5.353521], [43.50585, 5.615985]]})
+  }
+
+  render() {
+    return (
+      <div>
+        <Mapbox
+          token={token}
+          center={center}
+          style={style}
+          zoom={zoom}
+          theme={MapTheme}
+          boundingBox={this.state.boundingBox}
+        >
+          <LayerInteractions
+            defaultMarkerId={defaultMarkerId}
+            activeMarkerId={activeMarkerId}
+          />
+          <Source sources={mapSourceData} />
+          <Layer layers={mapLayerData} />
+        </Mapbox>
+        <button
+          className={MapTheme.Button}
+          onClick={this.fitBounds}
+        >
+          Fly
+        </button>
+      </div>
+    )
+  }
+}
+
+const MapExample = (<MapPage />)
+export { MapExample }

@@ -42,7 +42,7 @@ export {
 } from './Modal'
 
 export {
-  default as Map
+  MapExample,
 } from './Map'
 
 export {
