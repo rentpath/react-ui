@@ -59,7 +59,9 @@ export default class Mapbox extends PureComponent {
 
   componentWillReceiveProps(nextProps) {
     const { map } = this.state
-    fly(map, nextProps.boundingBox)
+    if (nextProps.boundingBox) {
+      fly(map, nextProps.boundingBox)
+    }
   }
 
   render() {
