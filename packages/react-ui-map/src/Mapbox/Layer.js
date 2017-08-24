@@ -6,15 +6,13 @@ export default class Layer extends Component {
     super(props, context)
 
     const { map } = this.context
-    const { layers } = this.props
+    const { layer } = this.props
 
-    layers.forEach(element => {
-      map.addLayer(element.layer)
-    })
+    map.addLayer(layer)
   }
 
   static propTypes = {
-    layers: PropTypes.array,
+    layer: PropTypes.object,
   }
 
   static contextTypes = {
@@ -23,11 +21,9 @@ export default class Layer extends Component {
 
   componentWillUnmount() {
     const { map } = this.context
-    const { layers } = this.props
+    const { layer } = this.props
 
-    layers.forEach(element => {
-      map.removeLayer(element.layer)
-    })
+    map.removeLayer(layer)
   }
 
   render() {  // eslint-disable-line class-methods-use-this
