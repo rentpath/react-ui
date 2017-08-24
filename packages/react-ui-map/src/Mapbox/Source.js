@@ -9,8 +9,8 @@ export default class Source extends Component {
     const { id, type, data } = this.props
 
     map.addSource(id, {
-      "type": type,
-      "data": data
+      type,
+      data,
     })
   }
 
@@ -29,8 +29,8 @@ export default class Source extends Component {
     const { id, type, data } = this.props
 
     map.removeSource(id, {
-      "type": type,
-      "data": data
+      type,
+      data,
     })
   }
 
