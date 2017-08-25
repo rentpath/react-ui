@@ -27,16 +27,6 @@ export default class Source extends Component {
     }
   }
 
-  componentWillUnmount() {
-    const { map } = this.context
-    const { id, type, data } = this.props
-
-    map.removeSource(id, {
-      type,
-      data,
-    })
-  }
-
   render() {
     return null
   }
