@@ -9,6 +9,7 @@ import classNames from 'classnames'
 
 export default class Label extends Component {
   static propTypes = {
+    className: PropTypes.string,
     text: PropTypes.string,
     theme: PropTypes.object,
     children: PropTypes.node,
@@ -33,6 +34,7 @@ export default class Label extends Component {
     )
 
     return (
+      /* eslint-disable jsx-a11y/label-has-for */
       <label {...props} className={classnames}>
         {text}{children}
       </label>

@@ -1,14 +1,13 @@
-import styles from "react-ui-core/node_modules/flexboxgrid/dist/flexboxgrid.css"
+import React from 'react'
 import {
   localizeCss as configureStylesForGrid,
   Grid,
   Row,
-  Col
-} from "react-ui-core/src"
-
-import React from "react"
-import cn from "classnames"
-import { ResponsiveTheme as theme } from "../theme"
+  Col,
+} from 'react-ui-core/src'
+import styles from 'react-ui-core/node_modules/flexboxgrid/dist/flexboxgrid.css'
+// import styles form 'react-flexbox-grid/dist/flexboxgrid.css'
+import { ResponsiveTheme as theme } from '../theme'
 
 configureStylesForGrid(styles)
 
@@ -47,6 +46,7 @@ export default (
         <Col className={theme.col} xs={2} sm={0}>
           <img
             className={theme.hamburger}
+            alt="icon"
             src="https://image.flaticon.com/icons/png/128/56/56763.png"
           />
         </Col>

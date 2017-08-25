@@ -7,7 +7,7 @@ const theme = {}
 describe('Collapsible', () => {
   const setup = props => {
     const wrapper = mount(
-      <Collapsible theme={theme} {...props}/>,
+      <Collapsible theme={theme} {...props} />,
     )
     return {
       wrapper,

@@ -115,7 +115,8 @@ export default class Field extends Component {
   }
 
   get uniqueId() {
-    return this._uniqueId || (this._uniqueId = randomId(this.props.name))
+    const id = this._uniqueId || (this._uniqueId = randomId(this.props.name))
+    return id
   }
 
   handleInputFocus = event => {
@@ -217,15 +218,18 @@ export default class Field extends Component {
       ),
     })
 
-    return FieldType ? (
-      <FieldType
-        {...Object.assign(props, fieldProps)}
-      />
-    ) : (
-      <div
-        {...fieldProps}
-        children={Object.values(props)}
-      />
+    if (FieldType) {
+      return (
+        <FieldType
+          {...Object.assign(props, fieldProps)}
+        />
+      )
+    }
+
+    return (
+      <div {...fieldProps}>
+        {Object.values(props) }
+      </div>
     )
   }
 }

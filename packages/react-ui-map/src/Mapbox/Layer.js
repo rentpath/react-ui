@@ -2,6 +2,14 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class Layer extends Component {
+  static propTypes = {
+    layer: PropTypes.array,
+  }
+
+  static contextTypes = {
+    map: PropTypes.object,
+  }
+
   constructor(props, context) {
     super(props, context)
 
@@ -11,14 +19,6 @@ export default class Layer extends Component {
     map.addLayer(layer)
   }
 
-  static propTypes = {
-    layer: PropTypes.object,
-  }
-
-  static contextTypes = {
-    map: PropTypes.object,
-  }
-
   componentWillUnmount() {
     const { map } = this.context
     const { layer } = this.props
@@ -26,7 +26,7 @@ export default class Layer extends Component {
     map.removeLayer(layer)
   }
 
-  render() {  // eslint-disable-line class-methods-use-this
+  render() {
     return null
   }
 }

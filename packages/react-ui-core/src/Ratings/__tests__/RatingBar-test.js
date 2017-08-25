@@ -7,7 +7,7 @@ it('renders correctly', () => {
     <RatingBar
       ratingScale={5}
       rating={3}
-      total= {'20 Ratings'}
+      total="20 Ratings"
       color="royalblue"
     />,
   ).toJSON()
@@ -29,7 +29,7 @@ it('only renders rating count', () => {
     <RatingBar
       ratingScale={0}
       rating={4}
-      total= {'20 Ratings'}
+      total="20 Ratings"
       color="royalblue"
     />,
   ).toJSON()
@@ -41,7 +41,7 @@ it('renders partial ratings', () => {
     <RatingBar
       ratingScale={5}
       rating={2.35}
-      total= {'20 Ratings'}
+      total="20 Ratings"
       color="royalblue"
     />,
   ).toJSON()

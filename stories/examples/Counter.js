@@ -1,13 +1,14 @@
-import React, { Component, PropTypes } from 'react'
+import React from 'react'
+import { Counter } from 'react-ui-core/src'
 import { CounterTheme } from '../theme'
-import Counter from 'react-ui-core/src/Counter'
 
 const count = 3
-const title = 'title'
 const decrementOperator = <span>&#x002B;</span>
 const incrementOperator = <span>&#x002D;</span>
 
-const handleClick = (counter) => {}
+const handleClick = currentCount => {
+  console.log(`current count: ${currentCount}`) // eslint-disable-line no-console
+}
 
 const CounterComponent = (
   <div>
@@ -19,8 +20,8 @@ const CounterComponent = (
       decrementOperator={decrementOperator}
       incrementOperator={incrementOperator}
       handleClick={handleClick}
-      incrementUnit='+'
-      label='Bedrooms'
+      incrementUnit="+"
+      label="Bedrooms"
       count={count}
       changeValue={2}
     />
@@ -29,8 +30,8 @@ const CounterComponent = (
       decrementOperator={decrementOperator}
       incrementOperator={incrementOperator}
       handleClick={handleClick}
-      incrementUnit='+'
-      label='Bathrooms'
+      incrementUnit="+"
+      label="Bathrooms"
       count={count}
     />
   </div>

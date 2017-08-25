@@ -9,6 +9,7 @@ import themed from 'react-themed'
 
 export default class Button extends Component {
   static propTypes = {
+    className: PropTypes.string,
     size: PropTypes.string,
     color: PropTypes.string,
     theme: PropTypes.object,

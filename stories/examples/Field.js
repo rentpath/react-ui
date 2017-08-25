@@ -1,6 +1,6 @@
 import React from 'react'
-import { FieldTheme } from '../theme'
 import { Field } from 'react-ui-core/src'
+import { FieldTheme } from '../theme'
 
 export const SelectField = (
   <Field
@@ -9,7 +9,7 @@ export const SelectField = (
     label="Priority"
     options={[
       { label: 'Low', value: 'low' },
-      { label: 'High', value: 'high' }
+      { label: 'High', value: 'high' },
     ]}
   />
 )

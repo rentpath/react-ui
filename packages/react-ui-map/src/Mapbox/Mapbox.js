@@ -5,15 +5,8 @@ import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
 import fly from './fly'
 
 export default class Mapbox extends PureComponent {
-  constructor(props, context) {
-    super(props, context)
-
-    this.state = {
-      map: null,
-    }
-  }
-
   static propTypes = {
+    className: PropTypes.string,
     size: PropTypes.string,
     color: PropTypes.string,
     theme: PropTypes.object,
@@ -31,6 +24,14 @@ export default class Mapbox extends PureComponent {
 
   static defaultProps = {
     theme: {},
+  }
+
+  constructor(props, context) {
+    super(props, context)
+
+    this.state = {
+      map: null,
+    }
   }
 
   getChildContext() {
@@ -52,16 +53,17 @@ export default class Mapbox extends PureComponent {
     })
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return (nextProps.children !== this.props.children ||
-      nextState.map !== this.state.map)
-  }
-
   componentWillReceiveProps(nextProps) {
     const { map } = this.state
+
     if (nextProps.boundingBox) {
       fly(map, nextProps.boundingBox)
     }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return (nextProps.children !== this.props.children ||
+      nextState.map !== this.state.map)
   }
 
   render() {

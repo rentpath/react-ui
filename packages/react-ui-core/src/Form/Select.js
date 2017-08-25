@@ -46,12 +46,13 @@ export default class Select extends Component {
     return (
       <select
         {...props}
-        children={children}
         className={classNames(
           className,
           theme.Select,
         )}
-      />
+      >
+        {children}
+      </select>
     )
   }
 }
