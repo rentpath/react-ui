@@ -6,15 +6,18 @@ export default class Source extends Component {
     super(props, context)
 
     const { map } = this.context
-    const { sources } = this.props
+    const { id, type, data } = this.props
 
-    sources.forEach(element => {
-      map.addSource(element.id, element.source)
+    map.addSource(id, {
+      type,
+      data,
     })
   }
 
   static propTypes = {
-    sources: PropTypes.array,
+    id: PropTypes.string,
+    type: PropTypes.string,
+    data: PropTypes.object,
   }
 
   static contextTypes = {
@@ -23,10 +26,11 @@ export default class Source extends Component {
 
   componentWillUnmount() {
     const { map } = this.context
-    const { sources } = this.props
+    const { id, type, data } = this.props
 
-    sources.forEach(element => {
-      map.removeSource(element.id, element.source)
+    map.removeSource(id, {
+      type,
+      data,
     })
   }
 
