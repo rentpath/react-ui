@@ -7,13 +7,15 @@ describe('<Source />', () => {
     const props = {
       id: 'atlanta',
       type: 'geojson',
-      data: {"foo": "bar"},
+      data: { foo: 'bar' },
     }
+
     const context = {
       map: {
         addSource: () => true,
       },
     }
+
     const wrapper = mount(<Source {...props} />, { context })
     expect(wrapper.prop('id')).toEqual('atlanta')
   })
@@ -22,13 +24,15 @@ describe('<Source />', () => {
     const props = {
       id: 'atlanta',
       type: 'geojson',
-      data: {"foo": "bar"},
+      data: { foo: 'bar' },
     }
+
     const context = {
       map: {
         addSource: () => true,
       },
     }
+
     const wrapper = mount(<Source {...props} />, { context })
     expect(wrapper.prop('type')).toEqual('geojson')
   })
@@ -37,14 +41,16 @@ describe('<Source />', () => {
     const props = {
       id: 'atlanta',
       type: 'geojson',
-      data: {"foo": "bar"},
+      data: { foo: 'bar' },
     }
+
     const context = {
       map: {
         addSource: () => true,
       },
     }
+
     const wrapper = mount(<Source {...props} />, { context })
-    expect(wrapper.prop('data')).toEqual({"foo": "bar"})
+    expect(wrapper.prop('data')).toEqual({ foo: 'bar' })
   })
 })
