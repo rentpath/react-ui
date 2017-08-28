@@ -1,0 +1,448 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not render anything when rating scale is 0 no matter what the rating might be 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className={undefined}
+  />
+</div>
+`;
+
+exports[`only renders rating count 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className={undefined}
+  />
+  <div
+    className={undefined}
+  >
+    20 Ratings
+  </div>
+</div>
+`;
+
+exports[`renders correctly 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className={undefined}
+  >
+    <svg
+      height="50"
+      viewBox="0 0 51 48"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient
+          id="rating-item-45623"
+        >
+          <stop
+            offset="0%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="300%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="300%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+          <stop
+            offset="100%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+        fill="url(#rating-item-45623)"
+        stroke="#000"
+        strokeWidth="3"
+      />
+    </svg>
+    <svg
+      height="50"
+      viewBox="0 0 51 48"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient
+          id="rating-item-13004"
+        >
+          <stop
+            offset="0%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="200%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="200%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+          <stop
+            offset="100%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+        fill="url(#rating-item-13004)"
+        stroke="#000"
+        strokeWidth="3"
+      />
+    </svg>
+    <svg
+      height="50"
+      viewBox="0 0 51 48"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient
+          id="rating-item-45444"
+        >
+          <stop
+            offset="0%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="100%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="100%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+          <stop
+            offset="100%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+        fill="url(#rating-item-45444)"
+        stroke="#000"
+        strokeWidth="3"
+      />
+    </svg>
+    <svg
+      height="50"
+      viewBox="0 0 51 48"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient
+          id="rating-item-31328"
+        >
+          <stop
+            offset="0%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="0%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="0%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+          <stop
+            offset="100%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+        fill="url(#rating-item-31328)"
+        stroke="#000"
+        strokeWidth="3"
+      />
+    </svg>
+    <svg
+      height="50"
+      viewBox="0 0 51 48"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient
+          id="rating-item-58060"
+        >
+          <stop
+            offset="0%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="-100%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="-100%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+          <stop
+            offset="100%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+        fill="url(#rating-item-58060)"
+        stroke="#000"
+        strokeWidth="3"
+      />
+    </svg>
+  </div>
+  <div
+    className={undefined}
+  >
+    20 Ratings
+  </div>
+</div>
+`;
+
+exports[`renders partial ratings 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className={undefined}
+  >
+    <svg
+      height="50"
+      viewBox="0 0 51 48"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient
+          id="rating-item-31348"
+        >
+          <stop
+            offset="0%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="235%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="235%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+          <stop
+            offset="100%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+        fill="url(#rating-item-31348)"
+        stroke="#000"
+        strokeWidth="3"
+      />
+    </svg>
+    <svg
+      height="50"
+      viewBox="0 0 51 48"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient
+          id="rating-item-43690"
+        >
+          <stop
+            offset="0%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="135%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="135%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+          <stop
+            offset="100%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+        fill="url(#rating-item-43690)"
+        stroke="#000"
+        strokeWidth="3"
+      />
+    </svg>
+    <svg
+      height="50"
+      viewBox="0 0 51 48"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient
+          id="rating-item-61638"
+        >
+          <stop
+            offset="0%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="35.00000000000001%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="35.00000000000001%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+          <stop
+            offset="100%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+        fill="url(#rating-item-61638)"
+        stroke="#000"
+        strokeWidth="3"
+      />
+    </svg>
+    <svg
+      height="50"
+      viewBox="0 0 51 48"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient
+          id="rating-item-27762"
+        >
+          <stop
+            offset="0%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="-64.99999999999999%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="-64.99999999999999%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+          <stop
+            offset="100%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+        fill="url(#rating-item-27762)"
+        stroke="#000"
+        strokeWidth="3"
+      />
+    </svg>
+    <svg
+      height="50"
+      viewBox="0 0 51 48"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient
+          id="rating-item-17070"
+        >
+          <stop
+            offset="0%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="-165%"
+            stopColor="royalblue"
+            stopOpacity="1"
+          />
+          <stop
+            offset="-165%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+          <stop
+            offset="100%"
+            stopColor="royalblue"
+            stopOpacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+        fill="url(#rating-item-17070)"
+        stroke="#000"
+        strokeWidth="3"
+      />
+    </svg>
+  </div>
+  <div
+    className={undefined}
+  >
+    20 Ratings
+  </div>
+</div>
+`;

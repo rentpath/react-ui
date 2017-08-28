@@ -38,3 +38,9 @@ export {
 export {
   Counter,
 } from './Counter'
+
+export {
+  RatingBar,
+  Star,
+  LinearGradient,
+} from './Ratings'
