@@ -24,16 +24,6 @@ export default class Source extends Component {
     map: PropTypes.object,
   }
 
-  componentWillUnmount() {
-    const { map } = this.context
-    const { id, type, data } = this.props
-
-    map.removeSource(id, {
-      type,
-      data,
-    })
-  }
-
   render() {  // eslint-disable-line class-methods-use-this
     return null
   }
