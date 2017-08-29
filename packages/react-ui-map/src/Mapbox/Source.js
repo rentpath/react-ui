@@ -7,11 +7,14 @@ export default class Source extends Component {
 
     const { map } = this.context
     const { id, type, data } = this.props
+    const source = map.getSource(id)
 
-    map.addSource(id, {
-      type,
-      data,
-    })
+    if (!source) {
+      map.addSource(id, {
+        type,
+        data,
+      })
+    }
   }
 
   static propTypes = {

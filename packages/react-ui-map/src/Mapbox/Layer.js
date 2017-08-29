@@ -19,6 +19,15 @@ export default class Layer extends Component {
     map: PropTypes.object,
   }
 
+  componentWillUnmount() {
+    const { map } = this.context
+    const { layer } = this.props
+
+    if (map.getLayer(layer)) {
+      map.removeLayer(layer)
+    }
+  }
+
   render() {  // eslint-disable-line class-methods-use-this
     return null
   }
