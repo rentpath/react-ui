@@ -23,7 +23,7 @@ export default class Layer extends Component {
     const { map } = this.context
     const { layer } = this.props
 
-    if (map.getLayer(layer)) {
+    if (map && map.getLayer(layer)) {
       map.removeLayer(layer)
     }
   }
