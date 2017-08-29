@@ -3,6 +3,29 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 export default class Counter extends Component {
+  static propTypes = {
+    label: PropTypes.string,
+    decrementOperator: PropTypes.element,
+    incrementOperator: PropTypes.element,
+    theme: PropTypes.object,
+    count: PropTypes.number,
+    changeValue: PropTypes.number,
+    decrementUnit: PropTypes.string,
+    incrementUnit: PropTypes.string,
+    handleClick: PropTypes.func,
+  }
+
+  static defaultProps = {
+    theme: {},
+    count: 0,
+    decrementUnit: '',
+    incrementUnit: '',
+    handleClick: () => {},
+    decrementOperator: <span>-</span>,
+    incrementOperator: <span>+</span>,
+    changeValue: 1,
+  }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -26,7 +49,7 @@ export default class Counter extends Component {
         </div>
         <div className={theme['Counter-label-active']}>
           <span
-            role='incrementUnit'
+            role="presentation"
             onClick={() => this.handleClick(this.state.count + changeValue)}
             className={cn(
               theme['Counter-content'],
@@ -43,7 +66,7 @@ export default class Counter extends Component {
             )}
           >{`${decrementUnit} ${count} ${incrementUnit}`}</span>
           <span
-            role='decrementUnit'
+            role="presentation"
             onClick={() => this.handleClick(this.state.count - changeValue)}
             className={cn(
               theme['Counter-content'],
@@ -56,26 +79,4 @@ export default class Counter extends Component {
       </div>
     )
   }
-}
-
-Counter.defaultProps = {
-  theme: {},
-  count: 0,
-  decrementUnit: '',
-  incrementUnit: '',
-  handleClick: () => {},
-  decrementOperator: <span>-</span>,
-  incrementOperator: <span>+</span>,
-  changeValue: 1,
-}
-
-Counter.propTypes = {
-  decrementOperator: PropTypes.element,
-  incrementOperator: PropTypes.element,
-  theme: PropTypes.object,
-  count: PropTypes.number,
-  changeValue: PropTypes.number,
-  decrementUnit: PropTypes.string,
-  incrementUnit: PropTypes.string,
-  handleClick: PropTypes.func,
 }

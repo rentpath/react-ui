@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { randomId } from 'react-ui-utils/src'
 import { LinearGradient } from 'react-ui-core/src'
 
 export default class Circle extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
-    theme: PropTypes.object,
     color: PropTypes.string,
-    stroke: PropTypes.string,
-    strokeWidth: PropTypes.number,
     width: PropTypes.string,
   }
 

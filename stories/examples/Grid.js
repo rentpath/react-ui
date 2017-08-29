@@ -1,13 +1,15 @@
-import styles from "react-ui-core/node_modules/flexboxgrid/dist/flexboxgrid.css"
+import React from 'react'
+import cn from 'classnames'
 import {
   localizeCss as configureStylesForGrid,
   Grid,
   Row,
-  Col
-} from "react-ui-core/src"
-import React from "react"
-import cn from "classnames"
-import { GridTheme as theme } from "../theme"
+  Col,
+} from 'react-ui-core/src'
+import styles from 'react-ui-core/node_modules/flexboxgrid/dist/flexboxgrid.css'
+// import styles form 'react-flexbox-grid/dist/flexboxgrid.css'
+
+import { GridTheme as theme } from '../theme'
 
 configureStylesForGrid(styles)
 
@@ -16,6 +18,7 @@ export default (
     <h2>Grid</h2>
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="https://raw.githubusercontent.com/kristoferjoseph/flexboxgrid/master/dist/flexboxgrid.css"
     >
       Flexbox Grid CSS
@@ -23,6 +26,7 @@ export default (
 
     <a
       target="_blank"
+      rel="noopener noreferrer"
       href="https://github.com/roylee0704/react-flexbox-grid"
     >
       React Flexbox-Grid

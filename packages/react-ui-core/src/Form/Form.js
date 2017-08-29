@@ -11,6 +11,10 @@ import serializeForm from 'form-serialize'
 export default class Form extends Component {
   static propTypes = {
     /**
+     * className to apply
+     */
+    className: PropTypes.string,
+    /**
      * The theme to apply.
      */
     theme: PropTypes.object,

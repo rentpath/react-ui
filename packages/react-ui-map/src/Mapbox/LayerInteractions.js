@@ -2,12 +2,6 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class LayerInteractions extends Component {
-  constructor(props, context) {
-    super(props, context)
-
-    this.moveToAndFilterMarker = this.moveToAndFilterMarker.bind(this)
-  }
-
   static propTypes = {
     defaultMarkerId: PropTypes.string,
     activeMarkerId: PropTypes.string,
@@ -15,6 +9,12 @@ export default class LayerInteractions extends Component {
 
   static contextTypes = {
     map: PropTypes.object,
+  }
+
+  constructor(props, context) {
+    super(props, context)
+
+    this.moveToAndFilterMarker = this.moveToAndFilterMarker.bind(this)
   }
 
   componentDidMount() {
@@ -38,7 +38,7 @@ export default class LayerInteractions extends Component {
     map.setFilter(activeMarkerId, ['==', 'title', event.features[0].properties.title])
   }
 
-  render() {  // eslint-disable-line class-methods-use-this
+  render() {
     return null
   }
 }

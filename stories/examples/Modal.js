@@ -1,9 +1,9 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { boolean } from '@storybook/addon-knobs'
-import { ModalTheme, ButtonTheme } from '../theme'
-import { Modal, ModalBody, Overlay } from 'react-ui-core/src'
+import { Modal } from 'react-ui-core/src'
 import { Button } from 'react-ui-core/src/Button'
+import { ModalTheme, ButtonTheme } from '../theme'
 
 const CloseButton = () => (
   <Button

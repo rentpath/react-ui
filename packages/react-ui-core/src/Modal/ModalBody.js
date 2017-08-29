@@ -4,8 +4,10 @@ import classNames from 'classnames'
 
 export default class ModalBody extends PureComponent {
   static propTypes = {
+    styles: PropTypes.object,
     theme: PropTypes.object,
     className: PropTypes.string,
+    CloseButton: PropTypes.node,
     onClose: PropTypes.func,
   }
 

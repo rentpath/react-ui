@@ -4,6 +4,7 @@ import classNames from 'classnames'
 
 export default class Text extends PureComponent {
   static propTypes = {
+    className: PropTypes.string,
     tag: PropTypes.string,
     theme: PropTypes.object,
   }

@@ -1,0 +1,29 @@
+{
+  "extends": "@rentpath/eslint-config-rentpath",
+  "parser": "babel-eslint",
+  "rules": {
+    "global-require": 0
+  },
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "babel",
+    "jest"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "src",
+          "packages"
+        ]
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest/globals": true
+  }
+}

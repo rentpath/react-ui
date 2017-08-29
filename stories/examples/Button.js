@@ -1,7 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
+import { Button } from 'react-ui-core/src/Button'
 import { ButtonTheme } from '../theme'
-import { Button }  from 'react-ui-core/src/Button'
 
 export const DefaultButton = (
   <Button
@@ -21,7 +21,6 @@ export const ButtonWithColor = (
     Click this red button
   </Button>
 )
-
 
 export const ButtonLarge = (
   <Button
