@@ -9,8 +9,10 @@ import classNames from 'classnames'
 
 export default class FieldSet extends PureComponent {
   static propTypes = {
+    className: PropTypes.string,
     legend: PropTypes.string,
     theme: PropTypes.object,
+    children: PropTypes.node,
   }
 
   static defaultProps = {

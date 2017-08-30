@@ -41,7 +41,7 @@ describe('Modal/Overlay', () => {
       onClick = jest.fn()
       wrapper = shallow(
         <Overlay onClick={onClick}>
-          <div id='child'></div>
+          <div id="child" />
         </Overlay>,
       )
 

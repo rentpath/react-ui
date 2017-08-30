@@ -7,6 +7,7 @@ export default class Overlay extends PureComponent {
     className: PropTypes.string,
     onClick: PropTypes.func,
     styles: PropTypes.object,
+    children: PropTypes.node,
   }
 
   static defaultProps = {
@@ -30,13 +31,15 @@ export default class Overlay extends PureComponent {
     return (
       <div
         ref={node => { this.overlay = node }}
+        role="presentation"
         onClick={this.handleClick}
         className={classNames(
           className,
           styles.overlay,
         )}
-        children={children}
-      />
+      >
+        {children }
+      </div>
     )
   }
 }

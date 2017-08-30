@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
@@ -13,16 +13,14 @@
     "lint:fix": "yarn run lint -- --fix"
   },
   "devDependencies": {
+    "@rentpath/eslint-config-rentpath": "^3.0.1",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.2.0",
     "babel-jest": "^20.0.3",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
-    "eslint": "^3.18.0",
-    "eslint-config-airbnb-base": "^11.1.1",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-jest": "^20.0.3",
+    "eslint": "^4.5.0",
     "jest": "^20.0.4"
   },
   "dependencies": {

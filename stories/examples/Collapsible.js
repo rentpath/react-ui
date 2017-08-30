@@ -1,27 +1,37 @@
-import React from 'react'
-import { CollapsibleTheme } from '../theme'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Collapsible } from 'react-ui-core/src/Collapsible'
+import { CollapsibleTheme } from '../theme'
 
-export default class Checkbox extends React.Component {
+export default class Checkbox extends Component {
+  static propTypes = {
+    className: PropTypes.string,
+    label: PropTypes.string,
+  }
+
   render() {
-  	return (<div className={this.props.className}>
-              <label><input type="checkbox"
-                name="checkbox"
-                value={this.props.label} />
-                {this.props.label}
-              </label>
-            </div>)
+    return (
+      <div className={this.props.className}>
+        <span>
+          <input
+            type="checkbox"
+            name="checkbox"
+            value={this.props.label}
+          />
+          {this.props.label}
+        </span>
+      </div>
+    )
   }
 }
 
-let title = 'Amenities';
-let showableItems = [
+const showableItems = [
   'Air Conditioning',
   'Elevator',
   'Laundry Facility',
-  'Disability Access'
+  'Disability Access',
 ]
-let nonshowableItems = [
+const nonshowableItems = [
   'Dishwasher',
   'Garbage Disposal',
   'Island Kitchens',
@@ -31,18 +41,19 @@ let nonshowableItems = [
   'Washer/Dryer in Unit',
 ]
 
-const renderItem = (item) => {
-  return (
-    <Checkbox
-      className={CollapsibleTheme.checkboxStyle}
-      label={item}
-    />
-  )
-}
+const renderItem = item => (
+  <Checkbox
+    key={item}
+    className={CollapsibleTheme.checkboxStyle}
+    label={item}
+  />
+)
 
 const myShowableItems = (
   <div>
-    <p><strong>{title}</strong></p>
+    <p>
+      <strong>Amenities</strong>
+    </p>
     {showableItems.map(renderItem)}
   </div>
 )
@@ -53,8 +64,8 @@ const myNonShowableItems = (
   </div>
 )
 
-function handleChange() {
-  console.log('in custom onclick handler')
+const handleChange = () => {
+  console.log('in custom onclick handler') // eslint-disable-line no-console
 }
 
 export const Collapse = (
@@ -63,8 +74,8 @@ export const Collapse = (
       showableItems={myShowableItems}
       nonshowableItems={myNonShowableItems}
       theme={CollapsibleTheme}
-      hiddenText='see all amenities'
-      visibleText='see less amenities'
+      hiddenText="see all amenities"
+      visibleText="see less amenities"
       visible={false}
       handleClick={handleChange}
     />

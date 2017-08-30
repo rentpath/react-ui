@@ -5,10 +5,7 @@ import LinearGradient from './LinearGradient'
 export default class Star extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
-    theme: PropTypes.object,
     color: PropTypes.string,
-    stroke: PropTypes.string,
-    strokeWidth: PropTypes.number,
     width: PropTypes.string,
   }
 

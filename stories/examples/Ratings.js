@@ -1,5 +1,5 @@
 import React from 'react'
-import { RatingBar }  from 'react-ui-core/src'
+import { RatingBar } from 'react-ui-core/src'
 import { Square, Circle } from '../SampleRatingItem'
 import { RatingBarTheme } from '../theme'
 
@@ -17,7 +17,7 @@ export const SquareRatings = (
     RatingItem={Square}
     ratingScale={5}
     rating={5}
-    total= {'15'}
+    total="15"
     color="royalblue"
     theme={RatingBarTheme}
   />
@@ -28,7 +28,7 @@ export const CircleRatings = (
     RatingItem={Circle}
     ratingScale={5}
     rating={4}
-    total= {'200 Rated'}
+    total="200 Rated"
     color="royalblue"
     theme={RatingBarTheme}
   />
@@ -39,7 +39,7 @@ export const ThreeRatings = (
     RatingItem={Square}
     ratingScale={5}
     rating={3}
-    total= {'27 Awesome'}
+    total="27 Awesome"
     color="royalblue"
     theme={RatingBarTheme}
   />
@@ -50,7 +50,7 @@ export const TwoRatings = (
     RatingItem={Square}
     ratingScale={5}
     rating={2}
-    total= {'403'}
+    total="403"
     color="royalblue"
     theme={RatingBarTheme}
   />
@@ -61,7 +61,7 @@ export const OneRatings = (
     RatingItem={Circle}
     ratingScale={5}
     rating={1}
-    total= {'3333'}
+    total="3333"
     color="royalblue"
     theme={RatingBarTheme}
   />
@@ -72,7 +72,7 @@ export const ManyRatings = (
     RatingItem={Square}
     ratingScale={63}
     rating={34}
-    total= {'150'}
+    total="150"
     color="royalblue"
     theme={RatingBarTheme}
   />
@@ -82,7 +82,7 @@ export const Partial1 = (
   <RatingBar
     ratingScale={5}
     rating={3.5}
-    total= {'150'}
+    total="150"
     color="royalblue"
     theme={RatingBarTheme}
   />
@@ -92,7 +92,7 @@ export const Partial2 = (
   <RatingBar
     ratingScale={5}
     rating={4.4}
-    total= {'150'}
+    total="150"
     color="royalblue"
     theme={RatingBarTheme}
   />
@@ -102,7 +102,7 @@ export const Partial3 = (
   <RatingBar
     ratingScale={5}
     rating={0.75}
-    total= {'150'}
+    total="150"
     color="royalblue"
     theme={RatingBarTheme}
   />
