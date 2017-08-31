@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import Counter from '../Counter'
 
 const theme = {}
@@ -17,14 +17,13 @@ const onClick = (type, counter) => {
 
 describe('Counter', () => {
   it('renders a Counter', () => {
-    const wrapper = shallow(<Counter theme={theme} />)
-    expect(wrapper.find('span[role="decrementUnit"]')).toHaveLength(1)
+    const wrapper = mount(<Counter theme={theme} />)
+    expect(wrapper.find('span')).toHaveLength(5)
   })
 
   it('passes through props', () => {
     const wrapper = shallow(
       <Counter
-        id="foo"
         theme={theme}
         count={3}
       />,
@@ -33,7 +32,7 @@ describe('Counter', () => {
   })
 
   it('passes through default count state', () => {
-    const wrapper = shallow(<Counter id="foo" theme={theme} />)
+    const wrapper = shallow(<Counter theme={theme} />)
     expect(wrapper.state('count')).toEqual(0)
   })
 
@@ -47,9 +46,10 @@ describe('Counter', () => {
           count={1}
         />,
       )
-      wrapper.find('span[role="incrementUnit"]').first().simulate('click')
+      wrapper.find('span').at(0).simulate('click')
       expect(wrapper.state('count')).toEqual(2)
     })
+
     it('calls a decrement callback', () => {
       const wrapper = shallow(
         <Counter
@@ -59,7 +59,7 @@ describe('Counter', () => {
           onClick={onClick}
         />,
       )
-      wrapper.find('span[role="decrementUnit"]').last().simulate('click')
+      wrapper.find('span').at(3).simulate('click')
       expect(wrapper.state('count')).toEqual(1)
     })
   })
