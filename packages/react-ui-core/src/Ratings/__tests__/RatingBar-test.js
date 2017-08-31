@@ -1,49 +1,45 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { mount } from 'enzyme'
 import RatingBar from '../RatingBar'
 
-it('renders correctly', () => {
-  const tree = renderer.create(
-    <RatingBar
-      ratingScale={5}
-      rating={3}
-      total="20 Ratings"
-      color="royalblue"
-    />,
-  ).toJSON()
-  expect(tree).toMatchSnapshot()
-})
+describe('RatingBar', () => {
+  it('component renders correctly', () => {
+    const wrapper = mount(<RatingBar />)
+    expect(wrapper.find('svg').length).toBe(1)
+  })
 
-it('does not render anything when rating scale is 0 no matter what the rating might be', () => {
-  const tree = renderer.create(
-    <RatingBar
-      ratingScale={0}
-      rating={2.35}
-    />,
-  ).toJSON()
-  expect(tree).toMatchSnapshot()
-})
+  it('renders a empty Ratings when rating is not provided', () => {
+    const wrapper = mount(<RatingBar ratingScale={5} />)
+    expect(wrapper.find('svg').length).toBe(5)
+  })
 
-it('only renders rating count', () => {
-  const tree = renderer.create(
-    <RatingBar
-      ratingScale={0}
-      rating={4}
-      total="20 Ratings"
-      color="royalblue"
-    />,
-  ).toJSON()
-  expect(tree).toMatchSnapshot()
-})
+  it('does not render when ratingScale is 0', () => {
+    const wrapper = mount(<RatingBar ratingScale={0} />)
+    expect(wrapper.find('svg').length).toBe(0)
+  })
 
-it('renders partial ratings', () => {
-  const tree = renderer.create(
-    <RatingBar
-      ratingScale={5}
-      rating={2.35}
-      total="20 Ratings"
-      color="royalblue"
-    />,
-  ).toJSON()
-  expect(tree).toMatchSnapshot()
+  it('renders 1 out of 5 Ratings', () => {
+    const wrapper = mount(<RatingBar ratingScale={5} rating={1} />)
+    const gradient = wrapper.find('LinearGradient')
+    expect(gradient.at(0).prop('width')).toBe('100%')
+    expect(gradient.at(1).prop('width')).toBe('0%')
+    expect(gradient.at(2).prop('width')).toBe('-100%')
+    expect(gradient.at(3).prop('width')).toBe('-200%')
+    expect(gradient.at(4).prop('width')).toBe('-300%')
+  })
+
+  it('renders partial Ratings', () => {
+    const wrapper = mount(<RatingBar ratingScale={5} rating={3.5} />)
+    const gradient = wrapper.find('LinearGradient')
+    expect(gradient.at(0).prop('width')).toBe('350%')
+    expect(gradient.at(1).prop('width')).toBe('250%')
+    expect(gradient.at(2).prop('width')).toBe('150%')
+    expect(gradient.at(3).prop('width')).toBe('50%')
+    expect(gradient.at(4).prop('width')).toBe('-50%')
+  })
+
+  it('renders total ratings', () => {
+    const wrapper = mount(<RatingBar ratingScale={5} rating={1} total="10" />)
+    expect(wrapper.find('RatingBar').prop('total')).toBe('10')
+  })
 })
