@@ -10,6 +10,8 @@ describe('<Layer />', () => {
     const context = {
       map: {
         addLayer: () => true,
+        getLayer: () => true,
+        removeLayer: () => true,
       },
     }
     const wrapper = mount(<Layer {...props} />, { context })

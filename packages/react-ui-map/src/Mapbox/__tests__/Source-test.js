@@ -12,6 +12,7 @@ describe('<Source />', () => {
     const context = {
       map: {
         addSource: () => true,
+        getSource: () => true,
       },
     }
     const wrapper = mount(<Source {...props} />, { context })
@@ -27,6 +28,7 @@ describe('<Source />', () => {
     const context = {
       map: {
         addSource: () => true,
+        getSource: () => true,
       },
     }
     const wrapper = mount(<Source {...props} />, { context })
@@ -42,6 +44,7 @@ describe('<Source />', () => {
     const context = {
       map: {
         addSource: () => true,
+        getSource: () => true,
       },
     }
     const wrapper = mount(<Source {...props} />, { context })
