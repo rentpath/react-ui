@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 export default class Layer extends Component {
   static propTypes = {
-    layer: PropTypes.array,
+    layer: PropTypes.object,
   }
 
   static contextTypes = {
