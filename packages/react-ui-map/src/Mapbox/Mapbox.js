@@ -11,6 +11,7 @@ export default class Mapbox extends PureComponent {
     theme: PropTypes.object,
     token: PropTypes.string,
     center: PropTypes.array,
+    flyOnCenterChange: PropTypes.bool,
     style: PropTypes.string,
     zoom: PropTypes.number,
     children: PropTypes.array,
@@ -22,6 +23,7 @@ export default class Mapbox extends PureComponent {
 
   static defaultProps = {
     theme: {},
+    flyOnCenterChange: false,
   }
 
   constructor(props, context) {
@@ -57,8 +59,14 @@ export default class Mapbox extends PureComponent {
   componentWillReceiveProps(nextProps) {
     const { map } = this.state
 
-    if (map && nextProps.center) {
-      map.flyTo(nextProps.center)
+    const { center, flyOnCenterChange } = nextProps
+
+    if (map && center && (center !== this.props.center)) {
+      if (flyOnCenterChange) {
+        map.flyTo(nextProps.center)
+      } else {
+        map.setCenter(nextProps.center)
+      }
     }
   }
 
