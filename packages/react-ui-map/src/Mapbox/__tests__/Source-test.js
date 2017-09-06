@@ -50,4 +50,28 @@ describe('<Source />', () => {
     const wrapper = mount(<Source {...props} />, { context })
     expect(wrapper.prop('data')).toEqual({ foo: 'bar' })
   })
+
+  it('sets new data', () => {
+    const props = {
+      id: 'atlanta',
+      type: 'geojson',
+      data: { foo: 'bar' },
+    }
+    const mock = { setData: () => jest.fn() }
+
+    jest.spyOn(mock, 'setData')
+
+    const context = {
+      map: {
+        addSource: () => true,
+        getSource: () => ({
+          ...mock,
+        }),
+      },
+    }
+    const wrapper = mount(<Source {...props} />, { context })
+    const newProps = { data: { bumble: 'bee' } }
+    wrapper.setProps(newProps)
+    expect(mock.setData).toHaveBeenCalledWith(newProps.data)
+  })
 })

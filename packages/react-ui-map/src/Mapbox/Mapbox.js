@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
-import fly from './fly'
 
 export default class Mapbox extends PureComponent {
   static propTypes = {
@@ -15,7 +14,6 @@ export default class Mapbox extends PureComponent {
     style: PropTypes.string,
     zoom: PropTypes.number,
     children: PropTypes.array,
-    boundingBox: PropTypes.array,
   }
 
   static childContextTypes = {
@@ -28,6 +26,7 @@ export default class Mapbox extends PureComponent {
 
   constructor(props, context) {
     super(props, context)
+    mapboxgl.accessToken = props.token
 
     this.state = {
       map: null,
@@ -35,29 +34,31 @@ export default class Mapbox extends PureComponent {
   }
 
   getChildContext() {
-    return { map: this.state.map }
+    return {
+      map: this.state.map,
+    }
   }
 
   componentDidMount() {
-    mapboxgl.accessToken = this.props.token
-    const map = new mapboxgl.Map({
-      container: this.container,
-      style: this.props.style,
-      center: this.props.center,
-      zoom: this.props.zoom,
-      theme: this.props.theme,
-    })
-
-    map.on('load', () => {
-      this.setState({ map })
-    })
+    if (this.props.center) {
+      const map = new mapboxgl.Map({
+        container: this.container,
+        style: this.props.style,
+        center: this.props.center,
+        zoom: this.props.zoom,
+        theme: this.props.theme,
+      })
+      map.on('load', () => {
+        this.setState({ map })
+      })
+    }
   }
 
   componentWillReceiveProps(nextProps) {
     const { map } = this.state
 
-    if (nextProps.boundingBox) {
-      fly(map, nextProps.boundingBox)
+    if (map && nextProps.center) {
+      map.flyTo(nextProps.center)
     }
   }
 
