@@ -10,7 +10,10 @@ export default class Mapbox extends PureComponent {
     color: PropTypes.string,
     theme: PropTypes.object,
     token: PropTypes.string,
-    center: PropTypes.array,
+    center: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+    ]),
     flyOnCenterChange: PropTypes.bool,
     style: PropTypes.string,
     zoom: PropTypes.number,
@@ -42,18 +45,20 @@ export default class Mapbox extends PureComponent {
   }
 
   componentDidMount() {
-    if (this.props.center) {
-      const map = new mapboxgl.Map({
-        container: this.container,
-        style: this.props.style,
-        center: this.props.center,
-        zoom: this.props.zoom,
-        theme: this.props.theme,
-      })
-      map.on('load', () => {
-        this.setState({ map })
-      })
+    const opts = {
+      container: this.container,
+      style: this.props.style,
+      center: this.props.center,
+      zoom: this.props.zoom,
+      theme: this.props.theme,
     }
+
+    if (!opts.center) delete opts.center
+
+    const map = new mapboxgl.Map(opts)
+    map.on('load', () => {
+      this.setState({ map })
+    })
   }
 
   componentWillReceiveProps(nextProps) {
