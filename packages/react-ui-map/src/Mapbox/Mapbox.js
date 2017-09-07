@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
-import fly from './fly'
 
 export default class Mapbox extends PureComponent {
   static propTypes = {
@@ -11,11 +10,14 @@ export default class Mapbox extends PureComponent {
     color: PropTypes.string,
     theme: PropTypes.object,
     token: PropTypes.string,
-    center: PropTypes.array,
+    center: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+    ]),
+    flyOnCenterChange: PropTypes.bool,
     style: PropTypes.string,
     zoom: PropTypes.number,
     children: PropTypes.array,
-    boundingBox: PropTypes.array,
   }
 
   static childContextTypes = {
@@ -24,10 +26,12 @@ export default class Mapbox extends PureComponent {
 
   static defaultProps = {
     theme: {},
+    flyOnCenterChange: false,
   }
 
   constructor(props, context) {
     super(props, context)
+    mapboxgl.accessToken = props.token
 
     this.state = {
       map: null,
@@ -35,19 +39,22 @@ export default class Mapbox extends PureComponent {
   }
 
   getChildContext() {
-    return { map: this.state.map }
+    return {
+      map: this.state.map,
+    }
   }
 
   componentDidMount() {
-    mapboxgl.accessToken = this.props.token
-    const map = new mapboxgl.Map({
+    const opts = {
       container: this.container,
       style: this.props.style,
-      center: this.props.center,
       zoom: this.props.zoom,
       theme: this.props.theme,
-    })
+    }
 
+    if (this.props.center) opts.center = this.props.center
+
+    const map = new mapboxgl.Map(opts)
     map.on('load', () => {
       this.setState({ map })
     })
@@ -56,8 +63,14 @@ export default class Mapbox extends PureComponent {
   componentWillReceiveProps(nextProps) {
     const { map } = this.state
 
-    if (nextProps.boundingBox) {
-      fly(map, nextProps.boundingBox)
+    const { center, flyOnCenterChange } = nextProps
+
+    if (map && center && (center !== this.props.center)) {
+      if (flyOnCenterChange) {
+        map.flyTo(nextProps.center)
+      } else {
+        map.setCenter(nextProps.center)
+      }
     }
   }
 

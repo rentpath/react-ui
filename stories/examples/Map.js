@@ -75,19 +75,6 @@ const defaultMarkerId = 'markers-default'
 const activeMarkerId = 'markers-active'
 
 class MapPage extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      boundingBox: [],
-    }
-
-    this.fitBounds = this.fitBounds.bind(this)
-  }
-
-  fitBounds() {
-    this.setState({ boundingBox: [[32.958984, -5.353521], [43.50585, 5.615985]] })
-  }
 
   render() {
     return (
@@ -98,7 +85,6 @@ class MapPage extends Component {
           style={style}
           zoom={zoom}
           theme={MapTheme}
-          boundingBox={this.state.boundingBox}
         >
           <LayerInteractions
             defaultMarkerId={defaultMarkerId}
@@ -108,12 +94,6 @@ class MapPage extends Component {
           <Layer layer={markersDefaultData} />
           <Layer layer={markersActiveData} />
         </Mapbox>
-        <button
-          className={MapTheme.Button}
-          onClick={this.fitBounds}
-        >
-          Fly
-        </button>
       </div>
     )
   }

@@ -14,16 +14,25 @@ export default class Source extends Component {
 
   constructor(props, context) {
     super(props, context)
-
     const { map } = this.context
     const { id, type, data } = this.props
     const source = map.getSource(id)
 
-    if (!source) {
+    if (!source && data) {
       map.addSource(id, {
         type,
         data,
       })
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { map } = this.context
+    const { data } = nextProps
+    const source = map.getSource(nextProps.id)
+
+    if (source && data) {
+      source.setData(data)
     }
   }
 
