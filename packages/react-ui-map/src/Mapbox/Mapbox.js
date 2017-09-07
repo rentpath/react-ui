@@ -48,12 +48,11 @@ export default class Mapbox extends PureComponent {
     const opts = {
       container: this.container,
       style: this.props.style,
-      center: this.props.center,
       zoom: this.props.zoom,
       theme: this.props.theme,
     }
 
-    if (!opts.center) delete opts.center
+    if (this.props.center) opts.center = this.props.center
 
     const map = new mapboxgl.Map(opts)
     map.on('load', () => {
