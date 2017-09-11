@@ -9,10 +9,12 @@ export default class Counter extends Component {
     incrementOperator: PropTypes.element,
     theme: PropTypes.object,
     count: PropTypes.number,
-    changeValue: PropTypes.number,
+    step: PropTypes.number,
+    min: PropTypes.number,
+    max: PropTypes.number,
     decrementUnit: PropTypes.string,
     incrementUnit: PropTypes.string,
-    handleClick: PropTypes.func,
+    onClick: PropTypes.func,
   }
 
   static defaultProps = {
@@ -20,10 +22,12 @@ export default class Counter extends Component {
     count: 0,
     decrementUnit: '',
     incrementUnit: '',
-    handleClick: () => {},
+    onClick: () => {},
     decrementOperator: <span>-</span>,
     incrementOperator: <span>+</span>,
-    changeValue: 1,
+    step: 1,
+    min: 0,
+    max: 10,
   }
 
   constructor(props) {
@@ -32,16 +36,36 @@ export default class Counter extends Component {
       count: this.props.count,
     }
     this.handleClick = this.handleClick.bind(this)
+    this.increment = this.increment.bind(this)
+    this.decrement = this.decrement.bind(this)
   }
+
   handleClick(count) {
-    this.props.handleClick(count)
-    this.setState({
-      count,
-    })
+    this.props.onClick(count)
+    this.setState({ count })
   }
+
+  increment() {
+    const count = this.state.count + this.props.step
+
+    if (count <= this.props.max) this.handleClick(count)
+  }
+
+  decrement() {
+    const count = this.state.count - this.props.step
+
+    if (count >= this.props.min) this.handleClick(count)
+  }
+
   render() {
     const { count } = this.state
-    const { theme, label, decrementUnit, incrementUnit, changeValue } = this.props
+    const {
+      theme,
+      label,
+      decrementUnit,
+      incrementUnit,
+    } = this.props
+
     return (
       <div className={theme.Counter}>
         <div className={theme['Counter-label']}>
@@ -50,8 +74,9 @@ export default class Counter extends Component {
         <div className={theme['Counter-label-active']}>
           <span
             role="presentation"
-            onClick={() => this.handleClick(this.state.count + changeValue)}
+            onClick={this.decrement}
             className={cn(
+              'bar',
               theme['Counter-content'],
               theme['Counter-shape'],
             )}
@@ -67,7 +92,7 @@ export default class Counter extends Component {
           >{`${decrementUnit} ${count} ${incrementUnit}`}</span>
           <span
             role="presentation"
-            onClick={() => this.handleClick(this.state.count - changeValue)}
+            onClick={this.increment}
             className={cn(
               theme['Counter-content'],
               theme['Counter-shape'],
