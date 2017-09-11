@@ -1,33 +1,27 @@
 .Counter {
   max-width: 800px;
   width: 100%;
-  display: table;
   margin: auto;
   margin-bottom: 15px;
 }
 
 .Counter-label {
-  display: table-cell;
-  vertical-align: middle;
+  margin-bottom: 5px;
 }
 
 .Counter-label-active {
-  vertical-align: middle;
-  display: table-cell;
   width: 400px;
 }
 
 .Counter-content {
   text-align: center;
   width: 20px;
-  float: right;
 }
 
 .Counter-shape {
-  border: 2px solid #666;
   color: white;
-  border-radius: 50%;
-  display: table-cell;
+  border-radius: 5px;
+  padding: 0 5px;
   background: #666;
 }
 
@@ -43,5 +37,4 @@ span.Counter-content {
 
 .Counter-count-content {
   width: 50px;
-  display: inline-block;
 }
