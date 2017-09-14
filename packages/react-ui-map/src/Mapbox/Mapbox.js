@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
+import MapboxGL from 'mapbox-gl/dist/mapbox-gl'
 
 export default class Mapbox extends PureComponent {
   static propTypes = {
@@ -22,6 +22,7 @@ export default class Mapbox extends PureComponent {
 
   static childContextTypes = {
     map: PropTypes.object,
+    MapboxGL: PropTypes.object,
   }
 
   static defaultProps = {
@@ -31,7 +32,6 @@ export default class Mapbox extends PureComponent {
 
   constructor(props, context) {
     super(props, context)
-    mapboxgl.accessToken = props.token
 
     this.state = {
       map: null,
@@ -41,20 +41,12 @@ export default class Mapbox extends PureComponent {
   getChildContext() {
     return {
       map: this.state.map,
+      MapboxGL,
     }
   }
 
   componentDidMount() {
-    const opts = {
-      container: this.container,
-      style: this.props.style,
-      zoom: this.props.zoom,
-      theme: this.props.theme,
-    }
-
-    if (this.props.center) opts.center = this.props.center
-
-    const map = new mapboxgl.Map(opts)
+    const map = this.setupMapbox()
     map.on('load', () => {
       this.setState({ map })
     })
@@ -77,6 +69,18 @@ export default class Mapbox extends PureComponent {
   shouldComponentUpdate(nextProps, nextState) {
     return (nextProps.children !== this.props.children ||
       nextState.map !== this.state.map)
+  }
+
+  setupMapbox() {
+    MapboxGL.accessToken = this.props.token
+    const { center, style, zoom, theme } = this.props
+    return new MapboxGL.Map({
+      container: this.container,
+      style,
+      zoom,
+      theme,
+      ...(center ? { center } : {}),
+    })
   }
 
   render() {
