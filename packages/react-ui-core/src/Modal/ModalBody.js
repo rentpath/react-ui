@@ -7,7 +7,7 @@ export default class ModalBody extends PureComponent {
     styles: PropTypes.object,
     theme: PropTypes.object,
     className: PropTypes.string,
-    CloseButton: PropTypes.node,
+    CloseButton: PropTypes.func,
     onClose: PropTypes.func,
   }
 

@@ -54,11 +54,10 @@ export default class Mapbox extends PureComponent {
 
   componentWillReceiveProps(nextProps) {
     const { map } = this.state
+    const { center } = this.props
 
-    const { center, flyOnCenterChange } = nextProps
-
-    if (map && center && (center !== this.props.center)) {
-      if (flyOnCenterChange) {
+    if (map && nextProps.center && this.isCenterChange(center, nextProps.center)) {
+      if (nextProps.flyOnCenterChange) {
         map.flyTo(nextProps.center)
       } else {
         map.setCenter(nextProps.center)
@@ -81,6 +80,13 @@ export default class Mapbox extends PureComponent {
       theme,
       ...(center ? { center } : {}),
     })
+  }
+
+  isCenterChange(center, nextCenter) {
+    const { lat, lng } = center || {}
+    const next = nextCenter || {}
+
+    return lat !== next.lat || lng !== next.lng
   }
 
   render() {
