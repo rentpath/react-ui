@@ -110,9 +110,8 @@ export default class Mapbox extends PureComponent {
             theme[`Map-${size}`],
             theme.Map,
           )}
-        >
-          {map && children}
-        </div>
+        />
+        {map && children}
       </div>
     )
   }
