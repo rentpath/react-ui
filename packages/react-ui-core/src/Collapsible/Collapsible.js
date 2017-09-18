@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import { Button } from '../Button'
 
 const noop = () => {}
@@ -64,14 +65,18 @@ export default class Collapsible extends Component {
     return (
       <div className={theme.collapsible}>
         {showableItems}
-        <div className={this.state.display ? theme.show : theme.hide}>
-          {nonshowableItems}
-        </div>
-        <div className={theme.alignBottom}>
-          <Button className={theme.strong} onClick={this.handleClick}>
-            {this.state.display ? visibleText : hiddenText}
-          </Button>
-        </div>
+        { nonshowableItems &&
+          <div>
+            <div className={this.state.display ? theme.show : theme.hide}>
+              {nonshowableItems}
+            </div>
+            <div className={theme.alignBottom}>
+              <Button className={cn(theme.strong, theme.btn)} onClick={this.handleClick}>
+                {this.state.display ? visibleText : hiddenText}
+              </Button>
+            </div>
+          </div>
+        }
       </div>
     )
   }
