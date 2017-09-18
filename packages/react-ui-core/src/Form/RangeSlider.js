@@ -36,10 +36,7 @@ export default class RangeSlider extends Component {
       ...props
     } = this.props
 
-    const header = props.formatHeader &&
-      this.state.value.min !== this.state.value.max ?
-      props.formatHeader(this.state.value.min, this.state.value.max)
-      : ''
+    const header = props.formatHeader && props.formatHeader(this.state.value)
 
     // https://github.com/davidchin/react-input-range
     return (

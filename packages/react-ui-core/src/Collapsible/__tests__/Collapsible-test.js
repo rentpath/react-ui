@@ -13,24 +13,28 @@ describe('Collapsible', () => {
       wrapper,
     }
   }
-  it('renders div elements', () => {
+
+  it('removes button without nonshowableItems', () => {
     const { wrapper } = setup({ theme })
-    expect(wrapper.find('div').length).toBe(3)
+    expect(wrapper.find('button').length).toEqual(0)
   })
-  it('contains show more', () => {
-    const { wrapper } = setup({ theme })
-    expect(wrapper.find('button').text()).toContain('more')
-  })
-  it('expands on click and contains show less', () => {
-    const { wrapper } = setup({ theme })
-    wrapper.find('button').simulate('click')
-    expect(wrapper.find('button').text()).toContain('less')
-  })
-  it('contracts on second click and contains show more', () => {
-    const { wrapper } = setup({ theme })
-    wrapper.find('button').simulate('click')
-    expect(wrapper.find('button').text()).toContain('less')
-    wrapper.find('button').simulate('click')
-    expect(wrapper.find('button').text()).toContain('more')
+
+  describe('with nonshowableItems', () => {
+    it('contains show more', () => {
+      const { wrapper } = setup({ theme, nonshowableItems: 'foo' })
+      expect(wrapper.find('button').text()).toContain('more')
+    })
+    it('expands on click and contains show less', () => {
+      const { wrapper } = setup({ theme, nonshowableItems: 'foo' })
+      wrapper.find('button').simulate('click')
+      expect(wrapper.find('button').text()).toContain('less')
+    })
+    it('contracts on second click and contains show more', () => {
+      const { wrapper } = setup({ theme, nonshowableItems: 'foo' })
+      wrapper.find('button').simulate('click')
+      expect(wrapper.find('button').text()).toContain('less')
+      wrapper.find('button').simulate('click')
+      expect(wrapper.find('button').text()).toContain('more')
+    })
   })
 })
