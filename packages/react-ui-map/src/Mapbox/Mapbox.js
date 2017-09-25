@@ -1,7 +1,12 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import classnames from 'classnames'
+import themed from 'react-themed'
 import MapboxGL from 'mapbox-gl/dist/mapbox-gl'
+
+@themed(/^Mapbox/, {
+  pure: true,
+})
 
 export default class Mapbox extends PureComponent {
   static propTypes = {
@@ -115,12 +120,14 @@ export default class Mapbox extends PureComponent {
       <div>
         <div
           ref={x => { this.container = x }}
-          className={classNames(
-            className,
-            theme[`Map-${color}`],
-            theme[`Map-${size}`],
-            theme.Map,
-          )}
+          className={
+            classnames(
+              className,
+              theme.Mapbox,
+              color && theme[`Mapbox-${color}`],
+              size && theme[`Mapbox-${size}`],
+            )
+          }
         />
         {(this.state.loaded && this.map) && children}
       </div>

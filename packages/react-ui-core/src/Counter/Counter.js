@@ -1,30 +1,32 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import themed from 'react-themed'
+import classnames from 'classnames'
 
-export default class Counter extends Component {
+@themed(/^Counter/, {
+  pure: true,
+})
+
+export default class Counter extends PureComponent {
   static propTypes = {
+    theme: PropTypes.object,
     label: PropTypes.string,
+    onClick: PropTypes.func,
     decrementOperator: PropTypes.element,
     incrementOperator: PropTypes.element,
-    theme: PropTypes.object,
     count: PropTypes.number,
     step: PropTypes.number,
     min: PropTypes.number,
     max: PropTypes.number,
-    decrementUnit: PropTypes.string,
-    incrementUnit: PropTypes.string,
-    onClick: PropTypes.func,
+    className: PropTypes.string,
   }
 
   static defaultProps = {
     theme: {},
-    count: 0,
-    decrementUnit: '',
-    incrementUnit: '',
     onClick: () => {},
     decrementOperator: <span>-</span>,
     incrementOperator: <span>+</span>,
+    count: 0,
     step: 1,
     min: 0,
     max: 10,
@@ -32,12 +34,23 @@ export default class Counter extends Component {
 
   constructor(props) {
     super(props)
+
     this.state = {
       count: this.props.count,
     }
-    this.handleClick = this.handleClick.bind(this)
+
     this.increment = this.increment.bind(this)
     this.decrement = this.decrement.bind(this)
+  }
+
+  get renderLabel() {
+    const { theme, label } = this.props
+
+    return (
+      <div className={theme.Counter_Label}>
+        {label}
+      </div>
+    )
   }
 
   handleClick(count) {
@@ -46,15 +59,17 @@ export default class Counter extends Component {
   }
 
   increment() {
-    const count = this.state.count + this.props.step
+    const { max, step } = this.props
+    const count = this.state.count + step
 
-    if (count <= this.props.max) this.handleClick(count)
+    if (count <= max) this.handleClick(count, 'INC')
   }
 
   decrement() {
-    const count = this.state.count - this.props.step
+    const { min, step } = this.props
+    const count = this.state.count - step
 
-    if (count >= this.props.min) this.handleClick(count)
+    if (count >= min) this.handleClick(count, 'DEC')
   }
 
   render() {
@@ -62,41 +77,42 @@ export default class Counter extends Component {
     const {
       theme,
       label,
-      decrementUnit,
-      incrementUnit,
+      className,
     } = this.props
 
     return (
-      <div className={theme.Counter}>
-        <div className={theme['Counter-label']}>
-          {label}
-        </div>
-        <div className={theme['Counter-label-active']}>
+      <div className={
+        classnames(
+          theme.Counter,
+          className
+        )}
+      >
+        {label && this.renderLabel}
+        <div className={theme.Counter_Controls}>
           <span
             role="presentation"
             onClick={this.decrement}
-            className={cn(
-              'bar',
-              theme['Counter-content'],
-              theme['Counter-shape'],
-            )}
+            className={
+              classnames(
+                theme.Counter_Button,
+                theme.Counter_Decrement,
+              )
+            }
           >
             {this.props.decrementOperator}
           </span>
-          <span
-            className={cn(
-              theme['Counter-content'],
-              theme['Counter-count-content'],
-              theme['Counter-Shape'],
-            )}
-          >{`${decrementUnit} ${count} ${incrementUnit}`}</span>
+          <span className={theme.Counter_Text}>
+            {count}
+          </span>
           <span
             role="presentation"
             onClick={this.increment}
-            className={cn(
-              theme['Counter-content'],
-              theme['Counter-shape'],
-            )}
+            className={
+              classnames(
+                theme.Counter_Button,
+                theme.Counter_Increment,
+              )
+            }
           >
             {this.props.incrementOperator}
           </span>

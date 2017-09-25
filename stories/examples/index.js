@@ -50,7 +50,8 @@ export {
 } from './Collapsible'
 
 export {
-  CounterComponent,
+  DefaultCounter,
+  CounterStep,
 } from './Counter'
 
 export {
