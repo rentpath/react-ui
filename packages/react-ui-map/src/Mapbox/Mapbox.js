@@ -32,28 +32,27 @@ export default class Mapbox extends PureComponent {
 
   constructor(props, context) {
     super(props, context)
-
-    this.state = {
-      map: null,
-    }
+    this.map = null
+    this.state = { loaded: false }
   }
 
   getChildContext() {
     return {
-      map: this.state.map,
+      map: this.map,
       MapboxGL,
     }
   }
 
   componentDidMount() {
-    const map = this.setupMapbox()
-    map.on('load', () => {
-      this.setState({ map })
+    this.map = this.setupMapbox()
+    this._isMounted = true
+    this.map.on('load', () => {
+      this.setState({ loaded: this.map.loaded() })
     })
   }
 
   componentWillReceiveProps(nextProps) {
-    const { map } = this.state
+    const { map } = this
     const { center } = this.props
 
     if (map && nextProps.center && this.isCenterChange(center, nextProps.center)) {
@@ -65,9 +64,14 @@ export default class Mapbox extends PureComponent {
     }
   }
 
+  componentWillUnmount() {
+    this._isMounted = false
+    this.map.remove()
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     return (nextProps.children !== this.props.children ||
-      nextState.map !== this.state.map)
+      nextState.map !== this.map)
   }
 
   setupMapbox() {
@@ -98,8 +102,6 @@ export default class Mapbox extends PureComponent {
       children,
     } = this.props
 
-    const { map } = this.state
-
     return (
       <div>
         <div
@@ -111,7 +113,7 @@ export default class Mapbox extends PureComponent {
             theme.Map,
           )}
         />
-        {map && children}
+        {(this.state.loaded && this.map && this._isMounted) && children}
       </div>
     )
   }

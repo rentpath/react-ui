@@ -19,15 +19,6 @@ export default class Layer extends Component {
     map.addLayer(layer)
   }
 
-  componentWillUnmount() {
-    const { map } = this.context
-    const { layer } = this.props
-
-    if (map && map.getLayer(layer)) {
-      map.removeLayer(layer)
-    }
-  }
-
   render() {
     return null
   }
