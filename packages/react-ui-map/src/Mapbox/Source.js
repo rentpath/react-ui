@@ -12,8 +12,7 @@ export default class Source extends Component {
     map: PropTypes.object,
   }
 
-  constructor(props, context) {
-    super(props, context)
+  componentDidMount() {
     const { map } = this.context
     const { id, type, data } = this.props
     const source = map.getSource(id)

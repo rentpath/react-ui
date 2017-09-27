@@ -10,12 +10,9 @@ export default class Layer extends Component {
     map: PropTypes.object,
   }
 
-  constructor(props, context) {
-    super(props, context)
-
+  componentDidMount() {
     const { map } = this.context
     const { layer } = this.props
-
     map.addLayer(layer)
   }
 

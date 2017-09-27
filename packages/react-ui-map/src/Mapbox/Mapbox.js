@@ -45,9 +45,10 @@ export default class Mapbox extends PureComponent {
 
   componentDidMount() {
     this.map = this.setupMapbox()
-    this._isMounted = true
-    this.map.on('load', () => {
-      this.setState({ loaded: this.map.loaded() })
+    this.map.on('style.load', () => {
+      this.setState({
+        loaded: true,
+      })
     })
   }
 
@@ -64,14 +65,13 @@ export default class Mapbox extends PureComponent {
     }
   }
 
-  componentWillUnmount() {
-    this._isMounted = false
-    this.map.remove()
-  }
-
   shouldComponentUpdate(nextProps, nextState) {
     return (nextProps.children !== this.props.children ||
       nextState.map !== this.map)
+  }
+
+  componentWillUnmount() {
+    this.map.remove()
   }
 
   setupMapbox() {
@@ -113,7 +113,7 @@ export default class Mapbox extends PureComponent {
             theme.Map,
           )}
         />
-        {(this.state.loaded && this.map && this._isMounted) && children}
+        {(this.state.loaded && this.map) && children}
       </div>
     )
   }
