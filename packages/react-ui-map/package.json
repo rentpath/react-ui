@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "mapbox-gl": "0.39.1",
+    "mapbox-gl": "^0.40.1",
     "prop-types": "^15.5.10"
   },
   "devDependencies": {
