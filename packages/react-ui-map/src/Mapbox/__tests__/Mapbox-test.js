@@ -19,10 +19,10 @@ describe('<Mapbox />', () => {
     expect(wrapper.find('.testing').length).toBe(1)
   })
 
-  it('sets the map state', () => {
+  it('sets map loaded on the state', () => {
     const wrapper = mount(<Mapbox />)
-    const map = wrapper.state().map
-    expect(map.isMock).toBe(true)
+    const { loaded } = wrapper.state()
+    expect(loaded).toBe(true)
   })
 
   it('sets the MapboxGL and map context variables', () => {

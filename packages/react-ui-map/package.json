@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-map",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "mapbox-gl": "0.39.1",
+    "mapbox-gl": "^0.40.1",
     "prop-types": "^15.5.10"
   },
   "devDependencies": {
