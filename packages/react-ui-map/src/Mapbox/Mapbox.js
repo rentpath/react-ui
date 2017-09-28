@@ -65,8 +65,8 @@ export default class Mapbox extends PureComponent {
     }
   }
 
-  shouldComponentUpdate(nextProps) {
-    return nextProps.children !== this.props.children
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.children !== this.props.children || this.state.loaded !== nextState.loaded
   }
 
   componentWillUnmount() {
