@@ -35,6 +35,13 @@ export default class Source extends Component {
     }
   }
 
+  componentWillUnmount() {
+    const { map } = this.context
+    const { id } = this.props
+
+    map.removeSource(id)
+  }
+
   render() {
     return null
   }

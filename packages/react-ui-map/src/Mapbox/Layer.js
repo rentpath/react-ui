@@ -16,6 +16,12 @@ export default class Layer extends Component {
     map.addLayer(layer)
   }
 
+  componentWillUnmount() {
+    const { map } = this.context
+    const { layer } = this.props
+    map.removeLayer(layer)
+  }
+
   render() {
     return null
   }
