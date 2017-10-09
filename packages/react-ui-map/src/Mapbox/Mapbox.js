@@ -30,6 +30,7 @@ export default class Mapbox extends PureComponent {
   static defaultProps = {
     theme: {},
     flyOnCenterChange: false,
+    dragRotate: true,
     touchRotate: true,
   }
 
