@@ -18,6 +18,8 @@ export default class Mapbox extends PureComponent {
     style: PropTypes.string,
     zoom: PropTypes.number,
     children: PropTypes.array,
+    dragRotate: PropTypes.bool,
+    touchRotate: PropTypes.bool,
   }
 
   static childContextTypes = {
@@ -28,6 +30,7 @@ export default class Mapbox extends PureComponent {
   static defaultProps = {
     theme: {},
     flyOnCenterChange: false,
+    touchRotate: true,
   }
 
   constructor(props, context) {
@@ -44,7 +47,12 @@ export default class Mapbox extends PureComponent {
   }
 
   componentDidMount() {
+    const { center, touchRotate } = this.props
     this.map = this.setupMapbox()
+    if(!touchRotate) {
+      // disable map rotation using touch rotation gesture
+      this.map.touchZoomRotate.disableRotation()
+    }
     this.map.on('style.load', () => {
       this.setState({
         loaded: true,
@@ -75,12 +83,13 @@ export default class Mapbox extends PureComponent {
 
   setupMapbox() {
     MapboxGL.accessToken = this.props.token
-    const { center, style, zoom, theme } = this.props
+    const { center, style, zoom, theme, dragRotate } = this.props
     return new MapboxGL.Map({
       container: this.container,
       style,
       zoom,
       theme,
+      dragRotate,
       ...(center ? { center } : {}),
     })
   }
