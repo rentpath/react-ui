@@ -20,6 +20,7 @@ export default class RatingBar extends PureComponent {
   }
   static defaultProps = {
     theme: {},
+    score: 0,
     maxScore: 5,
     RatingItem: Star,
   }
@@ -27,7 +28,6 @@ export default class RatingBar extends PureComponent {
   get ratingItems() {
     const {
       maxScore,
-      score,
       RatingItem,
       theme,
       color,
@@ -45,7 +45,7 @@ export default class RatingBar extends PureComponent {
           )
         }
         id={`rating-item-${index}`}
-        width={`${(score - index) * 100}%`}
+        width={`${this.fillWidth(index)}%`}
         {...props}
       />
     ))
@@ -59,6 +59,17 @@ export default class RatingBar extends PureComponent {
         {label}
       </div>
     )
+  }
+
+  fillWidth(index) {
+    const { score, maxScore } = this.props
+    const adjustedScore = score > maxScore ? maxScore : score
+
+    if (adjustedScore > index) {
+      const diff = Math.abs(adjustedScore - index)
+      return diff >= 1 ? 100 : diff * 100
+    }
+    return 0
   }
 
   render() {

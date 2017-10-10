@@ -45,7 +45,7 @@ describe('Modal/Overlay', () => {
         </Overlay>,
       )
 
-      node = wrapper.first().node
+      node = wrapper.first()
       wrapper.instance().overlay = node
     })
 

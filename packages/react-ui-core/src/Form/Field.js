@@ -179,7 +179,7 @@ export default class Field extends Component {
 
     props.input = createElement(input || controls[type] || controls.text, {
       id: inputId,
-      ref: el => { this.input = el },
+      key: inputId,
       type,
       theme,
       disabled,
@@ -190,6 +190,7 @@ export default class Field extends Component {
 
     if (label) {
       props.label = createElement(...parseArgs(label, Label, {
+        key: `label-${inputId}`,
         htmlFor: inputId,
         className: theme.Label,
       }))
@@ -197,10 +198,12 @@ export default class Field extends Component {
 
     if (error) {
       props.error = createElement(...parseArgs(error, Text, {
+        key: `error-${inputId}`,
         className: theme.Field_error,
       }))
     } else if (hint) {
       props.hint = createElement(...parseArgs(hint, Text, {
+        key: `hint-${inputId}`,
         className: theme.Field_hint,
       }))
     }

@@ -1,8 +1,9 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Counter from '../Counter'
+import ThemedCounter from '../Counter'
+import theme from './mocks/theme'
 
-const theme = {}
+const Counter = ThemedCounter.WrappedComponent
 
 describe('Counter', () => {
   it('renders a Counter', () => {
@@ -11,25 +12,33 @@ describe('Counter', () => {
   })
 
   it('passes through props', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Counter
         theme={theme}
         count={3}
       />,
     )
-    expect(wrapper.state('count')).toEqual(3)
+    expect(wrapper.prop('count')).toEqual(3)
   })
 
   it('passes through default count state', () => {
-    const wrapper = shallow(<Counter theme={theme} />)
-    expect(wrapper.state('count')).toEqual(0)
+    const wrapper = mount(<Counter theme={theme} />)
+    expect(wrapper.prop('count')).toEqual(0)
   })
 
   describe('onClick', () => {
     it('maintains count between min and max', () => {
-      const wrapper = shallow(<Counter min={1} count={1} max={3} />)
-      const decrementer = wrapper.find('span').at(0)
-      const incrementer = wrapper.find('span').at(3)
+      const wrapper = mount(
+        <Counter
+          min={1}
+          count={1}
+          max={3}
+          theme={theme}
+        />
+      )
+      const decrementer = wrapper.find('.Counter_Decrement > span')
+      const incrementer = wrapper.find('.Counter_Increment > span')
+
       decrementer.simulate('click')
       expect(wrapper.state('count')).toEqual(1)
       incrementer.simulate('click')

@@ -24,13 +24,12 @@ export default class Star extends Component {
     } = this.props
 
     return (
-      <div className={className} {...props}>
+      <div {...props}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="50"
           height="50"
           viewBox="0 0 51 48"
-          className={className}
         >
           <LinearGradient
             id={id}

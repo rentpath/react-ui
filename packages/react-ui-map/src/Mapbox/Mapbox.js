@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
@@ -8,7 +8,7 @@ import MapboxGL from 'mapbox-gl/dist/mapbox-gl'
   pure: true,
 })
 
-export default class Mapbox extends PureComponent {
+export default class Mapbox extends Component {
   static propTypes = {
     className: PropTypes.string,
     size: PropTypes.string,
@@ -53,9 +53,9 @@ export default class Mapbox extends PureComponent {
   }
 
   componentDidMount() {
-    const { center, touchRotate } = this.props
     this.map = this.setupMapbox()
-    if(!touchRotate) {
+
+    if (!this.props.touchRotate) {
       // disable map rotation using touch rotation gesture
       this.map.touchZoomRotate.disableRotation()
     }

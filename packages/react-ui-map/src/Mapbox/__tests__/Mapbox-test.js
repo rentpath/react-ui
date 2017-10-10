@@ -1,6 +1,8 @@
 import React from 'react'
-import { mount } from 'enzyme'
-import Mapbox from '../Mapbox'
+import { shallow } from 'enzyme'
+import ThemedMapbox from '../Mapbox'
+
+const Mapbox = ThemedMapbox.WrappedComponent
 
 jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
   Map: () => ({
@@ -15,18 +17,18 @@ describe('<Mapbox />', () => {
     const props = {
       className: 'testing',
     }
-    const wrapper = mount(<Mapbox {...props} />)
+    const wrapper = shallow(<Mapbox {...props} />)
     expect(wrapper.find('.testing').length).toBe(1)
   })
 
   it('sets map loaded on the state', () => {
-    const wrapper = mount(<Mapbox />)
+    const wrapper = shallow(<Mapbox />)
     const { loaded } = wrapper.state()
     expect(loaded).toBe(true)
   })
 
   it('sets the MapboxGL and map context variables', () => {
-    const wrapper = mount(<Mapbox />)
+    const wrapper = shallow(<Mapbox />)
     const context = wrapper.instance().getChildContext()
     expect(context.MapboxGL).toBeDefined()
     expect(context.map.isMock).toBe(true)
@@ -34,7 +36,7 @@ describe('<Mapbox />', () => {
 
   it('sets the access token', () => {
     const token = 'testToken1234'
-    const wrapper = mount(<Mapbox token={token} />)
+    const wrapper = shallow(<Mapbox token={token} />)
     const context = wrapper.instance().getChildContext()
     expect(context.MapboxGL.accessToken).toBe(token)
   })
