@@ -7,6 +7,7 @@ export default class Circle extends Component {
     id: PropTypes.string.isRequired,
     color: PropTypes.string,
     width: PropTypes.string,
+    className: PropTypes.string,
   }
 
   static defaultProps = {
@@ -19,29 +20,33 @@ export default class Circle extends Component {
       id,
       color,
       width,
+      className,
+      ...props
     } = this.props
 
     return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="50"
-        height="50"
-        viewBox="0 0 600 300"
-      >
-        <LinearGradient
-          id={id}
-          width={width}
-          color={color}
-        />
-        <circle
-          cx="250"
-          cy="150"
-          r="145"
-          fill={`url(#${id})`}
-          stroke="crimson"
-          strokeWidth="5"
-        />
-      </svg>
+      <div className={className} {...props}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 600 300"
+        >
+          <LinearGradient
+            id={id}
+            width={width}
+            color={color}
+          />
+          <circle
+            cx="250"
+            cy="150"
+            r="145"
+            fill={`url(#${id})`}
+            stroke="crimson"
+            strokeWidth="5"
+          />
+        </svg>
+      </div>
     )
   }
 }

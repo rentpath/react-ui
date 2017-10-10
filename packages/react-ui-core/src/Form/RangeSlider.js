@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import InputRange from 'react-input-range'
+import classnames from 'classnames'
+import themed from 'react-themed'
+
+@themed(/^RangeSlider/, {
+  pure: true,
+})
 
 export default class RangeSlider extends Component {
   static propTypes = {
     theme: PropTypes.object,
+    className: PropTypes.string,
     onChange: PropTypes.func,
     formatHeader: PropTypes.func,
     value: PropTypes.oneOfType([
@@ -32,16 +39,20 @@ export default class RangeSlider extends Component {
   render() {
     const {
       theme,
+      className,
       onChange,
+      formatHeader,
       ...props
     } = this.props
 
-    const header = props.formatHeader && props.formatHeader(this.state.value)
-
-    // https://github.com/davidchin/react-input-range
     return (
-      <div>
-        {header}
+      <div className={
+        classnames(
+          theme.RangeSlider,
+          className,
+        )}
+      >
+        {formatHeader && formatHeader(this.state.value)}
         <InputRange
           {...props}
           onChange={this.onChange}

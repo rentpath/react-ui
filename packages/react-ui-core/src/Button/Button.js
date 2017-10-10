@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import classnames from 'classnames'
 import themed from 'react-themed'
 
 @themed(/^Button/, {
@@ -31,12 +31,14 @@ export default class Button extends Component {
     return (
       <button
         {...props}
-        className={classNames(
-          className,
-          theme.Button,
-          theme[`Button-${color}`],
-          theme[`Button-${size}`],
-        )}
+        className={
+          classnames(
+            className,
+            theme.Button,
+            color && theme[`Button-${color}`],
+            size && theme[`Button-${size}`],
+          )
+        }
       />
     )
   }

@@ -1,28 +1,25 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import themed from 'react-themed'
+import classnames from 'classnames'
 import { Button } from '../Button'
 
-const noop = () => {}
+const type = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.element,
+])
+
+@themed(/^Collapsible/, {
+  pure: true,
+})
 
 export default class Collapsible extends Component {
   static propTypes = {
-    showableItems: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.element,
-    ]),
-    nonshowableItems: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.element,
-    ]),
-    hiddenText: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.element,
-    ]),
-    visibleText: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.element,
-    ]),
+    showableItems: type,
+    nonshowableItems: type,
+    hiddenText: type,
+    visibleText: type,
+    align: PropTypes.string,
     handleClick: PropTypes.func,
     visible: PropTypes.bool,
     theme: PropTypes.object,
@@ -33,17 +30,20 @@ export default class Collapsible extends Component {
     nonshowableItems: '',
     hiddenText: 'show more',
     visibleText: 'show less',
+    align: '',
+    handleClick: () => { },
     visible: false,
-    handleClick: noop,
     theme: {},
   }
 
   constructor(props) {
     super(props)
-    this.handleClick = this.handleClick.bind(this)
+
     this.state = {
       display: this.props.visible,
     }
+
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
@@ -56,25 +56,38 @@ export default class Collapsible extends Component {
   render() {
     const {
       theme,
+      align,
       showableItems,
       nonshowableItems,
       hiddenText,
       visibleText,
     } = this.props
 
+    const toggle = this.state.display ? 'visible' : 'hidden'
+
     return (
       <div className={theme.collapsible}>
         {showableItems}
         { nonshowableItems &&
           <div>
-            <div className={this.state.display ? theme.show : theme.hide}>
+            <div
+              className={classnames(
+                theme.Collapsible_Items,
+                theme[`Collapsible_Items-${toggle}`]
+              )}
+            >
               {nonshowableItems}
             </div>
-            <div className={theme.alignBottom}>
-              <Button className={cn(theme.strong, theme.btn)} onClick={this.handleClick}>
-                {this.state.display ? visibleText : hiddenText}
-              </Button>
-            </div>
+            <Button
+              onClick={this.handleClick}
+              className={classnames(
+                theme.Collapsible_Button,
+                theme[`Collapsible_Button-${toggle}`],
+                align && theme[`Collapsible-Button-${align}`],
+              )}
+            >
+              {this.state.display ? visibleText : hiddenText}
+            </Button>
           </div>
         }
       </div>

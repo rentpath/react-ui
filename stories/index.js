@@ -18,7 +18,8 @@ import {
   Grid,
   ResponsiveTemplate,
   Collapse,
-  CounterComponent,
+  DefaultCounter,
+  CounterStep,
   MapExample,
   DefaultRatings,
   SquareRatings,
@@ -67,7 +68,8 @@ storiesOf('Collapsible', module)
   .addWithInfo('default', 'Default themed', () => Collapse)
 
 storiesOf('Counter', module)
-  .addWithInfo('default', 'Default themed', () => CounterComponent)
+  .addWithInfo('default', 'Default themed', () => DefaultCounter)
+  .addWithInfo('step changed', 'Step changed', () => CounterStep)
 
 storiesOf('Map', module)
   .addWithInfo('default', 'Default themed', () => MapExample)

@@ -1,40 +1,34 @@
-.Counter {
-  max-width: 800px;
-  width: 100%;
-  margin: auto;
-  margin-bottom: 15px;
-}
-
-.Counter-label {
-  margin-bottom: 5px;
-}
-
-.Counter-label-active {
-  width: 400px;
-}
-
-.Counter-content {
-  text-align: center;
-  width: 20px;
-}
-
-.Counter-shape {
-  color: white;
-  border-radius: 5px;
-  padding: 0 5px;
-  background: #666;
-}
-
 .title {
   text-align: center;
   font-weight: bold;
 }
 
-span.Counter-content {
-  margin-left: 10px;
-  margin-right: 10px;
+.Counter {
+  width: 100%;
+  display: flex;
+  margin: 20px;
+  max-width: 300px;
 }
 
-.Counter-count-content {
-  width: 50px;
+.Counter_Label {
+  display: inline-block;
+  flex: 1;
+}
+
+.Counter_Controls {
+  display: inline-block;
+}
+
+.Counter_Text {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.Counter_Button {
+  color: white;
+  border-radius: 5px;
+  padding: 5px 15px;
+  display: inline-block;
+  background: #0076A3;
+  cursor: pointer;
 }

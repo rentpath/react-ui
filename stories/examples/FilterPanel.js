@@ -12,44 +12,39 @@ import {
   ModalFooter,
 } from 'react-ui-core/src'
 
-import { FilterPanelTheme } from '../theme'
+import { FilterPanelTheme as theme } from '../theme'
 import { examples as rangeSliderExamples } from './RangeSlider'
 
-const PriceSlider = rangeSliderExamples.withMinMaxStep
+const PriceSlider = () => rangeSliderExamples.withMinMaxStep
 
-const propertyTypeSet = () => (
+const Fields = () => (
   <FieldSet
     legend="Property Type"
-    theme={FilterPanelTheme}
   >
     <Grid fluid>
       <Row>
-        <Col className={FilterPanelTheme.propertyTypeColumn}>
+        <Col className={theme.col}>
           <Field
-            className={FilterPanelTheme.propertyTypeInput}
             type="checkbox"
             label="Apartments"
           />
         </Col>
-        <Col className={FilterPanelTheme.propertyTypeColumn}>
+        <Col className={theme.col}>
           <Field
-            className={FilterPanelTheme.propertyTypeInput}
             type="checkbox"
             label="Townhouses"
           />
         </Col>
       </Row>
       <Row>
-        <Col className={FilterPanelTheme.propertyTypeColumn}>
+        <Col className={theme.col}>
           <Field
-            className={FilterPanelTheme.propertyTypeInput}
             type="checkbox"
             label="Condos"
           />
         </Col>
-        <Col className={FilterPanelTheme.propertyTypeColumn}>
+        <Col className={theme.col}>
           <Field
-            className={FilterPanelTheme.propertyTypeInput}
             type="checkbox"
             label="Houses"
           />
@@ -62,12 +57,12 @@ const propertyTypeSet = () => (
 export default (
   <Modal>
     <ModalBody>
-      <Form theme={FilterPanelTheme}>
-        { PriceSlider }
-        { propertyTypeSet() }
+      <Form theme={theme}>
+        <PriceSlider />
+        <Fields />
       </Form>
     </ModalBody>
-    <ModalFooter className={FilterPanelTheme.ModalFooter}>
+    <ModalFooter className={theme.ModalFooter}>
       <Button>Show Apartments</Button>
     </ModalFooter>
   </Modal>

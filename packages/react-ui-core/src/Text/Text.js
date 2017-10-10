@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import classnames from 'classnames'
 
 export default class Text extends PureComponent {
   static propTypes = {
@@ -25,10 +25,12 @@ export default class Text extends PureComponent {
     return (
       <Tag
         {...props}
-        className={classNames(
-          className,
-          theme.Text,
-        )}
+        className={
+          classnames(
+            className,
+            theme.Text,
+          )
+        }
       />
     )
   }

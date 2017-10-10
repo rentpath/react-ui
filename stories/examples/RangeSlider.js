@@ -1,14 +1,13 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { RangeSlider } from 'react-ui-core/src'
-import { RangeSliderTheme } from '../theme'
+import { RangeSliderTheme as theme } from '../theme'
 
 const wrapper = (props = {}) => {
   /* eslint-disable react/prop-types */
   const {
     minValue,
     maxValue,
-    theme,
     value,
   } = props
   /* eslint-enable react/prop-types */
@@ -18,8 +17,8 @@ const wrapper = (props = {}) => {
       {...props}
       maxValue={maxValue || 20}
       minValue={minValue || 0}
+      theme={theme}
       onChangeComplete={val => action('onChangeComplete')(val)}
-      theme={theme || RangeSliderTheme}
       value={value || 10}
     />
   )
@@ -41,13 +40,16 @@ export const examples = {
     step: 100,
   }),
   sqftSlider: wrapper({
-    formatLabel: () => '',
-    formatHeader: (min, max) =>
-      (<div>
-        <h2 className={RangeSliderTheme.textCenter}>
-          Square Foot <br /> {min} ft - {max} ft+ <br />
+    formatHeader: value => (
+      <div>
+        <h2 className={theme.textCenter}>
+          Square Foot
+          <div className={theme.value}>
+            {`${value.min} ft - ${value.max} ft+`}
+          </div>
         </h2>
-      </div>),
+      </div>
+    ),
     value: {
       min: 600,
       max: 2000,
@@ -57,13 +59,16 @@ export const examples = {
     step: 100,
   }),
   priceSlider: wrapper({
-    formatLabel: () => '',
-    formatHeader: (min, max) =>
-      (<div>
-        <h2 className={RangeSliderTheme.textCenter}>
-          Price Range <br /> ${min} - ${max}+ <br />
+    formatHeader: value => (
+      <div>
+        <h2 className={theme.textCenter}>
+          Price Range
+          <div className={theme.value}>
+            {`${value.min} - ${value.max}+`}
+          </div>
         </h2>
-      </div>),
+      </div>
+    ),
     value: {
       min: 500,
       max: 1000,
@@ -75,7 +80,7 @@ export const examples = {
 }
 
 export default (
-  <div className={RangeSliderTheme.wrapper}>
+  <div className={theme.wrapper}>
     <h2>default</h2>
     {examples.default}
     <h2>with label</h2>

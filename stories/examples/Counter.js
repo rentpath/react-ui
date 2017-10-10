@@ -4,24 +4,25 @@ import { CounterTheme } from '../theme'
 
 const count = 3
 
-const decrementOperator = (<span>-</span>)
-const incrementOperator = (<span>+</span>)
+const decrementOperator = (<span>Remove</span>)
+const incrementOperator = (<span>Add</span>)
 
 const onClick = currentCount => {
   console.log(`current count: ${currentCount}`) // eslint-disable-line no-console
 }
 
-const CounterComponent = (
+const title = (
+  <div className={CounterTheme.title}>
+    Baths & Bedrooms
+  </div>
+)
+
+export const DefaultCounter = (
   <div>
-    <div className={CounterTheme.title}>
-      <p>Baths & Bedrooms</p>
-    </div>
+    {title}
     <Counter
       theme={CounterTheme}
-      decrementOperator={decrementOperator}
-      incrementOperator={incrementOperator}
       onClick={onClick}
-      incrementUnit="+"
       label="Bedrooms"
       count={count}
       step={2}
@@ -31,11 +32,28 @@ const CounterComponent = (
       decrementOperator={decrementOperator}
       incrementOperator={incrementOperator}
       onClick={onClick}
-      incrementUnit="+"
       label="Bathrooms"
       count={count}
     />
   </div>
 )
 
-export { CounterComponent }
+export const CounterStep = (
+  <div>
+    {title}
+    <Counter
+      theme={CounterTheme}
+      onClick={onClick}
+      label="Bedrooms (step 2)"
+      count={count}
+      step={2}
+    />
+    <Counter
+      theme={CounterTheme}
+      onClick={onClick}
+      label="Bathrooms (step 5)"
+      count={count}
+      step={5}
+    />
+  </div>
+)

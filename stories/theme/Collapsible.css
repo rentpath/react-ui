@@ -1,30 +1,39 @@
-.show {
+.Collapsible_Items-visible {
   display: block;
 }
 
-.hide {
+.Collapsible_Items-hidden {
   display: none;
 }
 
-.collapsible p {
+.Collapsible_Button {
+  display: block;
+  clear: both;
+  margin: 0 auto;
+  color: white;
+  border-radius: 5px;
+  background: #0076A3;
+  cursor: pointer;
+  border-style: none;
+  padding: 10px 20px;
+  -webkit-tap-highlight-color: none;
+  outline: none;
+}
+
+.Collapsible_Button p {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.alignBottom {
+.Collapsible_Button-bottom {
   display: inline-block;
   width: 100%;
-  margin-left: 10%;
 }
 
 .checkboxStyle {
   width: 40%;
-  height: 50px;
+  height: 30px;
   float: left;
   margin-left: 10%;
-}
-
-.strong {
-  font-weight: bold;
 }

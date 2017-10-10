@@ -1,48 +1,84 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { randomId } from '@rentpath/react-ui-utils'
+import themed from 'react-themed'
+import classnames from 'classnames'
 import Star from './Star'
 
-export default class RatingBar extends Component {
+@themed(/^RatingBar/, {
+  pure: true,
+})
+
+export default class RatingBar extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,
-    ratingScale: PropTypes.number,
-    rating: PropTypes.number,
-    total: PropTypes.string,
+    color: PropTypes.string,
+    className: PropTypes.string,
+    maxScore: PropTypes.number,
+    score: PropTypes.number,
+    label: PropTypes.string,
     RatingItem: PropTypes.func,
   }
   static defaultProps = {
     theme: {},
+    maxScore: 5,
     RatingItem: Star,
   }
 
   get ratingItems() {
     const {
-      ratingScale,
-      rating,
+      maxScore,
+      score,
       RatingItem,
+      theme,
+      color,
       ...props
     } = this.props
 
-    return [...Array(ratingScale).keys()].map(index => (
+    return [...Array(maxScore).keys()].map(index => (
       <RatingItem
         key={index}
-        id={randomId('rating-item')}
-        width={`${(rating - index) * 100}%`}
+        className={
+          classnames(
+            theme.RatingBar_Item,
+            theme[`RatingBar_Item-${index}`],
+            color && theme[`RatingBar_Item-${color}`]
+          )
+        }
+        id={`rating-item-${index}`}
+        width={`${(score - index) * 100}%`}
         {...props}
       />
     ))
   }
 
+  get renderLabel() {
+    const { theme, label } = this.props
+
+    return (
+      <div className={theme.RatingBar_Label}>
+        {label}
+      </div>
+    )
+  }
+
   render() {
     const {
-      total,
       theme,
+      label,
+      className,
     } = this.props
+
     return (
-      <div className={theme.ratingbar}>
-        <div className={theme.ratingcomp}>{this.ratingItems}</div>
-        { total && <div className={theme.label}>{total}</div> }
+      <div className={
+        classnames(
+          theme.RatingBar,
+          className,
+        )}
+      >
+        <div className={theme.RatingBar_Items}>
+          {this.ratingItems}
+        </div>
+        {label && this.renderLabel}
       </div>
     )
   }
