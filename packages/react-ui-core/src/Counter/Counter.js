@@ -54,8 +54,8 @@ export default class Counter extends PureComponent {
   }
 
   handleClick(count) {
-    this.props.onClick(count)
     this.setState({ count })
+    this.props.onClick(count)
   }
 
   increment() {

@@ -67,7 +67,7 @@ describe('Modal/ModalBody', () => {
     })
 
     it('sets onClose as a prop on the component', () => {
-      expect(wrapper.childAt(0).prop('onClose')).toBeInstanceOf(Function)
+      expect(wrapper.first().prop('onClose')).toBeInstanceOf(Function)
     })
 
     it('does not render the prop when no prop is passed', () => {

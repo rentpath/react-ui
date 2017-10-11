@@ -38,7 +38,7 @@ describe('Form/Field', () => {
 
   it('passes extra props to the input', () => {
     const { wrapper } = setup({ 'data-id': 'foo' })
-    expect(wrapper.find('[data-id="foo"]').length).toBe(1)
+    expect(wrapper.find('[data-id="foo"]').length).toBe(4)
   })
 
   describe('when "id" is undefined', () => {
@@ -146,7 +146,7 @@ describe('Form/Field', () => {
   describe('when "error" is an object', () => {
     it('renders an error with merged props', () => {
       const { wrapper } = setup({ error: { id: 'error' } })
-      expect(wrapper.find('#error').length).toBe(1)
+      expect(wrapper.find('#error').length).toBe(2)
     })
   })
 
@@ -175,7 +175,7 @@ describe('Form/Field', () => {
   describe('when "hint" is an object', () => {
     it('renders a hint with merged props', () => {
       const { wrapper } = setup({ hint: { id: 'hint' } })
-      expect(wrapper.find('#hint').length).toBe(1)
+      expect(wrapper.find('#hint').length).toBe(2)
     })
   })
 
@@ -205,9 +205,11 @@ describe('Form/Field', () => {
   describe('when both "label" and "error" are provided', () => {
     it('renders elements in the correct order', () => {
       const { wrapper } = setup({ label: 'label', error: 'error' })
-      expect(wrapper.childAt(0).getDOMNode().nodeName).toBe('LABEL')
-      expect(wrapper.childAt(1).getDOMNode().nodeName).toBe('INPUT')
-      expect(wrapper.childAt(2).getDOMNode().nodeName).toBe('DIV')
+      const children = wrapper.childAt(0)
+
+      expect(children.childAt(0).getDOMNode().nodeName).toBe('LABEL')
+      expect(children.childAt(1).getDOMNode().nodeName).toBe('INPUT')
+      expect(children.childAt(2).getDOMNode().nodeName).toBe('DIV')
     })
   })
 
@@ -229,14 +231,13 @@ describe('Form/Field', () => {
   describe('when input is blurred', () => {
     it('removes the focused classname from the container', () => {
       const { wrapper } = setup({ theme })
-      const container = wrapper.find('div')
       const input = wrapper.find('input')
 
       input.simulate('focus')
-      expect(container.prop('className')).toContain('Field-focused')
+      expect(wrapper.find('div').prop('className')).toContain('Field-focused')
 
       input.simulate('blur')
-      expect(container.prop('className')).not.toContain('Field-focused')
+      expect(wrapper.find('div').prop('className')).not.toContain('Field-focused')
     })
 
     it('calls a onBlur prop', () => {

@@ -7,8 +7,6 @@ import {
   Col,
 } from 'react-ui-core/src'
 import styles from 'react-ui-core/node_modules/flexboxgrid/dist/flexboxgrid.css'
-// import styles form 'react-flexbox-grid/dist/flexboxgrid.css'
-
 import { GridTheme as theme } from '../theme'
 
 configureStylesForGrid(styles)
