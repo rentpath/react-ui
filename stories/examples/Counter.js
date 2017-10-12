@@ -57,3 +57,29 @@ export const CounterStep = (
     />
   </div>
 )
+
+export const CounterText = (
+  <div>
+    {title}
+    <Counter
+      theme={CounterTheme}
+      onClick={onClick}
+      label="Bedrooms (step 2)"
+      count={count}
+      text={num => (
+        `the count is ${num}`
+      )}
+      step={2}
+    />
+    <Counter
+      theme={CounterTheme}
+      onClick={onClick}
+      label="Bathrooms (step 5)"
+      count={count}
+      text={num => (
+        `current count: ${num}`
+      )}
+      step={5}
+    />
+  </div>
+)

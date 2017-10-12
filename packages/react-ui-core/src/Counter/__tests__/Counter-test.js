@@ -26,6 +26,39 @@ describe('Counter', () => {
     expect(wrapper.prop('count')).toEqual(0)
   })
 
+  describe('custom text', () => {
+    it('uses the default "count" prop when no texst provided', () => {
+      const count = 2
+      const wrapper = mount(<Counter theme={theme} count={count} />)
+      expect(wrapper.find('.Counter_Text').getDOMNode().innerHTML).toEqual(String(count))
+    })
+
+    describe('when text is a function', () => {
+      it('generates text using count', () => {
+        const text = num => `this is a test for count ${num}`
+        const expected = 'this is a test for count 2'
+        const wrapper = mount(<Counter theme={theme} count={2} text={text} />)
+        expect(wrapper.find('.Counter_Text').getDOMNode().innerHTML).toEqual(expected)
+      })
+
+      it('generates text using count after increment / decrement', () => {
+        const text = num => `count is ${num}`
+        const wrapper = mount(<Counter count={1} theme={theme} text={text} />)
+        const decrementer = wrapper.find('.Counter_Decrement > span')
+        const incrementer = wrapper.find('.Counter_Increment > span')
+
+        const html = node => (
+          node.find('.Counter_Text').getDOMNode().innerHTML
+        )
+
+        incrementer.simulate('click')
+        expect(html(wrapper)).toEqual('count is 2')
+        decrementer.simulate('click')
+        expect(html(wrapper)).toEqual('count is 1')
+      })
+    })
+  })
+
   describe('onClick', () => {
     it('maintains count between min and max', () => {
       const wrapper = mount(

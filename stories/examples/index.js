@@ -52,6 +52,7 @@ export {
 export {
   DefaultCounter,
   CounterStep,
+  CounterText,
 } from './Counter'
 
 export {

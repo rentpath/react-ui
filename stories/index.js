@@ -20,6 +20,7 @@ import {
   Collapse,
   DefaultCounter,
   CounterStep,
+  CounterText,
   MapExample,
   DefaultRatings,
   SquareRatings,
@@ -70,6 +71,7 @@ storiesOf('Collapsible', module)
 storiesOf('Counter', module)
   .addWithInfo('default', 'Default themed', () => DefaultCounter)
   .addWithInfo('step changed', 'Step changed', () => CounterStep)
+  .addWithInfo('custom text', 'Custom text', () => CounterText)
 
 storiesOf('Map', module)
   .addWithInfo('default', 'Default themed', () => MapExample)

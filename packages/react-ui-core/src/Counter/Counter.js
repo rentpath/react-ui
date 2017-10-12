@@ -14,6 +14,7 @@ export default class Counter extends PureComponent {
     onClick: PropTypes.func,
     decrementOperator: PropTypes.element,
     incrementOperator: PropTypes.element,
+    text: PropTypes.func,
     count: PropTypes.number,
     step: PropTypes.number,
     min: PropTypes.number,
@@ -51,6 +52,13 @@ export default class Counter extends PureComponent {
         {label}
       </div>
     )
+  }
+
+  text(count) {
+    const { text } = this.props
+
+    if (text) return text(count)
+    return count
   }
 
   handleClick(count) {
@@ -102,7 +110,7 @@ export default class Counter extends PureComponent {
             {this.props.decrementOperator}
           </span>
           <span className={theme.Counter_Text}>
-            {count}
+            {this.text(count)}
           </span>
           <span
             role="presentation"

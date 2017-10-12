@@ -83,7 +83,7 @@ export default class Collapsible extends Component {
               className={classnames(
                 theme.Collapsible_Button,
                 theme[`Collapsible_Button-${toggle}`],
-                align && theme[`Collapsible-Button-${align}`],
+                align && theme[`Collapsible_Button-${align}`],
               )}
             >
               {this.state.display ? visibleText : hiddenText}
