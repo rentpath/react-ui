@@ -78,23 +78,21 @@ class MapPage extends Component {
 
   render() {
     return (
-      <div>
-        <Mapbox
-          token={token}
-          center={center}
-          style={style}
-          zoom={zoom}
-          theme={MapTheme}
-        >
-          <LayerInteractions
-            defaultMarkerId={defaultMarkerId}
-            activeMarkerId={activeMarkerId}
-          />
-          <Source id="markers" type="geojson" data={mapSourceData} />
-          <Layer layer={markersDefaultData} />
-          <Layer layer={markersActiveData} />
-        </Mapbox>
-      </div>
+      <Mapbox
+        token={token}
+        center={center}
+        style={style}
+        zoom={zoom}
+        theme={MapTheme}
+      >
+        <LayerInteractions
+          defaultMarkerId={defaultMarkerId}
+          activeMarkerId={activeMarkerId}
+        />
+        <Source id="markers" type="geojson" data={mapSourceData} />
+        <Layer layer={markersDefaultData} />
+        <Layer layer={markersActiveData} />
+      </Mapbox>
     )
   }
 }
