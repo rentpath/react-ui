@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
-import MapboxGL from 'mapbox-gl/dist/mapbox-gl'
 
 @themed(/^Mapbox/, {
   pure: true,
@@ -19,10 +18,13 @@ export default class Mapbox extends Component {
       PropTypes.object,
       PropTypes.array,
     ]),
-    flyOnCenterChange: PropTypes.bool,
+    flyToCenter: PropTypes.bool,
     style: PropTypes.string,
     zoom: PropTypes.number,
-    children: PropTypes.array,
+    children: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.array,
+    ]),
     dragRotate: PropTypes.bool,
     touchRotate: PropTypes.bool,
   }
@@ -34,7 +36,7 @@ export default class Mapbox extends Component {
 
   static defaultProps = {
     theme: {},
-    flyOnCenterChange: false,
+    flyToCenter: false,
     dragRotate: true,
     touchRotate: true,
   }
@@ -48,20 +50,24 @@ export default class Mapbox extends Component {
   getChildContext() {
     return {
       map: this.map,
-      MapboxGL,
+      MapboxGL: this.MapboxGL,
     }
   }
 
   componentDidMount() {
-    this.map = this.setupMapbox()
+    require.ensure([], require => {
+      this.MapboxGL = require('mapbox-gl/dist/mapbox-gl')
+      this.map = this.setupMapbox()
 
-    if (!this.props.touchRotate) {
-      // disable map rotation using touch rotation gesture
-      this.map.touchZoomRotate.disableRotation()
-    }
-    this.map.on('style.load', () => {
-      this.setState({
-        loaded: true,
+      if (!this.props.touchRotate) {
+        // disable map rotation using touch rotation gesture
+        this.map.touchZoomRotate.disableRotation()
+      }
+
+      this.map.on('style.load', () => {
+        this.setState({
+          loaded: true,
+        })
       })
     })
   }
@@ -71,7 +77,7 @@ export default class Mapbox extends Component {
     const { center } = this.props
 
     if (map && nextProps.center && this.isCenterChange(center, nextProps.center)) {
-      if (nextProps.flyOnCenterChange) {
+      if (nextProps.flyToCenter) {
         map.flyTo(nextProps.center)
       } else {
         map.setCenter(nextProps.center)
@@ -88,9 +94,10 @@ export default class Mapbox extends Component {
   }
 
   setupMapbox() {
-    MapboxGL.accessToken = this.props.token
+    this.MapboxGL.accessToken = this.props.token
     const { center, style, zoom, theme, dragRotate } = this.props
-    return new MapboxGL.Map({
+
+    return new this.MapboxGL.Map({
       container: this.container,
       style,
       zoom,
@@ -117,18 +124,17 @@ export default class Mapbox extends Component {
     } = this.props
 
     return (
-      <div>
-        <div
-          ref={x => { this.container = x }}
-          className={
-            classnames(
-              className,
-              theme.Mapbox,
-              color && theme[`Mapbox-${color}`],
-              size && theme[`Mapbox-${size}`],
-            )
-          }
-        />
+      <div
+        ref={x => { this.container = x }}
+        className={
+          classnames(
+            className,
+            theme.Mapbox,
+            color && theme[`Mapbox-${color}`],
+            size && theme[`Mapbox-${size}`],
+          )
+        }
+      >
         {(this.state.loaded && this.map) && children}
       </div>
     )

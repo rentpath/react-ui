@@ -1,7 +1,7 @@
-.Map {
+.Mapbox {
   position: absolute;
-  height: 700px;
-  width: 700px;
+  height: 100%;
+  width: 100%;
   top: 0;
 }
 
