@@ -57,10 +57,12 @@ export default class Mapbox extends Component {
   componentDidMount() {
     if (typeof require.ensure === 'function') {
       require.ensure([], require => {
-        this.loadMapbox(require)
+        this.MapboxGL = require('mapbox-gl/dist/mapbox-gl')
+        this.setupMapbox()
       })
     } else {
-      this.loadMapbox(require)
+      this.MapboxGL = require('mapbox-gl/dist/mapbox-gl')
+      this.setupMapbox()
     }
   }
 
@@ -108,11 +110,6 @@ export default class Mapbox extends Component {
         loaded: true,
       })
     })
-  }
-
-  loadMapbox(require) {
-    this.MapboxGL = require('mapbox-gl/dist/mapbox-gl')
-    this.setupMapbox()
   }
 
   isCenterChange(center, nextCenter) {
