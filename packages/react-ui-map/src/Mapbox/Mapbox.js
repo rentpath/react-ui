@@ -55,21 +55,15 @@ export default class Mapbox extends Component {
   }
 
   componentDidMount() {
-    require.ensure([], require => {
-      this.MapboxGL = require('mapbox-gl/dist/mapbox-gl')
-      this.map = this.setupMapbox()
-
-      if (!this.props.touchRotate) {
-        // disable map rotation using touch rotation gesture
-        this.map.touchZoomRotate.disableRotation()
-      }
-
-      this.map.on('style.load', () => {
-        this.setState({
-          loaded: true,
-        })
+    if (typeof require.ensure === 'function') {
+      require.ensure([], require => {
+        this.MapboxGL = require('mapbox-gl/dist/mapbox-gl')
+        this.setupMapbox()
       })
-    })
+    } else {
+      this.MapboxGL = require('mapbox-gl/dist/mapbox-gl')
+      this.setupMapbox()
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -97,13 +91,24 @@ export default class Mapbox extends Component {
     this.MapboxGL.accessToken = this.props.token
     const { center, style, zoom, theme, dragRotate } = this.props
 
-    return new this.MapboxGL.Map({
+    this.map = new this.MapboxGL.Map({
       container: this.container,
       style,
       zoom,
       theme,
       dragRotate,
       ...(center ? { center } : {}),
+    })
+
+    if (!this.props.touchRotate) {
+      // disable map rotation using touch rotation gesture
+      this.map.touchZoomRotate.disableRotation()
+    }
+
+    this.map.on('style.load', () => {
+      this.setState({
+        loaded: true,
+      })
     })
   }
 
