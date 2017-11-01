@@ -4,8 +4,8 @@ import { LinearGradient } from 'react-ui-core/src'
 
 export default class Square extends Component {
   static propTypes = {
-    id: PropTypes.string.isRequired,
-    color: PropTypes.string,
+    uniqueId: PropTypes.string.isRequired,
+    fillColor: PropTypes.string,
     width: PropTypes.string,
     className: PropTypes.string,
   }
@@ -17,8 +17,8 @@ export default class Square extends Component {
 
   render() {
     const {
-      id,
-      color,
+      uniqueId,
+      fillColor,
       width,
       className,
       ...props
@@ -33,12 +33,12 @@ export default class Square extends Component {
           height="50"
         >
           <LinearGradient
-            id={id}
+            id={uniqueId}
             width={width}
-            color={color}
+            fillColor={fillColor}
           />
           <path
-            fill={`url(#${id})`}
+            fill={`url(#${uniqueId})`}
             stroke="#000"
             strokeWidth="3"
             d="M10,990h980V10H10V990z M71.3,71.3h857.5v857.5H71.3V71.3z"

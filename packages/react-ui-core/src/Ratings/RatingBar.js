@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
+
 import classnames from 'classnames'
 import Star from './Star'
 
@@ -10,8 +11,9 @@ import Star from './Star'
 
 export default class RatingBar extends PureComponent {
   static propTypes = {
+    uniqueId: PropTypes.string.isRequired,
     theme: PropTypes.object,
-    color: PropTypes.string,
+    fillColor: PropTypes.string,
     className: PropTypes.string,
     maxScore: PropTypes.number,
     score: PropTypes.number,
@@ -23,14 +25,15 @@ export default class RatingBar extends PureComponent {
     score: 0,
     maxScore: 5,
     RatingItem: Star,
+    fillColor: 'black',
   }
 
   get ratingItems() {
     const {
+      uniqueId,
       maxScore,
       RatingItem,
       theme,
-      color,
       ...props
     } = this.props
 
@@ -41,10 +44,10 @@ export default class RatingBar extends PureComponent {
           classnames(
             theme.RatingBar_Item,
             theme[`RatingBar_Item-${index}`],
-            color && theme[`RatingBar_Item-${color}`]
+            this.props.fillColor && theme[`RatingBar_Item-${this.props.fillColor}`]
           )
         }
-        id={`rating-item-${index}`}
+        uniqueId={`${uniqueId}-rating-item-${index}`}
         width={`${this.fillWidth(index)}%`}
         {...props}
       />

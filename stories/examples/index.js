@@ -66,4 +66,5 @@ export {
   Partial1,
   Partial2,
   Partial3,
+  PartialTwoColor,
 } from './Ratings'
