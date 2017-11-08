@@ -4,8 +4,9 @@ import LinearGradient from './LinearGradient'
 
 export default class Star extends Component {
   static propTypes = {
-    id: PropTypes.string.isRequired,
-    color: PropTypes.string,
+    uniqueId: PropTypes.string.isRequired,
+    fillColor: PropTypes.string.isRequired,
+    backgroundFillColor: PropTypes.string,
     width: PropTypes.string,
     className: PropTypes.string,
   }
@@ -16,15 +17,16 @@ export default class Star extends Component {
 
   render() {
     const {
-      id,
-      color,
+      uniqueId,
+      fillColor,
+      backgroundFillColor,
       width,
       className,
       ...props
     } = this.props
 
     return (
-      <div {...props}>
+      <div className={className} {...props}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="50"
@@ -32,12 +34,13 @@ export default class Star extends Component {
           viewBox="0 0 51 48"
         >
           <LinearGradient
-            id={id}
+            id={uniqueId}
             width={width}
-            color={color}
+            fillColor={fillColor}
+            backgroundFillColor={backgroundFillColor}
           />
           <path
-            fill={`url(#${id})`}
+            fill={`url(#${uniqueId})`}
             stroke="#000"
             strokeWidth="3"
             d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
