@@ -7,8 +7,6 @@
     "transform-runtime",
     "transform-decorators-legacy",
     "transform-class-properties",
-    "babel-plugin-transform-object-rest-spread",
-    "dynamic-import-webpack"
-  ],
-  "ignore": "node_modules",
+    "babel-plugin-transform-object-rest-spread"
+  ]
 }
