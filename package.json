@@ -18,7 +18,9 @@
       "packages/react-ui-core",
       "packages/react-ui-map",
       "packages/react-ui-tracking",
-      "packages/react-ui-utils"
+      "packages/react-ui-utils",
+      "packages/react-ui-ag",
+      "packages/react-ui-rent"
     ]
   },
   "devDependencies": {
@@ -36,6 +38,7 @@
     "babel-core": "^6.24.0",
     "babel-eslint": "^8.0.1",
     "babel-jest": "^21.2.0",
+    "babel-plugin-dynamic-import-webpack": "^1.0.2",
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
