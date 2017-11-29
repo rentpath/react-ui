@@ -27,7 +27,6 @@ export {
 export {
   Modal,
   ModalBody,
-  ModalFooter,
   Overlay,
 } from './Modal'
 

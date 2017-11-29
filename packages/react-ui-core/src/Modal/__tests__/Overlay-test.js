@@ -1,6 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Overlay from '../Overlay'
+import ThemedOverlay from '../Overlay'
+
+const Overlay = ThemedOverlay.WrappedComponent
 
 describe('Modal/Overlay', () => {
   describe('className', () => {
@@ -10,25 +12,14 @@ describe('Modal/Overlay', () => {
       wrapper = shallow(<Overlay />)
     })
 
-    it('does not have a `className` on the root node', () => {
-      expect(wrapper.prop('className')).toBe('')
-    })
-
-    it('applies `overlay` to `className` on the root node', () => {
-      wrapper.setProps({ styles: { overlay: 'foo' } })
-      expect(wrapper.prop('className')).toBe('foo')
+    it('applies `Overlay` to `className` on the root node', () => {
+      wrapper.setProps({ theme: { Overlay: 'foo' } })
+      expect(wrapper.prop('className')).toEqual('foo')
     })
 
     it('applies `className` on the root node', () => {
       wrapper.setProps({ className: 'someName' })
       expect(wrapper.prop('className')).toBe('someName')
-    })
-
-    it('applies both `className` and `overlay` to `className` on the root node', () => {
-      wrapper.setProps({ styles: { overlay: 'foo' }, className: 'bar' })
-      const className = wrapper.prop('className')
-      expect(className).toContain('foo')
-      expect(className).toContain('bar')
     })
   })
 

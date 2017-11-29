@@ -11,6 +11,7 @@ import {
   ButtonLarge,
   ButtonSmall,
   DefaultModal,
+  CloseModal,
   ModalNoOverlayClose,
   ModalPopup,
   FilterPanel,
@@ -60,7 +61,8 @@ storiesOf('Field', module)
 storiesOf('Modal', module)
   .addDecorator(withKnobs)
   .add('default', () => DefaultModal)
-  .add('with no overlay click', () => ModalNoOverlayClose)
+  .add('with close button', () => CloseModal)
+  .add('with no overlay close', () => ModalNoOverlayClose)
   .add('with popup', ModalPopup)
 
 storiesOf('Text', module)

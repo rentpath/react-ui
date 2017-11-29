@@ -1,6 +1,13 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import themed from 'react-themed'
+import classnames from 'classnames'
+import ModalBody from './ModalBody'
 import Overlay from './Overlay'
+
+@themed('*', {
+  pure: true,
+})
 
 export default class Modal extends PureComponent {
   static propTypes = {
@@ -8,11 +15,14 @@ export default class Modal extends PureComponent {
     theme: PropTypes.object,
     onClose: PropTypes.func,
     closeOnOverlayClick: PropTypes.bool,
+    className: PropTypes.string,
+    children: PropTypes.any,
   }
 
   static defaultProps = {
-    isOpen: true,
+    isOpen: false,
     theme: {},
+    onClose: () => { },
     closeOnOverlayClick: true,
   }
 
@@ -33,18 +43,25 @@ export default class Modal extends PureComponent {
     const {
       isOpen,
       theme,
+      className,
+      children,
+      closeOnOverlayClick,
       ...props
     } = this.props
-
-    const classes = isOpen ? theme.Modal_open : theme.Modal_closed
 
     return (
       <Overlay
         onClick={this.overlayClose}
-        styles={theme.Overlay}
-        className={classes}
-        {...props}
-      />
+        className={classnames(
+          className,
+          theme[`Modal-${isOpen ? 'open' : 'close'}`],
+          theme.Modal,
+        )}
+      >
+        <ModalBody {...props}>
+          {children}
+        </ModalBody>
+      </Overlay>
     )
   }
 }

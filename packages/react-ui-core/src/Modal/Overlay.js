@@ -1,17 +1,23 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import classnames from 'classnames'
+import themed from 'react-themed'
+
+@themed(/^Overlay/, {
+  pure: true,
+})
 
 export default class Overlay extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     onClick: PropTypes.func,
-    styles: PropTypes.object,
+    theme: PropTypes.object,
     children: PropTypes.node,
   }
 
   static defaultProps = {
     styles: {},
+    theme: {},
   }
 
   constructor(props) {
@@ -26,19 +32,19 @@ export default class Overlay extends PureComponent {
   }
 
   render() {
-    const { className, styles, children } = this.props
+    const { className, theme, children } = this.props
 
     return (
       <div
         ref={node => { this.overlay = node }}
         role="presentation"
         onClick={this.handleClick}
-        className={classNames(
+        className={classnames(
           className,
-          styles.overlay,
+          theme.Overlay,
         )}
       >
-        {children }
+        {children}
       </div>
     )
   }
