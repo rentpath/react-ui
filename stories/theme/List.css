@@ -1,0 +1,14 @@
+.List {
+  display: flex;
+  width: 50%;
+  padding: 20px;
+}
+
+.List-horizontal {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.List-vertical {
+  flex-direction: column;
+}
