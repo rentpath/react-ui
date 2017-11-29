@@ -38,6 +38,8 @@ import {
   HorizontalList,
   ListWithPassedNodeTypes,
   ListWithOwnItemComponent,
+  DefaultSearchBar,
+  SearchBarWithHTMLButton,
 } from './examples'
 
 storiesOf('Button', module)
@@ -101,3 +103,7 @@ storiesOf('List', module)
   .addWithInfo('Horizontal List', 'Horizontal', () => HorizontalList)
   .addWithInfo('List with passed node types', 'Passed Node Types', () => ListWithPassedNodeTypes)
   .addWithInfo('List with own item component', 'Own item component', () => ListWithOwnItemComponent)
+
+storiesOf('SearchBar', module)
+  .addWithInfo('default', 'Default themed', () => DefaultSearchBar)
+  .addWithInfo('with HTML button prop', 'Default themed', () => SearchBarWithHTMLButton)

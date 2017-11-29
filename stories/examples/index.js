@@ -76,3 +76,8 @@ export {
   ListWithPassedNodeTypes,
   ListWithOwnItemComponent,
 } from './List'
+
+export {
+  DefaultSearchBar,
+  SearchBarWithHTMLButton,
+} from './Searchbar'
