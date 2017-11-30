@@ -1,0 +1,102 @@
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+.ModalBody {
+  position: relative;
+}
+
+.Modal_Heading {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.Modal_Heading,
+.Modal_SubHeading {
+  margin: 0 10px;
+}
+
+.Form {
+  max-width: 450px;
+}
+
+.Input,
+.Select,
+.Textarea {
+  background-color: #ffffff;
+  box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.08);
+  border: solid 1px #e9e9e9;
+  border-radius: 4px;
+  padding: 16px 10px;
+  width: 100%;
+  font-size: 13px;
+}
+
+.Input::placeholder,
+.Select::placeholder,
+.Textarea::placeholder,
+.Label_Textarea {
+  color: #adadad;
+}
+
+.Textarea {
+  padding-top: 35px;
+}
+
+.Label_Textarea {
+  position: absolute;
+  padding: 10px;
+}
+
+.Field.Field-checkbox {
+  color: #000;
+  display: inline-flex;
+  flex-direction: row-reverse;
+}
+
+.Field-checkbox .Input {
+  width: auto;
+  border: 0;
+}
+
+.Field-checkbox .Label,
+.TermsOfService {
+  font-size: 14px;
+}
+
+.Field.Field-checkbox,
+.TermsOfService {
+  padding: 0 10px;
+}
+
+.Field,
+.Button {
+  margin: 8px 0;
+}
+
+.Button {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border-radius: 100px;
+  background-color: #0175D7;
+  color: #fff;
+  box-shadow: 0 0.5px 1px 0 rgba(0,0,0,.15);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.CloseButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 16px;
+}

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CloseButton renders children passed 1`] = `
+<div
+  className=""
+>
+  Close
+</div>
+`;
+
+exports[`CloseButton renders default children if none passed 1`] = `
+<div
+  className=""
+>
+  X
+</div>
+`;
