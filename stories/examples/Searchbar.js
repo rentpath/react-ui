@@ -12,7 +12,7 @@ export const DefaultSearchBar = (
     onInput={value => console.log(value)}
     onAfterReset={() => console.log('after reset')}
     onSubmit={() => console.log('On submit')}
-    suggestions={[1, 2, 3, 4, 5, 6, 7, 8]}
+    suggestions={['a', 'b', 'c', 'd']}
   />
 )
 

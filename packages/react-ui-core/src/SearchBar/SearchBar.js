@@ -100,7 +100,7 @@ export default class SearchBar extends Component {
     this.setState({
       value: suggestions[activeSuggestionIndex],
     })
-    console.log('handleSuggestionSelection:', suggestions[activeSuggestionIndex])
+    console.log('handleSuggestionSelection:', activeSuggestionIndex, suggestions[activeSuggestionIndex])
   }
 
   reset() {
@@ -109,7 +109,8 @@ export default class SearchBar extends Component {
   }
 
   activateSuggestion(index) {
-    if (index < 0 || index >= this.props.suggestions.length) return
+    console.log('activateSuggestion', index)
+    if (index <= 0 || index >= this.props.suggestions.length) return
     this.setState({
       activeSuggestionIndex: index,
     })
@@ -182,6 +183,8 @@ export default class SearchBar extends Component {
             nodeType="div"
             listItemNodeType="ul"
             selectedIndex={activeSuggestionIndex}
+            onClick={this.handleSuggestionSelection}
+            onSelectionHover={this.activateSuggestion}
           />
         </div>,
       ]

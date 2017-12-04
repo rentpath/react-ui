@@ -8,16 +8,22 @@ export default class ItemWrapper extends PureComponent {
     index: PropTypes.number,
     selectedIndex: PropTypes.number,
     theme: PropTypes.object,
+    onSelectionHover: PropTypes.func,
   }
 
   render() {
-    const { selectedIndex, index, theme, children } = this.props
+    const { selectedIndex, index, theme, children, onSelectionHover,
+      ...props } = this.props
 
     return (
-      <div className={cn(
-        theme.ListItem,
-        selectedIndex === index && theme.ListItemSelected
-      )}
+      <div
+        className={cn(
+          theme.ListItem,
+          selectedIndex === index && theme.ListItemSelected
+        )}
+        onMouseEnter={() => { onSelectionHover(index) }}
+        onMouseLeave={() => { onSelectionHover(index) }}
+        {...props}
       >
         {children}
       </div>
