@@ -43,3 +43,7 @@ export {
   Star,
   LinearGradient,
 } from './Ratings'
+
+export {
+  List,
+} from './List'

@@ -34,6 +34,10 @@ import {
   Partial2,
   Partial3,
   PartialTwoColor,
+  DefaultList,
+  HorizontalList,
+  ListWithPassedNodeTypes,
+  ListWithOwnItemComponent,
 } from './examples'
 
 storiesOf('Button', module)
@@ -91,3 +95,9 @@ storiesOf('Ratings', module)
   .addWithInfo('Partial Rating 2', 'Partial Rating 2', () => Partial2)
   .addWithInfo('Partial Rating 3', 'Partial Rating 3', () => Partial3)
   .addWithInfo('Two-color Rating', 'Two-color Rating', () => PartialTwoColor)
+
+storiesOf('List', module)
+  .addWithInfo('default', 'Default List', () => DefaultList)
+  .addWithInfo('Horizontal List', 'Horizontal', () => HorizontalList)
+  .addWithInfo('List with passed node types', 'Passed Node Types', () => ListWithPassedNodeTypes)
+  .addWithInfo('List with own item component', 'Own item component', () => ListWithOwnItemComponent)
