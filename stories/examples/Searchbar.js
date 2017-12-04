@@ -1,7 +1,7 @@
 import React from 'react'
 import { SearchBar } from 'react-ui-core/src'
 import { DefaultButton } from './Button'
-import theme from '../theme/Form.css'
+import theme from '../theme/SearchBar.css'
 
 export const DefaultSearchBar = (
   <SearchBar
@@ -11,6 +11,8 @@ export const DefaultSearchBar = (
     value="test"
     onInput={value => console.log(value)}
     onAfterReset={() => console.log('after reset')}
+    onSubmit={() => console.log('On submit')}
+    suggestions={[1, 2, 3, 4, 5, 6, 7, 8]}
   />
 )
 
