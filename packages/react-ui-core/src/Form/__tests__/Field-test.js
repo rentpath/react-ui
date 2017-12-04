@@ -136,6 +136,13 @@ describe('Form/Field', () => {
     })
   })
 
+  describe('when there is no "label"', () => {
+    it('does not render a label', () => {
+      const { wrapper } = setup({ theme })
+      expect(wrapper.find('label').exists()).toBeFalsy()
+    })
+  })
+
   describe('when "error" is a string', () => {
     it('renders an error with custom text', () => {
       const { wrapper } = setup({ error: 'error' })

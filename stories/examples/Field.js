@@ -29,3 +29,13 @@ export const CheckboxField = (
     label="Option"
   />
 )
+
+export const RadioField = (
+  <Field
+    theme={FieldTheme}
+    type="radio"
+    label="Radio"
+    value="one-op"
+    checked
+  />
+)
