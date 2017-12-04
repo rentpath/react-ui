@@ -13,3 +13,6 @@ export { default as CounterTheme } from './Counter.css'
 export { default as RatingBarTheme } from './RatingBar.css'
 export { default as ListTheme } from './List.css'
 export { default as LeadTheme } from './Lead.css'
+export { default as RadioGroupTheme } from './RadioGroup.css'
+export { default as RadioButtonTheme } from './RadioButton.css'
+
