@@ -1,0 +1,28 @@
+.Text {
+  text-transform: uppercase;
+  font-size: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.Input {
+  border: 1px solid #aaa;
+  padding: 6px 10px;
+  margin: 0 8px;
+  flex: 4;
+}
+
+.resetButton {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-style: none;
+  font-weight: bold;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-style: none;
+  font-weight: bold;
+}

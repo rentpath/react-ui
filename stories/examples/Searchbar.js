@@ -1,7 +1,7 @@
 import React from 'react'
 import { SearchBar } from 'react-ui-core/src'
 import { DefaultButton } from './Button'
-import theme from '../theme/Form.css'
+import theme from '../theme/SearchBar.css'
 
 export const DefaultSearchBar = (
   <SearchBar
