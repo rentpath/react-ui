@@ -40,6 +40,7 @@ import {
   ListWithOwnItemComponent,
   DefaultSearchBar,
   SearchBarWithHTMLButton,
+  SearchBarSubmitButton,
 } from './examples'
 
 storiesOf('Button', module)
@@ -107,4 +108,5 @@ storiesOf('List', module)
 storiesOf('SearchBar', module)
   .addWithInfo('default', 'Default themed', () => DefaultSearchBar)
   .addWithInfo('with HTML button prop', 'Default themed', () => SearchBarWithHTMLButton)
+  .addWithInfo('with submit button', 'Default themed', () => SearchBarSubmitButton)
 

@@ -49,6 +49,7 @@ export default class SearchBar extends Component {
     this.reset = this.reset.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSuggestionSelection = this.handleSuggestionSelection.bind(this)
+    this.handleOnSubmit = this.handleOnSubmit.bind(this)
     this.onKeyDown = this.onKeyDown.bind(this)
     this.activateSuggestion = this.activateSuggestion.bind(this)
     this.disableSuggestions = this.disableSuggestions.bind(this)
@@ -62,6 +63,7 @@ export default class SearchBar extends Component {
       suggestionsVisible,
       activeSuggestionIndex: 0,
     }
+    this.onInput(value)
   }
 
   componentWillUnmount() {
@@ -117,6 +119,10 @@ export default class SearchBar extends Component {
     this.setState({
       value: selectedValue,
     })
+  }
+
+  handleOnSubmit() {
+    this.props.onSubmit(this.state.value)
   }
 
   reset() {
@@ -186,7 +192,7 @@ export default class SearchBar extends Component {
             onKeyDown={this.onKeyDown}
             onFocus={this.enableSuggestions}
           />
-          {this.button(submitButton, onSubmit, 'submit')}
+          {this.button(submitButton, this.handleOnSubmit, 'submit')}
           {this.button(resetButton, this.reset, 'reset')}
         </div>
         { suggestionsVisible &&

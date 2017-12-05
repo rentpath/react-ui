@@ -27,7 +27,7 @@ class Example extends Component {
         'these', 'so', 'some', 'her', 'would', 'make', 'like', 'him', 'into', 'time', 'has',
         'look', 'two', 'more', 'write', 'go', 'see', 'number', 'no', 'way', 'could', 'people',
         'my', 'than', 'first', 'water', 'been', 'call', 'who', 'oil', 'its', 'now', 'find', 'long',
-        'down', 'day', 'did', 'get', 'come', 'made', 'may', 'part']
+        'down', 'day', 'did', 'get', 'come', 'made', 'may', 'part', 'test']
 
     if (length < 1) {
       this.setState({ suggestions: [] })
@@ -45,7 +45,6 @@ class Example extends Component {
         theme={theme}
         resetButton={closeButton}
         placeholder="Search"
-        value="test"
         onInput={value => this.generateList(value)}
         onAfterReset={() => console.log('after reset')}
         onSubmit={() => console.log('On submit')}
@@ -64,6 +63,24 @@ export const SearchBarWithHTMLButton = (
     theme={theme}
     placeholder="Search"
     resetButton={<button>X</button>}
+    value="test"
+    suggestions={[<h1>HELLO</h1>, 'a', 'c', 'd']}
+    suggestionValueSelector={value => {
+      if (typeof value === 'object') {
+        return value.props.children
+      }
+      return value
+    }}
+  />,
+  ]
+)
+
+export const SearchBarSubmitButton = (
+  [<SearchBar
+    theme={theme}
+    placeholder="Search"
+    submitButton={<span role="img" aria-label="search" >&#128270;</span>}
+    onSubmit={value => { console.log(value) }}
     value="test"
     suggestions={[<h1>HELLO</h1>, 'a', 'c', 'd']}
     suggestionValueSelector={value => {
