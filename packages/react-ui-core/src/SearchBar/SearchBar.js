@@ -108,10 +108,14 @@ export default class SearchBar extends Component {
   }
 
   handleSuggestionSelection() {
-    const { suggestions } = this.props
+    const { suggestions, suggestionValueSelector } = this.props
     const { activeSuggestionIndex } = this.state
+    const selectedValue = suggestionValueSelector ?
+      suggestionValueSelector(suggestions[activeSuggestionIndex]) :
+      suggestions[activeSuggestionIndex]
+
     this.setState({
-      value: suggestions[activeSuggestionIndex],
+      value: selectedValue,
     })
   }
 
