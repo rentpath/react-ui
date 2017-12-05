@@ -138,6 +138,11 @@ export default class SearchBar extends Component {
     ) : null
   }
 
+  testOnBlur(e) {
+    console.log(e)
+    console.log(e.target)
+  }
+
   render() {
     const {
       theme,
@@ -156,7 +161,7 @@ export default class SearchBar extends Component {
     } = this.state
 
     return (
-      [
+      <div onBlur={this.testOnBlur}>
         <div className={theme.searchBar}>
           <Input
             theme={theme}
@@ -166,26 +171,26 @@ export default class SearchBar extends Component {
             onChange={this.handleChange}
             key={`input-${this.uniqueId}`}
             onKeyDown={this.onKeyDown}
-            onBlur={this.disableSuggestions}
             onFocus={this.enableSuggestions}
           />
           {this.button(submitButton, onSubmit, 'submit')}
           {this.button(resetButton, this.reset.bind(this), 'reset')}
-        </div>,
-        suggestionsVisible &&
-        <List
-          className={theme.suggestions}
-          key={`suggestions-${this.uniqueId}`}
-          theme={theme}
-          items={suggestions}
-          Item={ItemWrapper}
-          nodeType="div"
-          listItemNodeType="ul"
-          selectedIndex={activeSuggestionIndex}
-          onClick={this.handleSuggestionSelection}
-          onSelectionHover={this.activateSuggestion}
-        />,
-      ]
+        </div>
+        { suggestionsVisible &&
+          <List
+            className={theme.suggestions}
+            key={`suggestions-${this.uniqueId}`}
+            theme={theme}
+            items={suggestions}
+            Item={ItemWrapper}
+            nodeType="div"
+            listItemNodeType="ul"
+            selectedIndex={activeSuggestionIndex}
+            onSelectionClick={this.handleSuggestionSelection}
+            onSelectionHover={this.activateSuggestion}
+          />
+        }
+      </div>
     )
   }
 }

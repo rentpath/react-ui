@@ -32,6 +32,10 @@
   margin-left: 8px;
 }
 
+.ListItem:Hover {
+
+}
+
 .ListItem {
   border-bottom: 1px solid grey;
   padding: 10px;
@@ -40,6 +44,7 @@
 
 .ListItem.Selected {
   font-weight: bolder;
+  background-color: grey;
 }
 
 .searchBar {
