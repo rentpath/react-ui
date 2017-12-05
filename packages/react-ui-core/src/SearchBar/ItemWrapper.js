@@ -17,11 +17,6 @@ export default class ItemWrapper extends Component {
     this.handleHover = this.handleHover.bind(this)
   }
 
-  testEvent(e) {
-    e.preventDefault()
-    console.log(e)
-  }
-
   handleHover() {
     this.props.onSelectionHover(this.props.index)
   }
@@ -32,9 +27,7 @@ export default class ItemWrapper extends Component {
       index,
       theme,
       children,
-      onSelectionHover,
       onSelectionClick,
-      ...props
     } = this.props
 
     return (
@@ -45,7 +38,6 @@ export default class ItemWrapper extends Component {
         )}
         onClick={onSelectionClick}
         onMouseEnter={this.handleHover}
-        {...props}
       >
         {children}
       </div>
