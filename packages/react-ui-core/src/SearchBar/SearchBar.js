@@ -172,13 +172,12 @@ export default class SearchBar extends Component {
       <div onBlur={this.testOnBlur}>
         <div className={theme.searchBar}>
           <input
+            className={theme.Input}
             ref={node => { this.input = node }}
             theme={theme}
-            className={className}
             value={value}
             placeholder={placeholder}
             onChange={this.handleChange}
-            key={`input-${this.uniqueId}`}
             onKeyDown={this.onKeyDown}
             onFocus={this.enableSuggestions}
           />
@@ -188,7 +187,6 @@ export default class SearchBar extends Component {
         { suggestionsVisible &&
           <List
             className={theme.suggestions}
-            key={`suggestions-${this.uniqueId}`}
             theme={theme}
             items={suggestions}
             Item={ItemWrapper}

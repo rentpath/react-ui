@@ -14,10 +14,12 @@
 }
 
 .resetButton {
-  padding: 10px 20px;
+  padding: 5px;
   border-radius: 5px;
   border-style: none;
   font-weight: bold;
+  position: relative;
+  left: -30px;
 }
 
 .submitButton {
@@ -28,12 +30,8 @@
 }
 
 .suggestions {
-  width: 100px;
+  min-width: 100px;
   margin-left: 8px;
-}
-
-.ListItem:Hover {
-
 }
 
 .ListItem {

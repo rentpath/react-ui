@@ -1,12 +1,17 @@
 import React from 'react'
-import { SearchBar } from 'react-ui-core/src'
-import { DefaultButton } from './Button'
+import { SearchBar, Button } from 'react-ui-core/src'
 import theme from '../theme/SearchBar.css'
+
+const closeButton = (
+  <Button>
+    X
+  </Button>
+)
 
 export const DefaultSearchBar = (
   <SearchBar
     theme={theme}
-    resetButton={DefaultButton}
+    resetButton={closeButton}
     placeholder="Search"
     value="test"
     onInput={value => console.log(value)}
@@ -20,7 +25,8 @@ export const SearchBarWithHTMLButton = (
   <SearchBar
     theme={theme}
     placeholder="Search"
-    resetButton={<button>click me</button>}
+    resetButton={<button>X</button>}
     value="test"
+    suggestions={[<h1>HELLO</h1>, 'a', 'c', 'd']}
   />
 )
