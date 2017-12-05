@@ -80,4 +80,5 @@ export {
 export {
   DefaultSearchBar,
   SearchBarWithHTMLButton,
+  LocationSearch,
 } from './Searchbar'

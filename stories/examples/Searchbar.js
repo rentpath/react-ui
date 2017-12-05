@@ -76,3 +76,11 @@ export const SearchBarWithHTMLButton = (
   />,
   ]
 )
+
+export const LocationSearch = (
+  [<SearchBar
+    theme={theme}
+    resetButton="closeButton"
+    placeholder="City, State, Neighbourhood, Zip"
+  />]
+)
