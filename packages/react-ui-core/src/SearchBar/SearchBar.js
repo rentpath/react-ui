@@ -29,6 +29,7 @@ export default class SearchBar extends Component {
     onSubmit: PropTypes.func,
     value: PropTypes.string,
     placeholder: PropTypes.string,
+    suggestionValueSelector: PropTypes.func,
   }
 
   static defaultProps = {
