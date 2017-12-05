@@ -36,12 +36,10 @@ export default class ModalBody extends PureComponent {
           theme.ModalBody,
           className
         )}
+        {...props}
       >
-        {CloseButton && <CloseButton onClick={onClose} />}
-        <div
-          className={theme.ModalBody_InnerBody}
-          {...props}
-        >
+        {CloseButton && <CloseButton onClick={onClose} data-tid="modal-close-button" />}
+        <div className={theme.ModalBody_InnerBody}>
           {children}
         </div>
       </div>
