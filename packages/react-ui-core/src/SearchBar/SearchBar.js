@@ -52,6 +52,8 @@ export default class SearchBar extends Component {
     this.activateSuggestion = this.activateSuggestion.bind(this)
     this.disableSuggestions = this.disableSuggestions.bind(this)
     this.enableSuggestions = this.enableSuggestions.bind(this)
+    this.onDocumentClick = this.onDocumentClick.bind(this)
+    this.reset = this.reset.bind(this)
     this.onInput = debounce(this.props.onInput, 300, { leading: false, trailing: true })
 
     this.state = {
@@ -59,6 +61,10 @@ export default class SearchBar extends Component {
       suggestionsVisible,
       activeSuggestionIndex: 0,
     }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.onDocumentClick, false)
   }
 
   onKeyDown(event) {
@@ -83,6 +89,12 @@ export default class SearchBar extends Component {
     }
   }
 
+  onDocumentClick(event) {
+    if (this.state.suggestionsVisible && event.target !== this.input) {
+      this.disableSuggestions()
+    }
+  }
+
   get uniqueId() {
     const id = this._uniqueId || (this._uniqueId = randomId())
     return id
@@ -100,7 +112,6 @@ export default class SearchBar extends Component {
     this.setState({
       value: suggestions[activeSuggestionIndex],
     })
-    console.log('handleSuggestionSelection:', activeSuggestionIndex, suggestions[activeSuggestionIndex])
   }
 
   reset() {
@@ -116,12 +127,14 @@ export default class SearchBar extends Component {
   }
 
   disableSuggestions() {
+    document.addEventListener('click', this.onDocumentClick, false)
     this.setState({
       suggestionsVisible: false,
     })
   }
 
   enableSuggestions() {
+    document.addEventListener('click', this.onDocumentClick, false)
     this.setState({
       suggestionsVisible: true,
     })
@@ -136,11 +149,6 @@ export default class SearchBar extends Component {
         className: this.props.theme[`${buttonType}Button`],
       },
     ) : null
-  }
-
-  testOnBlur(e) {
-    console.log(e)
-    console.log(e.target)
   }
 
   render() {
@@ -163,7 +171,8 @@ export default class SearchBar extends Component {
     return (
       <div onBlur={this.testOnBlur}>
         <div className={theme.searchBar}>
-          <Input
+          <input
+            ref={node => { this.input = node }}
             theme={theme}
             className={className}
             value={value}
@@ -174,7 +183,7 @@ export default class SearchBar extends Component {
             onFocus={this.enableSuggestions}
           />
           {this.button(submitButton, onSubmit, 'submit')}
-          {this.button(resetButton, this.reset.bind(this), 'reset')}
+          {this.button(resetButton, this.reset, 'reset')}
         </div>
         { suggestionsVisible &&
           <List
