@@ -52,7 +52,6 @@ describe('SearchBar', () => {
       expect(onSubmit).toBeCalled()
     })
   })
-  // it('renders a reset button if passed in props', () => {})
   // it('uses placeholder if passed in props', () => {})
   // it('uses value if passed in props', () => {})
   // it('passes theme to the input', () => {
