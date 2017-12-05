@@ -55,26 +55,24 @@ class Example extends Component {
 }
 
 export const DefaultSearchBar = (
-  [<SearchBar
+  <SearchBar
     theme={theme}
     placeholder="Search"
     onSubmit={value => { alert(`submitting ${value}`) }}
     value="test"
     suggestions={['apple', 'banana', 'carrot']}
-  />,
-  ]
+  />
 )
 
 export const SearchBarSubmitButton = (
-  [<SearchBar
+  <SearchBar
     theme={theme}
     placeholder="Search"
     submitButton={<span role="img" aria-label="search" >&#128270;</span>}
     onSubmit={value => { alert(`submitting ${value}`) }}
     value="test"
     suggestions={['apple', 'banana', 'carrot']}
-  />,
-  ]
+  />
 )
 
 export const SearchBarResetButton = (
@@ -88,7 +86,7 @@ export const SearchBarResetButton = (
 )
 
 export const SearchBarWithHTMLButton = (
-  [<SearchBar
+  <SearchBar
     theme={theme}
     placeholder="Search"
     onSubmit={value => { alert(`submitting ${value}`) }}
@@ -100,8 +98,7 @@ export const SearchBarWithHTMLButton = (
       }
       return value
     }}
-  />,
-  ]
+  />
 )
 
 export const SearchBarWithDynamicResults = (

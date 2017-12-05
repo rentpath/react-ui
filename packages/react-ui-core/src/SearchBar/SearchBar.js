@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import debounce from 'lodash/debounce'
 import { randomId } from '@rentpath/react-ui-utils'
 import themed from 'react-themed'
-import { Input } from '../Form'
-import List from '../List'
+import { List } from '../List'
 import ItemWrapper from './ItemWrapper'
 
 const ESC = 27
@@ -165,10 +164,8 @@ export default class SearchBar extends Component {
   render() {
     const {
       theme,
-      className,
       resetButton,
       submitButton,
-      onSubmit,
       placeholder,
       suggestions,
     } = this.props
