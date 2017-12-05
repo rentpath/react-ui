@@ -86,14 +86,19 @@ export default class Counter extends PureComponent {
       theme,
       label,
       className,
+      decrementOperator,
+      incrementOperator,
+      ...props
     } = this.props
 
     return (
-      <div className={
-        classnames(
-          theme.Counter,
-          className
-        )}
+      <div
+        className={
+          classnames(
+            theme.Counter,
+            className
+          )}
+        {...props}
       >
         {label && this.renderLabel}
         <div className={theme.Counter_Controls}>
@@ -106,10 +111,11 @@ export default class Counter extends PureComponent {
                 theme.Counter_Decrement,
               )
             }
+            data-tid="counter-decrement"
           >
-            {this.props.decrementOperator}
+            {decrementOperator}
           </span>
-          <span className={theme.Counter_Text}>
+          <span className={theme.Counter_Text} data-tid="counter-text">
             {this.text(count)}
           </span>
           <span
@@ -121,8 +127,9 @@ export default class Counter extends PureComponent {
                 theme.Counter_Increment,
               )
             }
+            data-tid="counter-increment"
           >
-            {this.props.incrementOperator}
+            {incrementOperator}
           </span>
         </div>
       </div>
