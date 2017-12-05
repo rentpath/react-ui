@@ -26,6 +26,25 @@ describe('Counter', () => {
     expect(wrapper.prop('count')).toEqual(0)
   })
 
+  describe('when props are changed after mount', () => {
+    let wrapper
+
+    beforeEach(() => {
+      wrapper = shallow(
+        <Counter
+          theme={theme}
+          count={3}
+        />,
+      )
+    })
+
+    it('updates the state for counter', () => {
+      wrapper.setProps({ count: 10 })
+      expect(wrapper.state('count')).toEqual(10)
+      expect(wrapper.find('[data-tid="counter-text"]').text()).toEqual('10')
+    })
+  })
+
   describe('custom text', () => {
     it('uses the default "count" prop when no texst provided', () => {
       const count = 2

@@ -44,6 +44,12 @@ export default class Counter extends PureComponent {
     this.decrement = this.decrement.bind(this)
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.count !== nextProps.count) {
+      this.setState({ count: nextProps.count })
+    }
+  }
+
   get renderLabel() {
     const { theme, label } = this.props
 
@@ -88,6 +94,10 @@ export default class Counter extends PureComponent {
       className,
       decrementOperator,
       incrementOperator,
+      text,
+      step,
+      min,
+      max,
       ...props
     } = this.props
 
