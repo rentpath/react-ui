@@ -41,6 +41,8 @@ import {
   DefaultSearchBar,
   SearchBarWithHTMLButton,
   SearchBarSubmitButton,
+  SearchBarResetButton,
+  SearchBarWithDynamicResults,
 } from './examples'
 
 storiesOf('Button', module)
@@ -107,6 +109,8 @@ storiesOf('List', module)
 
 storiesOf('SearchBar', module)
   .addWithInfo('default', 'Default themed', () => DefaultSearchBar)
-  .addWithInfo('with HTML button prop', 'Default themed', () => SearchBarWithHTMLButton)
-  .addWithInfo('with submit button', 'Default themed', () => SearchBarSubmitButton)
+  .addWithInfo('with mixed html list', 'Mixed html list and suggestion value selector', () => SearchBarWithHTMLButton)
+  .addWithInfo('with submit button', 'Submit button', () => SearchBarSubmitButton)
+  .addWithInfo('with reset button', 'Reset button', () => SearchBarResetButton)
+  .addWithInfo('with dynamic asynchronous results', 'Async results', () => SearchBarWithDynamicResults)
 

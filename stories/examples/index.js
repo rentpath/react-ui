@@ -81,4 +81,6 @@ export {
   DefaultSearchBar,
   SearchBarWithHTMLButton,
   SearchBarSubmitButton,
+  SearchBarResetButton,
+  SearchBarWithDynamicResults,
 } from './Searchbar'

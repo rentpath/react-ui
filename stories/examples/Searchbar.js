@@ -55,22 +55,12 @@ class Example extends Component {
 }
 
 export const DefaultSearchBar = (
-  <Example />
-)
-
-export const SearchBarWithHTMLButton = (
   [<SearchBar
     theme={theme}
     placeholder="Search"
-    resetButton={<button>X</button>}
+    onSubmit={value => { alert(`submitting ${value}`) }}
     value="test"
-    suggestions={[<h1>HELLO</h1>, 'a', 'c', 'd']}
-    suggestionValueSelector={value => {
-      if (typeof value === 'object') {
-        return value.props.children
-      }
-      return value
-    }}
+    suggestions={['apple', 'banana', 'carrot']}
   />,
   ]
 )
@@ -80,7 +70,28 @@ export const SearchBarSubmitButton = (
     theme={theme}
     placeholder="Search"
     submitButton={<span role="img" aria-label="search" >&#128270;</span>}
-    onSubmit={value => { console.log(value) }}
+    onSubmit={value => { alert(`submitting ${value}`) }}
+    value="test"
+    suggestions={['apple', 'banana', 'carrot']}
+  />,
+  ]
+)
+
+export const SearchBarResetButton = (
+  [<SearchBar
+    theme={theme}
+    placeholder="Search"
+    resetButton={<button>X</button>}
+    suggestions={['Option 1', 'Option 2', 'Option 3']}
+  />,
+  ]
+)
+
+export const SearchBarWithHTMLButton = (
+  [<SearchBar
+    theme={theme}
+    placeholder="Search"
+    onSubmit={value => { alert(`submitting ${value}`) }}
     value="test"
     suggestions={[<h1>HELLO</h1>, 'a', 'c', 'd']}
     suggestionValueSelector={value => {
@@ -91,4 +102,8 @@ export const SearchBarSubmitButton = (
     }}
   />,
   ]
+)
+
+export const SearchBarWithDynamicResults = (
+  <Example />
 )
