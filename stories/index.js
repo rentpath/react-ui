@@ -39,6 +39,7 @@ import {
   ListWithPassedNodeTypes,
   ListWithOwnItemComponent,
   DefaultLeadModal,
+  DefaultCard,
 } from './examples'
 
 storiesOf('Button', module)
@@ -105,3 +106,6 @@ storiesOf('List', module)
 
 storiesOf('Rent Lead', module)
   .add('Default themed', () => DefaultLeadModal)
+
+storiesOf('Card', module)
+  .addWithInfo('default', 'Default Card', () => DefaultCard)

@@ -80,3 +80,7 @@ export {
 export {
   DefaultLeadModal,
 } from './rent'
+
+export {
+  DefaultCard,
+} from './Card'
