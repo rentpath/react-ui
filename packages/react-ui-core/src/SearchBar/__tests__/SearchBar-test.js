@@ -52,12 +52,33 @@ describe('SearchBar', () => {
       expect(onSubmit).toBeCalled()
     })
   })
-  // it('uses placeholder if passed in props', () => {})
-  // it('uses value if passed in props', () => {})
-  // it('passes theme to the input', () => {
-  //   const { wrapper } = setup({ theme })
-  //   expect(wrapper.find('Input').prop('theme')).toEqual(theme)
-  // })
+
+  it('uses placeholder if passed in props', () => {
+    const wrapper = mount(
+      <SearchBar
+        placeholder="test"
+      />
+    )
+    expect(wrapper.find('input').props().placeholder).toBe('test')
+  })
+
+  it('uses value if passed in props', () => {
+    const wrapper = mount(
+      <SearchBar
+        value="test"
+      />
+    )
+    expect(wrapper.find('input').props().value).toBe('test')
+  })
+
+  it('passes theme to the input', () => {
+    const wrapper = mount(
+      <SearchBar
+        theme={theme}
+      />
+    )
+    expect(wrapper.find('input').prop('theme')).toEqual(theme)
+  })
   // it('Renders suggestions in a List', () => {})
   // it('does not show suggestions by default', () => {})
   // it('closes suggestions list when a suggestion is clicked', () => {})

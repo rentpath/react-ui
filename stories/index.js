@@ -109,7 +109,7 @@ storiesOf('List', module)
 
 storiesOf('SearchBar', module)
   .addWithInfo('default', 'Default themed', () => DefaultSearchBar)
-  .addWithInfo('with mixed html list', 'Mixed html list and suggestion value selector', () => SearchBarWithHTMLButton)
+  .addWithInfo('with mixed suggestion list', 'Mixed html list (strings and html objects) and suggestion value selector', () => SearchBarWithHTMLButton)
   .addWithInfo('with submit button', 'Submit button', () => SearchBarSubmitButton)
   .addWithInfo('with reset button', 'Reset button', () => SearchBarResetButton)
   .addWithInfo('with dynamic asynchronous results', 'Async results', () => SearchBarWithDynamicResults)
