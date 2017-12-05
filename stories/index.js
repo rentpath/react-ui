@@ -107,3 +107,4 @@ storiesOf('List', module)
 storiesOf('SearchBar', module)
   .addWithInfo('default', 'Default themed', () => DefaultSearchBar)
   .addWithInfo('with HTML button prop', 'Default themed', () => SearchBarWithHTMLButton)
+
