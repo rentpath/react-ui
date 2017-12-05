@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TermsOfService renders children passed 1`] = `
+<div
+  className="TermsOfService"
+>
+  Foo
+</div>
+`;
+
+exports[`TermsOfService renders default children if none passed 1`] = `
+<div
+  className="TermsOfService"
+>
+  <div>
+    By submitting this form, you agree to Rent.com's 
+    <a
+      href="/company/legal/termsofservice/"
+    >
+       Terms of Service
+    </a>
+     and 
+    <a
+      href="/company/privacy-full/"
+    >
+       Privacy Policy
+    </a>
+    .
+  </div>
+</div>
+`;

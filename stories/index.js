@@ -38,6 +38,7 @@ import {
   HorizontalList,
   ListWithPassedNodeTypes,
   ListWithOwnItemComponent,
+  DefaultLeadModal,
 } from './examples'
 
 storiesOf('Button', module)
@@ -101,3 +102,6 @@ storiesOf('List', module)
   .addWithInfo('Horizontal List', 'Horizontal', () => HorizontalList)
   .addWithInfo('List with passed node types', 'Passed Node Types', () => ListWithPassedNodeTypes)
   .addWithInfo('List with own item component', 'Own item component', () => ListWithOwnItemComponent)
+
+storiesOf('Rent Lead', module)
+  .add('Default themed', () => DefaultLeadModal)

@@ -76,3 +76,7 @@ export {
   ListWithPassedNodeTypes,
   ListWithOwnItemComponent,
 } from './List'
+
+export {
+  DefaultLeadModal,
+} from './rent'
