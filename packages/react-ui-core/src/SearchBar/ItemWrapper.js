@@ -12,17 +12,22 @@ export default class ItemWrapper extends PureComponent {
   }
 
   render() {
-    const { selectedIndex, index, theme, children, onSelectionHover,
-      ...props } = this.props
+    const {
+      selectedIndex,
+      index,
+      theme,
+      children,
+      onSelectionHover,
+      ...props
+    } = this.props
 
     return (
       <div
         className={cn(
           theme.ListItem,
-          selectedIndex === index && theme.ListItemSelected
+          selectedIndex === index && theme.Selected
         )}
-        onMouseEnter={() => { onSelectionHover(index) }}
-        onMouseLeave={() => { onSelectionHover(index) }}
+        onMouseEnter={console.log('hover')}
         {...props}
       >
         {children}

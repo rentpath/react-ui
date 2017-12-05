@@ -109,8 +109,7 @@ export default class SearchBar extends Component {
   }
 
   activateSuggestion(index) {
-    console.log('activateSuggestion', index)
-    if (index <= 0 || index >= this.props.suggestions.length) return
+    if (index < 0 || index >= this.props.suggestions.length) return
     this.setState({
       activeSuggestionIndex: index,
     })
@@ -156,8 +155,6 @@ export default class SearchBar extends Component {
       activeSuggestionIndex,
     } = this.state
 
-    console.log(value)
-
     return (
       [
         <div className={theme.searchBar}>
@@ -175,18 +172,19 @@ export default class SearchBar extends Component {
           {this.button(submitButton, onSubmit, 'submit')}
           {this.button(resetButton, this.reset.bind(this), 'reset')}
         </div>,
-        suggestionsVisible && <div className={theme.suggestions} key={`suggestions-${this.uniqueId}`}>
-          <List
-            theme={theme}
-            items={suggestions}
-            Item={ItemWrapper}
-            nodeType="div"
-            listItemNodeType="ul"
-            selectedIndex={activeSuggestionIndex}
-            onClick={this.handleSuggestionSelection}
-            onSelectionHover={this.activateSuggestion}
-          />
-        </div>,
+        suggestionsVisible &&
+        <List
+          className={theme.suggestions}
+          key={`suggestions-${this.uniqueId}`}
+          theme={theme}
+          items={suggestions}
+          Item={ItemWrapper}
+          nodeType="div"
+          listItemNodeType="ul"
+          selectedIndex={activeSuggestionIndex}
+          onClick={this.handleSuggestionSelection}
+          onSelectionHover={this.activateSuggestion}
+        />,
       ]
     )
   }

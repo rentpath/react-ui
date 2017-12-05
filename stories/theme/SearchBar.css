@@ -26,3 +26,22 @@
   border-style: none;
   font-weight: bold;
 }
+
+.suggestions {
+  width: 100px;
+  margin-left: 8px;
+}
+
+.ListItem {
+  border-bottom: 1px solid grey;
+  padding: 10px;
+  background-color: #d2d2d2;
+}
+
+.ListItem.Selected {
+  font-weight: bolder;
+}
+
+.searchBar {
+
+}
