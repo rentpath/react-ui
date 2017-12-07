@@ -54,6 +54,7 @@
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-dom": "^16.2.0",
+    "react-storybook-addon-chapters": "^2.1.0",
     "react-test-renderer": "^16.2.0"
   },
   "dependencies": {

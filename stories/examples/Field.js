@@ -1,10 +1,8 @@
 import React from 'react'
 import { Field } from 'react-ui-core/src'
-import { FieldTheme } from '../theme'
 
 export const SelectField = (
   <Field
-    theme={FieldTheme}
     type="select"
     label="Priority"
     options={[
@@ -18,13 +16,11 @@ export const DefaultField = (
   <Field
     label="Name"
     placeholder="Enter name"
-    theme={FieldTheme}
   />
 )
 
 export const CheckboxField = (
   <Field
-    theme={FieldTheme}
     type="checkbox"
     label="Option"
   />
@@ -32,7 +28,6 @@ export const CheckboxField = (
 
 export const RadioField = (
   <Field
-    theme={FieldTheme}
     type="radio"
     label="Radio"
     value="one-op"

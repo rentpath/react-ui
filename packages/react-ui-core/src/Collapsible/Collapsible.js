@@ -7,6 +7,9 @@ import { Button } from '../Button'
 const type = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.element,
+  PropTypes.node,
+  PropTypes.func,
+  PropTypes.array,
 ])
 
 @themed(/^Collapsible/, {

@@ -1,0 +1,27 @@
+
+.Form {
+  width: 500px;
+}
+
+.Input,
+.Select,
+.Textarea {
+  padding: 6px 10px;
+  flex: 4;
+}
+
+.FieldSet {
+  width: 100%;
+  border: none;
+}
+
+.FieldSet_legend {
+  width: 100%;
+  text-align: center;
+}
+
+.col {
+  width: 50%;
+  white-space: nowrap;
+  display: inline-block;
+}
