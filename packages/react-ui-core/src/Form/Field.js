@@ -157,6 +157,7 @@ export default class Field extends Component {
       disabled,
       container,
       children,
+      className,
       ...rest
     } = this.props
 
@@ -213,6 +214,7 @@ export default class Field extends Component {
       fieldProps,
     ] = parseArgs(container, null, {
       className: classNames(
+        className,
         theme.Field,
         theme[`Field-${type}`],
         focused && theme['Field-focused'],

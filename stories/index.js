@@ -6,6 +6,10 @@ import {
   DefaultField,
   SelectField,
   CheckboxField,
+  RadioField,
+  DefaultRadioGroup,
+  ButtonRadioGroup,
+  VerticalRadioGroup,
   DefaultButton,
   ButtonWithColor,
   ButtonLarge,
@@ -62,6 +66,12 @@ storiesOf('Field', module)
   .addWithInfo('default', 'Default field is text input', () => DefaultField)
   .addWithInfo('with type select', 'Field with prop type set to select', () => SelectField)
   .addWithInfo('with type checkbox', 'Field with prop type set to checkbox', () => CheckboxField)
+  .addWithInfo('with type radiobutton', 'Field with prop type set to radio', () => RadioField)
+
+storiesOf('RadioGroup', module)
+  .add('default', () => DefaultRadioGroup)
+  .add('rendered vertically as buttons', () => ButtonRadioGroup)
+  .add('rendered vertically', () => VerticalRadioGroup)
 
 storiesOf('Modal', module)
   .addDecorator(withKnobs)
