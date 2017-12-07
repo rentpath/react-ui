@@ -44,6 +44,8 @@ import {
   ListWithOwnItemComponent,
   DefaultLeadModal,
   DefaultCard,
+  DefaultTitle,
+  EmbeddedLinkWithinTitle,
 } from './examples'
 
 storiesOf('Button', module)
@@ -119,3 +121,7 @@ storiesOf('Rent Lead', module)
 
 storiesOf('Card', module)
   .addWithInfo('default', 'Default Card', () => DefaultCard)
+
+storiesOf('Title', module)
+  .add('Default Title', () => DefaultTitle)
+  .add('Embedded Link within Title', () => EmbeddedLinkWithinTitle)
