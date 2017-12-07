@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders passed children and adds data-tid 1`] = `
+<div
+  className=""
+  titleNodeType="h2"
+>
+  <div
+    className={undefined}
+    data-tid="card-content"
+  >
+    <h1>
+      Hello world
+    </h1>
+  </div>
+</div>
+`;

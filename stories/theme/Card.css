@@ -1,0 +1,9 @@
+.Card {
+  border: solid;
+  width: 500px;
+  height: 200px;
+}
+
+.Title {
+  text-align: center;
+}
