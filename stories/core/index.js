@@ -91,6 +91,12 @@ import {
   DropdownMenuOnSelectionHover,
 } from './DropdownMenu'
 
+import {
+  DefaultDropDownMenu,
+  DropDownMenuOnSelection,
+  DropDownMenuOnSelectionHover,
+} from './DropDownMenu'
+
 const CoreThemeDecorator = storyFn => (
   <Theme theme={CoreTheme}>
     {storyFn()}
