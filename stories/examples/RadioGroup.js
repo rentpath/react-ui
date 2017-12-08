@@ -13,7 +13,7 @@ export const DefaultRadioGroup = (
   <ThemeProvider theme={theme}>
     <RadioGroup
       data-tid="foobar"
-      name={'radio-group-1'}
+      name="radio-group-1"
       fields={[
         { label: 'One', checked: false, value: 'One' },
         { label: 'Two', checked: false, value: 'Two' },
@@ -26,7 +26,7 @@ export const DefaultRadioGroup = (
 export const ButtonRadioGroup = (
   <ThemeProvider theme={theme}>
     <RadioGroup
-      name={'radio-group-2'}
+      name="radio-group-2"
       orientation="vertical"
       hideInputElement
       fields={[
@@ -41,7 +41,7 @@ export const ButtonRadioGroup = (
 export const VerticalRadioGroup = (
   <RadioGroup
     theme={RadioGroupTheme}
-    name={'radio-group-3'}
+    name="radio-group-3"
     orientation="vertical"
     fields={[
       { label: 'Un', checked: false, value: 'Un' },

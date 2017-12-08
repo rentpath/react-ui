@@ -44,6 +44,7 @@ import {
   ListWithOwnItemComponent,
   DefaultLeadModal,
   DefaultCard,
+  DefaultBedroomFilter,
 } from './examples'
 
 storiesOf('Button', module)
@@ -119,3 +120,6 @@ storiesOf('Rent Lead', module)
 
 storiesOf('Card', module)
   .addWithInfo('default', 'Default Card', () => DefaultCard)
+
+storiesOf('BedroomFilter', module)
+  .addWithInfo('default', 'Default Bedroom Filter', () => DefaultBedroomFilter)
