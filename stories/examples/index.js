@@ -83,6 +83,10 @@ export {
 } from './rent'
 
 export {
+  DefaultBedroomFilter,
+} from './ag'
+
+export {
   DefaultCard,
 } from './Card'
 
