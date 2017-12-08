@@ -13,7 +13,8 @@ import RatingBar from './RatingBar.css'
 import Title from './Title.css'
 import Form from './Form.css'
 import FilterPanel from './FilterPanel.css'
-import DropDown from './DropDown.css'
+import Dropdown from './Dropdown.css'
+import DropdownMenu from './DropdownMenu.css'
 import List from './List.css'
 import Card from './Card.css'
 import Modal from './Modal.css'
@@ -38,14 +39,14 @@ export default compose({},
   RatingBar,
   Form,
   FilterPanel,
-  DropDown,
+  Dropdown,
+  DropdownMenu,
   List,
   Card,
   Modal,
   ModalBody,
   Overlay,
   LeadForm,
-
   Grid,
   Responsive,
 )

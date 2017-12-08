@@ -1,0 +1,25 @@
+.Dropdown {
+  margin: 20px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.Dropdown_Content {
+  background: grey;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+}
+
+.Dropdown_Anchor-dropdownVisible {
+  background: grey;
+}
+
+.Dropdown_Anchor {
+  color: white;
+}
+
+.Dropdown .Text {
+  color: white;
+}

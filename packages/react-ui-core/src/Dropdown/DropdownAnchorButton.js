@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Button } from '../Button'
 
-export default class DefaultAnchor extends PureComponent {
+export default class DropdownAnchorButton extends PureComponent {
   static propTypes = {
     toggleVisibilty: PropTypes.func,
     handleDocumentClick: PropTypes.func,

@@ -59,8 +59,9 @@ export {
 } from './Title'
 
 export {
-  DropDown,
-} from './DropDown'
+  Dropdown,
+  DropdownMenu,
+} from './Dropdown'
 
 export {
   LeadForm,
