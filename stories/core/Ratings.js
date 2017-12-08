@@ -1,6 +1,6 @@
 import React from 'react'
 import { RatingBar } from 'react-ui-core/src'
-import { Square, Circle } from '../SampleRatingItem'
+import { Square, Circle } from './SampleRatingItem'
 
 export const DefaultRatings = (
   <RatingBar

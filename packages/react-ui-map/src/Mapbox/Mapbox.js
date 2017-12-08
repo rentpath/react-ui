@@ -36,6 +36,7 @@ export default class Mapbox extends Component {
 
   static defaultProps = {
     theme: {},
+    children: [],
     flyToCenter: false,
     dragRotate: true,
     touchRotate: true,
