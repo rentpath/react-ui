@@ -21,7 +21,7 @@ export default keyMirror([
   'Textarea',
   'RadioButton',
   'RadioButton-checked',
-  'RadioButton-hide',
+  'RadioButton-hidden',
   'RadioButton-vertical',
   'RadioGroup',
 ])

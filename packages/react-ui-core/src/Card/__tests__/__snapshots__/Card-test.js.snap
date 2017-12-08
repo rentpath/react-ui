@@ -3,7 +3,6 @@
 exports[`Card renders passed children and adds data-tid 1`] = `
 <div
   className=""
-  titleNodeType="h2"
 >
   <div
     className={undefined}

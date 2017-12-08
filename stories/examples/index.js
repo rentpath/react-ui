@@ -91,3 +91,8 @@ export {
   ButtonRadioGroup,
   VerticalRadioGroup,
 } from './RadioGroup'
+
+export {
+  DefaultTitle,
+  EmbeddedLinkWithinTitle,
+} from './Title'
