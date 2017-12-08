@@ -55,6 +55,7 @@ export {
   DefaultCounter,
   CounterStep,
   CounterText,
+  CounterCustomButtons,
 } from './Counter'
 
 export {
@@ -62,12 +63,8 @@ export {
   SquareRatings,
   CircleRatings,
   ThreeRatings,
-  TwoRatings,
-  OneRatings,
   ManyRatings,
-  Partial1,
-  Partial2,
-  Partial3,
+  Partial,
   PartialTwoColor,
 } from './Ratings'
 

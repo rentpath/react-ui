@@ -4,7 +4,7 @@ import InputRange from 'react-input-range'
 import classnames from 'classnames'
 import themed from 'react-themed'
 
-@themed(/^RangeSlider/, {
+@themed('*', {
   pure: true,
 })
 

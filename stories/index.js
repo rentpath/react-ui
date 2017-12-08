@@ -1,12 +1,19 @@
+import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
+import { withInfo } from '@storybook/addon-info'
+import { Theme } from 'react-themed'
+import {
+  CoreTheme,
+  RentTheme,
+} from './theme'
+
 import {
   CompleteForm,
   Text,
   DefaultField,
   SelectField,
   CheckboxField,
-  RadioField,
   DefaultRadioGroup,
   ButtonRadioGroup,
   VerticalRadioGroup,
@@ -26,17 +33,14 @@ import {
   DefaultCounter,
   CounterStep,
   CounterText,
+  CounterCustomButtons,
   MapExample,
   DefaultRatings,
   SquareRatings,
   CircleRatings,
   ThreeRatings,
-  TwoRatings,
-  OneRatings,
   ManyRatings,
-  Partial1,
-  Partial2,
-  Partial3,
+  Partial,
   PartialTwoColor,
   DefaultList,
   HorizontalList,
@@ -48,80 +52,120 @@ import {
   EmbeddedLinkWithinTitle,
 } from './examples'
 
+const CoreThemeDecorator = storyFn => (
+  <Theme theme={CoreTheme}>
+    {storyFn()}
+  </Theme>
+)
+
+const RentThemeDecorator = storyFn => (
+  <Theme theme={RentTheme}>
+    {storyFn()}
+  </Theme>
+)
+
 storiesOf('Button', module)
-  .addWithInfo('default', 'Default themed button', () => DefaultButton)
-  .addWithInfo('with color', 'Button with color prop added', () => ButtonWithColor)
-  .addWithInfo('small', 'Small button with size prop set', () => ButtonSmall)
-  .addWithInfo('large', 'Large button with size prop set', () => ButtonLarge)
+  .addDecorator((story, context) => withInfo('Button')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('default', () => DefaultButton)
+  .add('with color', () => ButtonWithColor)
+  .add('small', () => ButtonSmall)
+  .add('large', () => ButtonLarge)
 
 storiesOf('Layout', module)
-  .addWithInfo('Grid', 'grids rows and columns using flexbox', () => Grid)
-  .addWithInfo('Responsive template', 'responsive template using flexbox', () => ResponsiveTemplate)
+  .addDecorator((story, context) => withInfo('Layout')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('Grid', () => Grid)
+  .add('Responsive template', () => ResponsiveTemplate)
 
 storiesOf('Form', module)
-  .addWithInfo('complete form', 'Form with multiple components added', () => CompleteForm)
-  .addWithInfo('Filter Panel', 'Form with multiple components added', () => FilterPanel)
+  .addDecorator((story, context) => withInfo('Form')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('Form', () => CompleteForm)
+  .add('Filter Panel', () => FilterPanel)
 
 storiesOf('RangeSlider', module)
-  .addWithInfo('examples', 'slider input', () => RangeSlider)
+  .addDecorator((story, context) => withInfo('Slider')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('examples', () => RangeSlider)
 
 storiesOf('Field', module)
-  .addWithInfo('default', 'Default field is text input', () => DefaultField)
-  .addWithInfo('with type select', 'Field with prop type set to select', () => SelectField)
-  .addWithInfo('with type checkbox', 'Field with prop type set to checkbox', () => CheckboxField)
-  .addWithInfo('with type radiobutton', 'Field with prop type set to radio', () => RadioField)
+  .addDecorator((story, context) => withInfo('Field')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('default', () => DefaultField)
+  .add('with type select', () => SelectField)
+  .add('with type checkbox', () => CheckboxField)
 
 storiesOf('RadioGroup', module)
+  .addDecorator((story, context) => withInfo('RadioGroup')(story)(context))
+  .addDecorator(CoreThemeDecorator)
   .add('default', () => DefaultRadioGroup)
   .add('rendered vertically as buttons', () => ButtonRadioGroup)
   .add('rendered vertically', () => VerticalRadioGroup)
 
 storiesOf('Modal', module)
+  .addDecorator((story, context) => withInfo('Modal')(story)(context))
   .addDecorator(withKnobs)
+  .addDecorator(CoreThemeDecorator)
   .add('default', () => DefaultModal)
   .add('with close button', () => CloseModal)
   .add('with no overlay close', () => ModalNoOverlayClose)
   .add('with popup', ModalPopup)
 
 storiesOf('Text', module)
-  .addWithInfo('default', 'Default themed text', () => Text)
+  .addDecorator((story, context) => withInfo('Text')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('default', () => Text)
 
 storiesOf('Collapsible', module)
-  .addWithInfo('default', 'Default themed', () => Collapse)
+  .addDecorator((story, context) => withInfo('Collapsible')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('default', () => Collapse)
 
 storiesOf('Counter', module)
-  .addWithInfo('default', 'Default themed', () => DefaultCounter)
-  .addWithInfo('step changed', 'Step changed', () => CounterStep)
-  .addWithInfo('custom text', 'Custom text', () => CounterText)
+  .addDecorator((story, context) => withInfo('Counter')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('default', () => DefaultCounter)
+  .add('step changed', () => CounterStep)
+  .add('custom text', () => CounterText)
+  .add('custom buttons', () => CounterCustomButtons)
 
 storiesOf('Map', module)
-  .addWithInfo('default', 'Default themed', () => MapExample)
+  .addDecorator((story, context) => withInfo('Map')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('default', () => MapExample)
 
 storiesOf('Ratings', module)
-  .addWithInfo('default', 'Default themed', () => DefaultRatings)
-  .addWithInfo('Square Rating', '5 Rating', () => SquareRatings)
-  .addWithInfo('Circle Rating', '4 Rating', () => CircleRatings)
-  .addWithInfo('3 Rating', '3 Rating', () => ThreeRatings)
-  .addWithInfo('2 Rating', '2 Rating', () => TwoRatings)
-  .addWithInfo('1 Rating', '1 Rating', () => OneRatings)
-  .addWithInfo('Many Rating', 'Many Rating', () => ManyRatings)
-  .addWithInfo('Partial Rating 1', 'Partial Rating 1', () => Partial1)
-  .addWithInfo('Partial Rating 2', 'Partial Rating 2', () => Partial2)
-  .addWithInfo('Partial Rating 3', 'Partial Rating 3', () => Partial3)
-  .addWithInfo('Two-color Rating', 'Two-color Rating', () => PartialTwoColor)
+  .addDecorator((story, context) => withInfo('Ratings')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('default', () => DefaultRatings)
+  .add('Square Rating', () => SquareRatings)
+  .add('Circle Rating', () => CircleRatings)
+  .add('3 Rating', () => ThreeRatings)
+  .add('Many Ratings', () => ManyRatings)
+  .add('Partial Rating', () => Partial)
+  .add('Two-color Rating', () => PartialTwoColor)
 
 storiesOf('List', module)
-  .addWithInfo('default', 'Default List', () => DefaultList)
-  .addWithInfo('Horizontal List', 'Horizontal', () => HorizontalList)
-  .addWithInfo('List with passed node types', 'Passed Node Types', () => ListWithPassedNodeTypes)
-  .addWithInfo('List with own item component', 'Own item component', () => ListWithOwnItemComponent)
-
-storiesOf('Rent Lead', module)
-  .add('Default themed', () => DefaultLeadModal)
+  .addDecorator((story, context) => withInfo('List')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('default', () => DefaultList)
+  .add('Horizontal List', () => HorizontalList)
+  .add('List with passed node types', () => ListWithPassedNodeTypes)
+  .add('List with own item component', () => ListWithOwnItemComponent)
 
 storiesOf('Card', module)
-  .addWithInfo('default', 'Default Card', () => DefaultCard)
+  .addDecorator((story, context) => withInfo('Card')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('Default Card', () => DefaultCard)
 
 storiesOf('Title', module)
+  .addDecorator((story, context) => withInfo('Title')(story)(context))
+  .addDecorator(CoreThemeDecorator)
   .add('Default Title', () => DefaultTitle)
   .add('Embedded Link within Title', () => EmbeddedLinkWithinTitle)
+
+storiesOf('Rent Lead', module)
+  .addDecorator((story, context) => withInfo('Rent Lead')(story)(context))
+  .addDecorator(RentThemeDecorator)
+  .add('Default themed', () => DefaultLeadModal)

@@ -1,6 +1,5 @@
 import React from 'react'
-import { Counter } from 'react-ui-core/src'
-import { CounterTheme } from '../theme'
+import { Button, Counter } from 'react-ui-core/src'
 
 const count = 3
 
@@ -12,7 +11,7 @@ const onClick = currentCount => {
 }
 
 const title = (
-  <div className={CounterTheme.title}>
+  <div>
     Baths & Bedrooms
   </div>
 )
@@ -21,14 +20,12 @@ export const DefaultCounter = (
   <div>
     {title}
     <Counter
-      theme={CounterTheme}
       onClick={onClick}
       label="Bedrooms"
       count={count}
       step={2}
     />
     <Counter
-      theme={CounterTheme}
       decrementOperator={decrementOperator}
       incrementOperator={incrementOperator}
       onClick={onClick}
@@ -42,14 +39,12 @@ export const CounterStep = (
   <div>
     {title}
     <Counter
-      theme={CounterTheme}
       onClick={onClick}
       label="Bedrooms (step 2)"
       count={count}
       step={2}
     />
     <Counter
-      theme={CounterTheme}
       onClick={onClick}
       label="Bathrooms (step 5)"
       count={count}
@@ -62,7 +57,6 @@ export const CounterText = (
   <div>
     {title}
     <Counter
-      theme={CounterTheme}
       onClick={onClick}
       label="Bedrooms (step 2)"
       count={count}
@@ -72,13 +66,34 @@ export const CounterText = (
       step={2}
     />
     <Counter
-      theme={CounterTheme}
       onClick={onClick}
       label="Bathrooms (step 5)"
       count={count}
       text={num => (
         `current count: ${num}`
       )}
+      step={5}
+    />
+  </div>
+)
+
+export const CounterCustomButtons = (
+  <div>
+    {title}
+    <Counter
+      onClick={onClick}
+      label="Bedrooms (step 2)"
+      count={count}
+      incrementOperator={<Button>+</Button>}
+      decrementOperator={<Button>-</Button>}
+      step={2}
+    />
+    <Counter
+      onClick={onClick}
+      label="Bathrooms (step 5)"
+      count={count}
+      incrementOperator={<Button>+</Button>}
+      decrementOperator={<Button>-</Button>}
       step={5}
     />
   </div>

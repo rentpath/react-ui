@@ -7,7 +7,7 @@ import {
 } from 'react-ui-core/src'
 import styles from 'react-ui-core/node_modules/flexboxgrid/dist/flexboxgrid.css'
 // import styles form 'react-flexbox-grid/dist/flexboxgrid.css'
-import { ResponsiveTheme as theme } from '../theme'
+import theme from '../theme/core/Responsive.css'
 
 configureStylesForGrid(styles)
 

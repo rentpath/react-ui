@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Mapbox, LayerInteractions, Source, Layer } from 'react-ui-map/src'
-import { MapTheme } from '../theme'
 
 const mapSourceData = {
   type: 'FeatureCollection',
@@ -83,7 +82,6 @@ class MapPage extends Component {
         center={center}
         style={style}
         zoom={zoom}
-        theme={MapTheme}
       >
         <LayerInteractions
           defaultMarkerId={defaultMarkerId}

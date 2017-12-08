@@ -1,7 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { RangeSlider } from 'react-ui-core/src'
-import { RangeSliderTheme as theme } from '../theme'
+import StoryBookTheme from '../theme/Storybook.css'
 
 const wrapper = (props = {}) => {
   /* eslint-disable react/prop-types */
@@ -17,7 +17,6 @@ const wrapper = (props = {}) => {
       {...props}
       maxValue={maxValue || 20}
       minValue={minValue || 0}
-      theme={theme}
       onChangeComplete={val => action('onChangeComplete')(val)}
       value={value || 10}
     />
@@ -41,14 +40,9 @@ export const examples = {
   }),
   sqftSlider: wrapper({
     formatHeader: value => (
-      <div>
-        <h2 className={theme.textCenter}>
-          Square Foot
-          <div className={theme.value}>
-            {`${value.min} ft - ${value.max} ft+`}
-          </div>
-        </h2>
-      </div>
+      <h4 className={StoryBookTheme['Story-alignCenter']}>
+        Square Foot {`${value.min} ft - ${value.max} ft+`}
+      </h4>
     ),
     value: {
       min: 600,
@@ -60,14 +54,9 @@ export const examples = {
   }),
   priceSlider: wrapper({
     formatHeader: value => (
-      <div>
-        <h2 className={theme.textCenter}>
-          Price Range
-          <div className={theme.value}>
-            {`${value.min} - ${value.max}+`}
-          </div>
-        </h2>
-      </div>
+      <h4 className={StoryBookTheme['Story-alignCenter']}>
+        Price Range {`${value.min} - ${value.max}+`}
+      </h4>
     ),
     value: {
       min: 500,
@@ -80,14 +69,26 @@ export const examples = {
 }
 
 export default (
-  <div className={theme.wrapper}>
-    <h2>default</h2>
-    {examples.default}
-    <h2>with label</h2>
-    {examples.withLabel}
-    <h2>with min max and step</h2>
-    {examples.withMinMaxStep}
-    {examples.sqftSlider}
-    {examples.priceSlider}
+  <div>
+    <div className={StoryBookTheme['Story-padding']}>
+      <h3>Default</h3>
+      {examples.default}
+    </div>
+    <div className={StoryBookTheme['Story-padding']}>
+      <h3>With Label</h3>
+      {examples.withLabel}
+    </div>
+    <div className={StoryBookTheme['Story-padding']}>
+      <h3>With Min / Max and Step</h3>
+      {examples.withMinMaxStep}
+    </div>
+    <div className={StoryBookTheme['Story-padding']}>
+      <h3>Square Foot Slider</h3>
+      {examples.sqftSlider}
+    </div>
+    <div className={StoryBookTheme['Story-padding']}>
+      <h3>Price Slider</h3>
+      {examples.priceSlider}
+    </div>
   </div>
 )

@@ -1,18 +1,11 @@
-.Form {
-  border: 1px solid #eee;
-  padding: 20px;
-}
-
 .Text {
   text-transform: uppercase;
-  font-size: 20px;
-  border-bottom: 1px solid #eee;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
 
 .Field {
-  padding: 8px 0;
+  margin: 8px 0;
   display: flex;
   max-width: 600px;
 }
@@ -26,6 +19,5 @@
 .Textarea {
   border: 1px solid #aaa;
   padding: 6px 10px;
-  margin: 0 8px;
   flex: 4;
 }
