@@ -80,6 +80,7 @@ describe('Counter', () => {
 
   describe('onClick', () => {
     it('maintains count between min and max', () => {
+      const onClick = jest.fn()
       const wrapper = mount(
         <Counter
           min={1}
@@ -99,6 +100,23 @@ describe('Counter', () => {
       expect(wrapper.state('count')).toEqual(3)
       incrementer.simulate('click')
       expect(wrapper.state('count')).toEqual(3)
+    })
+
+    it('does not allow clicks to propogate from outer div', () => {
+      const onClick = jest.fn()
+      const wrapper = mount(
+        <Counter
+          min={1}
+          count={1}
+          max={3}
+          theme={theme}
+          className="wrappingDiv"
+          onClick={onClick}
+        />
+      )
+      const outerDiv = wrapper.find('div.wrappingDiv')
+      outerDiv.simulate('click')
+      expect(wrapper.prop('onClick')).not.toBeCalled()
     })
 
     it('calls decrement callback', () => {
