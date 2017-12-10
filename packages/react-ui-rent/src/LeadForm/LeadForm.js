@@ -5,7 +5,6 @@ import isEqual from 'lodash/isEqual'
 import { randomId } from '@rentpath/react-ui-utils'
 import { Form, Field } from '@rentpath/react-ui-core'
 import SubmitButton from './SubmitButton'
-import Header from './Header'
 import {
   Name,
   Message,
@@ -13,10 +12,10 @@ import {
   Phone,
   OptInNewsLetter,
   TermsOfService,
+  MoveInDate,
 } from './Fields'
 
 const FIELD_MAPPING = {
-  header: Header,
   name: Name,
   message: Message,
   email: Email,
@@ -25,14 +24,15 @@ const FIELD_MAPPING = {
   submit: SubmitButton,
   opt_in_newsletter: OptInNewsLetter,
   terms_of_service: TermsOfService,
+  move_date: MoveInDate,
 }
 
 const FIELDS = [
-  { name: 'header' },
   { name: 'message' },
   { name: 'name' },
   { name: 'email' },
   { name: 'phone' },
+  { name: 'move_date' },
   { name: 'submit' },
   { name: 'opt_in_newsletter' },
   { name: 'terms_of_service' },

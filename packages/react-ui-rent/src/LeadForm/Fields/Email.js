@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { Field } from '@rentpath/react-ui-core'
+import RequiredField from './RequiredField'
 
 export default class Email extends PureComponent {
   static propTypes = {
@@ -17,7 +17,7 @@ export default class Email extends PureComponent {
 
   render() {
     return (
-      <Field {...this.props} />
+      <RequiredField {...this.props} />
     )
   }
 }
