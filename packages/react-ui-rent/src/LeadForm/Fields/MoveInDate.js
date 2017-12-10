@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import RequiredField from './RequiredField'
+import { Field } from '@rentpath/react-ui-core'
 
-export default class Name extends PureComponent {
+export default class MoveInDate extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
     type: PropTypes.string,
@@ -10,13 +10,14 @@ export default class Name extends PureComponent {
   }
 
   static defaultProps = {
-    name: 'name',
-    placeholder: 'Name',
+    name: 'date',
+    type: 'date',
+    placeholder: 'Move in date',
   }
 
   render() {
     return (
-      <RequiredField {...this.props} />
+      <Field {...this.props} />
     )
   }
 }
