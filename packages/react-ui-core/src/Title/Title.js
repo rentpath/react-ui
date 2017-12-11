@@ -25,6 +25,7 @@ export default class Title extends PureComponent {
       className,
       theme,
       children,
+      ...props
     } = this.props
 
     return (
@@ -33,6 +34,8 @@ export default class Title extends PureComponent {
           theme.Title,
           className,
         )}
+        data-tid="title"
+        {...props}
       >
         {children}
       </NodeType>

@@ -24,6 +24,7 @@ const loadStories = () => {
   require('../stories/core')
   require('../stories/map')
   require('../stories/rent')
+  require('../stories/ag')
 }
 
 configure(loadStories, module)

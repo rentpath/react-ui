@@ -1,0 +1,14 @@
+.FilterCard {
+  padding: 5px;
+}
+
+.FilterCard_Body {
+  border: 1px solid black;
+  padding: 46px;
+  text-align: center;
+}
+
+.WithButtons .FilterCard_Body {
+  padding: 25px;
+  margin-bottom: 5px;
+}

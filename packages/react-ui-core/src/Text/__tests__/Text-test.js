@@ -31,4 +31,14 @@ describe('Text', () => {
     expect(className).toContain('Text')
     expect(className).toContain('MyText')
   })
+
+  it('has a default data-tid', () => {
+    const wrapper = shallow(<Text>Test Text</Text>)
+    expect(wrapper.find('[data-tid="text"]')).toHaveLength(1)
+  })
+  it('has allows an override of the data-tid', () => {
+    const wrapper = shallow(<Text data-tid="foo">Test Text</Text>)
+    expect(wrapper.find('[data-tid="foo"]')).toHaveLength(1)
+    expect(wrapper.find('[data-tid="text"]')).toHaveLength(0)
+  })
 })
