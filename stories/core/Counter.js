@@ -82,19 +82,17 @@ export const CounterCustomButtons = (
     {title}
     <Counter
       onClick={onClick}
-      label="Bedrooms (step 2)"
+      label="Bedrooms"
       count={count}
       incrementOperator={<Button>+</Button>}
       decrementOperator={<Button>-</Button>}
-      step={2}
     />
     <Counter
       onClick={onClick}
-      label="Bathrooms (step 5)"
+      label="Bathrooms"
       count={count}
       incrementOperator={<Button>+</Button>}
       decrementOperator={<Button>-</Button>}
-      step={5}
     />
   </div>
 )

@@ -13,7 +13,7 @@ const PriceSlider = () => rangeSliderExamples.withMinMaxStep
 const Fields = () => (
   <FieldSet
     legend="Property Type"
-    className={StoryBookTheme['Story-padding']}
+    className={StoryBookTheme['Story_Fieldset-padding']}
   >
     <Field
       type="checkbox"
