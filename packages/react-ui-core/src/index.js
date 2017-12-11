@@ -55,9 +55,23 @@ export {
 } from './Card'
 
 export {
-  Title
+  Title,
 } from './Title'
 
 export {
   DropDown,
 } from './DropDown'
+
+export {
+  LeadForm,
+  Name,
+  Email,
+  Phone,
+  Message,
+  OptInNewsLetter,
+  TermsOfService,
+} from './LeadForm'
+
+export {
+  LeadModal,
+} from './LeadModal'

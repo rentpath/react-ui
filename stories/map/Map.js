@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Mapbox, LayerInteractions, Source, Layer } from 'react-ui-map/src'
 
 const mapSourceData = {

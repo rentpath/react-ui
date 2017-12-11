@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders header and subHeader if subHeader passed 1`] = `
+<div>
+  <div
+    className=""
+  >
+    Contact Property
+  </div>
+  <div
+    className=""
+  >
+    To: (xxx) xxx - xxxx
+  </div>
+</div>
+`;
+
+exports[`Header renders header only if no subHeader passsed 1`] = `
+<div>
+  <div
+    className=""
+  >
+    Contact Property
+  </div>
+</div>
+`;
