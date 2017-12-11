@@ -4,6 +4,7 @@ import RadioButton from './RadioButton.css'
 import RadioGroup from './RadioGroup.css'
 import Card from './Card.css'
 import {
+  RangeSlider as RangeSliderBase,
   RadioButton as RadioButtonBase,
   RadioGroup as RadioGroupBase,
   ApplyButton as ApplyButtonBase,
@@ -16,6 +17,7 @@ import {
   RatingFilterCard,
   BedroomFilterCard,
   BathroomFilterCard,
+  PriceFilterCard,
 } from './Filters'
 
 export default compose({},
@@ -23,12 +25,14 @@ export default compose({},
   ApplyButton,
   CardBase,
   Card,
+  RangeSliderBase,
   PetFilterCard,
   RatingFilterCard,
   FilterCardBase,
   FilterCard,
   BedroomFilterCard,
   BathroomFilterCard,
+  PriceFilterCard,
   RadioButtonBase,
   RadioButton,
   RadioGroup,

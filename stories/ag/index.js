@@ -9,6 +9,8 @@ import {
   TwoButtonFilterCard,
   DesktopBedroomFilterCard,
   InlineBedroomFilterCard,
+  InlinePriceFilterCard,
+  DesktopPriceFilterCard,
   DesktopPetFilterCard,
   InlinePetFilterCard,
   InlineRatingFilterCard,
@@ -55,3 +57,13 @@ storiesOf('react-ui-ag / Filters / RadioGroupFilterCard / small', module)
   .add('Bathroom', () => InlineBathroomFilterCard)
   .add('Pet', () => InlinePetFilterCard)
   .add('Rating', () => InlineRatingFilterCard)
+
+storiesOf('react-ui-ag / Filters / PriceFilterCard / large', module)
+  .addDecorator((story, context) => withInfo('PriceFilterCard')(story)(context))
+  .addDecorator(AgThemeLargeDecorator)
+  .add('Price Filter', () => DesktopPriceFilterCard)
+
+storiesOf('react-ui-ag / Filters / PriceFilterCard / small', module)
+  .addDecorator((story, context) => withInfo('PriceFilterCard')(story)(context))
+  .addDecorator(AgThemeSmallDecorator)
+  .add('Price Filter', () => InlinePriceFilterCard)

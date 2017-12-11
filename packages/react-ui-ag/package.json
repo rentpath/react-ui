@@ -28,6 +28,7 @@
   "devDependencies": {
     "@rentpath/eslint-config-rentpath": "^3.0.1",
     "autobind-decorator": "^2.1.0",
+    "@rentpath/react-ui-core": "^1.4.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",

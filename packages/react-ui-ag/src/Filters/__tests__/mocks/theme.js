@@ -11,4 +11,6 @@ export default keyMirror([
   'FilterCard_Title',
   'FilterCard_Header',
   'FilterCard',
+  'PriceFilterCard',
+  'PriceFilterCard-noValue',
 ])

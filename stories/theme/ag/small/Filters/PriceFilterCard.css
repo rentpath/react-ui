@@ -1,0 +1,101 @@
+.PriceFilterCard .RangeSlider {
+  width: 100%;
+  padding: 0 15px 0 0;
+}
+
+.PriceFilterCard .RangeSlider_Text {
+  color: #787878;
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.PriceFilterCard .slider {
+  appearance: none;
+  background: #0077ff;
+  border: 12px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  height:12px;
+  width: 12px;
+  margin-top: -25.2px;
+  outline: none;
+  object-fit: contain;
+  top: 50%;
+}
+
+.PriceFilterCard-noValue .ApplyButton {
+  display:none;
+}
+
+.PriceFilterCard .slider:active {
+  transform: none;
+}
+
+.PriceFilterCard .slider:focus {
+  box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2);
+}
+
+.PriceFilterCard .sliderContainer {
+  transition: left 0.3s ease-out;
+}
+
+.PriceFilterCard .labelContainer {
+  position: relative;
+  white-space: nowrap;
+}
+
+.PriceFilterCard .minLabel,
+.PriceFilterCard .maxLabel {
+  display: none
+}
+
+.PriceFilterCard .maxLabel {
+  right: 0;
+}
+
+.PriceFilterCard .minLabel .labelContainer,
+.PriceFilterCard .maxLabel .labelContainer {
+  left: 0;
+}
+
+.PriceFilterCard .valueLabel {
+  position: absolute;
+  top: -47px;
+}
+
+.PriceFilterCard .track {
+  background: #5790d9;
+  border-radius: 20px;
+  cursor: pointer;
+  display: block;
+  height: 13px;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  width: 100%;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+
+.PriceFilterCard .activeTrack {
+  background: #e6e7e9;
+  height: 13px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  position: relative;
+  padding-right: 12px;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+
+.PriceFilterCard .inputRange {
+  height: 1rem;
+  margin-right: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.PriceFilterCard .disabledInputRange {
+  background: #cccccc;
+  border: 1px solid #cccccc;
+  box-shadow: none;
+  transform: none;
+}
