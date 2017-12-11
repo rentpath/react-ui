@@ -13,16 +13,14 @@ export default class FilterCard extends PureComponent {
     className: PropTypes.string,
     theme: PropTypes.object,
     children: PropTypes.node,
-    title: PropTypes.string,
-    description: PropTypes.string,
+    title: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+    description: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
     handleApplyClick: PropTypes.func,
     handleCancelClick: PropTypes.func,
   }
 
   static defaultProps = {
     theme: {},
-    title: '',
-    description: '',
   }
 
   render() {
