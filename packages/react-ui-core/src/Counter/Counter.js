@@ -109,6 +109,8 @@ export default class Counter extends PureComponent {
             className
           )}
         {...props}
+        // NOTE: ensure click is noop so handler is only on counter spans
+        onClick={() => {}}
       >
         {label && this.renderLabel}
         <div className={theme.Counter_Controls}>
