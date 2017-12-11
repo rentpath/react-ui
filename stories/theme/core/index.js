@@ -13,7 +13,6 @@ import Counter from './Counter.css'
 import RatingBar from './RatingBar.css'
 import List from './List.css'
 import Checkbox from './Checkbox.css'
-import Mapbox from './Map.css'
 import RadioGroup from './RadioGroup.css'
 import RadioButton from './RadioButton.css'
 import Card from './Card.css'
@@ -36,7 +35,6 @@ export default compose({},
   Counter,
   RatingBar,
   List,
-  Mapbox,
   Card,
   Title,
 )

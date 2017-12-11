@@ -1,3 +1,0 @@
-export {
-  DefaultLeadModal,
-} from './LeadForm'

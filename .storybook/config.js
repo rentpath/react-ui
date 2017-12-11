@@ -21,7 +21,9 @@ setOptions({
 })
 
 const loadStories = () => {
-  require('../stories')
+  require('../stories/core')
+  require('../stories/map')
+  require('../stories/rent')
 }
 
 configure(loadStories, module)

@@ -73,27 +73,19 @@ const zoom = 9
 const defaultMarkerId = 'markers-default'
 const activeMarkerId = 'markers-active'
 
-class MapPage extends Component {
-
-  render() {
-    return (
-      <Mapbox
-        token={token}
-        center={center}
-        style={style}
-        zoom={zoom}
-      >
-        <LayerInteractions
-          defaultMarkerId={defaultMarkerId}
-          activeMarkerId={activeMarkerId}
-        />
-        <Source id="markers" type="geojson" data={mapSourceData} />
-        <Layer layer={markersDefaultData} />
-        <Layer layer={markersActiveData} />
-      </Mapbox>
-    )
-  }
-}
-
-const MapExample = (<MapPage />)
-export { MapExample }
+export default (
+  <Mapbox
+    token={token}
+    center={center}
+    style={style}
+    zoom={zoom}
+  >
+    <LayerInteractions
+      defaultMarkerId={defaultMarkerId}
+      activeMarkerId={activeMarkerId}
+    />
+    <Source id="markers" type="geojson" data={mapSourceData} />
+    <Layer layer={markersDefaultData} />
+    <Layer layer={markersActiveData} />
+  </Mapbox>
+)
