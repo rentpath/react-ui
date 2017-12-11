@@ -75,6 +75,11 @@ import {
   EmbeddedLinkWithinTitle,
 } from './Title'
 
+import {
+  DefaultDropDown,
+  InputDropDown,
+} from './DropDown'
+
 const CoreThemeDecorator = storyFn => (
   <Theme theme={CoreTheme}>
     {storyFn()}
@@ -101,7 +106,6 @@ storiesOf('react-ui-core / Form / Form', module)
   .add('Form', () => CompleteForm)
   .add('Filter Panel Modal', () => FilterPanel)
 
-console.log(DefaultRangeSlider)
 storiesOf('react-ui-core / Form / RangeSlider', module)
   .addDecorator((story, context) => withInfo('Slider')(story)(context))
   .addDecorator(CoreThemeDecorator)
@@ -181,3 +185,9 @@ storiesOf('react-ui-core / Title', module)
   .addDecorator(CoreThemeDecorator)
   .add('Title', () => DefaultTitle)
   .add('Link Title', () => EmbeddedLinkWithinTitle)
+
+storiesOf('react-ui-core / Drop Down', module)
+  .addDecorator((story, context) => withInfo('Default Drop Down')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('Drop Down with default anchor', () => DefaultDropDown)
+  .add('Drop Down with custom Input anchor', () => InputDropDown)

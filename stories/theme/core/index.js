@@ -17,6 +17,7 @@ import RadioGroup from './RadioGroup.css'
 import RadioButton from './RadioButton.css'
 import Card from './Card.css'
 import Title from './Title.css'
+import DropDown from './DropDown.css'
 
 export default compose({},
   Checkbox,
@@ -37,4 +38,5 @@ export default compose({},
   List,
   Card,
   Title,
+  DropDown,
 )
