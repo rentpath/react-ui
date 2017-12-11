@@ -24,6 +24,7 @@ export default class Text extends PureComponent {
 
     return (
       <Tag
+        data-tid="text"
         {...props}
         className={
           classnames(

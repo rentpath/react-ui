@@ -30,6 +30,7 @@ export default class Button extends Component {
 
     return (
       <button
+        data-tid="button"
         {...props}
         className={
           classnames(
