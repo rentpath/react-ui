@@ -10,7 +10,7 @@ const ENTER = 13
 const ARROW_UP = 38
 const ARROW_DOWN = 40
 
-@themed(/^DropDown/, {
+@themed(/^DropDownMenu/, {
   pure: true,
 })
 
@@ -20,7 +20,7 @@ export default class DropDownMenu extends Component {
     className: PropTypes.string,
     options: PropTypes.node,
     onSelection: PropTypes.func,
-    onSelectionHover: PropTypes.func, 
+    onSelectionHover: PropTypes.func,
     optionValueSelector: PropTypes.func,
   }
 
@@ -64,26 +64,19 @@ export default class DropDownMenu extends Component {
         event.preventDefault()
         this.handleSelection(this.state.activeIndex)
         break
-      case ESC:
-        this.makeInvisible()
-        break
       default:
     }
   }
 
-  getValue() { 
-    const { optionValueSelector, options, onSelection } = this.props
+  getValue() {
+    const { optionValueSelector, options } = this.props
     let value = options[this.state.activeIndex]
 
     if (optionValueSelector) value = optionValueSelector(value)
     return value
   }
 
-  handleSelection(event) {
-    if (event.stopPropagation) {
-      event.stopPropagation()
-    }
-    
+  handleSelection() {
     this.props.onSelection(this.getValue())
   }
 
@@ -101,7 +94,6 @@ export default class DropDownMenu extends Component {
       className,
       options,
       theme,
-      visible,
       onSelectionHover,
       ...props
     } = this.props
@@ -113,6 +105,7 @@ export default class DropDownMenu extends Component {
         className={cn(
           className,
           theme.List,
+          theme.DropDownMenu
         )}
         items={options}
         Item={ItemWrapper}
@@ -125,4 +118,4 @@ export default class DropDownMenu extends Component {
       />
     )
   }
-} 
+}

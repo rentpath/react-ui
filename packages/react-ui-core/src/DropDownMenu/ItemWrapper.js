@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 import themed from 'react-themed'
 
-@themed('*', { pure: true })
+@themed('DropDownMenu', { pure: true })
 
 export default class ItemWrapper extends Component {
   static propTypes = {
@@ -31,16 +31,19 @@ export default class ItemWrapper extends Component {
       theme,
       children,
       onSelectionClick,
+      ...props
     } = this.props
 
     return (
       <div
+        data-tid={'dropdown-menu-list-item'}
         className={cn(
-          theme.ListItem,
-          selectedIndex === index && theme.Selected
+          theme.DropDownMenu_ListItem,
+          selectedIndex === index && theme.DropDownMenu_Selected
         )}
         onClick={onSelectionClick}
         onMouseEnter={this.handleHover}
+        {...props}
       >
         {children}
       </div>

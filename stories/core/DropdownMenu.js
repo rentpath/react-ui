@@ -2,13 +2,13 @@ import React from 'react'
 import { DropDownMenu } from 'react-ui-core/src'
 
 export const DefaultDropDownMenu = (
-  <DropDownMenu 
+  <DropDownMenu
     options={['Option1', 'Option2', 'Option3']}
   />
 )
 
 export const DropDownMenuOnSelection = (
-  <DropDownMenu 
+  <DropDownMenu
     options={['Option1', 'Option2', 'Option3']}
     onSelection={value => {
       alert(value)
@@ -17,7 +17,7 @@ export const DropDownMenuOnSelection = (
 )
 
 export const DropDownMenuOnSelectionHover = (
-  <DropDownMenu 
+  <DropDownMenu
     options={['Option1', 'Option2', 'Option3']}
     onSelectionHover={value => {
       alert(value)
