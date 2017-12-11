@@ -3,7 +3,6 @@ export {
   OneButtonFilterCard,
   TwoButtonFilterCard,
 } from './FilterCard'
-
 export {
   DesktopBedroomFilterCard,
   InlineBedroomFilterCard,
@@ -13,3 +12,8 @@ export {
   InlinePetFilterCard,
   InlineRatingFilterCard,
 } from './RadioGroupFilterCard'
+
+export {
+  InlinePriceFilterCard,
+  DesktopPriceFilterCard,
+} from './PriceFilterCard'

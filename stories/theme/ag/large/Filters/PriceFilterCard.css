@@ -1,0 +1,37 @@
+.PriceFilterCard {
+  padding: 0 25px;
+}
+
+.PriceFilterCard .FilterCard_Body {
+  flex-grow: 1;
+}
+
+.PriceFilterCard .RangeSlider {
+  width: 100%;
+}
+
+.PriceFilterCard .slider {
+  appearance: none;
+  background: #d2232a;
+  border: 11px solid #d2232a;
+  height: 11px;
+  width: 11px;
+  margin-top: -20px;
+}
+
+.PriceFilterCard .minLabel,
+.PriceFilterCard .maxLabel {
+  display: none
+}
+
+.PriceFilterCard .track {
+  background: #e6e7e9;
+  height: 6px;
+}
+
+
+.PriceFilterCard .activeTrack {
+  background: #d2232a;
+  height: 6px;
+  border-radius: 20px 0 0 20px;
+}

@@ -144,7 +144,7 @@ const InlineRatingFilterCardComponent = ({ theme }) => (
     description="Filter and only view properties that have a 4+ star rating from other renters."
     className={classnames(theme.InlineCard, theme.RatingFilterCard)}
     fields={[
-      { label: '4+ stars', value: '4' },
+      { label: '4+ stars', checked: true, value: '4' },
     ]}
     applyButton={{
       onClick: value => action('click')(`apply(${value})`),

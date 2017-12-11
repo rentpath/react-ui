@@ -1,10 +1,10 @@
 import { compose } from 'react-themed'
-import { FilterCard, PetFilterCard, BathroomFilterCard } from './Filters'
 import { ApplyButton, CancelButton } from './Buttons'
 import Card from './Card.css'
 import RadioButton from './RadioButton.css'
 import RadioGroup from './RadioGroup.css'
 import {
+  RangeSlider as RangeSliderBase,
   RadioButton as RadioButtonBase,
   RadioGroup as RadioGroupBase,
   ApplyButton as ApplyButtonBase,
@@ -12,17 +12,25 @@ import {
   FilterCard as FilterCardBase,
   Card as CardBase,
 } from '../base'
+import {
+  FilterCard,
+  PetFilterCard,
+  BathroomFilterCard,
+  PriceFilterCard,
+} from './Filters'
 
 export default compose({},
   ApplyButtonBase,
   ApplyButton,
   CancelButtonBase,
   CancelButton,
+  RangeSliderBase,
   CardBase,
   Card,
   FilterCardBase,
   FilterCard,
   PetFilterCard,
+  PriceFilterCard,
   BathroomFilterCard,
   RadioButtonBase,
   RadioButton,
