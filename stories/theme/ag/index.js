@@ -1,6 +1,3 @@
-import { compose } from 'react-themed'
-import FilterCard from './FilterCard.css'
-
-export default compose({},
-  FilterCard,
-)
+export { default as AgThemeSmall } from './small'
+export { default as AgThemeLarge } from './large'
+export { default as AgThemeExamples } from './examples'

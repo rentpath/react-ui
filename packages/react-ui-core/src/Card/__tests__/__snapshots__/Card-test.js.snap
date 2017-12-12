@@ -3,10 +3,11 @@
 exports[`Card renders passed children and adds data-tid 1`] = `
 <div
   className=""
+  data-tid="card"
 >
   <div
     className={undefined}
-    data-tid="card-content"
+    data-tid="card-body"
   >
     <h1>
       Hello world

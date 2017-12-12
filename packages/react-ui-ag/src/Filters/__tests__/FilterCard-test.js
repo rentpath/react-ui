@@ -7,7 +7,7 @@ import ThemedFilterCard from '../FilterCard'
 const FilterCard = ThemedFilterCard.WrappedComponent
 
 describe('ag/Filters/FilterCard', () => {
-  it('renders chlidren', () => {
+  it('renders children', () => {
     const children = <div data-tid="filter-card-children">Content of Children</div>
     const wrapper = shallow(<FilterCard>{children}</FilterCard>)
     expect(wrapper.find('div[data-tid="filter-card-children"]')).toHaveLength(1)
@@ -39,34 +39,30 @@ describe('ag/Filters/FilterCard', () => {
     expect(wrapper.find(Text)).toHaveLength(0)
   })
 
-  it('renders an apply button if an apply click handler is provided', () => {
-    const handleApplyClick = jest.fn()
-    const props = {
-      handleApplyClick,
-    }
+  it('renders an apply button if onApplyClick is provided', () => {
+    const onApplyClick = jest.fn()
+    const props = { onApplyClick }
     const wrapper = mount(<FilterCard {...props}>This is some child text</FilterCard>)
-    expect(wrapper.find('button[data-tid="filter-card-apply-button"]')).toHaveLength(1)
-    wrapper.find('button[data-tid="filter-card-apply-button"]').simulate('click')
-    expect(handleApplyClick.mock.calls).toHaveLength(1)
+    expect(wrapper.find('button[data-tid="apply-button"]')).toHaveLength(1)
+    wrapper.find('button[data-tid="apply-button"]').simulate('click')
+    expect(onApplyClick.mock.calls).toHaveLength(1)
   })
 
-  it('renders a cancel button if a cancel click handler is provided', () => {
-    const handleCancelClick = jest.fn()
-    const props = {
-      handleCancelClick,
-    }
+  it('renders a cancel button if onCancelClick is provided', () => {
+    const onCancelClick = jest.fn()
+    const props = { onCancelClick }
     const wrapper = mount(<FilterCard {...props}>This is some child text</FilterCard>)
-    expect(wrapper.find('button[data-tid="filter-card-cancel-button"]')).toHaveLength(1)
-    wrapper.find('button[data-tid="filter-card-cancel-button"]').simulate('click')
-    expect(handleCancelClick.mock.calls).toHaveLength(1)
+    expect(wrapper.find('button[data-tid="cancel-button"]')).toHaveLength(1)
+    wrapper.find('button[data-tid="cancel-button"]').simulate('click')
+    expect(onCancelClick.mock.calls).toHaveLength(1)
   })
 
-  it('does not render a cancel button if no apply button handler is provided', () => {
+  it('does not render a cancel button if onApplyClick is not provided', () => {
     const wrapper = shallow(<FilterCard>This is some child text</FilterCard>)
     expect(wrapper.find('[data-tid="filter-card-apply-button"]')).toHaveLength(0)
   })
 
-  it('does not render an apply button if no cancel button handler is provided', () => {
+  it('does not render an apply button if onCancelClick is not provided', () => {
     const wrapper = shallow(<FilterCard>This is some child text</FilterCard>)
     expect(wrapper.find('[data-tid="filter-card-cancel-button"]')).toHaveLength(0)
   })

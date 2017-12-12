@@ -20,4 +20,15 @@ describe('Card', () => {
       .toJSON()
     expect(snap).toMatchSnapshot()
   })
+
+  it('has a default data-tid', () => {
+    const wrapper = shallow(<Card>Test Text</Card>)
+    expect(wrapper.find('[data-tid="card"]')).toHaveLength(1)
+  })
+
+  it('has allows an override of the data-tid', () => {
+    const wrapper = shallow(<Card data-tid="foo">Test Text</Card>)
+    expect(wrapper.find('[data-tid="foo"]')).toHaveLength(1)
+    expect(wrapper.find('[data-tid="card"]')).toHaveLength(0)
+  })
 })

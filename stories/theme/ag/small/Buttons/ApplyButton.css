@@ -1,0 +1,16 @@
+.InlineCard .ApplyButton:active {
+  background-color: #ffffff;
+  color: #0175d7;
+}
+
+.InlineCard .ApplyButton {
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 13px;
+  min-width: 16px;
+  border: solid 1px #ffffff;
+}
+
+.InlineCard.BedroomFilterCard-noValue .ApplyButton {
+  display: none;
+}
