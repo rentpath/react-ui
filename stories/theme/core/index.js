@@ -23,6 +23,7 @@ import Overlay from './Overlay.css'
 import LeadForm from './Lead.css'
 import Grid from './Grid.css'
 import Responsive from './Responsive.css'
+import AutoSuggestField from './AutoSuggestField.css'
 
 export default compose({},
   Label,
@@ -49,4 +50,5 @@ export default compose({},
   LeadForm,
   Grid,
   Responsive,
+  AutoSuggestField,
 )

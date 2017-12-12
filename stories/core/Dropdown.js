@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 class DropdownFieldAnchor extends PureComponent {
   static propTypes = {
-    toggleVisibilty: PropTypes.func,
+    changeVisibility: PropTypes.func,
     dropDownVisible: PropTypes.bool,
     handleDocumentClick: PropTypes.func,
   }
@@ -18,7 +18,7 @@ class DropdownFieldAnchor extends PureComponent {
   }
 
   handleClick = () => {
-    if (!this.props.dropDownVisible) this.props.toggleVisibilty()
+    if (!this.props.dropDownVisible) this.props.changeVisibility(true)
   }
 
   render() {

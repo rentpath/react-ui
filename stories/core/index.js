@@ -92,10 +92,9 @@ import {
 } from './DropdownMenu'
 
 import {
-  DefaultDropDownMenu,
-  DropDownMenuOnSelection,
-  DropDownMenuOnSelectionHover,
-} from './DropDownMenu'
+  DefaultAutoSuggestField,
+  AutoSuggestFieldDynamicResults,
+} from './AutoSuggestField'
 
 const CoreThemeDecorator = storyFn => (
   <Theme theme={CoreTheme}>
@@ -215,6 +214,12 @@ storiesOf('react-ui-core / Dropdown Menu', module)
   .add('Default Dropdown Menu', () => DefaultDropdownMenu)
   .add('Dropdown On Selection', () => DropdownMenuOnSelection)
   .add('Dropdown On Selection hover', () => DropdownMenuOnSelectionHover)
+
+storiesOf('react-ui-core / AutoSuggestField', module)
+  .addDecorator((story, context) => withInfo('Default AutoSuggest Field')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('Default AutoSuggest Field', () => DefaultAutoSuggestField)
+  .add('Auto Suggest Field Dynamic Results', () => AutoSuggestFieldDynamicResults)
 
 storiesOf('react-ui-core / Lead', module)
   .addDecorator((story, context) => withInfo('Core Lead')(story)(context))
