@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TermsOfService renders children passed 1`] = `
+<div
+  className="TermsOfService"
+>
+  Foo
+</div>
+`;
+
+exports[`TermsOfService renders default children if none passed 1`] = `
+<div
+  className="TermsOfService"
+/>
+`;

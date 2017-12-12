@@ -1,13 +1,12 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import RequiredField from './RequiredField'
+import { Field } from '../../Form'
 
 export default class Email extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
     type: PropTypes.string,
     placeholder: PropTypes.string,
-    onClick: PropTypes.func,
   }
 
   static defaultProps = {
@@ -17,11 +16,8 @@ export default class Email extends PureComponent {
   }
 
   render() {
-    const {
-      onClick,
-    } = this.props
     return (
-      <RequiredField {...this.props} />
+      <Field {...this.props} />
     )
   }
 }

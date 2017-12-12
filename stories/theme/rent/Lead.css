@@ -1,82 +1,101 @@
-input,
-textarea {
-  box-sizing: border-box;
+.Field {
+  max-width: 600px;
 }
 
-.ModalBody {
-  position: relative;
-}
-
-.Modal_Heading {
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 4px;
-}
-
-.Modal_Heading,
-.Modal_SubHeading {
-  margin: 0 10px;
-}
-
-.Form {
-  max-width: 450px;
-}
-
+/* TODO: This should be a style from the styleguide */
 .Input,
 .Select,
 .Textarea {
-  background-color: #ffffff;
-  box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.08);
-  border: solid 1px #e9e9e9;
-  border-radius: 4px;
-  padding: 16px 10px;
-  width: 100%;
+  margin: 0;
   font-size: 13px;
+  font-weight: 700;
+  color: #4A4A4A;
+  border: 1px solid #E6E7E8;
+  border-radius: 4px;
+  box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  width: 100%;
 }
 
-.Input::placeholder,
-.Select::placeholder,
-.Textarea::placeholder,
+.Input:focus,
+.Select:focus,
+.Textarea:focus {
+  border-color: #0175D7;
+}
+
+.Button {
+  width: 100%;
+  margin-top: 10px;
+}
+
 .Label_Textarea {
-  color: #adadad;
+  font-size: 13px;
+  font-weight: 400;
+  color: #4A4A4A;
+  padding: 10px 0 0 13px;
+  position: absolute;
 }
 
 .Textarea {
-  padding-top: 35px;
+  padding-top: 30px;
+  resize: none;
+  height: 97px;
 }
 
-.Label_Textarea {
-  position: absolute;
-  padding: 10px;
+.Input::placeholder,
+.RequiredField_Label {
+  font-size: 13px;
+  font-weight: 400;
+  color: #4A4A4A;
+}
+
+.TermsOfService,
+.Field-checkbox .Label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #777777;
+}
+
+.Field-checkbox .Label {
+  padding-left: 5px;
+  width: 100%;
+}
+
+.TermsOfService a {
+  font-size: 10px;
+  text-decoration: none;
+  line-height: inherit;
 }
 
 .Field.Field-checkbox {
-  color: #000;
   display: inline-flex;
   flex-direction: row-reverse;
+  margin: 5px;
+}
+
+.TermsOfService {
+  margin-left: 5px;
 }
 
 .Field-checkbox .Input {
   width: auto;
-  border: 0;
-  margin-right: 16px;
-  flex: none;
 }
 
-.Field-checkbox .Label,
-.TermsOfService {
-  font-size: 14px;
+.RequiredField {
+  line-height: 0;
 }
 
-.Field.Field-checkbox,
-.TermsOfService {
-  padding: 10px 10px 0 10px;
+.RequiredField_Label {
+  position: relative;
+  top: 13px;
+  left: 13px;
 }
 
-.Field,
-.Button {
-  margin: 8px 0;
+.RequiredField_Label:after {
+  content: ' *';
+  color: #ea5117;
 }
+
 
 .Button {
   width: 100%;
@@ -92,13 +111,4 @@ textarea {
   text-align: center;
   white-space: nowrap;
   cursor: pointer;
-}
-
-.CloseButton {
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-weight: bold;
-  font-size: 20px;
-  padding: 16px;
 }

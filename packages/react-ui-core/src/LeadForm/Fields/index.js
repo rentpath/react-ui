@@ -1,0 +1,6 @@
+export { default as Name } from './Name'
+export { default as Email } from './Email'
+export { default as Phone } from './Phone'
+export { default as Message } from './Message'
+export { default as OptInNewsLetter } from './OptInNewsLetter'
+export { default as TermsOfService } from './TermsOfService'

@@ -80,6 +80,11 @@ import {
   InputDropDown,
 } from './DropDown'
 
+import {
+  DefaultLeadForm,
+  DefaultLeadModal,
+} from './Lead'
+
 const CoreThemeDecorator = storyFn => (
   <Theme theme={CoreTheme}>
     {storyFn()}
@@ -191,3 +196,9 @@ storiesOf('react-ui-core / Drop Down', module)
   .addDecorator(CoreThemeDecorator)
   .add('Drop Down with default anchor', () => DefaultDropDown)
   .add('Drop Down with custom Input anchor', () => InputDropDown)
+
+storiesOf('react-ui-core / Lead', module)
+  .addDecorator((story, context) => withInfo('Core Lead')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('LeadForm', () => DefaultLeadForm)
+  .add('LeadModal', () => DefaultLeadModal)
