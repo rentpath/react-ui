@@ -10,11 +10,13 @@ const theme = {
 
 class SampleAnchor extends PureComponent {
   static propTypes = {
-    toggleVisibilty: PropTypes.func,
+    changeVisibility: PropTypes.func,
+    dropDownVisible: PropTypes.bool,
   }
 
   handleClick = () => {
-    this.props.toggleVisibilty()
+    const { changeVisibility, dropDownVisible } = this.props
+    changeVisibility(!dropDownVisible)
   }
 
   render() {
@@ -65,7 +67,7 @@ describe('Dropdown', () => {
     expect(wrapper.find('button').text()).toEqual('test')
   })
 
-  it('Passes uses custom anchor if passed to props', () => {
+  it('Uses custom anchor if passed to props', () => {
     const { wrapper } = setup({ visible: true, Anchor: SampleAnchor })
     expect(wrapper.find('button').text()).toEqual('click me')
   })

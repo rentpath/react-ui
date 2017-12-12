@@ -1,26 +1,23 @@
 import React from 'react'
-import { DropDownMenu } from 'react-ui-core/src'
+import { action } from '@storybook/addon-actions'
+import { DropdownMenu } from 'react-ui-core/src'
 
-export const DefaultDropDownMenu = (
-  <DropDownMenu
+export const DefaultDropdownMenu = (
+  <DropdownMenu
     options={['Option1', 'Option2', 'Option3']}
   />
 )
 
-export const DropDownMenuOnSelection = (
-  <DropDownMenu
+export const DropdownMenuOnSelection = (
+  <DropdownMenu
     options={['Option1', 'Option2', 'Option3']}
-    onSelection={value => {
-      alert(value)
-    }}
+    onSelection={action('selected')}
   />
 )
 
-export const DropDownMenuOnSelectionHover = (
-  <DropDownMenu
+export const DropdownMenuOnSelectionHover = (
+  <DropdownMenu
     options={['Option1', 'Option2', 'Option3']}
-    onSelectionHover={value => {
-      alert(value)
-    }}
+    handleSelectionHover={action('hovering')}
   />
 )

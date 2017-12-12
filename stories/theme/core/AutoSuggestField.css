@@ -1,0 +1,20 @@
+.AutoSuggestField {
+  display: flex;
+  margin: 75px;
+}
+
+.AutoSuggestField .Dropdown {
+  margin: 0;
+  width: 300px;
+}
+
+.AutoSuggestField .Field {
+  margin: 0;
+}
+
+.AutoSuggestField .Button {
+  height: 40px;
+  position: relative;
+  left: -100px;
+  top: 5px;
+}

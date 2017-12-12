@@ -1,13 +1,13 @@
-.DropDownMenu  {
+.DropdownMenu  {
   padding: 0;
   width: 100px;
   background: grey;
 }
 
-.DropDownMenu_Selected {
-  background: lightgrey
+.DropdownMenu_Selected {
+  background: lightgrey;
 }
 
-.DropDownMenu_ListItem {
+.DropdownMenu_ListItem {
   padding: 4px;
 }
