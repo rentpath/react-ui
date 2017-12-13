@@ -11,6 +11,7 @@ export default class RequiredField extends Component {
     name: PropTypes.string,
     type: PropTypes.string,
     placeholder: PropTypes.string,
+    onChange: PropTypes.func,
   }
 
   static defaultProps = {
@@ -43,6 +44,10 @@ export default class RequiredField extends Component {
       }
     } else {
       this.setState({ labelVisible: true })
+    }
+    if (this.props.onChange &&
+      typeof this.props.onChange === 'function') {
+      this.props.onChange(event)
     }
   }
 
