@@ -70,7 +70,12 @@ export default class List extends PureComponent {
         )}
       >
         {items.map((item, i) => (
-          <Item key={this.itemId(i)} nodeType={listItemNodeType} {...props}>
+          <Item
+            key={this.itemId(i)}
+            index={i}
+            nodeType={listItemNodeType}
+            {...props}
+          >
             {item}
           </Item>
         ))}

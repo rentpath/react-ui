@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { mount, shallow } from 'enzyme'
-import DropDown from '../DropDown'
+import Dropdown from '../Dropdown'
 
 const theme = {
-  DropDown: 'DropDown',
-  DropDown_Content: 'DropDown_Content',
+  Dropdown: 'Dropdown',
+  Dropdown_Content: 'Dropdown_Content',
 }
 
 class SampleAnchor extends PureComponent {
@@ -22,12 +22,12 @@ class SampleAnchor extends PureComponent {
   }
 }
 
-describe('Drop Down', () => {
+describe('Dropdown', () => {
   const setup = props => {
     const wrapper = mount(
-      <DropDown theme={theme} {...props}>
+      <Dropdown theme={theme} {...props}>
         <h1>test</h1>
-      </DropDown>
+      </Dropdown>
     )
     return {
       wrapper,
@@ -36,9 +36,9 @@ describe('Drop Down', () => {
 
   it('renders children when visible', () => {
     const shallowWrapper = shallow(
-      <DropDown visible>
+      <Dropdown visible>
         <h1>test</h1>
-      </DropDown>
+      </Dropdown>
     )
     expect(shallowWrapper.find('h1').length).toEqual(1)
   })
@@ -48,9 +48,9 @@ describe('Drop Down', () => {
     expect(wrapper.find('h1').length).toEqual(0)
   })
 
-  it('gives children DropDown_Content className wrapper', () => {
+  it('gives children Dropdown_Content className wrapper', () => {
     const { wrapper } = setup({ visible: true })
-    expect(wrapper.find('.DropDown_Content').length).toEqual(1)
+    expect(wrapper.find('.Dropdown_Content').length).toEqual(1)
   })
 
   it('passes handleClick to Anchor prop', () => {
@@ -60,7 +60,7 @@ describe('Drop Down', () => {
     expect(wrapper.find('h1').length).toEqual(0)
   })
 
-  it('Passes text to default anchor', () => {
+  it('passes text to default anchor', () => {
     const { wrapper } = setup({ visible: true, text: 'test' })
     expect(wrapper.find('button').text()).toEqual('test')
   })

@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import DefaultAnchor from './DefaultAnchor'
+import DropdownAnchorButton from './DropdownAnchorButton'
 
-@themed(/^DropDown/)
+@themed(/^Dropdown/)
 
-export default class DropDown extends Component {
+export default class Dropdown extends Component {
   static propTypes = {
     className: PropTypes.string,
     visible: PropTypes.bool,
@@ -21,7 +21,7 @@ export default class DropDown extends Component {
   static defaultProps = {
     visible: false,
     theme: {},
-    Anchor: DefaultAnchor,
+    Anchor: DropdownAnchorButton,
   }
 
   constructor(props) {
@@ -63,7 +63,7 @@ export default class DropDown extends Component {
       <div
         ref={ref => { this.dropdown = ref }}
         className={classnames(
-          theme.DropDown,
+          theme.Dropdown,
           className
         )}
       >
@@ -74,14 +74,14 @@ export default class DropDown extends Component {
           toggleVisibilty={this.toggleVisibilty}
           dropDownVisible={dropDownVisible}
           className={classnames(
-            theme.DropDown_Anchor,
-            theme[`DropDown_Anchor-dropdown${dropDownVisible ? 'Visible' : 'Hidden'}`],
+            theme.Dropdown_Anchor,
+            theme[`Dropdown_Anchor-dropdown${dropDownVisible ? 'Visible' : 'Hidden'}`],
           )}
         />
         {dropDownVisible &&
           <div
             data-tid="dropdown-content"
-            className={theme.DropDown_Content}
+            className={theme.Dropdown_Content}
           >
             {children}
           </div>

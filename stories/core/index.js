@@ -76,14 +76,20 @@ import {
 } from './Title'
 
 import {
-  DefaultDropDown,
-  InputDropDown,
-} from './DropDown'
+  DefaultDropdown,
+  InputDropdown,
+} from './Dropdown'
 
 import {
   DefaultLeadForm,
   DefaultLeadModal,
 } from './Lead'
+
+import {
+  DefaultDropdownMenu,
+  DropdownMenuOnSelection,
+  DropdownMenuOnSelectionHover,
+} from './DropdownMenu'
 
 const CoreThemeDecorator = storyFn => (
   <Theme theme={CoreTheme}>
@@ -191,11 +197,18 @@ storiesOf('react-ui-core / Title', module)
   .add('Title', () => DefaultTitle)
   .add('Link Title', () => EmbeddedLinkWithinTitle)
 
-storiesOf('react-ui-core / Drop Down', module)
-  .addDecorator((story, context) => withInfo('Default Drop Down')(story)(context))
+storiesOf('react-ui-core / Dropdown', module)
+  .addDecorator((story, context) => withInfo('Default Dropdown')(story)(context))
   .addDecorator(CoreThemeDecorator)
-  .add('Drop Down with default anchor', () => DefaultDropDown)
-  .add('Drop Down with custom Input anchor', () => InputDropDown)
+  .add('Dropdown with default anchor', () => DefaultDropdown)
+  .add('Dropdown with custom Input anchor', () => InputDropdown)
+
+storiesOf('react-ui-core / Dropdown Menu', module)
+  .addDecorator((story, context) => withInfo('Default Dropdown Menu')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('Default Dropdown Menu', () => DefaultDropdownMenu)
+  .add('Dropdown On Selection', () => DropdownMenuOnSelection)
+  .add('Dropdown On Selection hover', () => DropdownMenuOnSelectionHover)
 
 storiesOf('react-ui-core / Lead', module)
   .addDecorator((story, context) => withInfo('Core Lead')(story)(context))
