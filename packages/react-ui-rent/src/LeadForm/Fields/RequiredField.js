@@ -45,8 +45,7 @@ export default class RequiredField extends Component {
     } else {
       this.setState({ labelVisible: true })
     }
-    if (this.props.onChange &&
-      typeof this.props.onChange === 'function') {
+    if (this.props.onChange) {
       this.props.onChange(event)
     }
   }
