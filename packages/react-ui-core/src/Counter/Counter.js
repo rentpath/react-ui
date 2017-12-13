@@ -20,6 +20,7 @@ export default class Counter extends PureComponent {
     min: PropTypes.number,
     max: PropTypes.number,
     className: PropTypes.string,
+    'data-tid': PropTypes.string,
   }
 
   static defaultProps = {
@@ -94,12 +95,9 @@ export default class Counter extends PureComponent {
       className,
       decrementOperator,
       incrementOperator,
-      text,
-      step,
-      min,
-      max,
-      ...props
     } = this.props
+
+    const dataTid = this.props['data-tid']
 
     return (
       <div
@@ -108,7 +106,7 @@ export default class Counter extends PureComponent {
             theme.Counter,
             className
           )}
-        {...props}
+        data-tid={dataTid}
       >
         {label && this.renderLabel}
         <div className={theme.Counter_Controls}>

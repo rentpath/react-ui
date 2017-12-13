@@ -3,6 +3,7 @@
 exports[`TermsOfService renders children passed 1`] = `
 <div
   className="TermsOfService"
+  data-tid="text"
 >
   Foo
 </div>
@@ -11,6 +12,7 @@ exports[`TermsOfService renders children passed 1`] = `
 exports[`TermsOfService renders default children if none passed 1`] = `
 <div
   className="TermsOfService"
+  data-tid="text"
 >
   <div>
     By submitting this form, you agree to Rent.com's 
