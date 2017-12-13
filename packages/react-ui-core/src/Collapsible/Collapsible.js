@@ -26,6 +26,7 @@ export default class Collapsible extends Component {
     handleClick: PropTypes.func,
     visible: PropTypes.bool,
     theme: PropTypes.object,
+    className: PropTypes.string,
   }
 
   static defaultProps = {
@@ -60,6 +61,7 @@ export default class Collapsible extends Component {
     const {
       theme,
       align,
+      className,
       showableItems,
       nonshowableItems,
       hiddenText,
@@ -69,7 +71,12 @@ export default class Collapsible extends Component {
     const toggle = this.state.display ? 'visible' : 'hidden'
 
     return (
-      <div className={theme.collapsible}>
+      <div
+        className={classnames(
+          className,
+          theme.Collapsible,
+        )}
+      >
         {showableItems}
         { nonshowableItems &&
           <div>
@@ -84,9 +91,8 @@ export default class Collapsible extends Component {
             <Button
               onClick={this.handleClick}
               className={classnames(
-                theme.Collapsible_Button,
-                theme[`Collapsible_Button-${toggle}`],
-                align && theme[`Collapsible_Button-${align}`],
+                theme[`Button-${toggle}`],
+                align && theme[`Button-${align}`],
               )}
             >
               {this.state.display ? visibleText : hiddenText}

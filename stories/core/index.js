@@ -6,7 +6,7 @@ import { Theme } from 'react-themed'
 import { CoreTheme } from '../theme'
 import CompleteForm from './CompleteForm'
 import FilterPanel from './FilterPanel'
-import { Collapse } from './Collapsible'
+import Collapsible from './Collapsible'
 import {
   DefaultRangeSlider,
   RangeSliderLabel,
@@ -151,7 +151,7 @@ storiesOf('react-ui-core / Text', module)
 storiesOf('react-ui-core / Collapsible', module)
   .addDecorator((story, context) => withInfo('Collapsible')(story)(context))
   .addDecorator(CoreThemeDecorator)
-  .add('Collapsible', () => Collapse)
+  .add('Collapsible', () => Collapsible)
 
 storiesOf('react-ui-core / Counter', module)
   .addDecorator((story, context) => withInfo('Counter')(story)(context))

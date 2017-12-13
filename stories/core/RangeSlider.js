@@ -15,6 +15,7 @@ const wrapper = (props = {}) => {
   return (
     <RangeSlider
       {...props}
+      className={StoryBookTheme['Story-padding']}
       maxValue={maxValue || 20}
       minValue={minValue || 0}
       onChangeComplete={val => action('onChangeComplete')(val)}

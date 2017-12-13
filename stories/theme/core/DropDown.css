@@ -4,11 +4,8 @@
   flex-direction: column;
 }
 
-.DropDown_Content {
-  background: grey;
-  border-radius: 3px;
-  color: white;
-  text-align: center;
+.DropDown .Text {
+  color: #fff;
 }
 
 .DropDown_Anchor-dropdownVisible {

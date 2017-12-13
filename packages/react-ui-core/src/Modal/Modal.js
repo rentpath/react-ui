@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import ModalBody from './ModalBody'
 import Overlay from './Overlay'
 
-@themed('*', {
+@themed(/^Modal/, {
   pure: true,
 })
 
@@ -24,14 +24,6 @@ export default class Modal extends PureComponent {
     theme: {},
     onClose: () => { },
     closeOnOverlayClick: true,
-  }
-
-  static childContextTypes = {
-    theme: PropTypes.object,
-  }
-
-  getChildContext() {
-    return { theme: this.props.theme }
   }
 
   get overlayClose() {

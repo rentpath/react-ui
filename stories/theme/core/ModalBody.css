@@ -1,0 +1,9 @@
+.ModalBody {
+  min-width: 500px;
+  padding: 20px;
+  background: #FFF;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #666;
+  position: relative;
+}

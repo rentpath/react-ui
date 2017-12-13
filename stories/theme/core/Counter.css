@@ -1,25 +1,18 @@
-.title {
-  text-align: center;
-  font-weight: bold;
-}
-
 .Counter {
-  width: 100%;
   display: flex;
-  margin: 20px;
-  max-width: 300px;
 }
 
-.Counter_Label {
+.Counter .Label {
   display: inline-block;
-  flex: 1;
 }
 
 .Counter_Controls {
   display: inline-block;
+  flex: 4;
 }
 
-.Counter_Text {
+.Counter .Text {
+  display: inline-block;
   text-align: center;
   padding: 0 20px;
 }
@@ -29,11 +22,16 @@
   border-radius: 5px;
   padding: 5px 15px;
   display: inline-block;
-  background: #0076A3;
+  background: #0175D7;
   cursor: pointer;
 }
 
 .Counter_Button .Button {
   border-radius: 50%;
   width: 38px;
+}
+
+.Counter .Button {
+  color: #ffffff;
+  font-weight: bold;
 }

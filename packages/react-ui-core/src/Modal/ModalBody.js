@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
 
-@themed('*', {
+@themed(/^ModalBody/, {
   pure: true,
 })
 

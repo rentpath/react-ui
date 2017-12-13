@@ -153,7 +153,7 @@ describe('Form/Field', () => {
   describe('when "error" is an object', () => {
     it('renders an error with merged props', () => {
       const { wrapper } = setup({ error: { id: 'error' } })
-      expect(wrapper.find('#error').length).toBe(2)
+      expect(wrapper.find('#error').length).toBe(3)
     })
   })
 
@@ -182,7 +182,7 @@ describe('Form/Field', () => {
   describe('when "hint" is an object', () => {
     it('renders a hint with merged props', () => {
       const { wrapper } = setup({ hint: { id: 'hint' } })
-      expect(wrapper.find('#hint').length).toBe(2)
+      expect(wrapper.find('#hint').length).toBe(3)
     })
   })
 

@@ -1,6 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Text from '../Text'
+import ThemedText from '../Text'
+
+const Text = ThemedText.WrappedComponent
 
 describe('Text', () => {
   const theme = { Text: 'Text' }
