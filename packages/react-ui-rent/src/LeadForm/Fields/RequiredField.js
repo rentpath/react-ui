@@ -11,6 +11,7 @@ export default class RequiredField extends Component {
     name: PropTypes.string,
     type: PropTypes.string,
     placeholder: PropTypes.string,
+    defaultValue: PropTypes.string,
     onChange: PropTypes.func,
   }
 
@@ -21,7 +22,7 @@ export default class RequiredField extends Component {
   constructor(props) {
     super(props)
     this.inputChange = this.inputChange.bind(this)
-    this.state = { labelVisible: true }
+    this.state = { labelVisible: !props.defaultValue }
   }
 
   get fieldLabel() {
