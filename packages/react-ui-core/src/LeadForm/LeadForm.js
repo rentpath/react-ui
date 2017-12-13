@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
+import classnames from 'classnames'
 import isEqual from 'lodash/isEqual'
 import { randomId } from '@rentpath/react-ui-utils'
 import { Form, Field } from '../Form'
@@ -38,7 +39,7 @@ const FIELDS = [
   { name: 'terms_of_service' },
 ]
 
-@themed('*')
+@themed(/^LeadForm/)
 
 export default class LeadForm extends Component {
   static propTypes = {
@@ -104,7 +105,13 @@ export default class LeadForm extends Component {
     } = this.props
 
     return (
-      <Form {...props}>
+      <Form
+        className={classnames(
+          theme.LeadForm,
+          className,
+        )}
+        {...props}
+      >
         {this.fields}
       </Form>
     )

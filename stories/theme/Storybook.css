@@ -1,9 +1,12 @@
-.Story_Fieldset-padding {
-  padding: 0;
+.Story-padding {
+  padding: 20px;
 }
 
-.Story-alignCenter {
-  text-align: center;
+.Story-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .Story_ModalClickText {

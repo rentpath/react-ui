@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
-
 import classnames from 'classnames'
 import Star from './Star'
 
-@themed(/^RatingBar/, {
+@themed(/^(RatingBar|Label)/, {
   pure: true,
 })
 
@@ -34,6 +33,7 @@ export default class RatingBar extends PureComponent {
       maxScore,
       RatingItem,
       theme,
+      className,
       ...props
     } = this.props
 
@@ -58,7 +58,7 @@ export default class RatingBar extends PureComponent {
     const { theme, label } = this.props
 
     return (
-      <div className={theme.RatingBar_Label}>
+      <div className={theme.Label}>
         {label}
       </div>
     )

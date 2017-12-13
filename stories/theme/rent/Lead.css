@@ -1,13 +1,13 @@
-.Field {
-  max-width: 600px;
+.RentLeadForm .Field {
+  max-width: 6200px;
 }
 
 /* TODO: This should be a style from the styleguide */
-.Input,
-.Select,
-.Textarea {
+.RentLeadForm .Input,
+.RentLeadForm .Select,
+.RentLeadForm .Textarea {
   margin: 0;
-  font-size: 13px;
+  font-size: 22px;
   font-weight: 700;
   color: #4A4A4A;
   border: 1px solid #E6E7E8;
@@ -17,15 +17,10 @@
   width: 100%;
 }
 
-.Input:focus,
-.Select:focus,
-.Textarea:focus {
+.RentLeadForm .Input:focus,
+.RentLeadForm .Select:focus,
+.RentLeadForm .Textarea:focus {
   border-color: #0175D7;
-}
-
-.Button {
-  width: 100%;
-  margin-top: 10px;
 }
 
 .Label_Textarea {
@@ -36,68 +31,69 @@
   position: absolute;
 }
 
-.Textarea {
+.RentLeadForm .Textarea {
   padding-top: 30px;
   resize: none;
   height: 97px;
 }
 
-.Input::placeholder,
-.RequiredField_Label {
+.RentLeadForm .Input::placeholder,
+.RentLeadForm .RequiredField_Label {
   font-size: 13px;
   font-weight: 400;
   color: #4A4A4A;
 }
 
-.TermsOfService,
-.Field-checkbox .Label {
+.RentLeadForm .TermsOfService,
+.RentLeadForm .Field-checkbox .Label {
   font-size: 10px;
   font-weight: 600;
   color: #777777;
 }
 
-.Field-checkbox .Label {
+.RentLeadForm .Field-checkbox .Label {
   padding-left: 5px;
   width: 100%;
 }
 
-.TermsOfService a {
+.RentLeadForm .TermsOfService a {
   font-size: 10px;
   text-decoration: none;
   line-height: inherit;
 }
 
-.Field.Field-checkbox {
+.RentLeadForm  .Field.Field-checkbox {
   display: inline-flex;
   flex-direction: row-reverse;
   margin: 5px;
 }
 
-.TermsOfService {
+.RentLeadForm .TermsOfService {
   margin-left: 5px;
 }
 
-.Field-checkbox .Input {
+.RentLeadForm .Field-checkbox .Input {
   width: auto;
 }
 
-.RequiredField {
+.RentLeadForm .RequiredField {
   line-height: 0;
 }
 
-.RequiredField_Label {
+.RentLeadForm .RequiredField_Label {
   position: relative;
   top: 13px;
   left: 13px;
 }
 
-.RequiredField_Label:after {
+.RentLeadForm .RequiredField_Label:after {
   content: ' *';
   color: #ea5117;
 }
 
 
-.Button {
+.RentLeadForm .Button {
+  margin-top: 10px;
   width: 100%;
   height: auto;
   padding: 10px;

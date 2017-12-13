@@ -7,7 +7,6 @@ export default class Email extends PureComponent {
     name: PropTypes.string,
     type: PropTypes.string,
     placeholder: PropTypes.string,
-    onClick: PropTypes.func,
   }
 
   static defaultProps = {
@@ -17,9 +16,6 @@ export default class Email extends PureComponent {
   }
 
   render() {
-    const {
-      onClick,
-    } = this.props
     return (
       <RequiredField {...this.props} />
     )

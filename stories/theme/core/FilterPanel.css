@@ -1,27 +1,21 @@
 
-.Form {
+.FilterPanel.Form {
   width: 500px;
 }
 
-.Input,
-.Select,
-.Textarea {
+.FilterPanel .Input,
+.FilterPanel .Select,
+.FilterPanel .Textarea {
   padding: 6px 10px;
   flex: 4;
 }
 
-.FieldSet {
+.FilterPanel .FieldSet {
   width: 100%;
   border: none;
 }
 
-.FieldSet_legend {
+.FilterPanel .FieldSet_legend {
   width: 100%;
   text-align: center;
-}
-
-.col {
-  width: 50%;
-  white-space: nowrap;
-  display: inline-block;
 }

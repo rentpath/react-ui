@@ -6,14 +6,6 @@
   display: none;
 }
 
-.Collapsible_Button-bottom {
-  display: inline-block;
-  width: 100%;
-}
-
-.checkboxStyle {
-  width: 40%;
-  height: 30px;
-  float: left;
-  margin-left: 10%;
+.Collapsible .Label {
+  min-width: 200px;
 }

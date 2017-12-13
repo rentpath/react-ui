@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { List } from 'react-ui-core/src'
+import { List, Text } from 'react-ui-core/src'
 
 const sampleListItems = ['One', 'Two', 'Three']
 
@@ -10,9 +10,9 @@ class sampleItemComponent extends PureComponent {
   }
   render() {
     return (
-      <div>
-        <p><strong>{this.props.children}</strong></p>
-      </div>
+      <Text>
+        {this.props.children}
+      </Text>
     )
   }
 }

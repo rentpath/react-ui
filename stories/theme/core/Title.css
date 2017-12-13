@@ -1,19 +1,18 @@
 .Title {
-  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
 }
 
 .Title-defaultLook {
   border: solid 1px;
 }
 
-.Title-Yuge {
-  font-family: Arial, Helvetica, sans-serif;
+.Title-yuge {
   font-size: 2.5rem;
   font-weight: 700;
-  text-align: center;
 }
 
-.Title-Yuge a {
+.Title-yuge a {
   text-decoration: none;
   text-transform: capitalize;
 }

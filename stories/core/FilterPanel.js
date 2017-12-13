@@ -1,14 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import themed from 'react-themed'
 import {
   Form,
   Field,
   FieldSet,
   Modal,
 } from 'react-ui-core/src'
-import { examples as rangeSliderExamples } from './RangeSlider'
+import { MinMaxStepRangeSlider } from './RangeSlider'
 import StoryBookTheme from '../theme/Storybook.css'
 
-const PriceSlider = () => rangeSliderExamples.withMinMaxStep
+const Slider = () => MinMaxStepRangeSlider
 
 const Fields = () => (
   <FieldSet
@@ -34,11 +36,19 @@ const Fields = () => (
   </FieldSet>
 )
 
-export default (
+const FilterPanel = props => (
   <Modal isOpen>
-    <Form>
-      <PriceSlider />
+    <Form className={props.theme.FilterPanel}>
+      <Slider />
       <Fields />
     </Form>
   </Modal>
 )
+
+FilterPanel.propTypes = {
+  theme: PropTypes.object,
+}
+
+const ThemedFilter = themed(['FilterPanel'])(FilterPanel)
+
+export default (<ThemedFilter />)

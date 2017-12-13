@@ -4,11 +4,13 @@ exports[`Header renders header and subHeader if subHeader passed 1`] = `
 <div>
   <div
     className=""
+    data-tid="text"
   >
     Contact Property
   </div>
   <div
     className=""
+    data-tid="text"
   >
     To: (xxx) xxx - xxxx
   </div>
@@ -19,6 +21,7 @@ exports[`Header renders header only if no subHeader passsed 1`] = `
 <div>
   <div
     className=""
+    data-tid="text"
   >
     Contact Property
   </div>

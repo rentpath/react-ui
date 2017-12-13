@@ -4,20 +4,16 @@
   margin-bottom: 10px;
 }
 
-.Field {
-  margin: 8px 0;
-  display: flex;
-  max-width: 600px;
-}
-
 .Label {
   flex: 1;
+}
+
+.Form .Field {
+  color:#000;
 }
 
 .Input,
 .Select,
 .Textarea {
-  border: 1px solid #aaa;
-  padding: 6px 10px;
   flex: 4;
 }

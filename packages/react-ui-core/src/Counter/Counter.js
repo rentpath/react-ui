@@ -2,8 +2,9 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
+import { Text } from '../Text'
 
-@themed(/^Counter/, {
+@themed(/^(Counter|Label|Text)/, {
   pure: true,
 })
 
@@ -54,7 +55,7 @@ export default class Counter extends PureComponent {
     const { theme, label } = this.props
 
     return (
-      <div className={theme.Counter_Label}>
+      <div className={theme.Label}>
         {label}
       </div>
     )
@@ -94,6 +95,7 @@ export default class Counter extends PureComponent {
       className,
       decrementOperator,
       incrementOperator,
+      onClick,
       text,
       step,
       min,
@@ -125,9 +127,9 @@ export default class Counter extends PureComponent {
           >
             {decrementOperator}
           </span>
-          <span className={theme.Counter_Text} data-tid="counter-text">
+          <Text data-tid="counter-text">
             {this.text(count)}
-          </span>
+          </Text>
           <span
             role="presentation"
             onClick={this.increment}

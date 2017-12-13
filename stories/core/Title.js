@@ -1,30 +1,34 @@
 import React from 'react'
-import { ThemeProvider, compose } from 'react-themed'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
+import themed from 'react-themed'
 import { Title } from 'react-ui-core/src/Title'
-import { TitleTheme } from '../theme'
-
-const theme = compose(
-  {},
-  TitleTheme,
-)
+import StoryBookTheme from '../theme/Storybook.css'
 
 export const DefaultTitle = (
-  <ThemeProvider theme={theme}>
-    <Title
-      nodeType="h2"
-    >
-      Default Title
-    </Title>
-  </ThemeProvider>
+  <Title
+    nodeType="h2"
+    className={StoryBookTheme['Story-center']}
+  >
+    Default Title
+  </Title>
 )
 
-export const EmbeddedLinkWithinTitle = (
-  <ThemeProvider theme={theme}>
-    <Title
-      nodeType="h3"
-      className={theme['Title-Yuge']}
-    >
-      <a href="/">Hello! <br /> Click this text to go back home</a>
-    </Title>
-  </ThemeProvider>
+const LinkTitle = props => (
+  <Title
+    nodeType="h3"
+    className={classnames(
+      StoryBookTheme['Story-center'],
+      props.theme['Title-yuge']
+    )}
+  >
+    <a href="/">Hello! <br /> Click this text to go back home</a>
+  </Title>
 )
+
+LinkTitle.propTypes = {
+  theme: PropTypes.object,
+}
+const ThemedLinkTitle = themed(/^Title/)(LinkTitle)
+
+export const EmbeddedLinkWithinTitle = (<ThemedLinkTitle />)

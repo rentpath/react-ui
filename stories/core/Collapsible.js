@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Field } from 'react-ui-core/src'
-import { Collapsible } from 'react-ui-core/src/Collapsible'
+import { Field, Collapsible } from 'react-ui-core/src'
+import StoryBookTheme from '../theme/Storybook.css'
 
-export default class Checkbox extends Component {
+class Checkbox extends Component {
   static propTypes = {
     className: PropTypes.string,
     label: PropTypes.string,
@@ -57,9 +57,10 @@ const handleChange = () => {
   console.log('in custom onclick handler') // eslint-disable-line no-console
 }
 
-export const Collapse = (
+export default (
   <div>
     <Collapsible
+      className={StoryBookTheme['Story-padding']}
       showableItems={myShowableItems}
       nonshowableItems={myNonShowableItems}
       hiddenText="see all amenities"

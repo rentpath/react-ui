@@ -6,9 +6,10 @@ import theme from './mocks/theme'
 const Counter = ThemedCounter.WrappedComponent
 
 describe('Counter', () => {
-  it('renders a Counter', () => {
+  it('renders a decrementer and incrementer', () => {
     const wrapper = mount(<Counter theme={theme} />)
-    expect(wrapper.find('span')).toHaveLength(5)
+    expect(wrapper.find('[data-tid="counter-decrement"]')).toHaveLength(1)
+    expect(wrapper.find('[data-tid="counter-increment"]')).toHaveLength(1)
   })
 
   it('passes through props', () => {
@@ -26,11 +27,11 @@ describe('Counter', () => {
     expect(wrapper.prop('count')).toEqual(0)
   })
 
-  describe('when props are changed after mount', () => {
+  describe('when props are changed', () => {
     let wrapper
 
     beforeEach(() => {
-      wrapper = shallow(
+      wrapper = mount(
         <Counter
           theme={theme}
           count={3}
@@ -41,7 +42,7 @@ describe('Counter', () => {
     it('updates the state for counter', () => {
       wrapper.setProps({ count: 10 })
       expect(wrapper.state('count')).toEqual(10)
-      expect(wrapper.find('[data-tid="counter-text"]').text()).toEqual('10')
+      expect(wrapper.find('Text').text()).toEqual('10')
     })
   })
 
@@ -49,7 +50,7 @@ describe('Counter', () => {
     it('uses the default "count" prop when no texst provided', () => {
       const count = 2
       const wrapper = mount(<Counter theme={theme} count={count} />)
-      expect(wrapper.find('.Counter_Text').getDOMNode().innerHTML).toEqual(String(count))
+      expect(wrapper.find('Text').getDOMNode().innerHTML).toEqual(String(count))
     })
 
     describe('when text is a function', () => {
@@ -57,7 +58,7 @@ describe('Counter', () => {
         const text = num => `this is a test for count ${num}`
         const expected = 'this is a test for count 2'
         const wrapper = mount(<Counter theme={theme} count={2} text={text} />)
-        expect(wrapper.find('.Counter_Text').getDOMNode().innerHTML).toEqual(expected)
+        expect(wrapper.find('Text').getDOMNode().innerHTML).toEqual(expected)
       })
 
       it('generates text using count after increment / decrement', () => {
@@ -67,7 +68,7 @@ describe('Counter', () => {
         const incrementer = wrapper.find('.Counter_Increment > span')
 
         const html = node => (
-          node.find('.Counter_Text').getDOMNode().innerHTML
+          node.find('Text').getDOMNode().innerHTML
         )
 
         incrementer.simulate('click')
@@ -79,6 +80,15 @@ describe('Counter', () => {
   })
 
   describe('onClick', () => {
+    it('does not get passed / fired on the root node', () => {
+      const onClick = jest.fn()
+      const wrapper = shallow(<Counter onClick={onClick} />)
+      wrapper.simulate('click')
+
+      expect(wrapper.prop('onClick')).toBeFalsy()
+      expect(onClick).not.toHaveBeenCalled()
+    })
+
     it('maintains count between min and max', () => {
       const wrapper = mount(
         <Counter
@@ -111,7 +121,7 @@ describe('Counter', () => {
           onClick={onClick}
         />,
       )
-      wrapper.find('span').at(0).simulate('click')
+      wrapper.find('[data-tid="counter-decrement"]').simulate('click')
       expect(onClick).toHaveBeenCalledWith(1)
       expect(wrapper.state('count')).toEqual(1)
     })
@@ -125,7 +135,7 @@ describe('Counter', () => {
           onClick={onClick}
         />,
       )
-      wrapper.find('span').at(3).simulate('click')
+      wrapper.find('[data-tid="counter-increment"]').simulate('click')
       expect(onClick).toHaveBeenCalledWith(3)
       expect(wrapper.state('count')).toEqual(3)
     })

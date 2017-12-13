@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { DropDown, List, Text, Field } from 'react-ui-core/src'
+import { DropDown, Card, List, Text, Field } from 'react-ui-core/src'
 import PropTypes from 'prop-types'
 
 class DropDownFieldAnchor extends PureComponent {
@@ -25,6 +25,8 @@ export const DefaultDropDown = (
 
 export const InputDropDown = (
   <DropDown Anchor={DropDownFieldAnchor}>
-    <List items={['foo', 'bar', 'baz']} />
+    <Card>
+      <List items={['foo', 'bar', 'baz']} />
+    </Card>
   </DropDown>
 )

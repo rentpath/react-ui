@@ -1,6 +1,7 @@
 import { compose } from 'react-themed'
-import Lead from './Lead.css'
+import CoreTheme from '../core'
+import RentLeadForm from './Lead.css'
 
-export default compose({},
-  Lead,
+export default compose(CoreTheme,
+  RentLeadForm,
 )
