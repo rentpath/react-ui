@@ -54,6 +54,7 @@ export default class RequiredField extends Component {
     const {
       theme,
       placeholder,
+      onChange,
       ...props
     } = this.props
 
