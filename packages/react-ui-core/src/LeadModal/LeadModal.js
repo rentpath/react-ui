@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Modal } from '../Modal'
+import { Modal, ModalCloseButton } from '../Modal'
 import { LeadForm } from '../LeadForm'
-import ModalCloseButton from './CloseButton'
 
 export default class LeadModal extends Component {
   static propTypes = {

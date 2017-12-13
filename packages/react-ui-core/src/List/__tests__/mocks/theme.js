@@ -4,4 +4,5 @@ export default keyMirror([
   'List-vertical',
   'List-horizontal',
   'ListItem',
+  'ListItem-highlight',
 ])

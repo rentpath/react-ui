@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import DropdownAnchorButton from './DropdownAnchorButton'
+import { parseArgs } from '@rentpath/react-ui-utils'
+import AnchorButton from './AnchorButton'
+import { Card } from '../Card'
 
 @themed(/^Dropdown/)
 
@@ -12,16 +14,16 @@ export default class Dropdown extends Component {
     visible: PropTypes.bool,
     theme: PropTypes.object,
     children: PropTypes.node,
-    Anchor: PropTypes.oneOfType([
+    anchorField: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.func,
+      PropTypes.object,
     ]),
   }
 
   static defaultProps = {
     visible: false,
     theme: {},
-    Anchor: DropdownAnchorButton,
   }
 
   constructor(props) {
@@ -47,16 +49,21 @@ export default class Dropdown extends Component {
     }
   }
 
+  renderAnchor(anchorField) {
+    return parseArgs(anchorField, AnchorButton)
+  }
+
   render() {
     const {
       theme,
       visible,
       children,
-      Anchor,
+      anchorField,
       className,
       ...props
     } = this.props
 
+    const [Button, fieldProps] = this.renderAnchor(anchorField)
     const dropDownVisible = this.state.visible
 
     return (
@@ -66,25 +73,21 @@ export default class Dropdown extends Component {
           theme.Dropdown,
           className
         )}
+        {...props}
       >
-        <Anchor
-          data-tid="dropdown-anchor"
+        <Button
           {...props}
+          {...fieldProps}
+          visible={dropDownVisible}
           handleDocumentClick={this.handleDocumentClick}
           toggleVisibilty={this.toggleVisibilty}
-          dropDownVisible={dropDownVisible}
-          className={classnames(
-            theme.Dropdown_Anchor,
-            theme[`Dropdown_Anchor-dropdown${dropDownVisible ? 'Visible' : 'Hidden'}`],
-          )}
         />
         {dropDownVisible &&
-          <div
-            data-tid="dropdown-content"
-            className={theme.Dropdown_Content}
+          <Card
+            data-tid="dropdown-body"
           >
             {children}
-          </div>
+          </Card>
         }
       </div>
     )

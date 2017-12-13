@@ -1,9 +1,12 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+import autobind from 'autobind-decorator'
 import themed from 'react-themed'
 
-@themed('*', { pure: true })
+@themed(/^ListItem/, {
+  pure: true,
+})
 
 export default class ListItem extends PureComponent {
 
@@ -12,6 +15,10 @@ export default class ListItem extends PureComponent {
     className: PropTypes.string,
     nodeType: PropTypes.string,
     children: PropTypes.node,
+    onMouseEnter: PropTypes.func,
+    onClick: PropTypes.func,
+    index: PropTypes.number,
+    highlight: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -19,11 +26,21 @@ export default class ListItem extends PureComponent {
     nodeType: 'li',
   }
 
+  @autobind
+  handleMouseEnter() {
+    const { onMouseEnter, index } = this.props
+
+    if (onMouseEnter) onMouseEnter(index)
+  }
+
   render() {
     const {
       theme,
       className,
       children,
+      onMouseEnter,
+      index,
+      highlight,
       nodeType: NodeType,
       ...props
     } = this.props
@@ -33,7 +50,10 @@ export default class ListItem extends PureComponent {
         className={cn(
           theme.ListItem,
           className,
+          highlight && theme['ListItem-highlight']
         )}
+        index={index}
+        onMouseEnter={this.handleMouseEnter}
         {...props}
       >
         {children}

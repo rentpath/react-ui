@@ -14,7 +14,7 @@ import Title from './Title.css'
 import Form from './Form.css'
 import FilterPanel from './FilterPanel.css'
 import Dropdown from './Dropdown.css'
-import DropdownMenu from './DropdownMenu.css'
+import Menu from './Menu.css'
 import List from './List.css'
 import Card from './Card.css'
 import Modal from './Modal.css'
@@ -40,7 +40,7 @@ export default compose({},
   Form,
   FilterPanel,
   Dropdown,
-  DropdownMenu,
+  Menu,
   List,
   Card,
   Modal,

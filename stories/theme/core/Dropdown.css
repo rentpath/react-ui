@@ -1,25 +1,40 @@
 .Dropdown {
-  margin: 20px;
   width: fit-content;
   display: flex;
   flex-direction: column;
 }
 
-.Dropdown_Content {
-  background: grey;
+.Dropdown .Card {
   border-radius: 3px;
-  color: white;
   text-align: center;
+  width: 100%;
 }
 
-.Dropdown_Anchor-dropdownVisible {
-  background: grey;
+.Dropdown .Field {
+  width: 500px;
 }
 
-.Dropdown_Anchor {
-  color: white;
+.Dropdown .Field .Label {
+  flex: none;
+  padding-right: 10px;
 }
 
-.Dropdown .Text {
-  color: white;
+.Dropdown .Button .Text {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.Dropdown .Button-expand:after,
+.Dropdown .Button-collapse:after {
+  padding-left: 20px;
+}
+
+.Dropdown .Button-expand:after {
+  content: '\25b2';
+}
+
+.Dropdown .Button-collapse:after {
+  content: '\25bc';
+
 }

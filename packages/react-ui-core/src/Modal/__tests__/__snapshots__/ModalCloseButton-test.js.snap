@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalCloseButton renders children passed 1`] = `
+<div
+  className=""
+  data-tid="modal-close-button"
+>
+  Close
+</div>
+`;
+
+exports[`ModalCloseButton renders default children if none passed 1`] = `
+<div
+  className=""
+  data-tid="modal-close-button"
+>
+  X
+</div>
+`;

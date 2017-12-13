@@ -1,14 +1,26 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
+import themed from 'react-themed'
 import { Button } from '../Button'
 
-export default class DropdownAnchorButton extends PureComponent {
+@themed(['Button-expand']['Button-collapse'], {
+  pure: true,
+})
+
+export default class AnchorButton extends PureComponent {
   static propTypes = {
     toggleVisibilty: PropTypes.func,
     handleDocumentClick: PropTypes.func,
-    text: PropTypes.node,
-    className: PropTypes.string,
+    visible: PropTypes.bool,
     onClick: PropTypes.func,
+    theme: PropTypes.object,
+    className: PropTypes.string,
+    text: PropTypes.any,
+  }
+
+  static defaultProps = {
+    theme: {},
   }
 
   constructor(props) {
@@ -25,21 +37,32 @@ export default class DropdownAnchorButton extends PureComponent {
   }
 
   handleClick() {
-    this.props.toggleVisibilty()
+    const { toggleVisibilty } = this.props
+
+    if (toggleVisibilty) toggleVisibilty()
   }
 
   render() {
     const {
+      handleDocumentClick,
+      toggleVisibilty,
+      visible,
       className,
+      theme,
       text,
       onClick, // eslint-disable-line no-unused-vars
+      ...props
     } = this.props
 
     return (
       <Button
-        data-tid="dropdown-anchor-button"
+        data-tid="anchor-button"
+        className={classnames(
+          className,
+          theme[`Button-${visible ? 'expand' : 'collapse'}`]
+        )}
         onClick={this.handleClick}
-        className={className}
+        {...props}
       >
         {text}
       </Button>

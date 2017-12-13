@@ -1,19 +1,18 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
 import themed from 'react-themed'
+import classnames from 'classnames'
 import { List } from '../List'
-import ItemWrapper from './ItemWrapper'
 
 const ENTER = 13
 const ARROW_UP = 38
 const ARROW_DOWN = 40
 
-@themed(/^DropdownMenu/, {
+@themed(['Menu'], {
   pure: true,
 })
 
-export default class DropdownMenu extends Component {
+export default class Menu extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,
     className: PropTypes.string,
@@ -21,22 +20,31 @@ export default class DropdownMenu extends Component {
     onSelection: PropTypes.func,
     handleSelectionHover: PropTypes.func,
     optionValueSelector: PropTypes.func,
+    nodeType: PropTypes.string,
+    listItem: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.func,
+      PropTypes.object,
+    ]),
+    highlightIndex: PropTypes.number,
   }
 
   static defaultProps = {
     theme: {},
     handleSelectionHover: () => {},
-    onSelection: () => {},
+    onSelection: () => { },
+    nodeType: 'div',
+    listItem: { nodeType: 'div' },
   }
 
   constructor(props) {
     super(props)
 
     this.state = {
-      activeIndex: 0,
+      highlightIndex: props.highlightIndex || 0,
     }
 
-    this.activateOption = this.activateOption.bind(this)
+    this.highlightOption = this.highlightOption.bind(this)
     this.handleSelection = this.handleSelection.bind(this)
     this.onKeyDown = this.onKeyDown.bind(this)
     this.getValue = this.getValue.bind(this)
@@ -46,6 +54,12 @@ export default class DropdownMenu extends Component {
     document.addEventListener('keydown', this.onKeyDown)
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.highlightIndex !== nextProps.highlightIndex) {
+      this.setState({ highlightIndex: nextProps.highlightIndex })
+    }
+  }
+
   componentWillUnmount() {
     document.removeEventListener('keydown', this.onKeyDown)
   }
@@ -53,15 +67,15 @@ export default class DropdownMenu extends Component {
   onKeyDown(event) {
     switch (event.keyCode) {
       case ARROW_DOWN:
-        this.activateOption(this.state.activeIndex + 1)
+        this.highlightOption(this.state.highlightIndex + 1)
         break
       case ARROW_UP:
         event.preventDefault()
-        this.activateOption(this.state.activeIndex - 1)
+        this.highlightOption(this.state.highlightIndex - 1)
         break
       case ENTER:
         event.preventDefault()
-        this.handleSelection(this.state.activeIndex)
+        this.handleSelection(this.state.highlightIndex)
         break
       default:
     }
@@ -69,7 +83,7 @@ export default class DropdownMenu extends Component {
 
   getValue() {
     const { optionValueSelector, options } = this.props
-    let value = options[this.state.activeIndex]
+    let value = options[this.state.highlightIndex]
 
     if (optionValueSelector) value = optionValueSelector(value)
     return value
@@ -79,10 +93,10 @@ export default class DropdownMenu extends Component {
     this.props.onSelection(this.getValue())
   }
 
-  activateOption(index) {
+  highlightOption(index) {
     if (index < 0 || index >= this.props.options.length) return
     this.setState({
-      activeIndex: index,
+      highlightIndex: index,
     })
 
     this.props.handleSelectionHover(this.getValue())
@@ -90,29 +104,25 @@ export default class DropdownMenu extends Component {
 
   render() {
     const {
-      className,
       options,
       theme,
       handleSelectionHover,
+      className,
       onSelection,
       ...props
     } = this.props
 
-    const { activeIndex } = this.state
-
     return (
       <List
-        className={cn(
+        role="button"
+        className={classnames(
           className,
-          theme.List,
-          theme.DropdownMenu
+          theme.Menu
         )}
         items={options}
-        Item={ItemWrapper}
-        nodeType="div"
-        selectedIndex={activeIndex}
-        handleSelectionClick={this.handleSelection}
-        handleSelectionHover={this.activateOption}
+        highlightIndex={this.state.highlightIndex}
+        onClick={this.handleSelection}
+        onMouseEnter={this.highlightOption}
         {...props}
       />
     )
