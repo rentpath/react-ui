@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import InputRange from 'react-input-range'
 import classnames from 'classnames'
+import omit from 'lodash/omit'
 import themed from 'react-themed'
 
 @themed('*', {
   pure: true,
 })
 
-export default class RangeSlider extends Component {
+export default class RangeSlider extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,
     className: PropTypes.string,
@@ -29,15 +30,28 @@ export default class RangeSlider extends Component {
     super(props)
     this.onChange = this.onChange.bind(this)
     this.state = { value: props.value }
+
+    this.setSliderTheme(props.theme)
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ value: nextProps.value })
+    if (this.props.value !== nextProps.value) {
+      this.setState({ value: nextProps.value })
+    }
+
+    if (this.props.theme !== nextProps.theme) {
+      this.setSliderTheme(nextProps.theme)
+    }
   }
 
   onChange(value) {
     if (this.props.onChange) this.props.onChange(value)
     this.setState({ value })
+  }
+
+  setSliderTheme(theme) {
+    // NOTE: this ensures react-input-range plays nicely with theme object
+    this.sliderTheme = omit(theme, '_getCss', '_insertCss')
   }
 
   render() {
@@ -61,7 +75,7 @@ export default class RangeSlider extends Component {
           {...props}
           onChange={this.onChange}
           value={this.state.value}
-          classNames={theme}
+          classNames={this.sliderTheme}
         />
       </div>
     )
