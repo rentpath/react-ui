@@ -26,6 +26,13 @@ describe('Counter', () => {
     expect(wrapper.prop('count')).toEqual(0)
   })
 
+  it('sets a "data-tid" field on the outer div', () => {
+    const testId = 'this-is-a-test-id'
+    const wrapper = mount(<Counter theme={theme} data-tid={testId} />)
+    const element = wrapper.find('.Counter')
+    expect(element.prop('data-tid')).toEqual(testId)
+  })
+
   describe('when props are changed after mount', () => {
     let wrapper
 

@@ -17,9 +17,6 @@ export default class Email extends PureComponent {
   }
 
   render() {
-    const {
-      onClick,
-    } = this.props
     return (
       <RequiredField {...this.props} />
     )
