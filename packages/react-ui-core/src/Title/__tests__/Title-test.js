@@ -35,6 +35,7 @@ describe('Title', () => {
     const wrapper = shallow(<Title>Test Text</Title>)
     expect(wrapper.find('[data-tid="title"]')).toHaveLength(1)
   })
+
   it('has allows an override of the data-tid', () => {
     const wrapper = shallow(<Title data-tid="foo">Test Text</Title>)
     expect(wrapper.find('[data-tid="foo"]')).toHaveLength(1)

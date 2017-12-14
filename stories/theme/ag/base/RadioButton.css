@@ -1,0 +1,11 @@
+.RadioButton {
+  display: inline-block;
+}
+
+.RadioButton-hidden .Input {
+  display: none;
+}
+
+.RadioButton .Label {
+  cursor: pointer;
+}

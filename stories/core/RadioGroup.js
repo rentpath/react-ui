@@ -10,7 +10,7 @@ export const DefaultRadioGroup = (
       { label: 'One', checked: false, value: 'One' },
       { label: 'Two', checked: false, value: 'Two' },
     ]}
-    onChange={event => action('change')(event.target.value)}
+    handleChange={event => action('change')(event.target.value)}
   />
 )
 
@@ -23,7 +23,7 @@ export const ButtonRadioGroup = (
       { label: 'Uno', checked: true, value: 'Uno' },
       { label: 'Dos', checked: false, value: 'Dos' },
     ]}
-    onChange={event => action('change')(event.target.value)}
+    handleChange={event => action('change')(event.target.value)}
   />
 )
 
@@ -35,6 +35,6 @@ export const VerticalRadioGroup = (
       { label: 'Un', checked: false, value: 'Un' },
       { label: 'Deux', checked: true, value: 'Deux' },
     ]}
-    onChange={event => action('change')(event.target.value)}
+    handleChange={event => action('change')(event.target.value)}
   />
 )

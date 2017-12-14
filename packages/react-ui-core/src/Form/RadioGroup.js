@@ -90,6 +90,7 @@ export default class RadioGroup extends Component {
       name,
       fields,
       hideInputElement,
+      handleChange,
       ...props
     } = this.props
 

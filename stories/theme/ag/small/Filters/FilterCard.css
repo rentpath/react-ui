@@ -1,0 +1,34 @@
+.FilterCard {
+  background-color: #0175d7;
+  color: #ffffff;
+  border-radius: 8px;
+  width: 343px;
+  height: 200px;
+}
+
+.FilterCard_Title {
+  font-weight: normal;
+  font-size: 17px;
+  text-align: left;
+}
+
+.FilterCard_Description {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.FilterCard_Description {
+  max-width: 200px;
+  line-height: 22px;
+}
+
+.FilterCard_Header {
+  margin-top: 15px;
+}
+
+.FilterCard_Body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}

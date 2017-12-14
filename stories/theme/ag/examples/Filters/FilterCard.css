@@ -12,3 +12,7 @@
   padding: 25px;
   margin-bottom: 5px;
 }
+
+.FilterCard_Buttons .Button {
+  margin: 15px;
+}

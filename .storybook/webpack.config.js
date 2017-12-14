@@ -14,7 +14,7 @@ module.exports = (storybookBaseConfig, configType) => {
           loader: 'css-loader',
           options: {
             modules: true,
-            localIdentName: '[name]-[local]',
+            localIdentName: '[path]-[local]',
             importLoaders: 1,
           }
         },

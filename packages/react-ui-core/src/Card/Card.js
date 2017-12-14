@@ -30,9 +30,10 @@ export default class Card extends PureComponent {
           theme.Card,
           className,
         )}
+        data-tid="card"
         {...props}
       >
-        <div className={theme.Content} data-tid="card-content">
+        <div className={theme.Card_Body} data-tid="card-body">
           {children}
         </div>
       </div>

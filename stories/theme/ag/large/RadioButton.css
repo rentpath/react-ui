@@ -1,0 +1,25 @@
+.SearchFilter .RadioButton {
+  border-radius: 5px;
+  border: solid 1px #787878;
+  margin: 5px;
+}
+
+.SearchFilter .RadioButton .Label {
+  display: inline-flex;
+  width: 80px;
+  height: 26px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 13px;
+  padding: 5px;
+}
+
+.SearchFilter .RadioButton-checked {
+  border: solid 1px #5a5a5a;
+  background-color: #5a5a5a;
+}
+
+.SearchFilter .RadioButton-checked .Label {
+  color: #ffffff;
+}
