@@ -60,8 +60,11 @@ export {
 
 export {
   Dropdown,
-  DropdownMenu,
 } from './Dropdown'
+
+export {
+  Menu,
+} from './Menu'
 
 export {
   LeadForm,

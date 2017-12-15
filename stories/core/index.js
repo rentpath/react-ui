@@ -77,7 +77,9 @@ import {
 
 import {
   DefaultDropdown,
-  InputDropdown,
+  DropdownWithProps,
+  DropdownWithMenu,
+  DropdownButtonToggle,
 } from './Dropdown'
 
 import {
@@ -86,10 +88,10 @@ import {
 } from './Lead'
 
 import {
-  DefaultDropdownMenu,
-  DropdownMenuOnSelection,
-  DropdownMenuOnSelectionHover,
-} from './DropdownMenu'
+  DefaultMenu,
+  MenuOnSelection,
+  MenuOnSelectionHover,
+} from './Menu'
 
 const CoreThemeDecorator = storyFn => (
   <Theme theme={CoreTheme}>
@@ -133,7 +135,7 @@ storiesOf('react-ui-core / Form / Field', module)
   .add('Select Field', () => SelectField)
   .add('Checkbox Field', () => CheckboxField)
 
-storiesOf('react-ui-core / RadioGroup', module)
+storiesOf('react-ui-core / Form / RadioGroup', module)
   .addDecorator((story, context) => withInfo('RadioGroup')(story)(context))
   .addDecorator(CoreThemeDecorator)
   .add('Radiogroup', () => DefaultRadioGroup)
@@ -198,17 +200,19 @@ storiesOf('react-ui-core / Title', module)
   .add('Link Title', () => EmbeddedLinkWithinTitle)
 
 storiesOf('react-ui-core / Dropdown', module)
-  .addDecorator((story, context) => withInfo('Default Dropdown')(story)(context))
+  .addDecorator((story, context) => withInfo('Dropdown')(story)(context))
   .addDecorator(CoreThemeDecorator)
-  .add('Dropdown with default anchor', () => DefaultDropdown)
-  .add('Dropdown with custom Input anchor', () => InputDropdown)
+  .add('Dropdown', () => DefaultDropdown)
+  .add('Dropdown With Anchor Props', () => DropdownWithProps)
+  .add('Custom Dropdown Input anchor', () => DropdownButtonToggle)
+  .add('Custom Dropdown With Menu', () => DropdownWithMenu)
 
-storiesOf('react-ui-core / Dropdown Menu', module)
-  .addDecorator((story, context) => withInfo('Default Dropdown Menu')(story)(context))
+storiesOf('react-ui-core / Menu', module)
+  .addDecorator((story, context) => withInfo(' Menu')(story)(context))
   .addDecorator(CoreThemeDecorator)
-  .add('Default Dropdown Menu', () => DefaultDropdownMenu)
-  .add('Dropdown On Selection', () => DropdownMenuOnSelection)
-  .add('Dropdown On Selection hover', () => DropdownMenuOnSelectionHover)
+  .add('Menu', () => DefaultMenu)
+  .add('On Keyboard Selection', () => MenuOnSelection)
+  .add('On Selection hover', () => MenuOnSelectionHover)
 
 storiesOf('react-ui-core / Lead', module)
   .addDecorator((story, context) => withInfo('Core Lead')(story)(context))

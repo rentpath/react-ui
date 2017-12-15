@@ -4,7 +4,7 @@ import { List, Text } from 'react-ui-core/src'
 
 const sampleListItems = ['One', 'Two', 'Three']
 
-class sampleItemComponent extends PureComponent {
+class SampleItemComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
   }
@@ -34,7 +34,9 @@ export const ListWithPassedNodeTypes = (
   <List
     items={sampleListItems}
     nodeType="div"
-    listItemNodeType="ul"
+    ListItem={{
+      nodeType: 'div',
+    }}
   />
 
 )
@@ -42,6 +44,6 @@ export const ListWithPassedNodeTypes = (
 export const ListWithOwnItemComponent = (
   <List
     items={sampleListItems}
-    Item={sampleItemComponent}
+    ListItem={props => (<SampleItemComponent {...props} />)}
   />
 )

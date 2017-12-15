@@ -78,17 +78,19 @@ export default class Collapsible extends Component {
         )}
       >
         {showableItems}
-        { nonshowableItems &&
-          <div>
+        {nonshowableItems &&
+          [
             <div
+              key="collapsible-toggle"
               className={classnames(
                 theme.Collapsible_Items,
                 theme[`Collapsible_Items-${toggle}`]
               )}
             >
               {nonshowableItems}
-            </div>
+            </div>,
             <Button
+              key="collapsible-button"
               onClick={this.handleClick}
               className={classnames(
                 theme[`Button-${toggle}`],
@@ -96,8 +98,8 @@ export default class Collapsible extends Component {
               )}
             >
               {this.state.display ? visibleText : hiddenText}
-            </Button>
-          </div>
+            </Button>,
+          ]
         }
       </div>
     )

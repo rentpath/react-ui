@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { action } from '@storybook/addon-actions'
 import { Field, Collapsible } from 'react-ui-core/src'
 import StoryBookTheme from '../theme/Storybook.css'
 
@@ -53,10 +54,6 @@ const myShowableItems = [
 
 const myNonShowableItems = nonshowableItems.map(renderItem)
 
-const handleChange = () => {
-  console.log('in custom onclick handler') // eslint-disable-line no-console
-}
-
 export default (
   <div>
     <Collapsible
@@ -66,7 +63,7 @@ export default (
       hiddenText="see all amenities"
       visibleText="see less amenities"
       visible={false}
-      handleClick={handleChange}
+      handleClick={action('handleClick')}
     />
   </div>
 )

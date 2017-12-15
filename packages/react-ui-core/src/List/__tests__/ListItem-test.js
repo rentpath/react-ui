@@ -10,18 +10,40 @@ describe('ListItem', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <ListItem />,
+      <ListItem theme={theme} />,
     )
   })
 
-  it('applies a theme classname', () => {
-    wrapper.setProps({ theme })
-    const className = wrapper.find('li').prop('className')
-    expect(className).toEqual('ListItem')
+  describe('props', () => {
+    it('applies a theme classname', () => {
+      wrapper.setProps({ theme })
+      const className = wrapper.find('li').prop('className')
+      expect(className).toEqual('ListItem')
+    })
+
+    it('accepts custom node type', () => {
+      wrapper.setProps({ nodeType: 'div', theme })
+      expect(wrapper.find('div').length).toBe(1)
+    })
+
+    describe('highlight prop', () => {
+      it('adds a highlight class when true', () => {
+        wrapper.setProps({ highlight: true })
+        expect(wrapper.prop('className')).toContain('ListItem-highlight')
+      })
+
+      it('does not add a highlight class when undefined / false', () => {
+        expect(wrapper.prop('className')).not.toContain('ListItem-highlight')
+      })
+    })
   })
 
-  it('accepts custom node type', () => {
-    wrapper.setProps({ nodeType: 'div', theme })
-    expect(wrapper.find('div').length).toBe(1)
+  describe('onMouseEnter', () => {
+    it('calls a function when prop passed', () => {
+      const onMouseEnter = jest.fn()
+      wrapper.setProps({ onMouseEnter })
+      wrapper.simulate('mouseenter')
+      expect(onMouseEnter).toHaveBeenCalled()
+    })
   })
 })

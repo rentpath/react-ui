@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { mount, shallow } from 'enzyme'
+import { Field } from '../../Form'
 import Dropdown from '../Dropdown'
 
 const theme = {
   Dropdown: 'Dropdown',
-  Dropdown_Content: 'Dropdown_Content',
 }
 
 class SampleAnchor extends PureComponent {
@@ -18,7 +18,12 @@ class SampleAnchor extends PureComponent {
   }
 
   render() {
-    return <button onClick={this.handleClick}>click me</button>
+    return (
+      <Field
+        onClick={this.handleClick}
+        label="click me"
+      />
+    )
   }
 }
 
@@ -48,25 +53,25 @@ describe('Dropdown', () => {
     expect(wrapper.find('h1').length).toEqual(0)
   })
 
-  it('gives children Dropdown_Content className wrapper', () => {
-    const { wrapper } = setup({ visible: true })
-    expect(wrapper.find('.Dropdown_Content').length).toEqual(1)
-  })
-
-  it('passes handleClick to Anchor prop', () => {
+  it('passes handleClick to anchorField prop', () => {
     const { wrapper } = setup({ visible: true })
     expect(wrapper.find('h1').length).toEqual(1)
     wrapper.find('button').simulate('click')
     expect(wrapper.find('h1').length).toEqual(0)
   })
 
-  it('passes text to default anchor', () => {
-    const { wrapper } = setup({ visible: true, text: 'test' })
-    expect(wrapper.find('button').text()).toEqual('test')
+  it('passes label to default anchor', () => {
+    const text = 'test'
+    const { wrapper } = setup({
+      visible: true,
+      text,
+    })
+
+    expect(wrapper.find('button').text()).toEqual(text)
   })
 
-  it('Passes uses custom anchor if passed to props', () => {
-    const { wrapper } = setup({ visible: true, Anchor: SampleAnchor })
-    expect(wrapper.find('button').text()).toEqual('click me')
+  it('passes uses custom anchor if passed to props', () => {
+    const { wrapper } = setup({ visible: true, anchorField: SampleAnchor })
+    expect(wrapper.find('label').text()).toEqual('click me')
   })
 })

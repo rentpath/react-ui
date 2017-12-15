@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import isEqual from 'lodash/isEqual'
 import cn from 'classnames'
-import { randomId } from '@rentpath/react-ui-utils'
+import { randomId, parseArgs } from '@rentpath/react-ui-utils'
 import themed from 'react-themed'
-import ListItem from './ListItem'
+import DefaultListItem from './ListItem'
 
 @themed('*', { pure: true })
 
@@ -13,20 +13,19 @@ export default class List extends PureComponent {
     theme: PropTypes.object,
     className: PropTypes.string,
     nodeType: PropTypes.string,
-    Item: PropTypes.oneOfType([
+    listItem: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.func,
+      PropTypes.object,
     ]),
     items: PropTypes.array,
-    listItemNodeType: PropTypes.string,
     orientation: PropTypes.string,
+    highlightIndex: PropTypes.number,
   }
 
   static defaultProps = {
     theme: {},
     nodeType: 'ul',
-    listItemNodeType: 'li',
-    Item: ListItem,
     items: [],
     orientation: 'vertical',
   }
@@ -49,17 +48,23 @@ export default class List extends PureComponent {
     return `${this.id}-${index}`
   }
 
+  renderListItem(listItem) {
+    return parseArgs(listItem, DefaultListItem)
+  }
+
   render() {
     const {
       theme,
       nodeType: NodeType,
-      Item,
       className,
       items,
+      listItem,
       orientation,
-      listItemNodeType,
+      highlightIndex,
       ...props
     } = this.props
+
+    const [Item, itemProps] = this.renderListItem(listItem)
 
     return (
       <NodeType
@@ -71,9 +76,11 @@ export default class List extends PureComponent {
       >
         {items.map((item, i) => (
           <Item
+            {...itemProps}
+            highlight={highlightIndex === i}
             key={this.itemId(i)}
             index={i}
-            nodeType={listItemNodeType}
+            data-tid={`list-item-${i}`}
             {...props}
           >
             {item}

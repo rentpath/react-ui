@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
+import { parseArgs } from '@rentpath/react-ui-utils'
+import ModalCloseButton from './ModalCloseButton'
 
 @themed(/^ModalBody/, {
   pure: true,
@@ -11,13 +13,28 @@ export default class ModalBody extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,
     className: PropTypes.string,
-    CloseButton: PropTypes.func,
+    CloseButton: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.node,
+      PropTypes.object,
+    ]),
     onClose: PropTypes.func,
     children: PropTypes.any,
   }
 
   static defaultProps = {
     theme: {},
+  }
+
+  renderCloseButton(CloseButton) {
+    if (CloseButton) {
+      const [Close] = parseArgs(CloseButton, ModalCloseButton)
+      return (
+        <Close onClick={this.props.onClose} />
+      )
+    }
+
+    return null
   }
 
   render() {
@@ -38,7 +55,7 @@ export default class ModalBody extends PureComponent {
         )}
         {...props}
       >
-        {CloseButton && <CloseButton onClick={onClose} data-tid="modal-close-button" />}
+        {this.renderCloseButton(CloseButton)}
         <div className={theme.ModalBody_InnerBody}>
           {children}
         </div>
