@@ -2,16 +2,22 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
+import { parseArgs } from '@rentpath/react-ui-utils'
 import { Card, Title, Text } from '@rentpath/react-ui-core'
 import {
-  CancelButton as DefaultCancelButton,
-  ApplyButton as DefaultApplyButton,
+  CancelButton,
+  ApplyButton,
 } from '../Buttons'
+
+const buttonType = PropTypes.oneOfType([
+  PropTypes.node,
+  PropTypes.func,
+  PropTypes.object,
+])
 
 @themed(/^FilterCard/, {
   pure: true,
 })
-
 export default class FilterCard extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
@@ -19,16 +25,18 @@ export default class FilterCard extends PureComponent {
     children: PropTypes.node,
     title: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
     description: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-    ApplyButton: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-    CancelButton: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-    onApplyClick: PropTypes.func,
-    onCancelClick: PropTypes.func,
+    applyButton: buttonType,
+    cancelButton: buttonType,
+    value: PropTypes.any,
   }
 
   static defaultProps = {
     theme: {},
-    ApplyButton: DefaultApplyButton,
-    CancelButton: DefaultCancelButton,
+  }
+
+  renderButton(button, DefaultButton) {
+    const [FilterButton, props] = parseArgs(this.props[button], DefaultButton)
+    return <FilterButton {...props} value={this.props.value} />
   }
 
   render() {
@@ -38,10 +46,8 @@ export default class FilterCard extends PureComponent {
       children,
       title,
       description,
-      onApplyClick,
-      onCancelClick,
-      ApplyButton,
-      CancelButton,
+      applyButton,
+      cancelButton,
       ...props
     } = this.props
 
@@ -62,10 +68,10 @@ export default class FilterCard extends PureComponent {
         <div className={theme.FilterCard_Body}>
           {children}
 
-          { (onApplyClick || onCancelClick) &&
+          { (applyButton || cancelButton) &&
             <div className={theme.FilterCard_Buttons}>
-              <ApplyButton onClick={onApplyClick} />
-              <CancelButton onClick={onCancelClick} />
+              {applyButton && this.renderButton('applyButton', ApplyButton)}
+              {cancelButton && this.renderButton('cancelButton', CancelButton)}
             </div>
           }
         </div>

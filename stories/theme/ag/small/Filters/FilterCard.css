@@ -1,7 +1,6 @@
 .FilterCard {
   background-color: #0175d7;
   color: #ffffff;
-  border-radius: 8px;
   width: 343px;
   height: 200px;
 }
@@ -27,7 +26,6 @@
 }
 
 .FilterCard_Body {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;

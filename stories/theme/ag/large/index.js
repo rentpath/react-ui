@@ -1,5 +1,5 @@
 import { compose } from 'react-themed'
-import { FilterCard } from './Filters'
+import { FilterCard, PetFilterCard } from './Filters'
 import { ApplyButton, CancelButton } from './Buttons'
 import Card from './Card.css'
 import RadioButton from './RadioButton.css'
@@ -22,6 +22,7 @@ export default compose({},
   Card,
   FilterCardBase,
   FilterCard,
+  PetFilterCard,
   RadioButtonBase,
   RadioButton,
   RadioGroupBase,

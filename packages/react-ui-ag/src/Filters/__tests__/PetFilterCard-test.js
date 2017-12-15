@@ -2,35 +2,35 @@ import React from 'react'
 import { mount, shallow } from 'enzyme'
 import FilterCard from '../FilterCard'
 import theme from './mocks/theme'
-import ThemedBedroomFilterCard from '../BedroomFilterCard'
+import ThemedPetFilterCard from '../PetFilterCard'
 
-const BedroomFilterCard = ThemedBedroomFilterCard.WrappedComponent
+const PetFilterCard = ThemedPetFilterCard.WrappedComponent
 
-describe('ag/Filters/BedroomFilterCard', () => {
+describe('ag/Filters/PetFilterCard', () => {
   it('renders a radiogroup', () => {
-    const wrapper = shallow(<BedroomFilterCard />)
-    expect(wrapper.find('[data-tid="bedroom-filter-card-radiogroup"]')).toHaveLength(1)
+    const wrapper = shallow(<PetFilterCard />)
+    expect(wrapper.find('[data-tid="pet-filter-card-radiogroup"]')).toHaveLength(1)
   })
 
   it('renders no buttons by default', () => {
-    const wrapper = shallow(<BedroomFilterCard />)
+    const wrapper = shallow(<PetFilterCard />)
     expect(wrapper.find(FilterCard).prop('onApplyClick')).toBeFalsy()
     expect(wrapper.find(FilterCard).prop('onCancelClick')).toBeFalsy()
   })
 
   it('changes the state value if a radio button is checked', () => {
-    const wrapper = mount(<BedroomFilterCard />)
+    const wrapper = mount(<PetFilterCard />)
     expect(wrapper.state('value')).toBeFalsy()
     const radioButtonInput =
-      wrapper.find('[data-tid="bedroom-filter-card-radiogroup"] input').at(2)
+      wrapper.find('[data-tid="pet-filter-card-radiogroup"] input').at(2)
     radioButtonInput.simulate('change')
     expect(wrapper.state('value')).toEqual(radioButtonInput.prop('value'))
   })
 
   it('applies the noValue className by default if no value is checked', () => {
-    const wrapper = shallow(<BedroomFilterCard theme={theme} />)
+    const wrapper = shallow(<PetFilterCard theme={theme} />)
     expect(wrapper.state('value')).toBeFalsy()
-    expect(wrapper.prop('className')).toContain('BedroomFilterCard-noValue')
+    expect(wrapper.prop('className')).toContain('PetFilterCard-noValue')
   })
 
   it('does not apply the noValue className by default if a value is checked', () => {
@@ -41,18 +41,18 @@ describe('ag/Filters/BedroomFilterCard', () => {
         { label: 'Two', value: 'Two' },
       ],
     }
-    const wrapper = shallow(<BedroomFilterCard {...props} />)
+    const wrapper = shallow(<PetFilterCard {...props} />)
     expect(wrapper.state('value')).toEqual('One')
-    expect(wrapper.prop('className')).not.toContain('BedroomFilterCard-noValue')
+    expect(wrapper.prop('className')).not.toContain('PetFilterCard-noValue')
   })
 
   it('removes the noValue className when a value is checked', () => {
-    const wrapper = mount(<BedroomFilterCard theme={theme} />)
-    expect(wrapper.find(FilterCard).hasClass('BedroomFilterCard-noValue')).toBeTruthy()
+    const wrapper = mount(<PetFilterCard theme={theme} />)
+    expect(wrapper.find(FilterCard).hasClass('PetFilterCard-noValue')).toBeTruthy()
     const radioButtonInput =
-      wrapper.find('[data-tid="bedroom-filter-card-radiogroup"] input').at(2)
+      wrapper.find('[data-tid="pet-filter-card-radiogroup"] input').at(2)
     radioButtonInput.simulate('change')
-    expect(wrapper.find(FilterCard).hasClass('BedroomFilterCard-noValue')).toBeFalsy()
+    expect(wrapper.find(FilterCard).hasClass('PetFilterCard-noValue')).toBeFalsy()
   })
 
   it('allows the fields to be overriden', () => {
@@ -63,19 +63,19 @@ describe('ag/Filters/BedroomFilterCard', () => {
         { label: 'Two', value: 'Two' },
       ],
     }
-    const wrapper = shallow(<BedroomFilterCard {...props} />)
-    expect(wrapper.find('[data-tid="bedroom-filter-card-radiogroup"]').prop('fields'))
+    const wrapper = shallow(<PetFilterCard {...props} />)
+    expect(wrapper.find('[data-tid="pet-filter-card-radiogroup"]').prop('fields'))
       .toEqual(props.fields)
   })
 
   it('has a default data-tid', () => {
-    const wrapper = shallow(<BedroomFilterCard />)
-    expect(wrapper.find('[data-tid="bedroom-filter-card"]')).toHaveLength(1)
+    const wrapper = shallow(<PetFilterCard />)
+    expect(wrapper.find('[data-tid="pet-filter-card"]')).toHaveLength(1)
   })
 
   it('has allows an override of the data-tid', () => {
-    const wrapper = shallow(<BedroomFilterCard data-tid="foo" />)
+    const wrapper = shallow(<PetFilterCard data-tid="foo" />)
     expect(wrapper.find('[data-tid="foo"]')).toHaveLength(1)
-    expect(wrapper.find('[data-tid="bedroom-filter-card"]')).toHaveLength(0)
+    expect(wrapper.find('[data-tid="pet-filter-card"]')).toHaveLength(0)
   })
 })

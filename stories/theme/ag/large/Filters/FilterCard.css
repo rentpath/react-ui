@@ -1,14 +1,12 @@
 .FilterCard {
   border: 0;
   color: #373737;
-  border-radius: 8px;
   width: 379px;
   box-shadow: 1px 2px 2px lightgrey;
   height: 191px;
 }
 
 .FilterCard_Body {
-  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-end;

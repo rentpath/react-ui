@@ -9,8 +9,12 @@ const DesktopBedroomFilterCardComponent = ({ theme }) => (
     className={theme.SearchFilter}
     title=""
     description=""
-    onApplyClick={value => action('click')(`apply(${value})`)}
-    onCancelClick={() => action('click')('cancel')}
+    applyButton={{
+      onClick: value => action('click')(`apply(${value})`),
+    }}
+    cancelButton={{
+      onClick: () => action('click')('cancel'),
+    }}
   />
 )
 DesktopBedroomFilterCardComponent.propTypes = {
@@ -28,7 +32,9 @@ const InlineBedroomFilterCardComponent = ({ theme }) => (
       { label: '2', value: '2' },
       { label: '3+', value: '3+' },
     ]}
-    onApplyClick={value => action('click')(`apply(${value})`)}
+    applyButton={{
+      onClick: value => action('click')(`apply(${value})`),
+    }}
   />
 )
 InlineBedroomFilterCardComponent.propTypes = {

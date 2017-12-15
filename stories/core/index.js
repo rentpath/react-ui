@@ -68,6 +68,7 @@ import {
   DefaultRadioGroup,
   ButtonRadioGroup,
   VerticalRadioGroup,
+  ImageButtonsRadioGroup,
 } from './RadioGroup'
 
 import {
@@ -141,6 +142,7 @@ storiesOf('react-ui-core / Form / RadioGroup', module)
   .add('Radiogroup', () => DefaultRadioGroup)
   .add('Vertical Radiogroup as Buttons', () => ButtonRadioGroup)
   .add('Vertical Radiogroup', () => VerticalRadioGroup)
+  .add('Image Buttons in RadioGroup', () => ImageButtonsRadioGroup)
 
 storiesOf('react-ui-core / Modal', module)
   .addDecorator((story, context) => withInfo('Modal')(story)(context))

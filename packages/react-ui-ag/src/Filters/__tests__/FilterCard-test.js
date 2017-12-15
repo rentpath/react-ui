@@ -39,30 +39,30 @@ describe('ag/Filters/FilterCard', () => {
     expect(wrapper.find(Text)).toHaveLength(0)
   })
 
-  it('renders an apply button if onApplyClick is provided', () => {
-    const onApplyClick = jest.fn()
-    const props = { onApplyClick }
+  it('renders an apply button if onClick is provided to applyButton', () => {
+    const onClick = jest.fn()
+    const props = { applyButton: { onClick } }
     const wrapper = mount(<FilterCard {...props}>This is some child text</FilterCard>)
     expect(wrapper.find('button[data-tid="apply-button"]')).toHaveLength(1)
     wrapper.find('button[data-tid="apply-button"]').simulate('click')
-    expect(onApplyClick.mock.calls).toHaveLength(1)
+    expect(onClick.mock.calls).toHaveLength(1)
   })
 
-  it('renders a cancel button if onCancelClick is provided', () => {
-    const onCancelClick = jest.fn()
-    const props = { onCancelClick }
+  it('renders a cancel button if onClick is provided to cancelButton', () => {
+    const onClick = jest.fn()
+    const props = { cancelButton: { onClick } }
     const wrapper = mount(<FilterCard {...props}>This is some child text</FilterCard>)
     expect(wrapper.find('button[data-tid="cancel-button"]')).toHaveLength(1)
     wrapper.find('button[data-tid="cancel-button"]').simulate('click')
-    expect(onCancelClick.mock.calls).toHaveLength(1)
+    expect(onClick.mock.calls).toHaveLength(1)
   })
 
-  it('does not render a cancel button if onApplyClick is not provided', () => {
+  it('does not render a cancel button if onClick is not provided to applyButton', () => {
     const wrapper = shallow(<FilterCard>This is some child text</FilterCard>)
     expect(wrapper.find('[data-tid="filter-card-apply-button"]')).toHaveLength(0)
   })
 
-  it('does not render an apply button if onCancelClick is not provided', () => {
+  it('does not render an apply button if onClick is not provided to cancelButton', () => {
     const wrapper = shallow(<FilterCard>This is some child text</FilterCard>)
     expect(wrapper.find('[data-tid="filter-card-cancel-button"]')).toHaveLength(0)
   })

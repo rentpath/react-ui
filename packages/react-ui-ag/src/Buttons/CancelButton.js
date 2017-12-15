@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
+import autobind from 'autobind-decorator'
 import { Button } from '@rentpath/react-ui-core'
 
 @themed(['CancelButton'], {
@@ -14,11 +15,19 @@ export default class CancelButton extends PureComponent {
     onClick: PropTypes.func,
     theme: PropTypes.object,
     name: PropTypes.node,
+    value: PropTypes.any,
   }
 
   static defaultProps = {
     theme: {},
     name: 'Cancel',
+  }
+
+  @autobind
+  handleClick() {
+    const { onClick } = this.props
+
+    if (onClick) onClick(this.props.value)
   }
 
   render() {
@@ -38,7 +47,7 @@ export default class CancelButton extends PureComponent {
           theme.CancelButton,
           className,
         )}
-        onClick={onClick}
+        onClick={this.handleClick}
         data-tid="cancel-button"
         {...props}
       >

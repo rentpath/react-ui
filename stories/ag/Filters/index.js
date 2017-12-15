@@ -8,3 +8,8 @@ export {
   DesktopBedroomFilterCard,
   InlineBedroomFilterCard,
 } from './BedroomFilterCard'
+
+export {
+  DesktopPetFilterCard,
+  InlinePetFilterCard,
+} from './PetFilterCard'

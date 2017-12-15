@@ -9,6 +9,8 @@ import {
   TwoButtonFilterCard,
   DesktopBedroomFilterCard,
   InlineBedroomFilterCard,
+  DesktopPetFilterCard,
+  InlinePetFilterCard,
 } from './Filters'
 
 const AgThemeSmallDecorator = storyFn => (
@@ -37,11 +39,21 @@ storiesOf('react-ui-ag / Filters / FilterCard', module)
   .add('Two Button FilterCard', () => TwoButtonFilterCard)
 
 storiesOf('react-ui-ag / Filters / BedroomFilterCard', module)
-  .addDecorator((story, context) => withInfo('FilterCard')(story)(context))
+  .addDecorator((story, context) => withInfo('BedroomFilterCard')(story)(context))
   .addDecorator(AgThemeLargeDecorator)
   .add('large', () => DesktopBedroomFilterCard)
 
 storiesOf('react-ui-ag / Filters / BedroomFilterCard', module)
-  .addDecorator((story, context) => withInfo('FilterCard')(story)(context))
+  .addDecorator((story, context) => withInfo('BedroomFilterCard')(story)(context))
   .addDecorator(AgThemeSmallDecorator)
   .add('small', () => InlineBedroomFilterCard)
+
+storiesOf('react-ui-ag / Filters / PetFilterCard', module)
+  .addDecorator((story, context) => withInfo('PetFilterCard')(story)(context))
+  .addDecorator(AgThemeLargeDecorator)
+  .add('large', () => DesktopPetFilterCard)
+
+storiesOf('react-ui-ag / Filters / PetFilterCard', module)
+  .addDecorator((story, context) => withInfo('PetFilterCard')(story)(context))
+  .addDecorator(AgThemeSmallDecorator)
+  .add('small', () => InlinePetFilterCard)

@@ -17,11 +17,15 @@ export default class RadioGroup extends Component {
     hideInputElement: PropTypes.bool,
     theme: PropTypes.object,
     fields: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string,
+      label: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object,
+        PropTypes.func,
+      ]),
       checked: PropTypes.bool,
       value: PropTypes.string,
     })),
-    handleChange: PropTypes.func,
+    onChange: PropTypes.func,
   }
 
   static defaultProps = {
@@ -64,8 +68,8 @@ export default class RadioGroup extends Component {
       value: event.target.value,
     })
 
-    if (this.props.handleChange) {
-      this.props.handleChange(event)
+    if (this.props.onChange) {
+      this.props.onChange(event)
     }
   }
 
@@ -90,7 +94,7 @@ export default class RadioGroup extends Component {
       name,
       fields,
       hideInputElement,
-      handleChange,
+      onChange,
       ...props
     } = this.props
 
