@@ -65,10 +65,6 @@ export default class LeadForm extends Component {
     this.generateRandomId()
   }
 
-  componentWillReceiveProps() {
-    this.generateRandomId()
-  }
-
   shouldComponentUpdate(nextProps) {
     return !isEqual(this.props.fields, nextProps.fields)
   }
