@@ -7,8 +7,8 @@ import { RadioGroup } from '@rentpath/react-ui-core'
 import autobind from 'autobind-decorator'
 import FilterCard from './FilterCard'
 
-@themed('*')
-export default class BedroomFilterCard extends Component {
+@themed(/^PetFilterCard/)
+export default class PetFilterCard extends Component {
   static propTypes = {
     title: PropTypes.node,
     description: PropTypes.node,

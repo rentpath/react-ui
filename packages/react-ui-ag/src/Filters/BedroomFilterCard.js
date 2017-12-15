@@ -7,7 +7,7 @@ import isEqual from 'lodash/isEqual'
 import autobind from 'autobind-decorator'
 import FilterCard from './FilterCard'
 
-@themed(/^BedroomFilter/)
+@themed(/^BedroomFilterCard/)
 
 export default class BedroomFilterCard extends Component {
   static propTypes = {
