@@ -3,6 +3,8 @@ import { keyMirror } from '@rentpath/react-ui-utils'
 export default keyMirror([
   'BedroomFilterCard',
   'BedroomFilterCard-noValue',
+  'BathroomFilterCard',
+  'BathroomFilterCard-noValue',
   'PetFilterCard',
   'PetFilterCard-noValue',
   'RatingFilterCard',

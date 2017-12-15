@@ -57,12 +57,12 @@ describe('ag/Filters/FilterCard', () => {
     expect(onClick.mock.calls).toHaveLength(1)
   })
 
-  it('does not render a cancel button if onClick is not provided to applyButton', () => {
+  it('does not render a apply button if onClick is not provided to applyButton', () => {
     const wrapper = shallow(<FilterCard>This is some child text</FilterCard>)
     expect(wrapper.find('[data-tid="filter-card-apply-button"]')).toHaveLength(0)
   })
 
-  it('does not render an apply button if onClick is not provided to cancelButton', () => {
+  it('does not render an cancel button if onClick is not provided to cancelButton', () => {
     const wrapper = shallow(<FilterCard>This is some child text</FilterCard>)
     expect(wrapper.find('[data-tid="filter-card-cancel-button"]')).toHaveLength(0)
   })

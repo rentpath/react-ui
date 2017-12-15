@@ -1,0 +1,7 @@
+.InlineCard.BathroomFilterCard .RadioButton .Label {
+  padding: 9px 20px;
+}
+
+.InlineCard.BathroomFilterCard-noValue .ApplyButton {
+  display: none;
+}

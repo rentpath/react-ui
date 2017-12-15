@@ -10,7 +10,7 @@ export const DefaultRadioGroup = (
       { label: 'One', checked: false, value: 'One' },
       { label: 'Two', checked: false, value: 'Two' },
     ]}
-    handleChange={event => action('change')(event.target.value)}
+    onChange={event => action('change')(event.target.value)}
   />
 )
 
@@ -23,7 +23,7 @@ export const ButtonRadioGroup = (
       { label: 'Uno', checked: true, value: 'Uno' },
       { label: 'Dos', checked: false, value: 'Dos' },
     ]}
-    handleChange={event => action('change')(event.target.value)}
+    onChange={event => action('change')(event.target.value)}
   />
 )
 
@@ -35,7 +35,7 @@ export const VerticalRadioGroup = (
       { label: 'Un', checked: false, value: 'Un' },
       { label: 'Deux', checked: true, value: 'Deux' },
     ]}
-    handleChange={event => action('change')(event.target.value)}
+    onChange={event => action('change')(event.target.value)}
   />
 )
 
@@ -44,7 +44,7 @@ export const ImageButtonsRadioGroup = (
     name="animals"
     orientation="vertical"
     hideInputElement
-    handleChange={event => action('change')(event.target.value)}
+    onChange={event => action('change')(event.target.value)}
     fields={[
       {
         value: 'lion',

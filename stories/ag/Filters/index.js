@@ -17,3 +17,8 @@ export {
 export {
   InlineRatingFilterCard,
 } from './RatingFilterCard'
+
+export {
+  InlineBathroomFilterCard,
+  DesktopBathroomFilterCard,
+} from './BathroomFilterCard'

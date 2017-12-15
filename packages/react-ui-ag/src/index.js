@@ -3,6 +3,7 @@ export {
   BedroomFilterCard,
   PetFilterCard,
   RatingFilterCard,
+  BathroomFilterCard,
 } from './Filters'
 
 export {
