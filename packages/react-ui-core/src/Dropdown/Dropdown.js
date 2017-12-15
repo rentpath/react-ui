@@ -16,34 +16,37 @@ export default class Dropdown extends Component {
       PropTypes.node,
       PropTypes.func,
     ]),
+    onVisibilityChange: PropTypes.func,
   }
 
   static defaultProps = {
     visible: false,
     theme: {},
     Anchor: DropdownAnchorButton,
+    onVisibilityChange: () => {},
   }
 
   constructor(props) {
     super(props)
     this.state = { visible: this.props.visible }
     this.handleDocumentClick = this.handleDocumentClick.bind(this)
-    this.toggleVisibilty = this.toggleVisibilty.bind(this)
+    this.changeVisibility = this.changeVisibility.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.visible !== nextProps.visible) {
-      this.setState({ visible: this.nextProps.visible })
+      this.setState({ visible: nextProps.visible })
     }
   }
 
-  toggleVisibilty() {
-    this.setState({ visible: !this.state.visible })
+  changeVisibility(visibility) {
+    this.props.onVisibilityChange(visibility)
+    this.setState({ visible: visibility })
   }
 
   handleDocumentClick(event) {
     if (this.state.visible && !this.dropdown.contains(event.target)) {
-      this.toggleVisibilty()
+      this.changeVisibility(false)
     }
   }
 
@@ -71,7 +74,7 @@ export default class Dropdown extends Component {
           data-tid="dropdown-anchor"
           {...props}
           handleDocumentClick={this.handleDocumentClick}
-          toggleVisibilty={this.toggleVisibilty}
+          changeVisibility={this.changeVisibility}
           dropDownVisible={dropDownVisible}
           className={classnames(
             theme.Dropdown_Anchor,
