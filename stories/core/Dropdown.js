@@ -1,22 +1,38 @@
 import React from 'react'
 import classnames from 'classnames'
+import PropTypes from 'prop-types'
 import { action } from '@storybook/addon-actions'
 import { Dropdown, Text, Menu } from 'react-ui-core/src'
 import DropdownButtonExample from './DropdownButtonExample'
 import DropdownInputExample from './DropdownInputExample'
+import DynamicDropdownExample from './DynamicDropdownExample'
 import StoryBookTheme from '../theme/Storybook.css'
 
 const inputProps = {
-  text: 'Dropdown Label',
+  children: 'Dropdown Label',
+}
+
+const Content = props => (
+  <div {...props}><h1>Hi</h1></div>
+)
+
+const DropdownMenu = props => (
+  <Menu
+    options={['Option1', 'Option2', 'Option3']}
+    onItemSelect={props.onSelect}
+  />
+)
+
+DropdownMenu.propTypes = {
+  onSelect: PropTypes.func,
 }
 
 export const DefaultDropdown = (
   <Dropdown
     className={StoryBookTheme['Story-padding']}
-    anchorField={{ text: <Text>Click Me</Text> }}
-    visible
+    anchorField={{ children: <Text>Click Me</Text> }}
   >
-    <h1>Hi!</h1>
+    <Content />
   </Dropdown>
 )
 
@@ -29,10 +45,11 @@ export const DropdownWithProps = (
   </Dropdown>
 )
 
-export const DropdownButtonToggle = (
+export const DropDownInputAnchor = (
   <Dropdown
     className={StoryBookTheme['Story-padding']}
     anchorField={props => (<DropdownInputExample {...props} />)}
+    toggleOnSelect={false}
   >
     <Menu options={['foo', 'bar', 'baz']} />
   </Dropdown>
@@ -42,14 +59,17 @@ export const DropdownWithMenu = (
   <Dropdown
     className={classnames(
       StoryBookTheme['Story-padding'],
-      StoryBookTheme.Story_Menu,
     )}
     anchorField={props => (<DropdownButtonExample {...props} />)}
   >
     <Menu
-      options={['Option1', 'Option2', 'Option3']}
-      handleSelectionHover={action('hovering')}
+      options={['foo', 'bar', 'baz']}
+      onItemSelect={action('selected')}
     />
-    <h1>hello</h1>
+    <Text className={StoryBookTheme.Story_DropdownMultiple}>Choose</Text>
   </Dropdown>
+)
+
+export const DropdownCloseOnOptionSelect = (
+  <DynamicDropdownExample theme={StoryBookTheme} />
 )

@@ -7,7 +7,8 @@
 .Dropdown .Card {
   border-radius: 3px;
   text-align: center;
-  width: 100%;
+  width: auto;
+  height: auto;
 }
 
 .Dropdown .Field {
@@ -36,5 +37,8 @@
 
 .Dropdown .Button-collapse:after {
   content: '\25bc';
+}
 
+.Dropdown .List {
+  padding: 5px;
 }

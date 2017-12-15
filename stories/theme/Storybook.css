@@ -17,3 +17,12 @@
   text-transform: uppercase;
   color: #ccc;
 }
+
+.Story_DropdownMultiple {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 10px;
+  background-color: #d3d3d3;
+  margin-bottom: 0;
+}

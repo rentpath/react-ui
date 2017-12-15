@@ -80,8 +80,15 @@ import {
   DefaultDropdown,
   DropdownWithProps,
   DropdownWithMenu,
-  DropdownButtonToggle,
+  DropDownInputAnchor,
+  DropdownCloseOnOptionSelect,
 } from './Dropdown'
+
+import {
+  AutoSuggestFieldSubmitButton,
+  AutoSuggestFieldClearButton,
+  AutoSuggestFieldDynamicResults,
+} from './AutoSuggestField'
 
 import {
   DefaultLeadForm,
@@ -201,20 +208,28 @@ storiesOf('react-ui-core / Title', module)
   .add('Title', () => DefaultTitle)
   .add('Link Title', () => EmbeddedLinkWithinTitle)
 
-storiesOf('react-ui-core / Dropdown', module)
-  .addDecorator((story, context) => withInfo('Dropdown')(story)(context))
-  .addDecorator(CoreThemeDecorator)
-  .add('Dropdown', () => DefaultDropdown)
-  .add('Dropdown With Anchor Props', () => DropdownWithProps)
-  .add('Custom Dropdown Input anchor', () => DropdownButtonToggle)
-  .add('Custom Dropdown With Menu and multiple children', () => DropdownWithMenu)
-
 storiesOf('react-ui-core / Menu', module)
   .addDecorator((story, context) => withInfo(' Menu')(story)(context))
   .addDecorator(CoreThemeDecorator)
   .add('Menu', () => DefaultMenu)
   .add('On Keyboard Selection', () => MenuOnSelection)
   .add('On Selection hover', () => MenuOnSelectionHover)
+
+storiesOf('react-ui-core / Dropdown', module)
+  .addDecorator((story, context) => withInfo('Dropdown')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('Dropdown', () => DefaultDropdown)
+  .add('Anchor Props', () => DropdownWithProps)
+  .add('Input Anchor without close toggle', () => DropDownInputAnchor)
+  .add('Multiple Children', () => DropdownWithMenu)
+  .add('Dynamic button text closes on option selection ', () => DropdownCloseOnOptionSelect)
+
+storiesOf('react-ui-core / AutoSuggestField', module)
+  .addDecorator((story, context) => withInfo('AutoSuggest Field')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('Field and Submit Button', () => AutoSuggestFieldSubmitButton)
+  .add('Field and Clear Button', () => AutoSuggestFieldClearButton)
+  .add('Dynamic Results', () => AutoSuggestFieldDynamicResults)
 
 storiesOf('react-ui-core / Lead', module)
   .addDecorator((story, context) => withInfo('Core Lead')(story)(context))

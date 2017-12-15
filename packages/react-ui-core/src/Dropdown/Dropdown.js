@@ -1,9 +1,10 @@
-import React, { Component, cloneElement } from 'react'
+import React, { Component, cloneElement, createElement } from 'react'
 import PropTypes from 'prop-types'
+import autobind from 'autobind-decorator'
+import { parseArgs } from '@rentpath/react-ui-utils'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import { parseArgs } from '@rentpath/react-ui-utils'
-import AnchorButton from './AnchorButton'
+import DropdownAnchor from './DropdownAnchor'
 import { Card } from '../Card'
 
 @themed(/^Dropdown/)
@@ -14,23 +15,29 @@ export default class Dropdown extends Component {
     visible: PropTypes.bool,
     theme: PropTypes.object,
     children: PropTypes.node,
+    onVisibilityChange: PropTypes.func,
     anchorField: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.func,
       PropTypes.object,
     ]),
+    toggleOnSelect: PropTypes.bool,
   }
 
   static defaultProps = {
+    toggleOnSelect: true,
     visible: false,
     theme: {},
+    onVisibilityChange: () => {},
   }
 
   constructor(props) {
     super(props)
-    this.state = { visible: this.props.visible }
-    this.handleDocumentClick = this.handleDocumentClick.bind(this)
-    this.toggleVisibilty = this.toggleVisibilty.bind(this)
+    this.state = { visible: props.visible }
+  }
+
+  componentDidMount() {
+    document.addEventListener('click', this.handleDocumentClick)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -39,29 +46,48 @@ export default class Dropdown extends Component {
     }
   }
 
-  toggleVisibilty() {
-    this.setState({ visible: !this.state.visible })
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleDocumentClick)
   }
 
-  handleDocumentClick(event) {
-    if (this.state.visible && !this.dropdown.contains(event.target)) {
-      this.toggleVisibilty()
+  @autobind
+  toggleVisibility() {
+    const { onVisibilityChange, toggleOnSelect } = this.props
+    const visible = toggleOnSelect ? !this.state.visible : true
+
+    this.setState({ visible })
+    if (this.state.visible !== visible) {
+      onVisibilityChange(visible)
     }
   }
 
-  renderAnchor(props) {
-    const [Anchor, fieldProps] = parseArgs(this.props.anchorField, AnchorButton, {
-      'data-tid': 'dropdown-anchor',
-      visible: this.state.visible,
-      handleDocumentClick: this.handleDocumentClick,
-      toggleVisibilty: this.toggleVisibilty,
-    })
+  @autobind
+  changeVisibility(visible) {
+    this.props.onVisibilityChange(visible)
+    this.setState({ visible })
+  }
 
-    return <Anchor {...props} {...fieldProps} />
+  @autobind
+  handleDocumentClick(event) {
+    if (this.state.visible && !this.dropdown.contains(event.target)) {
+      this.setState({ visible: false })
+    }
+  }
+
+  renderAnchor() {
+    return createElement(...parseArgs(
+      this.props.anchorField,
+      DropdownAnchor,
+      {
+        'data-tid': 'dropdown-anchor',
+        visible: this.state.visible,
+        onClick: this.toggleVisibility,
+      }
+    ))
   }
 
   renderChildren() {
-    const props = { toggleVisibilty: this.toggleVisibilty }
+    const props = { onSelect: this.toggleVisibility }
     const children = React.Children.toArray(this.props.children)
     return React.Children.map(children, child => (
       typeof child.type === 'function' ? cloneElement(child, props) : child
@@ -75,6 +101,8 @@ export default class Dropdown extends Component {
       children,
       anchorField,
       className,
+      onVisibilityChange,
+      toggleOnSelect,
       ...props
     } = this.props
 
@@ -87,7 +115,7 @@ export default class Dropdown extends Component {
         )}
         {...props}
       >
-        {this.renderAnchor(props)}
+        {this.renderAnchor()}
         {this.state.visible &&
           <Card data-tid="dropdown-body">
             {this.renderChildren()}

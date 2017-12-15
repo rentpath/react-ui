@@ -67,6 +67,10 @@ export {
 } from './Menu'
 
 export {
+  AutoSuggestField,
+} from './AutoSuggestField'
+
+export {
   LeadForm,
   Name,
   Email,

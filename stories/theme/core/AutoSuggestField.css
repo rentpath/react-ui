@@ -1,0 +1,35 @@
+.AutoSuggestField {
+  display: flex;
+  margin: 75px;
+}
+
+.AutoSuggestField .Dropdown,
+.AutoSuggestField .Field {
+  margin: 0;
+  width: 300px;
+}
+
+.AutoSuggestField .Button {
+  height: 40px;
+  position: relative;
+  left: -70px;
+  top: 5px;
+}
+
+.AutoSuggestField .Card {
+  height: auto;
+  width: auto;
+  text-align: left;
+}
+
+.AutoSuggestField .List {
+  padding: 0;
+}
+
+.AutoSuggestField .ListItem {
+  padding: 5px;
+}
+
+.clear .Button {
+  left: -40px;
+}
