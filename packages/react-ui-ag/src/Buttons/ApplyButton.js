@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
+import autobind from 'autobind-decorator'
 import { Button } from '@rentpath/react-ui-core'
 
 @themed(['ApplyButton'], {
@@ -14,11 +15,19 @@ export default class ApplyButton extends PureComponent {
     onClick: PropTypes.func,
     theme: PropTypes.object,
     name: PropTypes.node,
+    value: PropTypes.any,
   }
 
   static defaultProps = {
     theme: {},
     name: 'Apply',
+  }
+
+  @autobind
+  handleClick() {
+    const { onClick } = this.props
+
+    if (onClick) onClick(this.props.value)
   }
 
   render() {
@@ -27,6 +36,7 @@ export default class ApplyButton extends PureComponent {
       name,
       className,
       onClick,
+      value,
       ...props
     } = this.props
 
@@ -38,7 +48,7 @@ export default class ApplyButton extends PureComponent {
           theme.ApplyButton,
           className,
         )}
-        onClick={onClick}
+        onClick={this.handleClick}
         data-tid="apply-button"
         {...props}
       >

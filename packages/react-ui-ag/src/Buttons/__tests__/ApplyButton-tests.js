@@ -37,4 +37,11 @@ describe('ag/Buttons/ApplyButton', () => {
     expect(wrapper.find('[data-tid="foo"]')).toHaveLength(1)
     expect(wrapper.find('[data-tid="apply-button"]')).toHaveLength(0)
   })
+
+  it('passes value to the provided onClick function', () => {
+    const onClick = jest.fn()
+    const wrapper = shallow(<ApplyButton onClick={onClick} value="valueOfDoom" />)
+    wrapper.simulate('click')
+    expect(onClick.mock.calls[0][0]).toEqual('valueOfDoom')
+  })
 })

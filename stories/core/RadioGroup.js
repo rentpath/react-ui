@@ -38,3 +38,57 @@ export const VerticalRadioGroup = (
     handleChange={event => action('change')(event.target.value)}
   />
 )
+
+export const ImageButtonsRadioGroup = (
+  <RadioGroup
+    name="animals"
+    orientation="vertical"
+    hideInputElement
+    handleChange={event => action('change')(event.target.value)}
+    fields={[
+      {
+        value: 'lion',
+        label: {
+          children: (
+            <div>
+              OMG Lion!!!
+              <img style={{ width: '100px' }} alt="lion" src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Mr._Smart_LION.svg" />
+            </div>
+          ),
+        },
+      },
+      {
+        value: 'tiger',
+        label: {
+          children: (
+            <div>
+              OMG Tiger!!!
+              <img style={{ width: '100px' }} alt="tiger" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Ghostscript_Tiger.svg" />
+            </div>
+          ),
+        },
+      },
+      {
+        value: 'bear',
+        label: {
+          children: (
+            <div>
+              OMG Bear!!!
+              <img style={{ width: '100px' }} alt="bear" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Bear_rampant.svg/2000px-Bear_rampant.svg.png" />
+            </div>
+          ),
+        },
+      },
+      {
+        value: 'ohmy',
+        label: {
+          children: (
+            <div>
+              <img style={{ width: '300px' }} alt="oh my" src="https://media.giphy.com/media/H7iEm8CKI9ZAs/giphy.gif" />
+            </div>
+          ),
+        },
+      },
+    ]}
+  />
+)

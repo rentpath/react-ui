@@ -2,19 +2,18 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
-import { RadioGroup } from '@rentpath/react-ui-core'
 import isEqual from 'lodash/isEqual'
+import { RadioGroup } from '@rentpath/react-ui-core'
 import autobind from 'autobind-decorator'
 import FilterCard from './FilterCard'
 
-@themed(/^BedroomFilterCard/)
-
-export default class BedroomFilterCard extends Component {
+@themed(/^PetFilterCard/)
+export default class PetFilterCard extends Component {
   static propTypes = {
+    title: PropTypes.node,
+    description: PropTypes.node,
     className: PropTypes.string,
     theme: PropTypes.object,
-    title: PropTypes.string,
-    description: PropTypes.string,
     fields: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string,
       value: PropTypes.string,
@@ -22,16 +21,13 @@ export default class BedroomFilterCard extends Component {
   }
 
   static defaultProps = {
-    title: 'Filter by bedrooms',
-    description: 'View properties with a certain amount of bedrooms.',
+    title: 'Find pet friendly rentals',
+    description: 'See apartments that are pet friendly and find your pets a lovely home.',
     theme: {},
     fields: [
-      { label: 'Any', value: '' },
-      { label: 'Studio', value: '0' },
-      { label: '1', value: '1' },
-      { label: '2', value: '2' },
-      { label: '3', value: '3' },
-      { label: '4+', value: '4' },
+      { label: 'Dogs', value: 'dogs' },
+      { label: 'Cats', value: 'cats' },
+      { label: 'Both', value: 'both' },
     ],
   }
 
@@ -76,17 +72,17 @@ export default class BedroomFilterCard extends Component {
     return (
       <FilterCard
         className={classnames(
-          theme.BedroomFilterCard,
+          theme.PetFilterCard,
           className,
-          !this.state.value && theme['BedroomFilterCard-noValue']
+          !this.state.value && theme['PetFilterCard-noValue']
         )}
-        data-tid="bedroom-filter-card"
+        data-tid="pet-filter-card"
         value={this.state.value}
         {...props}
       >
         <RadioGroup
-          name="bedrooms"
-          data-tid="bedroom-filter-card-radiogroup"
+          name="pets"
+          data-tid="pet-filter-card-radiogroup"
           hideInputElement
           fields={fields}
           onChange={this.handleRadioGroupSelection}
