@@ -2,6 +2,7 @@ export {
   FilterCard,
   BedroomFilterCard,
   PetFilterCard,
+  RatingFilterCard,
 } from './Filters'
 
 export {

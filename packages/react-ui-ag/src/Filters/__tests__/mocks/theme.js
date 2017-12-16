@@ -5,6 +5,8 @@ export default keyMirror([
   'BedroomFilterCard-noValue',
   'PetFilterCard',
   'PetFilterCard-noValue',
+  'RatingFilterCard',
+  'RatingFilterCard-noValue',
   'FilterCard_Buttons',
   'FilterCard_ApplyButton',
   'FilterCard_CancelButton',
