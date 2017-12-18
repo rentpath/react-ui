@@ -12,12 +12,6 @@ describe('ag/Filters/BedroomFilterCard', () => {
     expect(wrapper.find('[data-tid="bedroom-filter-card-radiogroup"]')).toHaveLength(1)
   })
 
-  it('renders no buttons by default', () => {
-    const wrapper = shallow(<BedroomFilterCard />)
-    expect(wrapper.find(FilterCard).prop('onApplyClick')).toBeFalsy()
-    expect(wrapper.find(FilterCard).prop('onCancelClick')).toBeFalsy()
-  })
-
   it('changes the state value if a radio button is checked', () => {
     const wrapper = mount(<BedroomFilterCard />)
     expect(wrapper.state('value')).toBeFalsy()

@@ -18,7 +18,7 @@ const OneButtonFilterCardComponent = ({ theme }) => (
     className={theme.WithButtons}
     title="BEST FILTER EVER!!"
     description="This filter will change everything forever"
-    onApplyClick={() => action('click')('apply')}
+    applyButton={{ onClick: () => action('click')('apply') }}
   >
     <div>Filters go here</div>
   </FilterCard>
@@ -34,8 +34,8 @@ const TwoButtonFilterCardComponent = ({ theme }) => (
     className={theme.WithButtons}
     title="BEST FILTER EVER!!"
     description="This filter will change everything forever"
-    onApplyClick={() => action('click')('apply')}
-    onCancelClick={() => action('click')('cancel')}
+    applyButton={{ onClick: () => action('click')('apply') }}
+    cancelButton={{ onClick: () => action('click')('cancel') }}
   >
     <div>Filters go here</div>
   </FilterCard>

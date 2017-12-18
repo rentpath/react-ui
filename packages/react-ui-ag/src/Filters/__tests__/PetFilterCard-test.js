@@ -12,12 +12,6 @@ describe('ag/Filters/PetFilterCard', () => {
     expect(wrapper.find('[data-tid="pet-filter-card-radiogroup"]')).toHaveLength(1)
   })
 
-  it('renders no buttons by default', () => {
-    const wrapper = shallow(<PetFilterCard />)
-    expect(wrapper.find(FilterCard).prop('onApplyClick')).toBeFalsy()
-    expect(wrapper.find(FilterCard).prop('onCancelClick')).toBeFalsy()
-  })
-
   it('changes the state value if a radio button is checked', () => {
     const wrapper = mount(<PetFilterCard />)
     expect(wrapper.state('value')).toBeFalsy()
