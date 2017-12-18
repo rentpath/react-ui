@@ -11,6 +11,7 @@ import {
   InlineBedroomFilterCard,
   DesktopPetFilterCard,
   InlinePetFilterCard,
+  InlineRatingFilterCard,
 } from './Filters'
 
 const AgThemeSmallDecorator = storyFn => (
@@ -57,3 +58,8 @@ storiesOf('react-ui-ag / Filters / PetFilterCard', module)
   .addDecorator((story, context) => withInfo('PetFilterCard')(story)(context))
   .addDecorator(AgThemeSmallDecorator)
   .add('small', () => InlinePetFilterCard)
+
+storiesOf('react-ui-ag / Filters / RatingFilterCard', module)
+  .addDecorator((story, context) => withInfo('RatingFilterCard')(story)(context))
+  .addDecorator(AgThemeSmallDecorator)
+  .add('small', () => InlineRatingFilterCard)

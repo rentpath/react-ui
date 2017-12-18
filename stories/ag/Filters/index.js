@@ -13,3 +13,7 @@ export {
   DesktopPetFilterCard,
   InlinePetFilterCard,
 } from './PetFilterCard'
+
+export {
+  InlineRatingFilterCard,
+} from './RatingFilterCard'
