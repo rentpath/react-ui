@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, cloneElement } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
@@ -35,7 +35,7 @@ export default class Dropdown extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.visible !== nextProps.visible) {
-      this.setState({ visible: this.nextProps.visible })
+      this.setState({ visible: nextProps.visible })
     }
   }
 
@@ -53,6 +53,14 @@ export default class Dropdown extends Component {
     return parseArgs(anchorField, AnchorButton)
   }
 
+  renderChildren() {
+    const props = { toggleVisibilty: this.toggleVisibilty }
+    const children = React.Children.toArray(this.props.children)
+    return React.Children.map(children, child =>
+      (typeof child.type === 'function' ? cloneElement(child, props) : child)
+    )
+  }
+
   render() {
     const {
       theme,
@@ -63,9 +71,8 @@ export default class Dropdown extends Component {
       ...props
     } = this.props
 
-    const [Button, fieldProps] = this.renderAnchor(anchorField)
+    const [Anchor, fieldProps] = this.renderAnchor(anchorField)
     const dropDownVisible = this.state.visible
-
     return (
       <div
         ref={ref => { this.dropdown = ref }}
@@ -75,7 +82,8 @@ export default class Dropdown extends Component {
         )}
         {...props}
       >
-        <Button
+        <Anchor
+          data-tid="dropdown-anchor"
           {...props}
           {...fieldProps}
           visible={dropDownVisible}
@@ -86,7 +94,7 @@ export default class Dropdown extends Component {
           <Card
             data-tid="dropdown-body"
           >
-            {children}
+            {this.renderChildren()}
           </Card>
         }
       </div>

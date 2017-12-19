@@ -207,7 +207,7 @@ storiesOf('react-ui-core / Dropdown', module)
   .add('Dropdown', () => DefaultDropdown)
   .add('Dropdown With Anchor Props', () => DropdownWithProps)
   .add('Custom Dropdown Input anchor', () => DropdownButtonToggle)
-  .add('Custom Dropdown With Menu', () => DropdownWithMenu)
+  .add('Custom Dropdown With Menu and multiple children', () => DropdownWithMenu)
 
 storiesOf('react-ui-core / Menu', module)
   .addDecorator((story, context) => withInfo(' Menu')(story)(context))
