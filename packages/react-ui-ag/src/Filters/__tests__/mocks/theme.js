@@ -1,14 +1,8 @@
 import { keyMirror } from '@rentpath/react-ui-utils'
 
 export default keyMirror([
-  'BedroomFilterCard',
-  'BedroomFilterCard-noValue',
-  'BathroomFilterCard',
-  'BathroomFilterCard-noValue',
-  'PetFilterCard',
-  'PetFilterCard-noValue',
-  'RatingFilterCard',
-  'RatingFilterCard-noValue',
+  'RadioGroupFilterCard',
+  'RadioGroupFilterCard-noValue',
   'FilterCard_Buttons',
   'FilterCard_ApplyButton',
   'FilterCard_CancelButton',

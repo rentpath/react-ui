@@ -49,7 +49,7 @@ export default class Dropdown extends Component {
     }
   }
 
-  renderAnchor() {
+  renderAnchor(props) {
     const [Anchor, fieldProps] = parseArgs(this.props.anchorField, AnchorButton, {
       'data-tid': 'dropdown-anchor',
       visible: this.state.visible,
@@ -57,7 +57,7 @@ export default class Dropdown extends Component {
       toggleVisibilty: this.toggleVisibilty,
     })
 
-    return <Anchor {...fieldProps} />
+    return <Anchor {...props} {...fieldProps} />
   }
 
   renderChildren() {
@@ -87,7 +87,7 @@ export default class Dropdown extends Component {
         )}
         {...props}
       >
-        {this.renderAnchor()}
+        {this.renderAnchor(props)}
         {this.state.visible &&
           <Card data-tid="dropdown-body">
             {this.renderChildren()}

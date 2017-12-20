@@ -7,18 +7,9 @@ export {
 export {
   DesktopBedroomFilterCard,
   InlineBedroomFilterCard,
-} from './BedroomFilterCard'
-
-export {
-  DesktopPetFilterCard,
-  InlinePetFilterCard,
-} from './PetFilterCard'
-
-export {
-  InlineRatingFilterCard,
-} from './RatingFilterCard'
-
-export {
   InlineBathroomFilterCard,
   DesktopBathroomFilterCard,
-} from './BathroomFilterCard'
+  DesktopPetFilterCard,
+  InlinePetFilterCard,
+  InlineRatingFilterCard,
+} from './RadioGroupFilterCard'
