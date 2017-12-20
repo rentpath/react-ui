@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import { action } from '@storybook/addon-actions'
-import { Dropdown, List, Text, Menu } from 'react-ui-core/src'
+import { Dropdown, Text, Menu } from 'react-ui-core/src'
 import DropdownButtonExample from './DropdownButtonExample'
 import DropdownInputExample from './DropdownInputExample'
 import StoryBookTheme from '../theme/Storybook.css'
@@ -14,8 +14,9 @@ export const DefaultDropdown = (
   <Dropdown
     className={StoryBookTheme['Story-padding']}
     anchorField={{ text: <Text>Click Me</Text> }}
+    visible
   >
-    <div><h1>Hi</h1></div>
+    <h1>Hi!</h1>
   </Dropdown>
 )
 
@@ -24,7 +25,7 @@ export const DropdownWithProps = (
     anchorField={inputProps}
     className={StoryBookTheme['Story-padding']}
   >
-    <List items={['foo', 'bar', 'baz']} />
+    <Menu options={['foo', 'bar', 'baz']} />
   </Dropdown>
 )
 
@@ -33,7 +34,7 @@ export const DropdownButtonToggle = (
     className={StoryBookTheme['Story-padding']}
     anchorField={props => (<DropdownInputExample {...props} />)}
   >
-    <List items={['foo', 'bar', 'baz']} />
+    <Menu options={['foo', 'bar', 'baz']} />
   </Dropdown>
 )
 
@@ -49,5 +50,6 @@ export const DropdownWithMenu = (
       options={['Option1', 'Option2', 'Option3']}
       handleSelectionHover={action('hovering')}
     />
+    <h1>hello</h1>
   </Dropdown>
 )

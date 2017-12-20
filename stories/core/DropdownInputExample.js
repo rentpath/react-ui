@@ -17,7 +17,7 @@ export default class DropdownInputExample extends PureComponent {
     document.removeEventListener('click', this.props.handleDocumentClick)
   }
 
-  handleClick = () => {
+  handleFocus = () => {
     const { toggleVisibilty } = this.props
 
     if (!this.props.visible && toggleVisibilty) toggleVisibilty()
@@ -26,7 +26,7 @@ export default class DropdownInputExample extends PureComponent {
   render() {
     return (
       <Field
-        onClick={this.handleClick}
+        onFocus={this.handleFocus}
         label="Say Hi"
       />
     )
