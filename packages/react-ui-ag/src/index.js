@@ -1,9 +1,6 @@
 export {
   FilterCard,
-  BedroomFilterCard,
-  PetFilterCard,
-  RatingFilterCard,
-  BathroomFilterCard,
+  RadioGroupFilterCard,
 } from './Filters'
 
 export {

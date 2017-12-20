@@ -73,7 +73,7 @@ describe('Dropdown', () => {
   it('passes label to default anchor', () => {
     const text = 'test'
     const wrapper = mount(
-      <Dropdown visible={false} text={'test'}>
+      <Dropdown visible={false} text="test">
         <h1>hi</h1>
       </Dropdown>
     )

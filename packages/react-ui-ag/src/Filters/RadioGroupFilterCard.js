@@ -7,14 +7,12 @@ import isEqual from 'lodash/isEqual'
 import autobind from 'autobind-decorator'
 import FilterCard from './FilterCard'
 
-@themed(/^BedroomFilterCard/)
+@themed(/^RadioGroupFilterCard/)
 
-export default class BedroomFilterCard extends Component {
+export default class RadioGroupFilterCard extends Component {
   static propTypes = {
     className: PropTypes.string,
     theme: PropTypes.object,
-    title: PropTypes.string,
-    description: PropTypes.string,
     fields: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.oneOfType([
         PropTypes.node,
@@ -26,17 +24,7 @@ export default class BedroomFilterCard extends Component {
   }
 
   static defaultProps = {
-    title: 'Filter by bedrooms',
-    description: 'View properties with a certain amount of bedrooms.',
     theme: {},
-    fields: [
-      { label: 'Any', value: '' },
-      { label: 'Studio', value: '0' },
-      { label: '1', value: '1' },
-      { label: '2', value: '2' },
-      { label: '3', value: '3' },
-      { label: '4+', value: '4' },
-    ],
   }
 
   constructor(props) {
@@ -80,17 +68,17 @@ export default class BedroomFilterCard extends Component {
     return (
       <FilterCard
         className={classnames(
-          theme.BedroomFilterCard,
+          theme.RadioGroupFilterCard,
           className,
-          !this.state.value && theme['BedroomFilterCard-noValue']
+          !this.state.value && theme['RadioGroupFilterCard-noValue']
         )}
-        data-tid="bedroom-filter-card"
+        data-tid="radio-group-filter-card"
         value={this.state.value}
         {...props}
       >
         <RadioGroup
-          name="bedrooms"
-          data-tid="bedroom-filter-card-radiogroup"
+          name="radio-group-filter-card-radio-group"
+          data-tid="radio-group-filter-card-radio-group"
           hideInputElement
           fields={fields}
           onChange={this.handleRadioGroupSelection}
