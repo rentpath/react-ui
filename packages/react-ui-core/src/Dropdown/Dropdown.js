@@ -49,16 +49,23 @@ export default class Dropdown extends Component {
     }
   }
 
-  renderAnchor(anchorField) {
-    return parseArgs(anchorField, AnchorButton)
+  renderAnchor() {
+    const [Anchor, fieldProps] = parseArgs(this.props.anchorField, AnchorButton, {
+      'data-tid': 'dropdown-anchor',
+      visible: this.state.visible,
+      handleDocumentClick: this.handleDocumentClick,
+      toggleVisibilty: this.toggleVisibilty,
+    })
+
+    return <Anchor {...fieldProps} />
   }
 
   renderChildren() {
     const props = { toggleVisibilty: this.toggleVisibilty }
     const children = React.Children.toArray(this.props.children)
-    return React.Children.map(children, child =>
-      (typeof child.type === 'function' ? cloneElement(child, props) : child)
-    )
+    return React.Children.map(children, child => (
+      typeof child.type === 'function' ? cloneElement(child, props) : child
+    ))
   }
 
   render() {
@@ -71,8 +78,6 @@ export default class Dropdown extends Component {
       ...props
     } = this.props
 
-    const [Anchor, fieldProps] = this.renderAnchor(anchorField)
-    const dropDownVisible = this.state.visible
     return (
       <div
         ref={ref => { this.dropdown = ref }}
@@ -82,18 +87,9 @@ export default class Dropdown extends Component {
         )}
         {...props}
       >
-        <Anchor
-          data-tid="dropdown-anchor"
-          {...props}
-          {...fieldProps}
-          visible={dropDownVisible}
-          handleDocumentClick={this.handleDocumentClick}
-          toggleVisibilty={this.toggleVisibilty}
-        />
-        {dropDownVisible &&
-          <Card
-            data-tid="dropdown-body"
-          >
+        {this.renderAnchor()}
+        {this.state.visible &&
+          <Card data-tid="dropdown-body">
             {this.renderChildren()}
           </Card>
         }

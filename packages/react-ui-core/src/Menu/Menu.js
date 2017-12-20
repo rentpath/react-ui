@@ -34,8 +34,6 @@ export default class Menu extends PureComponent {
   static defaultProps = {
     theme: {},
     handleSelectionHover: () => {},
-    toggleVisibilty: () => {},
-    onSelection: () => {},
     closeOnSelection: true,
     nodeType: 'div',
     listItem: { nodeType: 'div' },
@@ -100,16 +98,13 @@ export default class Menu extends PureComponent {
       onSelection,
     } = this.props
 
-    onSelection(this.getValue())
-    if (closeOnSelection) toggleVisibilty()
+    if (onSelection) onSelection(this.getValue())
+    if (closeOnSelection && toggleVisibilty) toggleVisibilty()
   }
 
   highlightOption(index) {
     if (index < 0 || index >= this.props.options.length) return
-    this.setState({
-      highlightIndex: index,
-    })
-
+    this.setState({ highlightIndex: index })
     this.props.handleSelectionHover(this.getValue())
   }
 
