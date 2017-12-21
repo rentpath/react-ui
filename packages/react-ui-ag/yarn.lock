@@ -65,9 +65,9 @@
     eslint-plugin-jsx-a11y "^6.0.2"
     eslint-plugin-react "^7.3.0"
 
-"@rentpath/react-ui-core@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@rentpath/react-ui-core/-/react-ui-core-2.0.0.tgz#9439581724ea4f1001ad205d21574994f1fec407"
+"@rentpath/react-ui-core@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@rentpath/react-ui-core/-/react-ui-core-3.1.0.tgz#41dc5b66cdc8a61a79f26dd24d9e9fd238818037"
   dependencies:
     "@rentpath/react-ui-utils" "0.0.1"
     babel-runtime "^6.26.0"
@@ -3416,9 +3416,9 @@ react-dom@^16.0.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-"react-flexbox-grid@https://github.com/rentpath/react-flexbox-grid":
+"react-flexbox-grid@git+https://github.com/rentpath/react-flexbox-grid.git":
   version "1.1.3"
-  resolved "https://github.com/rentpath/react-flexbox-grid#ae2ea721eceb30b66c6ab824502e3ce34dcab39f"
+  resolved "git+https://github.com/rentpath/react-flexbox-grid.git#ae2ea721eceb30b66c6ab824502e3ce34dcab39f"
   dependencies:
     flexboxgrid "^6.3.0"
     prop-types "^15.5.8"

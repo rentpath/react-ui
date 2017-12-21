@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import InputRange from 'react-input-range'
 import classnames from 'classnames'
 import omit from 'lodash/omit'
+import isEqual from 'lodash/isEqual'
 import themed from 'react-themed'
 
 @themed('*', {
@@ -35,7 +36,7 @@ export default class RangeSlider extends PureComponent {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.value !== nextProps.value) {
+    if (!isEqual(this.props.value, nextProps.value)) {
       this.setState({ value: nextProps.value })
     }
 
