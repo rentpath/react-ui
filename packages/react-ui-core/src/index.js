@@ -83,3 +83,7 @@ export {
 export {
   LeadModal,
 } from './LeadModal'
+
+export {
+  Highlighter,
+} from './Highlighter'

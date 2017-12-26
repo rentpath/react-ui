@@ -34,16 +34,15 @@ export const ListWithPassedNodeTypes = (
   <List
     items={sampleListItems}
     nodeType="div"
-    ListItem={{
+    listItem={{
       nodeType: 'div',
     }}
   />
-
 )
 
 export const ListWithOwnItemComponent = (
   <List
     items={sampleListItems}
-    ListItem={props => (<SampleItemComponent {...props} />)}
+    listItem={props => (<SampleItemComponent {...props} />)}
   />
 )

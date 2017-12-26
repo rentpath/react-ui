@@ -13,7 +13,11 @@ export default class ListItem extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,
     className: PropTypes.string,
-    nodeType: PropTypes.string,
+    nodeType: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.func,
+      PropTypes.object,
+    ]),
     children: PropTypes.node,
     onMouseEnter: PropTypes.func,
     onClick: PropTypes.func,
