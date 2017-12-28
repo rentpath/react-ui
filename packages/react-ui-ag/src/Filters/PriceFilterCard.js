@@ -1,9 +1,8 @@
-import React, { Component, createElement } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classname from 'classnames'
 import themed from 'react-themed'
 import autobind from 'autobind-decorator'
-import isEqual from 'lodash/isEqual'
 import { parseArgs } from '@rentpath/react-ui-utils'
 import { RangeSlider } from '@rentpath/react-ui-core'
 import FilterCard from './FilterCard'
@@ -44,11 +43,13 @@ export default class PriceFilterCard extends Component {
   renderPriceSlider() {
     const { priceSlider } = this.props
     const [Slider, props] = parseArgs(priceSlider, RangeSlider)
-    return (<Slider
-      {...props}
-      onChangeComplete={this.handlePriceSliderChange}
-      data-tid="price-filter-card-slider"
-    />)
+    return (
+      <Slider
+        {...props}
+        onChangeComplete={this.handlePriceSliderChange}
+        data-tid="price-filter-card-slider"
+      />
+    )
   }
 
   render() {
