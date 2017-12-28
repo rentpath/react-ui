@@ -65,6 +65,31 @@
     eslint-plugin-jsx-a11y "^6.0.2"
     eslint-plugin-react "^7.3.0"
 
+"@rentpath/react-ui-core@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@rentpath/react-ui-core/-/react-ui-core-3.1.0.tgz#41dc5b66cdc8a61a79f26dd24d9e9fd238818037"
+  dependencies:
+    "@rentpath/react-ui-utils" "0.0.1"
+    babel-runtime "^6.26.0"
+    classnames "^2.2.5"
+    form-serialize "^0.7.1"
+    prop-types "^15.6.0"
+    react-flexbox-grid "https://github.com/rentpath/react-flexbox-grid"
+    react-input-range "^1.2.2"
+    react-themed "^3.2.1"
+
+"@rentpath/react-ui-utils@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rentpath/react-ui-utils/-/react-ui-utils-0.0.1.tgz#e9d5ce96308125048bb0c48e06140bf64419d007"
+  dependencies:
+    classnames "^2.2.5"
+
+"@rentpath/react-ui-utils@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@rentpath/react-ui-utils/-/react-ui-utils-1.0.1.tgz#4ed3d4b350ed01b03e64e616bd4821c8b7b89b98"
+  dependencies:
+    classnames "^2.2.5"
+
 "@types/node@*":
   version "8.0.53"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.53.tgz#396b35af826fa66aad472c8cb7b8d5e277f4e6d8"
@@ -271,6 +296,10 @@ async@^2.1.4:
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
+
+autobind-decorator@^1.3.4:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/autobind-decorator/-/autobind-decorator-1.4.3.tgz#4c96ffa77b10622ede24f110f5dbbf56691417d1"
 
 autobind-decorator@^2.1.0:
   version "2.1.0"
@@ -1769,6 +1798,10 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
+flexboxgrid@^6.3.0:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/flexboxgrid/-/flexboxgrid-6.3.1.tgz#e99898afc07b7047722bb81a958a5fba4d4e20fd"
+
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -1794,6 +1827,10 @@ form-data@~2.1.1:
     asynckit "^0.4.0"
     combined-stream "^1.0.5"
     mime-types "^2.1.12"
+
+form-serialize@^0.7.1:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/form-serialize/-/form-serialize-0.7.2.tgz#b0a2ff0c22026fb6d3d15c9d33f6de6a432e4732"
 
 fs-readdir-recursive@^1.0.0:
   version "1.1.0"
@@ -3378,6 +3415,20 @@ react-dom@^16.0.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+"react-flexbox-grid@git+https://github.com/rentpath/react-flexbox-grid.git":
+  version "1.1.3"
+  resolved "git+https://github.com/rentpath/react-flexbox-grid.git#ae2ea721eceb30b66c6ab824502e3ce34dcab39f"
+  dependencies:
+    flexboxgrid "^6.3.0"
+    prop-types "^15.5.8"
+
+react-input-range@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-input-range/-/react-input-range-1.2.2.tgz#65c295d8a9ab34cbd3b8f357579f4e66be215ea9"
+  dependencies:
+    autobind-decorator "^1.3.4"
+    prop-types "^15.5.8"
 
 react-test-renderer@^16.0.0, react-test-renderer@^16.0.0-0:
   version "16.1.1"
