@@ -61,6 +61,8 @@
 .PriceFilterCard .valueLabel {
   position: absolute;
   top: -47px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .PriceFilterCard .track {
@@ -87,7 +89,7 @@
 
 .PriceFilterCard .inputRange {
   height: 1rem;
-  margin-right: 1.5rem;
+  margin-right: 33px;
   margin-bottom: 2rem;
   position: relative;
 }
