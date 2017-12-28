@@ -13,3 +13,8 @@ export {
   InlinePetFilterCard,
   InlineRatingFilterCard,
 } from './RadioGroupFilterCard'
+
+export {
+  InlinePriceFilterCard,
+  DesktopPriceFilterCard,
+} from './PriceFilterCard'
