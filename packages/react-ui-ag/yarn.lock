@@ -65,7 +65,7 @@
     eslint-plugin-jsx-a11y "^6.0.2"
     eslint-plugin-react "^7.3.0"
 
-"@rentpath/react-ui-core@3.1.0":
+"@rentpath/react-ui-core@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@rentpath/react-ui-core/-/react-ui-core-3.1.0.tgz#41dc5b66cdc8a61a79f26dd24d9e9fd238818037"
   dependencies:
