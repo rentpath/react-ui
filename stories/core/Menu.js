@@ -11,13 +11,14 @@ export const DefaultMenu = (
 export const MenuOnSelection = (
   <Menu
     options={['Option1', 'Option2', 'Option3']}
-    onSelection={action('selected')}
+    onItemSelect={action('selected')}
   />
 )
 
 export const MenuOnSelectionHover = (
   <Menu
     options={['Option1', 'Option2', 'Option3']}
-    handleSelectionHover={action('hovering')}
+    onItemMouseOver={action('hovering')}
+    nodeType="section"
   />
 )

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import autobind from 'autobind-decorator'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import { List } from '../List'
@@ -17,11 +18,8 @@ export default class Menu extends PureComponent {
     theme: PropTypes.object,
     className: PropTypes.string,
     options: PropTypes.node,
-    toggleVisibilty: PropTypes.func,
-    closeOnSelection: PropTypes.bool,
-    onSelection: PropTypes.func,
-    handleSelectionHover: PropTypes.func,
-    optionValueSelector: PropTypes.func,
+    onItemSelect: PropTypes.func,
+    onItemMouseOver: PropTypes.func,
     nodeType: PropTypes.string,
     listItem: PropTypes.oneOfType([
       PropTypes.node,
@@ -33,8 +31,6 @@ export default class Menu extends PureComponent {
 
   static defaultProps = {
     theme: {},
-    handleSelectionHover: () => {},
-    closeOnSelection: true,
     nodeType: 'div',
     listItem: { nodeType: 'div' },
   }
@@ -45,11 +41,6 @@ export default class Menu extends PureComponent {
     this.state = {
       highlightIndex: props.highlightIndex || 0,
     }
-
-    this.highlightOption = this.highlightOption.bind(this)
-    this.handleSelection = this.handleSelection.bind(this)
-    this.onKeyDown = this.onKeyDown.bind(this)
-    this.getValue = this.getValue.bind(this)
   }
 
   componentDidMount() {
@@ -66,8 +57,11 @@ export default class Menu extends PureComponent {
     document.removeEventListener('keydown', this.onKeyDown)
   }
 
+  @autobind
   onKeyDown(event) {
-    switch (event.keyCode) {
+    const code = event.keyCode || event.key || event.keyIndentifier
+
+    switch (code) {
       case ARROW_DOWN:
         this.highlightOption(this.state.highlightIndex + 1)
         break
@@ -77,46 +71,41 @@ export default class Menu extends PureComponent {
         break
       case ENTER:
         event.preventDefault()
-        this.handleSelection(this.state.highlightIndex)
+        this.handleSelection()
         break
       default:
     }
   }
 
-  getValue() {
-    const { optionValueSelector, options } = this.props
-    let value = options[this.state.highlightIndex]
-
-    if (optionValueSelector) value = optionValueSelector(value)
-    return value
+  get value() {
+    const { options } = this.props
+    return options[this.state.highlightIndex]
   }
 
+  @autobind
   handleSelection() {
-    const {
-      toggleVisibilty,
-      closeOnSelection,
-      onSelection,
-    } = this.props
+    const { onItemSelect } = this.props
 
-    if (onSelection) onSelection(this.getValue())
-    if (closeOnSelection && toggleVisibilty) toggleVisibilty()
+    if (onItemSelect) onItemSelect(this.value)
   }
 
+  @autobind
   highlightOption(index) {
-    if (index < 0 || index >= this.props.options.length) return
-    this.setState({ highlightIndex: index })
-    this.props.handleSelectionHover(this.getValue())
+    const { options, onItemMouseOver } = this.props
+
+    if (index < 0 || index >= options.length) return
+    this.setState({ highlightIndex: index }, () => {
+      if (onItemMouseOver) onItemMouseOver(this.value)
+    })
   }
 
   render() {
     const {
       options,
       theme,
-      handleSelectionHover,
+      onItemMouseOver,
       className,
-      onSelection,
-      toggleVisibilty,
-      closeOnSelection,
+      onItemSelect,
       ...props
     } = this.props
 

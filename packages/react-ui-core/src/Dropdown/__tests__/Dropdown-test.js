@@ -7,13 +7,15 @@ import theme from './mocks/theme'
 
 const Dropdown = ThemedDropdown.WrappedComponent
 
+const map = {}
+
 class SampleAnchor extends PureComponent {
   static propTypes = {
-    toggleVisibilty: PropTypes.func,
+    onSelect: PropTypes.func,
   }
 
   handleClick = () => {
-    this.props.toggleVisibilty()
+    this.props.onSelect()
   }
 
   render() {
@@ -26,13 +28,19 @@ class SampleAnchor extends PureComponent {
   }
 }
 
-const SampleChild = props => <button data-tid="child" onClick={props.toggleVisibilty} />
+const SampleChild = props => <button data-tid="child" {...props} />
 
 SampleChild.propTypes = {
-  toggleVisibilty: PropTypes.func,
+  onSelect: PropTypes.func,
 }
 
 describe('Dropdown', () => {
+  beforeAll(() => {
+    window.document.addEventListener = jest.fn((event, cb) => {
+      map[event] = cb
+    })
+  })
+
   const setup = props => {
     const wrapper = mount(
       <Dropdown theme={theme} {...props}>
@@ -63,17 +71,23 @@ describe('Dropdown', () => {
     expect(wrapper.find('h1')).toHaveLength(0)
   })
 
-  it('default anchor fires toggleVisibilty on click', () => {
+  it('sets up default anchor to fire toggleVisibility on click', () => {
     const { wrapper } = setup({ visible: false })
     expect(wrapper.find('h1')).toHaveLength(0)
     wrapper.find('button').simulate('click')
     expect(wrapper.find('h1')).toHaveLength(1)
   })
 
+  it('should close on outside click', () => {
+    const { wrapper } = setup({ visible: true })
+    map.click({ target: '<html></html>' })
+    expect(wrapper.state('visible')).toEqual(false)
+  })
+
   it('passes label to default anchor', () => {
     const text = 'test'
     const wrapper = mount(
-      <Dropdown visible={false} text="test">
+      <Dropdown visible={false} anchorField={{ children: 'test' }}>
         <h1>hi</h1>
       </Dropdown>
     )
@@ -85,10 +99,17 @@ describe('Dropdown', () => {
     expect(wrapper.find('label').text()).toEqual('click me')
   })
 
-  it('passes toggleVisibilty to children', () => {
+  it('does not pass toggleVisibility to string types (non React)', () => {
     const { wrapper } = setup({ visible: true })
     expect(wrapper.find('h1')).toHaveLength(1)
     wrapper.find('[data-tid="child"]').simulate('click')
-    expect(wrapper.find('h1')).toHaveLength(0)
+    expect(wrapper.find('h1')).toHaveLength(1)
+  })
+
+  it('passes toggleVisibility to React components only', () => {
+    const { wrapper } = setup({ visible: true })
+    expect(wrapper.find('SampleChild')).toHaveLength(1)
+    wrapper.find('SampleChild').simulate('select')
+    expect(wrapper.find('SampleChild')).toHaveLength(0)
   })
 })
