@@ -7,6 +7,7 @@ import autobind from 'autobind-decorator'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import { Dropdown } from '../Dropdown'
+import { Highlighter } from '../Highlighter'
 import { Menu } from '../Menu'
 import { Button } from '../Button'
 import { Field } from '../Form'
@@ -33,6 +34,10 @@ export default class AutoSuggestField extends Component {
       PropTypes.func,
       PropTypes.object,
     ]),
+    highlight: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.object,
+    ]),
     onAfterClear: PropTypes.func,
     onSubmit: PropTypes.func,
     onSelection: PropTypes.func,
@@ -55,6 +60,7 @@ export default class AutoSuggestField extends Component {
     valueSelector: value => value,
     submitOnSelection: true,
     visible: false,
+    highlight: false,
   }
 
   constructor(props) {
@@ -92,6 +98,21 @@ export default class AutoSuggestField extends Component {
         }
         break
       default:
+    }
+  }
+
+  get highlightedListItem() {
+    const { highlight } = this.props
+
+    if (!highlight) return { nodeType: 'div' }
+    const indexHighlighted = highlight.indexHighlighted >= 0 ? highlight.indexHighlighted : 1
+
+    return { nodeType: props =>
+      (<Highlighter
+        indexHighlighted={indexHighlighted}
+        {...props}
+        pattern={this.state.value}
+      />),
     }
   }
 
@@ -180,6 +201,7 @@ export default class AutoSuggestField extends Component {
       onSubmit, // eslint-disable-line no-unused-vars
       onItemMouseOver,
       onSelection, // eslint-disable-line no-unused-vars
+      highlight,
       valueSelector,
       value,
       onAfterClear,
@@ -204,6 +226,7 @@ export default class AutoSuggestField extends Component {
           {...props}
         >
           <Menu
+            listItem={this.highlightedListItem}
             options={suggestions}
             onItemSelect={this.handleSuggestionSelection}
             onItemMouseOver={onItemMouseOver}

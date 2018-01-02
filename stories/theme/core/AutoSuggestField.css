@@ -27,7 +27,15 @@
 }
 
 .AutoSuggestField .ListItem {
-  padding: 5px;
+  padding: 5px 0;
+}
+
+.AutoSuggestField .Highlighter-Match {
+  background: none;
+}
+
+.AutoSuggestField .Menu {
+  padding-left: 5px;
 }
 
 .clear .Button {

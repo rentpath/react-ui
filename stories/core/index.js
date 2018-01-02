@@ -101,6 +101,11 @@ import {
   MenuOnSelectionHover,
 } from './Menu'
 
+import {
+  DefaultHighlighter,
+  HighlighterWithIndex,
+} from './Highlighter'
+
 const CoreThemeDecorator = storyFn => (
   <Theme theme={CoreTheme}>
     {storyFn()}
@@ -215,6 +220,13 @@ storiesOf('react-ui-core / Menu', module)
   .add('On Keyboard Selection', () => MenuOnSelection)
   .add('On Selection hover', () => MenuOnSelectionHover)
 
+storiesOf('react-ui-core / Highlighter', module)
+  .addDecorator((story, context) => withInfo('Default Highlighter')(story)(context))
+  .addDecorator(withKnobs)
+  .addDecorator(CoreThemeDecorator)
+  .add('Default Highlighter', () => DefaultHighlighter)
+  .add('Highlighter with index', HighlighterWithIndex)
+
 storiesOf('react-ui-core / Dropdown', module)
   .addDecorator((story, context) => withInfo('Dropdown')(story)(context))
   .addDecorator(CoreThemeDecorator)
@@ -229,7 +241,7 @@ storiesOf('react-ui-core / AutoSuggestField', module)
   .addDecorator(CoreThemeDecorator)
   .add('Field and Submit Button', () => AutoSuggestFieldSubmitButton)
   .add('Field and Clear Button', () => AutoSuggestFieldClearButton)
-  .add('Dynamic Results', () => AutoSuggestFieldDynamicResults)
+  .add('Dynamic Results with highlighted suggestions', () => AutoSuggestFieldDynamicResults)
 
 storiesOf('react-ui-core / Lead', module)
   .addDecorator((story, context) => withInfo('Core Lead')(story)(context))
