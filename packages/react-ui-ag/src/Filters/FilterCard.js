@@ -28,15 +28,29 @@ export default class FilterCard extends PureComponent {
     applyButton: buttonType,
     cancelButton: buttonType,
     value: PropTypes.any,
+    applyButtonDataTagSelection: PropTypes.string,
+    applyButtonDataTagItem: PropTypes.string,
+    applyButtonDataTagSection: PropTypes.string,
   }
 
   static defaultProps = {
     theme: {},
+    applyButtonDataTagSelection: '',
+    applyButtonDataTagItem: 'update_results_button',
+    applyButtonDataTagSection: 'filter_card',
   }
 
   renderButton(button, DefaultButton) {
     const [FilterButton, props] = parseArgs(this.props[button], DefaultButton)
-    return <FilterButton {...props} value={this.props.value} />
+    return (
+      <FilterButton
+        {...props}
+        data-tag_item={this.props.applyButtonDataTagItem}
+        data-tag_section={this.props.applyButtonDataTagSection}
+        data-tag_selection={this.props.applyButtonDataTagSelection}
+        value={this.props.value}
+      />
+    )
   }
 
   render() {
@@ -48,6 +62,9 @@ export default class FilterCard extends PureComponent {
       description,
       applyButton,
       cancelButton,
+      applyButtonDataTagSelection,
+      applyButtonDataTagItem,
+      applyButtonDataTagSection,
       ...props
     } = this.props
 
