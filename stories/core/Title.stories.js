@@ -4,15 +4,7 @@ import classnames from 'classnames'
 import themed from 'react-themed'
 import { Title } from 'react-ui-core/src/Title'
 import StoryBookTheme from '../theme/Storybook.css'
-
-export const DefaultTitle = (
-  <Title
-    nodeType="h2"
-    className={StoryBookTheme['Story-center']}
-  >
-    Default Title
-  </Title>
-)
+import coreStory from './coreStory'
 
 const LinkTitle = props => (
   <Title
@@ -29,6 +21,19 @@ const LinkTitle = props => (
 LinkTitle.propTypes = {
   theme: PropTypes.object,
 }
-const ThemedLinkTitle = themed(/^Title/)(LinkTitle)
 
-export const EmbeddedLinkWithinTitle = (<ThemedLinkTitle />)
+const ThemedTitle =  themed(/^Title/)(LinkTitle)
+
+
+coreStory('Title', module)
+  .add('Title', () => (
+    <Title
+      nodeType="h2"
+      className={StoryBookTheme['Story-center']}
+    >
+      Default Title
+    </Title>
+  ))
+  .add('Link Title', () => (
+     <ThemedTitle />
+  ))

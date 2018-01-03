@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { AutoSuggestField, Button } from 'react-ui-core/src'
 import { action } from '@storybook/addon-actions'
 import theme from '../theme/core/AutoSuggestField.css'
+import coreStory from './coreStory'
 
 const ClearButton = props => (<Button {...props}>X</Button>)
 const SubmitButton = props => (<Button {...props}>Submit</Button>)
@@ -52,27 +53,26 @@ class Example extends PureComponent {
   }
 }
 
-export const AutoSuggestFieldSubmitButton = (
-  <AutoSuggestField
-    suggestions={['Option 1', 'Option 2', 'Option 3']}
-    anchorField={{ placeholder: 'enter a choice...' }}
-    submitButton={SubmitButton}
-    onSubmit={action('On submit')}
-    submitOnSelection={false}
-  />
-)
-
-export const AutoSuggestFieldClearButton = (
-  <AutoSuggestField
-    suggestions={['Option A', 'Option B', 'Option C']}
-    clearButton={ClearButton}
-    onSubmit={action('On submit')}
-    onSelection={action('On selection')}
-    anchorField={{ placeholder: 'choose something...' }}
-    className={theme.clear}
-  />
-)
-
-export const AutoSuggestFieldDynamicResults = (
-  <Example />
-)
+coreStory('AutoSuggest Field', module)
+  .add('Field and Submit Button', () => (
+    <AutoSuggestField
+      suggestions={['Option 1', 'Option 2', 'Option 3']}
+      anchorField={{ placeholder: 'enter a choice...' }}
+      submitButton={SubmitButton}
+      onSubmit={action('On submit')}
+      submitOnSelection={false}
+    />
+  ))
+  .add('Field and Clear Button', () => (
+    <AutoSuggestField
+      suggestions={['Option A', 'Option B', 'Option C']}
+      clearButton={ClearButton}
+      onSubmit={action('On submit')}
+      onSelection={action('On selection')}
+      anchorField={{ placeholder: 'choose something...' }}
+      className={theme.clear}
+    />
+  ))
+  .add('Dynamic Results with highlighted suggestions', () => (
+    <Example />
+  ))

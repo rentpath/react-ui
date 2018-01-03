@@ -1,3 +1,4 @@
+import React from 'react'
 import { configure } from '@storybook/react'
 import { setOptions } from '@storybook/addon-options'
 import { setDefaults } from '@storybook/addon-info'
@@ -20,8 +21,10 @@ setOptions({
   sortStoriesByKind: false,
 })
 
+const req = require.context('../stories/core', true, /\.stories\.js$/)
+
 const loadStories = () => {
-  require('../stories/core')
+  req.keys().forEach((filename) => req(filename))
   require('../stories/map')
   require('../stories/rent')
   require('../stories/ag')
