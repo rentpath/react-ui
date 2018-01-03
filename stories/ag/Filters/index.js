@@ -18,3 +18,9 @@ export {
   InlinePriceFilterCard,
   DesktopPriceFilterCard,
 } from './PriceFilterCard'
+
+export {
+  DesktopBedroomDropdown,
+  DesktopBathroomDropdown,
+  DesktopPetDropdown,
+} from './RadioGroupDropdown'

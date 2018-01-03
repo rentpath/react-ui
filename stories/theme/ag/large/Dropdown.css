@@ -1,0 +1,18 @@
+.Dropdown {
+  margin: 10px;
+}
+
+.Dropdown .Card {
+  z-index: 1;
+}
+
+.Dropdown .Card::before {
+  background-color: #fff;
+  content:"";
+  height: 15px;
+  width: 96px;
+  z-index:1;
+  position: absolute;
+  top: 26px;
+  left: 10px;
+}

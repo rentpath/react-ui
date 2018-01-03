@@ -2,8 +2,10 @@
   border: 0;
   color: #373737;
   width: 379px;
-  box-shadow: 1px 2px 2px lightgrey;
+  box-shadow: 1px 1px 4px 1px lightgrey;
   height: 191px;
+  background-color: #fff;
+  border-radius: 3px;
 }
 
 .FilterCard_Body {
@@ -17,4 +19,8 @@
   flex-direction: row-reverse;
   justify-content: space-between;
   width: 175px;
+}
+
+.FilterCard.Card {
+  justify-content: center;
 }

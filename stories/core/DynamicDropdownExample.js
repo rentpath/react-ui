@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import { Dropdown, Menu } from 'react-ui-core/src'
+import { Dropdown, Menu, Card } from 'react-ui-core/src'
 import PropTypes from 'prop-types'
 import DropdownButtonExample from './DropdownButtonExample'
 
@@ -62,10 +62,12 @@ const MenuWrapper = props => {
   const { setButtonText, ...safeProps } = props
 
   return (
-    <Menu
-      onItemSelect={handleSelection}
-      {...safeProps}
-    />
+    <Card>
+      <Menu
+        onItemSelect={handleSelection}
+        {...safeProps}
+      />
+    </Card>
   )
 }
 

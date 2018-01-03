@@ -3416,9 +3416,9 @@ react-dom@^16.0.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-"react-flexbox-grid@git+https://github.com/rentpath/react-flexbox-grid.git":
+"react-flexbox-grid@https://github.com/rentpath/react-flexbox-grid":
   version "1.1.3"
-  resolved "git+https://github.com/rentpath/react-flexbox-grid.git#ae2ea721eceb30b66c6ab824502e3ce34dcab39f"
+  resolved "https://github.com/rentpath/react-flexbox-grid#ae2ea721eceb30b66c6ab824502e3ce34dcab39f"
   dependencies:
     flexboxgrid "^6.3.0"
     prop-types "^15.5.8"
