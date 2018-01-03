@@ -44,4 +44,14 @@ describe('ag/Buttons/ApplyButton', () => {
     wrapper.simulate('click')
     expect(onClick.mock.calls[0][0]).toEqual('valueOfDoom')
   })
+
+  it('renderes data tags if passed in', () => {
+    const wrapper = shallow(
+      <ApplyButton
+        onClick={() => null}
+        data-tag_item="update_results_button"
+      />
+    )
+    expect(wrapper.find('[data-tag_item="update_results_button"]')).toHaveLength(1)
+  })
 })
