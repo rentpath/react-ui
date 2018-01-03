@@ -25,7 +25,7 @@
 }
 
 .PriceFilterCard-noValue .ApplyButton {
-  display:none;
+  visibility: hidden;
 }
 
 .PriceFilterCard .slider:active {
