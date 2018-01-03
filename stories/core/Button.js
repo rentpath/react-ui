@@ -5,7 +5,7 @@ import StoryBookTheme from '../theme/Storybook.css'
 
 export const DefaultButton = (
   <Button
-    onClick={action('Clicked the buton!')}
+    onClick={action('Clicked the button!')}
     className={StoryBookTheme['Story-center']}
   >
     Click Me
@@ -16,7 +16,7 @@ export const ButtonWithColor = (
   <Button
     color="red"
     className={StoryBookTheme['Story-center']}
-    onClick={action('Clicked the red buton!')}
+    onClick={action('Clicked the red button!')}
   >
     Click this red button
   </Button>
@@ -26,7 +26,7 @@ export const ButtonLarge = (
   <Button
     size="large"
     className={StoryBookTheme['Story-center']}
-    onClick={action('Clicked the large buton!')}
+    onClick={action('Clicked the large button!')}
   >
     Click this large button
   </Button>
@@ -34,9 +34,9 @@ export const ButtonLarge = (
 
 export const ButtonSmall = (
   <Button
-    color="small"
+    size="small"
     className={StoryBookTheme['Story-center']}
-    onClick={action('Clicked the small buton!')}
+    onClick={action('Clicked the small button!')}
   >
     Click this small button
   </Button>
