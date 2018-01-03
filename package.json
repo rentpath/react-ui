@@ -54,10 +54,12 @@
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-dom": "^16.2.0",
-    "react-storybook-addon-chapters": "^2.1.0",
+    "react-storybook-addon-chapters": "^2.1.1",
     "react-test-renderer": "^16.2.0"
   },
   "dependencies": {
+    "@storybook/addon-a11y": "^3.3.3",
+    "@storybook/addon-viewport": "^3.3.3",
     "babel-runtime": "^6.23.0",
     "classnames": "^2.2.5",
     "form-serialize": "^0.7.1",

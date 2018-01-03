@@ -1,4 +1,5 @@
 import React from 'react'
+import Container from '../../.storybook/Container';
 import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
@@ -248,3 +249,44 @@ storiesOf('react-ui-core / Lead', module)
   .addDecorator(CoreThemeDecorator)
   .add('LeadForm', () => DefaultLeadForm)
   .add('LeadModal', () => DefaultLeadModal)
+
+
+storiesOf('Core Styleguide / Button', module)
+    .addDecorator(story => <Container story={story} />)
+    .addDecorator((story, context) => withInfo('Button')(story)(context))
+    .addDecorator(CoreThemeDecorator)
+    .addWithChapters(
+        'Button',
+        {
+            info: `
+        If you don't require displaying of the chapter information, simply use only one chapter with your list of sections and omit the chapter-related parameters.
+        You'll end up with just a list of rendered sections. Refer to the example in **example/story.js**.
+      `,
+            chapters: [
+                {
+                    sections: [
+                        {
+                            title: 'Default Button',
+                            sectionFn: () => DefaultButton,
+
+                        },
+                        {
+                            title: 'Colored Button',
+                            sectionFn: () => ButtonWithColor,
+
+                        },
+                        {
+                            title: 'Small Button',
+                            sectionFn: () => ButtonSmall,
+
+                        },
+                        {
+                            title: 'Large Button',
+                            sectionFn: () => ButtonLarge,
+
+                        },
+                    ],
+                },
+            ],
+        }
+    );
