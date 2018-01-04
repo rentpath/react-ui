@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { action } from '@storybook/addon-actions'
 import Collapsible from '../Collapsible'
 import Field from '../Field'
-import StoryBookTheme from '../.storybook/theme/Storybook.css'
 import coreStory from '../.storybook/coreStory'
 
 class Checkbox extends Component {
@@ -60,7 +59,6 @@ coreStory('Collapsible', module)
   .add('Collapsible', () => (
     <div>
       <Collapsible
-        className={StoryBookTheme['Story-padding']}
         showableItems={myShowableItems}
         nonshowableItems={myNonShowableItems}
         hiddenText="see all amenities"

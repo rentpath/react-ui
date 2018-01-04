@@ -1,14 +1,19 @@
 .Counter {
   display: flex;
+  white-space: nowrap;
+  padding: 10px;
+  align-items: center;
 }
 
 .Counter .Label {
   display: inline-block;
+  white-space: nowrap;
+  padding-right: 10px;
 }
 
 .Counter_Controls {
   display: inline-block;
-  flex: 4;
+  white-space: nowrap;
 }
 
 .Counter .Text {

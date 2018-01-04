@@ -10,7 +10,7 @@
     "lint:fix": "lerna run lint:fix",
     "postinstall": "lerna bootstrap",
     "prepublish": "lerna run clean --yes && lerna run build",
-    "storybook": "start-storybook -p 6006 -c .storybook",
+    "storybook": "start-storybook -p 6006 -c .storybook -s ./.storybook/dist",
     "build-storybook": "build-storybook"
   },
   "jest": {
@@ -25,10 +25,13 @@
   },
   "devDependencies": {
     "@rentpath/eslint-config-rentpath": "^3.0.1",
+    "@storybook/addon-a11y": "^3.3.3",
     "@storybook/addon-actions": "^3.2.17",
+    "@storybook/addon-centered": "^3.3.3",
     "@storybook/addon-info": "^3.2.17",
     "@storybook/addon-knobs": "^3.2.17",
     "@storybook/addon-options": "^3.2.17",
+    "@storybook/addon-viewport": "^3.3.3",
     "@storybook/react": "^3.2.17",
     "@types/node": "^8.0.55",
     "@types/react": "^16.0.27",
@@ -54,7 +57,7 @@
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-dom": "^16.2.0",
-    "react-storybook-addon-chapters": "^2.1.0",
+    "react-storybook-addon-chapters": "^2.1.1",
     "react-test-renderer": "^16.2.0"
   },
   "dependencies": {

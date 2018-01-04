@@ -70,6 +70,14 @@
     eslint-plugin-jsx-a11y "^6.0.2"
     eslint-plugin-react "^7.3.0"
 
+"@storybook/addon-a11y@^3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-3.3.3.tgz#cc59c3e81e62d6208d8256f2803272ff65cbec3b"
+  dependencies:
+    "@storybook/components" "^3.3.3"
+    axe-core "^2.6.0"
+    prop-types "^15.6.0"
+
 "@storybook/addon-actions@^3.2.17":
   version "3.2.17"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.2.17.tgz#e85d38f743125157fdaf6669708e089bc2008e50"
@@ -80,6 +88,12 @@
     prop-types "^15.6.0"
     react-inspector "^2.2.1"
     uuid "^3.1.0"
+
+"@storybook/addon-centered@^3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-centered/-/addon-centered-3.3.3.tgz#a92acb083b1f66e91ae9e12f52ca851e90cfacff"
+  dependencies:
+    global "^4.3.2"
 
 "@storybook/addon-info@^3.2.14", "@storybook/addon-info@^3.2.17":
   version "3.2.17"
@@ -123,6 +137,14 @@
   dependencies:
     "@storybook/addons" "^3.2.17"
 
+"@storybook/addon-viewport@^3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-3.3.3.tgz#fa41acd3d898b2ac9868005fe4eafeaec6c63f43"
+  dependencies:
+    "@storybook/components" "^3.3.3"
+    global "^4.3.2"
+    prop-types "^15.5.10"
+
 "@storybook/addons@^3.2.17":
   version "3.2.17"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.2.17.tgz#5c2ece24c5f7fbf7cedf4cfe503c5e356543e62d"
@@ -145,6 +167,14 @@
   dependencies:
     glamor "^2.20.40"
     glamorous "^4.11.0"
+    prop-types "^15.6.0"
+
+"@storybook/components@^3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.3.3.tgz#a01adb8eb065a9e9627d85d7268deb270b57d2de"
+  dependencies:
+    glamor "^2.20.40"
+    glamorous "^4.11.2"
     prop-types "^15.6.0"
 
 "@storybook/mantra-core@^1.7.0":
@@ -632,6 +662,10 @@ aws-sign2@~0.7.0:
 aws4@^1.2.1, aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
+
+axe-core@^2.6.0:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-2.6.1.tgz#28772c4f76966d373acda35b9a409299dc00d1b5"
 
 axobject-query@^0.1.0:
   version "0.1.0"
@@ -3565,6 +3599,18 @@ glamorous@^4.11.0:
     react-html-attributes "^1.3.0"
     svg-tag-names "^1.1.0"
 
+glamorous@^4.11.2:
+  version "4.11.2"
+  resolved "https://registry.yarnpkg.com/glamorous/-/glamorous-4.11.2.tgz#ce144c6a53e247ddf0896ad6faddebf78c49d864"
+  dependencies:
+    brcast "^3.0.0"
+    fast-memoize "^2.2.7"
+    html-tag-names "^1.1.1"
+    is-function "^1.0.1"
+    is-plain-object "^2.0.4"
+    react-html-attributes "^1.3.0"
+    svg-tag-names "^1.1.0"
+
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/glob-base/-/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"
@@ -6045,9 +6091,9 @@ react-split-pane@^0.1.71:
     prop-types "^15.5.10"
     react-style-proptype "^3.0.0"
 
-react-storybook-addon-chapters@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-storybook-addon-chapters/-/react-storybook-addon-chapters-2.1.0.tgz#d727446e34ed34357656674bf27499ff572e6bab"
+react-storybook-addon-chapters@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-storybook-addon-chapters/-/react-storybook-addon-chapters-2.1.1.tgz#07adf41784155853ede0acdfded5205ecea8c37d"
   dependencies:
     "@storybook/addon-info" "^3.2.14"
     "@storybook/components" "^3.2.14"
