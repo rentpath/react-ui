@@ -1,9 +1,11 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
+import { RangeSlider as ThemedRangeSlider } from '@rentpath/react-ui-core'
 import FilterCard from '../FilterCard'
 import theme from './mocks/theme'
 import ThemedPriceFilterCard from '../PriceFilterCard'
 
+const RangeSlider = ThemedRangeSlider.WrappedComponent
 const PriceFilterCard = ThemedPriceFilterCard.WrappedComponent
 
 describe('ag/Filters/PriceFilterCard', () => {
@@ -34,5 +36,25 @@ describe('ag/Filters/PriceFilterCard', () => {
     const wrapper = shallow(<PriceFilterCard data-tid="foo" />)
     expect(wrapper.find('[data-tid="foo"]')).toHaveLength(1)
     expect(wrapper.find('[data-tid="price-filter-card"]')).toHaveLength(0)
+  })
+
+  it('calls onChange when <RangeSlider/> onChangeComplete event occurs', () => {
+    const onChangeFn = jest.fn()
+    const wrapper = mount(
+      <PriceFilterCard
+        onChange={onChangeFn}
+        priceSlider={{
+          formatLabel: val => `$${val}`,
+          value: 500,
+          minValue: 200,
+          maxValue: 5000,
+          step: 100,
+        }}
+      />
+    )
+
+    wrapper.find(RangeSlider).props().onChangeComplete(2500)
+
+    expect(onChangeFn).toHaveBeenCalled()
   })
 })

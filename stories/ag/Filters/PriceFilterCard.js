@@ -22,6 +22,7 @@ const InlinePriceFilterCardComponent = ({ theme }) => (
     description="Set a maximum price for your search."
     applyButton={{ onClick: value => { action('onChangeComplete')(`Applied($${value})`) } }}
     priceSlider={Slider}
+    onChange={price => action('Inline Price Change')(`$${price}`)}
   />
 )
 
@@ -44,6 +45,7 @@ const DesktopPriceFilterCardComponent = ({ theme }) => (
       maxValue: 15000,
       step: 100,
     }}
+    onChange={price => action('Desktop Price Change')(`$${price.min} - $${price.max}`)}
   />
 )
 
