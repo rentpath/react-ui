@@ -107,6 +107,14 @@ import {
   HighlighterWithIndex,
 } from './Highlighter'
 
+import {
+  DefaultCarousel,
+  CarouselPaginationPrevious,
+  CarouselPaginationNext,
+  CarouselNavigation,
+  PhotoCarouselExample,
+} from './Carousel'
+
 const CoreThemeDecorator = storyFn => (
   <Theme theme={CoreTheme}>
     {storyFn()}
@@ -121,6 +129,15 @@ storiesOf('react-ui-core / Button', module)
   .add('Small Button', () => ButtonSmall)
   .add('Large Button', () => ButtonLarge)
   .add('Toggle Button', () => ToggleSVG)
+
+storiesOf('react-ui-core / Carousel', module)
+  .addDecorator((story, context) => withInfo('Carousel')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('Carousel', () => DefaultCarousel)
+  .add('Pagination on Page 1 ', () => CarouselPaginationNext)
+  .add('Pagination on Page 2', () => CarouselPaginationPrevious)
+  .add('Slide Navigation', () => CarouselNavigation)
+  .add('Photo Carousel', () => PhotoCarouselExample)
 
 storiesOf('react-ui-core / Layout', module)
   .addDecorator((story, context) => withInfo('Layout')(story)(context))

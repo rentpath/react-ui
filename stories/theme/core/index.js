@@ -26,6 +26,7 @@ import Responsive from './Responsive.css'
 import AutoSuggestField from './AutoSuggestField.css'
 import Highlighter from './Highlighter.css'
 import ToggleButton from './ToggleButton.css'
+import Carousel from './Carousel.css'
 
 export default compose({},
   Label,
@@ -34,6 +35,7 @@ export default compose({},
   RadioButton,
   RadioGroup,
   Button,
+  Carousel,
   Checkbox,
   Counter,
   RangeSlider,
