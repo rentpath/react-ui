@@ -10,12 +10,12 @@ import { Dropdown } from '../Dropdown'
 import { Highlighter } from '../Highlighter'
 import { Menu } from '../Menu'
 import { Button } from '../Button'
-import { Field } from '../Form'
+import { Field } from '../Field'
 
 const ENTER = 13
 const ESCAPE = 27
 
-@themed(/^AutoSuggestField/, {
+@themed(/^(AutoSuggestField|Button_Clear|Button_Submit)/, {
   pure: true,
 })
 
@@ -172,12 +172,16 @@ export default class AutoSuggestField extends Component {
   }
 
   renderButton(button, type, props) {
+    const { theme } = this.props
+    const name = capitalize(type)
+
     if (!button) return null
 
     return createElement(...parseArgs(button, Button, {
       ...props,
-      onClick: this[`handle${capitalize(type)}`],
+      onClick: this[`handle${name}`],
       'data-tid': `autosuggest-${type}-button`,
+      className: theme[`Button_${name}`],
     }))
   }
 

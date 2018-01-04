@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react'
+import { action } from '@storybook/addon-actions'
 import AutoSuggestField from '../AutoSuggestField'
 import Button from '../Button'
-import { action } from '@storybook/addon-actions'
-import theme from '../.storybook/theme/AutoSuggestField.css'
 import coreStory from '../.storybook/coreStory'
 
 const ClearButton = props => (<Button {...props}>X</Button>)
@@ -71,7 +70,6 @@ coreStory('AutoSuggest Field', module)
       onSubmit={action('On submit')}
       onSelection={action('On selection')}
       anchorField={{ placeholder: 'choose something...' }}
-      className={theme.clear}
     />
   ))
   .add('Dynamic Results with highlighted suggestions', () => (

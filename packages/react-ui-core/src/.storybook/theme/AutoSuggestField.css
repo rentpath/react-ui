@@ -1,19 +1,11 @@
 .AutoSuggestField {
   display: flex;
-  margin: 75px;
 }
 
 .AutoSuggestField .Dropdown,
 .AutoSuggestField .Field {
   margin: 0;
   width: 300px;
-}
-
-.AutoSuggestField .Button {
-  height: 40px;
-  position: relative;
-  left: -70px;
-  top: 5px;
 }
 
 .AutoSuggestField .Card {
@@ -38,6 +30,21 @@
   padding-left: 5px;
 }
 
-.clear .Button {
-  left: -40px;
+.AutoSuggestField .Button_Clear,
+.AutoSuggestField .Button_Submit {
+  position: relative;
+  top: 4px;
+  height: 40px;
+}
+
+.AutoSuggestField .Button_Clear {
+  left: -36px;
+}
+
+.AutoSuggestField .Button_Submit {
+  left: -70px;
+}
+
+.AutoSuggestField .Input {
+  flex: 1;
 }
