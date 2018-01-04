@@ -59,16 +59,25 @@ export default class Carousel extends Component {
   }
 
   static defaultProps = {
+<<<<<<< HEAD
     showNav: false,
     lazyLoad: false,
     theme: {},
   }
 
+=======
+    lazyLoad: false,
+    theme: {},
+  }
+>>>>>>> adding core carousel
   constructor(props) {
     super(props)
     this.carousel = []
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> adding core carousel
   componentWillReceiveProps(nextProps) {
     if (this.props.selectedIndex !== nextProps.selectedIndex) {
       this.slideToIndex(nextProps.selectedIndex)
@@ -200,9 +209,17 @@ export default class Carousel extends Component {
       items,
       navigation,
       pagination,
+<<<<<<< HEAD
       ...rest
     } = this.props
 
+=======
+      showNav,
+      ...rest
+    } = this.props
+
+    console.log('nav: ', this.navigation)
+>>>>>>> adding core carousel
     return (
       <div
         className={classnames(
@@ -214,6 +231,10 @@ export default class Carousel extends Component {
           items={this.items}
           renderItem={this.renderItem}
           onSlide={this.onSlide}
+<<<<<<< HEAD
+=======
+          showNav={false}
+>>>>>>> adding core carousel
           showThumbnails={false}
           showPlayButton={false}
           showFullscreenButton={false}
@@ -221,8 +242,13 @@ export default class Carousel extends Component {
           infinite={false}
           swipeThreshold={10}
           preventDefaultTouchmoveEvent
+<<<<<<< HEAD
           {...rest}
           {...this.navigation}
+=======
+          {...this.navigation}
+          {...rest}
+>>>>>>> adding core carousel
           ref={carousel => { this.carousel = carousel }}
         />
       </div>

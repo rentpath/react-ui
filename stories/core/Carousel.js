@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import { Carousel, PhotoCarousel } from 'react-ui-core/src'
 import StoryBookTheme from '../theme/Storybook.css'
 
-const Item = ({ children }) => ( // eslint-disable-line react/prop-types
+const Item = ({ children }) => (
   <div
     className={classnames(
       StoryBookTheme.Story_CarouselItem,
