@@ -9,6 +9,15 @@ import {
 } from './RangeSlider'
 import Grid from './Grid'
 import Text from './Text'
+
+import {
+  DefaultButton,
+  ButtonWithColor,
+  ButtonLarge,
+  ButtonSmall,
+  ToggleSVG,
+} from './Button'
+
 import ResponsiveTemplate from './ResponsiveTemplate'
 import {
   DefaultField,
@@ -94,6 +103,14 @@ import {
   HighlighterWithIndex,
 } from './Highlighter'
 
+import {
+  DefaultCarousel,
+  CarouselPaginationPrevious,
+  CarouselPaginationNext,
+  CarouselNavigation,
+  PhotoCarouselExample,
+} from './Carousel'
+
 import coreStories from './coreStories'
 
 coreStories('AutoSuggestField', module)
@@ -101,8 +118,22 @@ coreStories('AutoSuggestField', module)
   .add('Field and Clear Button', () => AutoSuggestFieldClearButton)
   .add('Dynamic Results with highlighted suggestions', () => AutoSuggestFieldDynamicResults)
 
+coreStories('Button', module)
+  .add('Button', () => DefaultButton)
+  .add('Colored Button', () => ButtonWithColor)
+  .add('Small Button', () => ButtonSmall)
+  .add('Large Button', () => ButtonLarge)
+  .add('Toggle Button', () => ToggleSVG)
+
 coreStories('Card', module)
   .add('Card', () => DefaultCard)
+
+coreStories('Carousel', module)
+  .add('Carousel', () => DefaultCarousel)
+  .add('Pagination on Page 1 ', () => CarouselPaginationNext)
+  .add('Pagination on Page 2', () => CarouselPaginationPrevious)
+  .add('Slide Navigation', () => CarouselNavigation)
+  .add('Photo Carousel', () => PhotoCarouselExample)
 
 coreStories('Counter', module)
   .add('Counter', () => DefaultCounter)

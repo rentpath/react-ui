@@ -27,3 +27,18 @@
   background-color: #d3d3d3;
   margin-bottom: 0;
 }
+
+.Story_CarouselItem {
+  box-shadow: 1px 1px 5px #666;
+  height: 100px;
+  width: 200px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #666;
+}
+
+.Story_CarouselItem-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

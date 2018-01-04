@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel Navigation renders passed children 1`] = `
+<div
+  className="CarouselNavigation-next"
+  data-tid="carousel-navigation-next"
+  role="button"
+  tabIndex={0}
+>
+  <div>
+    Test 1
+  </div>
+  <div>
+    Test 2
+  </div>
+  <div>
+    Test 3
+  </div>
+  <div>
+    Test 4
+  </div>
+</div>
+`;
