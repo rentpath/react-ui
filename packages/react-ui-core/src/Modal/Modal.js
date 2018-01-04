@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import ModalBody from './ModalBody'
-import Overlay from './Overlay'
+import ModalBody from '../ModalBody'
+import Overlay from '../Overlay'
 
 @themed(/^Modal/, {
   pure: true,

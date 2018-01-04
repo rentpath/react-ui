@@ -21,13 +21,13 @@ setOptions({
   sortStoriesByKind: false,
 })
 
-const req = require.context('../stories/core', true, /\.stories\.js$/)
+const coreReq = require.context('../packages/react-ui-core/src', true, /\-story\.js$/)
 
 const loadStories = () => {
-  req.keys().forEach((filename) => req(filename))
-  require('../stories/map')
-  require('../stories/rent')
-  require('../stories/ag')
+  coreReq.keys().forEach((filename) => coreReq(filename))
+  // require('../stories/map')
+  // require('../stories/rent')
+  // require('../stories/ag')
 }
 
 configure(loadStories, module)

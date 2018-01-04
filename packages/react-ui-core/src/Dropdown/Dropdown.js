@@ -5,7 +5,7 @@ import { parseArgs } from '@rentpath/react-ui-utils'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import DropdownAnchor from './DropdownAnchor'
-import { Card } from '../Card'
+import Card from '../Card'
 
 @themed(/^Dropdown/)
 

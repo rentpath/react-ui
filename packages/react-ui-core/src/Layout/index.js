@@ -1,3 +1,4 @@
+export { default } from './Grid'
 export {
   default as Grid,
   Row,

@@ -4,28 +4,27 @@ import themed from 'react-themed'
 import classnames from 'classnames'
 import isEqual from 'lodash/isEqual'
 import { randomId } from '@rentpath/react-ui-utils'
-import { Form, Field } from '../Form'
+import Field from '../Field'
+import Form from '../Form'
 import SubmitButton from './SubmitButton'
 import Header from './Header'
-import {
-  Name,
-  Message,
-  Email,
-  Phone,
-  OptInNewsLetter,
-  TermsOfService,
-} from './Fields'
+import EmailField from '../EmailField'
+import MessageField from '../MessageField'
+import NameField from '../NameField'
+import OptInNewsLetterField from '../OptInNewsLetterField'
+import PhoneField from '../PhoneField'
+import TermsOfServiceField from '../TermsOfServiceField'
 
 const FIELD_MAPPING = {
   header: Header,
-  name: Name,
-  message: Message,
-  email: Email,
-  phone: Phone,
-  tos: TermsOfService,
   submit: SubmitButton,
-  opt_in_newsletter: OptInNewsLetter,
-  terms_of_service: TermsOfService,
+  name: NameField,
+  message: MessageField,
+  email: EmailField,
+  phone: PhoneField,
+  tos: TermsOfServiceField,
+  opt_in_newsletter: OptInNewsLetterField,
+  terms_of_service: TermsOfServiceField,
 }
 
 const FIELDS = [
