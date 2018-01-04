@@ -1,5 +1,6 @@
 .AutoSuggestField {
   display: flex;
+  position: relative;
 }
 
 .AutoSuggestField .Dropdown,
@@ -32,17 +33,10 @@
 
 .AutoSuggestField .Button_Clear,
 .AutoSuggestField .Button_Submit {
-  position: relative;
+  position: absolute;
+  right: 3px;
   top: 4px;
   height: 40px;
-}
-
-.AutoSuggestField .Button_Clear {
-  left: -36px;
-}
-
-.AutoSuggestField .Button_Submit {
-  left: -70px;
 }
 
 .AutoSuggestField .Input {
