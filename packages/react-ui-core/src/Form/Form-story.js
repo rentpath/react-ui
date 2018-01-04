@@ -35,14 +35,14 @@ const Fields = () => (
 const FilterPanel = props => (
   <Modal isOpen>
     <Form className={props.theme.FilterPanel}>
-        <RangeSlider
-          {...props}
-          formatLabel={val => `$${val}`}
-          maxValue={1500}
-          minValue={800}
-          onChangeComplete={val => action('onChangeComplete')(val)}
-          value={{min: 800, max: 1500}}
-        />
+      <RangeSlider
+        {...props}
+        formatLabel={val => `$${val}`}
+        maxValue={1500}
+        minValue={800}
+        onChangeComplete={val => action('onChangeComplete')(val)}
+        value={{ min: 800, max: 1500 }}
+      />
       <Fields />
     </Form>
   </Modal>
@@ -56,8 +56,7 @@ const ThemedFilter = themed(['FilterPanel'])(FilterPanel)
 
 coreStory('Form / Form', module)
   .add('Form', () => (
-    <Form
-    >
+    <Form>
       <Text>Generic Form</Text>
       <Field
         label="Name"
@@ -82,5 +81,5 @@ coreStory('Form / Form', module)
     </Form>
   ))
   .add('Filter Panel Modal', () => (
-      <ThemedFilter />
+    <ThemedFilter />
   ))
