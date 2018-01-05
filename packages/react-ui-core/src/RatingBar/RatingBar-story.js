@@ -6,14 +6,14 @@ import coreStory from '../.storybook/coreStory'
 coreStory('Rating Bar', module)
   .add('Ratings', () => (
     <RatingBar
-      uniqueId="DefaultRatings"
+      uniqueId="default"
       score={2.35}
       fillColor="royalblue"
     />
   ))
   .add('Square Rating', () => (
     <RatingBar
-      uniqueId="SquareRatings"
+      uniqueId="square"
       RatingItem={Square}
       score={5}
       label="15"
@@ -22,7 +22,7 @@ coreStory('Rating Bar', module)
   ))
   .add('Circle Rating', () => (
     <RatingBar
-      uniqueId="CircleRatings"
+      uniqueId="circle"
       RatingItem={Circle}
       score={4}
       label="200 Rated"
@@ -31,36 +31,33 @@ coreStory('Rating Bar', module)
   ))
   .add('3 Ratings', () => (
     <RatingBar
-      uniqueId="ThreeRatings"
-      RatingItem={Square}
+      uniqueId="three"
       score={3}
       label="27 Awesome"
       fillColor="royalblue"
     />
   ))
-  .add('Many Ratings', () => (
+  .add('Max score of 10', () => (
     <RatingBar
-      uniqueId="ManyRatings"
-      RatingItem={Square}
-      maxScore={63}
-      score={34}
-      label="150"
+      uniqueId="maxScore"
+      maxScore={10}
+      score={7}
+      label="7 out of 10"
       fillColor="royalblue"
     />
   ))
   .add('Partial Rating', () => (
     <RatingBar
-      uniqueId="Partial1"
+      uniqueId="partial"
       score={3.5}
-      label="150"
+      label="3.5 partial rating"
       fillColor="royalblue"
     />
   ))
   .add('Two Color Rating', () => (
     <RatingBar
-      uniqueId="PartialTwoColor"
+      uniqueId="twoColor"
       score={3.5}
-      label="150"
       fillColor="yellow"
       backgroundFillColor="royalblue"
     />
