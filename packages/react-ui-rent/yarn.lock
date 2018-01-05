@@ -66,9 +66,9 @@
     eslint-plugin-jsx-a11y "^6.0.2"
     eslint-plugin-react "^7.3.0"
 
-"@rentpath/react-ui-core@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@rentpath/react-ui-core/-/react-ui-core-3.2.0.tgz#9592769ea438d67dd8fd63ea204b8340f09e34da"
+"@rentpath/react-ui-core@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@rentpath/react-ui-core/-/react-ui-core-3.3.0.tgz#74d3a03b14a32b6f93d14307d08cfd423c3ff56e"
   dependencies:
     "@rentpath/react-ui-utils" "0.0.1"
     babel-runtime "^6.26.0"
