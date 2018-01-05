@@ -11,7 +11,6 @@ export default class Square extends Component {
   }
 
   static defaultProps = {
-    theme: {},
     width: '0',
   }
 

@@ -11,7 +11,6 @@ export default class Circle extends Component {
   }
 
   static defaultProps = {
-    theme: {},
     width: '0',
   }
 
@@ -42,7 +41,7 @@ export default class Circle extends Component {
             cy="150"
             r="145"
             fill={`url(#${uniqueId})`}
-            stroke="crimson"
+            stroke="black"
             strokeWidth="5"
           />
         </svg>

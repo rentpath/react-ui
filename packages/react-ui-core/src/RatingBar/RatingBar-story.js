@@ -7,17 +7,14 @@ coreStory('Rating Bar', module)
   .add('Ratings', () => (
     <RatingBar
       uniqueId="default"
-      score={2.35}
-      fillColor="royalblue"
+      score={4}
     />
   ))
   .add('Square Rating', () => (
     <RatingBar
       uniqueId="square"
       RatingItem={Square}
-      score={5}
-      label="15"
-      fillColor="royalblue"
+      score={3}
     />
   ))
   .add('Circle Rating', () => (
@@ -25,16 +22,13 @@ coreStory('Rating Bar', module)
       uniqueId="circle"
       RatingItem={Circle}
       score={4}
-      label="200 Rated"
-      fillColor="royalblue"
     />
   ))
-  .add('3 Ratings', () => (
+  .add('Labeled', () => (
     <RatingBar
       uniqueId="three"
       score={3}
-      label="27 Awesome"
-      fillColor="royalblue"
+      label="3 out of 5"
     />
   ))
   .add('Max score of 10', () => (
@@ -43,14 +37,18 @@ coreStory('Rating Bar', module)
       maxScore={10}
       score={7}
       label="7 out of 10"
-      fillColor="royalblue"
     />
   ))
   .add('Partial Rating', () => (
     <RatingBar
       uniqueId="partial"
       score={3.5}
-      label="3.5 partial rating"
+    />
+  ))
+  .add('Color filled', () => (
+    <RatingBar
+      uniqueId="colorFilled"
+      score={3.5}
       fillColor="royalblue"
     />
   ))
@@ -58,7 +56,7 @@ coreStory('Rating Bar', module)
     <RatingBar
       uniqueId="twoColor"
       score={3.5}
-      fillColor="yellow"
-      backgroundFillColor="royalblue"
+      fillColor="gold"
+      backgroundFillColor="black"
     />
   ))
