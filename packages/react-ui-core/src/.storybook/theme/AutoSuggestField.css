@@ -10,9 +10,8 @@
 }
 
 .AutoSuggestField .Card {
-  height: auto;
-  width: auto;
   text-align: left;
+  max-width: 100%;
 }
 
 .AutoSuggestField .List {

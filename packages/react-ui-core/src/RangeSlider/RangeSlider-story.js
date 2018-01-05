@@ -13,15 +13,13 @@ const wrapper = (props = {}) => {
   /* eslint-enable react/prop-types */
 
   return (
-    <div style={{ width: '100%' }}>
-      <RangeSlider
-        {...props}
-        maxValue={maxValue || 20}
-        minValue={minValue || 0}
-        onChangeComplete={val => action('onChangeComplete')(val)}
-        value={value || 10}
-      />
-    </div>
+    <RangeSlider
+      {...props}
+      maxValue={maxValue || 20}
+      minValue={minValue || 0}
+      onChangeComplete={val => action('onChangeComplete')(val)}
+      value={value || 10}
+    />
   )
 }
 
