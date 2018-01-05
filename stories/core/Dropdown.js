@@ -1,8 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
-import PropTypes from 'prop-types'
 import { action } from '@storybook/addon-actions'
-import { Dropdown, Text, Menu } from 'react-ui-core/src'
+import { Dropdown, Text, Menu, Card } from 'react-ui-core/src'
 import DropdownButtonExample from './DropdownButtonExample'
 import DropdownInputExample from './DropdownInputExample'
 import DynamicDropdownExample from './DynamicDropdownExample'
@@ -13,19 +12,14 @@ const inputProps = {
 }
 
 const Content = props => (
-  <div {...props}><h1>Hi</h1></div>
+  <Card {...props}><h1>Hi</h1></Card>
 )
 
-const DropdownMenu = props => (
-  <Menu
-    options={['Option1', 'Option2', 'Option3']}
-    onItemSelect={props.onSelect}
-  />
+const MenuExample = props => (
+  <Card>
+    <Menu options={['foo', 'bar', 'baz']} {...props} />
+  </Card>
 )
-
-DropdownMenu.propTypes = {
-  onSelect: PropTypes.func,
-}
 
 export const DefaultDropdown = (
   <Dropdown
@@ -41,7 +35,7 @@ export const DropdownWithProps = (
     anchorField={inputProps}
     className={StoryBookTheme['Story-padding']}
   >
-    <Menu options={['foo', 'bar', 'baz']} />
+    <MenuExample />
   </Dropdown>
 )
 
@@ -51,7 +45,7 @@ export const DropDownInputAnchor = (
     anchorField={props => (<DropdownInputExample {...props} />)}
     toggleOnSelect={false}
   >
-    <Menu options={['foo', 'bar', 'baz']} />
+    <MenuExample />
   </Dropdown>
 )
 
@@ -62,11 +56,13 @@ export const DropdownWithMenu = (
     )}
     anchorField={props => (<DropdownButtonExample {...props} />)}
   >
-    <Menu
-      options={['foo', 'bar', 'baz']}
-      onItemSelect={action('selected')}
-    />
-    <Text className={StoryBookTheme.Story_DropdownMultiple}>Choose</Text>
+    <Card>
+      <Menu
+        options={['foo', 'bar', 'baz']}
+        onItemSelect={action('selected')}
+      />
+      <Text className={StoryBookTheme.Story_DropdownMultiple}>Choose</Text>
+    </Card>
   </Dropdown>
 )
 

@@ -5,7 +5,6 @@ import { parseArgs } from '@rentpath/react-ui-utils'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import DropdownAnchor from './DropdownAnchor'
-import { Card } from '../Card'
 
 @themed(/^Dropdown/)
 
@@ -82,6 +81,7 @@ export default class Dropdown extends Component {
         'data-tid': 'dropdown-anchor',
         visible: this.state.visible,
         onClick: this.toggleVisibility,
+        className: this.props.className,
       }
     ))
   }
@@ -117,9 +117,9 @@ export default class Dropdown extends Component {
       >
         {this.renderAnchor()}
         {this.state.visible &&
-          <Card data-tid="dropdown-body">
+          <div data-tid="dropdown-body">
             {this.renderChildren()}
-          </Card>
+          </div>
         }
       </div>
     )

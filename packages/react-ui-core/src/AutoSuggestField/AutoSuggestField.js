@@ -7,6 +7,7 @@ import autobind from 'autobind-decorator'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import { Dropdown } from '../Dropdown'
+import { Card } from '../Card'
 import { Highlighter } from '../Highlighter'
 import { Menu } from '../Menu'
 import { Button } from '../Button'
@@ -225,12 +226,14 @@ export default class AutoSuggestField extends Component {
           onVisibilityChange={this.handleVisibilityChange}
           {...props}
         >
-          <Menu
-            listItem={this.highlightedListItem}
-            options={suggestions}
-            onItemSelect={this.handleSuggestionSelection}
-            onItemMouseOver={onItemMouseOver}
-          />
+          <Card>
+            <Menu
+              listItem={this.highlightedListItem}
+              options={suggestions}
+              onItemSelect={this.handleSuggestionSelection}
+              onItemMouseOver={onItemMouseOver}
+            />
+          </Card>
         </Dropdown>
         {this.renderButton(submitButton, 'submit', props)}
         {this.renderButton(clearButton, 'clear', props)}

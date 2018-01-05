@@ -6,7 +6,7 @@ import classnames from 'classnames'
 import themed from 'react-themed'
 import { Button } from '../Button'
 
-@themed(['Dropdown_Anchor-expand']['Dropdown_Anchor-collapse'], {
+@themed(['DropdownAnchor-expand', 'DropdownAnchor-collapse', 'DropdownAnchor'], {
   pure: true,
 })
 
@@ -49,7 +49,8 @@ export default class DropdownAnchor extends PureComponent {
       'data-tid': 'dropdown-anchor',
       className: classnames(
         className,
-        theme[`Dropdown_Anchor-${visible ? 'expand' : 'collapse'}`]
+        theme.DropdownAnchor,
+        theme[`DropdownAnchor-${visible ? 'expand' : 'collapse'}`]
       ),
       onClick: this.handleClick,
       ...props,
@@ -60,4 +61,3 @@ export default class DropdownAnchor extends PureComponent {
     return this.renderAnchor()
   }
 }
-

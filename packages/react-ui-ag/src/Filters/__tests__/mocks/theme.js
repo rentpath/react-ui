@@ -13,4 +13,5 @@ export default keyMirror([
   'FilterCard',
   'PriceFilterCard',
   'PriceFilterCard-noValue',
+  'RadioGroupDropdown',
 ])

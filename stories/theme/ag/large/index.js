@@ -3,6 +3,8 @@ import { ApplyButton, CancelButton } from './Buttons'
 import Card from './Card.css'
 import RadioButton from './RadioButton.css'
 import RadioGroup from './RadioGroup.css'
+import DropdownAnchor from './DropdownAnchor.css'
+import Dropdown from './Dropdown.css'
 import {
   RadioButton as RadioButtonBase,
   RadioGroup as RadioGroupBase,
@@ -34,4 +36,6 @@ export default compose({},
   RadioButton,
   RadioGroupBase,
   RadioGroup,
+  Dropdown,
+  DropdownAnchor,
 )
