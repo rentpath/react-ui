@@ -80,7 +80,7 @@ describe('Dropdown', () => {
 
   it('should close on outside click', () => {
     const { wrapper } = setup({ visible: true })
-    map.click({ target: '<html></html>' })
+    map.click({ target: document.createElement('div') })
     expect(wrapper.state('visible')).toEqual(false)
   })
 

@@ -13,7 +13,7 @@
 .RadioButton-vertical {
   display: block;
   border-radius: 3px;
-  border: solid .5px #afafaf;
+  border: solid 0.5px #afafaf;
   text-align: center;
   padding: 0;
 }
@@ -35,7 +35,7 @@
 }
 
 .RadioButton-vertical .Input {
-  margin: 0 0 12px 0;
+  margin: 0 0 12px;
 }
 
 .RadioButton .Input:after {
