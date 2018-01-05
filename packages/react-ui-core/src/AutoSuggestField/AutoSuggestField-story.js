@@ -53,7 +53,7 @@ class Example extends PureComponent {
   }
 }
 
-coreStory('AutoSuggest Field', module)
+coreStory('AutoSuggestField', module)
   .add('Field and Submit Button', () => (
     <AutoSuggestField
       suggestions={['Option 1', 'Option 2', 'Option 3']}

@@ -3,7 +3,7 @@ import RatingBar from '../RatingBar'
 import { Square, Circle } from './SampleRatingItem'
 import coreStory from '../.storybook/coreStory'
 
-coreStory('Rating Bar', module)
+coreStory('RatingBar', module)
   .add('Ratings', () => (
     <RatingBar
       uniqueId="default"
