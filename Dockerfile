@@ -1,11 +1,12 @@
 FROM rentpath/rp_node:8.9.1
 
 WORKDIR $HOME/react-ui
-COPY --chown=node:node package.json yarn.lock $HOME/react-ui/
+COPY package.json yarn.lock $HOME/react-ui/
 run chown -R node:node $HOME/react-ui
 
 USER root
-COPY --chown=node:node . $HOME/react-ui/
+COPY . $HOME/react-ui/
+RUN chown -R node:node $HOME/react-ui/
 RUN apt-get install -y nginx
 
 USER node
