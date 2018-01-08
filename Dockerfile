@@ -7,7 +7,6 @@ run chown -R node:node $HOME/react-ui
 USER root
 COPY . $HOME/react-ui/
 RUN chown -R node:node $HOME/react-ui/
-RUN apt-get install -y nginx
 
 USER node
 RUN yarn config set registry https://registry.yarnpkg.com
@@ -18,6 +17,7 @@ RUN yarn test
 RUN yarn run build-storybook
 
 USER root
+RUN apt-get install -y nginx
 RUN cp -R storybook-static/* /var/www/html/
 
 EXPOSE 80

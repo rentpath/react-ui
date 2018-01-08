@@ -14,12 +14,6 @@ VERSION="$DATE-$BUILD_NUMBER-$COMMITISH";
 docker build \
       -f ./Dockerfile \
       -t rentpath/react-ui:$VERSION \
-      --build-arg BRANCH=$BRANCH_NAME \
-      --build-arg BUILD_SHA=$GIT_COMMIT \
-      --build-arg BUILD_ORG_REPO=$REPO \
-      --build-arg BUILD_TARGET_URL=$BUILD_URL \
-      --build-arg BUILD_AUTH=$BUILD_AUTH \
-      --build-arg BUILD_NUMBER=$BUILD_NUMBER \
       "$@" .
 
 docker push rentpath/react-ui:$VERSION
