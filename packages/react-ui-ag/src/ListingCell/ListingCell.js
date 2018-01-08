@@ -3,9 +3,8 @@ import autobind from 'autobind-decorator'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import { parseArgs } from '@rentpath/react-ui-utils'
-import { Card, Title, Text, RatingBar } from '@rentpath/react-ui-core'
+import { Card, Text, RatingBar } from '@rentpath/react-ui-core'
 import classNames from 'classnames'
-
 
 const objectOrNode = PropTypes.oneOfType([
   PropTypes.node,
@@ -13,11 +12,11 @@ const objectOrNode = PropTypes.oneOfType([
   PropTypes.object,
 ])
 
-@themed(/^ListingCard/, {
+@themed(/^ListingCell/, {
   pure: true,
 })
 
-export default class ListingCard extends Component {
+export default class ListingCell extends Component {
 
   static propTypes = {
     className: PropTypes.string,
@@ -25,12 +24,14 @@ export default class ListingCard extends Component {
     viewType: PropTypes.string,
 
     // this would include phone and email CTA
-    ctaSection: objectOrNode,
-    favorite: objectOrNode,
+    phoneCTA: objectOrNode,
+    emailCTA: objectOrNode,
+    onFavoriteToggle: PropTypes.func,
     photos: PropTypes.array,
     onCardClick: PropTypes.func,
 
-    // this would include price, name, beds, ula, and rating
+
+    // this would include price, name, beds, ula, favoriteStatus? and rating
     listingDetails: PropTypes.object,
   }
 
@@ -45,26 +46,20 @@ export default class ListingCard extends Component {
     return Math.round(avgOverallRating * 2.0) / 2.0
   }
 
-  get price() {
-    //do something with the price data to parse out a proper string
-  }
-
-  get bedroomText() {
-    //do something with the bedroom data to parse out a proper string
-  }
-
   renderInfoSection() {
     const { listingDetails, theme, viewType } = this.props
+    console.log(theme)
     return (
-      <div className={theme.CardInfo_infoOverPhoto}>
-        <Text className={theme.ListingCard_Price}>{this.price}</Text>
-        <Text className={theme.ListingCard_Price}>{listingDetails.title}</Text>
-        <Text className={theme.ListingCard_Price}>{this.bedroomText}</Text>
+      <div className={theme.ListingCell_Details}>
+        <Text className={theme.ListingCell_Price}>{listingDetails.price}</Text>
+        <Text className={theme.ListingCell_Title}>{listingDetails.title}</Text>
+        <Text className={theme.ListingCell_Bedroom}>{listingDetails.bedroomText}</Text>
         {!!listingDetails.numRatings &&
           <RatingBar
             uniqueId={`${listingDetails.listingId}-${viewType}`}
             score={this.roundedRating}
             label={`${listingDetails.numRatings}`}
+            className={theme.ListingCell_Rating}
           />
         }
       </div>
@@ -77,14 +72,12 @@ export default class ListingCard extends Component {
       viewType,
       onCardClick,
       className,
-      photos,
-      ...props
     } = this.props
 
     return (
       <Card
         className={classNames(
-          theme[`ListingCard-${viewType}`],
+          theme[`ListingCell-${viewType}`],
           className,
         )}
         data-tid="listing-section"
@@ -92,25 +85,16 @@ export default class ListingCard extends Component {
         role={'presentation'}
         onClick={onCardClick}
       >
-        <Carousel
-          className={classNames(
-            theme.ListingCard_Gallery,
-            className,
-          )}
-          photos={photos}
-          {...props}
-        />
-        { this.renderFavorite() }
-        { this.renderCTAs() }
-        { this.renderInfoSection() }
+        {this.renderInfoSection()}
       </Card>
     )
   }
 }
 
-//TODO: Move to CTA component
-
-// <div className={theme['ListingCard-overlay']}>
+//
+// //TODO: Move to CTA component
+//
+// <div className={theme['ListingCell-overlay']}>
 //   <div className={classNames(
 //     theme.CardInfo_contactIcons,
 //     theme[`CardInfo_contactIcons-${viewType}`])}
@@ -119,6 +103,7 @@ export default class ListingCard extends Component {
 //     {this.emailCTA}
 //   </div>
 // </div>
+//
 // ctaTags(ctaType) {
 //   const { isActiveCard } = this.props
 //
@@ -252,5 +237,3 @@ export default class ListingCard extends Component {
 //   }
 //   return 'Check Availability'
 // }
-
-//TODO: Move to details component

@@ -17,6 +17,7 @@ import {
   InlineBathroomFilterCard,
   DesktopBathroomFilterCard,
 } from './Filters'
+import { DefaultListingCell } from './ListingCell'
 
 const AgThemeSmallDecorator = storyFn => (
   <Theme theme={AgThemeSmall}>
@@ -67,3 +68,8 @@ storiesOf('react-ui-ag / Filters / PriceFilterCard / small', module)
   .addDecorator((story, context) => withInfo('PriceFilterCard')(story)(context))
   .addDecorator(AgThemeSmallDecorator)
   .add('Price Filter', () => InlinePriceFilterCard)
+
+storiesOf('react-ui-ag / ListingCell / small', module)
+  .addDecorator((story, context) => withInfo('ListingCell')(story)(context))
+  .addDecorator(AgThemeSmallDecorator)
+  .add('Default Listing Cell', () => DefaultListingCell)
