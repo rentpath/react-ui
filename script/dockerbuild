@@ -13,7 +13,7 @@ VERSION="$DATE-$BUILD_NUMBER-$COMMITISH";
 # Pass variables needed to generate BUILD-INFO
 docker build \
       -f ./Dockerfile \
-      -t rentpath/atc:$VERSION \
+      -t rentpath/react-ui:$VERSION \
       --build-arg BRANCH=$BRANCH_NAME \
       --build-arg BUILD_SHA=$GIT_COMMIT \
       --build-arg BUILD_ORG_REPO=$REPO \
