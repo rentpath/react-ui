@@ -11,10 +11,8 @@ RUN apt-get install -y nginx
 USER node
 RUN yarn config set registry https://registry.yarnpkg.com
 RUN yarn install
-
-ARG VERSION
-ARG COMMIT
-ARG BUILD_NUMBER
+RUN yarn lint
+RUN yarn test
 
 RUN yarn run build-storybook
 
