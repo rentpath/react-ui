@@ -20,6 +20,8 @@ import {
   PriceFilterCard,
 } from './Filters'
 
+import ListingCell from './ListingCell.css'
+
 export default compose({},
   ApplyButtonBase,
   ApplyButton,
@@ -37,4 +39,5 @@ export default compose({},
   RadioButton,
   RadioGroup,
   RadioGroupBase,
+  ListingCell,
 )

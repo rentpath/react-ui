@@ -20,6 +20,10 @@ import {
   DesktopBathroomDropdown,
   DesktopPetDropdown,
 } from './Filters'
+import {
+  DefaultListingCell,
+  SingleFamilyListingCell,
+} from './ListingCell'
 
 const AgThemeSmallDecorator = storyFn => (
   <Theme theme={AgThemeSmall}>
@@ -77,3 +81,9 @@ storiesOf('react-ui-ag / Filters / RadioGroupDropdown / large', module)
   .add('Beds', () => DesktopBedroomDropdown)
   .add('Baths', () => DesktopBathroomDropdown)
   .add('Pets', () => DesktopPetDropdown)
+
+storiesOf('react-ui-ag / ListingCell / small', module)
+  .addDecorator((story, context) => withInfo('ListingCell')(story)(context))
+  .addDecorator(AgThemeSmallDecorator)
+  .add('Default Listing Cell', () => DefaultListingCell)
+  .add('Single Family Listing Cell', () => SingleFamilyListingCell)
