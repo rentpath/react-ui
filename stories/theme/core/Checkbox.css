@@ -1,8 +1,8 @@
 .Input[type=checkbox] {
   display: inline-block;
-  vertical-align: -.25em;
+  vertical-align: -0.25em;
   border-radius: 2px;
-  margin-right: .6em;
+  margin-right: 0.6em;
   height: 16px;
   border: 0;
   box-shadow: none;
@@ -14,12 +14,12 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  vertical-align: -.25em;
+  vertical-align: -0.25em;
   border-radius: 2px;
   box-shadow: 0 0 0 0.15em #e9e9e9;
   line-height: 1.8rem;
   text-indent: 1px;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .Input[type=checkbox]:checked:after  {

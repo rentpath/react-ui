@@ -16,7 +16,7 @@
   border-radius: 50%;
   cursor: pointer;
   display: block;
-  height:12px;
+  height: 12px;
   width: 12px;
   margin-top: -25.2px;
   outline: none;
@@ -47,7 +47,7 @@
 
 .PriceFilterCard .minLabel,
 .PriceFilterCard .maxLabel {
-  display: none
+  display: none;
 }
 
 .PriceFilterCard .maxLabel {

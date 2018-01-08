@@ -3,11 +3,12 @@
   background: black;
   color: white;
   width: 80%;
-  display:block;
+  display: block;
   margin: 10px auto 0;
 }
 
-.row, .rowFixed {
+.row,
+.rowFixed {
   background: #007fff;
   min-height: 1rem;
   padding: 20px;
@@ -21,7 +22,7 @@
 .col {
   height: 20px;
   border: 1px solid #fff;
-  background:blue;
+  background: blue;
 }
 
 .col.fixed {

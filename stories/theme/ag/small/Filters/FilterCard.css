@@ -14,9 +14,6 @@
 .FilterCard_Description {
   font-size: 14px;
   font-weight: lighter;
-}
-
-.FilterCard_Description {
   max-width: 200px;
   line-height: 22px;
 }

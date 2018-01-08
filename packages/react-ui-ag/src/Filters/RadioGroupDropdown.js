@@ -93,11 +93,12 @@ export default class RadioGroupDropdown extends Component {
 }
 
 const RadioGroupDropdownAnchorTextComponent = props => (
-  <React.Fragment>
-    <Text>{props.text || props.defaultText}</Text>
-    <span>{props.icon}</span>
-  </React.Fragment>
+  [
+    <Text key="radiogroup-dropdown-text">{props.text || props.defaultText}</Text>,
+    <span key="radiogroup-dropdown-icon">{props.icon}</span>,
+  ]
 )
+
 RadioGroupDropdownAnchorTextComponent.propTypes = {
   text: PropTypes.string,
   defaultText: PropTypes.string.isRequired,

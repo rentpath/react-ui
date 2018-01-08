@@ -10,7 +10,7 @@
   cursor: pointer;
   display: block;
   height: 1.5rem;
-  margin-top: -.9rem;
+  margin-top: -0.9rem;
   outline: none;
   top: 50%;
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
