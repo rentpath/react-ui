@@ -1,0 +1,25 @@
+#!/bin/sh
+set -e
+
+cd "$(dirname "$0")/.."
+
+REPO="rentpath/react-ui"
+# Using HEAD~1 because Jenkins creates a merge commit
+GIT_COMMIT=`git rev-parse HEAD~1`
+COMMITISH=${GIT_COMMIT:0:7};
+DATE=`date -u "+%Y%m%d"`;
+VERSION="$DATE-$BUILD_NUMBER-$COMMITISH";
+
+# Pass variables needed to generate BUILD-INFO
+docker build \
+      -f ./Dockerfile \
+      -t rentpath/atc:$VERSION \
+      --build-arg BRANCH=$BRANCH_NAME \
+      --build-arg BUILD_SHA=$GIT_COMMIT \
+      --build-arg BUILD_ORG_REPO=$REPO \
+      --build-arg BUILD_TARGET_URL=$BUILD_URL \
+      --build-arg BUILD_AUTH=$BUILD_AUTH \
+      --build-arg BUILD_NUMBER=$BUILD_NUMBER \
+      "$@" .
+
+docker push rentpath/react-ui:$VERSION
