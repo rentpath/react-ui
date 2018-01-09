@@ -1,3 +1,10 @@
+.ListingCell-map .Card_Body {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
 .ListingCell_Price {
 
 }
@@ -15,6 +22,34 @@
 }
 
 .ListingCell_Details {
-  width: 200px;
-  border: 1px solid black;
+  border: 1px solid blue;
+  padding: 15px;
+}
+
+.ListingCell_Bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ListingCell_Rating .RatingBar_Items {
+  display: flex;
+}
+
+.ListingCell_CtaSection {
+  border: 1px solid grey;
+  padding: 10px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.ListingCell_CtaSection .Button {
+  padding: 5px;
+  margin: 10px;
+}
+
+.ListingCell_Rating .RatingBar_Item svg {
+  height: 20px;
+  width: 20px;
 }

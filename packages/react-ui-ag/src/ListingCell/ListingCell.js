@@ -2,14 +2,15 @@ import React, { Component } from 'react'
 import autobind from 'autobind-decorator'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
-import { parseArgs } from '@rentpath/react-ui-utils'
-import { Card, Text, RatingBar } from '@rentpath/react-ui-core'
+import { parseArgs, randomId } from '@rentpath/react-ui-utils'
+import { Card, Text, RatingBar, Button } from '@rentpath/react-ui-core'
 import classNames from 'classnames'
 
-const objectOrNode = PropTypes.oneOfType([
+const ctaTypes = PropTypes.oneOfType([
   PropTypes.node,
   PropTypes.func,
   PropTypes.object,
+  PropTypes.array,
 ])
 
 @themed(/^ListingCell/, {
@@ -24,12 +25,10 @@ export default class ListingCell extends Component {
     viewType: PropTypes.string,
 
     // this would include phone and email CTA
-    phoneCTA: objectOrNode,
-    emailCTA: objectOrNode,
+    ctaSection: ctaTypes,
     onFavoriteToggle: PropTypes.func,
     photos: PropTypes.array,
     onCardClick: PropTypes.func,
-
 
     // this would include price, name, beds, ula, favoriteStatus? and rating
     listingDetails: PropTypes.object,
@@ -46,9 +45,9 @@ export default class ListingCell extends Component {
     return Math.round(avgOverallRating * 2.0) / 2.0
   }
 
-  renderInfoSection() {
+  get infoSection() {
     const { listingDetails, theme, viewType } = this.props
-    console.log(theme)
+
     return (
       <div className={theme.ListingCell_Details}>
         <Text className={theme.ListingCell_Price}>{listingDetails.price}</Text>
@@ -63,6 +62,46 @@ export default class ListingCell extends Component {
           />
         }
       </div>
+    )
+  }
+
+  generateCtaButtons() {
+    const { ctaSection, theme } = this.props
+    let ctaButtons
+
+    if (Array.isArray(ctaSection)) {
+      ctaButtons = ctaSection.map(cta => this.renderButton(cta))
+    } else {
+      ctaButtons = this.renderButton(ctaSection)
+    }
+
+    return (
+      <div className={theme.ListingCell_CtaSection}>
+        {ctaButtons}
+      </div>
+    )
+  }
+
+  handleCTAclick(func) {
+    return event => {
+      func()
+      event.stopPropagation()
+    }
+  }
+
+  renderButton(cta) {
+    const { theme, className } = this.props
+    const [FilterButton, props] = parseArgs(cta, Button)
+    return (
+      <FilterButton
+        key={randomId()}
+        {...props}
+        onClick={this.handleCTAclick(cta.onClick)}
+        className={classNames(
+          theme[`ListingCell_CTA-${cta.type}`],
+          className,
+        )}
+      />
     )
   }
 
@@ -85,155 +124,14 @@ export default class ListingCell extends Component {
         role={'presentation'}
         onClick={onCardClick}
       >
-        {this.renderInfoSection()}
+        <div className={theme.ListingCell_Carousel}>
+          <h1>Carousel placeholder</h1>
+        </div>
+        <div className={theme.ListingCell_Bottom}>
+          {this.infoSection}
+          {this.generateCtaButtons()}
+        </div>
       </Card>
     )
   }
 }
-
-//
-// //TODO: Move to CTA component
-//
-// <div className={theme['ListingCell-overlay']}>
-//   <div className={classNames(
-//     theme.CardInfo_contactIcons,
-//     theme[`CardInfo_contactIcons-${viewType}`])}
-//   >
-//     {this.phoneCTA}
-//     {this.emailCTA}
-//   </div>
-// </div>
-//
-// ctaTags(ctaType) {
-//   const { isActiveCard } = this.props
-//
-//   if (!isActiveCard) return {}
-//
-//   const emailTagging = {
-//     'data-tag_item': 'check_availability_button',
-//   }
-//
-//   const phoneTagging = {
-//     'data-tag_action': 'lead_submission',
-//     'data-tag_item': null,
-//     'data-tag_selection': 'phone',
-//   }
-//
-//   return ctaType === 'phone' ? phoneTagging : emailTagging
-// }
-// @autobind
-// ctaHandler(event) {
-//   const { isActiveCard } = this.props
-//
-//   if (!isActiveCard) event.preventDefault()
-// }
-//
-// @autobind
-// emailClickHandler(event) {
-//   const {
-//     isActiveCard,
-//     onEmailClick,
-//     listing,
-//   } = this.props
-//
-//   // prevent link clicks
-//   event.preventDefault()
-//
-//   // prevent PDP clicks, on the parent div
-//   event.stopPropagation()
-//
-//   if (!isActiveCard) return
-//   if (onEmailClick) onEmailClick(listing)
-// }
-//
-// get emailCTA() {
-//   const {
-//     listing,
-//     emailIcon,
-//     viewType,
-//     theme,
-//   } = this.props
-//
-//   let center = ''
-//
-//   if (!(listing.mPhone && !listing.noVacancy && listing.isPaid)) {
-//     center = 'center'
-//   }
-//
-//   return (
-//     <a
-//       href={`/${listing.listingSeoPath}#pdp-contact-top`}
-//       onClick={this.emailClickHandler}
-//       {...this.ctaTags('email')}
-//     >
-//       <div className={theme[`CardInfo_contactIcon-${emailIcon}-${viewType}${center}`]}>
-//         <Icon
-//           className={classNames(
-//             theme[`CardInfo_contactIcon-${emailIcon}`],
-//             theme[`CardInfo_contactIcon-${emailIcon}-${viewType}${center}`]
-//           )}
-//           name={emailIcon}
-//           data-tid="email-contact-icon"
-//           data-nopdplink
-//         />
-//         <span>
-//           <p className={theme[`CardInfo_contactIcon-${emailIcon}-${viewType}${center}`]}>
-//             {this.ctaText}
-//           </p>
-//         </span>
-//       </div>
-//     </a>
-//   )
-// }
-//
-// get formatMDN() {
-//   return formatPhone(this.props.listing.mPhone)
-// }
-//
-// get phoneCTA() {
-//   const {
-//     theme,
-//     listing,
-//     type,
-//   } = this.props
-//
-//   if (listing.mPhone && !listing.noVacancy && listing.isPaid) {
-//     return (
-//       <a
-//         href={`tel:${listing.mPhone}`}
-//         onClick={this.ctaHandler}
-//         {...this.ctaTags('phone')}
-//       >
-//         <div className={theme[`CardInfo_contactIcon-${type}`]}>
-//           <Icon
-//             className={classNames(
-//               theme[`CardInfo_contactIcon-${contactIcon}`],
-//               theme[`CardInfo_contactIcon-${contactIcon}-${viewType}`]
-//             )}
-//             name={contactIcon}
-//             data-tid="contact-icon"
-//             data-nopdplink
-//           />
-//           <span>
-//             <p
-//               className={theme[`CardInfo_contactIcon-${contactIcon}-${viewType}`]}
-//               data-nopdplink
-//             >
-//               {this.formatMDN}
-//             </p>
-//           </span>
-//         </div>
-//       </a>
-//     )
-//   }
-//   return null
-// }
-//
-// get ctaText() {
-//   const { listing } = this.props
-//
-//   if (listing.listingAvailUnitCount > 0) {
-//     return 'Contact Property'
-//   }
-//   return 'Check Availability'
-// }
