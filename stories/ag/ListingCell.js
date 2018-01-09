@@ -3,6 +3,7 @@ import React from 'react'
 import themed from 'react-themed'
 import { ListingCell } from 'react-ui-ag/src'
 import { Button, Text } from 'react-ui-core/src'
+import Star from './StarRatingItem'
 
 // const ctaProps = { children: 'test', onClick: () => console.log('it works!') }
 // const ctaButton = props => <Text {...props} {...ctaProps} />
@@ -18,6 +19,7 @@ export const DefaultListingCell = (
       title: 'Cool Apartment',
       bedroomText: '3 bedrooms',
     }}
+    RatingItem={Star}
     viewType="map"
     ctaSection={[
       {

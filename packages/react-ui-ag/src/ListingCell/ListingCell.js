@@ -6,7 +6,7 @@ import { parseArgs, randomId } from '@rentpath/react-ui-utils'
 import { Card, Text, RatingBar, Button } from '@rentpath/react-ui-core'
 import classNames from 'classnames'
 
-const ctaTypes = PropTypes.oneOfType([
+const multiType = PropTypes.oneOfType([
   PropTypes.node,
   PropTypes.func,
   PropTypes.object,
@@ -25,17 +25,21 @@ export default class ListingCell extends Component {
     viewType: PropTypes.string,
 
     // this would include phone and email CTA
-    ctaSection: ctaTypes,
+    ctaSection: PropTypes.oneOfType([
+      multiType,
+      PropTypes.array,
+    ]),
     onFavoriteToggle: PropTypes.func,
     photos: PropTypes.array,
     onCardClick: PropTypes.func,
-
+    ratings: multiType,
     // this would include price, name, beds, ula, favoriteStatus? and rating
     listingDetails: PropTypes.object,
   }
 
   static defaultProps = {
     theme: {},
+    ratings: { fillColor: '#FBB900', backgroundFillColor: '#9B9B9B' },
   }
 
   get roundedRating() {
@@ -46,21 +50,14 @@ export default class ListingCell extends Component {
   }
 
   get infoSection() {
-    const { listingDetails, theme, viewType } = this.props
+    const { listingDetails, theme, viewType, ...props } = this.props
 
     return (
       <div className={theme.ListingCell_Details}>
         <Text className={theme.ListingCell_Price}>{listingDetails.price}</Text>
         <Text className={theme.ListingCell_Title}>{listingDetails.title}</Text>
         <Text className={theme.ListingCell_Bedroom}>{listingDetails.bedroomText}</Text>
-        {!!listingDetails.numRatings &&
-          <RatingBar
-            uniqueId={`${listingDetails.listingId}-${viewType}`}
-            score={this.roundedRating}
-            label={`${listingDetails.numRatings}`}
-            className={theme.ListingCell_Rating}
-          />
-        }
+        {!!listingDetails.numRatings && this.renderRatingBar()}
       </div>
     )
   }
@@ -101,6 +98,27 @@ export default class ListingCell extends Component {
           theme[`ListingCell_CTA-${cta.type}`],
           className,
         )}
+      />
+    )
+  }
+
+  renderRatingBar() {
+    const {
+      theme,
+      ratings,
+      listingDetails,
+      viewType,
+    } = this.props
+    const [RatingsBar, props] = parseArgs(ratings, RatingBar)
+    return (
+      <RatingsBar
+        uniqueId={`${listingDetails.listingId}-${viewType}`}
+        score={this.roundedRating}
+        label={`${listingDetails.numRatings}`}
+        className={theme.ListingCell_Rating}
+        {...props}
+        fillColor={ratings.fillColor}
+        backgroundFillColor={ratings.backgroundFillColor}
       />
     )
   }
