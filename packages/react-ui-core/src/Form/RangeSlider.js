@@ -52,7 +52,7 @@ export default class RangeSlider extends PureComponent {
 
   setSliderTheme(theme) {
     // NOTE: this ensures react-input-range plays nicely with theme object
-    this.sliderTheme = omit(theme, '_getCss', '_insertCss')
+    this.sliderTheme = omit(theme, '_getCss', '_insertCss', '_getContent')
   }
 
   render() {
