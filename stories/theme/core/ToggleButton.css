@@ -1,0 +1,16 @@
+.ToggleButton {
+  text-align: center;
+  color: darkgrey;
+}
+
+.ToggleButton-On svg{
+  fill: #4A8FE2;
+  stroke: #4A8FE2;
+}
+
+.ToggleButton-Off svg{
+  fill: transparent;
+  stroke: #4A8FE2;
+}
+
+

@@ -106,6 +106,11 @@ import {
   HighlighterWithIndex,
 } from './Highlighter'
 
+import {
+  DefaultToggleButton,
+  ToggleSVG,
+} from './ToggleButton'
+
 const CoreThemeDecorator = storyFn => (
   <Theme theme={CoreTheme}>
     {storyFn()}
@@ -248,3 +253,9 @@ storiesOf('react-ui-core / Lead', module)
   .addDecorator(CoreThemeDecorator)
   .add('LeadForm', () => DefaultLeadForm)
   .add('LeadModal', () => DefaultLeadModal)
+
+storiesOf('react-ui-core / Toggle Button', module)
+  .addDecorator((story, context) => withInfo('Toggle Button')(story)(context))
+  .addDecorator(CoreThemeDecorator)
+  .add('Toggle Button', () => DefaultToggleButton)
+  .add('Toggle SVG', () => ToggleSVG)
