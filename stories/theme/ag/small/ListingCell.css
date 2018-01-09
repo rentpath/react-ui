@@ -26,6 +26,31 @@
   padding: 15px;
 }
 
+.ListingCell_Top {
+  height: 120px;
+}
+
+.ListingCell_Carousel {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.ListingCell_Coupon {
+  height: 16px;
+  width: 54px;
+  position: relative;
+  bottom: 120px;
+}
+
+.ListingCell_Favorite {
+  height: 16px;
+  width: 15px;
+  position: relative;
+  bottom: 135px;
+  left: 315px;
+}
+
 .ListingCell_Bottom {
   display: flex;
   flex-direction: row;
