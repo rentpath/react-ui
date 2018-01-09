@@ -10,7 +10,6 @@ const multiType = PropTypes.oneOfType([
   PropTypes.node,
   PropTypes.func,
   PropTypes.object,
-  PropTypes.array,
 ])
 
 @themed(/^ListingCell/, {
@@ -50,7 +49,7 @@ export default class ListingCell extends Component {
   }
 
   get infoSection() {
-    const { listingDetails, theme, viewType, ...props } = this.props
+    const { listingDetails, theme } = this.props
 
     return (
       <div className={theme.ListingCell_Details}>
@@ -108,8 +107,11 @@ export default class ListingCell extends Component {
       ratings,
       listingDetails,
       viewType,
+      ctaSection,
+      onCardClick,
+      ...props
     } = this.props
-    const [RatingsBar, props] = parseArgs(ratings, RatingBar)
+    const [RatingsBar, ratingProps] = parseArgs(ratings, RatingBar)
     return (
       <RatingsBar
         uniqueId={`${listingDetails.listingId}-${viewType}`}
@@ -117,6 +119,7 @@ export default class ListingCell extends Component {
         label={`${listingDetails.numRatings}`}
         className={theme.ListingCell_Rating}
         {...props}
+        {...ratingProps}
         fillColor={ratings.fillColor}
         backgroundFillColor={ratings.backgroundFillColor}
       />

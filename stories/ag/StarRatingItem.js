@@ -42,6 +42,7 @@ export default class Star extends Component {
           />
           <path
             fill={`url(#${uniqueId})`}
+            stroke="transparent"
             fillRule="evenodd"
             d="M3.488 4.292L4.578.86l1.069 3.43h3.487l-2.823 2.06 1.19 3.431-2.934-2.059-2.795 2.06 1.051-3.437L0 4.292z"
           />
