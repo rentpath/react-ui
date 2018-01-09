@@ -124,8 +124,10 @@ export default class ListingCell extends Component {
         role={'presentation'}
         onClick={onCardClick}
       >
-        <div className={theme.ListingCell_Carousel}>
-          <h1>Carousel placeholder</h1>
+        <div className={theme.ListingCell_Top}>
+          <div className={theme.ListingCell_Carousel}>Carousel placeholder</div>
+          <div className={theme.ListingCell_Coupon}>Coupon placeholder</div>
+          <div className={theme.ListingCell_Favorite}>Favorite heart placeholder</div>
         </div>
         <div className={theme.ListingCell_Bottom}>
           {this.infoSection}
