@@ -75,14 +75,15 @@ export default class RadioGroup extends Component {
 
   renderRadioButton(index, fieldProps) {
     const props = pick(this.props, ['name', 'hideInputElement', 'orientation'])
+
     return (
       <RadioButton
-        data-tid="radiogroup-radiobutton"
         key={`${this.id}-${index}`}
         checked={this.state.value === fieldProps.value}
         onChange={this.handleValueChange}
         {...omit(fieldProps, 'checked')}
         {...props}
+
       />
     )
   }

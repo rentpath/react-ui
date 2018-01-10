@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
+import omit from 'lodash/omit'
 import { RadioGroup } from '@rentpath/react-ui-core'
 import isEqual from 'lodash/isEqual'
 import autobind from 'autobind-decorator'
@@ -43,7 +44,17 @@ export default class RadioGroupFilterCard extends Component {
   }
 
   get fields() {
-    return this.props.fields || []
+    const { fields = [] } = this.props
+    return fields.map(field => {
+      const obj = field
+
+      if (typeof field.label === 'string') {
+        obj.label = { text: field.label, 'data-tid': `radiogroup-radiobutton-${field.label}` }
+      } else {
+        obj.label = Object.assign({ 'data-tid': `radiogroup-radiobutton-${field.label.text}` }, field.label)
+      }
+      return obj
+    })
   }
 
   currentlyCheckedValue(fields = this.fields) {
@@ -61,7 +72,7 @@ export default class RadioGroupFilterCard extends Component {
     const {
       className,
       theme,
-      fields,
+
       ...props
     } = this.props
 
@@ -78,9 +89,8 @@ export default class RadioGroupFilterCard extends Component {
       >
         <RadioGroup
           name="radio-group-filter-card-radio-group"
-          data-tid="radio-group-filter-card-radio-group"
           hideInputElement
-          fields={fields}
+          fields={this.fields}
           onChange={this.handleRadioGroupSelection}
         />
       </FilterCard>
