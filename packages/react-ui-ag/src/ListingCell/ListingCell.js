@@ -73,6 +73,7 @@ export default class ListingCell extends Component {
         {...props}
         onClick={this.handleCTAclick(cta.onClick)}
         className={classNames(
+          theme.ListingCell_CTA,
           theme[`ListingCell_CTA-${cta.type}`],
           className,
         )}
@@ -128,9 +129,9 @@ export default class ListingCell extends Component {
         onClick={onCardClick}
       >
         <div className={theme.ListingCell_Top}>
-          <div className={theme.ListingCell_Carousel}>Carousel placeholder</div>
-          <div className={theme.ListingCell_Coupon}>Coupon placeholder</div>
-          <div className={theme.ListingCell_Favorite}>Favorite heart placeholder</div>
+          <div className={theme.ListingCell_Carousel}>Carousel</div>
+          <div className={theme.ListingCell_Coupon}>Coupon</div>
+          <div className={theme.ListingCell_Favorite}>Favorite</div>
         </div>
 
         <div className={theme.ListingCell_Bottom}>
@@ -140,11 +141,7 @@ export default class ListingCell extends Component {
               <Text className={theme.ListingCell_Price}>{listingDetails.price}</Text>
               <Text className={theme.ListingCell_Title}>{listingDetails.title}</Text>
             </div>
-            {ctaButtons.length > 1 &&
-              <div className={theme.ListingCell_CTA}>
-                {ctaButtons[0]}
-              </div>
-            }
+            {ctaButtons.length > 1 && ctaButtons[0]}
           </div>
 
           <div className={theme.ListingCell_Info_Bottom}>
@@ -157,9 +154,7 @@ export default class ListingCell extends Component {
                 </Text>
               }
             </div>
-            <div className={theme.ListingCell_CTA}>
-              {ctaButtons.length > 1 ? ctaButtons[1] : ctaButtons[0]}
-            </div>
+            {ctaButtons.length > 1 ? ctaButtons[1] : ctaButtons[0]}
           </div>
 
         </div>

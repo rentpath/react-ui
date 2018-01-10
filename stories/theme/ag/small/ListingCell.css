@@ -5,9 +5,6 @@
   background-color: #ffffff;
   background-color: var(--white-two);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.24);
-}
-
-.ListingCell-map {
   font-family: ProximaNova;
   color: #9b9b9b;
 }
@@ -15,15 +12,19 @@
 .ListingCell-map .Card_Body {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 }
 
 .ListingCell_Top {
   height: 120px;
+  border: 1px solid grey;
 }
 
 .ListingCell_Bottom {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  height: 80px;
   padding: 5px 6px 11px 10px;
 }
 
@@ -45,7 +46,7 @@
   width: 15px;
   position: relative;
   bottom: 135px;
-  left: 191px;
+  left: 218px;
 }
 
 .ListingCell_Info_Bottom,
@@ -53,26 +54,24 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-end;
+}
+
+.ListingCell_Info_Top {
+  margin-bottom: 3px;
 }
 
 .ListingCell_Rating {
   display: flex;
   flex-direction: row;
+  line-height: 12px;
 }
 
 .ListingCell_Rating .RatingBar_Items {
   display: flex;
 }
 
-.ListingCell_CtaSection {
-  border: 1px solid grey;
-  padding: 10px;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.ListingCell_CTA {
+.ListingCell_CTA-contact {
 
 }
 
@@ -110,7 +109,7 @@
   color: #d32526;
 }
 
-.ListingCell_CTA .Button {
+.ListingCell_CTA {
   padding-top: 5px;
   padding-bottom: 7px;
   width: 121px;
