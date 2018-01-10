@@ -6,7 +6,7 @@ import theme from './mocks/theme'
 const ToggleButton = ThemedToggleButton.WrappedComponent
 
 describe('ToggleButton', () => {
-  it('renders', () => {
+  it('renders the base class and children', () => {
     const props = {
       theme,
       className: theme.ToggleButton,
@@ -14,9 +14,8 @@ describe('ToggleButton', () => {
     }
 
     const wrapper = shallow(<ToggleButton {...props} />)
-    expect(wrapper.find('[data-tid="toggleButton"]').exists()).toBeTruthy()
-    expect(wrapper.find('[data-tid="toggleButton"]').hasClass('ToggleButton')).toBeTruthy()
-    expect(wrapper.find('[data-tid="toggleButton"]').contains([<a href="#">Toggle</a>])).toBeTruthy()
+    expect(wrapper.hasClass('ToggleButton')).toBeTruthy()
+    expect(wrapper.contains([<a href="#">Toggle</a>])).toBeTruthy()
   })
 
   it('sets the default state to off', () => {
@@ -27,10 +26,10 @@ describe('ToggleButton', () => {
     }
 
     const wrapper = shallow(<ToggleButton {...props} />)
-    expect(wrapper.find('[data-tid="toggleButton"]').hasClass('ToggleButton-Off')).toBeTruthy()
+    expect(wrapper.hasClass('ToggleButton-off')).toBeTruthy()
   })
 
-  it('changes switches css class between ToggleButton-On and ToggleButton-Off when toggled', () => {
+  it('changes switches css class between ToggleButton-on and ToggleButton-off when toggled', () => {
     const props = {
       theme,
       className: theme.ToggleButton,
@@ -38,9 +37,9 @@ describe('ToggleButton', () => {
     }
 
     const wrapper = shallow(<ToggleButton {...props} />)
-    expect(wrapper.find('[data-tid="toggleButton"]').hasClass('ToggleButton-Off')).toBeTruthy()
-    wrapper.find('[data-tid="toggleButton"]').simulate('click')
-    expect(wrapper.find('[data-tid="toggleButton"]').hasClass('ToggleButton-On')).toBeTruthy()
+    expect(wrapper.hasClass('ToggleButton-off')).toBeTruthy()
+    wrapper.simulate('click')
+    expect(wrapper.hasClass('ToggleButton-on')).toBeTruthy()
   })
 
   it('sets value to prop value', () => {
@@ -51,7 +50,9 @@ describe('ToggleButton', () => {
     }
 
     const wrapper = shallow(<ToggleButton {...props} value />)
-    expect(wrapper.find('[data-tid="toggleButton"]').hasClass('ToggleButton-On')).toBeTruthy()
+    expect(wrapper.hasClass('ToggleButton-on')).toBeTruthy()
+    wrapper.setProps({ value: false })
+    expect(wrapper.hasClass('ToggleButton-on')).not.toBeTruthy()
   })
 
   it('It fires callback function which returns alternating true and false', () => {
@@ -63,12 +64,11 @@ describe('ToggleButton', () => {
     const onClick = jest.fn()
 
     const wrapper = shallow(<ToggleButton onClick={onClick} {...props} />)
-    wrapper.find('[data-tid="toggleButton"]').simulate('click')
+    wrapper.simulate('click')
     expect(onClick.mock.calls[0][0]).toEqual(true)
-    wrapper.find('[data-tid="toggleButton"]').simulate('click')
+    wrapper.simulate('click')
     expect(onClick.mock.calls[1][0]).toEqual(false)
-    wrapper.find('[data-tid="toggleButton"]').simulate('click')
+    wrapper.simulate('click')
     expect(onClick.mock.calls[2][0]).toEqual(true)
-    console.log(onClick.mock.calls)
   })
 })

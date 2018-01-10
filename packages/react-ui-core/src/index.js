@@ -88,7 +88,3 @@ export {
   Highlighter,
 } from './Highlighter'
 
-export {
-  ToggleButton,
-} from './ToggleButton'
-

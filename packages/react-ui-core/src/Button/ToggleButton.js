@@ -1,10 +1,9 @@
-import React, { Component, createElement } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
 import autobind from 'autobind-decorator'
 import { Button } from '../Button'
-import { parseArgs } from '@rentpath/react-ui-utils'
 
 @themed(/^ToggleButton/)
 
@@ -30,6 +29,14 @@ export default class ToggleButton extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (!(this.props.value === nextProps.value)) {
+      this.setState({
+        value: nextProps.value,
+      })
+    }
+  }
+
   @autobind
   toggle() {
     const { onClick } = this.props
@@ -51,18 +58,18 @@ export default class ToggleButton extends Component {
     } = this.props
 
     return (
-      <button
+      <Button
         onClick={this.toggle}
         className={classnames(
           theme.ToggleButton,
           className,
-          theme[this.state.value ? 'ToggleButton-On' : 'ToggleButton-Off'],
+          theme[this.state.value ? 'ToggleButton-on' : 'ToggleButton-off'],
         )}
-        data-tid="toggleButton"
+        data-tid="toggle-button"
         {...props}
       >
         {children}
-      </button>
+      </Button>
     )
   }
 }

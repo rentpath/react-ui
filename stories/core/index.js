@@ -22,6 +22,7 @@ import {
   ButtonWithColor,
   ButtonLarge,
   ButtonSmall,
+  ToggleSVG,
 } from './Button'
 import {
   DefaultField,
@@ -106,11 +107,6 @@ import {
   HighlighterWithIndex,
 } from './Highlighter'
 
-import {
-  DefaultToggleButton,
-  ToggleSVG,
-} from './ToggleButton'
-
 const CoreThemeDecorator = storyFn => (
   <Theme theme={CoreTheme}>
     {storyFn()}
@@ -124,6 +120,7 @@ storiesOf('react-ui-core / Button', module)
   .add('Colored Button', () => ButtonWithColor)
   .add('Small Button', () => ButtonSmall)
   .add('Large Button', () => ButtonLarge)
+  .add('Toggle Button', () => ToggleSVG)
 
 storiesOf('react-ui-core / Layout', module)
   .addDecorator((story, context) => withInfo('Layout')(story)(context))
@@ -254,8 +251,3 @@ storiesOf('react-ui-core / Lead', module)
   .add('LeadForm', () => DefaultLeadForm)
   .add('LeadModal', () => DefaultLeadModal)
 
-storiesOf('react-ui-core / Toggle Button', module)
-  .addDecorator((story, context) => withInfo('Toggle Button')(story)(context))
-  .addDecorator(CoreThemeDecorator)
-  .add('Toggle Button', () => DefaultToggleButton)
-  .add('Toggle SVG', () => ToggleSVG)
