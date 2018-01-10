@@ -43,7 +43,6 @@ export const SingleFamilyListingCell = (
       bedroomText: '4 beds',
       available: true,
     }}
-    RatingItem={Star}
     viewType="map"
     ctaSection={
       {

@@ -49,6 +49,13 @@
 
 .ListingCell_Bottom {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ListingCell_Info_Bottom,
+.ListingCell_Info_Top {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
