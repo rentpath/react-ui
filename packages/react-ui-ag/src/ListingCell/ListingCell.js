@@ -150,7 +150,12 @@ export default class ListingCell extends Component {
           <div className={theme.ListingCell_Info_Bottom}>
             <div className={theme.ListingCell_Details_Bottom}>
               <Text className={theme.ListingCell_Bedroom}>{listingDetails.bedroomText}</Text>
-              {!!listingDetails.numRatings && this.renderRatingBar()}
+              {listingDetails.numRatings ?
+                this.renderRatingBar() :
+                <Text className={theme.ListingCell_Availability}>
+                  {listingDetails.availableText}
+                </Text>
+              }
             </div>
             <div className={theme.ListingCell_CTA}>
               {ctaButtons.length > 1 ? ctaButtons[1] : ctaButtons[0]}

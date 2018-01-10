@@ -41,7 +41,7 @@ export const SingleFamilyListingCell = (
       price: '$800',
       title: '3921 Tugaloo River Drive Northside Park North East',
       bedroomText: '4 beds',
-      available: true,
+      availableText: 'Available now',
     }}
     viewType="map"
     ctaSection={

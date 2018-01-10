@@ -17,21 +17,6 @@
   flex-direction: column;
 }
 
-.ListingCell_Price {
-  font-size: 16px;
-  font-weight: bold;
-  color: #4a4a4a;
-}
-
-.ListingCell_Title {
-  font-size: 13px;
-  color: #4a4a4a;
-}
-
-.ListingCell_Bedroom {
-  font-size: 13px;
-}
-
 .ListingCell_Top {
   height: 120px;
 }
@@ -99,6 +84,30 @@
 .ListingCell_Rating {
   display: flex;
   align-items: baseline;
+}
+
+.ListingCell_Price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+.ListingCell_Title {
+  color: #4a4a4a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 264px;
+}
+
+.ListingCell_Bedroom,
+.ListingCell_Availability,
+.ListingCell_Title {
+  font-size: 13px;
+}
+
+.ListingCell_Availability {
+  color: #d32526;
 }
 
 .ListingCell_CTA .Button {
