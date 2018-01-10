@@ -17,7 +17,10 @@ import {
   InlineBathroomFilterCard,
   DesktopBathroomFilterCard,
 } from './Filters'
-import { DefaultListingCell } from './ListingCell'
+import {
+  DefaultListingCell,
+  SingleFamilyListingCell,
+} from './ListingCell'
 
 const AgThemeSmallDecorator = storyFn => (
   <Theme theme={AgThemeSmall}>
@@ -73,3 +76,4 @@ storiesOf('react-ui-ag / ListingCell / small', module)
   .addDecorator((story, context) => withInfo('ListingCell')(story)(context))
   .addDecorator(AgThemeSmallDecorator)
   .add('Default Listing Cell', () => DefaultListingCell)
+  .add('Single Family Listing Cell', () => SingleFamilyListingCell)

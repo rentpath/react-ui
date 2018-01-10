@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import autobind from 'autobind-decorator'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import { parseArgs, randomId } from '@rentpath/react-ui-utils'
@@ -22,8 +21,6 @@ export default class ListingCell extends Component {
     className: PropTypes.string,
     theme: PropTypes.object,
     viewType: PropTypes.string,
-
-    // this would include phone and email CTA
     ctaSection: PropTypes.oneOfType([
       multiType,
       PropTypes.array,
@@ -32,7 +29,6 @@ export default class ListingCell extends Component {
     photos: PropTypes.array,
     onCardClick: PropTypes.func,
     ratings: multiType,
-    // this would include price, name, beds, ula, favoriteStatus? and rating
     listingDetails: PropTypes.object,
   }
 

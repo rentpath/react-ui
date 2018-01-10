@@ -17,10 +17,6 @@
 
 }
 
-.ListingCell_Rating {
-
-}
-
 .ListingCell_Details {
   border: 1px solid blue;
   padding: 15px;
@@ -55,6 +51,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.ListingCell_Rating {
+  display: flex;
+  flex-direction: row;
 }
 
 .ListingCell_Rating .RatingBar_Items {

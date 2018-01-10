@@ -1,21 +1,18 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import themed from 'react-themed'
+// import themed from 'react-themed'
 import { ListingCell } from 'react-ui-ag/src'
-import { Button, Text } from 'react-ui-core/src'
+import { action } from '@storybook/addon-actions'
 import Star from './StarRatingItem'
-
-// const ctaProps = { children: 'test', onClick: () => console.log('it works!') }
-// const ctaButton = props => <Text {...props} {...ctaProps} />
 
 export const DefaultListingCell = (
   <ListingCell
-    onCardClick={() => console.log('on card click')}
+    onCardClick={action('card click action')}
     listingDetails={{
       listingId: 1,
       avgOverallRating: 4.2,
       numRatings: 10,
-      price: 2000,
+      price: '$2000+',
       title: 'Cool Apartment',
       bedroomText: '3 bedrooms',
     }}
@@ -24,14 +21,36 @@ export const DefaultListingCell = (
     ctaSection={[
       {
         children: '404-378-1428',
-        onClick: () => console.log('it works!'),
-        type: 'phone'
+        onClick: action('Phone CTA action'),
+        type: 'phone',
       },
       {
         children: 'send an email',
-        onClick: () => console.log('it works!'),
-        type: 'email'
+        onClick: action('contact CTA action'),
+        type: 'contact',
       },
     ]}
+  />
+)
+
+export const SingleFamilyListingCell = (
+  <ListingCell
+    onCardClick={action('card click action')}
+    listingDetails={{
+      listingId: 1,
+      price: '$800',
+      title: '3921 Tugaloo River Drive Northside Park North East',
+      bedroomText: '4 beds',
+      available: true,
+    }}
+    RatingItem={Star}
+    viewType="map"
+    ctaSection={
+      {
+        children: '404-378-1428',
+        onClick: action('contact CTA action'),
+        type: 'phone',
+      }
+    }
   />
 )
