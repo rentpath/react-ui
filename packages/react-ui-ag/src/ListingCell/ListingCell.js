@@ -5,6 +5,7 @@ import { parseArgs, randomId } from '@rentpath/react-ui-utils'
 import { Card, Text, RatingBar, Button } from '@rentpath/react-ui-core'
 import classNames from 'classnames'
 
+/* eslint-disable  jsx-a11y/no-static-element-interactions */
 const multiType = PropTypes.oneOfType([
   PropTypes.node,
   PropTypes.func,
@@ -30,6 +31,7 @@ export default class ListingCell extends Component {
     onCardClick: PropTypes.func,
     ratings: multiType,
     listingDetails: PropTypes.object,
+    onFavoriteClick: PropTypes.func,
   }
 
   static defaultProps = {
@@ -57,7 +59,7 @@ export default class ListingCell extends Component {
     return ctaButtons
   }
 
-  handleCTAclick(func) {
+  handleClick(func) {
     return event => {
       func()
       event.stopPropagation()
@@ -71,12 +73,13 @@ export default class ListingCell extends Component {
       <FilterButton
         key={randomId()}
         {...props}
-        onClick={this.handleCTAclick(cta.onClick)}
+        onClick={this.handleClick(cta.onClick)}
         className={classNames(
           theme.ListingCell_CTA,
           theme[`ListingCell_CTA-${cta.type}`],
           className,
         )}
+        data-tid={`${cta.type}-cta-button`}
       />
     )
   }
@@ -89,6 +92,7 @@ export default class ListingCell extends Component {
       viewType,
       ctaSection,
       onCardClick,
+      onFavoriteClick,
       ...props
     } = this.props
     const [RatingsBar, ratingProps] = parseArgs(ratings, RatingBar)
@@ -113,9 +117,11 @@ export default class ListingCell extends Component {
       onCardClick,
       listingDetails,
       className,
+      onFavoriteClick,
     } = this.props
 
     const ctaButtons = this.generateCtaButtons()
+    const multipleCTAs = ctaButtons.length > 1
 
     return (
       <Card
@@ -131,7 +137,13 @@ export default class ListingCell extends Component {
         <div className={theme.ListingCell_Top}>
           <div className={theme.ListingCell_Carousel}>Carousel</div>
           <div className={theme.ListingCell_Coupon}>Coupon</div>
-          <div className={theme.ListingCell_Favorite}>Favorite</div>
+          <div
+            className={theme.ListingCell_Favorite}
+            onClick={this.handleClick(onFavoriteClick)}
+            data-tid="favorite-heart"
+          >
+            Favorite
+          </div>
         </div>
 
         <div className={theme.ListingCell_Bottom}>
@@ -147,14 +159,14 @@ export default class ListingCell extends Component {
           <div className={theme.ListingCell_Info_Bottom}>
             <div className={theme.ListingCell_Details_Bottom}>
               <Text className={theme.ListingCell_Bedroom}>{listingDetails.bedroomText}</Text>
-              {listingDetails.numRatings ?
+              {multipleCTAs ?
                 this.renderRatingBar() :
                 <Text className={theme.ListingCell_Availability}>
                   {listingDetails.availableText}
                 </Text>
               }
             </div>
-            {ctaButtons.length > 1 ? ctaButtons[1] : ctaButtons[0]}
+            {multipleCTAs ? ctaButtons[1] : ctaButtons[0]}
           </div>
 
         </div>
@@ -162,3 +174,5 @@ export default class ListingCell extends Component {
     )
   }
 }
+
+/* eslint-enable jsx-a11y/no-static-element-interactions */

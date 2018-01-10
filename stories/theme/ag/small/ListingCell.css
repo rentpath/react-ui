@@ -17,7 +17,7 @@
 
 .ListingCell_Top {
   height: 120px;
-  border: 1px solid grey;
+  border-bottom: 1px solid lightgrey;
 }
 
 .ListingCell_Bottom {

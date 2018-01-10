@@ -8,6 +8,7 @@ import Star from './StarRatingItem'
 export const DefaultListingCell = (
   <ListingCell
     onCardClick={action('card click action')}
+    onFavoriteClick={action('on favorite click')}
     listingDetails={{
       listingId: 1,
       avgOverallRating: 4.2,
@@ -36,6 +37,7 @@ export const DefaultListingCell = (
 export const SingleFamilyListingCell = (
   <ListingCell
     onCardClick={action('card click action')}
+    onFavoriteClick={action('on favorite click')}
     listingDetails={{
       listingId: 1,
       price: '$800',
