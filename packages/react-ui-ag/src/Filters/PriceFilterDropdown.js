@@ -4,26 +4,15 @@ import themed from 'react-themed'
 import autobind from 'autobind-decorator'
 import classnames from 'classnames'
 import { Dropdown, Text } from '@rentpath/react-ui-core'
-import RadioGroupFilterCard from './RadioGroupFilterCard'
+import PriceFilterCard from './PriceFilterCard'
 import DropdownFilterCardWrapper from './DropdownFilterCardWrapper'
 
-const nodeFuncOrObject = PropTypes.oneOfType([
-  PropTypes.node,
-  PropTypes.func,
-  PropTypes.object,
-])
-
-@themed(['RadioGroupDropdown'])
-export default class RadioGroupDropdown extends Component {
+@themed(['PriceFilterDropdown'])
+export default class PriceFilterDropdown extends Component {
   static propTypes = {
     className: PropTypes.string,
     theme: PropTypes.object,
     anchorText: PropTypes.node,
-    fields: PropTypes.arrayOf(PropTypes.shape({
-      label: nodeFuncOrObject,
-      value: PropTypes.string,
-      anchorLabel: nodeFuncOrObject,
-    })),
     applyButton: PropTypes.object,
     cancelButton: PropTypes.object,
   }
@@ -40,16 +29,6 @@ export default class RadioGroupDropdown extends Component {
     }
   }
 
-  get standardFields() {
-    return this.props.fields.map(originalField => {
-      const { anchorLabel, ...field } = originalField
-      return {
-        ...field,
-        checked: field.value === this.state.value,
-      }
-    })
-  }
-
   @autobind
   handleValueChange(value) {
     this.setState({ value })
@@ -57,10 +36,8 @@ export default class RadioGroupDropdown extends Component {
 
   renderAnchorButton() {
     const { value } = this.state
-    const { fields, anchorText } = this.props
-
-    const { label, anchorLabel } = fields.find(f => f.value === value) || {}
-    const text = anchorLabel || label
+    const { anchorText } = this.props
+    const text = value && `$${value.min}-$${value.max}`
 
     if (anchorText) return cloneElement(anchorText, { text })
     return <Text>{text}</Text>
@@ -69,7 +46,6 @@ export default class RadioGroupDropdown extends Component {
   render() {
     const {
       anchorText,
-      fields,
       theme,
       className,
       ...props
@@ -79,14 +55,13 @@ export default class RadioGroupDropdown extends Component {
       <Dropdown
         className={classnames(
           className,
-          theme.RadioGroupDropdown
+          theme.PriceFilterDropdown
         )}
         anchorField={{ children: this.renderAnchorButton() }}
       >
         <DropdownFilterCardWrapper
           {...props}
-          FilterCard={RadioGroupFilterCard}
-          fields={this.standardFields}
+          FilterCard={PriceFilterCard}
           handleValueChange={this.handleValueChange}
         />
       </Dropdown>
