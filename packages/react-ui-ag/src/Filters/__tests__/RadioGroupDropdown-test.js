@@ -21,7 +21,7 @@ describe('ag/Filters/RadioGroupDropdown', () => {
   it('changes the text of the dropdown anchor when the apply button is pressed', () => {
     const wrapper = mount(<RadioGroupDropdown {...props} />)
     wrapper.find('button[data-tid="dropdown-anchor"]').simulate('click')
-    wrapper.find('[data-tid="radio-group-filter-card-radio-group"] input')
+    wrapper.find('[name="radio-group-filter-card-radio-group"] input')
       .at(1).simulate('change')
     wrapper.find('button[data-tid="apply-button"]').simulate('click')
     expect(wrapper.find('button[data-tid="dropdown-anchor"]').text()).toContain('Bar!')
