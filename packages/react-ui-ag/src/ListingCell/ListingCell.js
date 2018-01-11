@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, createElement } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import { parseArgs, randomId } from '@rentpath/react-ui-utils'
@@ -32,6 +32,7 @@ export default class ListingCell extends Component {
     ratings: multiType,
     listingDetails: PropTypes.object,
     onFavoriteClick: PropTypes.func,
+    RatingItem: PropTypes.func,
   }
 
   static defaultProps = {
@@ -39,21 +40,14 @@ export default class ListingCell extends Component {
     ratings: { fillColor: '#FBB900', backgroundFillColor: '#9B9B9B' },
   }
 
-  get roundedRating() {
-    const { listingDetails: { avgOverallRating } } = this.props
-
-    if (!avgOverallRating) return avgOverallRating
-    return Math.round(avgOverallRating * 2.0) / 2.0
-  }
-
-  generateCtaButtons() {
+  generateCtaButtons(props) {
     const { ctaSection } = this.props
     let ctaButtons
 
     if (Array.isArray(ctaSection)) {
-      ctaButtons = ctaSection.map(cta => this.renderButton(cta))
+      ctaButtons = ctaSection.map(cta => this.renderButton(cta, props))
     } else {
-      ctaButtons = [this.renderButton(ctaSection)]
+      ctaButtons = [this.renderButton(ctaSection, props)]
     }
 
     return ctaButtons
@@ -66,42 +60,37 @@ export default class ListingCell extends Component {
     }
   }
 
-  renderButton(cta) {
+  renderButton(cta, props) {
     const { theme, className } = this.props
-    const [FilterButton, props] = parseArgs(cta, Button)
-    return (
-      <FilterButton
-        key={randomId()}
-        {...props}
-        onClick={this.handleClick(cta.onClick)}
-        className={classNames(
-          theme.ListingCell_CTA,
-          theme[`ListingCell_CTA-${cta.type}`],
-          className,
-        )}
-        data-tid={`${cta.type}-cta-button`}
-      />
-    )
+    return createElement(...parseArgs(cta, Button, {
+      ...props,
+      key: randomId(),
+      onClick: this.handleClick(cta.onClick),
+      className: classNames(
+        theme.ListingCell_CTA,
+        theme[`ListingCell_CTA-${cta.type}`],
+        className,
+      ),
+      'data-tid': `${cta.type}-cta-button`,
+    }))
   }
 
-  renderRatingBar() {
+  renderRatingBar(props) {
     const {
       theme,
       ratings,
       listingDetails,
       viewType,
-      ctaSection,
-      onCardClick,
-      onFavoriteClick,
-      ...props
+      RatingItem,
     } = this.props
     const [RatingsBar, ratingProps] = parseArgs(ratings, RatingBar)
     return (
       <RatingsBar
         uniqueId={`${listingDetails.listingId}-${viewType}`}
-        score={this.roundedRating}
+        score={listingDetails.rating}
         label={`${listingDetails.numRatings}`}
         className={theme.ListingCell_Rating}
+        RatingItem={RatingItem}
         {...props}
         {...ratingProps}
         fillColor={ratings.fillColor}
@@ -118,13 +107,17 @@ export default class ListingCell extends Component {
       listingDetails,
       className,
       onFavoriteClick,
+      RatingItem,
+      ctaSection,
+      ...props
     } = this.props
 
-    const ctaButtons = this.generateCtaButtons()
+    const ctaButtons = this.generateCtaButtons(props)
     const multipleCTAs = ctaButtons.length > 1
 
     return (
       <Card
+        {...props}
         className={classNames(
           theme[`ListingCell-${viewType}`],
           className,
@@ -136,7 +129,12 @@ export default class ListingCell extends Component {
       >
         <div className={theme.ListingCell_Top}>
           <div className={theme.ListingCell_Carousel}>Carousel</div>
-          <div className={theme.ListingCell_Coupon}>Coupon</div>
+          <div
+            data-tid="listing-cell-coupon"
+            className={theme.ListingCell_Coupon}
+          >
+            Coupon
+          </div>
           <div
             className={theme.ListingCell_Favorite}
             onClick={this.handleClick(onFavoriteClick)}
@@ -160,7 +158,7 @@ export default class ListingCell extends Component {
             <div className={theme.ListingCell_Details_Bottom}>
               <Text className={theme.ListingCell_Bedroom}>{listingDetails.bedroomText}</Text>
               {multipleCTAs ?
-                this.renderRatingBar() :
+                this.renderRatingBar(props) :
                 <Text className={theme.ListingCell_Availability}>
                   {listingDetails.availableText}
                 </Text>

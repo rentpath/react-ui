@@ -7,7 +7,7 @@ const defaultProps = {
   onFavoriteClick: () => { },
   listingDetails: {
     listingId: 1,
-    avgOverallRating: 4.2,
+    rating: 4,
     numRatings: 10,
     price: '$2000+',
     title: 'Cool Apartment',
