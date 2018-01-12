@@ -22,6 +22,11 @@ import {
   DesktopPriceFilterDropdown,
 } from './Filters'
 
+import {
+  DefaultBanner,
+  BannerWithNode,
+} from './Banners'
+
 const AgThemeSmallDecorator = storyFn => (
   <Theme theme={AgThemeSmall}>
     {storyFn()}
@@ -83,3 +88,9 @@ storiesOf('react-ui-ag / Filters / PriceFilterDropdown / large', module)
   .addDecorator((story, context) => withInfo('PriceFilterDropdown')(story)(context))
   .addDecorator(AgThemeLargeDecorator)
   .add('Price Filter', () => DesktopPriceFilterDropdown)
+
+storiesOf('react-ui-ag / Banners / Banner', module)
+  .addDecorator((story, context) => withInfo('Banner')(story)(context))
+  .addDecorator(AgThemeExamplesDecorator)
+  .add('Default Banner', () => DefaultBanner)
+  .add('Banner With Node as Name', () => BannerWithNode)
