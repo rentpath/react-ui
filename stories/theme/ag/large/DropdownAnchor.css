@@ -26,3 +26,18 @@
 .DropdownAnchor.PetFilterCard {
   width: 126px;
 }
+
+.DropdownAnchor.PriceFilterCard {
+  width: 149px;
+}
+
+.DropdownAnchor-expand::after {
+  background-color: #fff;
+  content: "";
+  height: 15px;
+  width: inherit;
+  z-index: 1;
+  position: absolute;
+  top: 26px;
+  left: 10px;
+}

@@ -19,6 +19,7 @@ import {
   DesktopBedroomDropdown,
   DesktopBathroomDropdown,
   DesktopPetDropdown,
+  DesktopPriceFilterDropdown,
 } from './Filters'
 
 const AgThemeSmallDecorator = storyFn => (
@@ -72,8 +73,13 @@ storiesOf('react-ui-ag / Filters / PriceFilterCard / small', module)
   .add('Price Filter', () => InlinePriceFilterCard)
 
 storiesOf('react-ui-ag / Filters / RadioGroupDropdown / large', module)
-  .addDecorator((story, context) => withInfo('PriceFilterCard')(story)(context))
+  .addDecorator((story, context) => withInfo('RadioGroupDropdown')(story)(context))
   .addDecorator(AgThemeLargeDecorator)
   .add('Beds', () => DesktopBedroomDropdown)
   .add('Baths', () => DesktopBathroomDropdown)
   .add('Pets', () => DesktopPetDropdown)
+
+storiesOf('react-ui-ag / Filters / PriceFilterDropdown / large', module)
+  .addDecorator((story, context) => withInfo('PriceFilterDropdown')(story)(context))
+  .addDecorator(AgThemeLargeDecorator)
+  .add('Price Filter', () => DesktopPriceFilterDropdown)

@@ -3,7 +3,8 @@ export {
   RadioGroupFilterCard,
   PriceFilterCard,
   RadioGroupDropdown,
-  RadioGroupDropdownAnchorText,
+  PriceFilterDropdown,
+  DropdownAnchorText,
 } from './Filters'
 
 export {
