@@ -7,6 +7,7 @@ export {
 
 export {
   Button,
+  ToggleButton,
 } from './Button'
 
 export {
@@ -87,3 +88,4 @@ export {
 export {
   Highlighter,
 } from './Highlighter'
+

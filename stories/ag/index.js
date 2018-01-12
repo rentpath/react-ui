@@ -27,6 +27,10 @@ import {
   BannerWithNode,
 } from './Banners'
 
+import {
+  DefaultDrawer,
+} from './Drawer'
+
 const AgThemeSmallDecorator = storyFn => (
   <Theme theme={AgThemeSmall}>
     {storyFn()}
@@ -94,3 +98,9 @@ storiesOf('react-ui-ag / Banners / Banner', module)
   .addDecorator(AgThemeExamplesDecorator)
   .add('Default Banner', () => DefaultBanner)
   .add('Banner With Node as Name', () => BannerWithNode)
+
+storiesOf('react-ui-ag / Drawer / DefaultDrawer', module)
+  .addDecorator((story, context) => withInfo('Banner')(story)(context))
+  .addDecorator(AgThemeExamplesDecorator)
+  .add('Drawer', () => DefaultDrawer)
+
