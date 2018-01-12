@@ -20,6 +20,7 @@ export default class PriceFilterCard extends Component {
       PropTypes.func,
       PropTypes.object,
     ]),
+    onChange: PropTypes.func,
   }
 
   static defaultProps = {
@@ -35,9 +36,11 @@ export default class PriceFilterCard extends Component {
 
   @autobind
   handlePriceSliderChange(value) {
-    this.setState({
-      value,
-    })
+    this.setState({ value })
+
+    if (this.props.onChange) {
+      this.props.onChange(value)
+    }
   }
 
   renderPriceSlider() {
@@ -57,6 +60,7 @@ export default class PriceFilterCard extends Component {
       theme,
       className,
       priceSlider,
+      onChange,
       ...props
     } = this.props
 

@@ -35,7 +35,11 @@ export default class Label extends Component {
 
     return (
       /* eslint-disable jsx-a11y/label-has-for */
-      <label {...props} className={classnames}>
+      <label
+        data-tid="label"
+        {...props}
+        className={classnames}
+      >
         {text}{children}
       </label>
     )

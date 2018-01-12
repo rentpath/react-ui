@@ -3,7 +3,6 @@
   height: 200px;
   border-radius: 5px;
   background-color: #ffffff;
-  background-color: var(--white-two);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.24);
   font-family: ProximaNova;
   color: #9b9b9b;
@@ -52,7 +51,6 @@
 .ListingCell_Info_Bottom,
 .ListingCell_Info_Top {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
 }
@@ -63,26 +61,18 @@
 
 .ListingCell_Rating {
   display: flex;
-  flex-direction: row;
   line-height: 12px;
+  display: flex;
+  align-items: baseline;
 }
 
 .ListingCell_Rating .RatingBar_Items {
   display: flex;
 }
 
-.ListingCell_CTA-contact {
-
-}
-
 .ListingCell_Rating .Label {
   font-size: 12px;
   color: #9b9b9b;
-}
-
-.ListingCell_Rating {
-  display: flex;
-  align-items: baseline;
 }
 
 .ListingCell_Price {

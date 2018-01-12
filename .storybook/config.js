@@ -13,10 +13,10 @@ setOptions({
   name: 'react-ui',
   url: 'https://github.com/rentpath/react-ui',
   goFullScreen: false,
-  showLeftPanel: true,
-  showDownPanel: true,
+  showStoriesPanel: true,
+  showAddonPanel: true,
   showSearchBox: false,
-  downPanelInRight: false,
+  addonPanelInRight: false,
   sortStoriesByKind: false,
 })
 

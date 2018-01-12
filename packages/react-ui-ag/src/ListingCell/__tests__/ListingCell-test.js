@@ -56,7 +56,7 @@ describe('ag/ListingCell/ListingCell', () => {
     })
   })
 
-  describe('cta buttons', () => {
+  describe('CTA buttons', () => {
     describe('multiple CTAs', () => {
       const wrapper = shallow(<ListingCell {...defaultProps} />)
       it('should generate buttons from an array of objects', () => {
@@ -91,7 +91,7 @@ describe('ag/ListingCell/ListingCell', () => {
 
       it('renders availabilty if only one CTA is passed in', () => {
         const details = wrapper.find('Text')
-        expect(details.at(3).text()).toEqual('find me')
+        expect(details.at(4).text()).toEqual('find me')
       })
 
       it('does not render rating bar if only one CTA is passed in', () => {
@@ -108,7 +108,7 @@ describe('ag/ListingCell/ListingCell', () => {
   it('should fire onFavoriteClick on favorite click', () => {
     const favClick = jest.fn()
     const wrapper = mount(<ListingCell {...defaultProps} onFavoriteClick={favClick} />)
-    const favHeart = (wrapper.find('[data-tid="favorite-heart"]'))
+    const favHeart = (wrapper.find('[data-tid="favorite-heart"]')).at(1)
     favHeart.simulate('click')
     expect(favClick).toHaveBeenCalled()
   })

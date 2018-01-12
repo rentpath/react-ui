@@ -1,3 +1,7 @@
-.PetFilterCard {
+.PetFilterCard .Card {
   height: 138px;
+}
+
+.RadioGroupDropdown.PetFilterCard .Card::before {
+  width: 126px;
 }

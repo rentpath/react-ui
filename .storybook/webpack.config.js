@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = (storybookBaseConfig, configType) => {
   storybookBaseConfig.module.rules.push(
@@ -60,6 +61,11 @@ module.exports = (storybookBaseConfig, configType) => {
       'node_modules',
       'packages',
     ]
+  }
+
+  if (configType === 'PRODUCTION') {
+    // Removing uglification until we figure out a fix for that.
+    storybookBaseConfig.plugins.pop();
   }
 
   return storybookBaseConfig

@@ -5,8 +5,7 @@ import { parseArgs, randomId } from '@rentpath/react-ui-utils'
 import { Card, Text, RatingBar, Button } from '@rentpath/react-ui-core'
 import classNames from 'classnames'
 
-/* eslint-disable  jsx-a11y/no-static-element-interactions */
-const multiType = PropTypes.oneOfType([
+const nodeFuncOrObject = PropTypes.oneOfType([
   PropTypes.node,
   PropTypes.func,
   PropTypes.object,
@@ -23,21 +22,24 @@ export default class ListingCell extends Component {
     theme: PropTypes.object,
     viewType: PropTypes.string,
     ctaSection: PropTypes.oneOfType([
-      multiType,
+      nodeFuncOrObject,
       PropTypes.array,
     ]),
     onFavoriteToggle: PropTypes.func,
     photos: PropTypes.array,
     onCardClick: PropTypes.func,
-    ratings: multiType,
+    ratings: nodeFuncOrObject,
     listingDetails: PropTypes.object,
     onFavoriteClick: PropTypes.func,
+    favoriteButton: nodeFuncOrObject,
     RatingItem: PropTypes.func,
   }
 
+  // TODO: replace favoriteButton children with heart svg
   static defaultProps = {
     theme: {},
     ratings: { fillColor: '#FBB900', backgroundFillColor: '#9B9B9B' },
+    favoriteButton: { children: 'favorite-heart' },
   }
 
   generateCtaButtons(props) {
@@ -62,16 +64,31 @@ export default class ListingCell extends Component {
 
   renderButton(cta, props) {
     const { theme, className } = this.props
+    const { type, onClick } = cta
     return createElement(...parseArgs(cta, Button, {
       ...props,
       key: randomId(),
-      onClick: this.handleClick(cta.onClick),
+      onClick: this.handleClick(onClick),
       className: classNames(
         theme.ListingCell_CTA,
-        theme[`ListingCell_CTA-${cta.type}`],
+        theme[`ListingCell_CTA-${type}`],
         className,
       ),
-      'data-tid': `${cta.type}-cta-button`,
+      'data-tid': `${type}-cta-button`,
+    }))
+  }
+
+  // TODO: replace Text with toggleButton
+  renderFavoriteButton(props) {
+    const { theme, className, favoriteButton, onFavoriteClick } = this.props
+    return createElement(...parseArgs(favoriteButton, Text, {
+      ...props,
+      onClick: this.handleClick(onFavoriteClick),
+      className: classNames(
+        theme.ListingCell_Favorite,
+        className,
+      ),
+      'data-tid': 'favorite-heart',
     }))
   }
 
@@ -83,16 +100,19 @@ export default class ListingCell extends Component {
       viewType,
       RatingItem,
     } = this.props
+
+    const { listingId, rating, numRatings } = listingDetails
+
     const [RatingsBar, ratingProps] = parseArgs(ratings, RatingBar)
     return (
       <RatingsBar
-        uniqueId={`${listingDetails.listingId}-${viewType}`}
-        score={listingDetails.rating}
-        label={`${listingDetails.numRatings}`}
-        className={theme.ListingCell_Rating}
-        RatingItem={RatingItem}
         {...props}
         {...ratingProps}
+        uniqueId={`${listingId}-${viewType}`}
+        score={rating}
+        label={`${numRatings}`}
+        className={theme.ListingCell_Rating}
+        RatingItem={RatingItem}
         fillColor={ratings.fillColor}
         backgroundFillColor={ratings.backgroundFillColor}
       />
@@ -109,12 +129,17 @@ export default class ListingCell extends Component {
       onFavoriteClick,
       RatingItem,
       ctaSection,
+      favoriteButton,
       ...props
     } = this.props
 
     const ctaButtons = this.generateCtaButtons(props)
     const multipleCTAs = ctaButtons.length > 1
 
+    // TODO: replace lines 153-159 with actual Carousel and Coupon
+
+    /* eslint-disable  jsx-a11y/no-static-element-interactions */
+    // needed to disable this for the onClick on the favoriteHeart placeholder
     return (
       <Card
         {...props}
@@ -122,9 +147,7 @@ export default class ListingCell extends Component {
           theme[`ListingCell-${viewType}`],
           className,
         )}
-        data-tid="listing-section"
-        data-tag_item="padding_box"
-        role={'presentation'}
+        data-tid={`listings-cell-${viewType}`}
         onClick={onCardClick}
       >
         <div className={theme.ListingCell_Top}>
@@ -135,13 +158,7 @@ export default class ListingCell extends Component {
           >
             Coupon
           </div>
-          <div
-            className={theme.ListingCell_Favorite}
-            onClick={this.handleClick(onFavoriteClick)}
-            data-tid="favorite-heart"
-          >
-            Favorite
-          </div>
+          {this.renderFavoriteButton(props)}
         </div>
 
         <div className={theme.ListingCell_Bottom}>

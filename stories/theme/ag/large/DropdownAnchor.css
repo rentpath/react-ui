@@ -1,0 +1,28 @@
+.DropdownAnchor {
+  background-color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 96px;
+  height: 36px;
+  border: none;
+  box-shadow: 1px 1px 4px 1px lightgrey;
+  z-index: 1;
+}
+
+.DropdownAnchor:focus {
+  outline: none;
+}
+
+.DropdownAnchor span {
+  font-size: 30px;
+  color: #d32526;
+}
+
+.DropdownAnchor .Text {
+  font-weight: lighter;
+}
+
+.DropdownAnchor.PetFilterCard {
+  width: 126px;
+}

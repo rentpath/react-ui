@@ -78,7 +78,6 @@ export default class RadioGroupFilterCard extends Component {
       >
         <RadioGroup
           name="radio-group-filter-card-radio-group"
-          data-tid="radio-group-filter-card-radio-group"
           hideInputElement
           fields={fields}
           onChange={this.handleRadioGroupSelection}

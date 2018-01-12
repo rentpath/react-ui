@@ -20,14 +20,14 @@ describe('ag/Filters/RadioGroupFilterCard', () => {
   }
   it('renders a radiogroup', () => {
     const wrapper = shallow(<RadioGroupFilterCard {...props} />)
-    expect(wrapper.find('[data-tid="radio-group-filter-card-radio-group"]')).toHaveLength(1)
+    expect(wrapper.find('[name="radio-group-filter-card-radio-group"]')).toHaveLength(1)
   })
 
   it('changes the state value if a radio button is checked', () => {
     const wrapper = mount(<RadioGroupFilterCard {...props} />)
     expect(wrapper.state('value')).toBeFalsy()
     const radioButtonInput =
-      wrapper.find('[data-tid="radio-group-filter-card-radio-group"] input').at(2)
+      wrapper.find('[name="radio-group-filter-card-radio-group"] input').at(2)
     radioButtonInput.simulate('change')
     expect(wrapper.state('value')).toEqual(radioButtonInput.prop('value'))
   })
@@ -55,7 +55,7 @@ describe('ag/Filters/RadioGroupFilterCard', () => {
     const wrapper = mount(<RadioGroupFilterCard {...props} />)
     expect(wrapper.find(FilterCard).hasClass('RadioGroupFilterCard-noValue')).toBeTruthy()
     const radioButtonInput =
-      wrapper.find('[data-tid="radio-group-filter-card-radio-group"] input').at(2)
+      wrapper.find('[name="radio-group-filter-card-radio-group"] input').at(2)
     radioButtonInput.simulate('change')
     expect(wrapper.find(FilterCard).hasClass('RadioGroupFilterCard-noValue')).toBeFalsy()
   })
@@ -69,7 +69,7 @@ describe('ag/Filters/RadioGroupFilterCard', () => {
       ],
     }
     const wrapper = shallow(<RadioGroupFilterCard {...overrideFieldsProps} />)
-    expect(wrapper.find('[data-tid="radio-group-filter-card-radio-group"]').prop('fields'))
+    expect(wrapper.find('[name="radio-group-filter-card-radio-group"]').prop('fields'))
       .toEqual(overrideFieldsProps.fields)
   })
 

@@ -46,7 +46,7 @@
 
 .PriceFilterCard .minLabel,
 .PriceFilterCard .maxLabel {
-  display: none
+  display: none;
 }
 
 .PriceFilterCard .maxLabel {

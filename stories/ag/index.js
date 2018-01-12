@@ -16,6 +16,9 @@ import {
   InlineRatingFilterCard,
   InlineBathroomFilterCard,
   DesktopBathroomFilterCard,
+  DesktopBedroomDropdown,
+  DesktopBathroomDropdown,
+  DesktopPetDropdown,
 } from './Filters'
 import {
   DefaultListingCell,
@@ -71,6 +74,13 @@ storiesOf('react-ui-ag / Filters / PriceFilterCard / small', module)
   .addDecorator((story, context) => withInfo('PriceFilterCard')(story)(context))
   .addDecorator(AgThemeSmallDecorator)
   .add('Price Filter', () => InlinePriceFilterCard)
+
+storiesOf('react-ui-ag / Filters / RadioGroupDropdown / large', module)
+  .addDecorator((story, context) => withInfo('PriceFilterCard')(story)(context))
+  .addDecorator(AgThemeLargeDecorator)
+  .add('Beds', () => DesktopBedroomDropdown)
+  .add('Baths', () => DesktopBathroomDropdown)
+  .add('Pets', () => DesktopPetDropdown)
 
 storiesOf('react-ui-ag / ListingCell / small', module)
   .addDecorator((story, context) => withInfo('ListingCell')(story)(context))

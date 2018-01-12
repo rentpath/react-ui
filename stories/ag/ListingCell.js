@@ -1,6 +1,4 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
-// import themed from 'react-themed'
 import { ListingCell } from 'react-ui-ag/src'
 import { action } from '@storybook/addon-actions'
 import Star from './StarRatingItem'

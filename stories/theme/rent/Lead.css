@@ -91,7 +91,6 @@
   color: #ea5117;
 }
 
-
 .RentLeadForm .Button {
   margin-top: 10px;
   width: 100%;
@@ -100,7 +99,7 @@
   border-radius: 100px;
   background-color: #0175D7;
   color: #fff;
-  box-shadow: 0 0.5px 1px 0 rgba(0,0,0,.15);
+  box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.15);
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
