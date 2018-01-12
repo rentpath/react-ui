@@ -25,6 +25,7 @@ import Grid from './Grid.css'
 import Responsive from './Responsive.css'
 import AutoSuggestField from './AutoSuggestField.css'
 import Highlighter from './Highlighter.css'
+import ToggleButton from './ToggleButton.css'
 
 export default compose({},
   Label,
@@ -53,4 +54,5 @@ export default compose({},
   Responsive,
   Highlighter,
   AutoSuggestField,
+  ToggleButton,
 )
