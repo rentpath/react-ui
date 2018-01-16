@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListingCell } from 'react-ui-ag/src'
+import { ListingCell, SingleFamilyListingCell } from 'react-ui-ag/src'
 import { action } from '@storybook/addon-actions'
 import Star from './StarRatingItem'
 
@@ -32,8 +32,8 @@ export const DefaultListingCell = (
   />
 )
 
-export const SingleFamilyListingCell = (
-  <ListingCell
+export const ListingCellSingleFamily = (
+  <SingleFamilyListingCell
     onCardClick={action('card click action')}
     onFavoriteClick={action('on favorite click')}
     listingDetails={{

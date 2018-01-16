@@ -33,7 +33,7 @@ import {
 
 import {
   DefaultListingCell,
-  SingleFamilyListingCell,
+  ListingCellSingleFamily,
 } from './ListingCell'
 
 const AgThemeSmallDecorator = storyFn => (
@@ -108,4 +108,4 @@ storiesOf('react-ui-ag / ListingCell / small', module)
   .addDecorator((story, context) => withInfo('ListingCell')(story)(context))
   .addDecorator(AgThemeSmallDecorator)
   .add('Default Listing Cell', () => DefaultListingCell)
-  .add('Single Family Listing Cell', () => SingleFamilyListingCell)
+  .add('Single Family Listing Cell', () => ListingCellSingleFamily)
