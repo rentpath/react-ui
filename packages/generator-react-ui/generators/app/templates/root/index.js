@@ -1,6 +1,1 @@
-export MyGreatNewComponent from './components/MyGreatNewComponent'
-export MyGreatNewComponentContainer from './container'
-export MyGreatNewComponentSelector from './selectors/selector'
-export reducer from './reducer'
-export { genericAction } from './actions'
-export { GENERIC_CONST } from './const'
+export { default as <%=componentName%> } from './<%=componentName%>'

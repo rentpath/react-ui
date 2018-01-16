@@ -4,14 +4,6 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 
 module.exports = class extends Generator {
-  _get_destination_path(filename, props) {
-    const path = 'src'
-    const {
-      componentName,
-    } = props
-    return `${path}/${componentName}/${filename}`
-  }
-
   prompting() {
     // Have Yeoman greet the user.
     this.log(
@@ -36,21 +28,26 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    console.log('this.destinationRoot()', this.destinationRoot());
-     
     const {
       componentName,
     } = this.props
+    const rootPath = 'src'
 
     // Root files
     this.fs.copyTpl(
       this.templatePath('root/index.js'),
-      this.destinationPath(this._get_destination_path('index.js', this.props)),
+      this.destinationPath(`${rootPath}/${componentName}/index.js`),
       { componentName: this.props.componentName }
     );
     this.fs.copyTpl(
       this.templatePath('root/MyComponent.js'),
-      this.destinationPath(this._get_destination_path(`${componentName}.js`, this.props)),
+      this.destinationPath(`${rootPath}/${componentName}/${componentName}.js`),
+      { componentName: this.props.componentName }
+    );
+    // __tests__
+    this.fs.copyTpl(
+      this.templatePath('__tests__/MyComponent-test.js'),
+      this.destinationPath(`${rootPath}/${componentName}/__tests__/${componentName}.js`),
       { componentName: this.props.componentName }
     );
   }
