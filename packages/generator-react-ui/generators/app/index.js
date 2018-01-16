@@ -4,13 +4,20 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 
 module.exports = class extends Generator {
+  _get_destination_path(filename, props) {
+    const foostr = './../react-ui-core/src'
+    const {
+      componentName,
+    } = props
+    return `${foostr}/${componentName}/${filename}`
+  }
+
   prompting() {
     // Have Yeoman greet the user.
     this.log(
       yosay(
         'Greetings Rentpath developer! Welcome to the ' +
-          chalk.red('generator-react-component') +
-          ' generator!'
+          chalk.red('react-ui Generator!')
       )
     );
 
@@ -29,13 +36,19 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    // const foostr = '../../../../react-ui-core/'
-    const foostr = './../react-ui-core/src/'
+    const {
+      componentName,
+    } = this.props
+
     // Root files
-    // this._writeRootFile('actions.js')
     this.fs.copyTpl(
       this.templatePath('root/index.js'),
-      this.destinationPath(foostr + this.props.componentName + '/index.js'),
+      this.destinationPath(this._get_destination_path('index.js', this.props)),
+      { componentName: this.props.componentName }
+    );
+    this.fs.copyTpl(
+      this.templatePath('root/MyComponent.js'),
+      this.destinationPath(this._get_destination_path(`${componentName}.js`, this.props)),
       { componentName: this.props.componentName }
     );
   }
