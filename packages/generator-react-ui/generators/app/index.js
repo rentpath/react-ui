@@ -5,11 +5,11 @@ const yosay = require('yosay');
 
 module.exports = class extends Generator {
   _get_destination_path(filename, props) {
-    const foostr = './../react-ui-core/src'
+    const path = 'src'
     const {
       componentName,
     } = props
-    return `${foostr}/${componentName}/${filename}`
+    return `${path}/${componentName}/${filename}`
   }
 
   prompting() {
@@ -36,6 +36,8 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    console.log('this.destinationRoot()', this.destinationRoot());
+     
     const {
       componentName,
     } = this.props

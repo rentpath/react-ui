@@ -12,7 +12,7 @@ npm install
 npm link
 ```
 
-Then navigate to the desired directory and generate your new component:
+Then navigate to the `~/source/react-ui/packages/react-ui-core` directory and generate your new component:
 
 ```bash
 yo react-component
