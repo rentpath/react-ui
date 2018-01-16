@@ -27,6 +27,11 @@ import {
   BannerWithNode,
 } from './Banners'
 
+import {
+  DefaultListingCell,
+  SingleFamilyListingCell,
+} from './ListingCell'
+
 const AgThemeSmallDecorator = storyFn => (
   <Theme theme={AgThemeSmall}>
     {storyFn()}
@@ -94,3 +99,9 @@ storiesOf('react-ui-ag / Banners / Banner', module)
   .addDecorator(AgThemeExamplesDecorator)
   .add('Default Banner', () => DefaultBanner)
   .add('Banner With Node as Name', () => BannerWithNode)
+
+storiesOf('react-ui-ag / ListingCell / small', module)
+  .addDecorator((story, context) => withInfo('ListingCell')(story)(context))
+  .addDecorator(AgThemeSmallDecorator)
+  .add('Default Listing Cell', () => DefaultListingCell)
+  .add('Single Family Listing Cell', () => SingleFamilyListingCell)
