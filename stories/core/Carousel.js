@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import { Carousel, PhotoCarousel } from 'react-ui-core/src'
 import StoryBookTheme from '../theme/Storybook.css'
 
-const Item = ({ children }) => (
+const Item = ({ children }) => ( // eslint-disable-line react/prop-types
   <div
     className={classnames(
       StoryBookTheme.Story_CarouselItem,
@@ -29,44 +29,47 @@ export const DefaultCarousel = (
 )
 
 export const CarouselPaginationNext = (
-  <Carousel
-    className={StoryBookTheme['Story-center']}
-
-    items={items}
-    pagination={{
-      pageNumber: 1,
-      total: 10,
-      pageSize: 2,
-      next: {
-        children: 'Next Page',
-        className: StoryBookTheme.Story_CarouselItem,
-      },
-      previous: {
-        children: 'Previous Page',
-        className: StoryBookTheme.Story_CarouselItem,
-      },
-    }}
-  />
+  <div className={StoryBookTheme['Story-center']}>
+    <p>USE LEFT AND RIGHT ARROWS TO SWIPE</p>
+    <Carousel
+      items={items}
+      pagination={{
+        pageNumber: 1,
+        total: 10,
+        pageSize: 2,
+        next: {
+          children: 'Next Page',
+          className: StoryBookTheme.Story_CarouselItem,
+        },
+        previous: {
+          children: 'Previous Page',
+          className: StoryBookTheme.Story_CarouselItem,
+        },
+      }}
+    />
+  </div>
 )
 
 export const CarouselPaginationPrevious = (
-  <Carousel
-    className={StoryBookTheme['Story-center']}
-    items={items}
-    pagination={{
-      pageNumber: 2,
-      total: 10,
-      pageSize: 2,
-      next: {
-        children: 'Next Page',
-        className: StoryBookTheme.Story_CarouselItem,
-      },
-      previous: {
-        children: 'Previous Page',
-        className: StoryBookTheme.Story_CarouselItem,
-      },
-    }}
-  />
+  <div className={StoryBookTheme['Story-center']}>
+    <p>USE LEFT AND RIGHT ARROWS TO SWIPE</p>
+    <Carousel
+      items={items}
+      pagination={{
+        pageNumber: 2,
+        total: 10,
+        pageSize: 2,
+        next: {
+          children: 'Next Page',
+          className: StoryBookTheme.Story_CarouselItem,
+        },
+        previous: {
+          children: 'Previous Page',
+          className: StoryBookTheme.Story_CarouselItem,
+        },
+      }}
+    />
+  </div>
 )
 
 export const CarouselNavigation = (

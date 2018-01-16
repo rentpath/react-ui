@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel renders navigation buttons if required 1`] = `
+<div
+  className=""
+  data-tid="carousel"
+>
+  <div
+    aria-live="polite"
+    className="image-gallery"
+  >
+    <div
+      className="image-gallery-content"
+    >
+      <div
+        className="image-gallery-slide-wrapper bottom"
+      >
+        <div
+          className="image-gallery-slides"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel renders passed children and adds data-tid 1`] = `
+<div
+  className=""
+  data-tid="carousel"
+>
+  <div
+    aria-live="polite"
+    className="image-gallery"
+  >
+    <div
+      className="image-gallery-content"
+    >
+      <div
+        className="image-gallery-slide-wrapper bottom"
+      >
+        <div
+          className="image-gallery-slides"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
