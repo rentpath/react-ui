@@ -9,14 +9,12 @@ export const DefaultHighlighter = (
 )
 
 export const HighlighterWithIndex = () => {
-  /* eslint-disable quote-props */
   const options = {
-    '0': 'all',
-    '1': 'first',
-    '2': 'second',
-    '3': 'third',
+    0: 'all',
+    1: 'first',
+    2: 'second',
+    3: 'third',
   }
-  /* eslint-enable quote-props */
   const indexHighlighted = parseInt(select('index to highlight', options, '1'), 10)
 
   const pattern = text('pattern', 'two')
