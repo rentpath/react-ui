@@ -2,8 +2,9 @@ import React, { Component, createElement } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import { parseArgs, randomId } from '@rentpath/react-ui-utils'
-import { Card, Text, RatingBar, Button } from '@rentpath/react-ui-core'
+import { Card, Text, Button } from '@rentpath/react-ui-core'
 import classNames from 'classnames'
+import ListingCellBottom from './ListingCellBottom'
 
 const nodeFuncOrObject = PropTypes.oneOfType([
   PropTypes.node,
@@ -33,6 +34,7 @@ export default class ListingCell extends Component {
     onFavoriteClick: PropTypes.func,
     favoriteButton: nodeFuncOrObject,
     RatingItem: PropTypes.func,
+    listingCellBottom: PropTypes.func,
   }
 
   // TODO: replace favoriteButton children with heart svg
@@ -40,19 +42,7 @@ export default class ListingCell extends Component {
     theme: {},
     ratings: { fillColor: '#FBB900', backgroundFillColor: '#9B9B9B' },
     favoriteButton: { children: 'favorite-heart' },
-  }
-
-  generateCtaButtons(props) {
-    const { ctaSection } = this.props
-    let ctaButtons
-
-    if (Array.isArray(ctaSection)) {
-      ctaButtons = ctaSection.map(cta => this.renderButton(cta, props))
-    } else {
-      ctaButtons = [this.renderButton(ctaSection, props)]
-    }
-
-    return ctaButtons
+    listingCellBottom: ListingCellBottom,
   }
 
   handleClick(func) {
@@ -60,22 +50,6 @@ export default class ListingCell extends Component {
       func()
       event.stopPropagation()
     }
-  }
-
-  renderButton(cta, props) {
-    const { theme, className } = this.props
-    const { type, onClick } = cta
-    return createElement(...parseArgs(cta, Button, {
-      ...props,
-      key: randomId(),
-      onClick: this.handleClick(onClick),
-      className: classNames(
-        theme.ListingCell_CTA,
-        theme[`ListingCell_CTA-${type}`],
-        className,
-      ),
-      'data-tid': `${type}-cta-button`,
-    }))
   }
 
   // TODO: replace Text with toggleButton
@@ -92,31 +66,24 @@ export default class ListingCell extends Component {
     }))
   }
 
-  renderRatingBar(props) {
+  renderListingCellBottom(props) {
     const {
       theme,
-      ratings,
       listingDetails,
-      viewType,
+      className,
+      listingCellBottom,
       RatingItem,
+      ctaSection,
     } = this.props
 
-    const { listingId, rating, numRatings } = listingDetails
-
-    const [RatingsBar, ratingProps] = parseArgs(ratings, RatingBar)
-    return (
-      <RatingsBar
-        {...props}
-        {...ratingProps}
-        uniqueId={`${listingId}-${viewType}`}
-        score={rating}
-        label={`${numRatings}`}
-        className={theme.ListingCell_Rating}
-        RatingItem={RatingItem}
-        fillColor={ratings.fillColor}
-        backgroundFillColor={ratings.backgroundFillColor}
-      />
-    )
+    return createElement(...parseArgs(listingCellBottom, Card, {
+      ...props,
+      className,
+      theme,
+      RatingItem,
+      ctaSection,
+      listingDetails,
+    }))
   }
 
   render() {
@@ -130,11 +97,9 @@ export default class ListingCell extends Component {
       RatingItem,
       ctaSection,
       favoriteButton,
+      listingCellBottom,
       ...props
     } = this.props
-
-    const ctaButtons = this.generateCtaButtons(props)
-    const multipleCTAs = ctaButtons.length > 1
 
     // TODO: replace lines 153-159 with actual Carousel and Coupon
 
@@ -161,30 +126,8 @@ export default class ListingCell extends Component {
           {this.renderFavoriteButton(props)}
         </div>
 
-        <div className={theme.ListingCell_Bottom}>
+        {this.renderListingCellBottom(props)}
 
-          <div className={theme.ListingCell_Info_Top}>
-            <div className={theme.ListingCell_Details_Top}>
-              <Text className={theme.ListingCell_Price}>{listingDetails.price}</Text>
-              <Text className={theme.ListingCell_Title}>{listingDetails.title}</Text>
-            </div>
-            {ctaButtons.length > 1 && ctaButtons[0]}
-          </div>
-
-          <div className={theme.ListingCell_Info_Bottom}>
-            <div className={theme.ListingCell_Details_Bottom}>
-              <Text className={theme.ListingCell_Bedroom}>{listingDetails.bedroomText}</Text>
-              {multipleCTAs ?
-                this.renderRatingBar(props) :
-                <Text className={theme.ListingCell_Availability}>
-                  {listingDetails.availableText}
-                </Text>
-              }
-            </div>
-            {multipleCTAs ? ctaButtons[1] : ctaButtons[0]}
-          </div>
-
-        </div>
       </Card>
     )
   }

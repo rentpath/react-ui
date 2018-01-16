@@ -14,4 +14,7 @@ export {
 
 export { Banner } from './Banners'
 
-export { ListingCell } from './ListingCell'
+export {
+  ListingCell,
+  SingleFamilyListingCell,
+} from './ListingCell'
