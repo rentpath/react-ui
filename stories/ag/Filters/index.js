@@ -24,3 +24,7 @@ export {
   DesktopBathroomDropdown,
   DesktopPetDropdown,
 } from './RadioGroupDropdown'
+
+export {
+  DesktopPriceFilterDropdown,
+} from './PriceFilterDropdown'

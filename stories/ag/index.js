@@ -19,7 +19,18 @@ import {
   DesktopBedroomDropdown,
   DesktopBathroomDropdown,
   DesktopPetDropdown,
+  DesktopPriceFilterDropdown,
 } from './Filters'
+import {
+  DefaultListingCell,
+  SingleFamilyListingCell,
+} from './ListingCell'
+
+import {
+  DefaultBanner,
+  BannerWithNode,
+} from './Banners'
+
 import {
   DefaultListingCell,
   SingleFamilyListingCell,
@@ -76,11 +87,22 @@ storiesOf('react-ui-ag / Filters / PriceFilterCard / small', module)
   .add('Price Filter', () => InlinePriceFilterCard)
 
 storiesOf('react-ui-ag / Filters / RadioGroupDropdown / large', module)
-  .addDecorator((story, context) => withInfo('PriceFilterCard')(story)(context))
+  .addDecorator((story, context) => withInfo('RadioGroupDropdown')(story)(context))
   .addDecorator(AgThemeLargeDecorator)
   .add('Beds', () => DesktopBedroomDropdown)
   .add('Baths', () => DesktopBathroomDropdown)
   .add('Pets', () => DesktopPetDropdown)
+
+storiesOf('react-ui-ag / Filters / PriceFilterDropdown / large', module)
+  .addDecorator((story, context) => withInfo('PriceFilterDropdown')(story)(context))
+  .addDecorator(AgThemeLargeDecorator)
+  .add('Price Filter', () => DesktopPriceFilterDropdown)
+
+storiesOf('react-ui-ag / Banners / Banner', module)
+  .addDecorator((story, context) => withInfo('Banner')(story)(context))
+  .addDecorator(AgThemeExamplesDecorator)
+  .add('Default Banner', () => DefaultBanner)
+  .add('Banner With Node as Name', () => BannerWithNode)
 
 storiesOf('react-ui-ag / ListingCell / small', module)
   .addDecorator((story, context) => withInfo('ListingCell')(story)(context))

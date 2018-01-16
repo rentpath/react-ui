@@ -1,16 +1,15 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 import theme from './mocks/theme'
-import ThemedRadioGroupDropdown,
-{ RadioGroupDropdownAnchorText }
-  from '../RadioGroupDropdown'
-import RadioGroupDropdownFilterCardWrapper from '../RadioGroupDropdownFilterCardWrapper'
+import ThemedRadioGroupDropdown from '../RadioGroupDropdown'
+import DropdownAnchorText from '../DropdownAnchorText'
+import DropdownFilterCardWrapper from '../DropdownFilterCardWrapper'
 
 const RadioGroupDropdown = ThemedRadioGroupDropdown.WrappedComponent
 
 describe('ag/Filters/RadioGroupDropdown', () => {
   const props = {
-    anchorText: <RadioGroupDropdownAnchorText defaultText="Fubar" />,
+    anchorText: <DropdownAnchorText defaultText="Fubar" />,
     fields: [
       { anchorLabel: 'Foo!', label: 'Foo', value: 'o' },
       { anchorLabel: 'Bar!', label: 'Bar', value: 'r' },
@@ -30,7 +29,7 @@ describe('ag/Filters/RadioGroupDropdown', () => {
   it('removes anchorLabel from labels', () => {
     const wrapper = shallow(<RadioGroupDropdown {...props} />)
     expect(
-      wrapper.find(RadioGroupDropdownFilterCardWrapper).props().fields.filter(f => f.anchorLabel)
+      wrapper.find(DropdownFilterCardWrapper).props().fields.filter(f => f.anchorLabel)
     ).toHaveLength(0)
   })
 })

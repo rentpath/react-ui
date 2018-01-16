@@ -19,6 +19,7 @@ import {
   BathroomFilterCard,
   PriceFilterCard,
 } from './Filters'
+import ListingCell from './ListingCell.css'
 
 import ListingCell from './ListingCell.css'
 

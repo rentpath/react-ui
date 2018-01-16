@@ -22,6 +22,7 @@ import {
   ButtonWithColor,
   ButtonLarge,
   ButtonSmall,
+  ToggleSVG,
 } from './Button'
 import {
   DefaultField,
@@ -119,6 +120,7 @@ storiesOf('react-ui-core / Button', module)
   .add('Colored Button', () => ButtonWithColor)
   .add('Small Button', () => ButtonSmall)
   .add('Large Button', () => ButtonLarge)
+  .add('Toggle Button', () => ToggleSVG)
 
 storiesOf('react-ui-core / Layout', module)
   .addDecorator((story, context) => withInfo('Layout')(story)(context))
@@ -248,3 +250,4 @@ storiesOf('react-ui-core / Lead', module)
   .addDecorator(CoreThemeDecorator)
   .add('LeadForm', () => DefaultLeadForm)
   .add('LeadModal', () => DefaultLeadModal)
+

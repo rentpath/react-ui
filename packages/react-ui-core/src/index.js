@@ -87,3 +87,4 @@ export {
 export {
   Highlighter,
 } from './Highlighter'
+

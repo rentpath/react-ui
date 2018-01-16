@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
-import RadioGroupFilterCard from './RadioGroupFilterCard'
 
-export default class RadioGroupDropdownFilterCardWrapper extends PureComponent {
+export default class DropdownFilterCardWrapper extends PureComponent {
   static propTypes = {
     onSelect: PropTypes.func,
     handleValueChange: PropTypes.func,
     applyButton: PropTypes.object,
     cancelButton: PropTypes.object,
+    FilterCard: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
@@ -39,11 +39,12 @@ export default class RadioGroupDropdownFilterCardWrapper extends PureComponent {
       handleValueChange,
       applyButton,
       cancelButton,
+      FilterCard,
       ...safeProps
     } = this.props
 
     return (
-      <RadioGroupFilterCard
+      <FilterCard
         {...safeProps}
         applyButton={{ ...applyButton, onClick: this.handleApplyClick }}
         cancelButton={{ ...cancelButton, onClick: this.handleCancelClick }}
