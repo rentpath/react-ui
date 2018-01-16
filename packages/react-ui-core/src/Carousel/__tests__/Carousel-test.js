@@ -3,8 +3,11 @@ import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
 import theme from './mocks/theme'
 import ThemedCarousel from '../Carousel'
+import ThemedCarouselNavigation from '../CarouselNavigation'
 
 const Carousel = ThemedCarousel.WrappedComponent
+const Navigation = ThemedCarouselNavigation.WrappedComponent
+
 const items = [
   <div key="1">Test 1</div>,
   <div key="2">Test 2</div>,
@@ -31,9 +34,9 @@ describe('Carousel', () => {
     expect(wrapper.find('[data-tid="carousel"]')).toHaveLength(1)
   })
 
-  it('renders navigation buttons if required', () => {
-    const snap = renderer
-      .create(
+  describe('navigation', () => {
+    it('renders navigation buttons based on object', () => {
+      const snap = renderer.create(
         <Carousel
           navigation={{
             next: {
@@ -48,7 +51,27 @@ describe('Carousel', () => {
         </Carousel>
       )
       .toJSON()
-    expect(snap).toMatchSnapshot()
+      expect(snap).toMatchSnapshot()
+    })
+
+    it('renders navigation buttons based on custom node', () => {
+      const snap = renderer.create(
+        <Carousel
+          navigation={{
+            previous: (<Navigation direction="previous">
+              Prior
+            </Navigation>),
+            next: (<Navigation direction="next">
+              Upcoming
+            </Navigation>),
+          }}
+        >
+          {items}
+        </Carousel>
+      ).toJSON()
+
+      expect(snap).toMatchSnapshot()
+    })
   })
 
   describe('pagination', () => {
