@@ -15,7 +15,7 @@
     "lint:js:fix": "lerna packages stories --fix",
     "postinstall": "lerna bootstrap",
     "prepublish": "lerna run clean --yes && lerna run build",
-    "publish-packages": "lerna publish --exact --conventional-commits",
+    "publish-packages": "lerna publish --exact --conventional-commits --registry=https://registry.npmjs.org/",
     "storybook": "start-storybook -p 6006 -c .storybook -s ./.storybook/dist",
     "build-storybook": "build-storybook"
   },
