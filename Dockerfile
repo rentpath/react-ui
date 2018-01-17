@@ -12,7 +12,7 @@ USER node
 RUN yarn config set registry https://registry.yarnpkg.com
 RUN yarn install --pure-lockfile
 RUN yarn lint
-RUN yarn test
+RUN yarn test:coverage
 
 RUN yarn run build-storybook
 
