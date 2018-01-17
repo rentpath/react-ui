@@ -4,7 +4,7 @@ React-UI is implemented as a [monorepo](https://github.com/babel/babel/blob/mast
 
 For simplicity, `yarn run clean` and `yarn run build` will execute `lerna run clean` and `lerna run build`, respectively, which will traverse `packages` and run the intended scripts in all of the individual packages.
 
-More Lerna [commands](https://github.com/lerna/lerna#commands), including how to publish.
+More Lerna [commands](https://github.com/lerna/lerna#commands). Please use `yarn publish-packages` to semantically publish and generate a CHANGELOG for all repos below.
 
 | Package | Version | Description |
 |---------|---------|-------------|
