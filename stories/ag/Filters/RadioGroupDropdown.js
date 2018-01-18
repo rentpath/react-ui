@@ -4,10 +4,14 @@ import themed from 'react-themed'
 import classnames from 'classnames'
 import { action } from '@storybook/addon-actions'
 import { RadioGroupDropdown, DropdownAnchorText } from 'react-ui-ag/src'
+import StorybookTheme from '../../theme/Storybook.css'
 
 const DesktopBedroomDropdownComponent = ({ theme }) => (
   <RadioGroupDropdown
-    className={theme.SearchFilter}
+    className={classnames(
+      theme.SearchFilter,
+      StorybookTheme['Story_Card-left']
+    )}
     anchorText={<DropdownAnchorText defaultText="Bed" />}
     fields={[
       { anchorLabel: '', label: 'Any', value: '' },
@@ -33,7 +37,7 @@ const DesktopBedroomDropdown = <ThemedDesktopBedroomDropdown />
 
 const DesktopBathroomDropdownComponent = ({ theme }) => (
   <RadioGroupDropdown
-    className={classnames(theme.SearchFilter, theme.BathroomFilterCard)}
+    className={classnames(theme.SearchFilter, theme.BathroomFilterCard, StorybookTheme['Story_Card-left'])}
     anchorText={<DropdownAnchorText defaultText="Bath" />}
     fields={[
       { anchorLabel: '1+ Baths', label: '1+', value: '1' },
@@ -56,7 +60,7 @@ const DesktopBathroomDropdown = <ThemedDesktopBathroomDropdown />
 
 const DesktopPetDropdownComponent = ({ theme }) => (
   <RadioGroupDropdown
-    className={classnames(theme.SearchFilter, theme.PetFilterCard)}
+    className={classnames(theme.SearchFilter, theme.PetFilterCard, StorybookTheme['Story_Card-left'])}
     anchorText={<DropdownAnchorText defaultText="Pets" />}
     fields={[
       { label: 'Dogs', value: 'dogs' },

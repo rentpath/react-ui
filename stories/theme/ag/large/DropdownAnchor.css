@@ -3,6 +3,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   width: 96px;
   height: 36px;
   border: none;
@@ -12,6 +13,10 @@
 
 .DropdownAnchor:focus {
   outline: none;
+}
+
+.DropdownAnchor-expand span {
+  transform: rotate(180deg);
 }
 
 .DropdownAnchor span {
@@ -39,5 +44,5 @@
   z-index: 1;
   position: absolute;
   top: 26px;
-  left: 10px;
+  left: 0;
 }

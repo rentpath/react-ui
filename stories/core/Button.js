@@ -1,12 +1,10 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { Button, ToggleButton } from 'react-ui-core/src/Button'
-import StoryBookTheme from '../theme/Storybook.css'
 
 export const DefaultButton = (
   <Button
     onClick={action('Clicked the button!')}
-    className={StoryBookTheme['Story-center']}
   >
     Click Me
   </Button>
@@ -15,7 +13,6 @@ export const DefaultButton = (
 export const ButtonWithColor = (
   <Button
     color="red"
-    className={StoryBookTheme['Story-center']}
     onClick={action('Clicked the red button!')}
   >
     Click this red button
@@ -25,7 +22,6 @@ export const ButtonWithColor = (
 export const ButtonLarge = (
   <Button
     size="large"
-    className={StoryBookTheme['Story-center']}
     onClick={action('Clicked the large button!')}
   >
     Click this large button
@@ -35,7 +31,6 @@ export const ButtonLarge = (
 export const ButtonSmall = (
   <Button
     size="small"
-    className={StoryBookTheme['Story-center']}
     onClick={action('Clicked the small button!')}
   >
     Click this small button
@@ -44,7 +39,6 @@ export const ButtonSmall = (
 
 export const ToggleSVG = (
   <ToggleButton
-    className={StoryBookTheme['Story-center']}
     onClick={value => {
       action('The button is ')(`${(value) ? 'toggled' : 'untoggled'}`)
     }}

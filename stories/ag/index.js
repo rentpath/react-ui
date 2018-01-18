@@ -1,8 +1,3 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
-import { Theme } from 'react-themed'
-import { AgThemeSmall, AgThemeLarge, AgThemeExamples } from '../theme'
 import {
   DefaultFilterCard,
   OneButtonFilterCard,
@@ -27,70 +22,42 @@ import {
   BannerWithNode,
 } from './Banners'
 
-const AgThemeSmallDecorator = storyFn => (
-  <Theme theme={AgThemeSmall}>
-    {storyFn()}
-  </Theme>
-)
+import {
+  smallStories,
+  largeStories,
+  exampleStories,
+} from './stories'
 
-const AgThemeLargeDecorator = storyFn => (
-  <Theme theme={AgThemeLarge}>
-    {storyFn()}
-  </Theme>
-)
-
-const AgThemeExamplesDecorator = storyFn => (
-  <Theme theme={AgThemeExamples}>
-    {storyFn()}
-  </Theme>
-)
-
-storiesOf('react-ui-ag / Filters / FilterCard', module)
-  .addDecorator((story, context) => withInfo('FilterCard')(story)(context))
-  .addDecorator(AgThemeExamplesDecorator)
+exampleStories('Filters / FilterCard', module)
   .add('Default', () => DefaultFilterCard)
   .add('One Button FilterCard', () => OneButtonFilterCard)
   .add('Two Button FilterCard', () => TwoButtonFilterCard)
 
-storiesOf('react-ui-ag / Filters / RadioGroupFilterCard / large', module)
-  .addDecorator((story, context) => withInfo('RadioGroupFilterCard')(story)(context))
-  .addDecorator(AgThemeLargeDecorator)
+largeStories('Filters / RadioGroupFilterCard / large', module)
   .add('Bedroom', () => DesktopBedroomFilterCard)
   .add('Bathroom', () => DesktopBathroomFilterCard)
   .add('Pet', () => DesktopPetFilterCard)
 
-storiesOf('react-ui-ag / Filters / RadioGroupFilterCard / small', module)
-  .addDecorator((story, context) => withInfo('RadioGroupFilterCard')(story)(context))
-  .addDecorator(AgThemeSmallDecorator)
+smallStories('Filters / RadioGroupFilterCard / small', module)
   .add('Bedroom', () => InlineBedroomFilterCard)
   .add('Bathroom', () => InlineBathroomFilterCard)
   .add('Pet', () => InlinePetFilterCard)
   .add('Rating', () => InlineRatingFilterCard)
 
-storiesOf('react-ui-ag / Filters / PriceFilterCard / large', module)
-  .addDecorator((story, context) => withInfo('PriceFilterCard')(story)(context))
-  .addDecorator(AgThemeLargeDecorator)
+largeStories('Filters / PriceFilterCard / large', module)
   .add('Price Filter', () => DesktopPriceFilterCard)
 
-storiesOf('react-ui-ag / Filters / PriceFilterCard / small', module)
-  .addDecorator((story, context) => withInfo('PriceFilterCard')(story)(context))
-  .addDecorator(AgThemeSmallDecorator)
+smallStories('Filters / PriceFilterCard / small', module)
   .add('Price Filter', () => InlinePriceFilterCard)
 
-storiesOf('react-ui-ag / Filters / RadioGroupDropdown / large', module)
-  .addDecorator((story, context) => withInfo('RadioGroupDropdown')(story)(context))
-  .addDecorator(AgThemeLargeDecorator)
+largeStories('Filters / RadioGroupDropdown / large', module)
   .add('Beds', () => DesktopBedroomDropdown)
   .add('Baths', () => DesktopBathroomDropdown)
   .add('Pets', () => DesktopPetDropdown)
 
-storiesOf('react-ui-ag / Filters / PriceFilterDropdown / large', module)
-  .addDecorator((story, context) => withInfo('PriceFilterDropdown')(story)(context))
-  .addDecorator(AgThemeLargeDecorator)
+largeStories('Filters / PriceFilterDropdown / large', module)
   .add('Price Filter', () => DesktopPriceFilterDropdown)
 
-storiesOf('react-ui-ag / Banners / Banner', module)
-  .addDecorator((story, context) => withInfo('Banner')(story)(context))
-  .addDecorator(AgThemeExamplesDecorator)
+exampleStories('Banners / Banner', module)
   .add('Default Banner', () => DefaultBanner)
   .add('Banner With Node as Name', () => BannerWithNode)

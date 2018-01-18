@@ -4,10 +4,15 @@ import themed from 'react-themed'
 import classnames from 'classnames'
 import { action } from '@storybook/addon-actions'
 import { PriceFilterDropdown, DropdownAnchorText } from 'react-ui-ag/src'
+import StorybookTheme from '../../theme/Storybook.css'
 
 const DesktopPriceFilterDropdownComponent = ({ theme }) => (
   <PriceFilterDropdown
-    className={classnames(theme.SearchFilter, theme.PriceFilterCard)}
+    className={classnames(
+      theme.SearchFilter,
+      theme.PriceFilterCard,
+      StorybookTheme['Story_Card-left']
+    )}
     anchorText={<DropdownAnchorText defaultText="Price" />}
     priceSlider={{
       formatLabel: val => `$${val}`,

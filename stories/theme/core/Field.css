@@ -14,4 +14,9 @@
   display: flex;
   max-width: 600px;
   color: #000;
+  align-items: center;
+}
+
+.Field .Label {
+  padding-right: 10px;
 }

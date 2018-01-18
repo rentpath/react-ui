@@ -8,15 +8,11 @@ import {
   Modal,
 } from 'react-ui-core/src'
 import { MinMaxStepRangeSlider } from './RangeSlider'
-import StoryBookTheme from '../theme/Storybook.css'
 
 const Slider = () => MinMaxStepRangeSlider
 
 const Fields = () => (
-  <FieldSet
-    legend="Property Type"
-    className={StoryBookTheme['Story_Fieldset-padding']}
-  >
+  <FieldSet legend="Property Type">
     <Field
       type="checkbox"
       label="Apartments"

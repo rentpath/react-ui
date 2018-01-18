@@ -1,19 +1,23 @@
-.Text {
-  text-transform: uppercase;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
-
-.Label {
-  flex: 1;
+.Form {
+  min-width: 300px;
 }
 
 .Form .Field {
   color: #000;
 }
 
-.Input,
-.Select,
-.Textarea {
+.Form .Text {
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.Form .Label {
+  flex: 1;
+}
+
+.Form .Input,
+.Form .Select,
+.Form .Textarea {
   flex: 4;
 }

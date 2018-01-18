@@ -4,12 +4,9 @@ import {
   Form,
   Field,
 } from 'react-ui-core/src'
-import StoryBookTheme from '../theme/Storybook.css'
 
 export default (
-  <Form
-    className={StoryBookTheme['Story-padding']}
-  >
+  <Form>
     <Text>Generic Form</Text>
     <Field
       label="Name"

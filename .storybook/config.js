@@ -1,6 +1,11 @@
-import { configure } from '@storybook/react'
+import { configure, addDecorator } from '@storybook/react'
 import { setOptions } from '@storybook/addon-options'
 import { setDefaults } from '@storybook/addon-info'
+import { checkA11y } from '@storybook/addon-a11y'
+import { withKnobs } from '@storybook/addon-knobs'
+
+addDecorator(checkA11y)
+addDecorator(withKnobs)
 
 setDefaults({
   header: false, // Toggles display of header with component name and description
