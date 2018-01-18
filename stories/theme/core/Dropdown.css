@@ -11,10 +11,6 @@
   height: auto;
 }
 
-.Dropdown .Field {
-  width: 500px;
-}
-
 .Dropdown .Field .Label {
   flex: none;
   padding-right: 10px;

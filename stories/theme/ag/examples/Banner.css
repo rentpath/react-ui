@@ -1,11 +1,7 @@
 .Banner {
-  margin: 50%;
-  border: solid 1px;
   border-radius: 8px;
-  height: 16px;
-  width: 54px;
   font-size: 12px;
-  padding: 5px;
+  padding: 8px;
   background-color: #4a4a4a;
   box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.15);
   color: #FFF;

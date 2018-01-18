@@ -1,5 +1,4 @@
 import React from 'react'
-import classnames from 'classnames'
 import { action } from '@storybook/addon-actions'
 import { Dropdown, Text, Menu, Card } from 'react-ui-core/src'
 import DropdownButtonExample from './DropdownButtonExample'
@@ -23,7 +22,6 @@ const MenuExample = props => (
 
 export const DefaultDropdown = (
   <Dropdown
-    className={StoryBookTheme['Story-padding']}
     anchorField={{ children: <Text>Click Me</Text> }}
   >
     <Content />
@@ -33,7 +31,6 @@ export const DefaultDropdown = (
 export const DropdownWithProps = (
   <Dropdown
     anchorField={inputProps}
-    className={StoryBookTheme['Story-padding']}
   >
     <MenuExample />
   </Dropdown>
@@ -41,7 +38,6 @@ export const DropdownWithProps = (
 
 export const DropDownInputAnchor = (
   <Dropdown
-    className={StoryBookTheme['Story-padding']}
     anchorField={props => (<DropdownInputExample {...props} />)}
     toggleOnSelect={false}
   >
@@ -51,9 +47,6 @@ export const DropDownInputAnchor = (
 
 export const DropdownWithMenu = (
   <Dropdown
-    className={classnames(
-      StoryBookTheme['Story-padding'],
-    )}
     anchorField={props => (<DropdownButtonExample {...props} />)}
   >
     <Card>

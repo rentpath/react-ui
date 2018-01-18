@@ -1,7 +1,2 @@
-import { compose } from 'react-themed'
-import CoreTheme from '../core'
-import RentLeadForm from './Lead.css'
-
-export default compose(CoreTheme,
-  RentLeadForm,
-)
+export { default as RentThemeSmall } from './small'
+export { default as RentThemeLarge } from './large'

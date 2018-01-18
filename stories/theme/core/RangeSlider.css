@@ -1,3 +1,8 @@
+.RangeSlider {
+  max-width: 500px;
+  width: 100%;
+}
+
 .RangeSlider_Text {
   color: #777777;
   text-align: center;
@@ -41,13 +46,15 @@
   position: absolute;
 }
 
-.maxLabel {
-  right: 0;
+.minLabel {
+  transform: translateX(0%);
+  left: 0.75rem;
 }
 
-.minLabel .labelContainer,
-.maxLabel .labelContainer {
-  left: 0;
+.maxLabel {
+  transform: translateX(100%);
+  right: -0.75rem;
+  left: auto;
 }
 
 .valueLabel {

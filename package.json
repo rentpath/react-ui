@@ -16,7 +16,7 @@
     "postinstall": "lerna bootstrap",
     "prepublish": "lerna run clean --yes && lerna run build",
     "publish-packages": "lerna publish --exact --conventional-commits",
-    "storybook": "start-storybook -p 6006 -c .storybook",
+    "storybook": "start-storybook -p 6006 -c .storybook -s ./.storybook/dist",
     "build-storybook": "build-storybook"
   },
   "jest": {
@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@rentpath/eslint-config-rentpath": "3.0.1",
+    "@storybook/addon-a11y": "^3.3.9",
     "@storybook/addon-actions": "3.3.6",
     "@storybook/addon-info": "3.3.6",
     "@storybook/addon-knobs": "3.3.6",

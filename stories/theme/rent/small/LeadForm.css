@@ -1,11 +1,11 @@
-.RentLeadForm .Field {
+.Form .Field {
   max-width: 6200px;
 }
 
 /* TODO: This should be a style from the styleguide */
-.RentLeadForm .Input,
-.RentLeadForm .Select,
-.RentLeadForm .Textarea {
+.Form .Input,
+.Form .Select,
+.Form .Textarea {
   margin: 0;
   font-size: 22px;
   font-weight: 700;
@@ -17,9 +17,9 @@
   width: 100%;
 }
 
-.RentLeadForm .Input:focus,
-.RentLeadForm .Select:focus,
-.RentLeadForm .Textarea:focus {
+.Form .Input:focus,
+.Form .Select:focus,
+.Form .Textarea:focus {
   border-color: #0175D7;
 }
 
@@ -31,67 +31,67 @@
   position: absolute;
 }
 
-.RentLeadForm .Textarea {
+.Form .Textarea {
   padding-top: 30px;
   resize: none;
   height: 97px;
 }
 
-.RentLeadForm .Input::placeholder,
-.RentLeadForm .RequiredField_Label {
+.Form .Input::placeholder,
+.Form .RequiredField_Label {
   font-size: 13px;
   font-weight: 400;
   color: #4A4A4A;
 }
 
-.RentLeadForm .TermsOfService,
-.RentLeadForm .Field-checkbox .Label {
+.Form .TermsOfService,
+.Form .Field-checkbox .Label {
   font-size: 10px;
   font-weight: 600;
   color: #777777;
 }
 
-.RentLeadForm .Field-checkbox .Label {
+.Form .Field-checkbox .Label {
   padding-left: 5px;
   width: 100%;
 }
 
-.RentLeadForm .TermsOfService a {
+.Form .TermsOfService a {
   font-size: 10px;
   text-decoration: none;
   line-height: inherit;
 }
 
-.RentLeadForm  .Field.Field-checkbox {
+.Form  .Field.Field-checkbox {
   display: inline-flex;
   flex-direction: row-reverse;
   margin: 5px;
 }
 
-.RentLeadForm .TermsOfService {
+.Form .TermsOfService {
   margin-left: 5px;
 }
 
-.RentLeadForm .Field-checkbox .Input {
+.Form .Field-checkbox .Input {
   width: auto;
 }
 
-.RentLeadForm .RequiredField {
+.Form .RequiredField {
   line-height: 0;
 }
 
-.RentLeadForm .RequiredField_Label {
+.Form .RequiredField_Label {
   position: relative;
   top: 13px;
   left: 13px;
 }
 
-.RentLeadForm .RequiredField_Label:after {
+.Form .RequiredField_Label:after {
   content: ' *';
   color: #ea5117;
 }
 
-.RentLeadForm .Button {
+.Form .Button {
   margin-top: 10px;
   width: 100%;
   height: auto;

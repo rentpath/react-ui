@@ -1,7 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { RangeSlider } from 'react-ui-core/src'
-import StoryBookTheme from '../theme/Storybook.css'
 
 const wrapper = (props = {}) => {
   /* eslint-disable react/prop-types */
@@ -15,7 +14,6 @@ const wrapper = (props = {}) => {
   return (
     <RangeSlider
       {...props}
-      className={StoryBookTheme['Story-padding']}
       maxValue={maxValue || 20}
       minValue={minValue || 0}
       onChangeComplete={val => action('onChangeComplete')(val)}
@@ -43,7 +41,7 @@ export const MinMaxStepRangeSlider = wrapper({
 
 export const SquareFootSlider = wrapper({
   formatHeader: value => (
-    <h4 className={StoryBookTheme['Story-alignCenter']}>
+    <h4>
       Square Foot {`${value.min} ft - ${value.max} ft+`}
     </h4>
   ),
@@ -58,7 +56,7 @@ export const SquareFootSlider = wrapper({
 
 export const PriceSlider = wrapper({
   formatHeader: value => (
-    <h4 className={StoryBookTheme['Story-alignCenter']}>
+    <h4>
       Price Range {`${value.min} - ${value.max}+`}
     </h4>
   ),

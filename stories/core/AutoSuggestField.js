@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import { AutoSuggestField, Button } from 'react-ui-core/src'
 import { action } from '@storybook/addon-actions'
-import theme from '../theme/core/AutoSuggestField.css'
 
 const ClearButton = props => (<Button {...props}>X</Button>)
 const SubmitButton = props => (<Button {...props}>Submit</Button>)
@@ -69,7 +68,6 @@ export const AutoSuggestFieldClearButton = (
     onSubmit={action('On submit')}
     onSelection={action('On selection')}
     anchorField={{ placeholder: 'choose something...' }}
-    className={theme.clear}
   />
 )
 

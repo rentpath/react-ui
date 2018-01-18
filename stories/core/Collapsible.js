@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { action } from '@storybook/addon-actions'
 import { Field, Collapsible } from 'react-ui-core/src'
-import StoryBookTheme from '../theme/Storybook.css'
 
 class Checkbox extends Component {
   static propTypes = {
@@ -57,7 +56,6 @@ const myNonShowableItems = nonshowableItems.map(renderItem)
 export default (
   <div>
     <Collapsible
-      className={StoryBookTheme['Story-padding']}
       showableItems={myShowableItems}
       nonshowableItems={myNonShowableItems}
       hiddenText="see all amenities"

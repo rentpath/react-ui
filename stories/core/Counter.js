@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button, Counter } from 'react-ui-core/src'
-import StoryBookTheme from '../theme/Storybook.css'
 
 const count = 3
 
@@ -14,7 +13,6 @@ const onClick = currentCount => {
 export const DefaultCounter = (
   <div>
     <Counter
-      className={StoryBookTheme['Story-padding']}
       onClick={onClick}
       label="Bedrooms"
       count={count}
@@ -23,7 +21,6 @@ export const DefaultCounter = (
     <Counter
       decrementOperator={decrementOperator}
       incrementOperator={incrementOperator}
-      className={StoryBookTheme['Story-padding']}
       onClick={onClick}
       label="Bathrooms"
       count={count}
@@ -35,14 +32,12 @@ export const CounterStep = (
   <div>
     <Counter
       onClick={onClick}
-      className={StoryBookTheme['Story-padding']}
       label="Bedrooms (step 2)"
       count={count}
       step={2}
     />
     <Counter
       onClick={onClick}
-      className={StoryBookTheme['Story-padding']}
       label="Bathrooms (step 5)"
       count={count}
       step={5}
@@ -54,7 +49,6 @@ export const CounterText = (
   <div>
     <Counter
       onClick={onClick}
-      className={StoryBookTheme['Story-padding']}
       label="Bedrooms"
       count={count}
       text={num => (
@@ -63,7 +57,6 @@ export const CounterText = (
     />
     <Counter
       onClick={onClick}
-      className={StoryBookTheme['Story-padding']}
       label="Bathrooms"
       count={count}
       text={num => (
@@ -81,7 +74,6 @@ export const CounterCustomButtons = (
       count={count}
       incrementOperator={<Button>+</Button>}
       decrementOperator={<Button>-</Button>}
-      className={StoryBookTheme['Story-padding']}
     />
     <Counter
       onClick={onClick}
@@ -89,7 +81,6 @@ export const CounterCustomButtons = (
       count={count}
       incrementOperator={<Button>+</Button>}
       decrementOperator={<Button>-</Button>}
-      className={StoryBookTheme['Story-padding']}
     />
   </div>
 )

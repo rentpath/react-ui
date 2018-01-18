@@ -8,6 +8,10 @@
   justify-content: space-around;
 }
 
+.List-horizontal .ListItem {
+  width: 100px;
+}
+
 .List-vertical {
   flex-direction: column;
 }
