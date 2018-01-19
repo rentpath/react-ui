@@ -1,0 +1,426 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel navigation does not render navigation if none passed 1`] = `
+<div
+  className=""
+  data-tid="carousel"
+>
+  <div
+    aria-live="polite"
+    className="image-gallery"
+  >
+    <div
+      className="image-gallery-content"
+    >
+      <div
+        className="image-gallery-slide-wrapper bottom"
+      >
+        <div
+          className="image-gallery-swipe"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="image-gallery-slides"
+          >
+            <div
+              className="image-gallery-slide center"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate(0%, 0)",
+                  "OTransform": "translate(0%, 0)",
+                  "WebkitTransform": "translate(0%, 0)",
+                  "msTransform": "translate(0%, 0)",
+                  "transform": "translate(0%, 0)",
+                }
+              }
+            >
+              <div>
+                Test 1
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide right"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate(100%, 0)",
+                  "OTransform": "translate(100%, 0)",
+                  "WebkitTransform": "translate(100%, 0)",
+                  "msTransform": "translate(100%, 0)",
+                  "transform": "translate(100%, 0)",
+                }
+              }
+            >
+              <div>
+                Test 2
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate(200%, 0)",
+                  "OTransform": "translate(200%, 0)",
+                  "WebkitTransform": "translate(200%, 0)",
+                  "msTransform": "translate(200%, 0)",
+                  "transform": "translate(200%, 0)",
+                }
+              }
+            >
+              <div>
+                Test 3
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate(300%, 0)",
+                  "OTransform": "translate(300%, 0)",
+                  "WebkitTransform": "translate(300%, 0)",
+                  "msTransform": "translate(300%, 0)",
+                  "transform": "translate(300%, 0)",
+                }
+              }
+            >
+              <div>
+                Test 4
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel navigation renders navigation buttons based on custom node 1`] = `
+<div
+  className=""
+  data-tid="carousel"
+>
+  <div
+    aria-live="polite"
+    className="image-gallery"
+  >
+    <div
+      className="image-gallery-content"
+    >
+      <div
+        className="image-gallery-slide-wrapper bottom"
+      >
+        <span>
+          <div
+            $$typeof={Symbol(react.element)}
+            _owner={null}
+            _store={Object {}}
+            className=""
+            data-tid="carousel-navigation-previous"
+            disabled={true}
+            onClick={[Function]}
+            props={
+              Object {
+                "children": "Prior",
+                "direction": "previous",
+                "theme": Object {},
+              }
+            }
+            role="button"
+            tabIndex={0}
+            type={[Function]}
+          />
+          <div
+            $$typeof={Symbol(react.element)}
+            _owner={null}
+            _store={Object {}}
+            className=""
+            data-tid="carousel-navigation-next"
+            disabled={false}
+            onClick={[Function]}
+            props={
+              Object {
+                "children": "Upcoming",
+                "direction": "next",
+                "theme": Object {},
+              }
+            }
+            role="button"
+            tabIndex={0}
+            type={[Function]}
+          />
+        </span>
+        <div
+          className="image-gallery-swipe"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="image-gallery-slides"
+          >
+            <div
+              className="image-gallery-slide center"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate(0%, 0)",
+                  "OTransform": "translate(0%, 0)",
+                  "WebkitTransform": "translate(0%, 0)",
+                  "msTransform": "translate(0%, 0)",
+                  "transform": "translate(0%, 0)",
+                }
+              }
+            >
+              <div>
+                Test 1
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide right"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate(100%, 0)",
+                  "OTransform": "translate(100%, 0)",
+                  "WebkitTransform": "translate(100%, 0)",
+                  "msTransform": "translate(100%, 0)",
+                  "transform": "translate(100%, 0)",
+                }
+              }
+            >
+              <div>
+                Test 2
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate(200%, 0)",
+                  "OTransform": "translate(200%, 0)",
+                  "WebkitTransform": "translate(200%, 0)",
+                  "msTransform": "translate(200%, 0)",
+                  "transform": "translate(200%, 0)",
+                }
+              }
+            >
+              <div>
+                Test 3
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate(300%, 0)",
+                  "OTransform": "translate(300%, 0)",
+                  "WebkitTransform": "translate(300%, 0)",
+                  "msTransform": "translate(300%, 0)",
+                  "transform": "translate(300%, 0)",
+                }
+              }
+            >
+              <div>
+                Test 4
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel navigation renders navigation buttons based on object 1`] = `
+<div
+  className=""
+  data-tid="carousel"
+>
+  <div
+    aria-live="polite"
+    className="image-gallery"
+  >
+    <div
+      className="image-gallery-content"
+    >
+      <div
+        className="image-gallery-slide-wrapper bottom"
+      >
+        <span>
+          <div
+            className=""
+            data-tid="carousel-navigation-previous"
+            disabled={true}
+            onClick={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Previous
+          </div>
+          <div
+            className=""
+            data-tid="carousel-navigation-next"
+            disabled={false}
+            onClick={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Next
+          </div>
+        </span>
+        <div
+          className="image-gallery-swipe"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="image-gallery-slides"
+          >
+            <div
+              className="image-gallery-slide center"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate(0%, 0)",
+                  "OTransform": "translate(0%, 0)",
+                  "WebkitTransform": "translate(0%, 0)",
+                  "msTransform": "translate(0%, 0)",
+                  "transform": "translate(0%, 0)",
+                }
+              }
+            >
+              <div>
+                Test 1
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide right"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate(100%, 0)",
+                  "OTransform": "translate(100%, 0)",
+                  "WebkitTransform": "translate(100%, 0)",
+                  "msTransform": "translate(100%, 0)",
+                  "transform": "translate(100%, 0)",
+                }
+              }
+            >
+              <div>
+                Test 2
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate(200%, 0)",
+                  "OTransform": "translate(200%, 0)",
+                  "WebkitTransform": "translate(200%, 0)",
+                  "msTransform": "translate(200%, 0)",
+                  "transform": "translate(200%, 0)",
+                }
+              }
+            >
+              <div>
+                Test 3
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate(300%, 0)",
+                  "OTransform": "translate(300%, 0)",
+                  "WebkitTransform": "translate(300%, 0)",
+                  "msTransform": "translate(300%, 0)",
+                  "transform": "translate(300%, 0)",
+                }
+              }
+            >
+              <div>
+                Test 4
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

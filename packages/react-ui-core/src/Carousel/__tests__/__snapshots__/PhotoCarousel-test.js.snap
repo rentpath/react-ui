@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhotoCarousel when no items renders an empty div when empty array 1`] = `
+<div
+  className={undefined}
+/>
+`;
+
+exports[`PhotoCarousel when no items renders an empty div when null 1`] = `
+<div
+  className={undefined}
+/>
+`;

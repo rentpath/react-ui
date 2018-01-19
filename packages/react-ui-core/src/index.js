@@ -88,3 +88,7 @@ export {
   Highlighter,
 } from './Highlighter'
 
+export {
+  Carousel,
+  PhotoCarousel,
+} from './Carousel'
