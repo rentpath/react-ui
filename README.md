@@ -9,7 +9,6 @@ More Lerna [commands](https://github.com/lerna/lerna#commands). Please use `yarn
 | Package | Version | Description |
 |---------|---------|-------------|
 | [`react-ui-core`](/packages/react-ui-core) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-core.svg)](https://www.npmjs.com/package/@rentpath/react-ui-core) | Core components for generic usage|
-| [`react-ui-map`](/packages/react-ui-map) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-map.svg)](https://www.npmjs.com/package/@rentpath/react-ui-map) | Map compoonents for RentPath usage|
 | [`react-ui-rent`](/packages/react-ui-rent) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-rent.svg)](https://www.npmjs.com/package/@rentpath/react-ui-rent) | Rent.com specific components|
 | [`react-ui-rentals`](/packages/react-ui-rentals) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-rentals.svg)](https://www.npmjs.com/package/@rentpath/react-ui-rentals) | Rentals.com specific components|
 | [`react-ui-ag`](/packages/react-ui-ag) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-ag.svg)](https://www.npmjs.com/package/@rentpath/react-ui-ag) | Apartmentguide.com specific components|

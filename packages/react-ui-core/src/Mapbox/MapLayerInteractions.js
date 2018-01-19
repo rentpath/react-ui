@@ -1,7 +1,8 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
+import autobind from 'autobind-decorator'
 
-export default class LayerInteractions extends Component {
+export default class MapLayerInteractions extends Component {
   static propTypes = {
     defaultMarkerId: PropTypes.string,
     activeMarkerId: PropTypes.string,
@@ -11,12 +12,6 @@ export default class LayerInteractions extends Component {
     map: PropTypes.object,
   }
 
-  constructor(props, context) {
-    super(props, context)
-
-    this.moveToAndFilterMarker = this.moveToAndFilterMarker.bind(this)
-  }
-
   componentDidMount() {
     const { map } = this.context
     const { defaultMarkerId } = this.props
@@ -24,6 +19,7 @@ export default class LayerInteractions extends Component {
     map.on('click', defaultMarkerId, this.moveToAndFilterMarker)
   }
 
+  @autobind
   moveToAndFilterMarker(event) {
     const { map } = this.context
     const { activeMarkerId } = this.props

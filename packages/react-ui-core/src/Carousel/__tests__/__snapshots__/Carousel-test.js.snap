@@ -7,7 +7,7 @@ exports[`Carousel navigation does not render navigation if none passed 1`] = `
 >
   <div
     aria-live="polite"
-    className="image-gallery"
+    className="image-gallery "
   >
     <div
       className="image-gallery-content"
@@ -33,13 +33,14 @@ exports[`Carousel navigation does not render navigation if none passed 1`] = `
               onTouchEnd={undefined}
               onTouchMove={undefined}
               onTouchStart={undefined}
+              role={undefined}
               style={
                 Object {
-                  "MozTransform": "translate(0%, 0)",
-                  "OTransform": "translate(0%, 0)",
-                  "WebkitTransform": "translate(0%, 0)",
-                  "msTransform": "translate(0%, 0)",
-                  "transform": "translate(0%, 0)",
+                  "MozTransform": "translate3d(0%, 0, 0)",
+                  "OTransform": "translate3d(0%, 0, 0)",
+                  "WebkitTransform": "translate3d(0%, 0, 0)",
+                  "msTransform": "translate3d(0%, 0, 0)",
+                  "transform": "translate3d(0%, 0, 0)",
                 }
               }
             >
@@ -55,13 +56,14 @@ exports[`Carousel navigation does not render navigation if none passed 1`] = `
               onTouchEnd={undefined}
               onTouchMove={undefined}
               onTouchStart={undefined}
+              role={undefined}
               style={
                 Object {
-                  "MozTransform": "translate(100%, 0)",
-                  "OTransform": "translate(100%, 0)",
-                  "WebkitTransform": "translate(100%, 0)",
-                  "msTransform": "translate(100%, 0)",
-                  "transform": "translate(100%, 0)",
+                  "MozTransform": "translate3d(100%, 0, 0)",
+                  "OTransform": "translate3d(100%, 0, 0)",
+                  "WebkitTransform": "translate3d(100%, 0, 0)",
+                  "msTransform": "translate3d(100%, 0, 0)",
+                  "transform": "translate3d(100%, 0, 0)",
                 }
               }
             >
@@ -77,13 +79,14 @@ exports[`Carousel navigation does not render navigation if none passed 1`] = `
               onTouchEnd={undefined}
               onTouchMove={undefined}
               onTouchStart={undefined}
+              role={undefined}
               style={
                 Object {
-                  "MozTransform": "translate(200%, 0)",
-                  "OTransform": "translate(200%, 0)",
-                  "WebkitTransform": "translate(200%, 0)",
-                  "msTransform": "translate(200%, 0)",
-                  "transform": "translate(200%, 0)",
+                  "MozTransform": "translate3d(200%, 0, 0)",
+                  "OTransform": "translate3d(200%, 0, 0)",
+                  "WebkitTransform": "translate3d(200%, 0, 0)",
+                  "msTransform": "translate3d(200%, 0, 0)",
+                  "transform": "translate3d(200%, 0, 0)",
                 }
               }
             >
@@ -99,13 +102,14 @@ exports[`Carousel navigation does not render navigation if none passed 1`] = `
               onTouchEnd={undefined}
               onTouchMove={undefined}
               onTouchStart={undefined}
+              role={undefined}
               style={
                 Object {
-                  "MozTransform": "translate(300%, 0)",
-                  "OTransform": "translate(300%, 0)",
-                  "WebkitTransform": "translate(300%, 0)",
-                  "msTransform": "translate(300%, 0)",
-                  "transform": "translate(300%, 0)",
+                  "MozTransform": "translate3d(300%, 0, 0)",
+                  "OTransform": "translate3d(300%, 0, 0)",
+                  "WebkitTransform": "translate3d(300%, 0, 0)",
+                  "msTransform": "translate3d(300%, 0, 0)",
+                  "transform": "translate3d(300%, 0, 0)",
                 }
               }
             >
@@ -128,7 +132,7 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
 >
   <div
     aria-live="polite"
-    className="image-gallery"
+    className="image-gallery "
   >
     <div
       className="image-gallery-content"
@@ -194,13 +198,14 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
               onTouchEnd={undefined}
               onTouchMove={undefined}
               onTouchStart={undefined}
+              role={undefined}
               style={
                 Object {
-                  "MozTransform": "translate(0%, 0)",
-                  "OTransform": "translate(0%, 0)",
-                  "WebkitTransform": "translate(0%, 0)",
-                  "msTransform": "translate(0%, 0)",
-                  "transform": "translate(0%, 0)",
+                  "MozTransform": "translate3d(0%, 0, 0)",
+                  "OTransform": "translate3d(0%, 0, 0)",
+                  "WebkitTransform": "translate3d(0%, 0, 0)",
+                  "msTransform": "translate3d(0%, 0, 0)",
+                  "transform": "translate3d(0%, 0, 0)",
                 }
               }
             >
@@ -216,13 +221,14 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
               onTouchEnd={undefined}
               onTouchMove={undefined}
               onTouchStart={undefined}
+              role={undefined}
               style={
                 Object {
-                  "MozTransform": "translate(100%, 0)",
-                  "OTransform": "translate(100%, 0)",
-                  "WebkitTransform": "translate(100%, 0)",
-                  "msTransform": "translate(100%, 0)",
-                  "transform": "translate(100%, 0)",
+                  "MozTransform": "translate3d(100%, 0, 0)",
+                  "OTransform": "translate3d(100%, 0, 0)",
+                  "WebkitTransform": "translate3d(100%, 0, 0)",
+                  "msTransform": "translate3d(100%, 0, 0)",
+                  "transform": "translate3d(100%, 0, 0)",
                 }
               }
             >
@@ -238,13 +244,14 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
               onTouchEnd={undefined}
               onTouchMove={undefined}
               onTouchStart={undefined}
+              role={undefined}
               style={
                 Object {
-                  "MozTransform": "translate(200%, 0)",
-                  "OTransform": "translate(200%, 0)",
-                  "WebkitTransform": "translate(200%, 0)",
-                  "msTransform": "translate(200%, 0)",
-                  "transform": "translate(200%, 0)",
+                  "MozTransform": "translate3d(200%, 0, 0)",
+                  "OTransform": "translate3d(200%, 0, 0)",
+                  "WebkitTransform": "translate3d(200%, 0, 0)",
+                  "msTransform": "translate3d(200%, 0, 0)",
+                  "transform": "translate3d(200%, 0, 0)",
                 }
               }
             >
@@ -260,13 +267,14 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
               onTouchEnd={undefined}
               onTouchMove={undefined}
               onTouchStart={undefined}
+              role={undefined}
               style={
                 Object {
-                  "MozTransform": "translate(300%, 0)",
-                  "OTransform": "translate(300%, 0)",
-                  "WebkitTransform": "translate(300%, 0)",
-                  "msTransform": "translate(300%, 0)",
-                  "transform": "translate(300%, 0)",
+                  "MozTransform": "translate3d(300%, 0, 0)",
+                  "OTransform": "translate3d(300%, 0, 0)",
+                  "WebkitTransform": "translate3d(300%, 0, 0)",
+                  "msTransform": "translate3d(300%, 0, 0)",
+                  "transform": "translate3d(300%, 0, 0)",
                 }
               }
             >
@@ -289,7 +297,7 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
 >
   <div
     aria-live="polite"
-    className="image-gallery"
+    className="image-gallery "
   >
     <div
       className="image-gallery-content"
@@ -337,13 +345,14 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
               onTouchEnd={undefined}
               onTouchMove={undefined}
               onTouchStart={undefined}
+              role={undefined}
               style={
                 Object {
-                  "MozTransform": "translate(0%, 0)",
-                  "OTransform": "translate(0%, 0)",
-                  "WebkitTransform": "translate(0%, 0)",
-                  "msTransform": "translate(0%, 0)",
-                  "transform": "translate(0%, 0)",
+                  "MozTransform": "translate3d(0%, 0, 0)",
+                  "OTransform": "translate3d(0%, 0, 0)",
+                  "WebkitTransform": "translate3d(0%, 0, 0)",
+                  "msTransform": "translate3d(0%, 0, 0)",
+                  "transform": "translate3d(0%, 0, 0)",
                 }
               }
             >
@@ -359,13 +368,14 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
               onTouchEnd={undefined}
               onTouchMove={undefined}
               onTouchStart={undefined}
+              role={undefined}
               style={
                 Object {
-                  "MozTransform": "translate(100%, 0)",
-                  "OTransform": "translate(100%, 0)",
-                  "WebkitTransform": "translate(100%, 0)",
-                  "msTransform": "translate(100%, 0)",
-                  "transform": "translate(100%, 0)",
+                  "MozTransform": "translate3d(100%, 0, 0)",
+                  "OTransform": "translate3d(100%, 0, 0)",
+                  "WebkitTransform": "translate3d(100%, 0, 0)",
+                  "msTransform": "translate3d(100%, 0, 0)",
+                  "transform": "translate3d(100%, 0, 0)",
                 }
               }
             >
@@ -381,13 +391,14 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
               onTouchEnd={undefined}
               onTouchMove={undefined}
               onTouchStart={undefined}
+              role={undefined}
               style={
                 Object {
-                  "MozTransform": "translate(200%, 0)",
-                  "OTransform": "translate(200%, 0)",
-                  "WebkitTransform": "translate(200%, 0)",
-                  "msTransform": "translate(200%, 0)",
-                  "transform": "translate(200%, 0)",
+                  "MozTransform": "translate3d(200%, 0, 0)",
+                  "OTransform": "translate3d(200%, 0, 0)",
+                  "WebkitTransform": "translate3d(200%, 0, 0)",
+                  "msTransform": "translate3d(200%, 0, 0)",
+                  "transform": "translate3d(200%, 0, 0)",
                 }
               }
             >
@@ -403,13 +414,14 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
               onTouchEnd={undefined}
               onTouchMove={undefined}
               onTouchStart={undefined}
+              role={undefined}
               style={
                 Object {
-                  "MozTransform": "translate(300%, 0)",
-                  "OTransform": "translate(300%, 0)",
-                  "WebkitTransform": "translate(300%, 0)",
-                  "msTransform": "translate(300%, 0)",
-                  "transform": "translate(300%, 0)",
+                  "MozTransform": "translate3d(300%, 0, 0)",
+                  "OTransform": "translate3d(300%, 0, 0)",
+                  "WebkitTransform": "translate3d(300%, 0, 0)",
+                  "msTransform": "translate3d(300%, 0, 0)",
+                  "transform": "translate3d(300%, 0, 0)",
                 }
               }
             >

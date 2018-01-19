@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export default class Source extends Component {
+export default class MapSource extends Component {
   static propTypes = {
     id: PropTypes.string,
     type: PropTypes.string,

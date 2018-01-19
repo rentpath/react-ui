@@ -1,9 +1,9 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import Layer from '../Layer'
+import MapLayer from '../MapLayer'
 
-describe('<Layer />', () => {
-  it('renders with a layer', () => {
+describe('MapLayer', () => {
+  it('renders with a MapLayer', () => {
     const props = {
       layer: { foo: 'bar' },
     }
@@ -14,7 +14,7 @@ describe('<Layer />', () => {
         removeLayer: () => true,
       },
     }
-    const wrapper = mount(<Layer {...props} />, { context })
+    const wrapper = mount(<MapLayer {...props} />, { context })
     expect(wrapper.prop('layer')).toEqual({ foo: 'bar' })
   })
 })

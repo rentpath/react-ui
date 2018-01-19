@@ -1,8 +1,8 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import Source from '../Source'
+import MapSource from '../MapSource'
 
-describe('<Source />', () => {
+describe('MapSource', () => {
   it('renders with an id', () => {
     const props = {
       id: 'atlanta',
@@ -15,7 +15,7 @@ describe('<Source />', () => {
         getSource: () => true,
       },
     }
-    const wrapper = mount(<Source {...props} />, { context })
+    const wrapper = mount(<MapSource {...props} />, { context })
     expect(wrapper.prop('id')).toEqual('atlanta')
   })
 
@@ -31,7 +31,7 @@ describe('<Source />', () => {
         getSource: () => true,
       },
     }
-    const wrapper = mount(<Source {...props} />, { context })
+    const wrapper = mount(<MapSource {...props} />, { context })
     expect(wrapper.prop('type')).toEqual('geojson')
   })
 
@@ -47,7 +47,7 @@ describe('<Source />', () => {
         getSource: () => true,
       },
     }
-    const wrapper = mount(<Source {...props} />, { context })
+    const wrapper = mount(<MapSource {...props} />, { context })
     expect(wrapper.prop('data')).toEqual({ foo: 'bar' })
   })
 
@@ -69,7 +69,7 @@ describe('<Source />', () => {
         }),
       },
     }
-    const wrapper = mount(<Source {...props} />, { context })
+    const wrapper = mount(<MapSource {...props} />, { context })
     const newProps = { data: { bumble: 'bee' } }
     wrapper.setProps(newProps)
     expect(mock.setData).toHaveBeenCalledWith(newProps.data)
