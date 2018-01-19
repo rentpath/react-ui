@@ -1,7 +1,0 @@
-yarn.lock
-src
-__tests__
-packages/**/yarn.lock
-packages/**/package-lock.json
-.coveralls.yml
-coverage
