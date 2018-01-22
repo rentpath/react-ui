@@ -19,14 +19,14 @@ const LargeThemeDecorator = storyFn => (
 
 export const largeStories = (name, mod) => (
   storiesOf(`react-ui-rent / ${name}`, mod)
-    .addDecorator(story => <Container story={story} />)
     .addDecorator((story, context) => withInfo(name)(story)(context))
+    .addDecorator(story => <Container story={story} />)
     .addDecorator(LargeThemeDecorator)
 )
 
 export const smallStories = (name, mod) => (
   storiesOf(`react-ui-rent / ${name}`, mod)
-    .addDecorator(story => <Container story={story} />)
     .addDecorator((story, context) => withInfo(name)(story)(context))
+    .addDecorator(story => <Container story={story} />)
     .addDecorator(SmallThemeDecorator)
 )

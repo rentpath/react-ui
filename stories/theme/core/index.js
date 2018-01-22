@@ -27,6 +27,7 @@ import AutoSuggestField from './AutoSuggestField.css'
 import Highlighter from './Highlighter.css'
 import ToggleButton from './ToggleButton.css'
 import Carousel from './Carousel.css'
+import Mapbox from './Mapbox.css'
 
 export default compose({},
   Label,
@@ -57,4 +58,5 @@ export default compose({},
   Highlighter,
   AutoSuggestField,
   ToggleButton,
+  Mapbox,
 )

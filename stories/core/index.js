@@ -111,6 +111,8 @@ import {
   PhotoCarouselExample,
 } from './Carousel'
 
+import MapPage from './Mapbox'
+
 import coreStories from './coreStories'
 
 coreStories('AutoSuggestField', module)
@@ -174,6 +176,9 @@ coreStories('List', module)
   .add('Horizontal List', () => HorizontalList)
   .add('Custom Node Type List', () => ListWithPassedNodeTypes)
   .add('Custom ListItem List', () => ListWithOwnItemComponent)
+
+coreStories('Mapbox', module)
+  .add('Mapbox', () => MapPage)
 
 coreStories('Menu', module)
   .add('Menu', () => DefaultMenu)

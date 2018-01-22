@@ -25,21 +25,21 @@ const ExampleThemeDecorator = storyFn => (
 
 export const exampleStories = (name, mod) => (
   storiesOf(`react-ui-ag / ${name}`, mod)
-    .addDecorator(story => <Container story={story} />)
     .addDecorator((story, context) => withInfo(name)(story)(context))
+    .addDecorator(story => <Container story={story} />)
     .addDecorator(ExampleThemeDecorator)
 )
 
 export const largeStories = (name, mod) => (
   storiesOf(`react-ui-ag / ${name}`, mod)
-    .addDecorator(story => <Container story={story} />)
     .addDecorator((story, context) => withInfo(name)(story)(context))
+    .addDecorator(story => <Container story={story} />)
     .addDecorator(LargeThemeDecorator)
 )
 
 export const smallStories = (name, mod) => (
   storiesOf(`react-ui-ag / ${name}`, mod)
-    .addDecorator(story => <Container story={story} />)
     .addDecorator((story, context) => withInfo(name)(story)(context))
+    .addDecorator(story => <Container story={story} />)
     .addDecorator(SmallThemeDecorator)
 )

@@ -13,7 +13,7 @@ const CoreThemeDecorator = storyFn => (
 
 export default (name, mod) => (
   storiesOf(`react-ui-core / ${name}`, mod)
+    .addDecorator((story, context) => withInfo(name)(story)(context))
     .addDecorator(story => <Container story={story} />)
-    .addDecorator((story, context) => withInfo(mod)(story)(context))
     .addDecorator(CoreThemeDecorator)
 )

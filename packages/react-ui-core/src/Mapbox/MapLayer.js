@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export default class Layer extends Component {
+export default class MapLayer extends Component {
   static propTypes = {
     layer: PropTypes.object,
   }

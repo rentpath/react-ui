@@ -1,5 +1,10 @@
 import React from 'react'
-import { Mapbox, LayerInteractions, Source, Layer } from 'react-ui-map/src'
+import {
+  Mapbox,
+  MapLayerInteractions,
+  MapSource,
+  MapLayer,
+} from 'react-ui-core/src'
 
 const mapSourceData = {
   type: 'FeatureCollection',
@@ -80,12 +85,12 @@ export default (
     style={style}
     zoom={zoom}
   >
-    <LayerInteractions
+    <MapLayerInteractions
       defaultMarkerId={defaultMarkerId}
       activeMarkerId={activeMarkerId}
     />
-    <Source id="markers" type="geojson" data={mapSourceData} />
-    <Layer layer={markersDefaultData} />
-    <Layer layer={markersActiveData} />
+    <MapSource id="markers" type="geojson" data={mapSourceData} />
+    <MapLayer layer={markersDefaultData} />
+    <MapLayer layer={markersActiveData} />
   </Mapbox>
 )
