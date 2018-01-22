@@ -3,10 +3,9 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "clean": "lerna run clean --yes",
     "build": "lerna run build",
-    "test": "jest",
-    "test:coverage": "node node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "build-storybook": "build-storybook -c .storybook -s .storybook/dist -o build",
+    "clean": "lerna run clean --yes",
     "lint": "yarn run lint:js && yarn run lint:css",
     "lint:css": "stylelint \"**/*.css\"",
     "lint:css:fix": "stylelint \"**/*.css\" --fix",
@@ -16,8 +15,11 @@
     "postinstall": "lerna bootstrap",
     "prepublish": "lerna run clean --yes && lerna run build",
     "publish-packages": "lerna publish --exact --conventional-commits --registry=https://registry.npmjs.org/",
+    "report-coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "storybook": "start-storybook -p 6006 -c .storybook -s ./.storybook/dist",
-    "build-storybook": "build-storybook"
+    "test": "./node_modules/.bin/jest --coverage",
+    "test:ci": "./node_modules/.bin/jest --coverage --maxWorkers=2 && yarn run report-coverage",
+    "test:coverage": "yarn run test && yarn run report-coverage"
   },
   "jest": {
     "collectCoverageFrom": [

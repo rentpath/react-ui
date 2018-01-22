@@ -1,7 +1,23 @@
 language: node_js
 node_js:
-  - "6"
+  - "node"
+  - "lts/*"
+cache: yarn
+
+env:
+  matrix:
+    secure: uM12n/1PCNKTXOj8vD4l42Tq7cdpFmk0KDgkEkQBh+MSlDU1VAoYFV81gVRvZN4aA7wXxpLUxEKoG34gFi3g0cy8vHHWwAYi3bZYaRoUMmcSoeqCiyvV2Y4PA0Xp2eOVPwonG7msXcX+3av2JRKbIT15MVredMb07vYa5kshIjAMS6+qgok69JUVue9g+xjmoQG7XTy9sYr+lCZQJEgcVbZaaT27aGm64vFSN1pyZOdQxB4l35xkewxcr6YcMEm80Xh5ehwGHANvznAR5Mmk4ulF/aySUe2a0C829gjdewr4cDiLiCqAjBeKHKRX7eT1wDZRBqp+uGmmRwaRjoMeQR0Nq5TW2Eizhe/bcg4dNaSgTjnMGmhtcHJmLDkCH0qA61YEQt1Z9oSsiPIKQiuFcHC3teMBToZKlQgDABklI93Nw0rQ8uJsqeeARsD2lgrrFGYigoYWEGd7fik5kesnTDa3EN5Tffp9Ffkfq5y8j0ZDCFWDm/ZvWs+f0rY6+ZmQHdzJL2Rqtzj/puq/1WB8PMRwiZvTcX+0I8yi9Awi2QMkDYIjbhxFeLYURGqpQUoTKtvMVPAZEJTQMoQBmehNTathNeaFvKzgDu9VdVn84/swBXPdH/TWJv8N+haEp+esuIgtN80iGM7t4vphcP2fnFzh9zYCQBw/rskPPhdIvoI=
+
 script:
   - yarn run lint
-  - yarn run test
-cache: yarn
+  - yarn run test:ci
+  - yarn run build-storybook
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set env matrix, marked secure
+  keep-history: true
+  local-dir: build
+  on:
+    branch: master
