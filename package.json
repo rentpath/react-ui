@@ -5,8 +5,8 @@
   "scripts": {
     "clean": "lerna run clean --yes",
     "build": "lerna run build",
-    "test": "NODE_ENV=test jest",
-    "test:coverage": "NODE_ENV=test node node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test": "jest",
+    "test:coverage": "node node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "yarn run lint:js && yarn run lint:css",
     "lint:css": "stylelint \"**/*.css\"",
     "lint:css:fix": "stylelint \"**/*.css\" --fix",
