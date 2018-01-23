@@ -15,8 +15,6 @@ describe('Drawer', () => {
 
     const wrapper = mount(<Drawer {...props} />)
 
-    console.log(wrapper.debug())
-
     expect(wrapper.hasClass('Drawer')).toBeTruthy()
     expect(wrapper.find('[data-tid="drawer-content"]').contains([<div>Content</div>])).toBeTruthy()
   })

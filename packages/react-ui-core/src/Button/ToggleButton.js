@@ -57,8 +57,6 @@ export default class ToggleButton extends Component {
       ...props
     } = this.props
 
-    console.log(theme)
-
     return (
       <Button
         onClick={this.toggle}

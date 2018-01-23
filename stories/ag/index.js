@@ -99,15 +99,8 @@ storiesOf('react-ui-ag / Banners / Banner', module)
   .add('Default Banner', () => DefaultBanner)
   .add('Banner With Node as Name', () => BannerWithNode)
 
-<<<<<<< HEAD
 storiesOf('react-ui-ag / Drawer / DefaultDrawer', module)
   .addDecorator((story, context) => withInfo('Banner')(story)(context))
   .addDecorator(AgThemeExamplesDecorator)
   .add('Drawer', () => DefaultDrawer)
-=======
-storiesOf('react-ui-ag / Toggle DropDown / DefaultToggleDropDown', module)
-  .addDecorator((story, context) => withInfo('Banner')(story)(context))
-  .addDecorator(AgThemeExamplesDecorator)
-  .add('Toggle Drop Down', () => DefaultToggleDropDown)
->>>>>>> 0fef51ef595e9a16e6c4ad0dda336742aed6f11d
 
