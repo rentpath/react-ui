@@ -43,7 +43,7 @@ describe('Drawer', () => {
     expect(wrapper.find('[data-tid="toggle-button"]').first().hasClass('ToggleButton-off')).toBeTruthy()
   })
 
-  it('It fires callback function which returns alternating true and false', () => {
+  it('fires callback function which returns alternating true and false', () => {
     const props = {
       theme,
       className: theme.Drawer,
