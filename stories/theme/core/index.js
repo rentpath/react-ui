@@ -28,6 +28,7 @@ import Highlighter from './Highlighter.css'
 import ToggleButton from './ToggleButton.css'
 import Carousel from './Carousel.css'
 import Mapbox from './Mapbox.css'
+import ListingCell from './ListingCell.css'
 
 export default compose({},
   Label,
@@ -59,4 +60,5 @@ export default compose({},
   AutoSuggestField,
   ToggleButton,
   Mapbox,
+  ListingCell,
 )

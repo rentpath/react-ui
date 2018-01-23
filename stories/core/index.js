@@ -113,6 +113,11 @@ import {
 
 import MapPage from './Mapbox'
 
+import {
+  DefaultListingCell,
+  ThemedListingCell,
+} from './ListingCell'
+
 import coreStories from './coreStories'
 
 coreStories('AutoSuggestField', module)
@@ -177,6 +182,10 @@ coreStories('List', module)
   .add('Custom Node Type List', () => ListWithPassedNodeTypes)
   .add('Custom ListItem List', () => ListWithOwnItemComponent)
 
+coreStories('ListingCell', module)
+  .add('Default', () => DefaultListingCell)
+  .add('Themed', () => ThemedListingCell)
+
 coreStories('Mapbox', module)
   .add('Mapbox', () => MapPage)
 
@@ -220,4 +229,3 @@ coreStories('Text', module)
 coreStories('Title', module)
   .add('Title', () => DefaultTitle)
   .add('Link Title', () => EmbeddedLinkWithinTitle)
-

@@ -1,0 +1,22 @@
+.ListingCell {
+  border: 1px solid black;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ListingCell .Bathroom {
+  color: red;
+}
+
+.ListingCell .RatingBar_Items {
+  display: flex;
+  flex-direction: row;
+}
+
+.SideBySideListingCell_BedBath {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
