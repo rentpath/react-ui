@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.3.3...@rentpath/react-ui-ag@0.4.0) (2018-01-23)
+
+
+### Features
+
+* **Hybrid Map:** create a hideable Drawer in react-ui-core ([51514a7](https://github.com/rentpath/react-ui/commit/51514a7))
+
+
+
+
 <a name="0.3.3"></a>
 ## [0.3.3](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.3.2...@rentpath/react-ui-ag@0.3.3) (2018-01-22)
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.1.0"></a>
+# [4.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.0.0...@rentpath/react-ui-core@4.1.0) (2018-01-23)
+
+
+### Features
+
+* **Create Listing Cell component and ListingComponents:** create ListingCell ([8d0a592](https://github.com/rentpath/react-ui/commit/8d0a592))
+* **Hybrid Map:** create a hideable Drawer in react-ui-core ([51514a7](https://github.com/rentpath/react-ui/commit/51514a7))
+
+
+
+
 <a name="4.0.0"></a>
 # [4.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@3.4.0...@rentpath/react-ui-core@4.0.0) (2018-01-22)
 

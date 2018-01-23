@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-ag",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@rentpath/eslint-config-rentpath": "3.0.1",
-    "@rentpath/react-ui-core": "4.0.0",
+    "@rentpath/react-ui-core": "4.1.0",
     "autobind-decorator": "2.1.0",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
