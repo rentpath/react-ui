@@ -19,6 +19,9 @@ import {
   BathroomFilterCard,
   PriceFilterCard,
 } from './Filters'
+import Banner from './Banner.css'
+
+import MobileMapListing from './MobileMapListing.css'
 
 export default compose({},
   ApplyButtonBase,
@@ -37,4 +40,6 @@ export default compose({},
   RadioButton,
   RadioGroup,
   RadioGroupBase,
+  MobileMapListing,
+  Banner,
 )

@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
+import { Button } from '../Button'
 
 @themed(/^CarouselNavigation/, {
   pure: true,
@@ -30,7 +31,7 @@ export default class CarouselNavigation extends PureComponent {
     } = this.props
 
     return (
-      <div
+      <Button
         data-tid={`carousel-navigation-${direction}`}
         className={classnames(
           className,
@@ -42,7 +43,7 @@ export default class CarouselNavigation extends PureComponent {
         {...rest}
       >
         {children}
-      </div>
+      </Button>
     )
   }
 }

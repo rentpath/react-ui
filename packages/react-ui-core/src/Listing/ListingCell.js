@@ -4,14 +4,17 @@ import classnames from 'classnames'
 import themed from 'react-themed'
 import isEqual from 'lodash/isEqual'
 import pick from 'lodash/pick'
+import autobind from 'autobind-decorator'
 
 @themed(/^ListingCell/, { pure: true })
+
 export default class ListingCell extends Component {
   static propTypes = {
     listing: PropTypes.object,
     children: PropTypes.node,
     theme: PropTypes.object,
     className: PropTypes.string,
+    onClick: PropTypes.func,
   }
 
   static childContextTypes = {
@@ -54,13 +57,31 @@ export default class ListingCell extends Component {
     return !isEqual(nextProps.listing, this.props.listing)
   }
 
+  @autobind
+  handleClick(event) {
+    const { onClick } = this.props
+
+    if (!onClick) return
+
+    if (!event || event.target.tagName !== 'BUTTON') onClick()
+  }
+
   render() {
-    const { theme, className, children, listing, ...props } = this.props
+    const {
+      theme,
+      className,
+      children,
+      listing,
+      onClick,
+      ...props
+    } = this.props
 
     return (
       <div
         className={classnames(theme.ListingCell, className)}
         data-tid="listing-cell"
+        role="presentation"
+        onClick={this.handleClick}
         {...props}
       >
         {children}

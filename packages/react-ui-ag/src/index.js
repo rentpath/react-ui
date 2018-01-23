@@ -14,3 +14,4 @@ export {
 
 export { Banner } from './Banners'
 
+export { MobileMapListing } from './Listing'
