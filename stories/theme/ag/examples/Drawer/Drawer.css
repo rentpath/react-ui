@@ -14,11 +14,11 @@
   margin-bottom: 9.5px;
 }
 
-.Drawer .Drawer_Content{
+.Drawer .Drawer_Content {
   width: 100%;
 }
 
-.Drawer .Drawer_Content div{
+.Drawer .Drawer_Content div {
   width: 200px;
   height: 200px;
   border: solid 1px black;
