@@ -1,11 +1,10 @@
-import React, { createElement } from 'react'
+import React from 'react'
 import { Motion, spring } from 'react-motion'
 import themed from 'react-themed'
 import PropTypes from 'prop-types'
 import { ToggleButton } from '@rentpath/react-ui-core'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
-import { parseArgs } from '@rentpath/react-ui-utils'
 
 @themed(/^Drawer/, {
   pure: true,
@@ -62,6 +61,9 @@ export default class Drawer extends React.Component {
       children,
       movementDamping,
       movementStiffness,
+      closeButtonContents,
+      openButtonContents,
+
     } = this.props
 
     return (
@@ -86,7 +88,7 @@ export default class Drawer extends React.Component {
                   onClick={this.handleToggle}
                   value={visible}
                 >
-                  {(this.state.visible) ? this.props.closeButtonContents : this.props.openButtonContents}
+                  {(this.state.visible) ? closeButtonContents : openButtonContents}
                 </ToggleButton>
                 { (x < height - 0.1) && <div
                   className={classnames(theme.Drawer_Content)}
