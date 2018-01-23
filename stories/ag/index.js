@@ -61,3 +61,4 @@ largeStories('Filters / PriceFilterDropdown / large', module)
 exampleStories('Banners / Banner', module)
   .add('Default Banner', () => DefaultBanner)
   .add('Banner With Node as Name', () => BannerWithNode)
+

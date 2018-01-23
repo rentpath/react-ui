@@ -118,6 +118,8 @@ import {
   ThemedListingCell,
 } from './ListingCell'
 
+import { DefaultDrawer } from './Drawer'
+
 import coreStories from './coreStories'
 
 coreStories('AutoSuggestField', module)
@@ -229,3 +231,6 @@ coreStories('Text', module)
 coreStories('Title', module)
   .add('Title', () => DefaultTitle)
   .add('Link Title', () => EmbeddedLinkWithinTitle)
+
+coreStories('Drawers / Drawer', module)
+  .add('Default Drawer', () => DefaultDrawer)

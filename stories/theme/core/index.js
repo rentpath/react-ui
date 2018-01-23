@@ -29,6 +29,7 @@ import ToggleButton from './ToggleButton.css'
 import Carousel from './Carousel.css'
 import Mapbox from './Mapbox.css'
 import ListingCell from './ListingCell.css'
+import Drawer from './Drawer.css'
 
 export default compose({},
   Label,
@@ -61,4 +62,5 @@ export default compose({},
   ToggleButton,
   Mapbox,
   ListingCell,
+  Drawer,
 )
