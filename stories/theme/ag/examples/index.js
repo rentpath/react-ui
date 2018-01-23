@@ -8,3 +8,4 @@ export default compose({},
   FilterCard,
   Banner,
 )
+

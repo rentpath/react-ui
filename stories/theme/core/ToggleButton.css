@@ -3,8 +3,9 @@
   padding: 0;
   border: 0 none;
   background-color: transparent;
-  color: #fff;
+  color: rgb(85, 8, 8);
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  font-size: 20px;
 }
 
 .ToggleButton-on svg {
