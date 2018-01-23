@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Motion, spring } from 'react-motion'
 import themed from 'react-themed'
 import PropTypes from 'prop-types'
@@ -10,7 +10,7 @@ import autobind from 'autobind-decorator'
   pure: true,
 })
 
-export default class Drawer extends React.Component {
+export default class Drawer extends Component {
 
   static propTypes = {
     className: PropTypes.string,
