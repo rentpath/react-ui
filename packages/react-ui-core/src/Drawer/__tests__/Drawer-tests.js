@@ -20,7 +20,7 @@ describe('Drawer', () => {
     expect(wrapper.find('[data-tid="drawer-content"]').contains([props.children])).toBeTruthy()
   })
 
-  it.only('sets the default state to toggled on', () => {
+  it('sets the default state to toggled on', () => {
     const props = {
       theme,
       className: theme.Drawer,

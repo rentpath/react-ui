@@ -1,0 +1,8 @@
+.Banner {
+  border-radius: 5px;
+  font-size: 10px;
+  padding: 3px 6px;
+  background-color: rgba(74, 74, 74, 0.8);
+  box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.15);
+  color: #FFF;
+}

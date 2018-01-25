@@ -17,6 +17,8 @@ import {
   DesktopPriceFilterDropdown,
 } from './Filters'
 
+import { ExampleMobileMapListing } from './Listings'
+
 import {
   DefaultBanner,
   BannerWithNode,
@@ -50,6 +52,9 @@ largeStories('Filters / PriceFilterCard / large', module)
 smallStories('Filters / PriceFilterCard / small', module)
   .add('Price Filter', () => InlinePriceFilterCard)
 
+smallStories('Listings', module)
+  .add('Mobile Map Listing', () => ExampleMobileMapListing)
+
 largeStories('Filters / RadioGroupDropdown / large', module)
   .add('Beds', () => DesktopBedroomDropdown)
   .add('Baths', () => DesktopBathroomDropdown)
@@ -58,7 +63,6 @@ largeStories('Filters / RadioGroupDropdown / large', module)
 largeStories('Filters / PriceFilterDropdown / large', module)
   .add('Price Filter', () => DesktopPriceFilterDropdown)
 
-exampleStories('Banners / Banner', module)
+smallStories('Banner', module)
   .add('Default Banner', () => DefaultBanner)
   .add('Banner With Node as Name', () => BannerWithNode)
-

@@ -141,7 +141,7 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
         className="image-gallery-slide-wrapper bottom"
       >
         <span>
-          <div
+          <button
             $$typeof={Symbol(react.element)}
             _owner={null}
             _store={Object {}}
@@ -160,7 +160,7 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
             tabIndex={0}
             type={[Function]}
           />
-          <div
+          <button
             $$typeof={Symbol(react.element)}
             _owner={null}
             _store={Object {}}
@@ -306,7 +306,7 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
         className="image-gallery-slide-wrapper bottom"
       >
         <span>
-          <div
+          <button
             className=""
             data-tid="carousel-navigation-previous"
             disabled={true}
@@ -315,8 +315,8 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
             tabIndex={0}
           >
             Previous
-          </div>
-          <div
+          </button>
+          <button
             className=""
             data-tid="carousel-navigation-next"
             disabled={false}
@@ -325,7 +325,7 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
             tabIndex={0}
           >
             Next
-          </div>
+          </button>
         </span>
         <div
           className="image-gallery-swipe"

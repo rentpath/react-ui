@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import ThemedListingCell from '../ListingCell'
 
 const ListingCell = ThemedListingCell.WrappedComponent
@@ -41,5 +41,18 @@ describe('ListingCell', () => {
     )
 
     expect(wrapper.find('[data-tid="listing-cell"]').props()).toMatchObject({ foo: 'bar' })
+  })
+
+  it('does not fire a cardClick when a nested button is clicked', () => {
+    const cardClick = jest.fn()
+    const wrapper = mount(
+      <ListingCell listing={listing} onClick={cardClick}>
+        <button data-tid="fake-button" />
+      </ListingCell>
+    )
+    wrapper.find('button[data-tid="fake-button"]').simulate('click')
+    expect(cardClick).not.toHaveBeenCalled()
+    wrapper.simulate('click')
+    expect(cardClick).toHaveBeenCalled()
   })
 })
