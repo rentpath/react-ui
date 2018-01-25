@@ -2,7 +2,7 @@
   "env": {
     "production": {
       "presets": [
-        "es2015",
+        "env",
         "react"
       ],
       "plugins": [
