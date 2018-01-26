@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
 import autobind from 'autobind-decorator'
-import { Button } from '../Button'
+import Button from './Button'
 
 @themed(/^ToggleButton/)
 
