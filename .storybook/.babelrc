@@ -1,6 +1,6 @@
 {
   "presets": [
-    "es2015",
+    "env",
     "react"
   ],
   "plugins": [
@@ -10,5 +10,5 @@
     "babel-plugin-transform-object-rest-spread",
     "dynamic-import-webpack"
   ],
-  "ignore": "node_modules",
+  "ignore": "node_modules"
 }
