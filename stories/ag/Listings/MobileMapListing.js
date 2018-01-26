@@ -12,11 +12,10 @@ const baseListing = {
   address: '3921 Tugaloo River Drive Northside Park Washington Parkway',
   unitLevelAvailability: '• 8 units left',
   availability: 'Available Now',
+  banner: '$ Coupon',
   rating: {
     score: 4,
     label: '20',
-    fillColor: 'yellow',
-    backgroundFillColor: '#ffffff',
     uniqueId: '123',
   },
   photos: [
@@ -33,39 +32,49 @@ const baseListing = {
       caption: null,
     },
   ],
+  phone: '404-378-1428',
 }
 
 const props = {
-  server: 'https://image.rent.com/',
-  dimensions: '280-120',
   listing: baseListing,
   onClick: () => action('click')('listing cell click'),
   favoriteButton: {
-    onClick: action('favorite toggle action'),
+    onClick: () => action('click')('favorite toggle action'),
     children: '♥',
   },
-  banner: '$ Coupon',
+  photos: {
+    server: 'https://image.rent.com/',
+    dimensions: '280-120',
+  },
+  ratings: {
+    fillColor: 'yellow',
+    backgroundFillColor: '#ffffff',
+  },
 }
 
 const ctaButtons = [
   {
-    children: '404-378-1428',
-    onClick: action('Phone CTA action'),
+    valueLocation: 'phone',
+    onClick: () => action('click')('Phone CTA action'),
     className: 'phone',
   },
   {
     children: 'send an email',
-    onClick: action('contact CTA action'),
+    onClick: () => action('click')('contact CTA action'),
     className: 'contact',
   },
 ]
 
 const singleFamilyProps = {
   ...props,
+  listing: {
+    ...props.listing,
+    singleFamily: true,
+  },
   ctaButton: {
-    children: '404-378-1428',
-    onClick: action('Phone CTA action'),
+    onClick: () => action('click')('More Information action'),
     className: 'phone',
+    children: 'More Information',
   },
 }
 
