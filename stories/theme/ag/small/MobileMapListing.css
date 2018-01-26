@@ -45,6 +45,7 @@
   font-family: ProximaNova;
   color: #ffffff;
   font-size: 11px;
+  cursor: pointer;
 }
 
 .MobileMapListing .Button {
@@ -54,17 +55,19 @@
 .MobileMapListing_FavoriteButton {
   position: absolute;
   z-index: 10;
-  right: 1%;
+  right: calc(1% + 10px);
   top: 4%;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .MobileMapListing_Banner {
   position: absolute;
   z-index: 10;
-  left: 3%;
+  left: calc(3% + 10px);
   top: 4%;
+  cursor: pointer;
 }
 
 .MobileMapListing_FavoriteButton.ToggleButton-on {
@@ -113,6 +116,14 @@
 .MobileMapListing .Price {
   font-size: 16px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MobileMapListing .PropertyName {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .MobileMapListing .Address {
@@ -130,6 +141,10 @@
   padding-left: 3px;
 }
 
+.MobileMapListing .Bedroom {
+  white-space: nowrap;
+}
+
 .MobileMapListing .Bedroom,
 .MobileMapListing .UnitLevelAvailability,
 .MobileMapListing .Label {
@@ -138,9 +153,12 @@
 
 .MobileMapListing .UnitLevelAvailability {
   margin-left: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.MobileMapListing_BedsAndULA {
+.MobileMapListing_BedsAndUla {
   display: flex;
 }
 

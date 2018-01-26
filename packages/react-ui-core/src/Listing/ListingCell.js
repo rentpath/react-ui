@@ -15,6 +15,7 @@ export default class ListingCell extends Component {
     theme: PropTypes.object,
     className: PropTypes.string,
     onClick: PropTypes.func,
+    prioritizeCardClick: PropTypes.bool,
   }
 
   static childContextTypes = {
@@ -57,15 +58,20 @@ export default class ListingCell extends Component {
 
   shouldComponentUpdate(nextProps) {
     return !isEqual(nextProps.listing, this.props.listing)
+      || this.props.prioritizeCardClick !== nextProps.prioritizeCardClick
   }
 
   @autobind
   handleClick(event) {
-    const { onClick } = this.props
+    const { onClick, prioritizeCardClick } = this.props
 
     if (!onClick) return
 
-    if (!event || event.target.tagName !== 'BUTTON') onClick()
+    if (prioritizeCardClick) {
+      onClick()
+    } else if (!event || event.target.tagName !== 'BUTTON') {
+      onClick()
+    }
   }
 
   render() {
@@ -75,6 +81,7 @@ export default class ListingCell extends Component {
       children,
       listing,
       onClick,
+      prioritizeCardClick,
       ...props
     } = this.props
 

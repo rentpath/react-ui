@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
+import get from 'lodash/get'
 import { Button, ToggleButton, ListingComponents, ListingCell } from '@rentpath/react-ui-core'
 import { Banner } from '../Banners'
 
@@ -10,33 +11,51 @@ const buttonPropTypes = PropTypes.shape({
   children: PropTypes.node,
   onClick: PropTypes.func,
   className: PropTypes.string,
+  valueLocation: PropTypes.string,
 })
 
 @themed(/^MobileMapListing/, { pure: true })
 
 export default class MobileMapListing extends PureComponent {
   static propTypes = {
+    index: PropTypes.number,
     listing: PropTypes.object,
     theme: PropTypes.object,
     className: PropTypes.string,
     onClick: PropTypes.func,
-    server: PropTypes.string,
-    dimensions: PropTypes.string,
+    photos: PropTypes.object,
+    ratings: PropTypes.object,
+    propertyName: PropTypes.object,
     ctaButtons: PropTypes.arrayOf(buttonPropTypes),
     favoriteButton: buttonPropTypes,
-    banner: PropTypes.node,
+    prioritizeCardClick: PropTypes.bool,
   }
 
   static defaultProps = {
     theme: {},
     listing: {},
+    ratings: {},
+    photos: {},
   }
 
   @autobind
-  handleClick(onClick) {
+  handleCardClick() {
+    const { index, onClick } = this.props
+
+    if (onClick) onClick(index)
+  }
+
+  @autobind
+  handleButtonClick(onClick) {
+    const { prioritizeCardClick } = this.props
+
     return event => {
-      if (onClick) onClick()
-      if (event && event.stopPropagation) event.stopPropagation()
+      if (!prioritizeCardClick && onClick) onClick(this.props.listing)
+
+      const shouldStopPropagation =
+        !prioritizeCardClick && event && event.stopPropagation
+
+      if (shouldStopPropagation) event.stopPropagation()
     }
   }
 
@@ -46,19 +65,21 @@ export default class MobileMapListing extends PureComponent {
   }
 
   renderCtaButton(props, key) {
-    const { theme } = this.props
-    const { className, onClick } = props
+    const { theme, listing } = this.props
+    const { className, onClick, valueLocation, ...buttonProps } = props
     return (
       <Button
-        {...props}
+        {...buttonProps}
         className={classnames(
           theme.MobileMapListing_CtaButton,
           className,
         )}
-        onClick={this.handleClick(onClick)}
+        onClick={this.handleButtonClick(onClick)}
         key={key}
         data-tid="cta-button"
-      />
+      >
+        {get(listing, props.valueLocation) || props.children}
+      </Button>
     )
   }
 
@@ -72,7 +93,7 @@ export default class MobileMapListing extends PureComponent {
           theme.MobileMapListing_FavoriteButton,
           className,
         )}
-        onClick={this.handleClick(onClick)}
+        onClick={this.handleButtonClick(onClick)}
       />
     )
   }
@@ -83,45 +104,44 @@ export default class MobileMapListing extends PureComponent {
       listing,
       onClick,
       className,
-      server,
-      dimensions,
+      photos,
+      ratings,
       ctaButtons,
       favoriteButton,
-      banner,
+      propertyName,
       ...props
     } = this.props
 
     return (
       <ListingCell
         listing={listing}
-        onClick={onClick}
+        onClick={this.handleCardClick}
         className={theme.MobileMapListing}
         {...props}
       >
         {this.renderFavoriteButton()}
-        {banner &&
+        {listing.banner &&
           <Banner
-            name={banner}
+            name={listing.banner}
             className={theme.MobileMapListing_Banner}
           />
         }
         <div className={theme.MobileMapListing_Top}>
           <ListingComponents.Photos
-            server={server}
-            dimensions={dimensions}
             showNav
-            {...props}
+            {...photos}
+            className={theme.MobileMapListing_Photos}
           />
         </div>
         <div className={theme.MobileMapListing_Bottom}>
           <div className={theme.MobileMapListing_Info}>
             <ListingComponents.Price />
-            <ListingComponents.PropertyName />
-            <div className={theme.MobileMapListing_BedsAndULA}>
+            <ListingComponents.PropertyName {...propertyName} />
+            <div className={theme.MobileMapListing_BedsAndUla}>
               <ListingComponents.Bedroom />
               <ListingComponents.UnitLevelAvailability />
             </div>
-            <ListingComponents.Ratings />
+            <ListingComponents.Ratings {...ratings} />
           </div>
           <div className={theme.MobileMapListing_CTAs}>
             {this.renderCtaButtons()}

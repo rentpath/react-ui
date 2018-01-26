@@ -12,6 +12,7 @@ const baseListing = {
   city: 'Great Town',
   state: 'YA',
   price: '$1170+',
+  phone: '678-907-1428',
   rating: {
     score: 4,
     label: '20',
@@ -32,8 +33,6 @@ const baseListing = {
 }
 
 const props = {
-  server: '',
-  dimensions: '280-120',
   listing: baseListing,
   onClick: () => { },
   navigation: {
@@ -46,7 +45,7 @@ const props = {
   },
   ctaButtons: [
     {
-      children: '404-378-1428',
+      valueLocation: 'phone',
       onClick: () => { },
       className: 'phone',
     },
@@ -60,7 +59,10 @@ const props = {
     onClick: () => { },
     children: '♥',
   },
-  banner: '$ Coupon',
+  photos: {
+    server: 'https://image.rent.com/',
+    dimensions: '280-120',
+  },
 }
 
 describe('ag/Listing/MobileMapListing', () => {
@@ -125,7 +127,10 @@ describe('ag/Listing/MobileMapListing', () => {
       />
     )
 
-    wrapper.find('[data-tid="carousel-navigation-next"]').at(0).simulate('click')
+    wrapper
+      .find('[data-tid="carousel"]')
+      .find('[className="image-gallery-left-nav"]')
+      .simulate('click')
     expect(cardClick).not.toHaveBeenCalled()
   })
 
