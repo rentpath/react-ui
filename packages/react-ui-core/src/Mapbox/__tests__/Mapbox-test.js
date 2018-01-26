@@ -6,7 +6,7 @@ const Mapbox = ThemedMapbox.WrappedComponent
 
 jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
   Map: () => ({
-    on: (_, callback) => callback(this),
+    on: (_, callback) => callback(),
     isMock: true,
     accessToken: null,
     remove: jest.fn(),

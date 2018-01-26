@@ -145,5 +145,3 @@ export default class Mapbox extends Component {
     )
   }
 }
-
-// Mapbox.js                         |    58.62 |    34.62 |    69.23 |    58.62 |... 117,119,133 |

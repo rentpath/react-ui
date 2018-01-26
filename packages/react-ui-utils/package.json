@@ -13,15 +13,6 @@
     "lint:fix": "yarn run lint -- --fix"
   },
   "devDependencies": {
-    "@rentpath/eslint-config-rentpath": "3.0.1",
-    "babel-cli": "6.26.0",
-    "babel-core": "6.26.0",
-    "babel-eslint": "8.1.2",
-    "babel-jest": "22.0.4",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "eslint": "4.15.0",
-    "jest": "22.0.4"
   },
   "dependencies": {
     "classnames": "2.2.5"
