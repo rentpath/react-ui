@@ -62,6 +62,8 @@ export default class Drawer extends Component {
       movementStiffness,
       closeButtonContents,
       openButtonContents,
+      visible: visibleProp,
+      ...props
     } = this.props
 
     const {
@@ -89,6 +91,7 @@ export default class Drawer extends Component {
                   theme={theme}
                   onClick={this.handleToggle}
                   value={visible}
+                  {...props}
                 >
                   {(visible) ? closeButtonContents : openButtonContents}
                 </ToggleButton>
