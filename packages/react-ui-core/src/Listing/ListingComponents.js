@@ -53,6 +53,7 @@ const components = [
   ['Price', 'price'],
   ['Location', 'location'],
   ['UnitLevelAvailability', 'unitLevelAvailability'],
+  ['Availability', 'availability'],
   ['Address', 'address'],
 ].reduce((acc, curr) => { acc[curr[0]] = createTextComponent(...curr); return acc }, {})
 
