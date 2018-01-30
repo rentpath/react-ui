@@ -14,4 +14,4 @@ export {
 
 export { Banner } from './Banners'
 
-export { MobileMapListing } from './Listing'
+export { MobileMapListing, SingleFamilyMobileMapListing } from './Listing'

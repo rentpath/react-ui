@@ -17,7 +17,7 @@ import {
   DesktopPriceFilterDropdown,
 } from './Filters'
 
-import { ExampleMobileMapListing } from './Listings'
+import { ExampleMobileMapListing, ExampleSingleFamily } from './Listings'
 
 import {
   DefaultBanner,
@@ -54,6 +54,7 @@ smallStories('Filters / PriceFilterCard / small', module)
 
 smallStories('Listings', module)
   .add('Mobile Map Listing', () => ExampleMobileMapListing)
+  .add('Single Family Mobile Map Listing', () => ExampleSingleFamily)
 
 largeStories('Filters / RadioGroupDropdown / large', module)
   .add('Beds', () => DesktopBedroomDropdown)

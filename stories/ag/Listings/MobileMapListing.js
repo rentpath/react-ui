@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MobileMapListing } from 'react-ui-ag/src'
+import { MobileMapListing, SingleFamilyMobileMapListing } from 'react-ui-ag/src'
 
 const baseListing = {
   bedrooms: '1-3 Beds',
@@ -9,7 +9,9 @@ const baseListing = {
   city: 'Great Town',
   state: 'YA',
   price: '$1170+',
+  address: '3921 Tugaloo River Drive Northside Park Washington Parkway',
   unitLevelAvailability: '• 8 units left',
+  availability: 'Available Now',
   rating: {
     score: 4,
     label: '20',
@@ -38,18 +40,6 @@ const props = {
   dimensions: '280-120',
   listing: baseListing,
   onClick: () => action('click')('listing cell click'),
-  ctaButtons: [
-    {
-      children: '404-378-1428',
-      onClick: action('Phone CTA action'),
-      className: 'phone',
-    },
-    {
-      children: 'send an email',
-      onClick: action('contact CTA action'),
-      className: 'contact',
-    },
-  ],
   favoriteButton: {
     onClick: action('favorite toggle action'),
     children: '♥',
@@ -57,6 +47,32 @@ const props = {
   banner: '$ Coupon',
 }
 
+const ctaButtons = [
+  {
+    children: '404-378-1428',
+    onClick: action('Phone CTA action'),
+    className: 'phone',
+  },
+  {
+    children: 'send an email',
+    onClick: action('contact CTA action'),
+    className: 'contact',
+  },
+]
+
+const singleFamilyProps = {
+  ...props,
+  ctaButton: {
+    children: '404-378-1428',
+    onClick: action('Phone CTA action'),
+    className: 'phone',
+  },
+}
+
 export const ExampleMobileMapListing = (
-  <MobileMapListing {...props} />
+  <MobileMapListing {...props} ctaButtons={ctaButtons} />
+)
+
+export const ExampleSingleFamily = (
+  <SingleFamilyMobileMapListing {...singleFamilyProps} />
 )

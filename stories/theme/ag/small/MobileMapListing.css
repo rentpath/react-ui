@@ -6,14 +6,14 @@
   align-items: center;
 }
 
-.ListingCell .RatingBar_Items {
-  display: flex;
-  flex-direction: row;
-}
-
 .MobileMapListing {
   width: 280px;
   height: 200px;
+}
+
+.MobileMapListing_Bottom,
+.MobileMapListing_BedsAndCta {
+  width: 264px;
 }
 
 .MobileMapListing_Top {
@@ -22,9 +22,8 @@
 
 .MobileMapListing_Bottom {
   display: flex;
-  width: 100%;
   justify-content: space-between;
-  padding: 8px 0 11px;
+  margin: 5px 6px 11px 10px;
   height: 80px;
 }
 
@@ -32,8 +31,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-right: 11px;
-  margin-top: 5px;
+  margin-top: 7px;
 }
 
 .MobileMapListing_CtaButton {
@@ -80,14 +78,14 @@
 .MobileMapListing_Info {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding-left: 11px;
+  justify-content: space-between;
 }
 
 .MobileMapListing_Info .Text {
   font-size: 13px;
   color: #4a4a4a;
-  margin-bottom: 2px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .MobileMapListing .RatingBar {
@@ -96,9 +94,15 @@
   line-height: 0;
 }
 
+.ListingCell .RatingBar_Items {
+  display: flex;
+  flex-direction: row;
+}
+
 .RatingBar_Item svg {
   width: 9.1px;
   height: 8.9px;
+  margin-left: 1.5px;
 }
 
 .image-gallery,
@@ -111,14 +115,24 @@
   white-space: nowrap;
 }
 
+.MobileMapListing .Address {
+  overflow: hidden;
+  max-width: 264px;
+}
+
+.MobileMapListing .Availability {
+  color: #d32526;
+  margin-top: 2px;
+}
+
 .MobileMapListing .Label {
   font-size: 12px;
   padding-left: 3px;
-  color: #9b9b9b;
 }
 
 .MobileMapListing .Bedroom,
-.MobileMapListing .UnitLevelAvailability {
+.MobileMapListing .UnitLevelAvailability,
+.MobileMapListing .Label {
   color: #9b9b9b;
 }
 
@@ -128,4 +142,14 @@
 
 .MobileMapListing_BedsAndULA {
   display: flex;
+}
+
+.MobileMapListing_BedsAndCta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.MobileMapListing_BedsAndCta > Div {
+  margin-top: 2px;
 }

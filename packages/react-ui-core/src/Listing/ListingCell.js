@@ -26,6 +26,7 @@ export default class ListingCell extends Component {
     rating: PropTypes.object,
     unitLevelAvailability: PropTypes.node,
     address: PropTypes.node,
+    availability: PropTypes.node,
     photos: PropTypes.arrayOf(
       PropTypes.shape({
         caption: PropTypes.string,
@@ -48,6 +49,7 @@ export default class ListingCell extends Component {
       'price',
       'rating',
       'unitLevelAvailability',
+      'availability',
       'address',
       'photos',
     ])
