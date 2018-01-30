@@ -9,6 +9,7 @@ import {
 } from './RangeSlider'
 import Grid from './Grid'
 import Text from './Text'
+import DefaultDateInput from './DefaultDateInput'
 
 import {
   DefaultButton,
@@ -227,6 +228,9 @@ coreStories('RatingBar', module)
 
 coreStories('Text', module)
   .add('Text', () => Text)
+
+coreStories('DateInput', module)
+    .add('DefaultDateInput', () => DefaultDateInput)
 
 coreStories('Title', module)
   .add('Title', () => DefaultTitle)
