@@ -109,3 +109,7 @@ export {
 export {
   Drawer,
 } from './Drawer'
+
+export {
+  DateInput,
+} from './DateInput'
