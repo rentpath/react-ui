@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.2.0"></a>
+# [4.2.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.1.0...@rentpath/react-ui-core@4.2.0) (2018-01-31)
+
+
+### Bug Fixes
+
+* **babel:** updated babel preset to env from es2015. ([efdde4d](https://github.com/rentpath/react-ui/commit/efdde4d))
+* **Drawer update:** component now spreads props to toggleButton component ([3e84282](https://github.com/rentpath/react-ui/commit/3e84282))
+* **Hybrid Map Listing:** fixed ratings in ListingCell for Listing Carousel for the Hybrid Map. ([ab0b658](https://github.com/rentpath/react-ui/commit/ab0b658))
+
+
+### Features
+
+* **adding feature:** create mobile map listing ([66aa18a](https://github.com/rentpath/react-ui/commit/66aa18a))
+* **react-ui-ag:** add SingleFamilyMobileMapListing ([a351f7d](https://github.com/rentpath/react-ui/commit/a351f7d))
+
+
+
+
 <a name="4.1.0"></a>
 # [4.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.0.0...@rentpath/react-ui-core@4.1.0) (2018-01-23)
 

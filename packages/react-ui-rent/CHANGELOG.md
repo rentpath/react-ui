@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.7"></a>
+## [0.3.7](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-rent@0.3.6...@rentpath/react-ui-rent@0.3.7) (2018-01-31)
+
+
+### Bug Fixes
+
+* **babel:** updated babel preset to env from es2015. ([efdde4d](https://github.com/rentpath/react-ui/commit/efdde4d))
+
+
+
+
 <a name="0.3.6"></a>
 ## [0.3.6](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-rent@0.3.5...@rentpath/react-ui-rent@0.3.6) (2018-01-23)
 
