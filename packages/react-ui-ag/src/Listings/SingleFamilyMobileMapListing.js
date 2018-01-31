@@ -24,7 +24,6 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
     dimensions: PropTypes.string,
     ctaButton: buttonPropTypes,
     favoriteButton: buttonPropTypes,
-    banner: PropTypes.node,
   }
 
   static defaultProps = {
@@ -33,7 +32,7 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
   }
 
   @autobind
-  handleClick(onClick) {
+  handleButtonClick(onClick) {
     return event => {
       if (onClick) onClick()
       if (event && event.stopPropagation) event.stopPropagation()
@@ -50,7 +49,7 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
           theme.MobileMapListing_CtaButton,
           className,
         )}
-        onClick={this.handleClick(onClick)}
+        onClick={this.handleButtonClick(onClick)}
         data-tid="cta-button"
       />
     )
@@ -66,7 +65,7 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
           theme.MobileMapListing_FavoriteButton,
           className,
         )}
-        onClick={this.handleClick(onClick)}
+        onClick={this.handleButtonClick(onClick)}
       />
     )
   }
@@ -81,7 +80,6 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
       dimensions,
       ctaButton,
       favoriteButton,
-      banner,
       ...props
     } = this.props
 
@@ -93,9 +91,9 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
         {...props}
       >
         {this.renderFavoriteButton()}
-        {banner &&
+        {listing.banner &&
           <Banner
-            name={banner}
+            name={listing.banner}
             className={theme.MobileMapListing_Banner}
           />
         }

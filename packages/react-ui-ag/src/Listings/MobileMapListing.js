@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
-import get from 'lodash/get'
 import { Button, ToggleButton, ListingComponents, ListingCell } from '@rentpath/react-ui-core'
 import { Banner } from '../Banners'
 
@@ -11,7 +10,6 @@ const buttonPropTypes = PropTypes.shape({
   children: PropTypes.node,
   onClick: PropTypes.func,
   className: PropTypes.string,
-  valueLocation: PropTypes.string,
 })
 
 @themed(/^MobileMapListing/, { pure: true })
@@ -32,6 +30,7 @@ export default class MobileMapListing extends PureComponent {
   }
 
   static defaultProps = {
+    prioritizeCardClick: true,
     theme: {},
     listing: {},
     ratings: {},
@@ -65,11 +64,11 @@ export default class MobileMapListing extends PureComponent {
   }
 
   renderCtaButton(props, key) {
-    const { theme, listing } = this.props
-    const { className, onClick, valueLocation, ...buttonProps } = props
+    const { theme } = this.props
+    const { className, onClick } = props
     return (
       <Button
-        {...buttonProps}
+        {...props}
         className={classnames(
           theme.MobileMapListing_CtaButton,
           className,
@@ -77,9 +76,7 @@ export default class MobileMapListing extends PureComponent {
         onClick={this.handleButtonClick(onClick)}
         key={key}
         data-tid="cta-button"
-      >
-        {get(listing, props.valueLocation) || props.children}
-      </Button>
+      />
     )
   }
 
