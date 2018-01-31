@@ -24,6 +24,7 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
     dimensions: PropTypes.string,
     ctaButton: buttonPropTypes,
     favoriteButton: buttonPropTypes,
+    prioritizeCardClick: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -33,9 +34,15 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
 
   @autobind
   handleButtonClick(onClick) {
+    const { prioritizeCardClick } = this.props
+
     return event => {
-      if (onClick) onClick()
-      if (event && event.stopPropagation) event.stopPropagation()
+      if (!prioritizeCardClick && onClick) onClick(this.props.listing)
+
+      const shouldStopPropagation =
+        !prioritizeCardClick && event && event.stopPropagation
+
+      if (shouldStopPropagation) event.stopPropagation()
     }
   }
 
