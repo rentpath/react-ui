@@ -1,0 +1,20 @@
+.ListingCarousel > :global(.image-gallery) > :global(.image-gallery-content) {
+  line-height: inherit;
+}
+
+.ListingCarousel > :global(.image-gallery) > :global(.image-gallery-content) > :global(.image-gallery-slide-wrapper) > :global(.image-gallery-swipe) > :global(.image-gallery-slides) {
+  overflow: visible;
+  left: calc(50% - 150px);
+  line-height: inherit;
+}
+
+.ListingCarousel > :global(.image-gallery) > :global(.image-gallery-content) > :global(.image-gallery-slide-wrapper) > :global(.image-gallery-swipe) > :global(.image-gallery-slides) > :global(.image-gallery-slide) {
+  padding: 0 10px; /* If you change this left/right padding, please update the MobileMapListing Banner and Favorites button left & right calc values */
+  width: 280px;
+}
+
+.DefaultListingCarouselCard {
+  width: 300px;
+  padding: 0 100px;
+  overflow: hidden;
+}
