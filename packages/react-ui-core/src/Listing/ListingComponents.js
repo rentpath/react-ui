@@ -20,7 +20,7 @@ export const createTextComponent = (name, contextItem) => {
     }
 
     static contextTypes = {
-      [contextItem]: PropTypes.string,
+      [contextItem]: PropTypes.node,
     }
 
     render() {
@@ -58,7 +58,7 @@ const components = [
 ].reduce((acc, curr) => { acc[curr[0]] = createTextComponent(...curr); return acc }, {})
 
 const Ratings = (props, { rating }) => (
-  rating ? <RatingBar {...rating} /> : null
+  rating ? <RatingBar {...props} {...rating} /> : null
 )
 
 Ratings.contextTypes = {
