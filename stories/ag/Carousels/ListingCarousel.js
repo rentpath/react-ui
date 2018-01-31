@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions'
 import { ListingCarousel } from 'react-ui-ag/src'
 import { Card } from 'react-ui-core/src'
 import themed from 'react-themed'
+import omit from 'lodash/omit'
 
 const listings = [
   {
@@ -13,9 +14,7 @@ const listings = [
     city: 'Great Town',
     state: 'YA',
     price: '$1 MILLION DOLLARS',
-    banner: '$ Coupon',
     unitLevelAvailability: '• 8 units left - Come get you some!',
-    phone: '404-378-1428',
     rating: {
       score: 4,
       label: '20',
@@ -43,7 +42,6 @@ const listings = [
     city: 'Stupid Town',
     state: 'BZ',
     price: '$0.01 / month',
-    phone: '678-383-9294',
     rating: {
       score: 1,
       label: '43,423',
@@ -71,8 +69,6 @@ const listings = [
     city: 'Okay Town',
     state: 'GS',
     price: '$100 / month',
-    phone: '770-777-9311',
-    banner: '$ Coupon',
     rating: {
       score: 3,
       label: '234',
@@ -100,7 +96,6 @@ const listings = [
     city: 'Hello World Town',
     state: 'HD',
     price: '$20 / day',
-    phone: '305-789-5555',
     rating: {
       score: 2,
       label: '567',
@@ -122,13 +117,43 @@ const listings = [
     ],
   },
   {
+    bedrooms: '3 Beds',
+    bathrooms: '2 Bathrooms',
+    city: 'Great Town',
+    state: 'YA',
+    price: '$1170+',
+    address: '3921 Tugaloo River Drive Northside Park Washington Parkway',
+    availability: 'Available Now',
+    banner: '$ Coupon',
+    rating: {
+      score: 4,
+      label: '20',
+      uniqueId: '123',
+    },
+    photos: [
+      {
+        path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
+        caption: 'test 1',
+      },
+      {
+        path: 'imgr/d56984e959a3feb1235f85ee202a0fc6/',
+        caption: null,
+      },
+      {
+        path: 'imgr/fd972eb03a0463c484580349ad5177b7/',
+        caption: null,
+      },
+    ],
+    phone: '404-378-1428',
+    singleFamily: true,
+  },
+  {
     bedrooms: '2 Bedrooms',
     bathrooms: '1-3 Bathrooms',
     name: 'Shrug Property',
     city: 'Hello World Town',
     state: 'HD',
     price: '$20 / day',
-    phone: '972-099-2000',
     rating: {
       score: 2,
       label: '567',
@@ -155,7 +180,7 @@ const listingProps = {
   onClick: () => action('click')('listing cell click'),
   ctaButtons: [
     {
-      valueLocation: 'phone',
+      children: '404-378-1428',
       onClick: () => action('click')('Phone CTA'),
       className: 'phone',
     },
@@ -169,6 +194,7 @@ const listingProps = {
     onClick: action('click')('favorite toggle'),
     children: '♥',
   },
+  banner: '$ Coupon',
   photos: {
     server: 'https://image.rent.com/',
     dimensions: '280-120',
@@ -180,11 +206,21 @@ const listingProps = {
   },
 }
 
+const singleFamilyProps = {
+  ...omit(listingProps, ['ctaButtons']),
+  ctaButton: {
+    onClick: () => action('click')('Phone CTA action'),
+    className: 'phone',
+    children: 'More Information',
+  },
+}
+
 const DefaultListingCarouselComponent = ({ theme }) => (
   <Card className={theme.DefaultListingCarouselCard}>
     <ListingCarousel
       listings={listings}
       listingProps={listingProps}
+      singleFamilyListingProps={singleFamilyProps}
       selectedIndex={listings.length - 1}
     />
   </Card>

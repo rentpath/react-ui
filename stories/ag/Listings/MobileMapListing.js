@@ -54,7 +54,7 @@ const props = {
 
 const ctaButtons = [
   {
-    children: '404-378-1428',
+    valueLocation: 'phone',
     onClick: () => action('click')('Phone CTA action'),
     className: 'phone',
   },
@@ -67,10 +67,14 @@ const ctaButtons = [
 
 const singleFamilyProps = {
   ...props,
+  listing: {
+    ...props.listing,
+    singleFamily: true,
+  },
   ctaButton: {
-    children: '404-378-1428',
     onClick: () => action('click')('Phone CTA action'),
     className: 'phone',
+    children: 'More Information',
   },
 }
 

@@ -20,8 +20,7 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
     theme: PropTypes.object,
     className: PropTypes.string,
     onClick: PropTypes.func,
-    server: PropTypes.string,
-    dimensions: PropTypes.string,
+    photos: PropTypes.object,
     ctaButton: buttonPropTypes,
     favoriteButton: buttonPropTypes,
     prioritizeCardClick: PropTypes.bool,
@@ -30,6 +29,7 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
   static defaultProps = {
     theme: {},
     listing: {},
+    ctaButton: {},
   }
 
   @autobind
@@ -83,8 +83,7 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
       listing,
       onClick,
       className,
-      server,
-      dimensions,
+      photos,
       ctaButton,
       favoriteButton,
       ...props
@@ -106,10 +105,9 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
         }
         <div className={theme.MobileMapListing_Top}>
           <ListingComponents.Photos
-            server={server}
-            dimensions={dimensions}
             showNav
             {...props}
+            {...photos}
           />
         </div>
         <div className={theme.MobileMapListing_Bottom}>

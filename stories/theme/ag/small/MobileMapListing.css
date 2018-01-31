@@ -115,6 +115,7 @@
 
 .MobileMapListing .Price {
   font-size: 16px;
+  font-weight: bolder;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
