@@ -13,30 +13,43 @@ const buttonPropTypes = PropTypes.shape({
 })
 
 @themed(/^MobileMapListing/, { pure: true })
-
 export default class SingleFamilyMobileMapListing extends PureComponent {
   static propTypes = {
+    index: PropTypes.number,
     listing: PropTypes.object,
     theme: PropTypes.object,
     className: PropTypes.string,
     onClick: PropTypes.func,
-    server: PropTypes.string,
-    dimensions: PropTypes.string,
+    photos: PropTypes.object,
     ctaButton: buttonPropTypes,
     favoriteButton: buttonPropTypes,
-    banner: PropTypes.node,
+    prioritizeCardClick: PropTypes.bool,
   }
 
   static defaultProps = {
     theme: {},
     listing: {},
+    ctaButton: {},
   }
 
   @autobind
-  handleClick(onClick) {
+  handleCardClick() {
+    const { index, onClick } = this.props
+
+    if (onClick) onClick(index)
+  }
+
+  @autobind
+  handleButtonClick(onClick) {
+    const { prioritizeCardClick } = this.props
+
     return event => {
-      if (onClick) onClick()
-      if (event && event.stopPropagation) event.stopPropagation()
+      if (!prioritizeCardClick && onClick) onClick(this.props.listing)
+
+      const shouldStopPropagation =
+        !prioritizeCardClick && event && event.stopPropagation
+
+      if (shouldStopPropagation) event.stopPropagation()
     }
   }
 
@@ -50,7 +63,7 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
           theme.MobileMapListing_CtaButton,
           className,
         )}
-        onClick={this.handleClick(onClick)}
+        onClick={this.handleButtonClick(onClick)}
         data-tid="cta-button"
       />
     )
@@ -66,7 +79,7 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
           theme.MobileMapListing_FavoriteButton,
           className,
         )}
-        onClick={this.handleClick(onClick)}
+        onClick={this.handleButtonClick(onClick)}
       />
     )
   }
@@ -77,34 +90,31 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
       listing,
       onClick,
       className,
-      server,
-      dimensions,
+      photos,
       ctaButton,
       favoriteButton,
-      banner,
       ...props
     } = this.props
 
     return (
       <ListingCell
         listing={listing}
-        onClick={onClick}
+        onClick={this.handleCardClick}
         className={theme.MobileMapListing}
         {...props}
       >
         {this.renderFavoriteButton()}
-        {banner &&
+        {listing.banner &&
           <Banner
-            name={banner}
+            name={listing.banner}
             className={theme.MobileMapListing_Banner}
           />
         }
         <div className={theme.MobileMapListing_Top}>
           <ListingComponents.Photos
-            server={server}
-            dimensions={dimensions}
             showNav
             {...props}
+            {...photos}
           />
         </div>
         <div className={theme.MobileMapListing_Bottom}>

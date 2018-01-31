@@ -1,4 +1,4 @@
 export {
   DefaultBanner,
   BannerWithNode,
-} from './Banners'
+} from './Banner'

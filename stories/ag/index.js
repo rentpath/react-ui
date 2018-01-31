@@ -24,6 +24,8 @@ import {
   BannerWithNode,
 } from './Banners'
 
+import { DefaultListingCarousel } from './Carousels'
+
 import {
   smallStories,
   largeStories,
@@ -55,6 +57,9 @@ smallStories('Filters / PriceFilterCard / small', module)
 smallStories('Listings', module)
   .add('Mobile Map Listing', () => ExampleMobileMapListing)
   .add('Single Family Mobile Map Listing', () => ExampleSingleFamily)
+
+smallStories('Carousels', module)
+  .add('Listing Carousel', () => DefaultListingCarousel)
 
 largeStories('Filters / RadioGroupDropdown / large', module)
   .add('Beds', () => DesktopBedroomDropdown)
