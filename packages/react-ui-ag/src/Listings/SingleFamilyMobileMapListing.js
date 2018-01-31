@@ -16,6 +16,7 @@ const buttonPropTypes = PropTypes.shape({
 
 export default class SingleFamilyMobileMapListing extends PureComponent {
   static propTypes = {
+    index: PropTypes.number,
     listing: PropTypes.object,
     theme: PropTypes.object,
     className: PropTypes.string,
@@ -30,6 +31,13 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
     theme: {},
     listing: {},
     ctaButton: {},
+  }
+
+  @autobind
+  handleCardClick() {
+    const { index, onClick } = this.props
+
+    if (onClick) onClick(index)
   }
 
   @autobind
@@ -92,7 +100,7 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
     return (
       <ListingCell
         listing={listing}
-        onClick={onClick}
+        onClick={this.handleCardClick}
         className={theme.MobileMapListing}
         {...props}
       >
