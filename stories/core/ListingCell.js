@@ -15,10 +15,14 @@ const baseListing = {
   rating: {
     score: 4,
     label: '20',
-    fillColor: 'yellow',
-    backgroundFillColor: '#ffffff',
     uniqueId: '123',
   },
+  phone: '555-867-5309',
+}
+
+const ratingProps = {
+  fillColor: 'yellow',
+  backgroundFillColor: '#ffffff',
 }
 
 export const DefaultListingCell = (
@@ -32,7 +36,7 @@ export const DefaultListingCell = (
       <div>
         <ListingComponents.Bathroom />
         <h1>hello</h1>
-        <ListingComponents.Ratings />
+        <ListingComponents.Ratings {...ratingProps} />
         <ListingComponents.Price />
       </div>
     </div>
@@ -55,7 +59,6 @@ const SideBySideListingCell = ({ theme }) => {
     rating: {
       ...baseListing.rating,
       score: parseInt(select('listing.rating.score', options, baseListing.rating.score.toString()), 10),
-      fillColor: text('listing.rating.fillColor', baseListing.rating.fillColor),
       label: text('listing.rating.label', baseListing.rating.label),
     },
     photos: [
@@ -75,13 +78,18 @@ const SideBySideListingCell = ({ theme }) => {
     hasCoupon: boolean('coupon', true),
   }
 
+  const sideBySideRatingProps = {
+    ...ratingProps,
+    fillColor: text('listing.rating.fillColor', ratingProps.fillColor),
+  }
+
   return (
     <ListingCell listing={listing} onClick={() => action('click')('click')}>
       <div className={theme.SideBySideListingCell_BedBath}>
         <ListingComponents.Bedroom />
         <ListingComponents.Bathroom />
       </div>
-      <ListingComponents.Ratings />
+      <ListingComponents.Ratings {...sideBySideRatingProps} />
       {listing.hasCoupon && <div>Coupon!</div>}
       <ListingComponents.Photos server="https://image.rent.com/" dimensions="400-200" showNav />
     </ListingCell>

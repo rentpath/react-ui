@@ -55,4 +55,15 @@ describe('ListingCell', () => {
     wrapper.simulate('click')
     expect(cardClick).toHaveBeenCalled()
   })
+
+  it('fires a card click on a button click if prioritizeCardClick is true', () => {
+    const cardClick = jest.fn()
+    const wrapper = mount(
+      <ListingCell listing={listing} onClick={cardClick} prioritizeCardClick>
+        <button data-tid="fake-button" />
+      </ListingCell>
+    )
+    wrapper.find('button[data-tid="fake-button"]').simulate('click')
+    expect(cardClick).toHaveBeenCalled()
+  })
 })
