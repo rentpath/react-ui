@@ -3,38 +3,43 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "build": "lerna run build",
+    "build": "NODE_ENV=production lerna exec -- babel --ignore  __tests__ -d lib src",
+    "build:watch": "yarn run build -- --watch",
     "build-storybook": "build-storybook -c .storybook -s .storybook/dist -o build",
-    "clean": "lerna run clean --yes",
+    "clean": "lerna exec -- rm -rf lib",
     "lint": "yarn run lint:js && yarn run lint:css",
-    "lint:css": "stylelint \"**/*.css\"",
-    "lint:css:fix": "stylelint \"**/*.css\" --fix",
+    "lint:css": "lerna exec -- stylelint \"**/*.css\"",
+    "lint:css:fix": "lerna exec -- stylelint \"**/*.css\" --fix",
     "lint:fix": "yarn run lint:js:fix && yarn run lint:css:fix",
-    "lint:js": "eslint packages stories",
-    "lint:js:fix": "lerna packages stories --fix",
+    "lint:js": "lerna exec -- eslint packages stories",
+    "lint:js:fix": "yarn run lint packages stories --fix",
     "postinstall": "lerna bootstrap",
-    "prepublish": "lerna run clean --yes && lerna run build",
+    "prepublish": "yarn run clean && yarn run build",
     "publish-packages": "lerna publish --exact --conventional-commits --registry=https://registry.npmjs.org/",
     "report-coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "storybook": "start-storybook -p 6006 -c .storybook -s ./.storybook/dist",
-    "test": "./node_modules/.bin/jest --coverage",
+    "test": "NODE_ENV=test jest --coverage",
     "test:ci": "yarn run test --maxWorkers=2 && yarn run report-coverage",
-    "test:coverage": "yarn run test && yarn run report-coverage"
+    "test:coverage": "yarn run test && yarn run report-coverage",
+    "test:watch": "yarn run test -- --watch"
   },
   "jest": {
+    "setupFiles": [
+      "<rootDir>/test/shim.js",
+      "<rootDir>/test/setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css)$": "./node_modules/jest-css-modules"
+    },
     "collectCoverageFrom": [
       "**/src/**/*.{js}",
       "!**/node_modules/**",
       "!**/index.js"
     ],
     "coverageDirectory": "./coverage",
-    "projects": [
-      "packages/react-ui-core",
-      "packages/react-ui-tracking",
-      "packages/react-ui-utils",
-      "packages/react-ui-ag",
-      "packages/react-ui-rent",
-      "packages/react-ui-rentals"
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/mocks/"
     ]
   },
   "devDependencies": {
@@ -50,12 +55,15 @@
     "@types/node": "9.3.0",
     "@types/react": "16.0.34",
     "@types/storybook__react": "3.0.6",
+    "autobind-decorator": "^2.1.0",
     "autoprefixer": "7.2.5",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "8.2.1",
     "babel-jest": "22.1.0",
     "babel-plugin-dynamic-import-webpack": "1.0.2",
+    "babel-plugin-react-css-modules": "^3.3.3",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-decorators-legacy": "1.3.4",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
@@ -67,6 +75,8 @@
     "css-loader": "0.28.9",
     "cz-conventional-changelog": "2.1.0",
     "cz-lerna-changelog": "1.2.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "4.15.0",
     "jest": "22.1.4",
     "jest-css-modules": "1.1.0",
