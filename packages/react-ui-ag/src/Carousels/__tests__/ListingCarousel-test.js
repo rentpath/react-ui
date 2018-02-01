@@ -176,10 +176,6 @@ const listingProps = {
     dimensions: '280-120',
     disableSwipe: true,
   },
-  ratings: {
-    fillColor: 'yellow',
-    backgroundFillColor: '#ffffff',
-  },
 }
 
 describe('ListingCarousel', () => {
@@ -219,6 +215,19 @@ describe('ListingCarousel', () => {
     expect(wrapper.state('selectedIndex')).toEqual(1)
     wrapper.find(MobileMapListing).at(2).simulate('click')
     expect(wrapper.state('selectedIndex')).toEqual(2)
+  })
+
+  it('maps the listings to the Carousel', () => {
+    const snap = renderer.create(<ListingCarousel {...props} />).toJSON()
+    expect(snap).toMatchSnapshot()
+  })
+
+  it('fires onSlide on selected index change', () => {
+    const onSlide = jest.fn()
+    const wrapper = mount(<ListingCarousel {...props} onSlide={onSlide} />)
+    expect(onSlide).not.toHaveBeenCalled()
+    wrapper.find(MobileMapListing).at(1).simulate('click')
+    expect(onSlide).toHaveBeenCalled()
   })
 
   it('only passes onClick events to the selected listing', () => {
