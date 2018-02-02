@@ -18,6 +18,7 @@ export default class ListingCarousel extends Component {
     listingProps: PropTypes.object,
     singleFamilyListingProps: PropTypes.object,
     selectedIndex: PropTypes.number,
+    onSlide: PropTypes.func,
   }
 
   static defaultProps = {
@@ -43,8 +44,11 @@ export default class ListingCarousel extends Component {
 
   @autobind
   listingClickHandler(index) {
+    const { onSlide, listings } = this.props
+
     if (index !== this.state.selectedIndex) {
       this.updatedSelectedIndex(index)
+      if (onSlide) onSlide(listings[index])
     } else if (this.props.listingProps.onClick) {
       this.props.listingProps.onClick(index)
     }

@@ -117,6 +117,7 @@ export default class MobileMapListing extends PureComponent {
       ctaButtons,
       favoriteButton,
       propertyName,
+      prioritizeCardClick,
       ...props
     } = this.props
 

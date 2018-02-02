@@ -93,6 +93,7 @@ export default class SingleFamilyMobileMapListing extends PureComponent {
       className,
       photos,
       ctaButton,
+      prioritizeCardClick,
       favoriteButton,
       ...props
     } = this.props
