@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.6.0...@rentpath/react-ui-ag@0.7.0) (2018-02-02)
+
+
+### Features
+
+* **react-ui-ag:** give ListingCarousel an `onIndexChange` prop ([78bd4dc](https://github.com/rentpath/react-ui/commit/78bd4dc))
+
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.5.1...@rentpath/react-ui-ag@0.6.0) (2018-01-31)
 
