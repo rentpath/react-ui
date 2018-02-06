@@ -5,6 +5,7 @@
   "scripts": {
     "build": "lerna run build",
     "build-storybook": "build-storybook -c .storybook -s .storybook/dist -o build",
+    "codecov": "yarn run test && ./node_modules/codecov/bin/codecov -t 9729bc93-20e5-42cb-aa55-a5308bd88f52",
     "clean": "lerna run clean --yes",
     "lint": "yarn run lint:js && yarn run lint:css",
     "lint:css": "stylelint \"**/*.css\"",
@@ -27,6 +28,7 @@
       "!**/node_modules/**",
       "!**/index.js"
     ],
+    "collectCoverage": true,
     "coverageDirectory": "./coverage",
     "projects": [
       "packages/react-ui-core",
@@ -62,6 +64,7 @@
     "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-env": "1.6.1",
     "babel-preset-react": "6.24.1",
+    "codecov": "^3.0.0",
     "commitizen": "2.9.6",
     "coveralls": "3.0.0",
     "css-loader": "0.28.9",
