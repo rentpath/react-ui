@@ -5,7 +5,6 @@
   "scripts": {
     "build": "lerna run build",
     "build-storybook": "build-storybook -c .storybook -s .storybook/dist -o build",
-    "codecov": "yarn run test && ./node_modules/codecov/bin/codecov -t 9729bc93-20e5-42cb-aa55-a5308bd88f52",
     "clean": "lerna run clean --yes",
     "lint": "yarn run lint:js && yarn run lint:css",
     "lint:css": "stylelint \"**/*.css\"",
@@ -16,11 +15,11 @@
     "postinstall": "lerna bootstrap",
     "prepublish": "lerna run clean --yes && lerna run build",
     "publish-packages": "lerna publish --exact --conventional-commits --registry=https://registry.npmjs.org/",
-    "report-coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "storybook": "start-storybook -p 6006 -c .storybook -s ./.storybook/dist",
     "test": "./node_modules/.bin/jest --coverage",
     "test:ci": "yarn run test --maxWorkers=2 && yarn run report-coverage",
-    "test:coverage": "yarn run test && yarn run report-coverage"
+    "test:coverage": "yarn run test && ./node_modules/codecov/bin/codecov -t 9729bc93-20e5-42cb-aa55-a5308bd88f52",
+    "validate-codecov": "cat codecov.yml | curl --data-binary @- https://codecov.io/validate"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -66,7 +65,6 @@
     "babel-preset-react": "6.24.1",
     "codecov": "^3.0.0",
     "commitizen": "2.9.6",
-    "coveralls": "3.0.0",
     "css-loader": "0.28.9",
     "cz-conventional-changelog": "2.1.0",
     "cz-lerna-changelog": "1.2.1",

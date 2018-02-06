@@ -1,4 +1,4 @@
-# react-ui [![Coverage Status](https://coveralls.io/repos/github/rentpath/react-ui/badge.svg?branch=master)](https://coveralls.io/github/rentpath/react-ui?branch=master)
+# react-ui [![codecov](https://codecov.io/gh/rentpath/react-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/rentpath/react-ui)
 
 React-UI is implemented as a [monorepo](https://github.com/babel/babel/blob/master/doc/design/monorepo.md) managed with [Lerna](https://github.com/lerna/lerna) to facilitate scripts, versioning and publishing.
 
