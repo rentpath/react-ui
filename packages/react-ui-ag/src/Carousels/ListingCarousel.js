@@ -33,12 +33,12 @@ export default class ListingCarousel extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.selectedIndex !== this.props.selectedIndex) {
-      this.updatedSelectedIndex(nextProps.selectedIndex)
+      this.updateSelectedIndex(nextProps.selectedIndex)
     }
   }
 
   @autobind
-  updatedSelectedIndex(selectedIndex) {
+  updateSelectedIndex(selectedIndex) {
     this.setState({ selectedIndex })
   }
 
@@ -47,7 +47,7 @@ export default class ListingCarousel extends Component {
     const { onSlide, listings } = this.props
 
     if (index !== this.state.selectedIndex) {
-      this.updatedSelectedIndex(index)
+      this.updateSelectedIndex(index)
       if (onSlide) onSlide(listings[index])
     } else if (this.props.listingProps.onClick) {
       this.props.listingProps.onClick(index)
@@ -85,7 +85,7 @@ export default class ListingCarousel extends Component {
           theme.ListingCarousel
         )}
         selectedIndex={this.state.selectedIndex}
-        onSlide={this.updatedSelectedIndex}
+        onSlide={this.updateSelectedIndex}
         items={listings.map((listing, i) => this.renderListing(listing, i))}
         {...props}
       />

@@ -43,6 +43,7 @@ const props = {
       children: 'Previous',
     },
   },
+  prioritizeCardClick: false,
   ctaButtons: [
     {
       valueLocation: 'phone',
@@ -79,6 +80,7 @@ describe('ag/Listing/MobileMapListing', () => {
           {...props}
           ctaButtons={[{ onClick: ctaClick }, { onClick: ctaClick }]}
           onClick={cardClick}
+          prioritizeCardClick={false}
         />
       )
     })
@@ -91,6 +93,19 @@ describe('ag/Listing/MobileMapListing', () => {
       wrapper.find('[data-tid="cta-button"]').at(0).simulate('click')
       wrapper.find('[data-tid="cta-button"]').at(1).simulate('click')
       expect(ctaClick.mock.calls).toHaveLength(2)
+    })
+
+    it('fires cta buttons on click action when prioritizeCardClick is true', () => {
+      wrapper = shallow(
+        <MobileMapListing
+          {...props}
+          ctaButtons={[{ onClick: ctaClick }, { onClick: ctaClick }]}
+          onClick={cardClick}
+          prioritizeCardClick
+        />)
+      wrapper.find('[data-tid="cta-button"]').at(0).simulate('click')
+      wrapper.find('[data-tid="cta-button"]').at(1).simulate('click')
+      expect(cardClick.mock.calls).toHaveLength(2)
     })
   })
 
