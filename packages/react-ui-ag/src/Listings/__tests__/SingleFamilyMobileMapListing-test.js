@@ -60,6 +60,20 @@ describe('ag/Listing/SingleFamilyMobileMapListing', () => {
     expect(ctaClick).toHaveBeenCalled()
   })
 
+  it('fires cta buttons on click action when prioritizeCardClick is true', () => {
+    const ctaClick = jest.fn()
+    const cardClick = jest.fn()
+    const wrapper = shallow(
+      <SingleFamilyMobileMapListing
+        {...props}
+        ctaButtons={{ onClick: ctaClick }}
+        onClick={cardClick}
+        prioritizeCardClick
+      />)
+    wrapper.find('[data-tid="cta-button"]').at(0).simulate('click')
+    expect(cardClick.mock.calls).toHaveLength(1)
+  })
+
   it('fires favoriteButton click action on favorite button click', () => {
     const favoriteClick = jest.fn()
     const wrapper = shallow(

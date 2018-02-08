@@ -48,10 +48,14 @@ export default class MobileMapListing extends PureComponent {
 
   @autobind
   handleButtonClick(onClick) {
-    const { prioritizeCardClick } = this.props
-
     return event => {
-      if (!prioritizeCardClick && onClick) onClick(this.props.listing)
+      const { prioritizeCardClick } = this.props
+
+      if (!prioritizeCardClick && onClick) {
+        onClick(this.props.listing)
+      } else if (prioritizeCardClick && this.props.onClick) {
+        this.props.onClick(this.props.index)
+      }
 
       const shouldStopPropagation =
         !prioritizeCardClick && event && event.stopPropagation
