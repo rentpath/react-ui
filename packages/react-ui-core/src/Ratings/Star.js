@@ -8,11 +8,13 @@ export default class Star extends Component {
     fillColor: PropTypes.string.isRequired,
     backgroundFillColor: PropTypes.string,
     width: PropTypes.string,
+    strokeWidth: PropTypes.string,
     className: PropTypes.string,
   }
 
   static defaultProps = {
     width: '0',
+    strokeWidth: '3',
   }
 
   render() {
@@ -21,6 +23,7 @@ export default class Star extends Component {
       fillColor,
       backgroundFillColor,
       width,
+      strokeWidth,
       className,
       ...props
     } = this.props
@@ -42,7 +45,7 @@ export default class Star extends Component {
           <path
             fill={`url(#${uniqueId})`}
             stroke="#000"
-            strokeWidth="3"
+            strokeWidth={strokeWidth}
             d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
           />
         </svg>
