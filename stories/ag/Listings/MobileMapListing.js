@@ -1,6 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MobileMapListing, SingleFamilyMobileMapListing } from 'react-ui-ag/src'
+import { boolean } from '@storybook/addon-knobs'
 
 const baseListing = {
   bedrooms: '1-3 Beds',
@@ -39,7 +40,7 @@ const props = {
   listing: baseListing,
   onClick: () => action('click')('listing cell click'),
   favoriteButton: {
-    onClick: () => action('click')('favorite toggle action'),
+    onClick: (listing, value) => action('click')('favorite toggled to ', value),
     children: '♥',
   },
   photos: {
@@ -78,10 +79,12 @@ const singleFamilyProps = {
   },
 }
 
-export const ExampleMobileMapListing = (
-  <MobileMapListing {...props} ctaButtons={ctaButtons} />
-)
+export const ExampleMobileMapListing = () => {
+  const isActive = boolean('isActive', true)
+  return <MobileMapListing {...props} ctaButtons={ctaButtons} isActive={isActive} />
+}
 
-export const ExampleSingleFamily = (
-  <SingleFamilyMobileMapListing {...singleFamilyProps} />
-)
+export const ExampleSingleFamily = () => {
+  const isActive = boolean('isActive', true)
+  return <SingleFamilyMobileMapListing {...singleFamilyProps} isActive={isActive} />
+}

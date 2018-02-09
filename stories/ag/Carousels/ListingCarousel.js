@@ -191,7 +191,7 @@ const listingProps = {
     },
   ],
   favoriteButton: {
-    onClick: action('click')('favorite toggle'),
+    onClick: (listing, value) => action('click')('favorite toggled to ', value),
     children: '♥',
   },
   banner: '$ Coupon',

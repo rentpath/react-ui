@@ -28,11 +28,11 @@ export default class MobileMapListing extends PureComponent {
     propertyName: PropTypes.object,
     ctaButtons: PropTypes.arrayOf(buttonPropTypes),
     favoriteButton: buttonPropTypes,
-    prioritizeCardClick: PropTypes.bool,
+    isActive: PropTypes.bool,
   }
 
   static defaultProps = {
-    prioritizeCardClick: false,
+    isActive: true,
     theme: {},
     listing: {},
     ratings: {},
@@ -48,19 +48,31 @@ export default class MobileMapListing extends PureComponent {
 
   @autobind
   handleButtonClick(onClick) {
-    return event => {
-      const { prioritizeCardClick } = this.props
+    const { isActive } = this.props
 
-      if (!prioritizeCardClick && onClick) {
+    return event => {
+      if (isActive && onClick) {
         onClick(this.props.listing)
-      } else if (prioritizeCardClick && this.props.onClick) {
+      } else if (!isActive && this.props.onClick) {
         this.props.onClick(this.props.index)
       }
 
       const shouldStopPropagation =
-        !prioritizeCardClick && event && event.stopPropagation
+        isActive && event && event.stopPropagation
 
       if (shouldStopPropagation) event.stopPropagation()
+    }
+  }
+
+  @autobind
+  handleFavoriteClick(value) {
+    const { isActive, favoriteButton } = this.props
+    const { onClick } = favoriteButton
+
+    if (isActive && onClick) {
+      onClick(this.props.listing, value)
+    } else if (!isActive && this.props.onClick) {
+      this.props.onClick(this.props.index)
     }
   }
 
@@ -79,6 +91,10 @@ export default class MobileMapListing extends PureComponent {
       ...buttonProps
     } = props
 
+    const buttonText = get(listing, valueLocation, children)
+
+    if (!buttonText) return null
+
     return (
       <Button
         {...buttonProps}
@@ -90,14 +106,14 @@ export default class MobileMapListing extends PureComponent {
         key={key}
         data-tid="cta-button"
       >
-        {get(listing, valueLocation, children)}
+        {buttonText}
       </Button>
     )
   }
 
   renderFavoriteButton() {
-    const { theme, favoriteButton } = this.props
-    const { className, onClick } = favoriteButton
+    const { theme, favoriteButton, isActive } = this.props
+    const { className } = favoriteButton
     return (
       <ToggleButton
         {...favoriteButton}
@@ -105,7 +121,8 @@ export default class MobileMapListing extends PureComponent {
           theme.MobileMapListing_FavoriteButton,
           className,
         )}
-        onClick={this.handleButtonClick(onClick)}
+        inactive={!isActive}
+        onClick={this.handleFavoriteClick}
       />
     )
   }
@@ -121,7 +138,7 @@ export default class MobileMapListing extends PureComponent {
       ctaButtons,
       favoriteButton,
       propertyName,
-      prioritizeCardClick,
+      isActive,
       ...props
     } = this.props
 
@@ -129,7 +146,12 @@ export default class MobileMapListing extends PureComponent {
       <ListingCell
         listing={listing}
         onClick={this.handleCardClick}
-        className={theme.MobileMapListing}
+        className={classnames(
+          className,
+          theme.MobileMapListing,
+          theme[`MobileMapListing-${isActive ? 'active' : 'inactive'}`]
+        )}
+        isActive={isActive}
         {...props}
       >
         {this.renderFavoriteButton()}

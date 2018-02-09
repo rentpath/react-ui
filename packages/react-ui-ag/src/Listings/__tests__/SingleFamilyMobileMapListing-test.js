@@ -1,7 +1,8 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import { ToggleButton } from '@rentpath/react-ui-core'
+import { ToggleButton, Button } from '@rentpath/react-ui-core'
 import ThemedSingleFamilyMobileMapListing from '../SingleFamilyMobileMapListing'
+import theme from './mocks/theme'
 
 const SingleFamilyMobileMapListing = ThemedSingleFamilyMobileMapListing.WrappedComponent
 
@@ -26,6 +27,7 @@ const props = {
   server: '',
   dimensions: '280-120',
   listing: baseListing,
+  theme,
   onClick: () => { },
   navigation: {
     next: {
@@ -56,11 +58,12 @@ describe('ag/Listing/SingleFamilyMobileMapListing', () => {
         ctaButton={{ onClick: ctaClick }}
       />
     )
-    wrapper.find('[data-tid="cta-button"]').simulate('click')
+
+    wrapper.find(Button).simulate('click')
     expect(ctaClick).toHaveBeenCalled()
   })
 
-  it('fires cta buttons on click action when prioritizeCardClick is true', () => {
+  it('fires cta buttons on click action when isActive is false', () => {
     const ctaClick = jest.fn()
     const cardClick = jest.fn()
     const wrapper = shallow(
@@ -68,7 +71,7 @@ describe('ag/Listing/SingleFamilyMobileMapListing', () => {
         {...props}
         ctaButtons={{ onClick: ctaClick }}
         onClick={cardClick}
-        prioritizeCardClick
+        isActive={false}
       />)
     wrapper.find('[data-tid="cta-button"]').at(0).simulate('click')
     expect(cardClick.mock.calls).toHaveLength(1)
@@ -76,14 +79,14 @@ describe('ag/Listing/SingleFamilyMobileMapListing', () => {
 
   it('fires favoriteButton click action on favorite button click', () => {
     const favoriteClick = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mount(
       <SingleFamilyMobileMapListing
         {...props}
         favoriteButton={{ onClick: favoriteClick }}
       />
     )
     wrapper.find(ToggleButton).simulate('click')
-    expect(favoriteClick).toHaveBeenCalled()
+    expect(favoriteClick).toHaveBeenCalledWith(baseListing, true)
   })
 
   it('does not fire cardClick on favorite button click', () => {
@@ -138,5 +141,15 @@ describe('ag/Listing/SingleFamilyMobileMapListing', () => {
   it('populates components from listing object prop', () => {
     const wrapper = mount(<SingleFamilyMobileMapListing {...props} />)
     expect(wrapper.find('[data-tid="bedroom"]').at(0).text()).toEqual(baseListing.bedrooms)
+  })
+
+  it('adds a inactive theme if the listing is inactive', () => {
+    const wrapper = shallow(<SingleFamilyMobileMapListing {...props} isActive={false} />)
+    expect(wrapper.hasClass('MobileMapListing-inactive')).toBeTruthy()
+  })
+
+  it('adds a active theme if the listing is active', () => {
+    const wrapper = shallow(<SingleFamilyMobileMapListing {...props} isActive />)
+    expect(wrapper.hasClass('MobileMapListing-active')).toBeTruthy()
   })
 })

@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { Button, RatingBar, ToggleButton } from '@rentpath/react-ui-core'
 import ThemedMobileMapListing from '../MobileMapListing'
+import theme from './mocks/theme'
 
 const MobileMapListing = ThemedMobileMapListing.WrappedComponent
 
@@ -34,6 +35,7 @@ const baseListing = {
 
 const props = {
   listing: baseListing,
+  theme,
   onClick: () => { },
   navigation: {
     next: {
@@ -43,7 +45,6 @@ const props = {
       children: 'Previous',
     },
   },
-  prioritizeCardClick: false,
   ctaButtons: [
     {
       valueLocation: 'phone',
@@ -78,11 +79,23 @@ describe('ag/Listing/MobileMapListing', () => {
       wrapper = shallow(
         <MobileMapListing
           {...props}
-          ctaButtons={[{ onClick: ctaClick }, { onClick: ctaClick }]}
+          ctaButtons={[{ children: 'foo', onClick: ctaClick }, { children: 'bar', onClick: ctaClick }]}
           onClick={cardClick}
-          prioritizeCardClick={false}
+          isActive
         />
       )
+    })
+
+    it('does not render a cta button if there is no text to display in the button', () => {
+      wrapper = shallow(
+        <MobileMapListing
+          {...props}
+          ctaButtons={[{ onClick: ctaClick }, { children: 'bar', onClick: ctaClick }]}
+          onClick={cardClick}
+          isActive
+        />
+      )
+      expect(wrapper.find(Button).length).toEqual(1)
     })
 
     it('handle an array of cta buttons', () => {
@@ -95,13 +108,13 @@ describe('ag/Listing/MobileMapListing', () => {
       expect(ctaClick.mock.calls).toHaveLength(2)
     })
 
-    it('fires cta buttons on click action when prioritizeCardClick is true', () => {
+    it('fires cta buttons on click action when isActive is false', () => {
       wrapper = shallow(
         <MobileMapListing
           {...props}
-          ctaButtons={[{ onClick: ctaClick }, { onClick: ctaClick }]}
+          ctaButtons={[{ children: 'foo', onClick: ctaClick }, { children: 'bar', onClick: ctaClick }]}
           onClick={cardClick}
-          prioritizeCardClick
+          isActive={false}
         />)
       wrapper.find('[data-tid="cta-button"]').at(0).simulate('click')
       wrapper.find('[data-tid="cta-button"]').at(1).simulate('click')
@@ -111,14 +124,14 @@ describe('ag/Listing/MobileMapListing', () => {
 
   it('fires favoriteButton click action on favorite button click', () => {
     const favoriteClick = jest.fn()
-    const wrapper = shallow(
+    const wrapper = mount(
       <MobileMapListing
         {...props}
         favoriteButton={{ onClick: favoriteClick }}
       />
     )
     wrapper.find(ToggleButton).simulate('click')
-    expect(favoriteClick).toHaveBeenCalled()
+    expect(favoriteClick).toHaveBeenCalledWith(baseListing, true)
   })
 
   it('does not fire cardClick on favorite button click', () => {
@@ -177,5 +190,15 @@ describe('ag/Listing/MobileMapListing', () => {
     const wrapper = mount(<MobileMapListing {...props} />)
     expect(wrapper.find('[data-tid="bedroom"]').at(0).text()).toEqual(baseListing.bedrooms)
     expect(wrapper.find(RatingBar).props().score).toEqual(4)
+  })
+
+  it('adds a inactive theme if the listing is inactive', () => {
+    const wrapper = shallow(<MobileMapListing {...props} isActive={false} />)
+    expect(wrapper.hasClass('MobileMapListing-inactive')).toBeTruthy()
+  })
+
+  it('adds a active theme if the listing is active', () => {
+    const wrapper = shallow(<MobileMapListing {...props} isActive />)
+    expect(wrapper.hasClass('MobileMapListing-active')).toBeTruthy()
   })
 })

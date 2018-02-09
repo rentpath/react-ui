@@ -55,8 +55,8 @@ smallStories('Filters / PriceFilterCard / small', module)
   .add('Price Filter', () => InlinePriceFilterCard)
 
 smallStories('Listings', module)
-  .add('Mobile Map Listing', () => ExampleMobileMapListing)
-  .add('Single Family Mobile Map Listing', () => ExampleSingleFamily)
+  .add('Mobile Map Listing', ExampleMobileMapListing)
+  .add('Single Family Mobile Map Listing', ExampleSingleFamily)
 
 smallStories('Carousels', module)
   .add('Listing Carousel', () => DefaultListingCarousel)

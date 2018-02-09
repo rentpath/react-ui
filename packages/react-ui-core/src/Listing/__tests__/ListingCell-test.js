@@ -56,10 +56,10 @@ describe('ListingCell', () => {
     expect(cardClick).toHaveBeenCalled()
   })
 
-  it('fires a card click on a button click if prioritizeCardClick is true', () => {
+  it('fires a card click on a button click if isActive is false', () => {
     const cardClick = jest.fn()
     const wrapper = mount(
-      <ListingCell listing={listing} onClick={cardClick} prioritizeCardClick>
+      <ListingCell listing={listing} onClick={cardClick} isActive={false}>
         <button data-tid="fake-button" />
       </ListingCell>
     )

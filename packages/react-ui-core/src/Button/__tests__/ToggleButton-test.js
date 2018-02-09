@@ -55,7 +55,7 @@ describe('ToggleButton', () => {
     expect(wrapper.hasClass('ToggleButton-on')).not.toBeTruthy()
   })
 
-  it('It fires callback function which returns alternating true and false', () => {
+  it('fires callback function which returns alternating true and false', () => {
     const props = {
       theme,
       className: theme.ToggleButton,
@@ -70,5 +70,18 @@ describe('ToggleButton', () => {
     expect(onClick.mock.calls[1][0]).toEqual(false)
     wrapper.simulate('click')
     expect(onClick.mock.calls[2][0]).toEqual(true)
+  })
+
+  it.only('does not toggle when inactive is true', () => {
+    const props = {
+      theme,
+      className: theme.ToggleButton,
+      children: <a href="#">Toggle</a>,
+    }
+    const onClick = jest.fn()
+
+    const wrapper = shallow(<ToggleButton onClick={onClick} {...props} inactive />)
+    wrapper.simulate('click')
+    expect(onClick.mock.calls[0][0]).toEqual(false)
   })
 })

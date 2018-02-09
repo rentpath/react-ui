@@ -14,6 +14,7 @@ export default class ToggleButton extends Component {
     children: PropTypes.node,
     value: PropTypes.bool,
     onClick: PropTypes.func,
+    inactive: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -39,11 +40,16 @@ export default class ToggleButton extends Component {
 
   @autobind
   toggle() {
-    const { onClick } = this.props
-    const value = !this.state.value
-    this.setState({
-      value,
-    })
+    const { onClick, inactive } = this.props
+
+    const value = inactive ? this.state.value : !this.state.value
+
+    if (!inactive) {
+      this.setState({
+        value,
+      })
+    }
+
     if (onClick) onClick(value)
   }
 
@@ -54,6 +60,7 @@ export default class ToggleButton extends Component {
       children,
       onClick,
       value,
+      inactive,
       ...props
     } = this.props
 

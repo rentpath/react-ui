@@ -63,7 +63,7 @@ export default class ListingCarousel extends Component {
         index={index}
         listing={listing}
         {...props}
-        prioritizeCardClick={index !== this.state.selectedIndex}
+        isActive={index === this.state.selectedIndex}
         onClick={this.listingClickHandler}
       />
     )
