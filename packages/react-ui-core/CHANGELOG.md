@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.4.0"></a>
+# [4.4.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.2.1...@rentpath/react-ui-core@4.4.0) (2018-02-09)
+
+
+### Features
+
+* **Hybrid Map:** add classname for mobile map listing for active and inactive ([fb197ab](https://github.com/rentpath/react-ui/commit/fb197ab))
+* **Rating Star:** add strokeWidth override inside the RatingBar's Star ([8f63b58](https://github.com/rentpath/react-ui/commit/8f63b58))
+
+
+
+
 <a name="4.3.0"></a>
 # [4.3.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.2.1...@rentpath/react-ui-core@4.3.0) (2018-02-08)
 
