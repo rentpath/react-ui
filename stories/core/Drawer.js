@@ -10,6 +10,7 @@ const DefaultDrawer = (
         border: 'solid 1px black',
         display: 'flex',
         alignItems: 'flex-end',
+        overflowY: 'hidden',
       }
     }
   >

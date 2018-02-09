@@ -2,6 +2,7 @@
   width: 100%; /*can be in percentage also.*/
   text-align: center;
   justify-content: center;
+  transition: all 400ms ease;
 }
 
 .Drawer .ToggleButton {
@@ -12,10 +13,6 @@
   background-color: #ffffff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
   margin-bottom: 9.5px;
-}
-
-.Drawer .Drawer_Content {
-  width: 100%;
 }
 
 .Drawer .Drawer_Content div {
