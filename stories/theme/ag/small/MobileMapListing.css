@@ -173,3 +173,8 @@
 .MobileMapListing_BedsAndCta > Div {
   margin-top: 2px;
 }
+
+.MobileMapListing-inactive :global(.image-gallery-right-nav),
+.MobileMapListing-inactive :global(.image-gallery-left-nav) {
+  display: none;
+}

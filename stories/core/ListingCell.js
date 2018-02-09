@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import { text, select, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-import { ListingCell, ListingComponents } from 'react-ui-core/src'
+import { ListingCell, ListingComponents, Button } from 'react-ui-core/src'
 
 const baseListing = {
   bedrooms: '1-3 Bedrooms',
@@ -84,13 +84,14 @@ const SideBySideListingCell = ({ theme }) => {
   }
 
   return (
-    <ListingCell listing={listing} onClick={() => action('click')('click')}>
+    <ListingCell listing={listing} onClick={() => action('click')('card click')}>
       <div className={theme.SideBySideListingCell_BedBath}>
         <ListingComponents.Bedroom />
         <ListingComponents.Bathroom />
       </div>
       <ListingComponents.Ratings {...sideBySideRatingProps} />
       {listing.hasCoupon && <div>Coupon!</div>}
+      <Button onClick={() => action('click')('button click')}>Click me!</Button>
       <ListingComponents.Photos server="https://image.rent.com/" dimensions="400-200" showNav />
     </ListingCell>
   )
