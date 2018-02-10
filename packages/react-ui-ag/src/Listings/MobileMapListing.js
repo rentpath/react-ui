@@ -112,11 +112,12 @@ export default class MobileMapListing extends PureComponent {
   }
 
   renderFavoriteButton() {
-    const { theme, favoriteButton, isActive } = this.props
+    const { theme, favoriteButton, isActive, listing } = this.props
     const { className } = favoriteButton
     return (
       <ToggleButton
         {...favoriteButton}
+        value={listing.isFavorited}
         className={classnames(
           theme.MobileMapListing_FavoriteButton,
           className,

@@ -81,10 +81,31 @@ const singleFamilyProps = {
 
 export const ExampleMobileMapListing = () => {
   const isActive = boolean('isActive', true)
-  return <MobileMapListing {...props} ctaButtons={ctaButtons} isActive={isActive} />
+  const listing = {
+    ...baseListing,
+    isFavorited: boolean('listing.isFavorited', false),
+  }
+  return (
+    <MobileMapListing
+      {...props}
+      listing={listing}
+      ctaButtons={ctaButtons}
+      isActive={isActive}
+    />
+  )
 }
 
 export const ExampleSingleFamily = () => {
   const isActive = boolean('isActive', true)
-  return <SingleFamilyMobileMapListing {...singleFamilyProps} isActive={isActive} />
+  const listing = {
+    ...baseListing,
+    isFavorited: boolean('listing.isFavorited', false),
+  }
+  return (
+    <SingleFamilyMobileMapListing
+      {...singleFamilyProps}
+      listing={listing}
+      isActive={isActive}
+    />
+  )
 }
