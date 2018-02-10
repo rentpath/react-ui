@@ -61,6 +61,7 @@ const listings = [
         caption: null,
       },
     ],
+    isFavorited: true,
   },
   {
     bedrooms: '1-4 Bedrooms',
@@ -115,6 +116,7 @@ const listings = [
         caption: null,
       },
     ],
+    isFavorited: true,
   },
   {
     bedrooms: '3 Beds',

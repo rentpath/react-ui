@@ -152,4 +152,28 @@ describe('ag/Listing/SingleFamilyMobileMapListing', () => {
     const wrapper = shallow(<SingleFamilyMobileMapListing {...props} isActive />)
     expect(wrapper.hasClass('MobileMapListing-active')).toBeTruthy()
   })
+
+  it('sets the favorite button to favorited when the listing has isFavorited as true', () => {
+    const favoritedProps = {
+      ...props,
+      listing: {
+        ...props.listing,
+        isFavorited: true,
+      },
+    }
+    const wrapper = shallow(<SingleFamilyMobileMapListing {...favoritedProps} />)
+    expect(wrapper.find(ToggleButton).prop('value')).toBeTruthy()
+  })
+
+  it('sets the favorite button to not favorited when the listing has isFavorited as false', () => {
+    const favoritedProps = {
+      ...props,
+      listing: {
+        ...props.listing,
+        isFavorited: false,
+      },
+    }
+    const wrapper = shallow(<SingleFamilyMobileMapListing {...favoritedProps} />)
+    expect(wrapper.find(ToggleButton).prop('value')).toBeFalsy()
+  })
 })
