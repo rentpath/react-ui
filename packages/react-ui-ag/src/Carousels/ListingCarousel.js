@@ -39,16 +39,15 @@ export default class ListingCarousel extends Component {
 
   @autobind
   updateSelectedIndex(selectedIndex) {
+    const { onSlide, listings } = this.props
     this.setState({ selectedIndex })
+    if (onSlide) onSlide(listings[selectedIndex])
   }
 
   @autobind
   listingClickHandler(index) {
-    const { onSlide, listings } = this.props
-
     if (index !== this.state.selectedIndex) {
       this.updateSelectedIndex(index)
-      if (onSlide) onSlide(listings[index])
     } else if (this.props.listingProps.onClick) {
       this.props.listingProps.onClick(index)
     }
@@ -75,6 +74,7 @@ export default class ListingCarousel extends Component {
       theme,
       listings,
       selectedIndex,
+      onSlide,
       ...props
     } = this.props
 
