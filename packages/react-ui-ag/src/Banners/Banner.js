@@ -29,28 +29,17 @@ export default class Banner extends PureComponent {
       ...props
     } = this.props
 
-    const sum = 4 + 12
-
-    if (!!sum) {
-      return (
-        <Text
-          className={classnames(
-            theme.Banner,
-            className,
-            {
-              foo: false,
-              bar: true,
-            }
-          )}
-          data-tid="banner"
-          foo="bar"
-          {...props}
-        >
-          {name}
-        </Text>
-      )
-    }
-
-    return (<p>Trying out codecov</p>)
+    return (
+      <Text
+        className={classnames(
+          theme.Banner,
+          className,
+        )}
+        data-tid="banner"
+        {...props}
+      >
+        {name}
+      </Text>
+    )
   }
 }
