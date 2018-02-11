@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.8.2"></a>
+## [0.8.2](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.8.1...@rentpath/react-ui-ag@0.8.2) (2018-02-11)
+
+
+### Bug Fixes
+
+* **Hybrid Map:** fix how onSlide is handled by ListingCarousel ([4a8d144](https://github.com/rentpath/react-ui/commit/4a8d144))
+
+
+
+
 <a name="0.8.1"></a>
 ## [0.8.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.8.0...@rentpath/react-ui-ag@0.8.1) (2018-02-10)
 
