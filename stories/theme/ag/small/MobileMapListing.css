@@ -92,10 +92,12 @@
   text-overflow: ellipsis;
 }
 
-.MobileMapListing .RatingBar {
+.MobileMapListing .RatingBar,
+.MobileMapListing_RatingPlaceHolder {
   display: flex;
   align-items: baseline;
   line-height: 0;
+  height: 9px;
 }
 
 .ListingCell .RatingBar_Items {

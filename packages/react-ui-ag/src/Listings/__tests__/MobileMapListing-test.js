@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
+import { omit } from 'lodash'
 import { Button, RatingBar, ToggleButton } from '@rentpath/react-ui-core'
 import ThemedMobileMapListing from '../MobileMapListing'
 import theme from './mocks/theme'
@@ -200,6 +201,13 @@ describe('ag/Listing/MobileMapListing', () => {
   it('adds a active theme if the listing is active', () => {
     const wrapper = shallow(<MobileMapListing {...props} isActive />)
     expect(wrapper.hasClass('MobileMapListing-active')).toBeTruthy()
+  })
+
+  it('adds a rating placeholder if the listing prop has no rating attribute', () => {
+    const wrapper = shallow(<MobileMapListing {...props} />)
+    expect(wrapper.find('[data-tid="rating-placeholder"]')).toHaveLength(0)
+    wrapper.setProps({ listing: omit(baseListing, 'rating') })
+    expect(wrapper.find('[data-tid="rating-placeholder"]')).toHaveLength(1)
   })
 
   it('sets the favorite button to favorited when the listing has isFavorited as true', () => {
