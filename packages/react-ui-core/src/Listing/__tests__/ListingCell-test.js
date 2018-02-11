@@ -54,6 +54,7 @@ describe('ListingCell', () => {
     expect(cardClick).not.toHaveBeenCalled()
     wrapper.simulate('click')
     expect(cardClick).toHaveBeenCalled()
+    expect(cardClick.mock.calls[0][0]).toEqual(listing)
   })
 
   it('fires a card click on a button click if isActive is false', () => {
@@ -65,5 +66,6 @@ describe('ListingCell', () => {
     )
     wrapper.find('button[data-tid="fake-button"]').simulate('click')
     expect(cardClick).toHaveBeenCalled()
+    expect(cardClick.mock.calls[0][0]).toEqual(listing)
   })
 })

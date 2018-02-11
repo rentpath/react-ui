@@ -49,7 +49,8 @@ export default class ListingCarousel extends Component {
     if (index !== this.state.selectedIndex) {
       this.updateSelectedIndex(index)
     } else if (this.props.listingProps.onClick) {
-      this.props.listingProps.onClick(index)
+      const { listings } = this.props
+      this.props.listingProps.onClick(index, listings[index])
     }
   }
 

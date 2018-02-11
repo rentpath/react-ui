@@ -64,10 +64,10 @@ export default class ListingCell extends Component {
 
   @autobind
   handleClick(event) {
-    const { onClick, isActive } = this.props
+    const { listing, onClick, isActive } = this.props
 
     if (!isActive || !event || event.target.tagName !== 'BUTTON') {
-      if (onClick) onClick()
+      if (onClick) onClick(listing)
     }
   }
 

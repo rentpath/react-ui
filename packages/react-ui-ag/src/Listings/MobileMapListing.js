@@ -15,7 +15,6 @@ const buttonPropTypes = PropTypes.shape({
 })
 
 @themed(/^MobileMapListing/, { pure: true })
-
 export default class MobileMapListing extends PureComponent {
   static propTypes = {
     index: PropTypes.number,
@@ -41,20 +40,20 @@ export default class MobileMapListing extends PureComponent {
 
   @autobind
   handleCardClick() {
-    const { index, onClick } = this.props
+    const { index, listing, onClick } = this.props
 
-    if (onClick) onClick(index)
+    if (onClick) onClick(index, listing)
   }
 
   @autobind
   handleButtonClick(onClick) {
-    const { isActive } = this.props
+    const { isActive, listing } = this.props
 
     return event => {
       if (isActive && onClick) {
         onClick(this.props.listing)
       } else if (!isActive && this.props.onClick) {
-        this.props.onClick(this.props.index)
+        this.props.onClick(this.props.index, listing)
       }
 
       const shouldStopPropagation =
@@ -66,13 +65,13 @@ export default class MobileMapListing extends PureComponent {
 
   @autobind
   handleFavoriteClick(value) {
-    const { isActive, favoriteButton } = this.props
+    const { isActive, listing, favoriteButton } = this.props
     const { onClick } = favoriteButton
 
     if (isActive && onClick) {
       onClick(this.props.listing, value)
     } else if (!isActive && this.props.onClick) {
-      this.props.onClick(this.props.index)
+      this.props.onClick(this.props.index, listing)
     }
   }
 

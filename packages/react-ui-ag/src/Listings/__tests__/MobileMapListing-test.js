@@ -180,11 +180,13 @@ describe('ag/Listing/MobileMapListing', () => {
     const wrapper = mount(
       <MobileMapListing
         {...props}
+        index={0}
         onClick={cardClick}
       />
     )
     wrapper.simulate('click')
     expect(cardClick).toHaveBeenCalled()
+    expect(cardClick.mock.calls).toEqual([[0, baseListing]])
   })
 
   it('populates components from listing object prop', () => {

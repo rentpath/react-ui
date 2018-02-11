@@ -20,6 +20,7 @@ const listings = [
       label: '20',
       uniqueId: '123',
     },
+    phone: '404-378-1428',
     photos: [
       {
         path: 'imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/',
@@ -47,6 +48,7 @@ const listings = [
       label: '43,423',
       uniqueId: '234',
     },
+    phone: '555-867-5309',
     photos: [
       {
         path: 'imgr/fd972eb03a0463c484580349ad5177b7/',
@@ -70,6 +72,12 @@ const listings = [
     city: 'Okay Town',
     state: 'GS',
     price: '$100 / month',
+    rating: {
+      score: 3,
+      label: '234',
+      uniqueId: '345',
+    },
+    phone: '800-777-9311',
     photos: [
       {
         path: 'imgr/d56984e959a3feb1235f85ee202a0fc6/',
@@ -97,6 +105,7 @@ const listings = [
       label: '567',
       uniqueId: '5678',
     },
+    phone: '706-123-4589',
     photos: [
       {
         path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
@@ -127,6 +136,7 @@ const listings = [
       label: '20',
       uniqueId: '123',
     },
+    phone: '678-403-1428',
     photos: [
       {
         path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
@@ -141,7 +151,6 @@ const listings = [
         caption: null,
       },
     ],
-    phone: '404-378-1428',
     singleFamily: true,
   },
   {
@@ -156,6 +165,7 @@ const listings = [
       label: '567',
       uniqueId: '5678',
     },
+    phone: '890-333-2034',
     photos: [
       {
         path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
@@ -174,15 +184,16 @@ const listings = [
 ]
 
 const listingProps = {
-  onClick: () => action('click')('listing cell click'),
+  onClick: (index, listing) => action('click')(`Carousel Position: ${index} for listing: ${listing.name}`),
   ctaButtons: [
     {
-      children: '404-378-1428',
+      valueLocation: 'phone',
       onClick: () => action('click')('Phone CTA'),
+      nodeType: 'a',
       className: 'phone',
     },
     {
-      children: 'send an email',
+      valueLocation: 'email',
       onClick: () => action('click')('contact CTA'),
       className: 'contact',
     },
@@ -198,8 +209,9 @@ const listingProps = {
     disableSwipe: true,
   },
   ratings: {
-    fillColor: 'yellow',
-    backgroundFillColor: '#ffffff',
+    fillColor: '#fbb900',
+    backgroundFillColor: '#9b9b9b',
+    strokeWidth: '0',
   },
 }
 
