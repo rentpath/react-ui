@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Motion, spring } from 'react-motion'
 import themed from 'react-themed'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
@@ -27,7 +26,7 @@ export default class Drawer extends Component {
 
   static defaultProps = {
     theme: {},
-    height: 220,
+    height: 205,
     movementDamping: null,
     movementStiffness: null,
     visible: true,
@@ -72,42 +71,31 @@ export default class Drawer extends Component {
 
     return (
       <div
-        className={classnames(theme.Drawer, className)}
+        className={classnames(
+          theme.Drawer,
+          theme[visible ? 'Drawer-on' : 'Drawer-off'],
+          className,
+        )}
+        style={visible ? {} : { transform: `translateY(${height}px)` }}
         data-tid="drawer"
       >
-        <Motion style={{
-          x: spring(this.state.visible ? 0 : height,
-            movementStiffness,
-            movementDamping),
-        }}
+        <ToggleButton
+          className={classnames(
+            theme[visible ? 'Drawer-Button-on' : 'Drawer-Button-off'],
+          )}
+          theme={theme}
+          onClick={this.handleToggle}
+          value={visible}
+          {...props}
         >
-          {({ x }) =>
-            (
-              <div>
-                <ToggleButton
-                  className={classnames(
-                    theme[this.state.visible ? 'Drawer-Button-on' : 'Drawer-Button-off'],
-                  )}
-                  theme={theme}
-                  onClick={this.handleToggle}
-                  value={visible}
-                  {...props}
-                >
-                  {(visible) ? closeButtonContents : openButtonContents}
-                </ToggleButton>
-                { (x < height - 0.1) && <div
-                  className={classnames(theme.Drawer_Content)}
-                  data-tid="drawer-content"
-                  style={{
-                    height: `${height - x}px`,
-                  }}
-                >
-                  {children}
-                </div>}
-              </div>
-            )
-          }
-        </Motion>
+          {(visible) ? closeButtonContents : openButtonContents}
+        </ToggleButton>
+        <div
+          className={theme.Drawer_Content}
+          data-tid="drawer-content"
+        >
+          {children}
+        </div>
       </div>
     )
   }

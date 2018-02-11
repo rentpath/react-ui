@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import ThemedDrawer from '../Drawer'
 import theme from './mocks/theme'
 import { ToggleButton } from '../../Button'
@@ -69,7 +69,8 @@ describe('Drawer', () => {
       visible: false,
     }
 
-    const wrapper = mount(<Drawer {...props} />)
-    expect(wrapper.find('[data-tid="drawer-content"]')).toHaveLength(0)
+    const wrapper = shallow(<Drawer {...props} />)
+    const drawer = wrapper.find('[data-tid="drawer"]')
+    expect(drawer.props().style).toEqual({ transform: 'translateY(205px)' })
   })
 })
