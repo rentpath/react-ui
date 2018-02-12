@@ -70,11 +70,6 @@ const listings = [
     city: 'Okay Town',
     state: 'GS',
     price: '$100 / month',
-    rating: {
-      score: 3,
-      label: '234',
-      uniqueId: '345',
-    },
     photos: [
       {
         path: 'imgr/d56984e959a3feb1235f85ee202a0fc6/',

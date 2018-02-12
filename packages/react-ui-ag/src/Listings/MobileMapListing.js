@@ -177,7 +177,13 @@ export default class MobileMapListing extends PureComponent {
               <ListingComponents.Bedroom />
               <ListingComponents.UnitLevelAvailability />
             </div>
-            <ListingComponents.Ratings {...ratings} />
+            {listing.rating ?
+              <ListingComponents.Ratings {...ratings} /> :
+              <div
+                className={theme.MobileMapListing_RatingPlaceHolder}
+                data-tid="rating-placeholder"
+              />
+            }
           </div>
           <div className={theme.MobileMapListing_CTAs}>
             {this.renderCtaButtons()}
