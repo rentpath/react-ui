@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.5.0"></a>
+# [4.5.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.2.1...@rentpath/react-ui-core@4.5.0) (2018-02-12)
+
+
+### Bug Fixes
+
+* **Hybrid Map:** added phoneNumber property to listing to get the phone number data as well as compo ([a353425](https://github.com/rentpath/react-ui/commit/a353425))
+* **Hybrid Map:** passed in Listing object to onClick props ([143038a](https://github.com/rentpath/react-ui/commit/143038a))
+
+
+### Features
+
+* **Hybrid Map:** add classname for mobile map listing for active and inactive ([fb197ab](https://github.com/rentpath/react-ui/commit/fb197ab))
+* **Rating Star:** add strokeWidth override inside the RatingBar's Star ([8f63b58](https://github.com/rentpath/react-ui/commit/8f63b58))
+
+
+
+
 <a name="4.4.1"></a>
 ## [4.4.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.4.0...@rentpath/react-ui-core@4.4.1) (2018-02-11)
 

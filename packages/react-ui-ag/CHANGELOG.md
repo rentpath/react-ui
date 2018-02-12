@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.7.0...@rentpath/react-ui-ag@0.9.0) (2018-02-12)
+
+
+### Bug Fixes
+
+* **Hybrid Map:** added phoneNumber property to listing to get the phone number data as well as compo ([a353425](https://github.com/rentpath/react-ui/commit/a353425))
+* **Hybrid Map:** allow isFavorited to be passed and used by MobileMapListing ([cf2aa18](https://github.com/rentpath/react-ui/commit/cf2aa18))
+* **Hybrid Map:** fix how onSlide is handled by ListingCarousel ([4a8d144](https://github.com/rentpath/react-ui/commit/4a8d144))
+* **Hybrid Map:** passed in Listing object to onClick props ([143038a](https://github.com/rentpath/react-ui/commit/143038a))
+* **react-ui-ag:** render an empty div instead of ratings if no rating present ([4990310](https://github.com/rentpath/react-ui/commit/4990310))
+
+
+### Features
+
+* **Hybrid Map:** add classname for mobile map listing for active and inactive ([fb197ab](https://github.com/rentpath/react-ui/commit/fb197ab))
+
+
+
+
 <a name="0.8.2"></a>
 ## [0.8.2](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.8.1...@rentpath/react-ui-ag@0.8.2) (2018-02-11)
 
