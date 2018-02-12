@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.9.1"></a>
+## [0.9.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.9.0...@rentpath/react-ui-ag@0.9.1) (2018-02-12)
+
+
+### Bug Fixes
+
+* **Hybrid Map:** reverted href attribute changes ([cb9ab38](https://github.com/rentpath/react-ui/commit/cb9ab38))
+
+
+
+
 <a name="0.9.0"></a>
 # [0.9.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.7.0...@rentpath/react-ui-ag@0.9.0) (2018-02-12)
 
