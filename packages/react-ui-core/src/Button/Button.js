@@ -13,10 +13,12 @@ export default class Button extends Component {
     size: PropTypes.string,
     color: PropTypes.string,
     theme: PropTypes.object,
+    nodeType: PropTypes.string,
   }
 
   static defaultProps = {
     theme: {},
+    nodeType: 'button',
   }
 
   render() {
@@ -25,11 +27,12 @@ export default class Button extends Component {
       color,
       theme,
       className,
+      nodeType: NodeType,
       ...props
     } = this.props
 
     return (
-      <button
+      <NodeType
         data-tid="button"
         {...props}
         className={

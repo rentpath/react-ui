@@ -87,12 +87,25 @@ export default class MobileMapListing extends PureComponent {
       onClick,
       valueLocation,
       children,
-      ...buttonProps
+      ...rest
     } = props
 
     const buttonText = get(listing, valueLocation, children)
+    let buttonProps = { ...rest }
 
     if (!buttonText) return null
+
+    if (valueLocation === 'phone') {
+      const { phoneNumber = {} } = listing
+
+      if (phoneNumber.display) {
+        buttonProps = {
+          ...rest,
+          nodeType: 'a',
+          href: `tel:${phoneNumber.digits}`,
+        }
+      }
+    }
 
     return (
       <Button
