@@ -230,14 +230,29 @@ describe('ListingCarousel', () => {
     expect(onSlide).toHaveBeenCalled()
   })
 
-  it('only passes onClick events to the selected listing', () => {
-    const wrapper = mount(
-      <ListingCarousel
-        selectedIndex={0} {...props}
-      />)
+  describe('only passes onClick events to the selected listing', () => {
+    it('does not call the handler when card is not selected', () => {
+      const wrapper = mount(
+        <ListingCarousel
+          selectedIndex={0} {...props}
+        />)
 
-    expect(wrapper.state('selectedIndex')).toEqual(0)
-    wrapper.find(MobileMapListing).at(1).simulate('click')
-    expect(onClick.mock.calls.length).toEqual(0)
+      expect(wrapper.state('selectedIndex')).toEqual(0)
+      wrapper.find(MobileMapListing).at(1).simulate('click')
+      expect(onClick.mock.calls.length).toEqual(0)
+    })
+
+    it('calls the handler when the card is selected', () => {
+      const wrapper = mount(
+        <ListingCarousel
+          selectedIndex={0}
+          {...props}
+        />)
+
+      wrapper.find(MobileMapListing).at(0).simulate('click')
+      expect(onClick.mock.calls.length).toEqual(1)
+      expect(onClick.mock.calls[0][0]).toEqual(0)
+      expect(onClick.mock.calls[0][1]).toEqual(listings[0])
+    })
   })
 })
