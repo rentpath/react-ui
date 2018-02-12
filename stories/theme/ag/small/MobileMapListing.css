@@ -48,6 +48,11 @@
   cursor: pointer;
 }
 
+a.MobileMapListing_CtaButton {
+  text-align: center;
+  height: initial;
+}
+
 .MobileMapListing .Button {
   outline: none;
 }

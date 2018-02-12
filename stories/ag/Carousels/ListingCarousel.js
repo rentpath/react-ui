@@ -21,6 +21,10 @@ const listings = [
       uniqueId: '123',
     },
     phone: '404-378-1428',
+    phoneNumber: {
+      digits: '4043781428',
+      display: '404-378-1428',
+    },
     photos: [
       {
         path: 'imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/',
@@ -49,6 +53,10 @@ const listings = [
       uniqueId: '234',
     },
     phone: '555-867-5309',
+    phoneNumber: {
+      digits: '5558675309',
+      display: '555-867-5309',
+    },
     photos: [
       {
         path: 'imgr/fd972eb03a0463c484580349ad5177b7/',
@@ -78,6 +86,10 @@ const listings = [
       uniqueId: '345',
     },
     phone: '800-777-9311',
+    phoneNumber: {
+      digits: '8007779311',
+      display: '800-777-9311',
+    },
     photos: [
       {
         path: 'imgr/d56984e959a3feb1235f85ee202a0fc6/',
@@ -105,7 +117,6 @@ const listings = [
       label: '567',
       uniqueId: '5678',
     },
-    phone: '706-123-4589',
     photos: [
       {
         path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
@@ -136,7 +147,6 @@ const listings = [
       label: '20',
       uniqueId: '123',
     },
-    phone: '678-403-1428',
     photos: [
       {
         path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
@@ -165,7 +175,6 @@ const listings = [
       label: '567',
       uniqueId: '5678',
     },
-    phone: '890-333-2034',
     photos: [
       {
         path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
@@ -188,7 +197,7 @@ const listingProps = {
   ctaButtons: [
     {
       valueLocation: 'phone',
-      onClick: () => action('click')('Phone CTA'),
+      onClick: listing => action('click')(`Phone CTA calling: ${listing.phoneNumber.digits}`),
       nodeType: 'a',
       className: 'phone',
     },
