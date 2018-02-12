@@ -16,6 +16,7 @@ export default class PhotoCarousel extends PureComponent {
       PropTypes.shape({
         caption: PropTypes.string,
         path: PropTypes.string,
+        itemProps: PropTypes.object,
       }),
     ),
     dimensions: PropTypes.string,
@@ -54,6 +55,7 @@ export default class PhotoCarousel extends PureComponent {
         alt={item.caption}
         src={this.photo(item.path)}
         className={this.props.theme.PhotoCarousel_Image}
+        {...item.itemProps}
       />
     )
   }

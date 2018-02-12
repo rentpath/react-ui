@@ -21,6 +21,16 @@ const items = [
   },
 ]
 
+const itemsWithProps = [
+  {
+    path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
+    caption: 'test 1',
+    itemProps: {
+      'data-tag_item': 'firstPhoto',
+    },
+  },
+]
+
 describe('PhotoCarousel', () => {
   it('applies a base theme to the root node', () => {
     const wrapper = shallow(
@@ -49,6 +59,17 @@ describe('PhotoCarousel', () => {
     expect(className).toContain('Foo')
   })
 
+  it('allows an object to be added to item if needed', () => {
+    const wrapper = shallow(
+      <PhotoCarousel
+        items={itemsWithProps}
+        server="https://image.rent.com/"
+      />
+    )
+    const itemProp = wrapper.prop('items')
+    expect(itemProp[0].itemProps['data-tag_item']).toBeTruthy()
+  })
+
   describe('when no items', () => {
     it('renders an empty div when empty array', () => {
       const snap = renderer.create(<PhotoCarousel items={[]} server="https://image.rent.com/" />).toJSON()
@@ -72,7 +93,6 @@ describe('PhotoCarousel', () => {
         dimensions={dims}
       />
     )
-
     const images = wrapper.find('img')
     expect(images.at(0).prop('src')).toEqual(`${server}${items[0].path}${dims}`)
     expect(images.at(1).prop('src')).toEqual(`${server}${items[1].path}${dims}`)
