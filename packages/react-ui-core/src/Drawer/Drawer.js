@@ -62,6 +62,7 @@ export default class Drawer extends Component {
       closeButtonContents,
       openButtonContents,
       visible: visibleProp,
+      onClick,
       ...props
     } = this.props
 
