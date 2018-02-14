@@ -34,13 +34,14 @@ const baseListing = {
     },
   ],
   phone: '404-378-1428',
+  isFavorited: boolean('listing.isFavorited', true),
 }
 
 const props = {
   listing: baseListing,
   onClick: () => action('click')('listing cell click'),
   favoriteButton: {
-    onClick: (listing, value) => action('click')('favorite toggled to ', value),
+    onClick: (listing, value) => action('click')('favorite toggled to ', boolean('listing.isFavorited', value)),
     children: '♥',
   },
   photos: {
