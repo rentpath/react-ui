@@ -64,7 +64,7 @@ export default class MobileMapListing extends PureComponent {
   }
 
   @autobind
-  handleFavoriteClick(value) {
+  handleFavoriteClick(value, event) {
     const { isActive, listing, favoriteButton } = this.props
     const { onClick } = favoriteButton
 
@@ -72,6 +72,13 @@ export default class MobileMapListing extends PureComponent {
       onClick(this.props.listing, value)
     } else if (!isActive && this.props.onClick) {
       this.props.onClick(this.props.index, listing)
+    }
+
+    const shouldStopPropagation =
+      isActive && event && event.stopPropagation
+
+    if (shouldStopPropagation) {
+      event.stopPropagation()
     }
   }
 

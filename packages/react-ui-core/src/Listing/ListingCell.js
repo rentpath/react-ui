@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
 import isEqual from 'lodash/isEqual'
+import intersection from 'lodash/intersection'
 import pick from 'lodash/pick'
 import autobind from 'autobind-decorator'
 
@@ -65,8 +66,13 @@ export default class ListingCell extends Component {
   @autobind
   handleClick(event) {
     const { listing, onClick, isActive } = this.props
+    const nonPropagationTargets = ['BUTTON', 'ANCHOR', 'USE', 'SVG']
 
-    if (!isActive || !event || event.target.tagName !== 'BUTTON') {
+    const { target, currentTarget } = event
+    const allTargets = [(target.tagName || '').toUpperCase(), (currentTarget.tagName || '').toUpperCase()]
+    const anyMatches = intersection(nonPropagationTargets, allTargets) || []
+
+    if (!isActive || !event || !anyMatches.length) {
       if (onClick) onClick(listing)
     }
   }

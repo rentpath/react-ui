@@ -39,7 +39,7 @@ export default class ToggleButton extends Component {
   }
 
   @autobind
-  toggle() {
+  toggle(event) {
     const { onClick, inactive } = this.props
 
     const value = inactive ? this.state.value : !this.state.value
@@ -50,7 +50,7 @@ export default class ToggleButton extends Component {
       })
     }
 
-    if (onClick) onClick(value)
+    if (onClick) onClick(value, event)
   }
 
   render() {
