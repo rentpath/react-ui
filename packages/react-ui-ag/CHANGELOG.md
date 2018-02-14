@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.9.3"></a>
+## [0.9.3](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.9.2...@rentpath/react-ui-ag@0.9.3) (2018-02-14)
+
+
+### Bug Fixes
+
+* **Hybrid Map:** favorite button and navigation click propagation bug events bubbling to parent cont ([4236ba7](https://github.com/rentpath/react-ui/commit/4236ba7))
+* **react-ui-ag:** give ListingCarousel onSlide to arguments: listing and index ([e83c071](https://github.com/rentpath/react-ui/commit/e83c071))
+
+
+
+
 <a name="0.9.2"></a>
 ## [0.9.2](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.9.1...@rentpath/react-ui-ag@0.9.2) (2018-02-13)
 
