@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.5.3"></a>
+## [4.5.3](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.5.2...@rentpath/react-ui-core@4.5.3) (2018-02-14)
+
+
+### Bug Fixes
+
+* **Hybrid Map:** favorite button and navigation click propagation bug events bubbling to parent cont ([4236ba7](https://github.com/rentpath/react-ui/commit/4236ba7))
+
+
+
+
 <a name="4.5.2"></a>
 ## [4.5.2](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.5.1...@rentpath/react-ui-core@4.5.2) (2018-02-13)
 
