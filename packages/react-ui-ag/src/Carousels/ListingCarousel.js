@@ -41,7 +41,7 @@ export default class ListingCarousel extends Component {
   updateSelectedIndex(selectedIndex) {
     const { onSlide, listings } = this.props
     this.setState({ selectedIndex })
-    if (onSlide) onSlide(listings[selectedIndex])
+    if (onSlide) onSlide(listings[selectedIndex], selectedIndex)
   }
 
   @autobind
