@@ -6,8 +6,8 @@ storybook-static
 *.swp
 .DS_Store
 .#*
+package-lock.json
 packages/**/yarn.lock
-packages/**/package-lock.json
 coverage
 build
 artifacts
