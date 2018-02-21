@@ -5,6 +5,7 @@ import RadioButton from './RadioButton.css'
 import RadioGroup from './RadioGroup.css'
 import DropdownAnchor from './DropdownAnchor.css'
 import Dropdown from './Dropdown.css'
+import { DesktopMapPinListing } from './Listings'
 import {
   RadioButton as RadioButtonBase,
   RadioGroup as RadioGroupBase,
@@ -38,4 +39,5 @@ export default compose({},
   RadioGroup,
   Dropdown,
   DropdownAnchor,
+  DesktopMapPinListing,
 )

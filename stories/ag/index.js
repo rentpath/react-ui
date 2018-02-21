@@ -17,7 +17,11 @@ import {
   DesktopPriceFilterDropdown,
 } from './Filters'
 
-import { ExampleMobileMapListing, ExampleSingleFamily } from './Listings'
+import {
+  ExampleMobileMapListing,
+  ExampleSingleFamily,
+  ExampleDesktopMapPinListing,
+} from './Listings'
 
 import {
   DefaultBanner,
@@ -57,6 +61,9 @@ smallStories('Filters / PriceFilterCard / small', module)
 smallStories('Listings', module)
   .add('Mobile Map Listing', ExampleMobileMapListing)
   .add('Single Family Mobile Map Listing', ExampleSingleFamily)
+
+largeStories('Listings', module)
+  .add('DesktopMapPinListing', () => ExampleDesktopMapPinListing)
 
 smallStories('Carousels', module)
   .add('Listing Carousel', () => DefaultListingCarousel)

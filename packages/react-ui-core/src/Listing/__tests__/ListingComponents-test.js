@@ -68,6 +68,36 @@ describe('ListingComponents', () => {
     })
   })
 
+  describe('Photo', () => {
+    const Photo = ListingComponents.Photo.WrappedComponent
+    const url = 'http://www.images.com/foo'
+
+    it('returns null if there is no photo in the context', () => {
+      const wrapper = shallow(<Photo />)
+      expect(wrapper.find('div').exists()).toBeFalsy()
+    })
+
+    it('returns null if there is no url in the photo', () => {
+      const wrapper = shallow(<Photo />, { context: { photo: { foo: 'bar' } } })
+      expect(wrapper.find('div').exists()).toBeFalsy()
+    })
+
+    it('puts the url in a CSS background-image inside a div', () => {
+      const wrapper = shallow(<Photo />, { context: { photo: { url } } })
+      expect(wrapper.find('div').prop('style')).toEqual({ backgroundImage: `url(${url})` })
+    })
+
+    it('passes extra props into the photo div', () => {
+      const wrapper = shallow(<Photo foo="bar" />, { context: { photo: { url } } })
+      expect(wrapper.find('div').prop('foo')).toEqual('bar')
+    })
+
+    it('passes anything inside the photo from context into the div as props', () => {
+      const wrapper = shallow(<Photo foo="bar" />, { context: { photo: { url, foo: 'bar' } } })
+      expect(wrapper.find('div').prop('foo')).toEqual('bar')
+    })
+  })
+
   const types = ['Bedroom', 'Bathroom', 'PropertyName', 'Price', 'Location', 'UnitLevelAvailability', 'Address']
 
   types.forEach(item => {

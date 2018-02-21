@@ -55,6 +55,7 @@ const components = [
   ['UnitLevelAvailability', 'unitLevelAvailability'],
   ['Availability', 'availability'],
   ['Address', 'address'],
+  ['Neighborhood', 'neighborhood'],
 ].reduce((acc, curr) => { acc[curr[0]] = createTextComponent(...curr); return acc }, {})
 
 const Ratings = (props, { rating }) => (
@@ -78,8 +79,30 @@ Photos.contextTypes = {
   ),
 }
 
+const Photo = ({ className, theme, ...props }, { photo }) => (
+  photo && photo.url ? (
+    <div
+      style={{ backgroundImage: `url(${photo.url})` }}
+      className={classnames(className, theme.Photo)}
+      {...props}
+      {...photo}
+    />
+  ) : null
+)
+Photo.propTypes = {
+  className: PropTypes.string,
+  theme: PropTypes.object,
+}
+Photo.defaultProps = {
+  theme: {},
+}
+Photo.contextTypes = {
+  photo: PropTypes.object,
+}
+
 export default {
   ...components,
   Ratings,
   Photos,
+  Photo: themed(['Photo'])(Photo),
 }
