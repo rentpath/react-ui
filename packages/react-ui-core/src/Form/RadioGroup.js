@@ -25,12 +25,15 @@ export default class RadioGroup extends Component {
       checked: PropTypes.bool,
       value: PropTypes.string,
     })),
+    allowUnselect: PropTypes.bool,
     onChange: PropTypes.func,
+    onUnselect: PropTypes.func,
   }
 
   static defaultProps = {
     theme: {},
     fields: [],
+    allowUnselect: false,
   }
 
   constructor(props) {
@@ -73,6 +76,16 @@ export default class RadioGroup extends Component {
     }
   }
 
+  handleClick = event => {
+    // Check if value was already selected, should we unselect it?
+    if (this.props.allowUnselect && this.state.value === event.target.value) {
+      this.setState({ value: null })
+      if (this.props.onUnselect) {
+        this.props.onUnselect(event)
+      }
+    }
+  }
+
   renderRadioButton(index, fieldProps) {
     const props = pick(this.props, ['name', 'hideInputElement', 'orientation'])
 
@@ -82,6 +95,7 @@ export default class RadioGroup extends Component {
         key={`${this.id}-${index}`}
         checked={this.state.value === fieldProps.value}
         onChange={this.handleValueChange}
+        onClick={this.handleClick}
         {...omit(fieldProps, 'checked')}
         {...props}
       />
@@ -96,6 +110,8 @@ export default class RadioGroup extends Component {
       fields,
       hideInputElement,
       onChange,
+      allowUnselect,
+      onUnselect,
       ...props
     } = this.props
 
