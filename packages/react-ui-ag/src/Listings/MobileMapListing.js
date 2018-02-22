@@ -82,6 +82,12 @@ export default class MobileMapListing extends PureComponent {
     }
   }
 
+  // renderPhoneCTAButton() {
+  //   const { listing: { phone } } = this.props
+  //   const { display, digits, icon } = phone
+
+  // }
+
   renderCtaButtons() {
     const { ctaButtons } = this.props
     return ctaButtons.map((cta, index) => this.renderCtaButton(cta, index))

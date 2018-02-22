@@ -54,6 +54,12 @@ module.exports = (storybookBaseConfig, configType) => {
         },
       ],
     },
+    {
+      test: /.svg$/,
+      include: path.resolve(__dirname, '../'),
+      exclude: /node_modules/,
+      use: ['svg-react-loader']
+    }
   )
 
   storybookBaseConfig.resolve = {

@@ -121,6 +121,8 @@ import {
 
 import { DefaultDrawer } from './Drawer'
 
+import { InlineIcon, FileBasedIcon } from './Icon'
+
 import coreStories from './coreStories'
 
 coreStories('AutoSuggestField', module)
@@ -238,3 +240,7 @@ coreStories('Title', module)
 
 coreStories('Drawers / Drawer', module)
   .add('Default Drawer', () => DefaultDrawer)
+
+coreStories('Icon', module)
+  .add('Inline Icon', () => InlineIcon)
+  .add('FileBased Icon', () => FileBasedIcon)
