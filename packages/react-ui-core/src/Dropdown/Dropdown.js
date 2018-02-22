@@ -117,7 +117,7 @@ export default class Dropdown extends Component {
       >
         {this.renderAnchor()}
         {this.state.visible &&
-          <div data-tid="dropdown-body">
+          <div data-tid="dropdown-body" className={theme.Dropdown_Body}>
             {this.renderChildren()}
           </div>
         }

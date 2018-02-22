@@ -86,7 +86,7 @@ export default class Menu extends PureComponent {
   handleSelection() {
     const { onItemSelect } = this.props
 
-    if (onItemSelect) onItemSelect(this.value)
+    if (onItemSelect) onItemSelect(this.value, this.state.highlightIndex)
   }
 
   @autobind
