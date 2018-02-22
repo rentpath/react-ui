@@ -1,0 +1,78 @@
+.DesktopMapPinListing {
+  border-radius: 5px;
+  box-shadow: 1px 0 5px 1px lightgray;
+  display: flex;
+  color: #373737;
+}
+
+.DesktopMapPinListing .Photo {
+  height: 106px;
+  width: 106px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.DesktopMapPinListing_Details {
+  width: 242px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.DesktopMapPinListing_Top {
+  font-weight: bold;
+  position: relative;
+}
+
+.DesktopMapPinListing_Location {
+  color: #777777;
+}
+
+.DesktopMapPinListing .Address {
+  font-size: 13px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.DesktopMapPinListing .Neighborhood {
+  font-size: 11px;
+}
+
+.DesktopMapPinListing_FavoriteButton {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+}
+
+.DesktopMapPinListing_FavoriteButton.ToggleButton-on {
+  color: #d32526;
+}
+
+.DesktopMapPinListing_FavoriteButton.ToggleButton-off {
+  color: rgba(192, 192, 192, 0.5);
+}
+
+.DesktopMapPinListing_CtaButton {
+  border: none;
+  background-color: transparent;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.DesktopMapPinListing_CTAs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.DesktopMapPinListing_CtaButtonContact {
+  color: #d2232a;
+}
