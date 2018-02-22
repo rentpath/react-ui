@@ -39,6 +39,21 @@ export const VerticalRadioGroup = (
   />
 )
 
+export const UnselectRadioGroup = (
+  <RadioGroup
+    name={'radio-group-4'}
+    orientation="vertical"
+    hideInputElement
+    fields={[
+      { label: 'Uno', checked: true, value: 'Uno' },
+      { label: 'Dos', checked: false, value: 'Dos' },
+    ]}
+    onChange={event => action('change')(event.target.value)}
+    allowUnselect
+    onUnselect={event => action('unselect')(event.target.value)}
+  />
+)
+
 export const ImageButtonsRadioGroup = (
   <RadioGroup
     name="animals"

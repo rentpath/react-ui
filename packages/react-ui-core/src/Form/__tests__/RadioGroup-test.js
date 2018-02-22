@@ -156,4 +156,52 @@ describe('Form/RadioGroup', () => {
     })
     expect(wrapper.find(RadioButton).first().key()).toEqual(initialKey)
   })
+
+  it('unselects the radio button when using allowUnselect', () => {
+    const spyOnChange = jest.fn()
+    const spyOnUnselect = jest.fn()
+    const props = {
+      name: 'fooRadioGroup',
+      fields: [
+        { label: 'One', checked: false, value: 'One' },
+        { label: 'Two', checked: true, value: 'Two' },
+      ],
+      theme,
+      onChange: spyOnChange,
+      onUnselect: spyOnUnselect,
+      allowUnselect: true,
+    }
+    const wrapper = mount(<RadioGroup {...props} />)
+    expect(wrapper.state('value')).toEqual('Two')
+    wrapper.find('input[value="Two"]').simulate('click')
+    expect(wrapper.state('value')).toEqual(null)
+    expect(wrapper.find('input[value="Two"]').props()).not.toHaveProperty('checked', true)
+    expect(wrapper.find('input[value="One"]').props()).not.toHaveProperty('checked', true)
+    expect(spyOnChange).not.toBeCalled()
+    expect(spyOnUnselect).toBeCalled()
+  })
+
+  it('does not unselect the radio button when allowUnselect is false', () => {
+    const spyOnChange = jest.fn()
+    const spyOnUnselect = jest.fn()
+    const props = {
+      name: 'fooRadioGroup',
+      fields: [
+        { label: 'One', checked: false, value: 'One' },
+        { label: 'Two', checked: true, value: 'Two' },
+      ],
+      theme,
+      onChange: spyOnChange,
+      onUnselect: spyOnUnselect,
+      allowUnselect: false,
+    }
+    const wrapper = mount(<RadioGroup {...props} />)
+    expect(wrapper.state('value')).toEqual('Two')
+    wrapper.find('input[value="Two"]').simulate('click')
+    expect(wrapper.state('value')).toEqual('Two')
+    expect(wrapper.find('input[value="Two"]').props()).toHaveProperty('checked', true)
+    expect(wrapper.find('input[value="One"]').props()).not.toHaveProperty('checked', true)
+    expect(spyOnChange).not.toBeCalled()
+    expect(spyOnUnselect).not.toBeCalled()
+  })
 })
