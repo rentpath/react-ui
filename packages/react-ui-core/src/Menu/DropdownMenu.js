@@ -31,7 +31,11 @@ export default class DropdownMenu extends Component {
   }
 
   get selectedItem() {
-    return this.props.options[this.state.selectedIndex] || ''
+    return this.itemLabel(this.props.options[this.state.selectedIndex]) || ''
+  }
+
+  itemLabel(item) {
+    return typeof item === 'object' ? item.label : item
   }
 
   @autobind

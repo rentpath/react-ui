@@ -17,7 +17,13 @@ export default class Menu extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,
     className: PropTypes.string,
-    options: PropTypes.node,
+    options: PropTypes.arrayOf(PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.shape({
+        label: PropTypes.node,
+        value: PropTypes.node,
+      }),
+    ])),
     onItemSelect: PropTypes.func,
     onItemMouseOver: PropTypes.func,
     nodeType: PropTypes.string,
@@ -82,6 +88,16 @@ export default class Menu extends PureComponent {
     return options[this.state.highlightIndex]
   }
 
+  get options() {
+    return this.props.options || []
+  }
+
+  get optionLabels() {
+    return this.options.map(option => (
+      typeof option === 'object' ? option.label : option
+    ))
+  }
+
   @autobind
   handleSelection() {
     const { onItemSelect } = this.props
@@ -116,7 +132,7 @@ export default class Menu extends PureComponent {
           className,
           theme.Menu
         )}
-        items={options}
+        items={this.optionLabels}
         highlightIndex={this.state.highlightIndex}
         onClick={this.handleSelection}
         onMouseEnter={this.highlightOption}

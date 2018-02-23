@@ -3,11 +3,26 @@ import { action } from '@storybook/addon-actions'
 import { Menu, DropdownMenu } from 'react-ui-core/src'
 
 const options = [
-  'Best Match',
-  'Price (Highest to Lowest)',
-  'Price (Lowest to Highest)',
-  'Distance (Nearest First)',
-  'Rating (High to Low)',
+  {
+    label: 'Best Match',
+    value: 'best-match',
+  },
+  {
+    label: 'Price (Highest to Lowest)',
+    value: 'price-desc',
+  },
+  {
+    label: 'Price (Lowest to Highest)',
+    value: 'price-asc',
+  },
+  {
+    label: 'Distance (Nearest First)',
+    value: 'distance',
+  },
+  {
+    label: 'Rating (High to Low)',
+    value: 'rating',
+  },
 ]
 
 export const DefaultMenu = (
@@ -34,6 +49,6 @@ export const MenuOnSelectionHover = (
 export const DefaultDropdownMenu = (
   <DropdownMenu
     options={options}
-    onItemSelect={(item, index) => action('item select')(`${item}, ${index}`)}
+    onItemSelect={(item, index) => action('item select')(`${item.value}, ${index}`)}
   />
 )
