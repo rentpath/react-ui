@@ -38,4 +38,9 @@ describe('DropdownMenu', () => {
     wrapper.find('ListItem').at(1).simulate('mouseenter').simulate('click')
     expect(onItemSelect).toHaveBeenCalledWith('bar', 1)
   })
+
+  it('allows an initial selection to be chosen with selectedIndex prop', () => {
+    const wrapper = mount(<DropdownMenu {...props} selectedIndex={2} />)
+    expect(wrapper.find('button[data-tid="dropdown-anchor"]').text()).toEqual('baz')
+  })
 })
