@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.10.0"></a>
+# [0.10.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.9.3...@rentpath/react-ui-ag@0.10.0) (2018-02-23)
+
+
+### Features
+
+* **Desktop Hybrid Map:** create DesktopMapPinListing for Desktop Hybrid Map ([4b908b8](https://github.com/rentpath/react-ui/commit/4b908b8))
+
+
+
+
 <a name="0.9.3"></a>
 ## [0.9.3](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.9.2...@rentpath/react-ui-ag@0.9.3) (2018-02-14)
 

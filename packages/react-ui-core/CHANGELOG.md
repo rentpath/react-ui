@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.6.0"></a>
+# [4.6.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.5.3...@rentpath/react-ui-core@4.6.0) (2018-02-23)
+
+
+### Features
+
+* **Desktop Hybrid Map:** create DesktopMapPinListing for Desktop Hybrid Map ([4b908b8](https://github.com/rentpath/react-ui/commit/4b908b8))
+* **RadioGroup:** add allowUnselect prop to RadioGroup component ([aa071d2](https://github.com/rentpath/react-ui/commit/aa071d2))
+
+
+
+
 <a name="4.5.3"></a>
 ## [4.5.3](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.5.2...@rentpath/react-ui-core@4.5.3) (2018-02-14)
 
