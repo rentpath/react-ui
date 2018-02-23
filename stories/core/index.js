@@ -98,6 +98,7 @@ import {
   DefaultMenu,
   MenuOnSelection,
   MenuOnSelectionHover,
+  DefaultDropdownMenu,
 } from './Menu'
 
 import {
@@ -197,6 +198,7 @@ coreStories('Menu', module)
   .add('Menu', () => DefaultMenu)
   .add('On Keyboard Selection', () => MenuOnSelection)
   .add('On Selection hover', () => MenuOnSelectionHover)
+  .add('DropdownMenu', () => DefaultDropdownMenu)
 
 coreStories('Modal', module)
   .add('Modal', () => DefaultModal)

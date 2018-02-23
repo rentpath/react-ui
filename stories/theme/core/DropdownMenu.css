@@ -1,0 +1,8 @@
+.DropdownMenu {
+  width: 180px;
+}
+
+.DropdownMenu .Menu {
+  border: solid;
+  width: 190px;
+}

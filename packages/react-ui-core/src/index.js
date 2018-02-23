@@ -65,6 +65,7 @@ export {
 
 export {
   Menu,
+  DropdownMenu,
 } from './Menu'
 
 export {

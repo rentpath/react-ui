@@ -17,7 +17,13 @@ export default class Menu extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,
     className: PropTypes.string,
-    options: PropTypes.node,
+    options: PropTypes.arrayOf(PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.shape({
+        label: PropTypes.node,
+        value: PropTypes.node,
+      }),
+    ])),
     onItemSelect: PropTypes.func,
     onItemMouseOver: PropTypes.func,
     nodeType: PropTypes.string,
@@ -78,22 +84,31 @@ export default class Menu extends PureComponent {
   }
 
   get value() {
-    const { options } = this.props
-    return options[this.state.highlightIndex]
+    return this.options[this.state.highlightIndex]
+  }
+
+  get options() {
+    return this.props.options || []
+  }
+
+  get items() {
+    return this.options.map(option => (
+      typeof option === 'object' ? option.label : option
+    ))
   }
 
   @autobind
   handleSelection() {
     const { onItemSelect } = this.props
 
-    if (onItemSelect) onItemSelect(this.value)
+    if (onItemSelect) onItemSelect(this.value, this.state.highlightIndex)
   }
 
   @autobind
   highlightOption(index) {
-    const { options, onItemMouseOver } = this.props
+    const { onItemMouseOver } = this.props
 
-    if (index < 0 || index >= options.length) return
+    if (index < 0 || index >= this.options.length) return
     this.setState({ highlightIndex: index }, () => {
       if (onItemMouseOver) onItemMouseOver(this.value)
     })
@@ -116,7 +131,7 @@ export default class Menu extends PureComponent {
           className,
           theme.Menu
         )}
-        items={options}
+        items={this.items}
         highlightIndex={this.state.highlightIndex}
         onClick={this.handleSelection}
         onMouseEnter={this.highlightOption}

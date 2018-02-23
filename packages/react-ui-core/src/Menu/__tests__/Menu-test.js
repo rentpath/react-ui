@@ -1,6 +1,7 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 import ThemedMenu from '../Menu'
+import { List } from '../../List'
 
 const Menu = ThemedMenu.WrappedComponent
 
@@ -8,7 +9,21 @@ const theme = {
   Menu: 'Menu',
 }
 const testListItem = () => <div />
-const items = [1, 2, 3]
+const options = [1, 2, 3]
+const objectOptions = [
+  {
+    label: 'Foo label',
+    value: 'foo value',
+  },
+  {
+    label: 'Bar label',
+    value: 'bar value',
+  },
+  {
+    label: 'Baz label',
+    value: 'baz value',
+  },
+]
 const map = {}
 
 describe('Menu', () => {
@@ -22,7 +37,7 @@ describe('Menu', () => {
     const wrapper = mount(
       <Menu
         theme={theme}
-        options={items}
+        options={options}
         {...props}
       />,
     )
@@ -32,26 +47,26 @@ describe('Menu', () => {
   }
 
   it('should pass options to List component', () => {
-    const { wrapper } = setup({ theme, options: items })
+    const { wrapper } = setup({ theme, options })
     expect(wrapper.find('ListItem')).toHaveLength(3)
   })
 
   it('should use element type specified by nodeType', () => {
-    const { wrapper } = setup({ theme, options: items })
+    const { wrapper } = setup({ theme, options })
     expect(wrapper.find('section')).toHaveLength(0)
     wrapper.setProps({ nodeType: 'section' })
     expect(wrapper.find('section')).toHaveLength(1)
   })
 
   it('should apply props from listItem prop object to each option', () => {
-    const { wrapper } = setup({ theme, options: items })
+    const { wrapper } = setup({ theme, options })
     expect(wrapper.find('section')).toHaveLength(0)
     wrapper.setProps({ listItem: { nodeType: 'section' } })
     expect(wrapper.find('section')).toHaveLength(3)
   })
 
   it('should use listItem prop component if passed', () => {
-    const { wrapper } = setup({ theme, options: items })
+    const { wrapper } = setup({ theme, options })
     expect(wrapper.find(testListItem)).toHaveLength(0)
     wrapper.setProps({ listItem: testListItem })
     expect(wrapper.find(testListItem)).toHaveLength(3)
@@ -64,7 +79,7 @@ describe('Menu', () => {
 
     const { wrapper } = setup({
       theme,
-      options: items,
+      options,
       onItemSelect: value => {
         testObject.value = value
       },
@@ -78,7 +93,7 @@ describe('Menu', () => {
   })
 
   it('should change highlighted index on up or down keydown', () => {
-    const { wrapper } = setup({ options: items })
+    const { wrapper } = setup({ options })
 
     expect(wrapper.state('highlightIndex')).toEqual(0)
 
@@ -93,7 +108,7 @@ describe('Menu', () => {
 
     setup({
       theme,
-      options: items,
+      options,
       onItemSelect: value => {
         testObject.value = value
       },
@@ -110,7 +125,7 @@ describe('Menu', () => {
 
     const { wrapper } = setup({
       theme,
-      options: items,
+      options,
       onItemMouseOver: value => {
         testObject.value = value
       },
@@ -124,17 +139,31 @@ describe('Menu', () => {
 
   describe('highlightOption', () => {
     it('should highlight valid indices', () => {
-      const wrapper = shallow(<Menu options={items} />)
+      const wrapper = shallow(<Menu options={options} />)
       const wrapperInst = wrapper.instance()
       wrapperInst.highlightOption(1)
       expect(wrapperInst.state.highlightIndex).toEqual(1)
     })
 
     it('should not highlight invalid indices', () => {
-      const wrapper = shallow(<Menu options={items} />)
+      const wrapper = shallow(<Menu options={options} />)
       const wrapperInst = wrapper.instance()
       wrapperInst.highlightOption(20)
       expect(wrapperInst.state.highlightIndex).toEqual(0)
+    })
+  })
+
+  describe('with object options', () => {
+    it('passes just the labels to List', () => {
+      const wrapper = shallow(<Menu options={objectOptions} />)
+      expect(wrapper.find(List).prop('items')).toEqual(objectOptions.map(obj => obj.label))
+    })
+
+    it('passes the whole object to the onItemSelect function', () => {
+      const onItemSelect = jest.fn()
+      const wrapper = mount(<Menu options={objectOptions} onItemSelect={onItemSelect} />)
+      wrapper.find('ListItem').at(1).simulate('mouseenter').simulate('click')
+      expect(onItemSelect).toHaveBeenCalledWith(objectOptions[1], 1)
     })
   })
 })
