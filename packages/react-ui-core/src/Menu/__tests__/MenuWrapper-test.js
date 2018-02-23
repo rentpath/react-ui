@@ -10,7 +10,7 @@ describe('MenuWrapper', () => {
     wrapper.find(Menu).props().onItemSelect()
     expect(onItemSelect).toHaveBeenCalled()
   })
-  it('calls the onSelect function when when Menu onItemSelect is called', () => {
+  it('calls the onSelect function when Menu onItemSelect is called', () => {
     const onSelect = jest.fn()
     const wrapper = shallow(<MenuWrapper onSelect={onSelect} />)
     wrapper.find(Menu).props().onItemSelect()
