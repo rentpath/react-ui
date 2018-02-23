@@ -91,7 +91,7 @@ export default class Menu extends PureComponent {
     return this.props.options || []
   }
 
-  get optionLabels() {
+  get items() {
     return this.options.map(option => (
       typeof option === 'object' ? option.label : option
     ))
@@ -131,7 +131,7 @@ export default class Menu extends PureComponent {
           className,
           theme.Menu
         )}
-        items={this.optionLabels}
+        items={this.items}
         highlightIndex={this.state.highlightIndex}
         onClick={this.handleSelection}
         onMouseEnter={this.highlightOption}
