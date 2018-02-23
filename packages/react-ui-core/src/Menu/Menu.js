@@ -84,8 +84,7 @@ export default class Menu extends PureComponent {
   }
 
   get value() {
-    const { options } = this.props
-    return options[this.state.highlightIndex]
+    return this.options[this.state.highlightIndex]
   }
 
   get options() {
@@ -107,9 +106,9 @@ export default class Menu extends PureComponent {
 
   @autobind
   highlightOption(index) {
-    const { options, onItemMouseOver } = this.props
+    const { onItemMouseOver } = this.props
 
-    if (index < 0 || index >= options.length) return
+    if (index < 0 || index >= this.options.length) return
     this.setState({ highlightIndex: index }, () => {
       if (onItemMouseOver) onItemMouseOver(this.value)
     })

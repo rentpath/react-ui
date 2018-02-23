@@ -49,10 +49,11 @@ export default class DropdownMenu extends Component {
 
   renderAnchorFieldText() {
     const { createAnchorText } = this.props
+    const label = this.itemLabel(this.selectedItem)
 
-    if (createAnchorText) return createAnchorText(this.selectedItem)
+    if (createAnchorText) return createAnchorText(label)
 
-    return this.selectedItem
+    return label
   }
 
   render() {
