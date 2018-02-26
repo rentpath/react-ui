@@ -30,8 +30,6 @@ export default class DesktopMapPinListing extends PureComponent {
   static defaultProps = {
     theme: {},
     listing: {},
-    ratings: {},
-    photos: {},
   }
 
   @autobind

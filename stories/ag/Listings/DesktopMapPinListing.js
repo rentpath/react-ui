@@ -24,7 +24,7 @@ const baseListing = {
   },
   photo: {
     url: 'https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/100-100/',
-    caption: 'test 1',
+    title: 'test 1',
   },
   phone: '(404)378-1428',
   isFavorited: boolean('listing.isFavorited', true),
@@ -36,10 +36,6 @@ const props = {
   favoriteButton: {
     onClick: (listing, value) => action('click')('favorite toggled to ', boolean('listing.isFavorited', value)),
     children: '♥',
-  },
-  ratings: {
-    fillColor: 'yellow',
-    backgroundFillColor: '#ffffff',
   },
 }
 

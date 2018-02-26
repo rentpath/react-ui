@@ -79,16 +79,19 @@ Photos.contextTypes = {
   ),
 }
 
-const Photo = ({ className, theme, ...props }, { photo }) => (
-  photo && photo.url ? (
+const Photo = ({ className, theme, ...props }, { photo }) => {
+  const { url, ...photoProps } = photo || {}
+
+  if (!url) return null
+  return (
     <div
       style={{ backgroundImage: `url(${photo.url})` }}
       className={classnames(className, theme.Photo)}
       {...props}
-      {...photo}
+      {...photoProps}
     />
-  ) : null
-)
+  )
+}
 Photo.propTypes = {
   className: PropTypes.string,
   theme: PropTypes.object,
