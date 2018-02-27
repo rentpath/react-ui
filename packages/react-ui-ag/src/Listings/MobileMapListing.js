@@ -1,8 +1,9 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
+import isEqual from 'lodash/isEqual'
 import get from 'lodash/get'
 import { Button, ToggleButton, ListingComponents, ListingCell } from '@rentpath/react-ui-core'
 import { Banner } from '../Banners'
@@ -14,8 +15,8 @@ const buttonPropTypes = PropTypes.shape({
   valueLocation: PropTypes.string,
 })
 
-@themed(/^MobileMapListing/, { pure: true })
-export default class MobileMapListing extends PureComponent {
+@themed(/^MobileMapListing/)
+export default class MobileMapListing extends Component {
   static propTypes = {
     index: PropTypes.number,
     listing: PropTypes.object,
@@ -36,6 +37,12 @@ export default class MobileMapListing extends PureComponent {
     listing: {},
     ratings: {},
     photos: {},
+  }
+
+  @autobind
+  shouldComponentUpdate(nextProps) {
+    return !isEqual(nextProps.listing, this.props.listing)
+      || this.props.isActive !== nextProps.isActive
   }
 
   @autobind

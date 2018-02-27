@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import themed from 'react-themed'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
@@ -9,7 +9,7 @@ import { ToggleButton } from '../Button'
   pure: true,
 })
 
-export default class Drawer extends Component {
+export default class Drawer extends PureComponent {
 
   static propTypes = {
     className: PropTypes.string,
