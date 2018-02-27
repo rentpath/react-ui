@@ -20,4 +20,8 @@ export {
   DesktopMapPinListing,
 } from './Listings'
 
+export {
+  GridViewHeader,
+} from './GridView'
+
 export { ListingCarousel } from './Carousels'

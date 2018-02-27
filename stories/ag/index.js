@@ -30,6 +30,8 @@ import {
 
 import { DefaultListingCarousel } from './Carousels'
 
+import { ExampleGridViewHeader } from './GridView'
+
 import {
   smallStories,
   largeStories,
@@ -79,3 +81,6 @@ largeStories('Filters / PriceFilterDropdown / large', module)
 smallStories('Banner', module)
   .add('Default Banner', () => DefaultBanner)
   .add('Banner With Node as Name', () => BannerWithNode)
+
+largeStories('GridView')
+  .add('GridViewHeader', () => ExampleGridViewHeader)

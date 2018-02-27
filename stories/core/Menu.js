@@ -49,6 +49,7 @@ export const MenuOnSelectionHover = (
 export const DefaultDropdownMenu = (
   <DropdownMenu
     options={options}
+    selectedValue="price-asc"
     onItemSelect={(item, index) => action('item select')(`${item.value}, ${index}`)}
   />
 )

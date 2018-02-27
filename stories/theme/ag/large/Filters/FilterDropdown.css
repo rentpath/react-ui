@@ -1,4 +1,4 @@
-.DropdownAnchor {
+.FilterDropdown .DropdownAnchor {
   background-color: #fff;
   display: inline-flex;
   align-items: center;
@@ -11,32 +11,32 @@
   z-index: 1;
 }
 
-.DropdownAnchor:focus {
+.FilterDropdown .DropdownAnchor:focus {
   outline: none;
 }
 
-.DropdownAnchor-expand span {
+.FilterDropdown .DropdownAnchor-expand span {
   transform: rotate(180deg);
 }
 
-.DropdownAnchor span {
+.FilterDropdown .DropdownAnchor span {
   font-size: 30px;
   color: #d32526;
 }
 
-.DropdownAnchor .Text {
+.FilterDropdown .DropdownAnchor .Text {
   font-weight: lighter;
 }
 
-.DropdownAnchor.PetFilterCard {
+.FilterDropdown .DropdownAnchor.PetFilterCard {
   width: 126px;
 }
 
-.DropdownAnchor.PriceFilterCard {
+.FilterDropdown .DropdownAnchor.PriceFilterCard {
   width: 149px;
 }
 
-.DropdownAnchor-expand::after {
+.FilterDropdown .DropdownAnchor-expand::after {
   background-color: #fff;
   content: "";
   height: 15px;
@@ -45,4 +45,12 @@
   position: absolute;
   top: 26px;
   left: 0;
+}
+
+.FilterDropdown .Dropdown {
+  margin: 10px;
+}
+
+.FilterDropdown .Dropdown .Card {
+  z-index: 1;
 }

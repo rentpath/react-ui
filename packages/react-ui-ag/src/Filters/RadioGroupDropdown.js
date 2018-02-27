@@ -13,7 +13,7 @@ const nodeFuncOrObject = PropTypes.oneOfType([
   PropTypes.object,
 ])
 
-@themed(['RadioGroupDropdown'])
+@themed(['RadioGroupDropdown', 'FilterDropdown'])
 export default class RadioGroupDropdown extends Component {
   static propTypes = {
     className: PropTypes.string,
@@ -79,7 +79,8 @@ export default class RadioGroupDropdown extends Component {
       <Dropdown
         className={classnames(
           className,
-          theme.RadioGroupDropdown
+          theme.RadioGroupDropdown,
+          theme.FilterDropdown,
         )}
         anchorField={{ children: this.renderAnchorButton() }}
       >
