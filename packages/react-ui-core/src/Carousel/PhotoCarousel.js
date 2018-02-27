@@ -42,7 +42,9 @@ export default class PhotoCarousel extends PureComponent {
     const props = typeof lazyLoad === 'object' ? lazyLoad : {}
 
     return (
-      <LazyLoad {...props}>
+      <LazyLoad
+        {...props}
+      >
         {this.renderCarousel()}
       </LazyLoad>
     )
@@ -65,6 +67,7 @@ export default class PhotoCarousel extends PureComponent {
       className,
       theme,
       items,
+      lazyLoad,
       ...rest
     } = this.props
 
@@ -73,6 +76,7 @@ export default class PhotoCarousel extends PureComponent {
         items={items}
         infinite
         renderItem={this.renderItem}
+        lazyLoad={!!lazyLoad}
         {...rest}
         className={classnames(
           theme.PhotoCarousel,

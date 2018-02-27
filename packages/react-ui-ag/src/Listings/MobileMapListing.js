@@ -15,6 +15,13 @@ const buttonPropTypes = PropTypes.shape({
   valueLocation: PropTypes.string,
 })
 
+const REACT_LAZYLOAD_PROP_DEFAULTS = {
+  offset: [250, -100],
+  resize: true,
+  width: 280,
+  height: 120,
+}
+
 @themed(/^MobileMapListing/)
 export default class MobileMapListing extends Component {
   static propTypes = {
@@ -28,11 +35,16 @@ export default class MobileMapListing extends Component {
     propertyName: PropTypes.object,
     ctaButtons: PropTypes.arrayOf(buttonPropTypes),
     favoriteButton: buttonPropTypes,
+    lazyLoad: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.bool,
+    ]),
     isActive: PropTypes.bool,
   }
 
   static defaultProps = {
     isActive: true,
+    lazyLoad: true,
     theme: {},
     listing: {},
     ratings: {},
@@ -142,6 +154,30 @@ export default class MobileMapListing extends Component {
     )
   }
 
+  renderPhotoCarousel() {
+    const { theme, lazyLoad, photos } = this.props
+    const photoProps = {
+      showNav: true,
+      ...photos,
+    }
+
+    if (lazyLoad) {
+      photoProps.lazyLoad =
+        typeof lazyLoad === 'boolean'
+          ? REACT_LAZYLOAD_PROP_DEFAULTS
+          : lazyLoad
+    }
+
+    return (
+      <div className={theme.MobileMapListing_Top}>
+        <ListingComponents.Photos
+          {...photoProps}
+          className={theme.MobileMapListing_Photos}
+        />
+      </div>
+    )
+  }
+
   render() {
     const {
       theme,
@@ -154,6 +190,7 @@ export default class MobileMapListing extends Component {
       favoriteButton,
       propertyName,
       isActive,
+      lazyLoad,
       ...props
     } = this.props
 
@@ -176,13 +213,7 @@ export default class MobileMapListing extends Component {
             className={theme.MobileMapListing_Banner}
           />
         }
-        <div className={theme.MobileMapListing_Top}>
-          <ListingComponents.Photos
-            showNav
-            {...photos}
-            className={theme.MobileMapListing_Photos}
-          />
-        </div>
+        {this.renderPhotoCarousel()}
         <div className={theme.MobileMapListing_Bottom}>
           <div className={theme.MobileMapListing_Info}>
             <ListingComponents.Price />
