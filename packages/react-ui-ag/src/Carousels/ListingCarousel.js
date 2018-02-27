@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { themed } from 'react-themed'
@@ -9,8 +9,10 @@ import {
   SingleFamilyMobileMapListing,
 } from '../Listings'
 
-@themed(/^ListingCarousel/)
-export default class ListingCarousel extends Component {
+@themed(/^ListingCarousel/,
+  { pure: true }
+)
+export default class ListingCarousel extends PureComponent {
   static propTypes = {
     listings: PropTypes.arrayOf(PropTypes.object),
     className: PropTypes.string,
