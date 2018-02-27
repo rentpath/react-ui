@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
 import themed from 'react-themed'
 import classnames from 'classnames'
+import isEqual from 'lodash/isEqual'
 import { Dropdown } from '../Dropdown'
 import MenuWrapper from './MenuWrapper'
 
@@ -39,6 +40,14 @@ export default class DropdownMenu extends Component {
     } else if (this.props.selectedValue !== nextProps.selectedValue) {
       this.setState({ selectedIndex: this.selectedIndexFromValue(nextProps.selectedValue) })
     }
+  }
+
+  shouldComponentUpdate(nextProps) {
+    const { options, selectedIndex, selectedValue } = this.props
+
+    return !isEqual(options, nextProps.options)
+      || selectedIndex !== nextProps.selectedIndex
+      || selectedValue !== nextProps.selectedValue
   }
 
   get selectedItem() {
