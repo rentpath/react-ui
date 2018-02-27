@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.7.0"></a>
+# [4.7.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.5.3...@rentpath/react-ui-core@4.7.0) (2018-02-27)
+
+
+### Bug Fixes
+
+* **Desktop Hybrid Map:** a few minor prop related fixes for DesktopMapPinListing ([478d120](https://github.com/rentpath/react-ui/commit/478d120))
+* **ListingCell, Drawer, MobileMapListing, HybridMobileMap:** react-ui optimizations ([14de3cf](https://github.com/rentpath/react-ui/commit/14de3cf))
+
+
+### Features
+
+* **Desktop Hybrid Map:** create DesktopMapPinListing for Desktop Hybrid Map ([4b908b8](https://github.com/rentpath/react-ui/commit/4b908b8))
+* **Desktop Hybrid Map:** create DropdownMenu component ([c2776da](https://github.com/rentpath/react-ui/commit/c2776da))
+* **RadioGroup:** add allowUnselect prop to RadioGroup component ([aa071d2](https://github.com/rentpath/react-ui/commit/aa071d2))
+
+
+
+
 <a name="4.6.0"></a>
 # [4.6.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.5.3...@rentpath/react-ui-core@4.6.0) (2018-02-23)
 
