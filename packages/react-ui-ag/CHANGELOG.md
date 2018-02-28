@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.12.0"></a>
+# [0.12.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.9.2...@rentpath/react-ui-ag@0.12.0) (2018-02-28)
+
+
+### Bug Fixes
+
+* **Desktop Hybrid Map:** a few minor prop related fixes for DesktopMapPinListing ([478d120](https://github.com/rentpath/react-ui/commit/478d120))
+* **Hybrid Map:** favorite button and navigation click propagation bug events bubbling to parent cont ([4236ba7](https://github.com/rentpath/react-ui/commit/4236ba7))
+* **ListingCell, Drawer, MobileMapListing, HybridMobileMap:** react-ui optimizations ([14de3cf](https://github.com/rentpath/react-ui/commit/14de3cf))
+* **react-ui-ag:** give ListingCarousel onSlide to arguments: listing and index ([e83c071](https://github.com/rentpath/react-ui/commit/e83c071))
+
+
+### Features
+
+* **Desktop Hybrid Map:** create DesktopMapPinListing for Desktop Hybrid Map ([4b908b8](https://github.com/rentpath/react-ui/commit/4b908b8))
+* **Desktop Hybrid Map:** create GridViewHeader component ([16bdec2](https://github.com/rentpath/react-ui/commit/16bdec2))
+
+
+
+
 <a name="0.11.0"></a>
 # [0.11.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.9.3...@rentpath/react-ui-ag@0.11.0) (2018-02-27)
 
