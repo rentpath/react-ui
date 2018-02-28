@@ -79,7 +79,6 @@ export default class RadioGroupDropdown extends Component {
       <Dropdown
         className={classnames(
           className,
-          theme.RadioGroupDropdown,
           theme.FilterDropdown,
         )}
         anchorField={{ children: this.renderAnchorButton() }}
