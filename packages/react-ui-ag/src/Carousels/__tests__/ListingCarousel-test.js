@@ -176,13 +176,7 @@ const listingProps = {
     dimensions: '280-120',
     disableSwipe: true,
   },
-  /* eslint-disable max-len */
-  // TODO
-  // gaa: This needs to be false because jsdom is providing a mocked DOM and react-lazyload
-  // manipulates the DOM so it crashes when attempting to create placeholders
-  // I'll need to look into this further later to see if we can fix this.
   lazyLoad: false,
-  /* eslint-enable max-len */
 }
 
 describe('ListingCarousel', () => {
