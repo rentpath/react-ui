@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import ThemedDropdownMenu from '../DropdownMenu'
 import Menu from '../Menu'
 
@@ -8,6 +8,23 @@ const DropdownMenu = ThemedDropdownMenu.WrappedComponent
 describe('DropdownMenu', () => {
   const props = {
     options: ['foo', 'bar', 'baz', 'qux'],
+  }
+
+  const objectProps = {
+    options: [
+      {
+        label: 'Foo label',
+        value: 'foo-value',
+      },
+      {
+        label: 'Bar label',
+        value: 'bar-value',
+      },
+      {
+        label: 'Baz label',
+        value: 'baz-value',
+      },
+    ],
   }
 
   it('changes the text of the dropdown anchor when a menu selection is made', () => {
@@ -42,5 +59,24 @@ describe('DropdownMenu', () => {
   it('allows an initial selection to be chosen with selectedIndex prop', () => {
     const wrapper = mount(<DropdownMenu {...props} selectedIndex={2} />)
     expect(wrapper.find('button[data-tid="dropdown-anchor"]').text()).toEqual('baz')
+  })
+
+  it('sets the selectedIndex using selectedValue with objects as props', () => {
+    const wrapper = shallow(<DropdownMenu {...objectProps} selectedValue="baz-value" />)
+    expect(wrapper.state('selectedIndex')).toEqual(2)
+  })
+
+  it('changes the selectedIndex in state when a new selectedIndex is received', () => {
+    const wrapper = shallow(<DropdownMenu {...objectProps} />)
+    expect(wrapper.state('selectedIndex')).toEqual(0)
+    wrapper.setProps({ selectedIndex: 1 })
+    expect(wrapper.state('selectedIndex')).toEqual(1)
+  })
+
+  it('changes the selectedIndex in state when a new selectedValue is received', () => {
+    const wrapper = shallow(<DropdownMenu {...objectProps} />)
+    expect(wrapper.state('selectedIndex')).toEqual(0)
+    wrapper.setProps({ selectedValue: 'bar-value' })
+    expect(wrapper.state('selectedIndex')).toEqual(1)
   })
 })

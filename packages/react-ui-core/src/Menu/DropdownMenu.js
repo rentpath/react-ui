@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
 import themed from 'react-themed'
 import classnames from 'classnames'
+import isEqual from 'lodash/isEqual'
 import { Dropdown } from '../Dropdown'
 import MenuWrapper from './MenuWrapper'
 
@@ -15,6 +16,7 @@ export default class DropdownMenu extends Component {
     onItemSelect: PropTypes.func,
     className: PropTypes.string,
     selectedIndex: PropTypes.number,
+    selectedValue: PropTypes.node,
     createAnchorText: PropTypes.func,
   }
 
@@ -22,20 +24,45 @@ export default class DropdownMenu extends Component {
     theme: {},
     options: [],
     selectedIndex: 0,
+    selectedValue: null,
     onItemSelect: () => {},
   }
 
   constructor(props) {
     super(props)
-    this.state = { selectedIndex: this.props.selectedIndex || 0 }
+    const selectedIndex = this.selectedIndexFromValue() || this.props.selectedIndex || 0
+    this.state = { selectedIndex }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.selectedIndex !== nextProps.selectedIndex) {
+      this.setState({ selectedIndex: nextProps.selectedIndex })
+    } else if (this.props.selectedValue !== nextProps.selectedValue) {
+      this.setState({ selectedIndex: this.selectedIndexFromValue(nextProps.selectedValue) })
+    }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const { options, selectedIndex, selectedValue } = this.props
+
+    return !isEqual(options, nextProps.options)
+      || selectedIndex !== nextProps.selectedIndex
+      || selectedValue !== nextProps.selectedValue
+      || this.state.selectedIndex !== nextState.selectedIndex
   }
 
   get selectedItem() {
     return this.props.options[this.state.selectedIndex] || ''
   }
 
-  itemLabel(item) {
+  get selectedItemLabel() {
+    const item = this.selectedItem
     return typeof item === 'object' ? item.label : item
+  }
+
+  selectedIndexFromValue(selectedValue = this.props.selectedValue) {
+    const index = this.props.options.findIndex(option => option.value === selectedValue)
+    return index === -1 ? 0 : index
   }
 
   @autobind
@@ -49,11 +76,9 @@ export default class DropdownMenu extends Component {
 
   renderAnchorFieldText() {
     const { createAnchorText } = this.props
-    const label = this.itemLabel(this.selectedItem)
 
-    if (createAnchorText) return createAnchorText(label)
-
-    return label
+    if (createAnchorText) return createAnchorText(this.selectedItemLabel)
+    return this.selectedItemLabel
   }
 
   render() {
@@ -62,6 +87,7 @@ export default class DropdownMenu extends Component {
       className,
       options,
       selectedIndex,
+      selectedValue,
       onItemSelect,
       createAnchorText,
       ...props

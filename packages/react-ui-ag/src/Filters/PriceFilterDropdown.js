@@ -7,7 +7,7 @@ import { Dropdown, Text } from '@rentpath/react-ui-core'
 import PriceFilterCard from './PriceFilterCard'
 import DropdownFilterCardWrapper from './DropdownFilterCardWrapper'
 
-@themed(['PriceFilterDropdown'])
+@themed(['FilterDropdown'])
 export default class PriceFilterDropdown extends Component {
   static propTypes = {
     className: PropTypes.string,
@@ -55,7 +55,7 @@ export default class PriceFilterDropdown extends Component {
       <Dropdown
         className={classnames(
           className,
-          theme.PriceFilterDropdown
+          theme.FilterDropdown,
         )}
         anchorField={{ children: this.renderAnchorButton() }}
       >
