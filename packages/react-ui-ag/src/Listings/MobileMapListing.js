@@ -155,14 +155,11 @@ export default class MobileMapListing extends Component {
   }
 
   renderPhotoCarousel() {
-    const { theme, lazyLoad, photos } = this.props
-    const photoProps = {
-      showNav: true,
-      ...photos,
-    }
+    const { theme, photos } = this.props
+    let { lazyLoad } = this.props
 
-    if (lazyLoad) {
-      photoProps.lazyLoad =
+    if (lazyLoad && typeof lazyLoad === 'boolean') {
+      lazyLoad =
         typeof lazyLoad === 'boolean'
           ? REACT_LAZYLOAD_PROP_DEFAULTS
           : lazyLoad
@@ -171,7 +168,9 @@ export default class MobileMapListing extends Component {
     return (
       <div className={theme.MobileMapListing_Top}>
         <ListingComponents.Photos
-          {...photoProps}
+          showNav
+          {...photos}
+          lazyLoad={lazyLoad}
           className={theme.MobileMapListing_Photos}
         />
       </div>
