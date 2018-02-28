@@ -13,7 +13,7 @@ const nodeFuncOrObject = PropTypes.oneOfType([
   PropTypes.object,
 ])
 
-@themed(['RadioGroupDropdown', 'FilterDropdown'])
+@themed(['FilterDropdown'])
 export default class RadioGroupDropdown extends Component {
   static propTypes = {
     className: PropTypes.string,
