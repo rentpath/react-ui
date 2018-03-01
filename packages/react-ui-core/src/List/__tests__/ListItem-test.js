@@ -36,6 +36,17 @@ describe('ListItem', () => {
         expect(wrapper.prop('className')).not.toContain('ListItem-highlight')
       })
     })
+
+    describe('selected prop', () => {
+      it('adds a selected class when true', () => {
+        wrapper.setProps({ selected: true })
+        expect(wrapper.prop('className')).toContain('ListItem-selected')
+      })
+
+      it('does not add a selected class when undefined / false', () => {
+        expect(wrapper.prop('className')).not.toContain('ListItem-selected')
+      })
+    })
   })
 
   describe('onMouseEnter', () => {

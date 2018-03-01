@@ -33,6 +33,7 @@ export default class Menu extends PureComponent {
       PropTypes.object,
     ]),
     highlightIndex: PropTypes.number,
+    selectedIndex: PropTypes.number,
   }
 
   static defaultProps = {
@@ -121,6 +122,7 @@ export default class Menu extends PureComponent {
       onItemMouseOver,
       className,
       onItemSelect,
+      selectedIndex,
       ...props
     } = this.props
 
@@ -133,6 +135,7 @@ export default class Menu extends PureComponent {
         )}
         items={this.items}
         highlightIndex={this.state.highlightIndex}
+        selectedIndex={selectedIndex}
         onClick={this.handleSelection}
         onMouseEnter={this.highlightOption}
         {...props}

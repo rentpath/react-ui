@@ -153,6 +153,11 @@ describe('Menu', () => {
     })
   })
 
+  it('passes the selectedIndex prop to List', () => {
+    const wrapper = shallow(<Menu options={options} selectedIndex={2} />)
+    expect(wrapper.find(List).prop('selectedIndex')).toEqual(2)
+  })
+
   describe('with object options', () => {
     it('passes just the labels to List', () => {
       const wrapper = shallow(<Menu options={objectOptions} />)

@@ -88,12 +88,23 @@ describe('List', () => {
     })
 
     describe('highlightIndex', () => {
-      it('sets ListItem `activate` true when highlightIndex equals index', () => {
+      it('sets ListItem `highlight` true when highlightIndex equals index', () => {
         const highlightIndex = 1
         wrapper.setProps({ highlightIndex, items })
-        wrapper.find(ListItem).map((item, index) => { // eslint-disable-line
+        wrapper.find(ListItem).forEach((item, index) => {
           const active = index === highlightIndex
           expect(item.prop('highlight')).toEqual(active)
+        })
+      })
+    })
+
+    describe('selectedIndex', () => {
+      it('sets ListItem `selected` true when highlightIndex equals index', () => {
+        const selectedIndex = 1
+        wrapper.setProps({ selectedIndex, items })
+        wrapper.find(ListItem).forEach((item, index) => {
+          const active = index === selectedIndex
+          expect(item.prop('selected')).toEqual(active)
         })
       })
     })

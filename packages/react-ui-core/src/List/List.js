@@ -21,6 +21,7 @@ export default class List extends PureComponent {
     items: PropTypes.array,
     orientation: PropTypes.string,
     highlightIndex: PropTypes.number,
+    selectedIndex: PropTypes.number,
   }
 
   static defaultProps = {
@@ -61,6 +62,7 @@ export default class List extends PureComponent {
       listItem,
       orientation,
       highlightIndex,
+      selectedIndex,
       ...props
     } = this.props
 
@@ -78,6 +80,7 @@ export default class List extends PureComponent {
           <Item
             {...itemProps}
             highlight={highlightIndex === i}
+            selected={selectedIndex === i}
             key={this.itemId(i)}
             index={i}
             data-tid={`list-item-${i}`}
