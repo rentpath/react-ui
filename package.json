@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "build:watch": "yarn run build -- --watch",
     "build": "lerna run build",
     "build-storybook": "build-storybook -c .storybook -s .storybook/dist -o build",
     "clean": "lerna run clean --yes",

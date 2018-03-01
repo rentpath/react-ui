@@ -176,7 +176,6 @@ const listingProps = {
     dimensions: '280-120',
     disableSwipe: true,
   },
-  lazyLoad: false,
 }
 
 describe('ListingCarousel', () => {
