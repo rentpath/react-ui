@@ -13,14 +13,8 @@ const buttonPropTypes = PropTypes.shape({
   className: PropTypes.string,
 })
 
-const REACT_LAZYLOAD_PROP_DEFAULTS = {
-  offset: [250, -100],
-  resize: true,
-  width: 280,
-  height: 120,
-}
-
 @themed(/^MobileMapListing/)
+
 export default class SingleFamilyMobileMapListing extends Component {
   static propTypes = {
     index: PropTypes.number,
@@ -31,10 +25,6 @@ export default class SingleFamilyMobileMapListing extends Component {
     photos: PropTypes.object,
     ctaButton: buttonPropTypes,
     favoriteButton: buttonPropTypes,
-    lazyLoad: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.object,
-    ]),
     isActive: PropTypes.bool,
   }
 
@@ -43,7 +33,6 @@ export default class SingleFamilyMobileMapListing extends Component {
     listing: {},
     ctaButton: {},
     isActive: true,
-    lazyLoad: true,
   }
 
   @autobind
@@ -123,26 +112,6 @@ export default class SingleFamilyMobileMapListing extends Component {
     )
   }
 
-  renderPhotoCarousel() {
-    const { theme, photos } = this.props
-    let { lazyLoad } = this.props
-
-    if (lazyLoad && typeof lazyLoad === 'boolean') {
-      lazyLoad = REACT_LAZYLOAD_PROP_DEFAULTS
-    }
-
-    return (
-      <div className={theme.MobileMapListing_Top}>
-        <ListingComponents.Photos
-          showNav
-          {...photos}
-          lazyLoad={lazyLoad}
-          className={theme.MobileMapListing_Photos}
-        />
-      </div>
-    )
-  }
-
   render() {
     const {
       theme,
@@ -153,7 +122,6 @@ export default class SingleFamilyMobileMapListing extends Component {
       ctaButton,
       favoriteButton,
       isActive,
-      lazyLoad,
       ...props
     } = this.props
 
@@ -176,7 +144,13 @@ export default class SingleFamilyMobileMapListing extends Component {
             className={theme.MobileMapListing_Banner}
           />
         }
-        {this.renderPhotoCarousel()}
+        <div className={theme.MobileMapListing_Top}>
+          <ListingComponents.Photos
+            showNav
+            {...props}
+            {...photos}
+          />
+        </div>
         <div className={theme.MobileMapListing_Bottom}>
           <div className={theme.MobileMapListing_Info}>
             <ListingComponents.Price />

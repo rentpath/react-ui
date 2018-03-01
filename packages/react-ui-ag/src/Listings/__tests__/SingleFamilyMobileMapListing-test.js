@@ -24,6 +24,8 @@ const baseListing = {
 }
 
 const props = {
+  server: '',
+  dimensions: '280-120',
   listing: baseListing,
   theme,
   onClick: () => { },
@@ -45,11 +47,6 @@ const props = {
     children: '♥',
   },
   banner: '$ Coupon',
-  photos: {
-    server: 'https://image.rent.com/',
-    dimensions: '280-120',
-  },
-  lazyLoad: false,
 }
 
 describe('ag/Listing/SingleFamilyMobileMapListing', () => {
@@ -113,10 +110,7 @@ describe('ag/Listing/SingleFamilyMobileMapListing', () => {
       />
     )
 
-    wrapper
-      .find('[data-tid="carousel"]')
-      .find('[className="image-gallery-left-nav"]')
-      .simulate('click')
+    wrapper.find('[data-tid="carousel-navigation-next"]').at(0).simulate('click')
     expect(cardClick).not.toHaveBeenCalled()
   })
 

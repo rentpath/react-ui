@@ -31,10 +31,6 @@ const baseListing = {
       path: '',
       caption: '',
     },
-    {
-      path: '',
-      caption: '',
-    },
   ],
 }
 
@@ -70,7 +66,6 @@ const props = {
     server: 'https://image.rent.com/',
     dimensions: '280-120',
   },
-  lazyLoad: false,
 }
 
 describe('ag/Listing/MobileMapListing', () => {

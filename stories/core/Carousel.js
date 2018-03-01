@@ -87,40 +87,32 @@ export const CarouselNavigation = (
   />
 )
 
-const photoProps = [
-  {
-    path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
-    caption: 'test 1',
-  },
-  {
-    path: 'imgr/d56984e959a3feb1235f85ee202a0fc6/',
-    caption: null,
-  },
-  {
-    path: 'imgr/fd972eb03a0463c484580349ad5177b7/',
-    caption: null,
-  },
-  {
-    path: 'imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/',
-    caption: null,
-  },
-  {
-    path: 'imgr/d13b78bff171be4a68ff576e036251ab/',
-    caption: null,
-  },
-]
-
 export const PhotoCarouselExample = (
   <PhotoCarousel
-    items={photoProps}
+    items={[
+      {
+        path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
+        caption: 'test 1',
+      },
+      {
+        path: 'imgr/d56984e959a3feb1235f85ee202a0fc6/',
+        caption: null,
+      },
+      {
+        path: 'imgr/fd972eb03a0463c484580349ad5177b7/',
+        caption: null,
+      },
+      {
+        path: 'imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/',
+        caption: null,
+      },
+      {
+        path: 'imgr/d13b78bff171be4a68ff576e036251ab/',
+        caption: null,
+      },
+    ]}
     server="https://image.rent.com/"
     dimensions="400-200"
-    lazyLoad={{
-      offset: 100,
-      resize: true,
-      height: 158,
-      width: 280,
-    }}
     showNav
   />
 )
