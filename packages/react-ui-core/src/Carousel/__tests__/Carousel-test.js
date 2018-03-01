@@ -1,6 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { shallow, mount } from 'enzyme'
+import LazyLoad from 'react-lazyload'
 import theme from './mocks/theme'
 import ThemedCarousel from '../Carousel'
 import ThemedCarouselNavigation from '../CarouselNavigation'
@@ -43,6 +44,18 @@ describe('Carousel', () => {
       />
     )
     expect(wrapper.find('.TestItem')).toHaveLength(4)
+  })
+
+  it('lazyLoads images if required', () => {
+    const wrapper = shallow(
+      <Carousel
+        theme={theme}
+        items={items}
+        lazyLoad
+      />
+    )
+
+    expect(wrapper.find(<LazyLoad />)).toBeTruthy()
   })
 
   describe('slideToIndex', () => {
