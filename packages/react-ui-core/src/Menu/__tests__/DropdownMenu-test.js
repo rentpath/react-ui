@@ -2,6 +2,7 @@ import React from 'react'
 import { mount, shallow } from 'enzyme'
 import ThemedDropdownMenu from '../DropdownMenu'
 import Menu from '../Menu'
+import MenuWrapper from '../MenuWrapper'
 
 const DropdownMenu = ThemedDropdownMenu.WrappedComponent
 
@@ -78,5 +79,10 @@ describe('DropdownMenu', () => {
     expect(wrapper.state('selectedIndex')).toEqual(0)
     wrapper.setProps({ selectedValue: 'bar-value' })
     expect(wrapper.state('selectedIndex')).toEqual(1)
+  })
+
+  it('passes the selectedIndex to the Menu', () => {
+    const wrapper = shallow(<DropdownMenu {...props} selectedIndex={2} />)
+    expect(wrapper.find(MenuWrapper).prop('selectedIndex')).toEqual(2)
   })
 })

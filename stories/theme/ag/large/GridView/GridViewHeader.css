@@ -5,6 +5,8 @@
   background-color: #ffffff;
   height: 40px;
   padding-left: 10px;
+  color: #373737;
+  font-size: 12px;
 }
 
 .GridViewHeaderCard {
@@ -14,7 +16,6 @@
   background-color: #f7f7f7;
   justify-content: center;
   padding-top: 30px;
-  font-size: 12px;
 }
 
 .GridViewHeader_Counter {
@@ -32,7 +33,7 @@
 }
 
 .GridViewHeader .DropdownAnchor {
-  width: 225px;
+  min-width: 150px;
   border: 0;
   background-color: transparent;
   padding: 0;
@@ -41,6 +42,10 @@
   cursor: pointer;
   padding: 14px;
   position: relative;
+}
+
+.GridViewHeader_AnchorText {
+  padding-right: 15px;
 }
 
 .GridViewHeader .DropdownAnchor-expand {
@@ -72,11 +77,6 @@
   padding: 0 10px;
 }
 
-.GridViewHeader .ListItem:hover {
-  background-color: #5a5a5a;
-  color: #ffffff;
-}
-
 .GridViewHeader_SortChevron {
   font-size: 30px;
   position: absolute;
@@ -87,4 +87,14 @@
 
 .GridViewHeader .DropdownAnchor-expand .GridViewHeader_SortChevron {
   transform: rotate(180deg);
+}
+
+.GridViewHeader .ListItem-selected {
+  background: #5a5a5a;
+  color: #ffffff;
+}
+
+.GridViewHeader .ListItem-highlight {
+  background-color: #e6e7e8;
+  color: #373737;
 }

@@ -101,6 +101,7 @@ export default class DropdownMenu extends Component {
       >
         <MenuWrapper
           options={options}
+          selectedIndex={this.state.selectedIndex}
           onItemSelect={this.itemSelectionHandler}
         />
       </Dropdown>

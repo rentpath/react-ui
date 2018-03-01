@@ -23,6 +23,7 @@ export default class ListItem extends PureComponent {
     onClick: PropTypes.func,
     index: PropTypes.number,
     highlight: PropTypes.bool,
+    selected: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -45,6 +46,7 @@ export default class ListItem extends PureComponent {
       onMouseEnter,
       index,
       highlight,
+      selected,
       nodeType: NodeType,
       ...props
     } = this.props
@@ -54,7 +56,8 @@ export default class ListItem extends PureComponent {
         className={cn(
           theme.ListItem,
           className,
-          highlight && theme['ListItem-highlight']
+          highlight && theme['ListItem-highlight'],
+          selected && theme['ListItem-selected'],
         )}
         index={index}
         onMouseEnter={this.handleMouseEnter}
