@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
-import isEqual from 'lodash/isEqual'
 import { Button, ToggleButton, ListingComponents, ListingCell } from '@rentpath/react-ui-core'
 import { Banner } from '../Banners'
 
@@ -46,10 +45,9 @@ export default class SingleFamilyMobileMapListing extends Component {
     lazyLoad: true,
   }
 
-  @autobind
   shouldComponentUpdate(nextProps) {
-    return !isEqual(nextProps.listing, this.props.listing)
-      || this.props.isActive !== nextProps.isActive
+    return this.props.isActive !== nextProps.isActive ||
+      this.props.listing.id !== nextProps.listing.id
   }
 
   @autobind
