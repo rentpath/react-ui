@@ -213,8 +213,8 @@ describe('ag/Listing/MobileMapListing', () => {
   it('adds a rating placeholder if the listing prop has no rating attribute', () => {
     const wrapper = shallow(<MobileMapListing {...props} />)
     expect(wrapper.find('[data-tid="rating-placeholder"]')).toHaveLength(0)
-    wrapper.setProps({ listing: omit(baseListing, 'rating') })
-    expect(wrapper.find('[data-tid="rating-placeholder"]')).toHaveLength(1)
+    const noRatingsWrapper = shallow(<MobileMapListing {...props} listing={omit(baseListing, 'rating')} />)
+    expect(noRatingsWrapper.find('[data-tid="rating-placeholder"]')).toHaveLength(1)
   })
 
   it('sets the favorite button to favorited when the listing has isFavorited as true', () => {
