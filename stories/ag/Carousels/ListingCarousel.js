@@ -222,6 +222,12 @@ const listingProps = {
     backgroundFillColor: '#9b9b9b',
     strokeWidth: '0',
   },
+  lazyLoad: {
+    offset: [250, -100],
+    resize: true,
+    width: 280,
+    height: 120,
+  },
 }
 
 const singleFamilyProps = {
