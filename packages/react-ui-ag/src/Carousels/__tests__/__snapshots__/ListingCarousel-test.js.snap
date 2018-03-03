@@ -509,117 +509,12 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 >
                   <div
                     className=""
-                    data-tid="carousel"
-                  >
-                    <div
-                      aria-live="polite"
-                      className="image-gallery "
-                    >
-                      <div
-                        className="image-gallery-content"
-                      >
-                        <div
-                          className="image-gallery-slide-wrapper bottom"
-                        >
-                          <span>
-                            <button
-                              aria-label="Previous Slide"
-                              className="image-gallery-left-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                            <button
-                              aria-label="Next Slide"
-                              className="image-gallery-right-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                          </span>
-                          <div
-                            className="image-gallery-slides"
-                          >
-                            <div
-                              className="image-gallery-slide center"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(0%, 0, 0)",
-                                  "OTransform": "translate3d(0%, 0, 0)",
-                                  "WebkitTransform": "translate3d(0%, 0, 0)",
-                                  "msTransform": "translate3d(0%, 0, 0)",
-                                  "transform": "translate3d(0%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/fd972eb03a0463c484580349ad5177b7/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide right"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(100%, 0, 0)",
-                                  "OTransform": "translate3d(100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(100%, 0, 0)",
-                                  "msTransform": "translate3d(100%, 0, 0)",
-                                  "transform": "translate3d(100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide left"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(-100%, 0, 0)",
-                                  "OTransform": "translate3d(-100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(-100%, 0, 0)",
-                                  "msTransform": "translate3d(-100%, 0, 0)",
-                                  "transform": "translate3d(-100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/d13b78bff171be4a68ff576e036251ab/280-120"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/fd972eb03a0463c484580349ad5177b7/280-120)",
+                      }
+                    }
+                  />
                 </div>
                 <div
                   className={undefined}
@@ -948,117 +843,12 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 >
                   <div
                     className=""
-                    data-tid="carousel"
-                  >
-                    <div
-                      aria-live="polite"
-                      className="image-gallery "
-                    >
-                      <div
-                        className="image-gallery-content"
-                      >
-                        <div
-                          className="image-gallery-slide-wrapper bottom"
-                        >
-                          <span>
-                            <button
-                              aria-label="Previous Slide"
-                              className="image-gallery-left-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                            <button
-                              aria-label="Next Slide"
-                              className="image-gallery-right-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                          </span>
-                          <div
-                            className="image-gallery-slides"
-                          >
-                            <div
-                              className="image-gallery-slide center"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(0%, 0, 0)",
-                                  "OTransform": "translate3d(0%, 0, 0)",
-                                  "WebkitTransform": "translate3d(0%, 0, 0)",
-                                  "msTransform": "translate3d(0%, 0, 0)",
-                                  "transform": "translate3d(0%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/d56984e959a3feb1235f85ee202a0fc6/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide right"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(100%, 0, 0)",
-                                  "OTransform": "translate3d(100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(100%, 0, 0)",
-                                  "msTransform": "translate3d(100%, 0, 0)",
-                                  "transform": "translate3d(100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/fd972eb03a0463c484580349ad5177b7/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide left"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(-100%, 0, 0)",
-                                  "OTransform": "translate3d(-100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(-100%, 0, 0)",
-                                  "msTransform": "translate3d(-100%, 0, 0)",
-                                  "transform": "translate3d(-100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/280-120"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/d56984e959a3feb1235f85ee202a0fc6/280-120)",
+                      }
+                    }
+                  />
                 </div>
                 <div
                   className={undefined}
@@ -1387,117 +1177,12 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 >
                   <div
                     className=""
-                    data-tid="carousel"
-                  >
-                    <div
-                      aria-live="polite"
-                      className="image-gallery "
-                    >
-                      <div
-                        className="image-gallery-content"
-                      >
-                        <div
-                          className="image-gallery-slide-wrapper bottom"
-                        >
-                          <span>
-                            <button
-                              aria-label="Previous Slide"
-                              className="image-gallery-left-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                            <button
-                              aria-label="Next Slide"
-                              className="image-gallery-right-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                          </span>
-                          <div
-                            className="image-gallery-slides"
-                          >
-                            <div
-                              className="image-gallery-slide center"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(0%, 0, 0)",
-                                  "OTransform": "translate3d(0%, 0, 0)",
-                                  "WebkitTransform": "translate3d(0%, 0, 0)",
-                                  "msTransform": "translate3d(0%, 0, 0)",
-                                  "transform": "translate3d(0%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt="test 1"
-                                className={undefined}
-                                src="https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide right"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(100%, 0, 0)",
-                                  "OTransform": "translate3d(100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(100%, 0, 0)",
-                                  "msTransform": "translate3d(100%, 0, 0)",
-                                  "transform": "translate3d(100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/d56984e959a3feb1235f85ee202a0fc6/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide left"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(-100%, 0, 0)",
-                                  "OTransform": "translate3d(-100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(-100%, 0, 0)",
-                                  "msTransform": "translate3d(-100%, 0, 0)",
-                                  "transform": "translate3d(-100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/fd972eb03a0463c484580349ad5177b7/280-120"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/280-120)",
+                      }
+                    }
+                  />
                 </div>
                 <div
                   className={undefined}
@@ -1826,117 +1511,12 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 >
                   <div
                     className=""
-                    data-tid="carousel"
-                  >
-                    <div
-                      aria-live="polite"
-                      className="image-gallery "
-                    >
-                      <div
-                        className="image-gallery-content"
-                      >
-                        <div
-                          className="image-gallery-slide-wrapper bottom"
-                        >
-                          <span>
-                            <button
-                              aria-label="Previous Slide"
-                              className="image-gallery-left-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                            <button
-                              aria-label="Next Slide"
-                              className="image-gallery-right-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                          </span>
-                          <div
-                            className="image-gallery-slides"
-                          >
-                            <div
-                              className="image-gallery-slide center"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(0%, 0, 0)",
-                                  "OTransform": "translate3d(0%, 0, 0)",
-                                  "WebkitTransform": "translate3d(0%, 0, 0)",
-                                  "msTransform": "translate3d(0%, 0, 0)",
-                                  "transform": "translate3d(0%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt="test 1"
-                                className={undefined}
-                                src="https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide right"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(100%, 0, 0)",
-                                  "OTransform": "translate3d(100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(100%, 0, 0)",
-                                  "msTransform": "translate3d(100%, 0, 0)",
-                                  "transform": "translate3d(100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/d56984e959a3feb1235f85ee202a0fc6/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide left"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(-100%, 0, 0)",
-                                  "OTransform": "translate3d(-100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(-100%, 0, 0)",
-                                  "msTransform": "translate3d(-100%, 0, 0)",
-                                  "transform": "translate3d(-100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/fd972eb03a0463c484580349ad5177b7/280-120"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/280-120)",
+                      }
+                    }
+                  />
                 </div>
                 <div
                   className={undefined}
@@ -2409,6 +1989,14 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       </div>
                     </div>
                   </div>
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/280-120)",
+                      }
+                    }
+                  />
                 </div>
                 <div
                   className={undefined}
@@ -2743,117 +2331,12 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 >
                   <div
                     className=""
-                    data-tid="carousel"
-                  >
-                    <div
-                      aria-live="polite"
-                      className="image-gallery "
-                    >
-                      <div
-                        className="image-gallery-content"
-                      >
-                        <div
-                          className="image-gallery-slide-wrapper bottom"
-                        >
-                          <span>
-                            <button
-                              aria-label="Previous Slide"
-                              className="image-gallery-left-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                            <button
-                              aria-label="Next Slide"
-                              className="image-gallery-right-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                          </span>
-                          <div
-                            className="image-gallery-slides"
-                          >
-                            <div
-                              className="image-gallery-slide center"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(0%, 0, 0)",
-                                  "OTransform": "translate3d(0%, 0, 0)",
-                                  "WebkitTransform": "translate3d(0%, 0, 0)",
-                                  "msTransform": "translate3d(0%, 0, 0)",
-                                  "transform": "translate3d(0%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/fd972eb03a0463c484580349ad5177b7/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide right"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(100%, 0, 0)",
-                                  "OTransform": "translate3d(100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(100%, 0, 0)",
-                                  "msTransform": "translate3d(100%, 0, 0)",
-                                  "transform": "translate3d(100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide left"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(-100%, 0, 0)",
-                                  "OTransform": "translate3d(-100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(-100%, 0, 0)",
-                                  "msTransform": "translate3d(-100%, 0, 0)",
-                                  "transform": "translate3d(-100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/d13b78bff171be4a68ff576e036251ab/280-120"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/fd972eb03a0463c484580349ad5177b7/280-120)",
+                      }
+                    }
+                  />
                 </div>
                 <div
                   className={undefined}
@@ -3182,117 +2665,12 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 >
                   <div
                     className=""
-                    data-tid="carousel"
-                  >
-                    <div
-                      aria-live="polite"
-                      className="image-gallery "
-                    >
-                      <div
-                        className="image-gallery-content"
-                      >
-                        <div
-                          className="image-gallery-slide-wrapper bottom"
-                        >
-                          <span>
-                            <button
-                              aria-label="Previous Slide"
-                              className="image-gallery-left-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                            <button
-                              aria-label="Next Slide"
-                              className="image-gallery-right-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                          </span>
-                          <div
-                            className="image-gallery-slides"
-                          >
-                            <div
-                              className="image-gallery-slide center"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(0%, 0, 0)",
-                                  "OTransform": "translate3d(0%, 0, 0)",
-                                  "WebkitTransform": "translate3d(0%, 0, 0)",
-                                  "msTransform": "translate3d(0%, 0, 0)",
-                                  "transform": "translate3d(0%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/d56984e959a3feb1235f85ee202a0fc6/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide right"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(100%, 0, 0)",
-                                  "OTransform": "translate3d(100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(100%, 0, 0)",
-                                  "msTransform": "translate3d(100%, 0, 0)",
-                                  "transform": "translate3d(100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/fd972eb03a0463c484580349ad5177b7/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide left"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(-100%, 0, 0)",
-                                  "OTransform": "translate3d(-100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(-100%, 0, 0)",
-                                  "msTransform": "translate3d(-100%, 0, 0)",
-                                  "transform": "translate3d(-100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/280-120"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/d56984e959a3feb1235f85ee202a0fc6/280-120)",
+                      }
+                    }
+                  />
                 </div>
                 <div
                   className={undefined}
@@ -3621,117 +2999,12 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 >
                   <div
                     className=""
-                    data-tid="carousel"
-                  >
-                    <div
-                      aria-live="polite"
-                      className="image-gallery "
-                    >
-                      <div
-                        className="image-gallery-content"
-                      >
-                        <div
-                          className="image-gallery-slide-wrapper bottom"
-                        >
-                          <span>
-                            <button
-                              aria-label="Previous Slide"
-                              className="image-gallery-left-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                            <button
-                              aria-label="Next Slide"
-                              className="image-gallery-right-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                          </span>
-                          <div
-                            className="image-gallery-slides"
-                          >
-                            <div
-                              className="image-gallery-slide center"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(0%, 0, 0)",
-                                  "OTransform": "translate3d(0%, 0, 0)",
-                                  "WebkitTransform": "translate3d(0%, 0, 0)",
-                                  "msTransform": "translate3d(0%, 0, 0)",
-                                  "transform": "translate3d(0%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt="test 1"
-                                className={undefined}
-                                src="https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide right"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(100%, 0, 0)",
-                                  "OTransform": "translate3d(100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(100%, 0, 0)",
-                                  "msTransform": "translate3d(100%, 0, 0)",
-                                  "transform": "translate3d(100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/d56984e959a3feb1235f85ee202a0fc6/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide left"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(-100%, 0, 0)",
-                                  "OTransform": "translate3d(-100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(-100%, 0, 0)",
-                                  "msTransform": "translate3d(-100%, 0, 0)",
-                                  "transform": "translate3d(-100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/fd972eb03a0463c484580349ad5177b7/280-120"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/280-120)",
+                      }
+                    }
+                  />
                 </div>
                 <div
                   className={undefined}
@@ -4060,117 +3333,12 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 >
                   <div
                     className=""
-                    data-tid="carousel"
-                  >
-                    <div
-                      aria-live="polite"
-                      className="image-gallery "
-                    >
-                      <div
-                        className="image-gallery-content"
-                      >
-                        <div
-                          className="image-gallery-slide-wrapper bottom"
-                        >
-                          <span>
-                            <button
-                              aria-label="Previous Slide"
-                              className="image-gallery-left-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                            <button
-                              aria-label="Next Slide"
-                              className="image-gallery-right-nav"
-                              disabled={false}
-                              onClick={[Function]}
-                              type="button"
-                            />
-                          </span>
-                          <div
-                            className="image-gallery-slides"
-                          >
-                            <div
-                              className="image-gallery-slide center"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(0%, 0, 0)",
-                                  "OTransform": "translate3d(0%, 0, 0)",
-                                  "WebkitTransform": "translate3d(0%, 0, 0)",
-                                  "msTransform": "translate3d(0%, 0, 0)",
-                                  "transform": "translate3d(0%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt="test 1"
-                                className={undefined}
-                                src="https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide right"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(100%, 0, 0)",
-                                  "OTransform": "translate3d(100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(100%, 0, 0)",
-                                  "msTransform": "translate3d(100%, 0, 0)",
-                                  "transform": "translate3d(100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/d56984e959a3feb1235f85ee202a0fc6/280-120"
-                              />
-                            </div>
-                            <div
-                              className="image-gallery-slide left"
-                              onClick={undefined}
-                              onMouseLeave={undefined}
-                              onMouseOver={undefined}
-                              onTouchEnd={undefined}
-                              onTouchMove={undefined}
-                              onTouchStart={undefined}
-                              role={undefined}
-                              style={
-                                Object {
-                                  "MozTransform": "translate3d(-100%, 0, 0)",
-                                  "OTransform": "translate3d(-100%, 0, 0)",
-                                  "WebkitTransform": "translate3d(-100%, 0, 0)",
-                                  "msTransform": "translate3d(-100%, 0, 0)",
-                                  "transform": "translate3d(-100%, 0, 0)",
-                                }
-                              }
-                            >
-                              <img
-                                alt={null}
-                                className={undefined}
-                                src="https://image.rent.com/imgr/fd972eb03a0463c484580349ad5177b7/280-120"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/280-120)",
+                      }
+                    }
+                  />
                 </div>
                 <div
                   className={undefined}

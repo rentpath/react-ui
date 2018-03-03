@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { omit } from 'lodash'
-import { Button, RatingBar, ToggleButton } from '@rentpath/react-ui-core'
+import { Button, RatingBar, ToggleButton, ListingComponents } from '@rentpath/react-ui-core'
 import ThemedMobileMapListing from '../MobileMapListing'
 import theme from './mocks/theme'
 
@@ -239,5 +239,29 @@ describe('ag/Listing/MobileMapListing', () => {
     }
     const wrapper = shallow(<MobileMapListing {...favoritedProps} />)
     expect(wrapper.find(ToggleButton).prop('value')).toBeFalsy()
+  })
+
+  describe('photos', () => {
+    it('renders a component with a PhotoCarousel if active', () => {
+      const wrapper = shallow(<MobileMapListing {...props} />)
+
+      expect(wrapper.find(ListingComponents.Photos)).toHaveLength(1)
+      expect(wrapper.find(ListingComponents.Photo)).toHaveLength(1)
+    })
+
+    it('renders a component with one background image if inactive', () => {
+      const wrapper = shallow(<MobileMapListing {...props} isActive={false} />)
+
+      expect(wrapper.find(ListingComponents.Photos)).toHaveLength(0)
+      expect(wrapper.find(ListingComponents.Photo)).toHaveLength(1)
+    })
+
+    it('renders a photo component even without a listing photos array', () => {
+      const omittedPhotoProps = omit(props, 'photos')
+      const wrapper = shallow(<MobileMapListing {...omittedPhotoProps} isActive={false} />)
+
+      expect(wrapper.find(ListingComponents.Photos)).toHaveLength(0)
+      expect(wrapper.find(ListingComponents.Photo)).toHaveLength(1)
+    })
   })
 })
