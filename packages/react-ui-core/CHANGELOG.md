@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.10.0"></a>
+# [4.10.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.8.0...@rentpath/react-ui-core@4.10.0) (2018-03-05)
+
+
+### Bug Fixes
+
+* **Desktop Hybrid Map:** support selected class to ListItem, List, Menu, and DropdownMenu ([2bd9d6c](https://github.com/rentpath/react-ui/commit/2bd9d6c))
+
+
+### Features
+
+* **Hybrid Map:** adding props to MobileMapListing to enable photo carousel lazy load on react-image ([9936f4c](https://github.com/rentpath/react-ui/commit/9936f4c))
+* **Hybrid Map:** adding props to MobileMapListing to enable photo carousel lazy load on react-image ([14e3409](https://github.com/rentpath/react-ui/commit/14e3409))
+* **Hybrid Map:** fixed lazyloading forcecheck issue, improved lazyload carousel performance ([62fc29c](https://github.com/rentpath/react-ui/commit/62fc29c))
+
+
+
+
 <a name="4.9.0"></a>
 # [4.9.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.8.0...@rentpath/react-ui-core@4.9.0) (2018-03-01)
 
