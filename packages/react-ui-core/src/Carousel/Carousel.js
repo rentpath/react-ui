@@ -75,6 +75,7 @@ export default class Carousel extends Component {
     const { onSlide } = this.props
 
     if (onSlide) onSlide(index)
+    forceCheck()
   }
 
   get pageInfo() {
@@ -122,7 +123,6 @@ export default class Carousel extends Component {
   slideToIndex(index) {
     if (this.carousel && this.props.items[index]) {
       this.carousel.slideToIndex(index)
-      forceCheck()
     }
   }
 

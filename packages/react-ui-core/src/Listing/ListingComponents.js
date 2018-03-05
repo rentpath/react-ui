@@ -92,13 +92,16 @@ const Photo = ({ className, theme, ...props }, { photo }) => {
     />
   )
 }
+
 Photo.propTypes = {
   className: PropTypes.string,
   theme: PropTypes.object,
 }
+
 Photo.defaultProps = {
   theme: {},
 }
+
 Photo.contextTypes = {
   photo: PropTypes.object,
 }

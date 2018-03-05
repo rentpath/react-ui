@@ -121,6 +121,10 @@ a.MobileMapListing_CtaButton {
   border-radius: 5px 5px 0 0;
 }
 
+.MobileMapListing .Photo {
+  min-height: 120px;
+}
+
 .MobileMapListing .Price {
   font-size: 16px;
   font-weight: bolder;

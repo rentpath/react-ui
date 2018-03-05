@@ -50,9 +50,18 @@ export default class MobileMapListing extends Component {
     photos: {},
   }
 
+  constructor(props) {
+    super(props)
+    this.loadedCarousel = false
+  }
+
   shouldComponentUpdate(nextProps) {
     return this.props.isActive !== nextProps.isActive ||
       this.props.listing.id !== nextProps.listing.id
+  }
+
+  get listingPhotos() {
+    return get(this.props.listing, 'photos', [])
   }
 
   @autobind
@@ -97,6 +106,11 @@ export default class MobileMapListing extends Component {
     if (shouldStopPropagation) {
       event.stopPropagation()
     }
+  }
+
+  @autobind
+  handlePhotoCarouselSlide(index) { // eslint-disable-line no-unused-vars
+    this.loadedCarousel = true
   }
 
   renderCtaButtons() {
@@ -153,24 +167,33 @@ export default class MobileMapListing extends Component {
   }
 
   renderPhotoCarousel() {
-    const { theme, photos } = this.props
+    const { listing, theme, photos, isActive } = this.props
     let { lazyLoad } = this.props
 
     if (lazyLoad && typeof lazyLoad === 'boolean') {
-      lazyLoad =
-        typeof lazyLoad === 'boolean'
-          ? REACT_LAZYLOAD_PROP_DEFAULTS
-          : lazyLoad
+      lazyLoad = typeof lazyLoad === 'boolean'
+        ? REACT_LAZYLOAD_PROP_DEFAULTS
+        : lazyLoad
+    }
+
+    if (!isActive) {
+      const { server, dimensions } = photos
+      const firstPhoto = this.listingPhotos[0] || {}
+      listing.photo = { url: `${server}${firstPhoto.path}${dimensions}` }
     }
 
     return (
       <div className={theme.MobileMapListing_Top}>
-        <ListingComponents.Photos
-          showNav
-          {...photos}
-          lazyLoad={lazyLoad}
-          className={theme.MobileMapListing_Photos}
-        />
+        {(isActive || this.loadedCarousel) &&
+          <ListingComponents.Photos
+            showNav
+            {...photos}
+            lazyLoad={lazyLoad}
+            className={theme.MobileMapListing_Photos}
+            onSlide={this.handlePhotoCarouselSlide}
+          />
+        }
+        <ListingComponents.Photo />
       </div>
     )
   }
