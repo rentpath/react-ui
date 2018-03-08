@@ -4,6 +4,7 @@ import themed from 'react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
 import get from 'lodash/get'
+import LazyLoad, { forceCheck } from 'react-lazyload'
 import { Button, ToggleButton, ListingComponents, ListingCell } from '@rentpath/react-ui-core'
 import { Banner } from '../Banners'
 
@@ -57,7 +58,13 @@ export default class MobileMapListing extends Component {
 
   shouldComponentUpdate(nextProps) {
     return this.props.isActive !== nextProps.isActive ||
-      this.props.listing.id !== nextProps.listing.id
+    this.props.listing.id !== nextProps.listing.id
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.isActive !== prevProps.isActive && !prevProps.isActive) {
+      forceCheck()
+    }
   }
 
   get listingPhotos() {
@@ -193,8 +200,24 @@ export default class MobileMapListing extends Component {
             onSlide={this.handlePhotoCarouselSlide}
           />
         }
-        <ListingComponents.Photo />
+        {this.renderPhoto(lazyLoad)}
       </div>
+    )
+  }
+
+  renderPhoto(lazyLoad) {
+    if (lazyLoad) {
+      return (
+        <LazyLoad
+          {...lazyLoad}
+        >
+          <ListingComponents.Photo />
+        </LazyLoad>
+      )
+    }
+
+    return (
+      <ListingComponents.Photo />
     )
   }
 
