@@ -43,3 +43,9 @@ export const smallStories = (name, mod) => (
     .addDecorator(story => <Container story={story} />)
     .addDecorator(SmallThemeDecorator)
 )
+
+export const styledStories = (name, mod) => (
+  storiesOf(`react-ui-ag / ${name}`, mod)
+    .addDecorator((story, context) => withInfo(name)(story)(context))
+    .addDecorator(story => <Container story={story} />)
+)

@@ -28,6 +28,8 @@ import {
   BannerWithNode,
 } from './Banners'
 
+import RatingBar from './RatingBar'
+
 import { DefaultListingCarousel } from './Carousels'
 
 import { ExampleGridViewHeader } from './GridView'
@@ -36,7 +38,10 @@ import {
   smallStories,
   largeStories,
   exampleStories,
+  styledStories,
 } from './stories'
+
+import React from 'react'
 
 exampleStories('Filters / FilterCard', module)
   .add('Default', () => DefaultFilterCard)
@@ -84,3 +89,6 @@ smallStories('Banner', module)
 
 largeStories('GridView')
   .add('GridViewHeader', () => ExampleGridViewHeader)
+
+styledStories('Ratings')
+         .add('RatingBar', () => (<RatingBar score={4} />))

@@ -171,9 +171,9 @@ const listings = [
     state: 'HD',
     price: '$20 / day',
     rating: {
-      score: 2,
+      score: 3,
       label: '567',
-      uniqueId: '5678',
+      uniqueId: '123',
     },
     photos: [
       {

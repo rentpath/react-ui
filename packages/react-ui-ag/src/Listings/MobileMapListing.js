@@ -149,25 +149,21 @@ export default class MobileMapListing extends Component {
     )
   }
 
-  renderFavoriteButton() {
-    const { theme, favoriteButton, isActive, listing } = this.props
-    const { className } = favoriteButton
-    return (
-      <ToggleButton
-        {...favoriteButton}
-        value={listing.isFavorited}
-        className={classnames(
-          theme.MobileMapListing_FavoriteButton,
-          className,
-        )}
-        inactive={!isActive}
-        onClick={this.handleFavoriteClick}
-      />
-    )
-  }
+  render() {
+    const {
+      theme,
+      listing,
+      onClick,
+      className,
+      photos,
+      ratings,
+      ctaButtons,
+      favoriteButton,
+      propertyName,
+      isActive,
+      ...props
+    } = this.props
 
-  renderPhotoCarousel() {
-    const { listing, theme, photos, isActive } = this.props
     let { lazyLoad } = this.props
 
     if (lazyLoad && typeof lazyLoad === 'boolean') {
@@ -183,38 +179,6 @@ export default class MobileMapListing extends Component {
     }
 
     return (
-      <div className={theme.MobileMapListing_Top}>
-        {(isActive || this.loadedCarousel) &&
-          <ListingComponents.Photos
-            showNav
-            {...photos}
-            lazyLoad={lazyLoad}
-            className={theme.MobileMapListing_Photos}
-            onSlide={this.handlePhotoCarouselSlide}
-          />
-        }
-        <ListingComponents.Photo />
-      </div>
-    )
-  }
-
-  render() {
-    const {
-      theme,
-      listing,
-      onClick,
-      className,
-      photos,
-      ratings,
-      ctaButtons,
-      favoriteButton,
-      propertyName,
-      isActive,
-      lazyLoad,
-      ...props
-    } = this.props
-
-    return (
       <ListingCell
         listing={listing}
         onClick={this.handleCardClick}
@@ -226,14 +190,34 @@ export default class MobileMapListing extends Component {
         isActive={isActive}
         {...props}
       >
-        {this.renderFavoriteButton()}
+        <ToggleButton
+          {...favoriteButton}
+          value={listing.isFavorited}
+          className={classnames(
+            theme.MobileMapListing_FavoriteButton,
+            favoriteButton.className,
+          )}
+          inactive={!isActive}
+          onClick={this.handleFavoriteClick}
+        />
         {listing.banner &&
           <Banner
             name={listing.banner}
             className={theme.MobileMapListing_Banner}
           />
         }
-        {this.renderPhotoCarousel()}
+        <div className={theme.MobileMapListing_Top}>
+          {(isActive || this.loadedCarousel) &&
+            <ListingComponents.Photos
+              showNav
+              {...photos}
+              lazyLoad={lazyLoad}
+              className={theme.MobileMapListing_Photos}
+              onSlide={this.handlePhotoCarouselSlide}
+            />
+          }
+          <ListingComponents.Photo />
+        </div>
         <div className={theme.MobileMapListing_Bottom}>
           <div className={theme.MobileMapListing_Info}>
             <ListingComponents.Price />

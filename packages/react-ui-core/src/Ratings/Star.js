@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import LinearGradient from './LinearGradient'
 
 export default class Star extends Component {
   static propTypes = {
@@ -28,6 +27,14 @@ export default class Star extends Component {
       ...props
     } = this.props
 
+    let backgroundStopOpacity = 1
+    let effectiveBackgroundFillColor = backgroundFillColor
+
+    if (!effectiveBackgroundFillColor) {
+      effectiveBackgroundFillColor = fillColor
+      backgroundStopOpacity = 0
+    }
+
     return (
       <div className={className} {...props}>
         <svg
@@ -36,12 +43,22 @@ export default class Star extends Component {
           height="50"
           viewBox="0 0 51 48"
         >
-          <LinearGradient
-            id={uniqueId}
-            width={width}
-            fillColor={fillColor}
-            backgroundFillColor={backgroundFillColor}
-          />
+          <defs>
+            <linearGradient id={uniqueId}>
+              <stop offset="0%" stopOpacity="1" stopColor={fillColor} />
+              <stop offset={width} stopOpacity="1" stopColor={fillColor} />
+              <stop
+                offset={width}
+                stopOpacity={backgroundStopOpacity}
+                stopColor={effectiveBackgroundFillColor}
+              />
+              <stop
+                offset="100%"
+                stopOpacity={backgroundStopOpacity}
+                stopColor={effectiveBackgroundFillColor}
+              />
+            </linearGradient>
+          </defs>
           <path
             fill={`url(#${uniqueId})`}
             stroke="#000"
