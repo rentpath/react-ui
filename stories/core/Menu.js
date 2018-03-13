@@ -27,7 +27,7 @@ const options = [
 
 export const DefaultMenu = (
   <Menu
-    options={['Option1', 'Option2', 'Option3']}
+    options={[1, 2, 3]}
   />
 )
 
@@ -42,6 +42,14 @@ export const MenuOnSelectionHover = (
   <Menu
     options={['Option1', 'Option2', 'Option3']}
     onItemMouseOver={action('hovering')}
+    nodeType="section"
+  />
+)
+
+export const MenuWithLabel = (
+  <Menu
+    options={['Option1', { label: 'Unclickable Label' }, 'Option3', { label: 'Unclickable Label 2' }]}
+    onItemSelect={action('selected')}
     nodeType="section"
   />
 )
