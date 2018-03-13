@@ -22,6 +22,7 @@ export default class Menu extends PureComponent {
       PropTypes.shape({
         label: PropTypes.node,
         value: PropTypes.node,
+        disabled: PropTypes.bool,
       }),
     ])),
     onItemSelect: PropTypes.func,
@@ -40,13 +41,17 @@ export default class Menu extends PureComponent {
     theme: {},
     nodeType: 'div',
     listItem: { nodeType: 'div' },
+    options: [],
   }
 
   constructor(props) {
     super(props)
 
+    this.state = {}
     this.state = {
       highlightIndex: props.highlightIndex || 0,
+      indexedOptionIndex: props.highlightIndex || 0,
+      indexedOptions: this.generateIndexedOptions(),
     }
   }
 
@@ -57,6 +62,12 @@ export default class Menu extends PureComponent {
   componentWillReceiveProps(nextProps) {
     if (this.props.highlightIndex !== nextProps.highlightIndex) {
       this.setState({ highlightIndex: nextProps.highlightIndex })
+    }
+
+    if (this.props.options !== nextProps.options) {
+      this.setState({
+        indexedOptions: this.generateIndexedOptions(),
+      })
     }
   }
 
@@ -70,11 +81,11 @@ export default class Menu extends PureComponent {
 
     switch (code) {
       case ARROW_DOWN:
-        this.highlightOption(this.state.highlightIndex + 1)
+        this.highlightIndexedOption(this.state.indexedOptionIndex + 1)
         break
       case ARROW_UP:
         event.preventDefault()
-        this.highlightOption(this.state.highlightIndex - 1)
+        this.highlightIndexedOption(this.state.indexedOptionIndex - 1)
         break
       case ENTER:
         event.preventDefault()
@@ -82,10 +93,6 @@ export default class Menu extends PureComponent {
         break
       default:
     }
-  }
-
-  get value() {
-    return this.options[this.state.highlightIndex]
   }
 
   get options() {
@@ -98,21 +105,52 @@ export default class Menu extends PureComponent {
     ))
   }
 
+  option() {
+    return this.options[this.state.highlightIndex || 0]
+  }
+
   @autobind
   handleSelection() {
     const { onItemSelect } = this.props
 
-    if (onItemSelect) onItemSelect(this.value, this.state.highlightIndex)
+    const value = this.option()
+
+    if (onItemSelect && value && !value.disabled) {
+      onItemSelect(value, this.state.highlightIndex)
+    }
   }
 
   @autobind
   highlightOption(index) {
+    const { onItemMouseOver, options } = this.props
+
+    if (index < 0 || index >= options.length) return
+    this.setState({
+      highlightIndex: index,
+    }, () => {
+      if (onItemMouseOver) onItemMouseOver(this.option())
+    })
+  }
+
+  @autobind
+  highlightIndexedOption(index) {
     const { onItemMouseOver } = this.props
 
-    if (index < 0 || index >= this.options.length) return
-    this.setState({ highlightIndex: index }, () => {
-      if (onItemMouseOver) onItemMouseOver(this.value)
+    if (index < 0 || index >= this.state.indexedOptions.length) return
+    this.setState({
+      highlightIndex: this.state.indexedOptions[index].index,
+      indexedOptionIndex: index,
+    }, () => {
+      if (onItemMouseOver) onItemMouseOver(this.option())
     })
+  }
+
+  generateIndexedOptions() {
+    return this.options.map((option, index) => ({
+      disabled: option.disabled,
+      index,
+    }))
+      .filter(option => option.disabled !== true)
   }
 
   render() {
