@@ -24,6 +24,19 @@ const objectOptions = [
     value: 'baz value',
   },
 ]
+const objectOptionsWithLabel = [
+  {
+    label: 'Foo label',
+    value: 'foo value',
+  },
+  {
+    label: 'Bar label',
+    value: 'bar value',
+  },
+  {
+    label: 'Baz label',
+  },
+]
 const map = {}
 
 describe('Menu', () => {
@@ -77,19 +90,17 @@ describe('Menu', () => {
       value: -1,
     }
 
+    const onItemSelect = jest.fn()
+
     const { wrapper } = setup({
       theme,
       options,
-      onItemSelect: value => {
-        testObject.value = value
-      },
+      onItemSelect,
     })
 
     expect(testObject.value).toEqual(-1)
-    const listItemTwo = wrapper.find('ListItem').at(2)
-    listItemTwo.simulate('mouseenter')
-    listItemTwo.simulate('click')
-    expect(testObject.value).toEqual(3)
+    wrapper.find('ListItem').at(1).simulate('mouseenter').simulate('click')
+    expect(onItemSelect).toHaveBeenCalledWith(options[1], 1)
   })
 
   it('should change highlighted index on up or down keydown', () => {
@@ -169,6 +180,36 @@ describe('Menu', () => {
       const wrapper = mount(<Menu options={objectOptions} onItemSelect={onItemSelect} />)
       wrapper.find('ListItem').at(1).simulate('mouseenter').simulate('click')
       expect(onItemSelect).toHaveBeenCalledWith(objectOptions[1], 1)
+    })
+  })
+
+  describe('with object with no value attribute', () => {
+    it('should not perform on click functionality', () => {
+      const testObject = {
+        value: -1,
+      }
+
+      const { wrapper } = setup({
+        theme,
+        options: objectOptionsWithLabel,
+        onItemSelect: value => {
+          testObject.value = value
+        },
+      })
+
+      expect(testObject.value).toEqual(-1)
+      const listItemTwo = wrapper.find('ListItem').at(2)
+      listItemTwo.simulate('mouseenter')
+      listItemTwo.simulate('click')
+      expect(testObject.value).toEqual(-1)
+    })
+
+    it('should skip object index on up or down keydown', () => {
+      const { wrapper } = setup({ options: objectOptionsWithLabel })
+      expect(wrapper.state('highlightIndex')).toEqual(0)
+      map.keydown({ keyCode: 40 })
+      map.keydown({ keyCode: 40 })
+      expect(wrapper.state('highlightIndex')).toEqual(1)
     })
   })
 })

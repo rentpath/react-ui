@@ -40,6 +40,7 @@ export default class Menu extends PureComponent {
     theme: {},
     nodeType: 'div',
     listItem: { nodeType: 'div' },
+    options: [],
   }
 
   constructor(props) {
@@ -47,6 +48,8 @@ export default class Menu extends PureComponent {
 
     this.state = {
       highlightIndex: props.highlightIndex || 0,
+      indexedOptionIndex: props.highlightIndex || 0,
+      indexedOptions: this.generateIndexedOptions(),
     }
   }
 
@@ -57,6 +60,12 @@ export default class Menu extends PureComponent {
   componentWillReceiveProps(nextProps) {
     if (this.props.highlightIndex !== nextProps.highlightIndex) {
       this.setState({ highlightIndex: nextProps.highlightIndex })
+    }
+
+    if (this.props.options !== nextProps.options) {
+      this.setState({
+        indexedOptions: this.generateIndexedOptions(),
+      })
     }
   }
 
@@ -70,11 +79,11 @@ export default class Menu extends PureComponent {
 
     switch (code) {
       case ARROW_DOWN:
-        this.highlightOption(this.state.highlightIndex + 1)
+        this.highlightIndexedOption(this.state.indexedOptionIndex + 1)
         break
       case ARROW_UP:
         event.preventDefault()
-        this.highlightOption(this.state.highlightIndex - 1)
+        this.highlightIndexedOption(this.state.indexedOptionIndex - 1)
         break
       case ENTER:
         event.preventDefault()
@@ -100,19 +109,47 @@ export default class Menu extends PureComponent {
 
   @autobind
   handleSelection() {
-    const { onItemSelect } = this.props
+    const { onItemSelect, options } = this.props
 
-    if (onItemSelect) onItemSelect(this.value, this.state.highlightIndex)
+    const option = options[this.state.highlightIndex]
+
+    if (onItemSelect && (typeof option === 'object') ? option.value : option) {
+      onItemSelect(this.value, this.state.highlightIndex)
+    }
   }
 
   @autobind
   highlightOption(index) {
-    const { onItemMouseOver } = this.props
+    const { onItemMouseOver, options } = this.props
 
-    if (index < 0 || index >= this.options.length) return
-    this.setState({ highlightIndex: index }, () => {
+    if (index < 0 || index >= options.length) return
+    this.setState({
+      highlightIndex: index,
+    }, () => {
       if (onItemMouseOver) onItemMouseOver(this.value)
     })
+  }
+
+  @autobind
+  highlightIndexedOption(index) {
+    const { onItemMouseOver } = this.props
+
+    if (index < 0 || index >= this.state.indexedOptions.length) return
+    this.setState({
+      highlightIndex: this.state.indexedOptions[index].index,
+      indexedOptionIndex: index,
+    }, () => {
+      if (onItemMouseOver) onItemMouseOver(this.value)
+    })
+  }
+
+  @autobind
+  generateIndexedOptions() {
+    return this.props.options.map((option, index) => ({
+      value: (typeof option === 'object') ? option.value : option,
+      index,
+    }))
+      .filter(option => option.value)
   }
 
   render() {

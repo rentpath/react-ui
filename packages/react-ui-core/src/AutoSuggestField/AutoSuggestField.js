@@ -39,6 +39,7 @@ export default class AutoSuggestField extends Component {
       PropTypes.bool,
       PropTypes.object,
     ]),
+    highlightIndex: PropTypes.number,
     onAfterClear: PropTypes.func,
     onSubmit: PropTypes.func,
     onSelection: PropTypes.func,
@@ -212,6 +213,7 @@ export default class AutoSuggestField extends Component {
       onAfterClear,
       submitOnSelection,
       visible,
+      onInput,
       ...props
     } = this.props
 
