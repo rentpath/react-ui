@@ -35,6 +35,8 @@ const objectOptionsWithLabel = [
   },
   {
     label: 'Baz label',
+    value: 'Baz Value',
+    disabled: true,
   },
 ]
 const map = {}

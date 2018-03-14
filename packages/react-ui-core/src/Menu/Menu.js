@@ -22,6 +22,7 @@ export default class Menu extends PureComponent {
       PropTypes.shape({
         label: PropTypes.node,
         value: PropTypes.node,
+        disabled: PropTypes.bool,
       }),
     ])),
     onItemSelect: PropTypes.func,
@@ -93,28 +94,31 @@ export default class Menu extends PureComponent {
     }
   }
 
-  get value() {
-    return this.options[this.state.highlightIndex]
-  }
-
   get options() {
     return this.props.options || []
   }
 
   get items() {
-    return this.options.map(option => (
-      typeof option === 'object' ? option.label : option
-    ))
+    return this.options.map(option =>
+      ((typeof option === 'object' && option.label !== undefined) ?
+        option.label :
+        option
+      )
+    )
+  }
+
+  get option() {
+    return this.options[this.state.highlightIndex || 0]
   }
 
   @autobind
   handleSelection() {
-    const { onItemSelect, options } = this.props
+    const { onItemSelect } = this.props
 
-    const option = options[this.state.highlightIndex]
+    const value = this.option
 
-    if (onItemSelect && (typeof option === 'object') ? option.value : option) {
-      onItemSelect(this.value, this.state.highlightIndex)
+    if (onItemSelect && value && !value.disabled) {
+      onItemSelect(value, this.state.highlightIndex)
     }
   }
 
@@ -126,7 +130,7 @@ export default class Menu extends PureComponent {
     this.setState({
       highlightIndex: index,
     }, () => {
-      if (onItemMouseOver) onItemMouseOver(this.value)
+      if (onItemMouseOver) onItemMouseOver(this.option)
     })
   }
 
@@ -139,17 +143,16 @@ export default class Menu extends PureComponent {
       highlightIndex: this.state.indexedOptions[index].index,
       indexedOptionIndex: index,
     }, () => {
-      if (onItemMouseOver) onItemMouseOver(this.value)
+      if (onItemMouseOver) onItemMouseOver(this.option
     })
   }
 
-  @autobind
   generateIndexedOptions() {
-    return this.props.options.map((option, index) => ({
-      value: (typeof option === 'object') ? option.value : option,
+    return this.options.map((option, index) => ({
+      disabled: option.disabled,
       index,
     }))
-      .filter(option => option.value)
+      .filter(option => option.disabled !== true)
   }
 
   render() {
