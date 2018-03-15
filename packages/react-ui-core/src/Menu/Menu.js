@@ -46,7 +46,6 @@ export default class Menu extends PureComponent {
 
   constructor(props) {
     super(props)
-
     this.state = {
       highlightIndex: props.highlightIndex || 0,
       indexedOptionIndex: props.highlightIndex || 0,
