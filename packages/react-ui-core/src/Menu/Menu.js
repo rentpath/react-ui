@@ -143,7 +143,7 @@ export default class Menu extends PureComponent {
       highlightIndex: this.state.indexedOptions[index].index,
       indexedOptionIndex: index,
     }, () => {
-      if (onItemMouseOver) onItemMouseOver(this.option
+      if (onItemMouseOver) onItemMouseOver(this.option)
     })
   }
 
