@@ -200,7 +200,7 @@ coreStories('Menu', module)
   .add('On Keyboard Selection', () => MenuOnSelection)
   .add('On Selection hover', () => MenuOnSelectionHover)
   .add('DropdownMenu', () => DefaultDropdownMenu)
-  .add('MenuWithLabel', () => MenuWithLabel)
+  .add('Menu with Disabled options', () => MenuWithLabel)
 
 coreStories('Modal', module)
   .add('Modal', () => DefaultModal)

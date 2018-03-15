@@ -27,7 +27,7 @@ const options = [
 
 export const DefaultMenu = (
   <Menu
-    options={[<div>1</div>, 2, 3]}
+    options={[1, 2, 3]}
   />
 )
 

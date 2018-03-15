@@ -46,7 +46,6 @@ export default class Menu extends PureComponent {
 
   constructor(props) {
     super(props)
-
     this.state = {
       highlightIndex: props.highlightIndex || 0,
       indexedOptionIndex: props.highlightIndex || 0,
@@ -107,7 +106,7 @@ export default class Menu extends PureComponent {
     )
   }
 
-  get option() {
+  get highlightedOption() {
     return this.options[this.state.highlightIndex || 0]
   }
 
@@ -115,7 +114,7 @@ export default class Menu extends PureComponent {
   handleSelection() {
     const { onItemSelect } = this.props
 
-    const value = this.option
+    const value = this.highlightedOption
 
     if (onItemSelect && value && !value.disabled) {
       onItemSelect(value, this.state.highlightIndex)
@@ -130,7 +129,7 @@ export default class Menu extends PureComponent {
     this.setState({
       highlightIndex: index,
     }, () => {
-      if (onItemMouseOver) onItemMouseOver(this.option)
+      if (onItemMouseOver) onItemMouseOver(this.highlightedOption)
     })
   }
 
@@ -143,7 +142,7 @@ export default class Menu extends PureComponent {
       highlightIndex: this.state.indexedOptions[index].index,
       indexedOptionIndex: index,
     }, () => {
-      if (onItemMouseOver) onItemMouseOver(this.option
+      if (onItemMouseOver) onItemMouseOver(this.highlightedOption)
     })
   }
 

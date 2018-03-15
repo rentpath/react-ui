@@ -185,7 +185,7 @@ describe('Menu', () => {
     })
   })
 
-  describe('with object with no value attribute', () => {
+  describe('with object with disabled attribute', () => {
     it('should not perform on click functionality', () => {
       const testObject = {
         value: -1,
