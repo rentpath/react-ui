@@ -48,7 +48,7 @@ export const MenuOnSelectionHover = (
 
 export const MenuWithLabel = (
   <Menu
-    options={['Option1', { label: 'Unclickable Label' }, 'Option3', { label: 'Unclickable Label 2' }]}
+    options={['Option1', { label: 'Unclickable Label', disabled: true, value: 'Disabled Option1' }, 'Option3', { label: 'Unclickable Label 2', disabled: true, value: 'Disabled Option2' }]}
     onItemSelect={action('selected')}
     nodeType="section"
   />
