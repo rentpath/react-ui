@@ -132,22 +132,10 @@ describe('Menu', () => {
   })
 
   it('should perform on mouseover functionality ', () => {
-    const testObject = {
-      value: -1,
-    }
-
-    const { wrapper } = setup({
-      theme,
-      options,
-      onItemMouseOver: value => {
-        testObject.value = value
-      },
-    })
-
-    expect(testObject.value).toEqual(-1)
-    const listItemTwo = wrapper.find('ListItem').at(2)
-    listItemTwo.simulate('mouseenter')
-    expect(testObject.value).toEqual(3)
+    const onItemSelect = jest.fn()
+    const wrapper = mount(<Menu options={options} onItemSelect={onItemSelect} />)
+    wrapper.find('ListItem').at(1).simulate('mouseenter').simulate('click')
+    expect(onItemSelect).toHaveBeenCalledWith(options[1], 1)
   })
 
   describe('highlightOption', () => {
@@ -197,6 +185,13 @@ describe('Menu', () => {
   })
 
   describe('with object with disabled key', () => {
+    it('should not highlight disabed option indices by default', () => {
+      const wrapper = shallow(<Menu options={[{ disabled: true }, { disabled: true }]} />)
+      const wrapperInst = wrapper.instance()
+      wrapperInst.highlightOption(20)
+      expect(wrapperInst.state.highlightIndex).toEqual(-1)
+    })
+
     it('should not perform on click functionality', () => {
       const testObject = {
         value: -1,

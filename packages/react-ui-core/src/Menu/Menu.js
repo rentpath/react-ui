@@ -47,14 +47,15 @@ export default class Menu extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      highlightIndex: props.highlightIndex || 0,
-      indexedOptionIndex: props.highlightIndex || 0,
+      highlightIndex: -1,
+      indexedOptionIndex: -1,
       indexedOptions: this.generateIndexedOptions(),
     }
   }
 
   componentDidMount() {
     document.addEventListener('keydown', this.onKeyDown)
+    this.highlightIndexedOption(0)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -65,7 +66,7 @@ export default class Menu extends PureComponent {
     if (this.props.options !== nextProps.options) {
       this.setState({
         indexedOptions: this.generateIndexedOptions(),
-      })
+      }, this.highlightIndexedOption(0))
     }
   }
 
