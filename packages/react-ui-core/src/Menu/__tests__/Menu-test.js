@@ -183,9 +183,20 @@ describe('Menu', () => {
       wrapper.find('ListItem').at(1).simulate('mouseenter').simulate('click')
       expect(onItemSelect).toHaveBeenCalledWith(objectOptions[1], 1)
     })
+
+    it('passes objects that do not have label key to List', () => {
+      const optionsRandom = [
+        {
+          a: 'a',
+          b: 'b',
+        },
+      ]
+      const wrapper = shallow(<Menu options={optionsRandom} />)
+      expect(wrapper.find(List).prop('items')).toEqual(optionsRandom)
+    })
   })
 
-  describe('with object with disabled attribute', () => {
+  describe('with object with disabled key', () => {
     it('should not perform on click functionality', () => {
       const testObject = {
         value: -1,
