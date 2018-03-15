@@ -114,10 +114,10 @@ export default class Menu extends PureComponent {
   handleSelection() {
     const { onItemSelect } = this.props
 
-    const value = this.highlightedOption
+    const option = this.highlightedOption
 
-    if (onItemSelect && value && !value.disabled) {
-      onItemSelect(value, this.state.highlightIndex)
+    if (onItemSelect && option && !option.disabled) {
+      onItemSelect(option, this.state.highlightIndex)
     }
   }
 
