@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.15.0"></a>
+# [0.15.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.12.0...@rentpath/react-ui-ag@0.15.0) (2018-03-15)
+
+
+### Bug Fixes
+
+* **Hybrid Map:** lazyloading Photo and forcechecking lazyload library when MobileMapListing isActive ([6e9aa85](https://github.com/rentpath/react-ui/commit/6e9aa85))
+* **react-ui-ag:** shouldComponentUpdate only cares about isActive or listing.id ([348d2f6](https://github.com/rentpath/react-ui/commit/348d2f6))
+
+
+### Features
+
+* **Hybrid Map:** adding props to MobileMapListing to enable photo carousel lazy load on react-image ([9936f4c](https://github.com/rentpath/react-ui/commit/9936f4c))
+* **Hybrid Map:** adding props to MobileMapListing to enable photo carousel lazy load on react-image ([14e3409](https://github.com/rentpath/react-ui/commit/14e3409))
+* **Hybrid Map:** fixed lazyloading forcecheck issue, improved lazyload carousel performance ([62fc29c](https://github.com/rentpath/react-ui/commit/62fc29c))
+
+
+
+
 <a name="0.14.0"></a>
 # [0.14.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.12.0...@rentpath/react-ui-ag@0.14.0) (2018-03-05)
 
