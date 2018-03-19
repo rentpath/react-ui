@@ -47,6 +47,7 @@ export default class AutoSuggestField extends Component {
     onInput: PropTypes.func,
     submitOnSelection: PropTypes.bool,
     visible: PropTypes.bool,
+    onVisibilityChange: PropTypes.func,
     suggestions: PropTypes.node,
     value: PropTypes.string,
     valueSelector: PropTypes.func,
@@ -119,16 +120,17 @@ export default class AutoSuggestField extends Component {
   }
 
   updateValueAndClose(value, cb = () => { }) {
+    this.handleVisibilityChange(false)
     this.setState({
       value,
-      visible: false,
     }, cb)
   }
 
   @autobind
   handleInput(event) {
     const value = event.target.value
-    this.setState({ value, visible: true })
+    this.setState({ value })
+    this.handleVisibilityChange(true)
     this.onInput(value)
   }
 
@@ -161,9 +163,11 @@ export default class AutoSuggestField extends Component {
 
   @autobind
   handleVisibilityChange(visible) {
+    const onVisibilityChange = this.props.onVisibilityChange
     this.setState({
       visible,
     })
+    if (onVisibilityChange) onVisibilityChange(visible)
   }
 
   @autobind
@@ -214,6 +218,7 @@ export default class AutoSuggestField extends Component {
       submitOnSelection,
       visible,
       onInput,
+      onVisibilityChange,
       ...props
     } = this.props
 

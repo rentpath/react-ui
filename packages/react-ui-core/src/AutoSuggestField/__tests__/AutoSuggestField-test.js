@@ -93,6 +93,18 @@ describe('AutoSuggestField', () => {
     expect(onAfterClear.mock.calls).toHaveLength(1)
   })
 
+  it('fires onVisibilityChange on visiblity state change', () => {
+    const onVisibilityChange = jest.fn()
+    const { wrapper } = setup({
+      clearButton: TestButton,
+      value: 'test',
+      visible: true,
+      onVisibilityChange,
+    })
+    wrapper.find('button').simulate('click')
+    expect(onVisibilityChange).toHaveBeenCalledWith(false)
+  })
+
   it('should submit on enter keydown', () => {
     const onSubmit = jest.fn()
     setup({
@@ -107,11 +119,13 @@ describe('AutoSuggestField', () => {
 
   describe('clearButton', () => {
     const onAfterClear = jest.fn()
+    const onVisibilityChange = jest.fn()
     const { wrapper } = setup({
       clearButton: TestButton,
       value: 'test',
       onAfterClear,
       visible: true,
+      onVisibilityChange,
     })
 
     it('closes dropdown on click', () => {
@@ -126,6 +140,11 @@ describe('AutoSuggestField', () => {
 
     it('fires onAfterClear after clear', () => {
       expect(onAfterClear.mock.calls).toHaveLength(1)
+    })
+
+    it('fires onVisibilityChange with false', () => {
+      wrapper.find('button').simulate('click')
+      expect(onVisibilityChange).toHaveBeenCalledWith(false)
     })
   })
 
