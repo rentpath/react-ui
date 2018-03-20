@@ -70,6 +70,7 @@ export default class Dropdown extends Component {
   handleDocumentClick(event) {
     if (this.state.visible && !this.dropdown.contains(event.target)) {
       this.setState({ visible: false })
+      this.props.onVisibilityChange(false)
     }
   }
 

@@ -81,6 +81,14 @@ export default class AutoSuggestField extends Component {
     document.addEventListener('keydown', this.onKeyDown)
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (!(this.props.value === nextProps.value)) {
+      this.setState({
+        value: nextProps.value,
+      })
+    }
+  }
+
   componentWillUnmount() {
     document.removeEventListener('keydown', this.onKeyDown)
   }
