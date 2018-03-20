@@ -18,7 +18,13 @@ export default class List extends PureComponent {
       PropTypes.func,
       PropTypes.object,
     ]),
-    items: PropTypes.array,
+    items: PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.node,
+        PropTypes.func,
+        PropTypes.shape({
+          label: PropTypes.node.isRequired,
+        })])),
     orientation: PropTypes.string,
     highlightIndex: PropTypes.number,
     selectedIndex: PropTypes.number,
@@ -49,8 +55,18 @@ export default class List extends PureComponent {
     return `${this.id}-${index}`
   }
 
-  renderListItem(listItem) {
+  itemComponentAndProps(listItem) {
     return parseArgs(listItem, DefaultListItem)
+  }
+
+  renderItem(item) {
+    if (typeof item === 'object') {
+      const { label, ...props } = item
+      return [label, props]
+    } else if (typeof item === 'function') {
+      return [item()]
+    }
+    return [item]
   }
 
   render() {
@@ -66,7 +82,7 @@ export default class List extends PureComponent {
       ...props
     } = this.props
 
-    const [Item, itemProps] = this.renderListItem(listItem)
+    const [Item, baseProps] = this.itemComponentAndProps(listItem)
 
     return (
       <NodeType
@@ -76,19 +92,23 @@ export default class List extends PureComponent {
           className,
         )}
       >
-        {items.map((item, i) => (
-          <Item
-            {...itemProps}
-            highlight={highlightIndex === i}
-            selected={selectedIndex === i}
-            key={this.itemId(i)}
-            index={i}
-            data-tid={`list-item-${i}`}
-            {...props}
-          >
-            {item}
-          </Item>
-        ))}
+        {items.map((item, i) => {
+          const [children, itemProps] = this.renderItem(item)
+          return (
+            <Item
+              {...baseProps}
+              data-tid={`list-item-${i}`}
+              {...props}
+              {...itemProps}
+              highlight={highlightIndex === i}
+              selected={selectedIndex === i}
+              key={this.itemId(i)}
+              index={i}
+            >
+              {children}
+            </Item>
+          )
+        })}
       </NodeType>
     )
   }

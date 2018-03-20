@@ -98,15 +98,6 @@ export default class Menu extends PureComponent {
     return this.props.options || []
   }
 
-  get items() {
-    return this.options.map(option =>
-      ((typeof option === 'object' && option.label !== undefined) ?
-        option.label :
-        option
-      )
-    )
-  }
-
   get highlightedOption() {
     return this.options[this.state.highlightIndex || 0]
   }
@@ -124,9 +115,9 @@ export default class Menu extends PureComponent {
 
   @autobind
   highlightOption(index) {
-    const { onItemMouseOver, options } = this.props
+    const { onItemMouseOver } = this.props
 
-    if (index < 0 || index >= options.length) return
+    if (index < 0 || index >= this.options.length) return
     this.setState({
       highlightIndex: index,
     }, () => {
@@ -157,7 +148,6 @@ export default class Menu extends PureComponent {
 
   render() {
     const {
-      options,
       theme,
       onItemMouseOver,
       className,
@@ -173,7 +163,7 @@ export default class Menu extends PureComponent {
           className,
           theme.Menu
         )}
-        items={this.items}
+        items={this.options || []}
         highlightIndex={this.state.highlightIndex}
         selectedIndex={selectedIndex}
         onClick={this.handleSelection}

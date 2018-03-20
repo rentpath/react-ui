@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List mount handles function items 1`] = `
+<ul
+  className=""
+>
+  <li
+    className=""
+    data-tid="list-item-0"
+    index={0}
+    onMouseEnter={[Function]}
+  >
+    <div>
+      foo
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`List mount handles labelless items 1`] = `
+<ul
+  className=""
+>
+  <li
+    className=""
+    data-tid="list-item-0"
+    index={0}
+    onMouseEnter={[Function]}
+    test_attr="2"
+    value={1}
+  />
+  <li
+    className=""
+    data-tid="list-item-1"
+    index={1}
+    onMouseEnter={[Function]}
+    test_attr="2"
+    value={2}
+  />
+</ul>
+`;
+
+exports[`List mount passes through object props 1`] = `
+<ul
+  className=""
+>
+  <li
+    className=""
+    data-tid="list-item-0"
+    index={0}
+    onMouseEnter={[Function]}
+    test_attr="2"
+    value={1}
+  >
+    one
+  </li>
+  <li
+    className=""
+    data-tid="list-item-1"
+    index={1}
+    onMouseEnter={[Function]}
+    test_attr="2"
+    value={2}
+  >
+    two
+  </li>
+</ul>
+`;

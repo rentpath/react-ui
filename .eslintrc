@@ -2,7 +2,9 @@
   "extends": "@rentpath/eslint-config-rentpath",
   "parser": "babel-eslint",
   "rules": {
-    "global-require": 0
+    "global-require": 0,
+    "jest/no-disabled-tests": "error",
+    "jest/no-focused-tests": "error",
   },
   "plugins": [
     "react",
