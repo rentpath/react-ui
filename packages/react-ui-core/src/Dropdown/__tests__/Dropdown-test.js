@@ -84,6 +84,13 @@ describe('Dropdown', () => {
     expect(wrapper.state('visible')).toEqual(false)
   })
 
+  it('should call onVisibilityChange prop on outside click', () => {
+    const onVisibilityChange = jest.fn()
+    setup({ visible: true, onVisibilityChange })
+    map.click({ target: document.createElement('div') })
+    expect(onVisibilityChange.mock.calls).toHaveLength(1)
+  })
+
   it('passes label to default anchor', () => {
     const text = 'test'
     const wrapper = mount(

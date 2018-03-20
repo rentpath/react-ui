@@ -117,6 +117,15 @@ describe('AutoSuggestField', () => {
     expect(onSubmit.mock.calls).toHaveLength(1)
   })
 
+  it('should update the value state to the prop when the prop changes', () => {
+    const { wrapper } = setup({
+      value: 'foo',
+    })
+    expect(wrapper.state('value')).toEqual('foo')
+    wrapper.setProps({ value: 'bar' })
+    expect(wrapper.state('value')).toEqual('bar')
+  })
+
   describe('clearButton', () => {
     const onAfterClear = jest.fn()
     const onVisibilityChange = jest.fn()
