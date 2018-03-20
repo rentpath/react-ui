@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.19"></a>
+## [0.1.19](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-rentals@0.1.15...@rentpath/react-ui-rentals@0.1.19) (2018-03-20)
+
+
+
+
+**Note:** Version bump only for package @rentpath/react-ui-rentals
+
 <a name="0.1.18"></a>
 ## [0.1.18](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-rentals@0.1.15...@rentpath/react-ui-rentals@0.1.18) (2018-03-15)
 
