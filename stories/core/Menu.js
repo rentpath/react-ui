@@ -6,22 +6,27 @@ const options = [
   {
     label: 'Best Match',
     value: 'best-match',
+    'data-tag_selection': 'best_match',
   },
   {
     label: 'Price (Highest to Lowest)',
     value: 'price-desc',
+    'data-tag_selection': 'price_highest_first',
   },
   {
     label: 'Price (Lowest to Highest)',
     value: 'price-asc',
+    'data-tag_selection': 'price_lowest_first',
   },
   {
     label: 'Distance (Nearest First)',
     value: 'distance',
+    'data-tag_selection': 'distance_nearest_first',
   },
   {
     label: 'Rating (High to Low)',
     value: 'rating',
+    'data-tag_selection': 'ratings_high_to_low',
   },
 ]
 

@@ -11,3 +11,4 @@ packages/**/package-lock.json
 coverage
 build
 artifacts
+.idea

@@ -61,6 +61,11 @@ describe('Menu', () => {
     }
   }
 
+  it('should not barf if passed null options', () => {
+    const { wrapper } = setup({ theme, options: null })
+    expect(wrapper.find('ListItem')).toHaveLength(0)
+  })
+
   it('should pass options to List component', () => {
     const { wrapper } = setup({ theme, options })
     expect(wrapper.find('ListItem')).toHaveLength(3)
@@ -160,11 +165,6 @@ describe('Menu', () => {
   })
 
   describe('with object options', () => {
-    it('passes just the labels to List', () => {
-      const wrapper = shallow(<Menu options={objectOptions} />)
-      expect(wrapper.find(List).prop('items')).toEqual(objectOptions.map(obj => obj.label))
-    })
-
     it('passes the whole object to the onItemSelect function', () => {
       const onItemSelect = jest.fn()
       const wrapper = mount(<Menu options={objectOptions} onItemSelect={onItemSelect} />)

@@ -1,11 +1,38 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
+import renderer from 'react-test-renderer'
 import theme from './mocks/theme'
 import ThemedList from '../List'
 import ListItem from '../ListItem'
 
 const List = ThemedList.WrappedComponent
 const items = [1, 2, 3]
+const menuItems = [
+  {
+    label: 'one',
+    value: 1,
+    test_attr: '2',
+  },
+  {
+    label: 'two',
+    value: 2,
+    test_attr: '2',
+  },
+]
+const labellessItems = [
+  {
+    value: 1,
+    test_attr: '2',
+  },
+  {
+    value: 2,
+    test_attr: '2',
+  },
+]
+
+const functionItems = [
+  () => (<div>foo</div>),
+]
 
 describe('List', () => {
   describe('mount', () => {
@@ -25,6 +52,31 @@ describe('List', () => {
         />
       )
       expect(wrapper.find('ListItem').at(0).prop('nodeType')).toEqual('span')
+    })
+
+    it('passes through object props', () => {
+      const snap = renderer
+        .create(<List items={menuItems} />)
+        .toJSON()
+      expect(snap).toMatchSnapshot()
+    })
+
+    it('handles labelless items', () => {
+      const errorFunc = global.console.error
+      global.console.error = jest.fn()
+      const snap = renderer
+        .create(<List items={labellessItems} />)
+        .toJSON()
+      expect(snap).toMatchSnapshot()
+      expect(console.error).toBeCalled() // eslint-disable-line no-console
+      console.error = errorFunc // eslint-disable-line no-console
+    })
+
+    it('handles function items', () => {
+      const snap = renderer
+        .create(<List items={functionItems} />)
+        .toJSON()
+      expect(snap).toMatchSnapshot()
     })
 
     it('accepts custom node type', () => {

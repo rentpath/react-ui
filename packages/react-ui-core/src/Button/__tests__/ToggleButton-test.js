@@ -72,7 +72,7 @@ describe('ToggleButton', () => {
     expect(onClick.mock.calls[2][0]).toEqual(true)
   })
 
-  it.only('does not toggle when inactive is true', () => {
+  it('does not toggle when inactive is true', () => {
     const props = {
       theme,
       className: theme.ToggleButton,
