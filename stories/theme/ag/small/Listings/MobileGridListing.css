@@ -1,0 +1,199 @@
+.ListingCell {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.MobileGridListing {
+  width: 100%;
+  height: 240px;
+  margin-bottom: 6px;
+}
+
+.MobileGridListing_Bottom,
+.MobileGridListing_BedsAndCta {
+  width: 100%;
+}
+
+.MobileGridListing_Top {
+  height: 160px;
+  width: 100%;
+}
+
+.MobileGridListing_Top .PhotoCarousel :global .image-gallery :global .image-gallery-slide img{
+  height: 160px;
+  width: 100%;
+}
+
+.MobileGridListing_Bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 8px;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.MobileGridListing_CTAs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+
+.MobileGridListing_CtaButton {
+  padding-top: 5px;
+  padding-bottom: 7px;
+  width: 121px;
+  height: 25px;
+  border-radius: 16px;
+  background-color: #d32526;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+  font-family: ProximaNova;
+  color: #ffffff;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+a.MobileGridListing_CtaButton {
+  text-align: center;
+  height: initial;
+}
+
+.MobileGridListing .Button {
+  outline: none;
+}
+
+.MobileGridListing_FavoriteButton {
+  position: absolute;
+  z-index: 10;
+  right: calc(1% + 10px);
+  top: 4%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.MobileGridListing_Banner {
+  position: absolute;
+  z-index: 10;
+  left: calc(3% + 10px);
+  top: 4%;
+  cursor: pointer;
+}
+
+.MobileGridListing_FavoriteButton.ToggleButton-on {
+  color: #d32526;
+}
+
+.MobileGridListing_FavoriteButton.ToggleButton-off {
+  color: rgba(192, 192, 192, 0.5);
+}
+
+.MobileGridListing_Info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.MobileGridListing_Info .Text {
+  font-size: 13px;
+  color: #4a4a4a;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.MobileGridListing .RatingBar,
+.MobileGridListing_RatingPlaceHolder {
+  display: flex;
+  align-items: baseline;
+  line-height: 0;
+  height: 9px;
+}
+
+.ListingCell .RatingBar_Items {
+  display: flex;
+  flex-direction: row;
+}
+
+.RatingBar_Item svg {
+  width: 9.1px;
+  height: 8.9px;
+  margin-left: 1.5px;
+}
+
+.image-gallery,
+.ListingCell img {
+  border-radius: 5px 5px 0 0;
+}
+
+.MobileGridListing .Photo {
+  min-height: 120px;
+}
+
+.MobileGridListing .Price {
+  font-size: 16px;
+  font-weight: bolder;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MobileGridListing .PropertyName {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MobileGridListing .Address {
+  overflow: hidden;
+  max-width: 264px;
+}
+
+.MobileGridListing .Availability {
+  color: #d32526;
+  margin-top: 2px;
+}
+
+.MobileGridListing .Label {
+  font-size: 12px;
+  padding-left: 3px;
+}
+
+.MobileGridListing .Bedroom {
+  white-space: nowrap;
+}
+
+.MobileGridListing .Bedroom,
+.MobileGridListing .UnitLevelAvailability,
+.MobileGridListing .Label {
+  color: #9b9b9b;
+}
+
+.MobileGridListing .UnitLevelAvailability {
+  margin-left: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MobileGridListing_BedsAndUla {
+  display: flex;
+}
+
+.MobileGridListing_BedsAndCta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.MobileGridListing_BedsAndCta > Div {
+  margin-top: 2px;
+}
+
+.MobileGridListing-inactive :global(.image-gallery-right-nav),
+.MobileGridListing-inactive :global(.image-gallery-left-nav) {
+  display: none;
+}

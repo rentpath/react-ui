@@ -51,6 +51,7 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 index={0}
                 onClick={[Function]}
                 role="presentation"
+                view="map"
               >
                 <button
                   className=""
@@ -496,6 +497,7 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 index={1}
                 onClick={[Function]}
                 role="presentation"
+                view="map"
               >
                 <button
                   className=""
@@ -830,6 +832,7 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 index={2}
                 onClick={[Function]}
                 role="presentation"
+                view="map"
               >
                 <button
                   className=""
@@ -1164,6 +1167,7 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 index={3}
                 onClick={[Function]}
                 role="presentation"
+                view="map"
               >
                 <button
                   className=""
@@ -1498,6 +1502,7 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 index={4}
                 onClick={[Function]}
                 role="presentation"
+                view="map"
               >
                 <button
                   className=""
@@ -1865,6 +1870,7 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 index={0}
                 onClick={[Function]}
                 role="presentation"
+                view="map"
               >
                 <button
                   className=""
@@ -2318,6 +2324,7 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 index={1}
                 onClick={[Function]}
                 role="presentation"
+                view="map"
               >
                 <button
                   className=""
@@ -2652,6 +2659,7 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 index={2}
                 onClick={[Function]}
                 role="presentation"
+                view="map"
               >
                 <button
                   className=""
@@ -2986,6 +2994,7 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 index={3}
                 onClick={[Function]}
                 role="presentation"
+                view="map"
               >
                 <button
                   className=""
@@ -3320,6 +3329,7 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 index={4}
                 onClick={[Function]}
                 role="presentation"
+                view="map"
               >
                 <button
                   className=""
