@@ -13,15 +13,10 @@
     "module": "commonjs",
     "outDir": "./lib",
     "jsx": "react",
-    "lib": [
-      "dom",
-      "es6"
-    ],
     "moduleResolution": "node"
   },
   "include": [
-    "src/**/*",
-    "stories/**/*"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",

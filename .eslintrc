@@ -1,16 +1,21 @@
 {
-  "extends": "@rentpath/eslint-config-rentpath",
+  "extends": [
+    "@rentpath/eslint-config-rentpath",
+    "tslint"
+  ],
   "parser": "babel-eslint",
   "rules": {
     "global-require": 0,
     "jest/no-disabled-tests": "error",
     "jest/no-focused-tests": "error",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
   },
   "plugins": [
     "react",
     "jsx-a11y",
     "babel",
-    "jest"
+    "jest",
+    "typescript"
   ],
   "settings": {
     "import/resolver": {

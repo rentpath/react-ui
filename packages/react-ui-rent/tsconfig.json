@@ -7,24 +7,21 @@
     "preserveConstEnums": true,
     "allowSyntheticDefaultImports": true,
     "suppressImplicitAnyIndexErrors": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "allowJs": true,
-    "target": "es2015",
+    "target": "es6",
     "module": "commonjs",
     "outDir": "./lib",
     "jsx": "react",
-    "lib": [
-      "dom",
-      "es6"
+    "moduleResolution": "node",
+    "lib" : [
+      "es2016.array.include", "es6", "dom"
     ],
-    "moduleResolution": "node"
   },
   "include": [
-    "src/**/*",
-    "stories/**/*"
+    "src/**/*"
   ],
   "exclude": [
-    "node_modules",
     "__tests__"
   ]
 }

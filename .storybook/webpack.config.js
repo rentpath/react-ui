@@ -54,9 +54,18 @@ module.exports = (storybookBaseConfig, configType) => {
         },
       ],
     },
+    {
+      test: /\.ts(x?)$/,
+      use: "ts-loader",
+      include: [
+        path.resolve(__dirname, '../'),
+      ],
+      exclude: /node_modules/,
+    }
   )
 
   storybookBaseConfig.resolve = {
+    extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
     modules: [
       'node_modules',
       'packages',

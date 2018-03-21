@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "babel --ignore __tests__ -d lib src",
+    "build": "tsc",
     "build:watch": "yarn run build -- --watch",
     "test": "NODE_ENV=test jest",
     "test:watch": "yarn run test -- --watch",
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@rentpath/eslint-config-rentpath": "3.0.1",
+    "@types/react-dom": "^16.0.4",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "8.1.2",
@@ -37,9 +38,15 @@
     "eslint": "4.15.0",
     "jest": "22.0.4",
     "react-dom": "16.2.0",
-    "react-test-renderer": "16.2.0"
+    "react-test-renderer": "16.2.0",
+    "ts-jest": "^22.4.1",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.2"
   },
   "dependencies": {
+    "@types/node": "^9.4.7",
+    "@types/react": "^16.0.40",
     "prop-types": "15.6.0"
   },
   "peerDependencies": {

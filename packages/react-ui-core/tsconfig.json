@@ -9,19 +9,18 @@
     "suppressImplicitAnyIndexErrors": true,
     "sourceMap": true,
     "allowJs": true,
-    "target": "es2015",
+    "target": "es5",
     "module": "commonjs",
     "outDir": "./lib",
     "jsx": "react",
+    "moduleResolution": "node",
     "lib": [
-      "dom",
-      "es6"
+      "es6",
+      "dom"
     ],
-    "moduleResolution": "node"
   },
   "include": [
-    "src/**/*",
-    "stories/**/*"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",

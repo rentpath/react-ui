@@ -114,3 +114,7 @@ export {
 export {
   DateInput,
 } from './DateInput'
+
+export {
+  Image,
+} from './Image'
