@@ -10,6 +10,8 @@ import themed from 'react-themed'
 export default class Overlay extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
+    onMouseDown: PropTypes.func,
+    onMouseUp: PropTypes.func,
     onClick: PropTypes.func,
     theme: PropTypes.object,
     children: PropTypes.node,
@@ -23,11 +25,39 @@ export default class Overlay extends PureComponent {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
+    this.handleMouseDown = this.handleMouseDown.bind(this)
+    this.handleMouseUp = this.handleMouseUp.bind(this)
+  }
+
+  handleMouseDown(e) {
+    // Verify that the click started on the overlay
+    this.clickedOutside = (e.target === this.overlay)
+
+    if (this.props.onMouseDown) {
+      this.props.onMouseDown(e)
+    }
+  }
+
+  handleMouseUp(e) {
+    // Verify that the click ended on the overlay
+    if (e.target !== this.overlay) {
+      this.clickedOutside = false
+    }
+
+    if (this.props.onMouseUp) {
+      this.props.onMouseUp(e)
+    }
   }
 
   handleClick(e) {
+    // If the click did not start and end on the overlay do not register click
+    if (!this.clickedOutside) {
+      return
+    }
+    this.clickedOutside = null
+
     if (this.props.onClick && e.target === this.overlay) {
-      this.props.onClick()
+      this.props.onClick(e)
     }
   }
 
@@ -38,6 +68,8 @@ export default class Overlay extends PureComponent {
       <div
         ref={node => { this.overlay = node }}
         role="presentation"
+        onMouseDown={this.handleMouseDown}
+        onMouseUp={this.handleMouseUp}
         onClick={this.handleClick}
         className={classnames(
           className,
