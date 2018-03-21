@@ -28,9 +28,9 @@ export default class ModalBody extends PureComponent {
 
   renderCloseButton(CloseButton) {
     if (CloseButton) {
-      const [Close] = parseArgs(CloseButton, ModalCloseButton)
+      const [Close, props] = parseArgs(CloseButton, ModalCloseButton)
       return (
-        <Close onClick={this.props.onClose} />
+        <Close {...props} onClick={this.props.onClose} />
       )
     }
 

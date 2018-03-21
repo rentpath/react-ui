@@ -11,6 +11,7 @@ import {
   CancelButton as CancelButtonBase,
   FilterCard as FilterCardBase,
   Card as CardBase,
+  Modal as ModalBase,
 } from '../base'
 import {
   FilterCard,
@@ -22,11 +23,15 @@ import {
 import {
   GridViewHeader,
 } from './GridView'
+import {
+  EmailModal,
+} from './Modals'
 
 export default compose({},
   ApplyButtonBase,
   ApplyButton,
   CancelButtonBase,
+  ModalBase,
   CancelButton,
   CardBase,
   Card,
@@ -42,4 +47,5 @@ export default compose({},
   RadioGroup,
   DesktopMapPinListing,
   GridViewHeader,
+  EmailModal,
 )
