@@ -9,16 +9,21 @@
     "suppressImplicitAnyIndexErrors": true,
     "sourceMap": true,
     "allowJs": true,
-    "target": "es2015",
+    "target": "es5",
     "module": "commonjs",
     "outDir": "./lib",
     "jsx": "react",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "lib": [
+      "es6",
+      "dom"
+    ],
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
+    "lib",
     "node_modules",
     "__tests__"
   ]

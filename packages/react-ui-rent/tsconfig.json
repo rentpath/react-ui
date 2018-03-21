@@ -7,21 +7,24 @@
     "preserveConstEnums": true,
     "allowSyntheticDefaultImports": true,
     "suppressImplicitAnyIndexErrors": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "allowJs": true,
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "outDir": "./lib",
     "jsx": "react",
     "moduleResolution": "node",
-    "lib" : [
-      "es2016.array.include", "es6", "dom"
+    "lib": [
+      "es6",
+      "dom"
     ],
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
+    "lib",
+    "node_modules",
     "__tests__"
   ]
 }
