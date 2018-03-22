@@ -114,3 +114,8 @@ export {
 export {
   DateInput,
 } from './DateInput'
+
+export {
+  Gmap,
+  GmapSpinner,
+} from './Gmap'

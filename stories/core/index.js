@@ -124,7 +124,12 @@ import {
 
 import { DefaultDrawer } from './Drawer'
 
-import coreStories from './coreStories'
+import {
+  DefaultGmap,
+  GmapWithSpinner,
+} from './Gmap'
+
+import coreStories, { coreStoriesNoContainer } from './coreStories'
 
 coreStories('AutoSuggestField', module)
   .add('Field and Submit Button', () => AutoSuggestFieldSubmitButton)
@@ -169,6 +174,10 @@ coreStories('Field', module)
   .add('Field', () => DefaultField)
   .add('Select Field', () => SelectField)
   .add('Checkbox Field', () => CheckboxField)
+
+coreStoriesNoContainer('Gmap', module)
+  .add('Gmap', () => DefaultGmap)
+  .add('Gmap with spinner', () => GmapWithSpinner)
 
 coreStories('Highlighter', module)
   .add('Default Highlighter', () => DefaultHighlighter)
