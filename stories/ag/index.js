@@ -82,5 +82,5 @@ smallStories('Banner', module)
   .add('Default Banner', () => DefaultBanner)
   .add('Banner With Node as Name', () => BannerWithNode)
 
-largeStories('GridView')
+largeStories('GridView', module)
   .add('GridViewHeader', () => ExampleGridViewHeader)

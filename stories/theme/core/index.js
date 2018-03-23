@@ -31,6 +31,7 @@ import Carousel from './Carousel.css'
 import Mapbox from './Mapbox.css'
 import ListingCell from './ListingCell.css'
 import Drawer from './Drawer.css'
+import Gmap from './Gmap.css'
 
 export default compose({},
   Label,
@@ -65,4 +66,5 @@ export default compose({},
   Mapbox,
   ListingCell,
   Drawer,
+  Gmap,
 )

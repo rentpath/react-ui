@@ -6,4 +6,3 @@ export default ({ story }) => ( // eslint-disable-line react/prop-types
     {story()}
   </div>
 )
-
