@@ -25,3 +25,5 @@ export {
 } from './GridView'
 
 export { ListingCarousel } from './Carousels'
+
+export { EmailModal } from './Modals'

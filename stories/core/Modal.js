@@ -19,9 +19,9 @@ export const DefaultModal = (
   </Modal>
 )
 
-export const CloseModal = (
+export const CloseModal = () => (
   <Modal
-    isOpen
+    isOpen={boolean('isOpen', true)}
     onClose={action('CloseButton closed the modal!')}
     CloseButton={CloseButton}
   >
@@ -31,7 +31,7 @@ export const CloseModal = (
 
 export const ModalNoOverlayClose = (
   <Modal
-    isOpen
+    isOpen={boolean('isOpen', true)}
     closeOnOverlayClick={false}
     CloseButton={CloseButton}
     onClose={action('CloseButton closed the modal!')}
@@ -40,20 +40,17 @@ export const ModalNoOverlayClose = (
   </Modal>
 )
 
-export const ModalPopup = () => {
-  const isOpen = boolean('isOpen', false)
-  return [
-    <div
-      className={StorybookTheme.Story_ModalClickText}
-      key="activate-modal"
-    >
-      Activate through knobs to open
-    </div>,
-    <Modal
-      isOpen={isOpen}
-      key="modal"
-    >
-      <div>{"I'm open! Woohoo!"}</div>
-    </Modal>,
-  ]
-}
+export const ModalPopup = () => ([
+  <div
+    className={StorybookTheme.Story_ModalClickText}
+    key="activate-modal"
+  >
+    Activate through knobs to open
+  </div>,
+  <Modal
+    isOpen={boolean('isOpen', false)}
+    key="modal"
+  >
+    <div>{"I'm open! Woohoo!"}</div>
+  </Modal>,
+])

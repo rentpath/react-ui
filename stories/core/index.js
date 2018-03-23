@@ -213,7 +213,7 @@ coreStories('Menu', module)
 
 coreStories('Modal', module)
   .add('Modal', () => DefaultModal)
-  .add('Modal With Close Button', () => CloseModal)
+  .add('Modal With Close Button', CloseModal)
   .add('Modal No Close on Overlay', () => ModalNoOverlayClose)
   .add('Modal Open By Click', ModalPopup)
 

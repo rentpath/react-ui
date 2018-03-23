@@ -1,0 +1,110 @@
+.EmailModal .ModalBody {
+  width: 450px;
+  max-height: 300px;
+}
+
+.EmailModal .ModalBody_InnerBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  color: #4a4a4a;
+  height: 100%;
+  justify-content: center;
+}
+
+.EmailModal .CloseButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.EmailModal div {
+  text-align: center;
+}
+
+.EmailModal_Header {
+  width: 240px;
+  padding-bottom: 15px;
+}
+
+.EmailModal h3 {
+  margin: 0;
+  padding: 30px 0 15px;
+}
+
+.EmailModal .Field {
+  padding: 8px;
+  border: solid 1px #0474d7;
+  border-radius: 3px;
+  text-align: left;
+  font-size: 13px;
+  line-height: 20px;
+  color: #4a4a4a;
+  display: flex;
+  flex-direction: column;
+}
+
+.EmailModal .Field input {
+  font-weight: bold;
+  color: #4a4a4a;
+  border: none;
+  outline: none;
+}
+
+.EmailModal .Form {
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.EmailModal .Form div,
+.EmailModal .Form span {
+  text-align: left;
+}
+
+.EmailModal .Form .Label span {
+  color: #ea5117;
+}
+
+.EmailModal_ErrorMessage {
+  color: #ea5117;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 3px 0 0 10px;
+}
+
+.EmailModal-error .Field {
+  border: solid 1px #ea5117;
+  background-color: #fdede7;
+}
+
+.EmailModal-error .Field input {
+  background-color: #fdede7;
+}
+
+.EmailModal_Submit {
+  padding-top: 20px;
+}
+
+.EmailModal-error .EmailModal_Submit {
+  padding-top: 6px;
+}
+
+.EmailModal .Button {
+  background-color: #0175d7;
+  color: #fff;
+  padding: 15px 0;
+  border-radius: 40px;
+  outline: none;
+  width: 100%;
+}
+
+.EmailModal_Footer {
+  color: #0175d7;
+  cursor: pointer;
+  padding-bottom: 15px;
+  font-size: 14px;
+}

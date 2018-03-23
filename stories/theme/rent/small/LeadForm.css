@@ -107,3 +107,7 @@
   white-space: nowrap;
   cursor: pointer;
 }
+
+.CloseButton {
+  cursor: pointer;
+}
