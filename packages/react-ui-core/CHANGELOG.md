@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.13.0"></a>
+# [4.13.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.8.0...@rentpath/react-ui-core@4.13.0) (2018-03-23)
+
+
+### Bug Fixes
+
+* **AutoSuggestField:** autoSuggestField changed to pass 'value' prop to the state when it is updated ([4ad1eef](https://github.com/rentpath/react-ui/commit/4ad1eef))
+* **Desktop Hybrid Map:** support selected class to ListItem, List, Menu, and DropdownMenu ([2bd9d6c](https://github.com/rentpath/react-ui/commit/2bd9d6c))
+* **Menu:** pass properties (other than label) to Menu ListItems ([1384910](https://github.com/rentpath/react-ui/commit/1384910))
+
+
+### Features
+
+* **AutoSuggestField:** adds onVisibilityChange prop to AutoSuggestField so the state can be passed ([1b8fa50](https://github.com/rentpath/react-ui/commit/1b8fa50))
+* **AutoSuggestField Menu:** Fixes debounce issue and menu ([8d9f731](https://github.com/rentpath/react-ui/commit/8d9f731))
+* **AutoSuggestField Menu:** Fixes debounce issue and menu [#209](https://github.com/rentpath/react-ui/issues/209) ([954dd28](https://github.com/rentpath/react-ui/commit/954dd28))
+* **googlemap:** addition of google map ([446b1f0](https://github.com/rentpath/react-ui/commit/446b1f0))
+* **Hybrid Map:** adding props to MobileMapListing to enable photo carousel lazy load on react-image ([9936f4c](https://github.com/rentpath/react-ui/commit/9936f4c))
+* **Hybrid Map:** adding props to MobileMapListing to enable photo carousel lazy load on react-image ([14e3409](https://github.com/rentpath/react-ui/commit/14e3409))
+* **Hybrid Map:** fixed lazyloading forcecheck issue, improved lazyload carousel performance ([62fc29c](https://github.com/rentpath/react-ui/commit/62fc29c))
+* **Property Link Email:** create EmailModal component ([44c64bb](https://github.com/rentpath/react-ui/commit/44c64bb))
+
+
+
+
 <a name="4.12.0"></a>
 # [4.12.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.8.0...@rentpath/react-ui-core@4.12.0) (2018-03-20)
 
