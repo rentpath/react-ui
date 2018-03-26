@@ -26,6 +26,7 @@
     ]
   },
   "devDependencies": {
+    "@rentpath/react-redux-router": "^3.0.2",
     "@rentpath/eslint-config-rentpath": "3.0.1",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
@@ -45,6 +46,7 @@
     "jest": "22.1.4",
     "jest-css-modules": "1.1.0",
     "react-dom": "16.2.0",
+    "react-redux": "^5.0.7",
     "react-test-renderer": "16.2.0"
   },
   "dependencies": {

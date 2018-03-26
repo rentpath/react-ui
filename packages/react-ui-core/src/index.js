@@ -119,3 +119,8 @@ export {
   Gmap,
   GmapSpinner,
 } from './Gmap'
+
+export {
+  LinkList,
+  LinkItem,
+} from './LinkList'
