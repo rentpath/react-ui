@@ -59,6 +59,11 @@ import {
 } from './List'
 
 import {
+  DefaultLinkList,
+  AnchorTagLinkList,
+} from './LinkList'
+
+import {
   DefaultCard,
 } from './Card'
 
@@ -196,6 +201,10 @@ coreStories('List', module)
   .add('Horizontal List', () => HorizontalList)
   .add('Custom Node Type List', () => ListWithPassedNodeTypes)
   .add('Custom ListItem List', () => ListWithOwnItemComponent)
+
+coreStories('LinkList', module)
+  .add('LinkList', () => DefaultLinkList)
+  .add('Anchor Tag LinkList', () => AnchorTagLinkList)
 
 coreStories('ListingCell', module)
   .add('Default', () => DefaultListingCell)
