@@ -1,15 +1,20 @@
 import React from 'react'
 import { Gmap, GmapSpinner } from 'react-ui-core/src'
 
+const key = 'AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A'
+const containerStyle = { position: 'fixed' }
+
 export const DefaultGmap = (
   <Gmap
-    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A&v=3.exp&libraries=geometry,drawing,places"
+    containerStyle={containerStyle}
+    apiKey={key}
   />
 )
 
 export const GmapWithSpinner = (
   <Gmap
-    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A&v=3.exp&libraries=geometry,drawing,places"
-    loadingElement={<GmapSpinner loading color="#D73636" />}
+    containerStyle={containerStyle}
+    apiKey={key}
+    spinner={<GmapSpinner color="#ff0000" loading />}
   />
 )

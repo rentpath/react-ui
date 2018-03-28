@@ -87,6 +87,6 @@ smallStories('Banner', module)
 largeStories('GridView', module)
   .add('GridViewHeader', () => ExampleGridViewHeader)
 
-largeStories('Modals')
+largeStories('Modals', module)
   .add('Optional EmailModal', OptionalEmailModal)
   .add('Mandatory EmailModal', MandatoryEmailModal)
