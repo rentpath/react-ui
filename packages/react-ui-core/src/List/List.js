@@ -60,7 +60,7 @@ export default class List extends PureComponent {
   }
 
   renderItem(item) {
-    if (typeof item === 'object') {
+    if (item && typeof item === 'object' && !React.isValidElement(item)) {
       const { label, ...props } = item
       return [label, props]
     } else if (typeof item === 'function') {
