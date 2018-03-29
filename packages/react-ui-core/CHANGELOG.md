@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.14.1"></a>
+## [4.14.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.14.0...@rentpath/react-ui-core@4.14.1) (2018-03-29)
+
+
+
+
+**Note:** Version bump only for package @rentpath/react-ui-core
+
 <a name="4.14.0"></a>
 # [4.14.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.8.0...@rentpath/react-ui-core@4.14.0) (2018-03-29)
 
