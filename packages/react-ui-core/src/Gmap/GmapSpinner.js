@@ -11,18 +11,44 @@ export default class MapSpinner extends PureComponent {
     loading: PropTypes.bool,
     theme: PropTypes.object,
     className: PropTypes.string,
+    closeDelay: PropTypes.number,
   }
 
   static defaultProps = {
+    closeDelay: 0,
     loading: false,
     theme: {},
     color: '#000',
   }
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      loading: this.props.loading,
+    }
+  }
+
+  componentDidUpdate(nextProps) {
+    if (this.props.loading !== nextProps.loading && nextProps.loading) {
+      this.close()
+    }
+  }
+
+  close() {
+    const { closeDelay } = this.props
+
+    // add timeout so the gray background isn't the only thing we see
+    setTimeout(() => {
+      this.setState({ loading: false })
+    }, closeDelay)
+  }
+
   render() {
+    const { loading } = this.state
     const {
       theme,
       className,
+      closeDelay,
       ...rest
     } = this.props
 
@@ -32,7 +58,7 @@ export default class MapSpinner extends PureComponent {
         theme.Gmap_Spinner,
       )}
       >
-        <BounceLoader {...rest} />
+        <BounceLoader {...rest} loading={loading} />
       </div>
     )
   }

@@ -1,5 +1,5 @@
-.Gmap_Container {
-  position: fixed;
+.Gmap {
+  position: fixed !important; /* stylelint-disable-line declaration-no-important */
   z-index: 0;
   height: 100%;
   width: 100%;
@@ -7,14 +7,15 @@
   left: 0;
 }
 
-.Gmap_Element {
-  height: 100%;
-}
-
 .Gmap_Spinner {
+  z-index: 1;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
 }
 
+.Marker {
+  z-index: 1111;
+  background: #ff0000;
+}

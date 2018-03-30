@@ -118,4 +118,6 @@ export {
 export {
   Gmap,
   GmapSpinner,
+  GmapInteraction,
+  Marker,
 } from './Gmap'

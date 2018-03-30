@@ -1,3 +1,5 @@
 export { default } from './Gmap'
 export { default as Gmap } from './Gmap'
 export { default as GmapSpinner } from './GmapSpinner'
+export { default as Marker } from './Marker'
+export { GmapInteraction } from './GmapInteraction'

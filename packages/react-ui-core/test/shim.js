@@ -5,3 +5,30 @@ const raf = cb => {
 }
 
 global.requestAnimationFrame = raf
+
+global.google = {
+  maps: {
+    event: {
+      clearInstanceListeners: () => {},
+    },
+    LatLng: (lat, lng) => ({
+      latitude: parseFloat(lat),
+      longitude: parseFloat(lng),
+      lat: () => this.latitude,
+      lng: () => this.longitude,
+    }),
+    LatLngBounds: (ne, sw) => ({
+      getSouthWest: () => sw,
+      getNorthEast: () => ne,
+    }),
+    OverlayView: () => ({}),
+    InfoWindow: () => ({}),
+    Marker: () => ({}),
+    MarkerImage: () => ({}),
+    Map: () => ({
+      addListener: () => { },
+    }),
+    Point: () => ({}),
+    Size: () => ({}),
+  },
+}
