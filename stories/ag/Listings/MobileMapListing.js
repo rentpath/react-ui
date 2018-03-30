@@ -109,3 +109,28 @@ export const ExampleSingleFamily = () => {
     />
   )
 }
+
+export const ExampleMobileGridListing = () => {
+  const isActive = boolean('isActive', true)
+  const listing = {
+    ...baseListing,
+    isFavorited: boolean('listing.isFavorited', false),
+  }
+  const style = {
+    width: '400px',
+    height: '768px',
+    border: 'solid 1px #333',
+    padding: '6px 8px',
+  }
+  return (
+    <div style={style}>
+      <MobileMapListing
+        {...props}
+        listing={listing}
+        ctaButtons={ctaButtons}
+        isActive={isActive}
+        view="srp"
+      />
+    </div>
+  )
+}

@@ -21,7 +21,10 @@ import {
 } from './Filters'
 import Banner from './Banner.css'
 
-import MobileMapListing from './MobileMapListing.css'
+import {
+  MobileMapListing,
+  MobileGridListing,
+} from './Listings'
 import ListingCarousel from './ListingCarousel.css'
 
 export default compose({},
@@ -42,6 +45,7 @@ export default compose({},
   RadioGroup,
   RadioGroupBase,
   MobileMapListing,
+  MobileGridListing,
   ListingCarousel,
   Banner,
 )

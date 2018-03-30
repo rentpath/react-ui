@@ -22,7 +22,12 @@ const REACT_LAZYLOAD_PROP_DEFAULTS = {
   height: 120,
 }
 
-@themed(/^MobileMapListing/)
+const VIEW_TYPES = {
+  map: 'map',
+  grid: 'srp',
+}
+
+@themed(/^(MobileMapListing|MobileGridListing)/)
 export default class MobileMapListing extends Component {
   static propTypes = {
     index: PropTypes.number,
@@ -40,6 +45,7 @@ export default class MobileMapListing extends Component {
       PropTypes.bool,
     ]),
     isActive: PropTypes.bool,
+    view: PropTypes.oneOf(Object.values(VIEW_TYPES)),
   }
 
   static defaultProps = {
@@ -49,6 +55,7 @@ export default class MobileMapListing extends Component {
     listing: {},
     ratings: {},
     photos: {},
+    view: VIEW_TYPES.map,
   }
 
   constructor(props) {
@@ -67,8 +74,20 @@ export default class MobileMapListing extends Component {
     }
   }
 
+  get themeName() {
+    return this.props.view === VIEW_TYPES.map ?
+      'MobileMapListing' :
+      'MobileGridListing'
+  }
+
   get listingPhotos() {
     return get(this.props.listing, 'photos', [])
+  }
+
+  themeClassName(suffix, modifier = '_') {
+    return suffix ?
+      this.props.theme[`${this.themeName}${modifier}${suffix}`] :
+      this.props.theme[this.themeName]
   }
 
   @autobind
@@ -126,7 +145,7 @@ export default class MobileMapListing extends Component {
   }
 
   renderCtaButton(props, key) {
-    const { theme, listing } = this.props
+    const { listing } = this.props
     const {
       className,
       onClick,
@@ -144,7 +163,7 @@ export default class MobileMapListing extends Component {
       <Button
         {...buttonProps}
         className={classnames(
-          theme.MobileMapListing_CtaButton,
+          this.themeClassName('CtaButton'),
           className,
         )}
         onClick={this.handleButtonClick(onClick)}
@@ -157,14 +176,14 @@ export default class MobileMapListing extends Component {
   }
 
   renderFavoriteButton() {
-    const { theme, favoriteButton, isActive, listing } = this.props
+    const { favoriteButton, isActive, listing } = this.props
     const { className } = favoriteButton
     return (
       <ToggleButton
         {...favoriteButton}
         value={listing.isFavorited}
         className={classnames(
-          theme.MobileMapListing_FavoriteButton,
+          this.themeClassName('FavoriteButton'),
           className,
         )}
         inactive={!isActive}
@@ -174,7 +193,7 @@ export default class MobileMapListing extends Component {
   }
 
   renderPhotoCarousel() {
-    const { listing, theme, photos, isActive } = this.props
+    const { listing, photos, isActive } = this.props
     let { lazyLoad } = this.props
 
     if (lazyLoad && typeof lazyLoad === 'boolean') {
@@ -190,13 +209,13 @@ export default class MobileMapListing extends Component {
     }
 
     return (
-      <div className={theme.MobileMapListing_Top}>
+      <div className={this.themeClassName('Top')}>
         {(isActive || this.loadedCarousel) &&
           <ListingComponents.Photos
             showNav
             {...photos}
             lazyLoad={lazyLoad}
-            className={theme.MobileMapListing_Photos}
+            className={this.themeClassName('Photos')}
             onSlide={this.handlePhotoCarouselSlide}
           />
         }
@@ -243,8 +262,8 @@ export default class MobileMapListing extends Component {
         onClick={this.handleCardClick}
         className={classnames(
           className,
-          theme.MobileMapListing,
-          theme[`MobileMapListing-${isActive ? 'active' : 'inactive'}`]
+          this.themeClassName(),
+          this.themeClassName(`${isActive ? 'active' : 'inactive'}`, '-')
         )}
         isActive={isActive}
         {...props}
@@ -253,27 +272,27 @@ export default class MobileMapListing extends Component {
         {listing.banner &&
           <Banner
             name={listing.banner}
-            className={theme.MobileMapListing_Banner}
+            className={this.themeClassName('Banner')}
           />
         }
         {this.renderPhotoCarousel()}
-        <div className={theme.MobileMapListing_Bottom}>
-          <div className={theme.MobileMapListing_Info}>
+        <div className={this.themeClassName('Bottom')}>
+          <div className={this.themeClassName('Info')}>
             <ListingComponents.Price />
             <ListingComponents.PropertyName {...propertyName} />
-            <div className={theme.MobileMapListing_BedsAndUla}>
+            <div className={this.themeClassName('BedsAndUla')}>
               <ListingComponents.Bedroom />
               <ListingComponents.UnitLevelAvailability />
             </div>
             {listing.rating ?
               <ListingComponents.Ratings {...ratings} /> :
               <div
-                className={theme.MobileMapListing_RatingPlaceHolder}
+                className={this.themeClassName('RatingPlaceHolder')}
                 data-tid="rating-placeholder"
               />
             }
           </div>
-          <div className={theme.MobileMapListing_CTAs}>
+          <div className={this.themeClassName('CTAs')}>
             {this.renderCtaButtons()}
           </div>
         </div>
