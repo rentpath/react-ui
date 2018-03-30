@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GmapBase spinner does not use a spinner if none is passed 1`] = `
+<div
+  className=""
+  style={
+    Object {
+      "height": "100%",
+      "position": "absolute",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "bottom": 0,
+        "display": "inherit",
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    Loading map...
+  </div>
+</div>
+`;
+
+exports[`GmapBase spinner uses the \`Spinner\` node passed with props 1`] = `
+Array [
+  <span />,
+  <div
+    className=""
+    style={
+      Object {
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "bottom": 0,
+          "display": "inherit",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      Loading map...
+    </div>
+  </div>,
+]
+`;
+
+exports[`GmapBase spinner uses the default \`div\` and applies props if object 1`] = `
+Array [
+  <div
+    data-tag_section="foo"
+  />,
+  <div
+    className=""
+    style={
+      Object {
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "bottom": 0,
+          "display": "inherit",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      Loading map...
+    </div>
+  </div>,
+]
+`;
+
+exports[`GmapBase spinner uses the prop directly if valid React element 1`] = `
+Array [
+  <div>
+    spinner
+  </div>,
+  <div
+    className=""
+    style={
+      Object {
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "bottom": 0,
+          "display": "inherit",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      Loading map...
+    </div>
+  </div>,
+]
+`;
