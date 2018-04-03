@@ -21,6 +21,11 @@ export const GmapWithSpinner = (
 
 export const GmapWithMarker = (
   <Gmap apiKey={key}>
-    <Marker />
+    <Marker
+      position={{
+        lat: 33.7490,
+        lng: -84.3880,
+      }}
+    />
   </Gmap>
 )
