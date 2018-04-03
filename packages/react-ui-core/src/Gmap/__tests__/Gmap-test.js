@@ -1,115 +1,70 @@
 import React from 'react'
+import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
-import ThemedGmap from '../Gmap'
+import Gmap from '../Gmap'
 
-const Gmap = ThemedGmap.WrappedComponent
-const key = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A&v=3.exp&libraries=geometry,drawing,places'
-
-const theme = {
-  Gmap_Container: 'containerClass',
-  Gmap_Element: 'elementClass',
-  Gmap_Spinner: 'spinnerClass',
-}
+const key = 'AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A'
 
 describe('Gmap', () => {
-  describe('containerElement', () => {
-    const setup = containerElement => {
-      const wrapper = shallow(
-        <Gmap
-          googleMapURL={key}
-          theme={theme}
-          containerElement={containerElement}
-        />
-      )
-      return wrapper.prop('containerElement')
+  describe('componentDidMount', () => {
+    const setup = () => {
+      const wrapper = shallow(<Gmap apiKey={key} />)
+      const instance = wrapper.instance()
+      const scriptLoadedSpy = jest.spyOn(instance, 'scriptLoaded')
+      const loadScriptSpy = jest.spyOn(instance, 'loadScript')
+
+      return { wrapper, instance, scriptLoadedSpy, loadScriptSpy }
     }
 
-    it('applies props correctly when type object', () => {
-      const containerElement = setup({
-        'data-tag_secton': 'container-tag',
-      })
+    it('fires `scriptLoaded` if google map script has already been loaded', () => {
+      const { instance, scriptLoadedSpy, loadScriptSpy } = setup()
+      instance.componentDidMount()
 
-      expect(containerElement.type).toEqual('div')
-      expect(containerElement.props).toEqual({
-        className: 'containerClass',
-        'data-tag_secton': 'container-tag',
-      })
+      expect(scriptLoadedSpy).toHaveBeenCalled()
+      expect(loadScriptSpy).not.toHaveBeenCalled()
     })
 
-    it('uses existing prop when type element', () => {
-      const containerElement = setup(<span>test</span>)
-      expect(React.isValidElement(containerElement)).toEqual(true)
-      expect(containerElement.props.children).toEqual('test')
+    it('fires `loadScript` if google map script has not been loaded', () => {
+      const maps = window.google.maps
+      window.google.maps = undefined
+      const { instance, scriptLoadedSpy, loadScriptSpy } = setup()
+
+      instance.componentDidMount()
+
+      expect(scriptLoadedSpy).not.toHaveBeenCalled()
+      expect(loadScriptSpy).toHaveBeenCalled()
+      window.google.maps = maps
     })
   })
 
-  describe('mapElement', () => {
-    const setup = mapElement => {
-      const wrapper = shallow(
-        <Gmap
-          googleMapURL={key}
-          theme={theme}
-          mapElement={mapElement}
-        />
-      )
-      return wrapper.prop('mapElement')
-    }
-
-    it('applies props correctly when type object', () => {
-      const mapElement = setup({
-        'data-tag_secton': 'container-tag',
-      })
-
-      expect(mapElement.type).toEqual('div')
-      expect(mapElement.props).toEqual({
-        className: 'elementClass',
-        'data-tag_secton': 'container-tag',
-      })
+  describe('spinner', () => {
+    it('uses the prop directly if valid React element', () => {
+      const snap = renderer
+        .create(<Gmap apiKey={key} spinner={<div>spinner</div>} />)
+        .toJSON()
+      expect(snap).toMatchSnapshot()
     })
 
-    it('uses existing prop when type element', () => {
-      const mapElement = setup(<span>test</span>)
-      expect(React.isValidElement(mapElement)).toEqual(true)
-      expect(mapElement.props.children).toEqual('test')
-    })
-  })
-
-  describe('loadingElement', () => {
-    const setup = loadingElement => {
-      const wrapper = shallow(
-        <Gmap
-          googleMapURL={key}
-          theme={theme}
-          loadingElement={loadingElement}
-        />
-      )
-      return wrapper.prop('loadingElement')
-    }
-
-    it('applies props correctly when type object', () => {
-      const loadingElement = setup({
-        'data-tag_secton': 'container-tag',
-      })
-
-      expect(loadingElement.type).toEqual('div')
-      expect(loadingElement.props).toEqual({
-        className: 'spinnerClass',
-        'data-tag_secton': 'container-tag',
-      })
+    it('uses the default `div` and applies props if object', () => {
+      const snap = renderer
+        .create(<Gmap apiKey={key} spinner={{ 'data-tag_section': 'foo' }} />)
+        .toJSON()
+      expect(snap).toMatchSnapshot()
     })
 
-    it('applies props correctly when type node', () => {
-      const loadingElement = setup('foo')
-      expect(loadingElement.type).toEqual('div')
-      expect(loadingElement.props).toEqual({
-        className: 'spinnerClass',
-      })
+    it('uses the `Spinner` node passed with props', () => {
+      const Spinner = <span />
+      const snap = renderer
+        .create(<Gmap apiKey={key} spinner={Spinner} />)
+        .toJSON()
+      expect(snap).toMatchSnapshot()
     })
 
-    it('uses existing prop when type element', () => {
-      const loadingElement = setup(<span>test</span>)
-      expect(React.isValidElement(loadingElement)).toEqual(true)
-      expect(loadingElement.props.children).toEqual('test')
+    it('does not use a spinner if none is passed', () => {
+      const snap = renderer
+        .create(<Gmap apiKey={key} />)
+        .toJSON()
+      expect(snap).toMatchSnapshot()
     })
   })
 })

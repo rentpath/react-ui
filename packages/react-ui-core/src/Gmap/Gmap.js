@@ -1,67 +1,86 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import themed from 'react-themed'
+import autobind from 'autobind-decorator'
 import { parseArgs } from '@rentpath/react-ui-utils'
 import GmapBase from './GmapBase'
 
-const createComponent = (element, className) => {
-  if (React.isValidElement(element)) return element
-
-  const [Container, props] = parseArgs(element, 'div', { className })
-  return <Container {...props} />
-}
-
-@themed(/^Gmap/, { pure: true })
+const API_BASE_URL = 'https://maps.googleapis.com/maps/api/js'
 
 export default class Gmap extends PureComponent {
   static propTypes = {
-    loadingElement: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.element,
+    apiKey: PropTypes.string.isRequired,
+    libraries: PropTypes.arrayOf(
+      PropTypes.string,
+    ),
+    spinner: PropTypes.oneOfType([
+      PropTypes.func,
       PropTypes.node,
-    ]),
-    containerElement: PropTypes.oneOfType([
       PropTypes.object,
-      PropTypes.element,
     ]),
-    mapElement: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.element,
-    ]),
-    theme: PropTypes.object,
   }
 
   static defaultProps = {
-    theme: {},
+    libraries: [],
   }
 
-  get containerElement() {
-    const { containerElement, theme } = this.props
-    return createComponent(containerElement, theme.Gmap_Container)
+  constructor(props) {
+    super(props)
+    this.state = {
+      loaded: false,
+      spinner: props.spinner,
+    }
   }
 
-  get mapElement() {
-    const { mapElement, theme } = this.props
-    return createComponent(mapElement, theme.Gmap_Element)
+  componentDidMount() {
+    if (this.isInitialized) {
+      this.scriptLoaded()
+      return
+    }
+    this.loadScript()
   }
 
-  get loadingElement() {
-    const { loadingElement, theme } = this.props
-    return createComponent(loadingElement, theme.Gmap_Spinner)
+  get isInitialized() {
+    return !!(window.google && window.google.maps)
+  }
+
+  get spinner() {
+    const { spinner, loaded } = this.state
+    const props = { key: 'map-spinner', loading: !loaded }
+
+    if (spinner) {
+      if (React.isValidElement(spinner)) return React.cloneElement(spinner, props)
+      return React.createElement(...parseArgs(spinner, 'div', props))
+    }
+
+    return null
+  }
+
+  @autobind
+  scriptLoaded() {
+    this.setState({ loaded: true })
+  }
+
+  async loadScript() {
+    const { apiKey, libraries } = this.props
+    const url = `${API_BASE_URL}?key=${apiKey}&libraries=${libraries.join()}`
+
+    await import(/* webpackChunkName: "scriptjs" */ 'scriptjs').then(scriptjs => {
+      scriptjs(url, this.scriptLoaded)
+    })
   }
 
   render() {
-    /* NOTE: containerElement, mapElement and loadingElement props
-       are needed to use wtih the withScriptjs and withGoogleMap
-       HOCs from the react-google-maps library
-    */
-    return (
-      <GmapBase
-        {...this.props}
-        containerElement={this.containerElement}
-        mapElement={this.mapElement}
-        loadingElement={this.loadingElement}
-      />
-    )
+    const { loaded } = this.state
+    const {
+      spinner,
+      apiKey,
+      libraries,
+      ...rest
+    } = this.props
+
+    return [
+      this.spinner,
+      loaded ? <GmapBase key="google-map" {...rest} /> : null,
+    ]
   }
 }

@@ -1,15 +1,26 @@
 import React from 'react'
+import { action } from '@storybook/addon-actions'
 import { Gmap, GmapSpinner } from 'react-ui-core/src'
+import Marker from './Marker'
+
+const key = 'AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A'
 
 export const DefaultGmap = (
   <Gmap
-    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A&v=3.exp&libraries=geometry,drawing,places"
+    apiKey={key}
+    onBoundsChanged={(action('bounds changed'))}
   />
 )
 
 export const GmapWithSpinner = (
   <Gmap
-    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A&v=3.exp&libraries=geometry,drawing,places"
-    loadingElement={<GmapSpinner loading color="#D73636" />}
+    apiKey={key}
+    spinner={<GmapSpinner color="#ff0000" loading closeDelay={1000} />}
   />
+)
+
+export const GmapWithMarker = (
+  <Gmap apiKey={key}>
+    <Marker />
+  </Gmap>
 )
