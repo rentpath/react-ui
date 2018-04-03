@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-rentals@0.1.22...@rentpath/react-ui-rentals@1.0.0) (2018-04-03)
+
+
+### Features
+
+* **dependencies:** upgrade packages ([ca579bd](https://github.com/rentpath/react-ui/commit/ca579bd))
+
+
+### BREAKING CHANGES
+
+* **dependencies:** Now requires react ^16.3.0 as a peer
+
+
+
+
 <a name="0.1.22"></a>
 ## [0.1.22](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-rentals@0.1.21...@rentpath/react-ui-rentals@0.1.22) (2018-03-29)
 

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.14.1...@rentpath/react-ui-core@5.0.0) (2018-04-03)
+
+
+### Features
+
+* **dependencies:** upgrade packages ([8d8f144](https://github.com/rentpath/react-ui/commit/8d8f144))
+* **dependencies:** upgrade packages ([ca579bd](https://github.com/rentpath/react-ui/commit/ca579bd))
+
+
+### BREAKING CHANGES
+
+* **dependencies:** Now requires react ^16.3.0 as a peer
+* **dependencies:** Now requires react ^16.3.0 as a peer
+
+
+
+
 <a name="4.14.1"></a>
 ## [4.14.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.14.0...@rentpath/react-ui-core@4.14.1) (2018-03-29)
 

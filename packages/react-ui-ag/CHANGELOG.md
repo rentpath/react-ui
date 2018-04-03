@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.18.1...@rentpath/react-ui-ag@1.0.0) (2018-04-03)
+
+
+### Features
+
+* **dependencies:** upgrade packages ([ca579bd](https://github.com/rentpath/react-ui/commit/ca579bd))
+
+
+### BREAKING CHANGES
+
+* **dependencies:** Now requires react ^16.3.0 as a peer
+
+
+
+
 <a name="0.18.1"></a>
 ## [0.18.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.18.0...@rentpath/react-ui-ag@0.18.1) (2018-03-29)
 
