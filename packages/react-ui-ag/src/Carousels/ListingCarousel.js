@@ -1,13 +1,17 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import debounce from 'lodash/debounce'
 import { themed } from 'react-themed'
 import { Carousel } from '@rentpath/react-ui-core'
 import autobind from 'autobind-decorator'
+
 import {
   MobileMapListing,
   SingleFamilyMobileMapListing,
 } from '../Listings'
+
+const DEBOUNCE_WAIT = 550
 
 @themed(/^ListingCarousel/,
   { pure: true }
@@ -31,6 +35,14 @@ export default class ListingCarousel extends PureComponent {
   constructor(props) {
     super(props)
     this.state = { selectedIndex: this.props.selectedIndex }
+  }
+
+  componentDidMount() {
+    this.listingClickHandler = debounce(this.listingClickHandler, DEBOUNCE_WAIT, {
+      leading: true,
+      trailing: false,
+      maxWait: DEBOUNCE_WAIT,
+    })
   }
 
   componentWillReceiveProps(nextProps) {

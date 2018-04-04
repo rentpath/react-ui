@@ -7,6 +7,7 @@ import { MobileMapListing } from '../../Listings'
 
 const ListingCarousel = ThemedListingCarousel.WrappedComponent
 const onClick = jest.fn()
+const DEBOUNCE_WAIT = 550
 
 const listings = [
   {
@@ -207,7 +208,9 @@ describe('ListingCarousel', () => {
 
     expect(wrapper.state('selectedIndex')).toEqual(1)
     wrapper.find(MobileMapListing).at(0).simulate('click')
-    expect(wrapper.state('selectedIndex')).toEqual(0)
+    setTimeout(() => {
+      expect(wrapper.state('selectedIndex')).toEqual(0)
+    }, DEBOUNCE_WAIT)
   })
 
   it('updates the selectedIndex when next card is clicked on', () => {
@@ -215,7 +218,9 @@ describe('ListingCarousel', () => {
 
     expect(wrapper.state('selectedIndex')).toEqual(1)
     wrapper.find(MobileMapListing).at(2).simulate('click')
-    expect(wrapper.state('selectedIndex')).toEqual(2)
+    setTimeout(() => {
+      expect(wrapper.state('selectedIndex')).toEqual(2)
+    }, DEBOUNCE_WAIT)
   })
 
   it('maps the listings to the Carousel', () => {
@@ -228,7 +233,20 @@ describe('ListingCarousel', () => {
     const wrapper = mount(<ListingCarousel {...props} onSlide={onSlide} />)
     expect(onSlide).not.toHaveBeenCalled()
     wrapper.find(MobileMapListing).at(1).simulate('click')
-    expect(onSlide).toHaveBeenCalled()
+    setTimeout(() => {
+      expect(onSlide).toHaveBeenCalled()
+    }, DEBOUNCE_WAIT)
+  })
+
+  it('waits half a second to change selected index on click', () => {
+    const onSlide = jest.fn()
+    const wrapper = mount(<ListingCarousel {...props} onSlide={onSlide} />)
+    expect(onSlide).not.toHaveBeenCalled()
+    wrapper.find(MobileMapListing).at(1).simulate('click')
+    expect(onSlide).not.toHaveBeenCalled()
+    setTimeout(() => {
+      expect(onSlide).toHaveBeenCalled()
+    }, DEBOUNCE_WAIT)
   })
 
   describe('only passes onClick events to the selected listing', () => {
@@ -240,7 +258,9 @@ describe('ListingCarousel', () => {
 
       expect(wrapper.state('selectedIndex')).toEqual(0)
       wrapper.find(MobileMapListing).at(1).simulate('click')
-      expect(onClick.mock.calls.length).toEqual(0)
+      setTimeout(() => {
+        expect(onClick.mock.calls.length).toEqual(0)
+      }, DEBOUNCE_WAIT)
     })
 
     it('calls the handler when the card is selected', () => {
@@ -251,9 +271,11 @@ describe('ListingCarousel', () => {
         />)
 
       wrapper.find(MobileMapListing).at(0).simulate('click')
-      expect(onClick.mock.calls.length).toEqual(1)
-      expect(onClick.mock.calls[0][0]).toEqual(0)
-      expect(onClick.mock.calls[0][1]).toEqual(listings[0])
+      setTimeout(() => {
+        expect(onClick.mock.calls.length).toEqual(1)
+        expect(onClick.mock.calls[0][0]).toEqual(0)
+        expect(onClick.mock.calls[0][1]).toEqual(listings[0])
+      }, DEBOUNCE_WAIT)
     })
   })
 })
