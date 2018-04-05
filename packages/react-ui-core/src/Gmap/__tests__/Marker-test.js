@@ -10,6 +10,7 @@ describe('Marker', () => {
     }
     const wrapper = shallow(
       <Marker
+        map={{ google: 'map' }}
         onClick={jest.fn()}
         onDragEnd={jest.fn()}
       />
@@ -23,10 +24,10 @@ describe('Marker', () => {
 
   describe('setupMarker', () => {
     describe('adds a map marker when map is defined', () => {
-      const wrapper = shallow(<Marker id="test" />)
+      const wrapper = shallow(<Marker id="test" map={{ google: 'map' }} />)
       const markerSpy = jest.spyOn(window.google.maps, 'Marker')
 
-      wrapper.instance().setupMarker({ google: 'map' })
+      wrapper.instance().setupMarker()
 
       it('passes props and map to marker', () => {
         expect(markerSpy).toHaveBeenCalledWith({
@@ -41,50 +42,24 @@ describe('Marker', () => {
     it('does not add a map marker when map is undefined', () => {
       const wrapper = shallow(<Marker />)
       wrapper.instance().setupMarker()
-      expect(wrapper.instance().marker).not.toBeDefined()
+      expect(wrapper.instance().marker).not.toBeTruthy()
     })
   })
 
   it('sets up only those events that have been passed as props', () => {
-    const addListener = jest.fn()
-    const handleEvent = jest.spyOn(Marker.prototype, 'handleEvent')
-    const marker = {
-      addListener,
-    }
-    const wrapper = shallow(
+    const map = { google: 'map' }
+    const markerSpy = jest.spyOn(window.google.maps.event, 'addListener')
+
+    shallow(
       <Marker
+        map={map}
         onClick={jest.fn()}
         onDragEnd={jest.fn()}
       />
     )
 
-    wrapper.instance().marker = marker
-    wrapper.instance().setupEvents()
-
-    expect(marker.addListener).toHaveBeenCalledWith('dragend', expect.any(Function))
-    expect(marker.addListener).toHaveBeenCalledWith('click', expect.any(Function))
-    expect(marker.addListener).not.toHaveBeenCalledWith('mouseout', expect.any(Function))
-
-    expect(handleEvent).toHaveBeenCalledWith('onDragEnd')
-    expect(handleEvent).toHaveBeenCalledWith('onClick')
-    expect(handleEvent).not.toHaveBeenCalledWith('onMouseOut')
-  })
-
-  it('handleEvent passes correct parameters when fired', () => {
-    const onClick = jest.fn()
-    const wrapper = shallow(<Marker onClick={onClick} id="id" />)
-    const mockedEvent = { target: {} }
-    const clickEvent = wrapper.instance().handleEvent('onClick')
-    clickEvent(mockedEvent)
-
-    expect(onClick).toHaveBeenCalledTimes(1)
-    expect(onClick).toHaveBeenCalledWith(
-      mockedEvent,
-      {
-        id: 'id',
-        onClick,
-      },
-      undefined
-    )
+    expect(markerSpy).toHaveBeenCalledWith(expect.any(Object), 'dragend', expect.any(Function))
+    expect(markerSpy).toHaveBeenCalledWith(expect.any(Object), 'click', expect.any(Function))
+    expect(markerSpy).not.toHaveBeenCalledWith(map, 'mouseout', expect.any(Function))
   })
 })

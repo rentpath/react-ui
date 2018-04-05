@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react'
+import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { GmapContext } from './GmapContext'
+import { setupMarker, removeMarker } from './utils/markerHelpers'
 
 const EVENTS = {
   onClick: 'click',
@@ -16,52 +16,27 @@ const EVENTS = {
 const EVENT_NAMES = Object.keys(EVENTS)
 
 class Marker extends PureComponent {
+  static propTypes = {
+    map: PropTypes.object,
+  }
 
   componentWillUnmount() {
     if (this.marker) {
-      window.google.maps.event.clearInstanceListeners(this.marker)
-      this.marker.setMap(null)
+      removeMarker(this.marker)
       this.marker = null
     }
   }
 
-  setupMarker(map) {
-    if (map) {
-      this.marker = new window.google.maps.Marker({
-        ...this.props,
-        map,
-      })
-
-      this.setupEvents()
-    }
-
+  setupMarker() {
+    const { map, ...rest } = this.props
+    this.marker = setupMarker(map, rest)
     return null
   }
 
-  setupEvents() {
-    EVENT_NAMES.forEach(name => {
-      if (this.props[name]) {
-        this.marker.addListener(EVENTS[name], this.handleEvent(name))
-      }
-    })
-  }
-
-  handleEvent(name) {
-    return event => {
-      this.props[name](event, this.props, this.marker)
-    }
-  }
-
   render() {
-    return (
-      <GmapContext.Consumer>
-        { context => this.setupMarker(context.map)}
-      </GmapContext.Consumer>
-    )
+    return this.setupMarker()
   }
 }
-
-Marker.propTypes = {}
 
 EVENT_NAMES.forEach(name => {
   Marker.propTypes[name] = PropTypes.func

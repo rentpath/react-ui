@@ -127,7 +127,8 @@ import { DefaultDrawer } from './Drawer'
 import {
   DefaultGmap,
   GmapWithSpinner,
-  GmapWithMarker,
+  GmapWithSingleMarker,
+  GmapWithMultipleMarkers,
 } from './Gmap'
 
 import coreStories, { coreStoriesNoContainer } from './coreStories'
@@ -179,7 +180,8 @@ coreStories('Field', module)
 coreStoriesNoContainer('Gmap', module)
   .add('Gmap', () => DefaultGmap)
   .add('Gmap with spinner', () => GmapWithSpinner)
-  .add('Gmap with marker', () => GmapWithMarker)
+  .add('Gmap with marker', () => GmapWithSingleMarker)
+  .add('Gmap with multiple markers', () => GmapWithMultipleMarkers)
 
 coreStories('Highlighter', module)
   .add('Default Highlighter', () => DefaultHighlighter)

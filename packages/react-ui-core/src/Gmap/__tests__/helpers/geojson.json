@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.786645,
+          -84.38781
+        ]
+      },
+      "properties": {
+        "id": "2034989",
+        "name": "Atlantic House"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.806832,
+          -84.36627
+        ]
+      },
+      "properties": {
+        "id": "2035008",
+        "name": "Morningside by Windsor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.838316,
+          -84.356508
+        ]
+      },
+      "properties": {
+        "id": "r1893015",
+        "name": "Beautiful Executive Condo in Buckhead on Lenox Rd"
+      }
+    }
+  ]
+}

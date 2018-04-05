@@ -54,6 +54,7 @@
     "react-themed": "3.2.1"
   },
   "peerDependencies": {
-    "react": "16.3.1"
+    "react": "16.3.1",
+    "react-dom": "16.3.1"
   }
 }

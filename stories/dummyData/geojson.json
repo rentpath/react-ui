@@ -1,0 +1,8657 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.786645,
+          -84.38781
+        ]
+      },
+      "properties": {
+        "id": "2034989",
+        "name": "Atlantic House"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.806832,
+          -84.36627
+        ]
+      },
+      "properties": {
+        "id": "2035008",
+        "name": "Morningside by Windsor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.838316,
+          -84.356508
+        ]
+      },
+      "properties": {
+        "id": "r1893015",
+        "name": "Beautiful Executive Condo in Buckhead on Lenox Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.731931,
+          -84.348741
+        ]
+      },
+      "properties": {
+        "id": "LV30163818",
+        "name": "830 Moreland Avenue Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.813162,
+          -84.39372
+        ]
+      },
+      "properties": {
+        "id": "2029531",
+        "name": "Venue Brookwood"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8127,
+          -84.374
+        ]
+      },
+      "properties": {
+        "id": "78974",
+        "name": "Marquis Midtown District"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.78647,
+          -84.40166
+        ]
+      },
+      "properties": {
+        "id": "2029493",
+        "name": "Local on Fourteenth"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.749657,
+          -84.40272
+        ]
+      },
+      "properties": {
+        "id": "2002142",
+        "name": "Stonewall Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.775785,
+          -84.35638
+        ]
+      },
+      "properties": {
+        "id": "2028815",
+        "name": "950 St. Charles Ave"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.767592,
+          -84.353002
+        ]
+      },
+      "properties": {
+        "id": "LV30135042",
+        "name": "490 North Highland Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.838697,
+          -84.47892
+        ]
+      },
+      "properties": {
+        "id": "2029511",
+        "name": "Arium Vinings Station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.789129,
+          -84.39986
+        ]
+      },
+      "properties": {
+        "id": "2009690",
+        "name": "Exchange"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.784153,
+          -84.38051
+        ]
+      },
+      "properties": {
+        "id": "2037173",
+        "name": "Piedmont House"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.782,
+          -84.3793
+        ]
+      },
+      "properties": {
+        "id": "192126",
+        "name": "Post Parkside - GA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8259,
+          -84.3581
+        ]
+      },
+      "properties": {
+        "id": "79",
+        "name": "Arbor Gates at Buckhead"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.769,
+          -84.3824
+        ]
+      },
+      "properties": {
+        "id": "40541",
+        "name": "The Waterford on Piedmont"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.837969,
+          -84.30947
+        ]
+      },
+      "properties": {
+        "id": "2013317",
+        "name": "Audubon Briarcliff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8231,
+          -84.3169
+        ]
+      },
+      "properties": {
+        "id": "6751",
+        "name": "Madison Druid Hills"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7864,
+          -84.3884
+        ]
+      },
+      "properties": {
+        "id": "100034543",
+        "name": "Icon Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.779717,
+          -84.37956
+        ]
+      },
+      "properties": {
+        "id": "2015945",
+        "name": "921 Myrtle Street"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7826,
+          -84.4116
+        ]
+      },
+      "properties": {
+        "id": "100036275",
+        "name": "The Brady"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.793166,
+          -84.40484
+        ]
+      },
+      "properties": {
+        "id": "2029542",
+        "name": "Heights at West Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.786252,
+          -84.41091
+        ]
+      },
+      "properties": {
+        "id": "2029540",
+        "name": "Cottonwood Westside"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7832,
+          -84.3865
+        ]
+      },
+      "properties": {
+        "id": "100033495",
+        "name": "Post Midtown Atlanta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.752883,
+          -84.36631
+        ]
+      },
+      "properties": {
+        "id": "2015970",
+        "name": "West Inman Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7813,
+          -84.3673
+        ]
+      },
+      "properties": {
+        "id": "759",
+        "name": "Virginia Highlands Apartments"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.815,
+          -84.3316
+        ]
+      },
+      "properties": {
+        "id": "192086",
+        "name": "Post Briarcliff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8109,
+          -84.3894
+        ]
+      },
+      "properties": {
+        "id": "79597",
+        "name": "Allure At Brookwood"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.774,
+          -84.3847
+        ]
+      },
+      "properties": {
+        "id": "12747",
+        "name": "Solace on Peachtree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7406,
+          -84.3135
+        ]
+      },
+      "properties": {
+        "id": "666",
+        "name": "The Villages Of East Lake Ph I & II"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.771858,
+          -84.3826
+        ]
+      },
+      "properties": {
+        "id": "2034916",
+        "name": "131 Ponce Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.779753,
+          -84.38671
+        ]
+      },
+      "properties": {
+        "id": "2019254",
+        "name": "Nine15 Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.813823,
+          -84.39587
+        ]
+      },
+      "properties": {
+        "id": "2016428",
+        "name": "The Monroe"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.764867,
+          -84.453878
+        ]
+      },
+      "properties": {
+        "id": "LV30127742",
+        "name": "2031 Chicago Avenue Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8271,
+          -84.3568
+        ]
+      },
+      "properties": {
+        "id": "11339",
+        "name": "Avana Lenox"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.697725,
+          -84.450558
+        ]
+      },
+      "properties": {
+        "id": "LV30072929",
+        "name": "1900 Stanton Delowe Con"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7806,
+          -84.4156
+        ]
+      },
+      "properties": {
+        "id": "79911",
+        "name": "Gables 820 West"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.818796,
+          -84.36621
+        ]
+      },
+      "properties": {
+        "id": "2034917",
+        "name": "AMLI Piedmont Heights"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.746507,
+          -84.36002
+        ]
+      },
+      "properties": {
+        "id": "2029544",
+        "name": "841 Memorial"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7735,
+          -84.3844
+        ]
+      },
+      "properties": {
+        "id": "100034581",
+        "name": "lilli Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.771265,
+          -84.380452
+        ]
+      },
+      "properties": {
+        "id": "r2387601",
+        "name": "Savannah Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8021,
+          -84.3285
+        ]
+      },
+      "properties": {
+        "id": "183629",
+        "name": "Gables Emory Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7774,
+          -84.3844
+        ]
+      },
+      "properties": {
+        "id": "190571",
+        "name": "Skyhouse South"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.81531,
+          -84.31693
+        ]
+      },
+      "properties": {
+        "id": "2011648",
+        "name": "Calibre Woods"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.774701,
+          -84.35557
+        ]
+      },
+      "properties": {
+        "id": "2013357",
+        "name": "Frederica Oaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.820994,
+          -84.388884
+        ]
+      },
+      "properties": {
+        "id": "r2387130",
+        "name": "Haynes House"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7888,
+          -84.4165
+        ]
+      },
+      "properties": {
+        "id": "100031751",
+        "name": "Westside Heights"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77113,
+          -84.36242
+        ]
+      },
+      "properties": {
+        "id": "2016230",
+        "name": "755 North"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8203,
+          -84.373
+        ]
+      },
+      "properties": {
+        "id": "100030995",
+        "name": "Overture Lindbergh 55+"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.657909,
+          -84.510844
+        ]
+      },
+      "properties": {
+        "id": "r2387014",
+        "name": "Park at the Marketplace"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7127,
+          -84.3883
+        ]
+      },
+      "properties": {
+        "id": "174824",
+        "name": "Villages At Carver"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.72311,
+          -84.400256
+        ]
+      },
+      "properties": {
+        "id": "LV30159008",
+        "name": "1161 Ira Street Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.6724,
+          -84.5007
+        ]
+      },
+      "properties": {
+        "id": "78904",
+        "name": "Royal Oaks Apartments"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.746719,
+          -84.37673
+        ]
+      },
+      "properties": {
+        "id": "2007833",
+        "name": "Mattress Factory Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.771701,
+          -84.372605
+        ]
+      },
+      "properties": {
+        "id": "r1351030",
+        "name": "Great 2/2.5 Mayfair Renaissance Condo (1908)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7901,
+          -84.3948
+        ]
+      },
+      "properties": {
+        "id": "162531",
+        "name": "17 West"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.777062,
+          -84.358046
+        ]
+      },
+      "properties": {
+        "id": "LV29987852",
+        "name": "896 Greenwood Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.749976,
+          -84.40375
+        ]
+      },
+      "properties": {
+        "id": "2015937",
+        "name": "Intown Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.692272,
+          -84.475444
+        ]
+      },
+      "properties": {
+        "id": "LV30093878",
+        "name": "2650 Hayden Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.76608,
+          -84.36407
+        ]
+      },
+      "properties": {
+        "id": "2032590",
+        "name": "Anthem on Ashley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8033,
+          -84.3983
+        ]
+      },
+      "properties": {
+        "id": "100026384",
+        "name": "Ardmore & 28th Apartments"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.658588,
+          -84.50872
+        ]
+      },
+      "properties": {
+        "id": "2007826",
+        "name": "Park at the Marketplace"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7592,
+          -84.3596
+        ]
+      },
+      "properties": {
+        "id": "44271",
+        "name": "Mariposa Loft Apartments @ Inman Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.782635,
+          -84.41158
+        ]
+      },
+      "properties": {
+        "id": "2001118",
+        "name": "1016 Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.716687,
+          -84.30413
+        ]
+      },
+      "properties": {
+        "id": "2039469",
+        "name": "Flats at East Atlanta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.818614,
+          -84.33527
+        ]
+      },
+      "properties": {
+        "id": "2033905",
+        "name": "2213 Briarcliff Road, NE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7869,
+          -84.4137
+        ]
+      },
+      "properties": {
+        "id": "191616",
+        "name": "Walton Westside"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7016,
+          -84.4475
+        ]
+      },
+      "properties": {
+        "id": "192024",
+        "name": "Village Highlands"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.81895,
+          -84.310737
+        ]
+      },
+      "properties": {
+        "id": "LV30067716",
+        "name": "2284 Lavista Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7645,
+          -84.3671
+        ]
+      },
+      "properties": {
+        "id": "100033665",
+        "name": "Aster"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7556,
+          -84.3868
+        ]
+      },
+      "properties": {
+        "id": "91217",
+        "name": "Dwell ATL"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8139,
+          -84.3955
+        ]
+      },
+      "properties": {
+        "id": "100018941",
+        "name": "The Jane"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7235,
+          -84.3232
+        ]
+      },
+      "properties": {
+        "id": "100035920",
+        "name": "Modera Vinings"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8123,
+          -84.3654
+        ]
+      },
+      "properties": {
+        "id": "80799",
+        "name": "Optimist Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.761707,
+          -84.35891
+        ]
+      },
+      "properties": {
+        "id": "2016368",
+        "name": "Inman Quarter"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.782616,
+          -84.38209
+        ]
+      },
+      "properties": {
+        "id": "LV30144373",
+        "name": "1023 Juniper Street Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.761234,
+          -84.36562
+        ]
+      },
+      "properties": {
+        "id": "2015606",
+        "name": "Highland Walk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.808092,
+          -84.41273
+        ]
+      },
+      "properties": {
+        "id": "2016549",
+        "name": "Berkshire Howell Mill"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.799548,
+          -84.470985
+        ]
+      },
+      "properties": {
+        "id": "LV30067942",
+        "name": "1620 Hollywood Road Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.747431,
+          -84.37585
+        ]
+      },
+      "properties": {
+        "id": "2032414",
+        "name": "George"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.769938,
+          -84.36847
+        ]
+      },
+      "properties": {
+        "id": "2013360",
+        "name": "Spanish Oaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.810273,
+          -84.3703
+        ]
+      },
+      "properties": {
+        "id": "2015790",
+        "name": "Monroe Place"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.806498,
+          -84.36717
+        ]
+      },
+      "properties": {
+        "id": "2015976",
+        "name": "Morningside Courts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8127,
+          -84.3049
+        ]
+      },
+      "properties": {
+        "id": "65",
+        "name": "3131 by Cortland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.667589,
+          -84.484462
+        ]
+      },
+      "properties": {
+        "id": "LV30038557",
+        "name": "3242 Briarwood Boulevard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.777712,
+          -84.387277
+        ]
+      },
+      "properties": {
+        "id": "r2387603",
+        "name": "Biltmore at Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7291,
+          -84.3804
+        ]
+      },
+      "properties": {
+        "id": "100033807",
+        "name": "Columbia Peoplestown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.809377,
+          -84.43512
+        ]
+      },
+      "properties": {
+        "id": "2016093",
+        "name": "Elysian at Collier"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.761928,
+          -84.35987
+        ]
+      },
+      "properties": {
+        "id": "2016258",
+        "name": "North Highland Steel"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.804394,
+          -84.51319
+        ]
+      },
+      "properties": {
+        "id": "r2839233",
+        "name": "We expect to make this brand new home available fo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.684,
+          -84.4994
+        ]
+      },
+      "properties": {
+        "id": "80615",
+        "name": "Landing Square"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.777583,
+          -84.40857
+        ]
+      },
+      "properties": {
+        "id": "2015600",
+        "name": "M Street Apartments"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.790481,
+          -84.377155
+        ]
+      },
+      "properties": {
+        "id": "r2194986",
+        "name": "4 br, 3.5 bath House - 36 S Prado NE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7729,
+          -84.3657
+        ]
+      },
+      "properties": {
+        "id": "r2387131",
+        "name": "Flats at Ponce City Market"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.770655,
+          -84.350723
+        ]
+      },
+      "properties": {
+        "id": "LV30000888",
+        "name": "593 Seminole Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.776538,
+          -84.38251
+        ]
+      },
+      "properties": {
+        "id": "2039452",
+        "name": "Broadstone Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.759225,
+          -84.32128
+        ]
+      },
+      "properties": {
+        "id": "LV30190695",
+        "name": "237 Kirkwood Road Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.822475,
+          -84.370606
+        ]
+      },
+      "properties": {
+        "id": "r2387015",
+        "name": "Uptown Square"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.747125,
+          -84.34781
+        ]
+      },
+      "properties": {
+        "id": "2029523",
+        "name": "1209 Memorial"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.752654,
+          -84.369192
+        ]
+      },
+      "properties": {
+        "id": "LV30050908",
+        "name": "55 Bradley Street Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7729,
+          -84.3828
+        ]
+      },
+      "properties": {
+        "id": "27707",
+        "name": "Marq on Ponce"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8091,
+          -84.4159
+        ]
+      },
+      "properties": {
+        "id": "192089",
+        "name": "The Pointe at Collier Hills"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.793504,
+          -84.34427
+        ]
+      },
+      "properties": {
+        "id": "2016297",
+        "name": "Sidney at Morningside"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.722167,
+          -84.465936
+        ]
+      },
+      "properties": {
+        "id": "LV30207143",
+        "name": "2367 Cascade Road Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.748919,
+          -84.3928
+        ]
+      },
+      "properties": {
+        "id": "2039470",
+        "name": "MC Kiser Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.815,
+          -84.381366
+        ]
+      },
+      "properties": {
+        "id": "r2832787",
+        "name": "Cozy and Charming Peachtree Hills Cottage!!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.792,
+          -84.4032
+        ]
+      },
+      "properties": {
+        "id": "100033455",
+        "name": "464 Bishop Apartments"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8242,
+          -84.3311
+        ]
+      },
+      "properties": {
+        "id": "2393",
+        "name": "Ashford Druid Hills"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.755998,
+          -84.366285
+        ]
+      },
+      "properties": {
+        "id": "r2837258",
+        "name": "Studioplex Loft on Beltine! 2 br Live/Work O4W..."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7761,
+          -84.3846
+        ]
+      },
+      "properties": {
+        "id": "100029252",
+        "name": "Trace"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.807613,
+          -84.368044
+        ]
+      },
+      "properties": {
+        "id": "r2387498",
+        "name": "Morningside Courts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7927,
+          -84.3417
+        ]
+      },
+      "properties": {
+        "id": "14277",
+        "name": "Gables Rock Springs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7848,
+          -84.4132
+        ]
+      },
+      "properties": {
+        "id": "100036321",
+        "name": "Broadstone Yards"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.760015,
+          -84.435935
+        ]
+      },
+      "properties": {
+        "id": "r2244996",
+        "name": "Spacious Intown, 3 Bedroom Home!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7421,
+          -84.4026
+        ]
+      },
+      "properties": {
+        "id": "100033914",
+        "name": "Columbia Mechanicsville"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.787774,
+          -84.471109
+        ]
+      },
+      "properties": {
+        "id": "LV30163958",
+        "name": "2542 Etheridge Drive Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.776367,
+          -84.354266
+        ]
+      },
+      "properties": {
+        "id": "LV30085762",
+        "name": "1009 Greenwood Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8202,
+          -84.376
+        ]
+      },
+      "properties": {
+        "id": "192082",
+        "name": "Post Peachtree Hills"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7884,
+          -84.449
+        ]
+      },
+      "properties": {
+        "id": "100033365",
+        "name": "Columbia Park Citi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8124,
+          -84.3913
+        ]
+      },
+      "properties": {
+        "id": "10548",
+        "name": "Peachtree Park Apartments"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.82202,
+          -84.35284
+        ]
+      },
+      "properties": {
+        "id": "r2387207",
+        "name": "Helios at Cheshire Bridge"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.807679,
+          -84.41506
+        ]
+      },
+      "properties": {
+        "id": "2029524",
+        "name": "Mill Works"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7655,
+          -84.4048
+        ]
+      },
+      "properties": {
+        "id": "44953",
+        "name": "The Point at Westside"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.840581,
+          -84.38292
+        ]
+      },
+      "properties": {
+        "id": "2015602",
+        "name": "92 West Paces"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.791747,
+          -84.310256
+        ]
+      },
+      "properties": {
+        "id": "LV30159975",
+        "name": "1992 North Decatur Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8371,
+          -84.3747
+        ]
+      },
+      "properties": {
+        "id": "22227",
+        "name": "Hanover East Paces"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.757596,
+          -84.472276
+        ]
+      },
+      "properties": {
+        "id": "LV30031133",
+        "name": "2442 Laurel Circle Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.761939,
+          -84.367471
+        ]
+      },
+      "properties": {
+        "id": "LV29804326",
+        "name": "271 Glen Iris Drive Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.773687,
+          -84.36346
+        ]
+      },
+      "properties": {
+        "id": "2006773",
+        "name": "Ford Factory Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.767717,
+          -84.36042
+        ]
+      },
+      "properties": {
+        "id": "2016104",
+        "name": "Telephone Factory Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.836689,
+          -84.37604
+        ]
+      },
+      "properties": {
+        "id": "2038074",
+        "name": "Alexan Buckhead Village"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.760153,
+          -84.36705
+        ]
+      },
+      "properties": {
+        "id": "2031945",
+        "name": "217 Lampkin Street NE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.760622,
+          -84.33989
+        ]
+      },
+      "properties": {
+        "id": "2037892",
+        "name": "Spoke Atlanta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.749705,
+          -84.40394
+        ]
+      },
+      "properties": {
+        "id": "2001028",
+        "name": "Legacy Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.760766,
+          -84.364155
+        ]
+      },
+      "properties": {
+        "id": "r2387630",
+        "name": "Highland Walk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.76057,
+          -84.340081
+        ]
+      },
+      "properties": {
+        "id": "r2391977",
+        "name": "Spoke Atlanta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7153,
+          -84.3273
+        ]
+      },
+      "properties": {
+        "id": "45627",
+        "name": "Ashford East Village"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.810016,
+          -84.3893
+        ]
+      },
+      "properties": {
+        "id": "2001087",
+        "name": "Brookwood Valley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8248,
+          -84.3376
+        ]
+      },
+      "properties": {
+        "id": "79948",
+        "name": "Gables Sheridan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.761377,
+          -84.37337
+        ]
+      },
+      "properties": {
+        "id": "2015928",
+        "name": "City View"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.783997,
+          -84.38358
+        ]
+      },
+      "properties": {
+        "id": "2015943",
+        "name": "77 12th"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.751172,
+          -84.39876
+        ]
+      },
+      "properties": {
+        "id": "2039468",
+        "name": "Fulton Supply Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.83344,
+          -84.49368
+        ]
+      },
+      "properties": {
+        "id": "2011633",
+        "name": "Calibre Lake"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.777618,
+          -84.40835
+        ]
+      },
+      "properties": {
+        "id": "2013321",
+        "name": "935M"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.760272,
+          -84.36676
+        ]
+      },
+      "properties": {
+        "id": "2028820",
+        "name": "221 Lampkin Street NE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8173,
+          -84.3472
+        ]
+      },
+      "properties": {
+        "id": "11299",
+        "name": "The Reserve at La Vista Walk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.741547,
+          -84.340283
+        ]
+      },
+      "properties": {
+        "id": "LV30144069",
+        "name": "459 East Side Avenue Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.78507,
+          -84.369586
+        ]
+      },
+      "properties": {
+        "id": "LV29999492",
+        "name": "547 Elmwood Drive Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.729145,
+          -84.334753
+        ]
+      },
+      "properties": {
+        "id": "r2832942",
+        "name": "Newly renovated bungalow located on a corner lot!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.792161,
+          -84.396833
+        ]
+      },
+      "properties": {
+        "id": "r2387101",
+        "name": "ATLofts -  Located in Atlantic Station with a Walk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7762,
+          -84.3005
+        ]
+      },
+      "properties": {
+        "id": "100021946",
+        "name": "The Place on Ponce"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7808,
+          -84.3839
+        ]
+      },
+      "properties": {
+        "id": "100036297",
+        "name": "The Byron"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7885,
+          -84.3882
+        ]
+      },
+      "properties": {
+        "id": "100034023",
+        "name": "AMLI Arts Center"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7937,
+          -84.4511
+        ]
+      },
+      "properties": {
+        "id": "100033282",
+        "name": "Columbia Crest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8251,
+          -84.3667
+        ]
+      },
+      "properties": {
+        "id": "78844",
+        "name": "Peninsula at Buckhead"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.78504,
+          -84.459754
+        ]
+      },
+      "properties": {
+        "id": "LV30152416",
+        "name": "1073 Hollywood Road Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.772745,
+          -84.370978
+        ]
+      },
+      "properties": {
+        "id": "LV30103937",
+        "name": "669 Boulevard Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.752155,
+          -84.358927
+        ]
+      },
+      "properties": {
+        "id": "LV30203446",
+        "name": "66 Chester Avenue Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7617,
+          -84.3825
+        ]
+      },
+      "properties": {
+        "id": "100025658",
+        "name": "The Office"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7845,
+          -84.3883
+        ]
+      },
+      "properties": {
+        "id": "100029615",
+        "name": "ATLofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.835222,
+          -84.31511
+        ]
+      },
+      "properties": {
+        "id": "2015591",
+        "name": "Villas on Briarcliff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8072,
+          -84.4714
+        ]
+      },
+      "properties": {
+        "id": "100029231",
+        "name": "Bolton Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.770996,
+          -84.362451
+        ]
+      },
+      "properties": {
+        "id": "r2387132",
+        "name": "755 North - Direct access to Beltline and Old Four"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.768795,
+          -84.36694
+        ]
+      },
+      "properties": {
+        "id": "2034927",
+        "name": "Amli Old 4th Ward"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.770123,
+          -84.37824
+        ]
+      },
+      "properties": {
+        "id": "2016328",
+        "name": "251 North"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8371,
+          -84.3762
+        ]
+      },
+      "properties": {
+        "id": "24270",
+        "name": "Allure In Buckhead Village"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.757263,
+          -84.352277
+        ]
+      },
+      "properties": {
+        "id": "r2387018",
+        "name": "Station Square"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.816995,
+          -84.387945
+        ]
+      },
+      "properties": {
+        "id": "LV30080814",
+        "name": "50 Mobile Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.812399,
+          -84.4258
+        ]
+      },
+      "properties": {
+        "id": "2034960",
+        "name": "2100 Defoors"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.679435,
+          -84.421234
+        ]
+      },
+      "properties": {
+        "id": "LV30105348",
+        "name": "2773 Harlan Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.813368,
+          -84.424547
+        ]
+      },
+      "properties": {
+        "id": "r2830459",
+        "name": "Westside Court"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8009,
+          -84.4087
+        ]
+      },
+      "properties": {
+        "id": "46399",
+        "name": "Berkeley Heights"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.777044,
+          -84.358283
+        ]
+      },
+      "properties": {
+        "id": "LV29804026",
+        "name": "890 Greenwood Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.811466,
+          -84.423833
+        ]
+      },
+      "properties": {
+        "id": "r2387107",
+        "name": "Reserve Collier Hills"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.786,
+          -84.445
+        ]
+      },
+      "properties": {
+        "id": "100033358",
+        "name": "Columbia Grove"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8079,
+          -84.3754
+        ]
+      },
+      "properties": {
+        "id": "83213",
+        "name": "Gables Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8335,
+          -84.3583
+        ]
+      },
+      "properties": {
+        "id": "100031040",
+        "name": "Shallowford Pines Shallowford Arms"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7004,
+          -84.4062
+        ]
+      },
+      "properties": {
+        "id": "100020308",
+        "name": "Brookside Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.78395,
+          -84.383591
+        ]
+      },
+      "properties": {
+        "id": "LV30033712",
+        "name": "1080 Peachtree Street Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.753037,
+          -84.484076
+        ]
+      },
+      "properties": {
+        "id": "LV30103444",
+        "name": "2950 Martin Luther King Junior Drive Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.837838,
+          -84.38546
+        ]
+      },
+      "properties": {
+        "id": "2037484",
+        "name": "119 Pharr Manor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.819459,
+          -84.373861
+        ]
+      },
+      "properties": {
+        "id": "r2387550",
+        "name": "Peachtree Hills"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.780176,
+          -84.383652
+        ]
+      },
+      "properties": {
+        "id": "r2186496",
+        "name": "Gorgeous Midtown Condo With Stunning Views!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.83511,
+          -84.32796
+        ]
+      },
+      "properties": {
+        "id": "2016315",
+        "name": "Stone Creek at Brookhaven"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.746847,
+          -84.378655
+        ]
+      },
+      "properties": {
+        "id": "r2387187",
+        "name": "George - USB Ports. Chalkboards. Barn Doors. NEST"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.758947,
+          -84.372074
+        ]
+      },
+      "properties": {
+        "id": "LV30209124",
+        "name": "170 Boulevard Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.698717,
+          -84.32375
+        ]
+      },
+      "properties": {
+        "id": "LV30073055",
+        "name": "2000 Bouldercrest Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.684776,
+          -84.468082
+        ]
+      },
+      "properties": {
+        "id": "LV30002381",
+        "name": "2585 Westchester Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.768451,
+          -84.3883
+        ]
+      },
+      "properties": {
+        "id": "2035837",
+        "name": "Penthouses One Baltimore Place"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.757109,
+          -84.362194
+        ]
+      },
+      "properties": {
+        "id": "LV30195229",
+        "name": "780 Dixie Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.724198,
+          -84.480199
+        ]
+      },
+      "properties": {
+        "id": "LV30201825",
+        "name": "1110 Veltre Circle Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.665853,
+          -84.447815
+        ]
+      },
+      "properties": {
+        "id": "LV30201053",
+        "name": "1790 Lyle Avenue"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7732,
+          -84.3525
+        ]
+      },
+      "properties": {
+        "id": "100029359",
+        "name": "675 N Highland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.826144,
+          -84.317368
+        ]
+      },
+      "properties": {
+        "id": "LV30190861",
+        "name": "1562 Laurel Park Circle"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.822109,
+          -84.387076
+        ]
+      },
+      "properties": {
+        "id": "LV30105864",
+        "name": "2467 Peachtree Road Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.778309,
+          -84.373207
+        ]
+      },
+      "properties": {
+        "id": "LV30038183",
+        "name": "864 Charles Allen Drive Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7812,
+          -84.3901
+        ]
+      },
+      "properties": {
+        "id": "100027692",
+        "name": "100 Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8197,
+          -84.3657
+        ]
+      },
+      "properties": {
+        "id": "186242",
+        "name": "AMLI Lindbergh"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77916,
+          -84.382255
+        ]
+      },
+      "properties": {
+        "id": "LV30080131",
+        "name": "905 Juniper Street Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.745598,
+          -84.38478
+        ]
+      },
+      "properties": {
+        "id": "2002262",
+        "name": "Capitol Gateway"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8019,
+          -84.3963
+        ]
+      },
+      "properties": {
+        "id": "43834",
+        "name": "The Row at Twenty Sixth"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.779268,
+          -84.34463
+        ]
+      },
+      "properties": {
+        "id": "2039448",
+        "name": "Briarcliff Court Condos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7836,
+          -84.3856
+        ]
+      },
+      "properties": {
+        "id": "100032499",
+        "name": "Sixty 11th"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.819725,
+          -84.37329
+        ]
+      },
+      "properties": {
+        "id": "2013340",
+        "name": "Peachtree Hills"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.73545,
+          -84.41412
+        ]
+      },
+      "properties": {
+        "id": "2015797",
+        "name": "Ashley West End"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7988,
+          -84.4126
+        ]
+      },
+      "properties": {
+        "id": "11417",
+        "name": "Arbors at Berkeley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8211,
+          -84.3523
+        ]
+      },
+      "properties": {
+        "id": "46511",
+        "name": "CB Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7974,
+          -84.4054
+        ]
+      },
+      "properties": {
+        "id": "6873",
+        "name": "500 Northside"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.814247,
+          -84.33756
+        ]
+      },
+      "properties": {
+        "id": "2016290",
+        "name": "Sloan Square"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.798366,
+          -84.39158
+        ]
+      },
+      "properties": {
+        "id": "2030351",
+        "name": "1660 Peachtree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8323,
+          -84.322
+        ]
+      },
+      "properties": {
+        "id": "14386",
+        "name": "Marquis at Briarcliff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.71557,
+          -84.416875
+        ]
+      },
+      "properties": {
+        "id": "LV30160555",
+        "name": "1440 Hartford Avenue Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.771104,
+          -84.36534
+        ]
+      },
+      "properties": {
+        "id": "2035006",
+        "name": "Amli Ponce Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.786474,
+          -84.3803
+        ]
+      },
+      "properties": {
+        "id": "2011654",
+        "name": "Windsor at Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8198,
+          -84.4458
+        ]
+      },
+      "properties": {
+        "id": "11144",
+        "name": "Ashford 2788"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7891,
+          -84.4001
+        ]
+      },
+      "properties": {
+        "id": "100021202",
+        "name": "Steelworks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7926,
+          -84.4082
+        ]
+      },
+      "properties": {
+        "id": "100029432",
+        "name": "Accent Waterworks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.741734,
+          -84.35835
+        ]
+      },
+      "properties": {
+        "id": "2035844",
+        "name": "Enso"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.833344,
+          -84.49307
+        ]
+      },
+      "properties": {
+        "id": "2013327",
+        "name": "Oakley Run"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.736822,
+          -84.408137
+        ]
+      },
+      "properties": {
+        "id": "r2387632",
+        "name": "Metropolitan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.801156,
+          -84.41106
+        ]
+      },
+      "properties": {
+        "id": "2014383",
+        "name": "Alexander at the District"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7825,
+          -84.3807
+        ]
+      },
+      "properties": {
+        "id": "100029980",
+        "name": "Azure On The Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.764885,
+          -84.382618
+        ]
+      },
+      "properties": {
+        "id": "r2387070",
+        "name": "Century Skyline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.841201,
+          -84.41994
+        ]
+      },
+      "properties": {
+        "id": "LV30210327",
+        "name": "3150 Rilman Road Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.832549,
+          -84.38148
+        ]
+      },
+      "properties": {
+        "id": "2038832",
+        "name": "78 Sheridan Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.780103,
+          -84.448259
+        ]
+      },
+      "properties": {
+        "id": "LV29979532",
+        "name": "947 Margaret Place Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.818599,
+          -84.367078
+        ]
+      },
+      "properties": {
+        "id": "r2387160",
+        "name": "AMLI Piedmont Heights"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.81916,
+          -84.31045
+        ]
+      },
+      "properties": {
+        "id": "2001065",
+        "name": "Kenco Lavista"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.75671,
+          -84.3616
+        ]
+      },
+      "properties": {
+        "id": "2013354",
+        "name": "Inman Court"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.779425,
+          -84.38423
+        ]
+      },
+      "properties": {
+        "id": "2013326",
+        "name": "900 Peachtree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.81402,
+          -84.46745
+        ]
+      },
+      "properties": {
+        "id": "LV30062865",
+        "name": "2145 Bolton Road Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.784544,
+          -84.385079
+        ]
+      },
+      "properties": {
+        "id": "r2387103",
+        "name": "77 12th - Located in the heart of Midtown.  Floor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8319,
+          -84.382
+        ]
+      },
+      "properties": {
+        "id": "100031184",
+        "name": "Buckhead Town Homes and Gardens"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.840537,
+          -84.33139
+        ]
+      },
+      "properties": {
+        "id": "2016107",
+        "name": "Villas at Druid Hills"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7402,
+          -84.4059
+        ]
+      },
+      "properties": {
+        "id": "100033919",
+        "name": "Columbia at Mechanicsville Crossing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7834,
+          -84.3792
+        ]
+      },
+      "properties": {
+        "id": "190679",
+        "name": "1045 on the Park Apartment Homes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.730143,
+          -84.367403
+        ]
+      },
+      "properties": {
+        "id": "r2387611",
+        "name": "575 Boulevard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.776553,
+          -84.300865
+        ]
+      },
+      "properties": {
+        "id": "r2387119",
+        "name": "Place on Ponce"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8257,
+          -84.3613
+        ]
+      },
+      "properties": {
+        "id": "96",
+        "name": "Ivy at Buckhead"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.779375,
+          -84.377307
+        ]
+      },
+      "properties": {
+        "id": "LV30190694",
+        "name": "907 Argonne Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8047,
+          -84.4226
+        ]
+      },
+      "properties": {
+        "id": "100028043",
+        "name": "1824 Defoor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.78,
+          -84.39
+        ]
+      },
+      "properties": {
+        "id": "r2387216",
+        "name": "Piedmont House"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7002,
+          -84.4841
+        ]
+      },
+      "properties": {
+        "id": "12166",
+        "name": "Pines at Greenbriar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.82,
+          -84.3708
+        ]
+      },
+      "properties": {
+        "id": "88489",
+        "name": "The Pointe at Lindbergh"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7573,
+          -84.3492
+        ]
+      },
+      "properties": {
+        "id": "100029625",
+        "name": "Station R"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.75177,
+          -84.37656
+        ]
+      },
+      "properties": {
+        "id": "2015632",
+        "name": "Ashley Auburn Pointe"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.836653,
+          -84.376692
+        ]
+      },
+      "properties": {
+        "id": "LV30194011",
+        "name": "345 Pharr Road Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.827,
+          -84.4909
+        ]
+      },
+      "properties": {
+        "id": "12723",
+        "name": "The Emerson 1600"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.790626,
+          -84.397541
+        ]
+      },
+      "properties": {
+        "id": "LV30157880",
+        "name": "270 17th Street Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.774713,
+          -84.355021
+        ]
+      },
+      "properties": {
+        "id": "r2387480",
+        "name": "Frederica Oaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.841,
+          -84.4988
+        ]
+      },
+      "properties": {
+        "id": "6748",
+        "name": "Park Valley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.675612,
+          -84.417047
+        ]
+      },
+      "properties": {
+        "id": "LV30070056",
+        "name": "2905 Springdale Road Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7559,
+          -84.4053
+        ]
+      },
+      "properties": {
+        "id": "90276",
+        "name": "The Residences at CityCenter"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.704877,
+          -84.501346
+        ]
+      },
+      "properties": {
+        "id": "LV30127734",
+        "name": "3510 Ingledale Drive Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.785683,
+          -84.30291
+        ]
+      },
+      "properties": {
+        "id": "2006766",
+        "name": "Pines on Scott"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.755297,
+          -84.38905
+        ]
+      },
+      "properties": {
+        "id": "2002240",
+        "name": "Lofts at Muses"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7928,
+          -84.3068
+        ]
+      },
+      "properties": {
+        "id": "22510",
+        "name": "Gables Montclair"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8137,
+          -84.3921
+        ]
+      },
+      "properties": {
+        "id": "82784",
+        "name": "Mezzo Apartment Homes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.802629,
+          -84.411673
+        ]
+      },
+      "properties": {
+        "id": "r2387038",
+        "name": "Alexander at the District"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.711439,
+          -84.384779
+        ]
+      },
+      "properties": {
+        "id": "LV30147113",
+        "name": "41 Meldon Avenue Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.684715,
+          -84.49496
+        ]
+      },
+      "properties": {
+        "id": "2013344",
+        "name": "Village on the Green"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7559,
+          -84.361937
+        ]
+      },
+      "properties": {
+        "id": "r2387313",
+        "name": "Inman Court"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.746801,
+          -84.405744
+        ]
+      },
+      "properties": {
+        "id": "r2387618",
+        "name": "Intown Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.81496,
+          -84.478252
+        ]
+      },
+      "properties": {
+        "id": "LV30052163",
+        "name": "2142 James Jackson Parkway Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.789,
+          -84.3892
+        ]
+      },
+      "properties": {
+        "id": "43833",
+        "name": "Arts Center Tower"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.775776,
+          -84.356567
+        ]
+      },
+      "properties": {
+        "id": "LV29996003",
+        "name": "944 Saint Charles Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.779233,
+          -84.344893
+        ]
+      },
+      "properties": {
+        "id": "r2830442",
+        "name": "Briarcliff Court Condos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.787016,
+          -84.380719
+        ]
+      },
+      "properties": {
+        "id": "r2387594",
+        "name": "Windsor at Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.84,
+          -84.38
+        ]
+      },
+      "properties": {
+        "id": "r2387124",
+        "name": "16 Peachtree (BY APPT)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.81658,
+          -84.350036
+        ]
+      },
+      "properties": {
+        "id": "LV30200272",
+        "name": "2260 Lavista Court Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8301,
+          -84.3376
+        ]
+      },
+      "properties": {
+        "id": "100026766",
+        "name": "Seven"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.792859,
+          -84.318007
+        ]
+      },
+      "properties": {
+        "id": "LV30210240",
+        "name": "2001 Ridgewood Drive Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.809111,
+          -84.33432
+        ]
+      },
+      "properties": {
+        "id": "2016069",
+        "name": "Atlantic Briarcliff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.729146,
+          -84.479245
+        ]
+      },
+      "properties": {
+        "id": "LV30199866",
+        "name": "2797 Benjamin E Mays Drive Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.836937,
+          -84.327985
+        ]
+      },
+      "properties": {
+        "id": "r2387620",
+        "name": "Stone Creek at Brookhaven"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.702065,
+          -84.309619
+        ]
+      },
+      "properties": {
+        "id": "LV30093920",
+        "name": "2892 Horse Shoe Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8007,
+          -84.3075
+        ]
+      },
+      "properties": {
+        "id": "155704",
+        "name": "Clairmont Reserve Apartments"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.715542,
+          -84.432289
+        ]
+      },
+      "properties": {
+        "id": "LV30209603",
+        "name": "1347 Campbellton Road Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.785087,
+          -84.38054
+        ]
+      },
+      "properties": {
+        "id": "r2387156",
+        "name": "Yoo on the Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.748233,
+          -84.33915
+        ]
+      },
+      "properties": {
+        "id": "2039454",
+        "name": "1462 Memorial Dr."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.752046,
+          -84.358956
+        ]
+      },
+      "properties": {
+        "id": "LV30024048",
+        "name": "70b Chester Avenue Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.766179,
+          -84.364117
+        ]
+      },
+      "properties": {
+        "id": "r2387214",
+        "name": "Anthem on Ashley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.747242,
+          -84.347767
+        ]
+      },
+      "properties": {
+        "id": "r2387198",
+        "name": "1209 Memorial"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.791422,
+          -84.398121
+        ]
+      },
+      "properties": {
+        "id": "r2307891",
+        "name": "2 br, 2 bath House - 361 17th Street, NW, #2216"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.6951,
+          -84.499
+        ]
+      },
+      "properties": {
+        "id": "100035890",
+        "name": "Delta Kingston"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.756368,
+          -84.493522
+        ]
+      },
+      "properties": {
+        "id": "LV30031183",
+        "name": "3241 Delmar Lane Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.746843,
+          -84.37777
+        ]
+      },
+      "properties": {
+        "id": "2016302",
+        "name": "Leonard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77646,
+          -84.349625
+        ]
+      },
+      "properties": {
+        "id": "LV30052339",
+        "name": "1156 Saint Louis Place Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7412,
+          -84.4039
+        ]
+      },
+      "properties": {
+        "id": "100033906",
+        "name": "Columbia at Mechanicsville Station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.798474,
+          -84.406251
+        ]
+      },
+      "properties": {
+        "id": "r2387441",
+        "name": "Highland Ridge"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.773345,
+          -84.40394
+        ]
+      },
+      "properties": {
+        "id": "2001960",
+        "name": "Hotel Rocy Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.6838,
+          -84.3923
+        ]
+      },
+      "properties": {
+        "id": "100018229",
+        "name": "Lakewood Forest Apartment Homes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.695502,
+          -84.386476
+        ]
+      },
+      "properties": {
+        "id": "LV29986544",
+        "name": "60 Finch Drive Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.676001,
+          -84.451695
+        ]
+      },
+      "properties": {
+        "id": "LV30199144",
+        "name": "2912 8th Street"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.839377,
+          -84.33018
+        ]
+      },
+      "properties": {
+        "id": "r2387367",
+        "name": "Villas at Druid Hills"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8322,
+          -84.3429
+        ]
+      },
+      "properties": {
+        "id": "100031196",
+        "name": "Buckhead Creek"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.759209,
+          -84.468393
+        ]
+      },
+      "properties": {
+        "id": "LV30081430",
+        "name": "2481 Scottridge Drive Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.743042,
+          -84.427432
+        ]
+      },
+      "properties": {
+        "id": "LV30160607",
+        "name": "441 Holderness Street Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.78061,
+          -84.383206
+        ]
+      },
+      "properties": {
+        "id": "r2834566",
+        "name": "Gorgeous 2 bedroom 2 bathroom Top Floor Unit"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.740575,
+          -84.359668
+        ]
+      },
+      "properties": {
+        "id": "r2397991",
+        "name": "Glenwood at Grant Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.776092,
+          -84.36371
+        ]
+      },
+      "properties": {
+        "id": "2016223",
+        "name": "Highland View"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.800884,
+          -84.408736
+        ]
+      },
+      "properties": {
+        "id": "r2387664",
+        "name": "Berkeley Heights"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8348,
+          -84.3857
+        ]
+      },
+      "properties": {
+        "id": "12871",
+        "name": "The Aster Buckhead"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7206,
+          -84.5104
+        ]
+      },
+      "properties": {
+        "id": "190124",
+        "name": "Westwood Glen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.723171,
+          -84.3798
+        ]
+      },
+      "properties": {
+        "id": "LV30207066",
+        "name": "1195 Milton Terrace Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.835509,
+          -84.507522
+        ]
+      },
+      "properties": {
+        "id": "LV30194285",
+        "name": "4824 Clay Brooke Drive Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.784097,
+          -84.383532
+        ]
+      },
+      "properties": {
+        "id": "r2821734",
+        "name": "1 br, 1 bath House - 1080 Peachtree Street #907"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77,
+          -84.36
+        ]
+      },
+      "properties": {
+        "id": "r2387633",
+        "name": "Virginia Court"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.76315,
+          -84.437923
+        ]
+      },
+      "properties": {
+        "id": "LV30029616",
+        "name": "284 Holly Road Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.740115,
+          -84.36414
+        ]
+      },
+      "properties": {
+        "id": "2007834",
+        "name": "Roosevelt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.783856,
+          -84.401046
+        ]
+      },
+      "properties": {
+        "id": "LV30136908",
+        "name": "425 Richards Street Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.837813,
+          -84.33481
+        ]
+      },
+      "properties": {
+        "id": "2013338",
+        "name": "Esquire Apartments"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.6616,
+          -84.5014
+        ]
+      },
+      "properties": {
+        "id": "44523",
+        "name": "Landmark at Creekside Grand"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77814,
+          -84.40885
+        ]
+      },
+      "properties": {
+        "id": "r2387082",
+        "name": "935M - Located in West Midtown. Convenient to Down"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.768795,
+          -84.366944
+        ]
+      },
+      "properties": {
+        "id": "r2387064",
+        "name": "Amli Old 4th Ward"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.812294,
+          -84.4234
+        ]
+      },
+      "properties": {
+        "id": "2016084",
+        "name": "Reserve Collier Hills"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8161,
+          -84.3503
+        ]
+      },
+      "properties": {
+        "id": "89028",
+        "name": "Lenox Woods"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.815566,
+          -84.317471
+        ]
+      },
+      "properties": {
+        "id": "LV30108503",
+        "name": "Lavista Rd and Calibre Woods Dr NE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8149,
+          -84.4225
+        ]
+      },
+      "properties": {
+        "id": "2426",
+        "name": "Collier Ridge"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.836056,
+          -84.384575
+        ]
+      },
+      "properties": {
+        "id": "r2839382",
+        "name": "2 br, 2 bath House - 2965 Pharr Court South - Phar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.6991,
+          -84.4465
+        ]
+      },
+      "properties": {
+        "id": "100035888",
+        "name": "Stanton View"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.735809,
+          -84.437498
+        ]
+      },
+      "properties": {
+        "id": "LV30201646",
+        "name": "1523 Olympian Way Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.809011,
+          -84.334396
+        ]
+      },
+      "properties": {
+        "id": "r2387234",
+        "name": "Atlantic Briarcliff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.773453,
+          -84.35095
+        ]
+      },
+      "properties": {
+        "id": "2029251",
+        "name": "1115 Ponce de Leon Avenue"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.701953,
+          -84.308425
+        ]
+      },
+      "properties": {
+        "id": "LV30128622",
+        "name": "2898 Cloverleaf Drive Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.774394,
+          -84.384701
+        ]
+      },
+      "properties": {
+        "id": "LV30160564",
+        "name": "730 Peachtree Street Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.79282,
+          -84.34477
+        ]
+      },
+      "properties": {
+        "id": "r2387085",
+        "name": "Sidney at Morningside"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.763848,
+          -84.383063
+        ]
+      },
+      "properties": {
+        "id": "LV30206861",
+        "name": "131 Ralph McGill Boulevard Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.72089,
+          -84.428929
+        ]
+      },
+      "properties": {
+        "id": "LV30160514",
+        "name": "1250 Oakland Terrace Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.756202,
+          -84.296948
+        ]
+      },
+      "properties": {
+        "id": "LV30197336",
+        "name": "17 Oakhurst Common Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.727612,
+          -84.379405
+        ]
+      },
+      "properties": {
+        "id": "LV30200723",
+        "name": "982 Grant Terrace Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.817736,
+          -84.33612
+        ]
+      },
+      "properties": {
+        "id": "2033899",
+        "name": "2194 Briarcliff Road, NE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.733827,
+          -84.447767
+        ]
+      },
+      "properties": {
+        "id": "LV30127598",
+        "name": "1931 South Gordon Street Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.789121,
+          -84.399565
+        ]
+      },
+      "properties": {
+        "id": "LV30209305",
+        "name": "384 16th Street Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.778566,
+          -84.353284
+        ]
+      },
+      "properties": {
+        "id": "LV30180704",
+        "name": "880 North Highland Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.778141,
+          -84.34694
+        ]
+      },
+      "properties": {
+        "id": "2032480",
+        "name": "860 Briarcliff Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.69386,
+          -84.364864
+        ]
+      },
+      "properties": {
+        "id": "LV30031129",
+        "name": "760 Constitution Road Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.776357,
+          -84.354726
+        ]
+      },
+      "properties": {
+        "id": "r1565244",
+        "name": "1BR/BA Apt-  Virginia Highland Neighborhood-Green"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.749141,
+          -84.403472
+        ]
+      },
+      "properties": {
+        "id": "r2387034",
+        "name": "Legacy Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.834947,
+          -84.492719
+        ]
+      },
+      "properties": {
+        "id": "r2387308",
+        "name": "Oakley Run"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.696791,
+          -84.452853
+        ]
+      },
+      "properties": {
+        "id": "LV30062960",
+        "name": "2132 Pinehurst Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.6997,
+          -84.4512
+        ]
+      },
+      "properties": {
+        "id": "28145",
+        "name": "Brentwood Apartments"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.771846,
+          -84.382946
+        ]
+      },
+      "properties": {
+        "id": "r2387120",
+        "name": "131 Ponce Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.821672,
+          -84.38789
+        ]
+      },
+      "properties": {
+        "id": "r2387415",
+        "name": "2460 Peachtree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.745048,
+          -84.41784
+        ]
+      },
+      "properties": {
+        "id": "2016294",
+        "name": "Ashley Collegetown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.768557,
+          -84.388328
+        ]
+      },
+      "properties": {
+        "id": "r2387217",
+        "name": "Penthouses One Baltimore Place"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7687,
+          -84.3923
+        ]
+      },
+      "properties": {
+        "id": "21997",
+        "name": "Centennial Place"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.748496,
+          -84.496382
+        ]
+      },
+      "properties": {
+        "id": "LV30091919",
+        "name": "294 Brownlee Road Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.741158,
+          -84.348023
+        ]
+      },
+      "properties": {
+        "id": "r2387178",
+        "name": "Alexan EAV"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.659051,
+          -84.455782
+        ]
+      },
+      "properties": {
+        "id": "r2401917",
+        "name": "Reserve at Lavista Walk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.742892,
+          -84.504948
+        ]
+      },
+      "properties": {
+        "id": "r1896267",
+        "name": "Beautiful 3 Bedroom, 3 1/2 Bath by Cascades"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.746844,
+          -84.378133
+        ]
+      },
+      "properties": {
+        "id": "r2387146",
+        "name": "Leonard - Convenient to I-75/I-85 & I-20. Walking"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7002,
+          -84.4265
+        ]
+      },
+      "properties": {
+        "id": "100033898",
+        "name": "Columbia at Sylvan Hills"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.837706,
+          -84.385284
+        ]
+      },
+      "properties": {
+        "id": "r2390044",
+        "name": "2 Bedroom Renovated Buckhead condo! March rent..."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8212,
+          -84.4485
+        ]
+      },
+      "properties": {
+        "id": "23785",
+        "name": "Moores Mill Village"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.689496,
+          -84.358908
+        ]
+      },
+      "properties": {
+        "id": "LV30144314",
+        "name": "943 Natham Drive Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.755293,
+          -84.364237
+        ]
+      },
+      "properties": {
+        "id": "r2387152",
+        "name": "Alexan on Krog"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.83255,
+          -84.381489
+        ]
+      },
+      "properties": {
+        "id": "LV30135122",
+        "name": "78 Sheridan Drive Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.810884,
+          -84.42814
+        ]
+      },
+      "properties": {
+        "id": "LV30206848",
+        "name": "2030 Defoor Avenue Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.782708,
+          -84.305325
+        ]
+      },
+      "properties": {
+        "id": "LV30201539",
+        "name": "759 Scott Boulevard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.813961,
+          -84.39513
+        ]
+      },
+      "properties": {
+        "id": "r2387165",
+        "name": "The Monroe"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7544,
+          -84.4795
+        ]
+      },
+      "properties": {
+        "id": "180312",
+        "name": "Seven Courts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.834,
+          -84.49
+        ]
+      },
+      "properties": {
+        "id": "14670",
+        "name": "Walton Vinings"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.703957,
+          -84.512957
+        ]
+      },
+      "properties": {
+        "id": "LV30201822",
+        "name": "1859 King Alfred Drive Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.825,
+          -84.3397
+        ]
+      },
+      "properties": {
+        "id": "6756",
+        "name": "Briarhill"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.807123,
+          -84.410117
+        ]
+      },
+      "properties": {
+        "id": "r2833705",
+        "name": "Spacious 3 Bedroom Cottage in Channing Valley!!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.786261,
+          -84.410912
+        ]
+      },
+      "properties": {
+        "id": "r2387109",
+        "name": "Cottonwood Westside"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.777799,
+          -84.38017
+        ]
+      },
+      "properties": {
+        "id": "2039473",
+        "name": "848 Myrtle Street"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.834812,
+          -84.381734
+        ]
+      },
+      "properties": {
+        "id": "r2831695",
+        "name": "1 BR Condo at ParkLane on Peachtree in Buckhead"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.748173,
+          -84.377678
+        ]
+      },
+      "properties": {
+        "id": "r2387315",
+        "name": "Mattress Factory Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.752521,
+          -84.390094
+        ]
+      },
+      "properties": {
+        "id": "r2830427",
+        "name": "MC Kiser Lofts (BY APPT)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.726179,
+          -84.43255
+        ]
+      },
+      "properties": {
+        "id": "LV30075848",
+        "name": "1363 Almont Drive Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.743802,
+          -84.33705
+        ]
+      },
+      "properties": {
+        "id": "r2832939",
+        "name": "Awesome EAV 2BR/1 BA Cape Cod + Bonus Room - Sh..."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.754809,
+          -84.389372
+        ]
+      },
+      "properties": {
+        "id": "r2387246",
+        "name": "Lofts at Muses"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.704106,
+          -84.302767
+        ]
+      },
+      "properties": {
+        "id": "r2819672",
+        "name": "Fully Renovated 3 Bedroom Brick ranch in East..."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.818615,
+          -84.335279
+        ]
+      },
+      "properties": {
+        "id": "LV30067723",
+        "name": "2213 Briarcliff Road Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.751214,
+          -84.398611
+        ]
+      },
+      "properties": {
+        "id": "r2830421",
+        "name": "Fulton Supply Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.78504,
+          -84.45975
+        ]
+      },
+      "properties": {
+        "id": "2039475",
+        "name": "Dwell at Hollywood"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.773502,
+          -84.503124
+        ]
+      },
+      "properties": {
+        "id": "LV30180660",
+        "name": "3429 Adkins Road Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.834793,
+          -84.38029
+        ]
+      },
+      "properties": {
+        "id": "2015908",
+        "name": "43 Peachtree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.770614,
+          -84.350658
+        ]
+      },
+      "properties": {
+        "id": "LV29994885",
+        "name": "591 Seminole Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7364,
+          -84.4149
+        ]
+      },
+      "properties": {
+        "id": "100009736",
+        "name": "Oglethorpe Place"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.74,
+          -84.39
+        ]
+      },
+      "properties": {
+        "id": "r2826926",
+        "name": "Awesome 1 BR/2 BA Loft in Crown Candy Lofts nea..."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7635,
+          -84.3918
+        ]
+      },
+      "properties": {
+        "id": "100036018",
+        "name": "Post Centennial Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.671246,
+          -84.466168
+        ]
+      },
+      "properties": {
+        "id": "LV30198721",
+        "name": "3062 McKenzie Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8158,
+          -84.4519
+        ]
+      },
+      "properties": {
+        "id": "189112",
+        "name": "Bridge Side Apartments"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.665991,
+          -84.447938
+        ]
+      },
+      "properties": {
+        "id": "LV30078079",
+        "name": "1804 Lyle Avenue"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.741009,
+          -84.358907
+        ]
+      },
+      "properties": {
+        "id": "r2387088",
+        "name": "Enso - Eco-friendly Community in East Atlanta.  En"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.773796,
+          -84.35603
+        ]
+      },
+      "properties": {
+        "id": "2007821",
+        "name": "Andrews Court"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.810501,
+          -84.419804
+        ]
+      },
+      "properties": {
+        "id": "LV30201416",
+        "name": "987 Collier Road Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.786598,
+          -84.443707
+        ]
+      },
+      "properties": {
+        "id": "LV30175135",
+        "name": "1519 Bungalow Lane"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.775716,
+          -84.356197
+        ]
+      },
+      "properties": {
+        "id": "LV29804237",
+        "name": "954 Saint Charles Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.815957,
+          -84.36557
+        ]
+      },
+      "properties": {
+        "id": "2013348",
+        "name": "Lakeshore Crossing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.841378,
+          -84.426022
+        ]
+      },
+      "properties": {
+        "id": "r2387127",
+        "name": "Solis Downwood"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.797458,
+          -84.40514
+        ]
+      },
+      "properties": {
+        "id": "2013311",
+        "name": "Highland Ridge"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77319,
+          -84.40405
+        ]
+      },
+      "properties": {
+        "id": "r2387012",
+        "name": "Hotel Rocy Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.748139,
+          -84.3384
+        ]
+      },
+      "properties": {
+        "id": "2039484",
+        "name": "1494 Memorial Dr."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.692532,
+          -84.315374
+        ]
+      },
+      "properties": {
+        "id": "LV30128625",
+        "name": "3168 Cherry Valley Drive Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.731578,
+          -84.492902
+        ]
+      },
+      "properties": {
+        "id": "LV30209860",
+        "name": "876 Laurelmont Drive Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.813198,
+          -84.42455
+        ]
+      },
+      "properties": {
+        "id": "2039493",
+        "name": "Westside Court"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.779609,
+          -84.34729
+        ]
+      },
+      "properties": {
+        "id": "2013315",
+        "name": "Virginia Court"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.815931,
+          -84.364996
+        ]
+      },
+      "properties": {
+        "id": "r2387495",
+        "name": "Lakeshore Crossing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.722766,
+          -84.445717
+        ]
+      },
+      "properties": {
+        "id": "LV30154784",
+        "name": "1771 Avon Avenue Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.725666,
+          -84.309393
+        ]
+      },
+      "properties": {
+        "id": "LV30038460",
+        "name": "1976 Valencia Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.786748,
+          -84.401771
+        ]
+      },
+      "properties": {
+        "id": "r2387191",
+        "name": "Local on Fourteenth"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.81732,
+          -84.33573
+        ]
+      },
+      "properties": {
+        "id": "LV30192870",
+        "name": "2182 Briarcliff Road Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.744671,
+          -84.365305
+        ]
+      },
+      "properties": {
+        "id": "LV30185529",
+        "name": "361 Cameron Street Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.761379,
+          -84.373968
+        ]
+      },
+      "properties": {
+        "id": "r2387629",
+        "name": "City View (Freedom Parkway)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.789058,
+          -84.319284
+        ]
+      },
+      "properties": {
+        "id": "LV30092182",
+        "name": "1743 North Decatur Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.81525,
+          -84.39727
+        ]
+      },
+      "properties": {
+        "id": "2001046",
+        "name": "CoHo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.784665,
+          -84.388222
+        ]
+      },
+      "properties": {
+        "id": "r2387100",
+        "name": "SkyHouse Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.790158,
+          -84.389623
+        ]
+      },
+      "properties": {
+        "id": "LV30144525",
+        "name": "61 16th Street Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.732667,
+          -84.479329
+        ]
+      },
+      "properties": {
+        "id": "LV30201832",
+        "name": "850 Peyton Road Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.755855,
+          -84.361598
+        ]
+      },
+      "properties": {
+        "id": "LV30005002",
+        "name": "70 Spruce Street Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.825575,
+          -84.33496
+        ]
+      },
+      "properties": {
+        "id": "r2387549",
+        "name": "Belara - Easy Access to I-85 and GA 400. Convenien"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.745962,
+          -84.359688
+        ]
+      },
+      "properties": {
+        "id": "r2387186",
+        "name": "841 Memorial"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.782221,
+          -84.412087
+        ]
+      },
+      "properties": {
+        "id": "r2387621",
+        "name": "1016 Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.764891,
+          -84.389233
+        ]
+      },
+      "properties": {
+        "id": "LV30153719",
+        "name": "45 Ivan Allen Junior Boulevard Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77704,
+          -84.35788
+        ]
+      },
+      "properties": {
+        "id": "2029132",
+        "name": "900 Greenwood Ave"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.731617,
+          -84.374802
+        ]
+      },
+      "properties": {
+        "id": "LV30045725",
+        "name": "386 Ormond Street Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.785283,
+          -84.302219
+        ]
+      },
+      "properties": {
+        "id": "r2387585",
+        "name": "Pines on Scott"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.749456,
+          -84.402591
+        ]
+      },
+      "properties": {
+        "id": "r2387645",
+        "name": "Stonewall Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.821562,
+          -84.371888
+        ]
+      },
+      "properties": {
+        "id": "r2387069",
+        "name": "Eon at Lindbergh"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.749797,
+          -84.377114
+        ]
+      },
+      "properties": {
+        "id": "r2387060",
+        "name": "Pencil Factory Flats and Shops"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.786185,
+          -84.387809
+        ]
+      },
+      "properties": {
+        "id": "r2387157",
+        "name": "Atlantic House"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.768045,
+          -84.341439
+        ]
+      },
+      "properties": {
+        "id": "LV30011057",
+        "name": "505 Oakdale Road Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.775815,
+          -84.356432
+        ]
+      },
+      "properties": {
+        "id": "LV30150110",
+        "name": "950 Saint Charles Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.763549,
+          -84.505088
+        ]
+      },
+      "properties": {
+        "id": "LV29984190",
+        "name": "298 Argus Circle Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.835182,
+          -84.38018
+        ]
+      },
+      "properties": {
+        "id": "2015912",
+        "name": "22-24 Peachtree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.810518,
+          -84.435413
+        ]
+      },
+      "properties": {
+        "id": "r2387118",
+        "name": "Elysian at Collier"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.83214,
+          -84.382727
+        ]
+      },
+      "properties": {
+        "id": "r2387046",
+        "name": "French Quarter"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.751211,
+          -84.466213
+        ]
+      },
+      "properties": {
+        "id": "LV30075835",
+        "name": "64 Willis Mill Road Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.749847,
+          -84.426602
+        ]
+      },
+      "properties": {
+        "id": "LV30045241",
+        "name": "177 Holderness Street Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.807103,
+          -84.414351
+        ]
+      },
+      "properties": {
+        "id": "r2387200",
+        "name": "Mill Works"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.778061,
+          -84.380912
+        ]
+      },
+      "properties": {
+        "id": "LV30079262",
+        "name": "855 Piedmont Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.719288,
+          -84.327161
+        ]
+      },
+      "properties": {
+        "id": "LV30104225",
+        "name": "1858 Brannen Road Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.822532,
+          -84.386478
+        ]
+      },
+      "properties": {
+        "id": "r1605202",
+        "name": "Great 2/2 corner condo in Buckhead at ParkLane"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.787609,
+          -84.404458
+        ]
+      },
+      "properties": {
+        "id": "r2387037",
+        "name": "Exchange - Walking Distance from Shopping, Enterta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.837794,
+          -84.334818
+        ]
+      },
+      "properties": {
+        "id": "r2387324",
+        "name": "Esquire Apartments"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.835182,
+          -84.38084
+        ]
+      },
+      "properties": {
+        "id": "2015925",
+        "name": "16 Peachtree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.744842,
+          -84.437775
+        ]
+      },
+      "properties": {
+        "id": "r2368721",
+        "name": "New Renovation! 4 BED 3 FULL BATH/ Westside..."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.835186,
+          -84.380186
+        ]
+      },
+      "properties": {
+        "id": "r2387123",
+        "name": "22-24 Peachtree (BY APPT)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.701634,
+          -84.49568
+        ]
+      },
+      "properties": {
+        "id": "LV30135309",
+        "name": "3302 Tiara Circle Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.73683,
+          -84.40812
+        ]
+      },
+      "properties": {
+        "id": "2015599",
+        "name": "Metropolitan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7491,
+          -84.3902
+        ]
+      },
+      "properties": {
+        "id": "r2394660",
+        "name": "Village on the Green"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.779785,
+          -84.390984
+        ]
+      },
+      "properties": {
+        "id": "r1148093",
+        "name": "1 BR/1 BR Condo in Prestigious Mayfair Building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.813649,
+          -84.337635
+        ]
+      },
+      "properties": {
+        "id": "r2387462",
+        "name": "Sloan Square"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.76257,
+          -84.33319
+        ]
+      },
+      "properties": {
+        "id": "LV30062864",
+        "name": "1660 DeKalb Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.792,
+          -84.4474
+        ]
+      },
+      "properties": {
+        "id": "100033293",
+        "name": "Columbia Estates"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.782589,
+          -84.30572
+        ]
+      },
+      "properties": {
+        "id": "2038590",
+        "name": "759 Scott Blvd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7703,
+          -84.36822
+        ]
+      },
+      "properties": {
+        "id": "2015969",
+        "name": "575 Boulevard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.731591,
+          -84.511802
+        ]
+      },
+      "properties": {
+        "id": "LV30106261",
+        "name": "3620 Ginnis Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.781767,
+          -84.407812
+        ]
+      },
+      "properties": {
+        "id": "r2387056",
+        "name": "Tenside -  Stainless Appliances.  Side-by-side Ref"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.760091,
+          -84.36818
+        ]
+      },
+      "properties": {
+        "id": "2039345",
+        "name": "214 Randolph St"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.741346,
+          -84.48467
+        ]
+      },
+      "properties": {
+        "id": "LV30203132",
+        "name": "533 Fielding Lane Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.783979,
+          -84.457015
+        ]
+      },
+      "properties": {
+        "id": "LV30160663",
+        "name": "1054 Gun Club Road Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.817736,
+          -84.336128
+        ]
+      },
+      "properties": {
+        "id": "LV29991518",
+        "name": "2194 Briarcliff Road Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.683357,
+          -84.434438
+        ]
+      },
+      "properties": {
+        "id": "r2203484",
+        "name": "Cute 3 BR/2 BA Cape Cod Home in Jefferson Park ..."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.776281,
+          -84.361907
+        ]
+      },
+      "properties": {
+        "id": "LV30104039",
+        "name": "773 Greenwood Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8105,
+          -84.4198
+        ]
+      },
+      "properties": {
+        "id": "2036417",
+        "name": "987 Collier Road NW"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.772159,
+          -84.368225
+        ]
+      },
+      "properties": {
+        "id": "LV30174922",
+        "name": "650 Glen Iris Drive Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.790476,
+          -84.377034
+        ]
+      },
+      "properties": {
+        "id": "LV30200452",
+        "name": "36 South Prado Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.806992,
+          -84.395172
+        ]
+      },
+      "properties": {
+        "id": "LV30172247",
+        "name": "8 Collier Road Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.742589,
+          -84.3325
+        ]
+      },
+      "properties": {
+        "id": "r2834382",
+        "name": "Renovated Brick 3 bedroom Bungalow in East..."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.778142,
+          -84.346934
+        ]
+      },
+      "properties": {
+        "id": "LV30135154",
+        "name": "860 Briarcliff Road Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77088,
+          -84.37307
+        ]
+      },
+      "properties": {
+        "id": "LV30072967",
+        "name": "600 Parkway Drive Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.712436,
+          -84.299978
+        ]
+      },
+      "properties": {
+        "id": "LV30153488",
+        "name": "2216 Clanton Terrace"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.675988,
+          -84.486705
+        ]
+      },
+      "properties": {
+        "id": "LV30104071",
+        "name": "20 Pine Canyon Drive Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.778805,
+          -84.310497
+        ]
+      },
+      "properties": {
+        "id": "r1573796",
+        "name": "Between Emory and Decatur Square!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.727018,
+          -84.302856
+        ]
+      },
+      "properties": {
+        "id": "LV30049886",
+        "name": "1983 Mark Trail"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.773454,
+          -84.35096
+        ]
+      },
+      "properties": {
+        "id": "LV30011719",
+        "name": "1115 Ponce De Leon Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.721115,
+          -84.481801
+        ]
+      },
+      "properties": {
+        "id": "LV30209506",
+        "name": "1260 Shore Drive Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.768067,
+          -84.341479
+        ]
+      },
+      "properties": {
+        "id": "r2398274",
+        "name": "3 br, 2 bath House - 505 Oakdale Rd Unit 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.768199,
+          -84.360538
+        ]
+      },
+      "properties": {
+        "id": "r2387223",
+        "name": "Telephone Factory Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.817319,
+          -84.33572
+        ]
+      },
+      "properties": {
+        "id": "2034029",
+        "name": "2182 Briarcliff Road, NE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7451,
+          -84.418995
+        ]
+      },
+      "properties": {
+        "id": "r2387665",
+        "name": "Ashley Collegetown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.737229,
+          -84.491279
+        ]
+      },
+      "properties": {
+        "id": "LV30201830",
+        "name": "3185 West Manor Circle Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.716694,
+          -84.304139
+        ]
+      },
+      "properties": {
+        "id": "r2830423",
+        "name": "Flats at East Atlanta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.734719,
+          -84.414774
+        ]
+      },
+      "properties": {
+        "id": "r2387653",
+        "name": "Ashley West End"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.812524,
+          -84.42626
+        ]
+      },
+      "properties": {
+        "id": "r2387262",
+        "name": "2100 Defoors"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.82352,
+          -84.387456
+        ]
+      },
+      "properties": {
+        "id": "LV30108570",
+        "name": "Peachtree Rd NW and Lindbergh Dr NE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.812585,
+          -84.392368
+        ]
+      },
+      "properties": {
+        "id": "r2387183",
+        "name": "Venue Brookwood"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.779778,
+          -84.379146
+        ]
+      },
+      "properties": {
+        "id": "r2387635",
+        "name": "921 Myrtle Street"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.770752,
+          -84.350574
+        ]
+      },
+      "properties": {
+        "id": "LV29998397",
+        "name": "603 Seminole Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.753335,
+          -84.366961
+        ]
+      },
+      "properties": {
+        "id": "r2387033",
+        "name": "West Inman Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.837762,
+          -84.309548
+        ]
+      },
+      "properties": {
+        "id": "r2387307",
+        "name": "Audubon Briarcliff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.792673,
+          -84.336837
+        ]
+      },
+      "properties": {
+        "id": "r2387231",
+        "name": "Highland Square"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.754566,
+          -84.367406
+        ]
+      },
+      "properties": {
+        "id": "LV30143497",
+        "name": "608 Edgewood Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.745759,
+          -84.318556
+        ]
+      },
+      "properties": {
+        "id": "r2387074",
+        "name": "Element at Kirkwood"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.752047,
+          -84.35929
+        ]
+      },
+      "properties": {
+        "id": "LV29980809",
+        "name": "69 Chester Avenue Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.687319,
+          -84.443599
+        ]
+      },
+      "properties": {
+        "id": "LV30203591",
+        "name": "1686 Connally Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7729,
+          -84.3657
+        ]
+      },
+      "properties": {
+        "id": "r2387176",
+        "name": "Flats at Ponce City Market - Affordable"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.777817,
+          -84.380194
+        ]
+      },
+      "properties": {
+        "id": "r2830416",
+        "name": "848 Myrtle Street"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.81775,
+          -84.426113
+        ]
+      },
+      "properties": {
+        "id": "r2401869",
+        "name": "End Unit Town-home in Beautiful Buckhead with Spli"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.685139,
+          -84.432013
+        ]
+      },
+      "properties": {
+        "id": "r2836658",
+        "name": "Cute and charming 2 Bedroom Duplex in HOT East..."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.755672,
+          -84.416511
+        ]
+      },
+      "properties": {
+        "id": "LV30201554",
+        "name": "870 Mayson Turner Road Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.784783,
+          -84.399637
+        ]
+      },
+      "properties": {
+        "id": "LV30163748",
+        "name": "1101 Mecaslin Street Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.773406,
+          -84.35604
+        ]
+      },
+      "properties": {
+        "id": "r2387252",
+        "name": "Andrews Court"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.816377,
+          -84.38954
+        ]
+      },
+      "properties": {
+        "id": "r2819360",
+        "name": "Affordable City Living - Utilities Included"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.806027,
+          -84.366283
+        ]
+      },
+      "properties": {
+        "id": "r2387150",
+        "name": "Morningside by Windsor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.727591,
+          -84.299554
+        ]
+      },
+      "properties": {
+        "id": "r1674811",
+        "name": "Brick 3 Bedroom Ranch w/ Fenced in Backyard!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.751052,
+          -84.31824
+        ]
+      },
+      "properties": {
+        "id": "LV29978842",
+        "name": "2123 Hosea L Williams Drive Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.793132,
+          -84.404841
+        ]
+      },
+      "properties": {
+        "id": "r2387163",
+        "name": "Heights at West Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.713713,
+          -84.353458
+        ]
+      },
+      "properties": {
+        "id": "LV30093108",
+        "name": "1501 Woodland Avenue Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77,
+          -84.36
+        ]
+      },
+      "properties": {
+        "id": "r2833704",
+        "name": "2 bedroom in Morningside - Everything Brand New"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.810445,
+          -84.388917
+        ]
+      },
+      "properties": {
+        "id": "r2387487",
+        "name": "Brookwood Valley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.711726,
+          -84.480801
+        ]
+      },
+      "properties": {
+        "id": "r2263917",
+        "name": "Stunning Home with Tons of Space!!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.776731,
+          -84.392997
+        ]
+      },
+      "properties": {
+        "id": "LV30056987",
+        "name": "176 5th Street Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.793878,
+          -84.448701
+        ]
+      },
+      "properties": {
+        "id": "r2828800",
+        "name": "Intown Living-One of a Kind! 3 Bedrm w/ Custom..."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.773532,
+          -84.376105
+        ]
+      },
+      "properties": {
+        "id": "r2387655",
+        "name": "Durant Place"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.827157,
+          -84.483418
+        ]
+      },
+      "properties": {
+        "id": "r2387245",
+        "name": "Wellington Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.768413,
+          -84.368605
+        ]
+      },
+      "properties": {
+        "id": "LV30090424",
+        "name": "567 Winton Terrace Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.776996,
+          -84.35794
+        ]
+      },
+      "properties": {
+        "id": "LV30180657",
+        "name": "900 Greenwood Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.780415,
+          -84.388372
+        ]
+      },
+      "properties": {
+        "id": "LV30093122",
+        "name": "44 Peachtree Place Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.766866,
+          -84.455737
+        ]
+      },
+      "properties": {
+        "id": "LV30002316",
+        "name": "425 New Jersey Avenue Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.750366,
+          -84.461382
+        ]
+      },
+      "properties": {
+        "id": "LV30000916",
+        "name": "198 Barfield Avenue Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.751704,
+          -84.378152
+        ]
+      },
+      "properties": {
+        "id": "r2387087",
+        "name": "Ashley Auburn Pointe"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.797118,
+          -84.392665
+        ]
+      },
+      "properties": {
+        "id": "r2828419",
+        "name": "1660 Peachtree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.832332,
+          -84.385344
+        ]
+      },
+      "properties": {
+        "id": "r2832566",
+        "name": "Cute as a button in Buckhead"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.774175,
+          -84.357868
+        ]
+      },
+      "properties": {
+        "id": "r2387009",
+        "name": "904 Ponce de Leon Ave."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.827109,
+          -84.352892
+        ]
+      },
+      "properties": {
+        "id": "r1635690",
+        "name": "Location! Location! 1 Bed Condo in Buckhead!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.7734,
+          -84.3761
+        ]
+      },
+      "properties": {
+        "id": "100035554",
+        "name": "Durant Place"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.841779,
+          -84.377497
+        ]
+      },
+      "properties": {
+        "id": "LV30198036",
+        "name": "3180 Mathieson Drive Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.723415,
+          -84.338121
+        ]
+      },
+      "properties": {
+        "id": "LV30038320",
+        "name": "1509 Wainwright Drive Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.709286,
+          -84.2921
+        ]
+      },
+      "properties": {
+        "id": "LV30125528",
+        "name": "2412 Whites Ridge"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.701575,
+          -84.380103
+        ]
+      },
+      "properties": {
+        "id": "LV30174052",
+        "name": "1928 Meador Avenue Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.721788,
+          -84.447193
+        ]
+      },
+      "properties": {
+        "id": "LV30127502",
+        "name": "1225 Westridge Road Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.774727,
+          -84.367903
+        ]
+      },
+      "properties": {
+        "id": "LV30206871",
+        "name": "741 Ponce De Leon Court Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.808778,
+          -84.304063
+        ]
+      },
+      "properties": {
+        "id": "r2838477",
+        "name": "Stunning 3/3.5 Decatur Townhome!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.706166,
+          -84.316956
+        ]
+      },
+      "properties": {
+        "id": "LV30061725",
+        "name": "2780 Hidden Forest Court"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.692513,
+          -84.304617
+        ]
+      },
+      "properties": {
+        "id": "LV30163284",
+        "name": "3190 Clifton Church Road Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.84,
+          -84.36
+        ]
+      },
+      "properties": {
+        "id": "r2387185",
+        "name": "Park at Peachtree Memorial"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.749454,
+          -84.367581
+        ]
+      },
+      "properties": {
+        "id": "LV30203712",
+        "name": "189 Savannah Street Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.776703,
+          -84.409007
+        ]
+      },
+      "properties": {
+        "id": "r2387641",
+        "name": "M Street Apartments"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.745482,
+          -84.424857
+        ]
+      },
+      "properties": {
+        "id": "LV30045393",
+        "name": "1135 Sells Avenue Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77605,
+          -84.363691
+        ]
+      },
+      "properties": {
+        "id": "r2387331",
+        "name": "Highland View"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.774246,
+          -84.359262
+        ]
+      },
+      "properties": {
+        "id": "LV30033578",
+        "name": "856 Ponce De Leon Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.723225,
+          -84.511491
+        ]
+      },
+      "properties": {
+        "id": "LV30210139",
+        "name": "3820 Old Cascade Road Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.748274,
+          -84.43659
+        ]
+      },
+      "properties": {
+        "id": "LV30062994",
+        "name": "251 Mathewson Place Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.770264,
+          -84.365358
+        ]
+      },
+      "properties": {
+        "id": "r2387112",
+        "name": "Amli Ponce Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.780171,
+          -84.387029
+        ]
+      },
+      "properties": {
+        "id": "r2397716",
+        "name": "Nine15 Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.773836,
+          -84.3578
+        ]
+      },
+      "properties": {
+        "id": "2013365",
+        "name": "904 Ponce de Leon Ave."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.762691,
+          -84.359581
+        ]
+      },
+      "properties": {
+        "id": "r2387035",
+        "name": "North Highland Steel"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.757489,
+          -84.35203
+        ]
+      },
+      "properties": {
+        "id": "2035005",
+        "name": "Station Square"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.809331,
+          -84.369327
+        ]
+      },
+      "properties": {
+        "id": "r2387310",
+        "name": "Monroe Place"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.798656,
+          -84.394229
+        ]
+      },
+      "properties": {
+        "id": "LV30022769",
+        "name": "20 Standish Avenue Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8411,
+          -84.4889
+        ]
+      },
+      "properties": {
+        "id": "r2094860",
+        "name": "FLATS AT WEST VILLAGE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.783142,
+          -84.305359
+        ]
+      },
+      "properties": {
+        "id": "LV30204189",
+        "name": "763 Scott Boulevard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.807945,
+          -84.413095
+        ]
+      },
+      "properties": {
+        "id": "r2387121",
+        "name": "Berkshire Howell Mill"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.676617,
+          -84.435933
+        ]
+      },
+      "properties": {
+        "id": "LV30127494",
+        "name": "2883 Harris Street"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.778566,
+          -84.35328
+        ]
+      },
+      "properties": {
+        "id": "2039554",
+        "name": "880 North Highland Ave NE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.734845,
+          -84.418421
+        ]
+      },
+      "properties": {
+        "id": "LV29983905",
+        "name": "933 Mathews Street Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.772409,
+          -84.363256
+        ]
+      },
+      "properties": {
+        "id": "r2387286",
+        "name": "Ford Factory Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.8362,
+          -84.3426
+        ]
+      },
+      "properties": {
+        "id": "6887",
+        "name": "The Pointe at Lenox Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.804836,
+          -84.423639
+        ]
+      },
+      "properties": {
+        "id": "r2387172",
+        "name": "1824 Defoor Westside"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.770164,
+          -84.368563
+        ]
+      },
+      "properties": {
+        "id": "r2387540",
+        "name": "Spanish Oaks"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.814095,
+          -84.338822
+        ]
+      },
+      "properties": {
+        "id": "r2387358",
+        "name": "Kenco Lavista"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.671737,
+          -84.460508
+        ]
+      },
+      "properties": {
+        "id": "LV30074431",
+        "name": "3073 Washington Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.721674,
+          -84.313564
+        ]
+      },
+      "properties": {
+        "id": "LV30084248",
+        "name": "1878 South Hampton Lane Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.790226,
+          -84.37578
+        ]
+      },
+      "properties": {
+        "id": "2027473",
+        "name": "1294 Piedmont Avenue"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.764992,
+          -84.366037
+        ]
+      },
+      "properties": {
+        "id": "r2387080",
+        "name": "Amli Parkside"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.740427,
+          -84.363767
+        ]
+      },
+      "properties": {
+        "id": "r2387517",
+        "name": "Roosevelt - Controlled Coded Access Gate, Full Siz"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.766505,
+          -84.383065
+        ]
+      },
+      "properties": {
+        "id": "r2387261",
+        "name": "Townhouse Atlanta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.728409,
+          -84.426384
+        ]
+      },
+      "properties": {
+        "id": "LV30023348",
+        "name": "1176 Merrill Avenue Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.746436,
+          -84.385161
+        ]
+      },
+      "properties": {
+        "id": "r2387032",
+        "name": "Capitol Gateway"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.836712,
+          -84.385228
+        ]
+      },
+      "properties": {
+        "id": "r2387205",
+        "name": "119 Pharr Manor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.752173,
+          -84.40139
+        ]
+      },
+      "properties": {
+        "id": "LV30198007",
+        "name": "425 Chapel Street Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.733478,
+          -84.442415
+        ]
+      },
+      "properties": {
+        "id": "LV30146347",
+        "name": "1668 Beecher Street Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.776518,
+          -84.382455
+        ]
+      },
+      "properties": {
+        "id": "r2830415",
+        "name": "Broadstone Midtown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.779616,
+          -84.449269
+        ]
+      },
+      "properties": {
+        "id": "LV30038503",
+        "name": "920 Margaret Place Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.839266,
+          -84.480487
+        ]
+      },
+      "properties": {
+        "id": "r2387250",
+        "name": "Arium Vinings Station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.6674,
+          -84.4747
+        ]
+      },
+      "properties": {
+        "id": "100012093",
+        "name": "Dodson Courtyard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.76329,
+          -84.454609
+        ]
+      },
+      "properties": {
+        "id": "LV29979776",
+        "name": "2050 Joseph E. Boone Boulevard Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.760087,
+          -84.368204
+        ]
+      },
+      "properties": {
+        "id": "r2828992",
+        "name": "214 Randolph St"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.709624,
+          -84.383137
+        ]
+      },
+      "properties": {
+        "id": "LV30000882",
+        "name": "32 Bowen Avenue Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.687507,
+          -84.429946
+        ]
+      },
+      "properties": {
+        "id": "LV30194432",
+        "name": "2436 West Woodland Circle"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.751849,
+          -84.373556
+        ]
+      },
+      "properties": {
+        "id": "LV30090422",
+        "name": "87 Lucy Street Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77296,
+          -84.357758
+        ]
+      },
+      "properties": {
+        "id": "LV30190693",
+        "name": "676 Linwood Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.719902,
+          -84.463391
+        ]
+      },
+      "properties": {
+        "id": "LV29984633",
+        "name": "2287 Boulevard Granada Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.747644,
+          -84.434211
+        ]
+      },
+      "properties": {
+        "id": "LV30195449",
+        "name": "1425 Westview Drive Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.76198,
+          -84.358444
+        ]
+      },
+      "properties": {
+        "id": "r2387140",
+        "name": "Inman Quarter"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.721856,
+          -84.448711
+        ]
+      },
+      "properties": {
+        "id": "LV30084243",
+        "name": "1221 Cahaba Drive Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.838186,
+          -84.33901
+        ]
+      },
+      "properties": {
+        "id": "r1256075",
+        "name": "1 Bedroom Condo in Brookhave/Buckhead in Keys Lake"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.770788,
+          -84.369918
+        ]
+      },
+      "properties": {
+        "id": "r2387458",
+        "name": "251 North - Convenient Midtown Location minutes to"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.753684,
+          -84.369138
+        ]
+      },
+      "properties": {
+        "id": "LV30103876",
+        "name": "25 Bradley Street Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77449,
+          -84.360827
+        ]
+      },
+      "properties": {
+        "id": "LV30025057",
+        "name": "729 Bonaventure Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.674149,
+          -84.399714
+        ]
+      },
+      "properties": {
+        "id": "LV30069697",
+        "name": "2959 Forrest Hills Drive Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.724905,
+          -84.40592
+        ]
+      },
+      "properties": {
+        "id": "LV30031120",
+        "name": "557 Mayland Avenue Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.779319,
+          -84.384388
+        ]
+      },
+      "properties": {
+        "id": "r2387259",
+        "name": "900 Peachtree"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.832138,
+          -84.38272
+        ]
+      },
+      "properties": {
+        "id": "2011651",
+        "name": "French Quarter"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.724103,
+          -84.401882
+        ]
+      },
+      "properties": {
+        "id": "LV30104044",
+        "name": "1129 McDaniel Street Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.814306,
+          -84.395231
+        ]
+      },
+      "properties": {
+        "id": "r2387242",
+        "name": "CoHo - Located on the Beltline.<BR>Granite Counterto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.761065,
+          -84.349814
+        ]
+      },
+      "properties": {
+        "id": "LV29987859",
+        "name": "1164 Alta Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.792161,
+          -84.396833
+        ]
+      },
+      "properties": {
+        "id": "r2387041",
+        "name": "17th Street Lofts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.834329,
+          -84.378069
+        ]
+      },
+      "properties": {
+        "id": "r2387490",
+        "name": "43 Peachtree (BY APPT)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.779279,
+          -84.383322
+        ]
+      },
+      "properties": {
+        "id": "LV30203701",
+        "name": "121 8th Street Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.822487,
+          -84.386455
+        ]
+      },
+      "properties": {
+        "id": "r1004340",
+        "name": "Luxury 2/2 High Rise Condo in Heart of Buckhead"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.793947,
+          -84.364953
+        ]
+      },
+      "properties": {
+        "id": "LV30146929",
+        "name": "1445 Monroe Drive Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.760272,
+          -84.366763
+        ]
+      },
+      "properties": {
+        "id": "LV30018320",
+        "name": "221 Lampkin Street Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.835401,
+          -84.315127
+        ]
+      },
+      "properties": {
+        "id": "r2387457",
+        "name": "Villas on Briarcliff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.678316,
+          -84.301806
+        ]
+      },
+      "properties": {
+        "id": "LV30084372",
+        "name": "3576 Satellite Boulevard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.753524,
+          -84.37367
+        ]
+      },
+      "properties": {
+        "id": "LV29804330",
+        "name": "419 Chamberlain Street Southeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.814079,
+          -84.314978
+        ]
+      },
+      "properties": {
+        "id": "r2387512",
+        "name": "Calibre Woods"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.674132,
+          -84.485483
+        ]
+      },
+      "properties": {
+        "id": "LV30072546",
+        "name": "2992 Dogwood Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.836524,
+          -84.375604
+        ]
+      },
+      "properties": {
+        "id": "r2394307",
+        "name": "Alexan Buckhead Village"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.790729,
+          -84.397374
+        ]
+      },
+      "properties": {
+        "id": "r2246395",
+        "name": "2 br, 2.5 bath House - 270 17th Street NW #1509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.788743,
+          -84.313307
+        ]
+      },
+      "properties": {
+        "id": "LV30092249",
+        "name": "451 Durand Drive Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.829183,
+          -84.357407
+        ]
+      },
+      "properties": {
+        "id": "LV30046640",
+        "name": "1112 Pine Heights Drive Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.693725,
+          -84.436939
+        ]
+      },
+      "properties": {
+        "id": "LV30154798",
+        "name": "2245 Dauphine Street"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.79124,
+          -84.344785
+        ]
+      },
+      "properties": {
+        "id": "LV30204084",
+        "name": "1104 Woodbridge Hollow Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.790227,
+          -84.375781
+        ]
+      },
+      "properties": {
+        "id": "LV30000816",
+        "name": "1294 Piedmont Avenue Northeast"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.796426,
+          -84.399672
+        ]
+      },
+      "properties": {
+        "id": "LV30078965",
+        "name": "355 Deering Road Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.739741,
+          -84.432652
+        ]
+      },
+      "properties": {
+        "id": "LV30147252",
+        "name": "565 Langhorn Street Southwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.780613,
+          -84.388305
+        ]
+      },
+      "properties": {
+        "id": "LV30083101",
+        "name": "44 Peachtree Place Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.731619,
+          -84.511802
+        ]
+      },
+      "properties": {
+        "id": "LV30106265",
+        "name": "3604 Ginnis Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.671632,
+          -84.466175
+        ]
+      },
+      "properties": {
+        "id": "r2826927",
+        "name": "3BR/1.5BA Brick Ranch in East Point  - No Secti..."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.79159,
+          -84.398089
+        ]
+      },
+      "properties": {
+        "id": "LV30049257",
+        "name": "361 17th Street Northwest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.774945,
+          -84.495363
+        ]
+      },
+      "properties": {
+        "id": "LV30034526",
+        "name": "723 Harwell Road Northwest"
+      }
+    }
+  ]
+}

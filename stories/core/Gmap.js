@@ -1,7 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { Gmap, GmapSpinner } from 'react-ui-core/src'
-import Marker from './Marker'
+import { Gmap, GmapSpinner, Marker, Markers } from 'react-ui-core/src'
+import geojson from '../dummyData/geojson.json'
 
 const key = 'AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A'
 
@@ -19,7 +19,7 @@ export const GmapWithSpinner = (
   />
 )
 
-export const GmapWithMarker = (
+export const GmapWithSingleMarker = (
   <Gmap apiKey={key}>
     <Marker
       position={{
@@ -27,5 +27,11 @@ export const GmapWithMarker = (
         lng: -84.3880,
       }}
     />
+  </Gmap>
+)
+
+export const GmapWithMultipleMarkers = (
+  <Gmap apiKey={key}>
+    <Markers geojson={geojson} />
   </Gmap>
 )

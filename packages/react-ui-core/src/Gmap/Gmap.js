@@ -1,86 +1,158 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
-import { parseArgs } from '@rentpath/react-ui-utils'
-import GmapBase from './GmapBase'
+import themed from 'react-themed'
+import classnames from 'classnames'
+import startsWith from 'lodash/startsWith'
+import pickBy from 'lodash/pickBy'
+import { GmapInteraction } from './GmapInteraction'
+import withGoogleScript from './withGoogleScript'
+import { setupEvents } from './utils/mapEventHelpers'
 
-const API_BASE_URL = 'https://maps.googleapis.com/maps/api/js'
+const DEFAULT_ZOOM = 8
+const DEFAULT_CENTER = { // Atlanta, GA
+  lat: 33.7490,
+  lng: -84.3880,
+}
 
-export default class Gmap extends PureComponent {
+const EVENTS = {
+  onBoundsChanged: 'bounds_changed',
+  onCenterChanged: 'center_changed',
+  onClick: 'click',
+  onDoubleClick: 'dblclick',
+  onDrag: 'drag',
+  onDragEnd: 'dragend',
+  onDragStart: 'dragstart',
+  onHeadingChanged: 'heading_changed',
+  onIdle: 'idle',
+  onMaptypeIdChanged: 'maptypeid_changed',
+  onMouseMove: 'mousemove',
+  onMouseOut: 'mouseout',
+  onMouseOver: 'mouseover',
+  onProjectionChanged: 'projection_changed',
+  onResize: 'resize',
+  onRightClick: 'rightclick',
+  onTilesLoaded: 'tilesloaded',
+  onTiltChanged: 'tilt_changed',
+  onZoomChanged: 'zoom_changed',
+}
+
+const EVENT_NAMES = Object.keys(EVENTS)
+
+const MAP_CONTROLS = {
+  fullscreenControl: false,
+  streetViewControl: false,
+  zoomControl: true,
+  mapTypeControl: true,
+  scaleControl: true,
+  rotateControl: true,
+}
+
+@themed(/^Gmap/, { pure: true })
+
+export class Gmap extends PureComponent {
   static propTypes = {
-    apiKey: PropTypes.string.isRequired,
-    libraries: PropTypes.arrayOf(
-      PropTypes.string,
-    ),
-    spinner: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.node,
-      PropTypes.object,
-    ]),
+    theme: PropTypes.object,
+    className: PropTypes.string,
+    children: PropTypes.node,
+    center: PropTypes.shape({
+      lat: PropTypes.number,
+      lng: PropTypes.number,
+    }),
+    zoom: PropTypes.number,
+    clickableIcons: PropTypes.bool,
+    mapControls: PropTypes.shape({
+      fullscreenControl: PropTypes.bool,
+      mapTypeControl: PropTypes.bool,
+      zoomControl: PropTypes.bool,
+      streetViewControl: PropTypes.bool,
+    }),
   }
 
   static defaultProps = {
-    libraries: [],
+    theme: {},
+    zoom: DEFAULT_ZOOM,
+    clickableIcons: false,
   }
 
   constructor(props) {
     super(props)
-    this.state = {
-      loaded: false,
-      spinner: props.spinner,
-    }
+
+    this.state = { map: null }
+    this.googleMap = React.createRef()
   }
 
   componentDidMount() {
-    if (this.isInitialized) {
-      this.scriptLoaded()
-      return
+    this.initMap()
+  }
+
+  componentWillUnmount() {
+    if (this.map) {
+      window.google.maps.event.clearInstanceListeners(this.map)
     }
-    this.loadScript()
   }
 
-  get isInitialized() {
-    return !!(window.google && window.google.maps)
+  get children() {
+    const { map } = this.state
+    const { children } = this.props
+
+    return React.Children.map(React.Children.toArray(children), child =>
+      React.cloneElement(child, { map })
+    )
   }
 
-  get spinner() {
-    const { spinner, loaded } = this.state
-    const props = { key: 'map-spinner', loading: !loaded }
-
-    if (spinner) {
-      if (React.isValidElement(spinner)) return React.cloneElement(spinner, props)
-      return React.createElement(...parseArgs(spinner, 'div', props))
-    }
-
-    return null
+  get mapControls() {
+    return { ...MAP_CONTROLS, ...this.props.mapControls }
   }
 
-  @autobind
-  scriptLoaded() {
-    this.setState({ loaded: true })
-  }
+  initMap() {
+    const {
+      zoom,
+      center,
+      clickableIcons,
+    } = this.props
 
-  async loadScript() {
-    const { apiKey, libraries } = this.props
-    const url = `${API_BASE_URL}?key=${apiKey}&libraries=${libraries.join()}`
-
-    await import(/* webpackChunkName: "scriptjs" */ 'scriptjs').then(scriptjs => {
-      scriptjs(url, this.scriptLoaded)
+    this.map = new window.google.maps.Map(this.googleMap.current, {
+      zoom,
+      clickableIcons,
+      center: center || DEFAULT_CENTER,
+      ...this.mapControls,
     })
+
+    setupEvents(this.map, EVENTS, this.props)
+
+    this.setState({ map: this.map })
+    GmapInteraction.registerMap(this.map)
   }
 
   render() {
-    const { loaded } = this.state
+    const { map } = this.state
     const {
-      spinner,
-      apiKey,
-      libraries,
+      theme,
+      className,
+      children,
       ...rest
     } = this.props
 
-    return [
-      this.spinner,
-      loaded ? <GmapBase key="google-map" {...rest} /> : null,
-    ]
+    const attributes = pickBy(rest, (_, key) => startsWith(key, 'data'))
+
+    return (
+      <div
+        ref={this.googleMap}
+        className={classnames(
+          theme.Gmap,
+          className,
+        )}
+        data-tid="google-map"
+        {...attributes}
+      >
+        {map && this.children}
+      </div>
+    )
   }
 }
+
+EVENT_NAMES.forEach(name => {
+  Gmap.propTypes[name] = PropTypes.func
+})
+
+export default withGoogleScript(Gmap)

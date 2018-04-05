@@ -9,6 +9,7 @@ global.requestAnimationFrame = raf
 global.google = {
   maps: {
     event: {
+      addListener: () => {},
       clearInstanceListeners: () => {},
     },
     LatLng: (lat, lng) => ({
@@ -30,5 +31,8 @@ global.google = {
     }),
     Point: () => ({}),
     Size: () => ({}),
+    SymbolPath: {
+      CIRCLE: 'circle',
+    },
   },
 }

@@ -27,3 +27,11 @@ export {
 export { ListingCarousel } from './Carousels'
 
 export { EmailModal } from './Modals'
+
+export {
+  Gmap,
+  Marker,
+  Markers,
+  markerIcon,
+  markerIconHover,
+} from './Gmap'
