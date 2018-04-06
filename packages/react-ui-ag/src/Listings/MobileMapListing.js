@@ -58,7 +58,8 @@ export default class MobileMapListing extends Component {
 
   shouldComponentUpdate(nextProps) {
     return this.props.isActive !== nextProps.isActive ||
-    this.props.listing.id !== nextProps.listing.id
+    this.props.listing.id !== nextProps.listing.id ||
+    this.props.listing.isFavorited !== nextProps.listing.isFavorited
   }
 
   componentDidUpdate(prevProps) {
