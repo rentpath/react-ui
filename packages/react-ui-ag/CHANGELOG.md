@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.18.1...@rentpath/react-ui-ag@2.0.0) (2018-04-09)
+
+
+### Bug Fixes
+
+* **ListingCarousel:** stops wrong listing cell from being activated on repeated click ([30873aa](https://github.com/rentpath/react-ui/commit/30873aa))
+
+
+### Features
+
+* **dependencies:** upgrade packages ([ca579bd](https://github.com/rentpath/react-ui/commit/ca579bd))
+
+
+### BREAKING CHANGES
+
+* **dependencies:** Now requires react ^16.3.0 as a peer
+
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.18.1...@rentpath/react-ui-ag@1.0.0) (2018-04-03)
 
