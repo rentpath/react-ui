@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
-import scriptjs from 'scriptjs'
 import { parseArgs } from '@rentpath/react-ui-utils'
 import getDisplayName from './utils/getDisplayName'
 
@@ -65,8 +64,14 @@ export default function(BaseComponent) {
 
     loadScript() {
       const { apiKey, libraries, version } = this.props
-      const url = `${API_BASE_URL}?key=${apiKey}&version=${version}&libraries=${libraries.join()}`
-      scriptjs(url, this.scriptLoaded)
+      const script = document.createElement('script')
+
+      window.google_map_initialize = this.scriptLoaded
+
+      script.async = true
+      script.defer = true
+      script.src = `${API_BASE_URL}?key=${apiKey}&version=${version}&libraries=${libraries.join()}&callback=google_map_initialize`
+      document.head.appendChild(script)
     }
 
     render() {
