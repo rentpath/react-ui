@@ -1,70 +1,40 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
-import Gmap from '../Gmap'
+import { Gmap as ThemedGmap } from '../Gmap'
 
-const key = 'AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A'
+const Gmap = ThemedGmap.WrappedComponent
+
+const theme = {
+  Gmap: 'mapClass',
+}
 
 describe('Gmap', () => {
-  describe('componentDidMount', () => {
-    const setup = () => {
-      const wrapper = shallow(<Gmap apiKey={key} />)
-      const instance = wrapper.instance()
-      const scriptLoadedSpy = jest.spyOn(instance, 'scriptLoaded')
-      const loadScriptSpy = jest.spyOn(instance, 'loadScript')
-
-      return { wrapper, instance, scriptLoadedSpy, loadScriptSpy }
-    }
-
-    it('fires `scriptLoaded` if google map script has already been loaded', () => {
-      const { instance, scriptLoadedSpy, loadScriptSpy } = setup()
-      instance.componentDidMount()
-
-      expect(scriptLoadedSpy).toHaveBeenCalled()
-      expect(loadScriptSpy).not.toHaveBeenCalled()
-    })
-
-    it('fires `loadScript` if google map script has not been loaded', () => {
-      const maps = window.google.maps
-      window.google.maps = undefined
-      const { instance, scriptLoadedSpy, loadScriptSpy } = setup()
-
-      instance.componentDidMount()
-
-      expect(scriptLoadedSpy).not.toHaveBeenCalled()
-      expect(loadScriptSpy).toHaveBeenCalled()
-      window.google.maps = maps
-    })
+  it('applies a custom className', () => {
+    const wrapper = shallow(<Gmap className="customMap" />)
+    expect(wrapper.prop('className')).toEqual('customMap')
   })
 
-  describe('spinner', () => {
-    it('uses the prop directly if valid React element', () => {
-      const snap = renderer
-        .create(<Gmap apiKey={key} spinner={<div>spinner</div>} />)
-        .toJSON()
-      expect(snap).toMatchSnapshot()
-    })
+  it('applies a theme className', () => {
+    const wrapper = shallow(<Gmap theme={theme} />)
+    expect(wrapper.prop('className')).toEqual('mapClass')
+  })
 
-    it('uses the default `div` and applies props if object', () => {
-      const snap = renderer
-        .create(<Gmap apiKey={key} spinner={{ 'data-tag_section': 'foo' }} />)
-        .toJSON()
-      expect(snap).toMatchSnapshot()
-    })
+  it('applies extra props correctly', () => {
+    const wrapper = shallow(<Gmap data-tag_section="map-tag" />)
+    expect(wrapper.prop('data-tag_section')).toEqual('map-tag')
+  })
 
-    it('uses the `Spinner` node passed with props', () => {
-      const Spinner = <span />
-      const snap = renderer
-        .create(<Gmap apiKey={key} spinner={Spinner} />)
-        .toJSON()
-      expect(snap).toMatchSnapshot()
-    })
+  it('sets up only those events that have been passed as props', () => {
+    const mapSpy = jest.spyOn(window.google.maps.event, 'addListener')
+    shallow(
+      <Gmap
+        onClick={jest.fn()}
+        onBoundsChanged={jest.fn()}
+      />
+    )
 
-    it('does not use a spinner if none is passed', () => {
-      const snap = renderer
-        .create(<Gmap apiKey={key} />)
-        .toJSON()
-      expect(snap).toMatchSnapshot()
-    })
+    expect(mapSpy).toHaveBeenCalledWith(expect.any(Object), 'bounds_changed', expect.any(Function))
+    expect(mapSpy).toHaveBeenCalledWith(expect.any(Object), 'click', expect.any(Function))
+    expect(mapSpy).not.toHaveBeenCalledWith(expect.any(Object), 'mouseout', expect.any(Function))
   })
 })

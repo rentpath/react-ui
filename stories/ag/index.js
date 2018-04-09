@@ -40,6 +40,12 @@ import {
   exampleStories,
 } from './stories'
 
+import {
+  DefaultGmap,
+  OneMarker,
+  MultipleMarkers,
+} from './Gmap'
+
 exampleStories('Filters / FilterCard', module)
   .add('Default', () => DefaultFilterCard)
   .add('One Button FilterCard', () => OneButtonFilterCard)
@@ -90,3 +96,8 @@ largeStories('GridView', module)
 largeStories('Modals', module)
   .add('Optional EmailModal', OptionalEmailModal)
   .add('Mandatory EmailModal', MandatoryEmailModal)
+
+largeStories('Gmap', module)
+  .add('Map', DefaultGmap)
+  .add('Map with one marker', OneMarker)
+  .add('Map with multiple markers', MultipleMarkers)

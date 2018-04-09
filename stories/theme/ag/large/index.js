@@ -12,6 +12,7 @@ import {
   FilterCard as FilterCardBase,
   Card as CardBase,
   Modal as ModalBase,
+  Gmap as GmapBase,
 } from '../base'
 import {
   FilterCard,
@@ -31,6 +32,7 @@ export default compose({},
   ApplyButtonBase,
   ApplyButton,
   CancelButtonBase,
+  GmapBase,
   ModalBase,
   CancelButton,
   CardBase,
