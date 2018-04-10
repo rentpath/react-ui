@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-rentals",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
@@ -47,8 +47,8 @@
     "react-test-renderer": "16.3.1"
   },
   "dependencies": {
-    "@rentpath/react-ui-core": "6.1.0",
-    "@rentpath/react-ui-utils": "3.0.1",
+    "@rentpath/react-ui-core": "6.1.1",
+    "@rentpath/react-ui-utils": "3.0.2",
     "classnames": "2.2.5",
     "prop-types": "^15.6.1",
     "react-themed": "3.2.1"
