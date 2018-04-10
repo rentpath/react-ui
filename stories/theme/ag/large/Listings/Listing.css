@@ -1,0 +1,4 @@
+.Listing-inactive :global(.image-gallery-right-nav),
+.Listing-inactive :global(.image-gallery-left-nav) {
+  display: none;
+}

@@ -15,9 +15,14 @@ export {
 export { Banner } from './Banners'
 
 export {
+  Listing,
   MobileMapListing,
   SingleFamilyMobileMapListing,
   DesktopMapPinListing,
+  DesktopListing,
+  SingleFamilyDesktopListing,
+  MobileListing,
+  SingleFamilyMobileListing,
 } from './Listings'
 
 export {
