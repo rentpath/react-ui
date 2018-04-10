@@ -85,6 +85,20 @@ export class Gmap extends PureComponent {
     this.initMap()
   }
 
+  componentDidUpdate(prevProps) {
+    const { center, zoom } = this.props
+
+    if (this.map) {
+      if (this.isCenterChange(prevProps.center, center)) {
+        this.map.setCenter(center)
+      }
+
+      if (zoom && prevProps.zoom !== zoom) {
+        this.map.setZoom(zoom)
+      }
+    }
+  }
+
   componentWillUnmount() {
     if (this.map) {
       window.google.maps.event.clearInstanceListeners(this.map)
@@ -122,6 +136,14 @@ export class Gmap extends PureComponent {
 
     this.setState({ map: this.map })
     GmapInteraction.registerMap(this.map)
+  }
+
+  isCenterChange(prev, next) {
+    const { lat: plat, lng: plng } = prev || {}
+    const { lat: nlat, lng: nlng } = next || {}
+
+    if (plat && plng && !(nlat && nlng)) return false
+    return plat !== nlat || plng !== nlng
   }
 
   render() {
