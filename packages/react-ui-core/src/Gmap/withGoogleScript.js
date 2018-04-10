@@ -21,11 +21,13 @@ export default function(BaseComponent) {
         PropTypes.node,
         PropTypes.object,
       ]),
+      onScriptLoadError: PropTypes.func,
     }
 
     static defaultProps = {
       libraries: [],
       version: '3',
+      onScriptLoadError: error => { window.mapLoadError = error },
     }
 
     state = {
@@ -57,20 +59,24 @@ export default function(BaseComponent) {
       return null
     }
 
+    get api() {
+      const { apiKey, libraries, version } = this.props
+      return `${API_BASE_URL}?key=${apiKey}&version=${version}&libraries=${libraries.join()}&callback=google_map_initialize`
+    }
+
     @autobind
     scriptLoaded() {
       this.setState({ loaded: true })
     }
 
     loadScript() {
-      const { apiKey, libraries, version } = this.props
       const script = document.createElement('script')
-
       window.google_map_initialize = this.scriptLoaded
 
       script.async = true
       script.defer = true
-      script.src = `${API_BASE_URL}?key=${apiKey}&version=${version}&libraries=${libraries.join()}&callback=google_map_initialize`
+      script.src = this.api
+      script.onerror = this.props.onScriptLoadError
       document.head.appendChild(script)
     }
 
@@ -81,6 +87,7 @@ export default function(BaseComponent) {
         apiKey,
         libraries,
         version,
+        onScriptLoadError,
         ...rest
       } = this.props
 
