@@ -27,7 +27,9 @@ export default function(BaseComponent) {
     static defaultProps = {
       libraries: [],
       version: '3',
-      onScriptLoadError: error => { window.mapLoadError = error },
+      onScriptLoadError: error => {
+        window.mapLoadError = error
+      },
     }
 
     state = {
