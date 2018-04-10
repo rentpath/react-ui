@@ -37,4 +37,33 @@ describe('Gmap', () => {
     expect(mapSpy).toHaveBeenCalledWith(expect.any(Object), 'click', expect.any(Function))
     expect(mapSpy).not.toHaveBeenCalledWith(expect.any(Object), 'mouseout', expect.any(Function))
   })
+
+  it('updates the map zoom when zoom prop changes', () => {
+    const wrapper = shallow(<Gmap zoom={10} />)
+    const setZoom = jest.fn()
+    const instance = wrapper.instance()
+    instance.map = {
+      ...instance.map,
+      setZoom,
+    }
+    const testZoom = 5
+    wrapper.setProps({ zoom: testZoom })
+    expect(setZoom).toHaveBeenCalledWith(testZoom)
+  })
+
+  it('updates the map center when center prop changes', () => {
+    const wrapper = shallow(<Gmap center={{ lat: 33.7490, lng: -84.3880 }} />)
+    const setCenter = jest.fn()
+    const instance = wrapper.instance()
+    instance.map = {
+      ...instance.map,
+      setCenter,
+    }
+    const testCenter = {
+      lat: 34.0701,
+      lng: -118.3497,
+    }
+    wrapper.setProps({ center: testCenter })
+    expect(setCenter).toHaveBeenCalledWith(testCenter)
+  })
 })
