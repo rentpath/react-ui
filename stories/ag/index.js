@@ -21,6 +21,10 @@ import {
   ExampleMobileMapListing,
   ExampleSingleFamily,
   ExampleDesktopMapPinListing,
+  ExampleDesktopListing,
+  ExampleSingleFamilyDesktopListing,
+  ExampleMobileListing,
+  ExampleSingleFamilyMobileListing,
 } from './Listings'
 
 import {
@@ -71,9 +75,13 @@ smallStories('Filters / PriceFilterCard / small', module)
 smallStories('Listings', module)
   .add('Mobile Map Listing', ExampleMobileMapListing)
   .add('Single Family Mobile Map Listing', ExampleSingleFamily)
+  .add('Mobile Listing', ExampleMobileListing)
+  .add('Single Family Mobile Listing', ExampleSingleFamilyMobileListing)
 
 largeStories('Listings', module)
   .add('DesktopMapPinListing', () => ExampleDesktopMapPinListing)
+  .add('Desktop Listing', ExampleDesktopListing)
+  .add('Single Family Desktop Listing', ExampleSingleFamilyDesktopListing)
 
 smallStories('Carousels', module)
   .add('Listing Carousel', () => DefaultListingCarousel)

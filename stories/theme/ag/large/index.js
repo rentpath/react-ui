@@ -3,7 +3,7 @@ import { ApplyButton, CancelButton } from './Buttons'
 import Card from './Card.css'
 import RadioButton from './RadioButton.css'
 import RadioGroup from './RadioGroup.css'
-import { DesktopMapPinListing } from './Listings'
+import { DesktopMapPinListing, Listing, DesktopListing } from './Listings'
 import {
   RadioButton as RadioButtonBase,
   RadioGroup as RadioGroupBase,
@@ -27,6 +27,7 @@ import {
 import {
   EmailModal,
 } from './Modals'
+import Banner from './Banner.css'
 
 export default compose({},
   ApplyButtonBase,
@@ -48,6 +49,9 @@ export default compose({},
   RadioGroupBase,
   RadioGroup,
   DesktopMapPinListing,
+  Listing,
+  DesktopListing,
+  Banner,
   GridViewHeader,
   EmailModal,
 )
