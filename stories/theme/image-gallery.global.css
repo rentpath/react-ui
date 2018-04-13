@@ -82,7 +82,7 @@
   cursor: pointer;
   outline: none;
   position: absolute;
-  z-index: 4; }
+  z-index: 100; }
   .image-gallery-fullscreen-button::before,
   .image-gallery-play-button::before,
   .image-gallery-left-nav::before,
@@ -181,7 +181,9 @@
   line-height: 0;
   overflow: hidden;
   position: relative;
-  white-space: nowrap; }
+  white-space: nowrap;
+  transform: translate3d(0, 0, 0)
+}
 
 .image-gallery-slide {
   background: #fff;
@@ -326,4 +328,3 @@
     .image-gallery-index {
       font-size: .8em;
       padding: 5px 10px; } }
-

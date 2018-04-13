@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { action } from '@storybook/addon-actions'
 import { ListingCarousel } from 'react-ui-ag/src'
-import { Card } from 'react-ui-core/src'
 import themed from 'react-themed'
 import omit from 'lodash/omit'
 
@@ -246,14 +245,11 @@ const singleFamilyProps = {
 }
 
 const DefaultListingCarouselComponent = ({ theme }) => (
-  <Card className={theme.DefaultListingCarouselCard}>
-    <ListingCarousel
-      listings={listings}
-      listingProps={listingProps}
-      singleFamilyListingProps={singleFamilyProps}
-      selectedIndex={listings.length - 1}
-    />
-  </Card>
+  <ListingCarousel
+    listings={listings.slice(0, 2)}
+    listingProps={listingProps}
+    singleFamilyListingProps={singleFamilyProps}
+  />
 )
 
 DefaultListingCarouselComponent.propTypes = {

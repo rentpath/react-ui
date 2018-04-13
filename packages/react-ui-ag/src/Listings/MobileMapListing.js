@@ -184,24 +184,22 @@ export default class MobileMapListing extends Component {
         : lazyLoad
     }
 
-    if (!isActive) {
-      const { server, dimensions } = photos
-      const firstPhoto = this.listingPhotos[0] || {}
-      listing.photo = { url: `${server}${firstPhoto.path}${dimensions}` }
-    }
+    // if (!isActive) {
+    //   const { server, dimensions } = photos
+    //   const firstPhoto = this.listingPhotos[0] || {}
+    //   listing.photo = { url: `${server}${firstPhoto.path}${dimensions}` }
+    // }
 
     return (
       <div className={theme.MobileMapListing_Top}>
-        {(isActive || this.loadedCarousel) &&
-          <ListingComponents.Photos
-            showNav
-            {...photos}
-            lazyLoad={lazyLoad}
-            className={theme.MobileMapListing_Photos}
-            onSlide={this.handlePhotoCarouselSlide}
-          />
-        }
-        {this.renderPhoto(lazyLoad)}
+        <ListingComponents.Photos
+          showNav
+          {...photos}
+          lazyLoad={lazyLoad}
+          className={theme.MobileMapListing_Photos}
+          onSlide={this.handlePhotoCarouselSlide}
+        />
+        {/*this.renderPhoto(lazyLoad)*/}
       </div>
     )
   }
