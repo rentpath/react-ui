@@ -11,7 +11,7 @@ import {
   SingleFamilyMobileMapListing,
 } from '../Listings'
 
-const DEBOUNCE_WAIT = 550
+const DEBOUNCE_WAIT = 1200
 
 @themed(/^ListingCarousel/,
   { pure: true }
