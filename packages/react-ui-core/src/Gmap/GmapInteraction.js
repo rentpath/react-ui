@@ -1,6 +1,5 @@
 import once from 'lodash/once'
 import get from 'lodash/fp/get'
-import curry from 'lodash/fp/curry'
 import { setupMarker, removeMarker } from './utils/markerHelpers'
 
 class GmapCallbackFactory {
@@ -22,7 +21,7 @@ class GmapCallbackFactory {
     }
 
     this.MarkerInteraction = {
-      setupMarker: curry(setupMarker)(map),
+      setupMarker: props => setupMarker(map, props),
       removeMarker,
     }
   }
