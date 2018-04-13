@@ -7,7 +7,7 @@ import { MobileMapListing } from '../../Listings'
 
 const ListingCarousel = ThemedListingCarousel.WrappedComponent
 const onClick = jest.fn()
-const DEBOUNCE_WAIT = 550
+const DEBOUNCE_WAIT = 1200
 
 const listings = [
   {
