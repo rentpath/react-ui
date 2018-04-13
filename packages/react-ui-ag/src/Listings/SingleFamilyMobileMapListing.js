@@ -52,9 +52,9 @@ export default class SingleFamilyMobileMapListing extends Component {
 
   @autobind
   handleCardClick() {
-    const { index, onClick } = this.props
+    const { index, onClick, listing } = this.props
 
-    if (onClick) onClick(index)
+    if (onClick) onClick(index, listing)
   }
 
   @autobind

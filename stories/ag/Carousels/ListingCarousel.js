@@ -8,6 +8,7 @@ import omit from 'lodash/omit'
 
 const listings = [
   {
+    id: '1',
     bedrooms: '1-3 Bedrooms',
     bathrooms: '2 Bathrooms',
     name: 'Awesome Property! - Also the longest line you\'ve ever seen',
@@ -41,6 +42,7 @@ const listings = [
     ],
   },
   {
+    id: '2',
     bedrooms: '2-4 Bedrooms',
     bathrooms: '1 Bathroom',
     name: 'Terrible Property',
@@ -74,6 +76,7 @@ const listings = [
     isFavorited: true,
   },
   {
+    id: '3',
     bedrooms: '1-4 Bedrooms',
     bathrooms: '3 Bathrooms',
     name: 'Mediocre Property',
@@ -106,34 +109,7 @@ const listings = [
     ],
   },
   {
-    bedrooms: '2 Bedrooms',
-    bathrooms: '1-3 Bathrooms',
-    name: 'Shrug Property',
-    city: 'Hello World Town',
-    state: 'HD',
-    price: '$20 / day',
-    rating: {
-      score: 2,
-      label: '567',
-      uniqueId: '5678',
-    },
-    photos: [
-      {
-        path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
-        caption: 'test 1',
-      },
-      {
-        path: 'imgr/d56984e959a3feb1235f85ee202a0fc6/',
-        caption: null,
-      },
-      {
-        path: 'imgr/fd972eb03a0463c484580349ad5177b7/',
-        caption: null,
-      },
-    ],
-    isFavorited: true,
-  },
-  {
+    id: '5',
     bedrooms: '3 Beds',
     bathrooms: '2 Bathrooms',
     city: 'Great Town',
@@ -164,6 +140,36 @@ const listings = [
     singleFamily: true,
   },
   {
+    id: '4',
+    bedrooms: '2 Bedrooms',
+    bathrooms: '1-3 Bathrooms',
+    name: 'Shrug Property',
+    city: 'Hello World Town',
+    state: 'HD',
+    price: '$20 / day',
+    rating: {
+      score: 2,
+      label: '567',
+      uniqueId: '5678',
+    },
+    photos: [
+      {
+        path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
+        caption: 'test 1',
+      },
+      {
+        path: 'imgr/d56984e959a3feb1235f85ee202a0fc6/',
+        caption: null,
+      },
+      {
+        path: 'imgr/fd972eb03a0463c484580349ad5177b7/',
+        caption: null,
+      },
+    ],
+    isFavorited: true,
+  },
+  {
+    id: '6',
     bedrooms: '2 Bedrooms',
     bathrooms: '1-3 Bathrooms',
     name: 'Shrug Property',
