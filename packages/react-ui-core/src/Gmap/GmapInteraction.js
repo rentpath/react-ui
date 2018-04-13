@@ -1,4 +1,7 @@
 import once from 'lodash/once'
+import get from 'lodash/fp/get'
+import curry from 'lodash/fp/curry'
+import { setupMarker, removeMarker } from './utils/markerHelpers'
 
 class GmapCallbackFactory {
   constructor() {
@@ -9,11 +12,18 @@ class GmapCallbackFactory {
     })
 
     this.call = (f, args) => {
-      if (map[f] && typeof map[f] === 'function') {
-        return map[f](...args)
+      const mapApiFunc = get(f)(map)
+
+      if (mapApiFunc && typeof mapApiFunc === 'function') {
+        return mapApiFunc(...args)
       }
 
       return undefined
+    }
+
+    this.MarkerInteraction = {
+      setupMarker: curry(setupMarker)(map),
+      removeMarker,
     }
   }
 }
