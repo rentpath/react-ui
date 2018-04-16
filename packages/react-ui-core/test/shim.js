@@ -28,6 +28,11 @@ global.google = {
     MarkerImage: () => ({}),
     Map: () => ({
       addListener: () => { },
+      data: {
+        setStyle: () => {},
+        loadGeoJson: () => {},
+        addGeoJson: () => {},
+      },
     }),
     Point: () => ({}),
     Size: () => ({}),
