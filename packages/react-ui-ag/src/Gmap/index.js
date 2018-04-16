@@ -1,4 +1,5 @@
 export { default as Gmap } from './Gmap'
 export { default as Marker } from './Marker'
 export { default as Markers } from './Markers'
+export { default as GeojsonMarkers } from './GeojsonMarkers'
 export { markerIcon, markerIconHover } from './markerIcons'

@@ -37,6 +37,7 @@ export {
   Gmap,
   Marker,
   Markers,
+  GeojsonMarkers,
   markerIcon,
   markerIconHover,
 } from './Gmap'
