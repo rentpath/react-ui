@@ -20,6 +20,7 @@
         "stage-0"
       ],
       "plugins": [
+        "transform-runtime",
         "transform-es2015-modules-commonjs",
         "transform-decorators-legacy",
         "dynamic-import-node"
