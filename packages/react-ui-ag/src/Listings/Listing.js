@@ -59,8 +59,12 @@ export default class Listing extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return this.props.isActive !== nextProps.isActive ||
-    this.props.listing.id !== nextProps.listing.id
+    const { isActive, listing } = this.props
+    const { id, isFavorited } = listing
+
+    return isActive !== nextProps.isActive ||
+    id !== nextProps.listing.id ||
+    isFavorited !== nextProps.listing.isFavorited
   }
 
   componentDidUpdate(prevProps) {
@@ -182,10 +186,10 @@ export default class Listing extends Component {
 
     return (
       <div className={theme.Listing_Banner}>
-        {listing.banners.map(banner =>
+        {listing.banners.map((banner, index) =>
           (
             <Banner
-              key={banner}
+              key={`${banner}_${index}`}
               name={banner}
             />
           )
