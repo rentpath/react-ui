@@ -1,5 +1,6 @@
 import once from 'lodash/once'
 import get from 'lodash/fp/get'
+import isArray from 'lodash/isArray'
 import { setupMarker, removeMarker } from './utils/markerHelpers'
 
 class GmapCallbackFactory {
@@ -14,7 +15,10 @@ class GmapCallbackFactory {
       const mapApiFunc = get(f)(map)
 
       if (mapApiFunc && typeof mapApiFunc === 'function') {
-        return mapApiFunc(...args)
+        if (isArray(args)) {
+          return mapApiFunc(...args)
+        }
+        return mapApiFunc(args)
       }
 
       return undefined
