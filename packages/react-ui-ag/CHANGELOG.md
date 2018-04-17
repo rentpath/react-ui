@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.18.1...@rentpath/react-ui-ag@3.0.0) (2018-04-17)
+
+
+### Bug Fixes
+
+* **ListingCarousel:** stops wrong listing cell from being activated on repeated click ([30873aa](https://github.com/rentpath/react-ui/commit/30873aa))
+* **react-ui-ag Listing component:** listing component is not rerendering on isFavorited prop change ([5645ee8](https://github.com/rentpath/react-ui/commit/5645ee8))
+
+
+### Features
+
+* **dependencies:** upgrade packages ([ca579bd](https://github.com/rentpath/react-ui/commit/ca579bd))
+* **react-ui-ag:** created Listing components for Desktop and Mobile ([4ad1fc3](https://github.com/rentpath/react-ui/commit/4ad1fc3))
+
+
+### BREAKING CHANGES
+
+* **dependencies:** Now requires react ^16.3.0 as a peer
+
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@0.18.1...@rentpath/react-ui-ag@2.0.0) (2018-04-09)
 

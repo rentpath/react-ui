@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.0.0"></a>
+# [7.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.14.1...@rentpath/react-ui-core@7.0.0) (2018-04-17)
+
+
+### Bug Fixes
+
+* **google map:** ssr map loading broken ([d46e579](https://github.com/rentpath/react-ui/commit/d46e579))
+* **ListingCarousel:** stops wrong listing cell from being activated on repeated click ([30873aa](https://github.com/rentpath/react-ui/commit/30873aa))
+
+
+### Features
+
+* **dependencies:** upgrade packages ([8d8f144](https://github.com/rentpath/react-ui/commit/8d8f144))
+* **dependencies:** upgrade packages ([ca579bd](https://github.com/rentpath/react-ui/commit/ca579bd))
+* **google map:** update map zoom and center on prop change ([ed3bdff](https://github.com/rentpath/react-ui/commit/ed3bdff))
+
+
+### BREAKING CHANGES
+
+* **dependencies:** Now requires react ^16.3.0 as a peer
+* **dependencies:** Now requires react ^16.3.0 as a peer
+
+
+
+
 <a name="6.0.0"></a>
 # [6.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.14.1...@rentpath/react-ui-core@6.0.0) (2018-04-09)
 
