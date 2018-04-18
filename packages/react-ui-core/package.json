@@ -62,7 +62,8 @@
     "react-lazyload": "2.3.0",
     "react-motion": "^0.5.2",
     "react-spinners": "^0.2.6",
-    "react-themed": "3.2.1"
+    "react-themed": "3.2.1",
+    "react": "^16.3.1"
   },
   "peerDependencies": {
     "lodash": "^4.17.5",

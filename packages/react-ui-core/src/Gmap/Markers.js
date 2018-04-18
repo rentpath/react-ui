@@ -7,8 +7,8 @@ const EMPTY_MARKERS = {}
 const MARKER = ({ properties, geometry }) => ({
   id: properties.id,
   position: {
-    lat: geometry.coordinates[0],
-    lng: geometry.coordinates[1],
+    lat: geometry.coordinates[1],
+    lng: geometry.coordinates[0],
   },
   title: properties.id,
   key: properties.id,
