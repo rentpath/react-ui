@@ -1,24 +1,29 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import DatePicker from 'react-datepicker'
+import DatePicker from 'react-basic-datepicker'
 
 export default class DateInput extends Component {
+  static propTypes = {
+    onChange: PropTypes.func,
+    className: PropTypes.string,
+    name: PropTypes.string,
+  }
 
- static propTypes = {
-   selected: PropTypes.object,
-   onChange: PropTypes.func,
-   maxDate: PropTypes.object,
-   minDate: PropTypes.object,
-   placeholderText: PropTypes.string,
- }
+  static defaultProps = {
+    placeholderText: 'Date',
+    className: 'DatePicker',
+  }
 
- static defaultProps = {
-   placeholderText: 'Date',
- }
+  render() {
+    const { onChange, className, name, ...rest } = this.props
 
- render() {
-   return (
-     <DatePicker {...this.props} />
-   )
- }
+    return (
+      <DatePicker
+        handleDateChange={onChange}
+        datepickerName={name}
+        datepickerClassName={className}
+        {...rest}
+      />
+    )
+  }
 }
