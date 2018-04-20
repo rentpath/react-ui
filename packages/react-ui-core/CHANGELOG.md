@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.0.0"></a>
+# [8.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@7.0.0...@rentpath/react-ui-core@8.0.0) (2018-04-20)
+
+
+### Bug Fixes
+
+* **@react-ui-core:** upgrading Mapbox version ([74448e9](https://github.com/rentpath/react-ui/commit/74448e9))
+
+
+### Code Refactoring
+
+* **react-ui-core/Gmap:** fixing call for deep functions, adding Marker Interaction ([f8bf88b](https://github.com/rentpath/react-ui/commit/f8bf88b))
+
+
+### BREAKING CHANGES
+
+* **@react-ui-core:** 0.44
+
+Fixing dep
+* **react-ui-core/Gmap:** none
+
+
+
+
 <a name="7.0.0"></a>
 # [7.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@4.14.1...@rentpath/react-ui-core@7.0.0) (2018-04-17)
 
