@@ -59,12 +59,13 @@ export default class Listing extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    const { isActive, listing } = this.props
+    const { isActive, listing, className } = this.props
     const { id, isFavorited } = listing
 
     return isActive !== nextProps.isActive ||
     id !== nextProps.listing.id ||
-    isFavorited !== nextProps.listing.isFavorited
+    isFavorited !== nextProps.listing.isFavorited ||
+    className !== nextProps.classname
   }
 
   componentDidUpdate(prevProps) {

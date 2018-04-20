@@ -3,8 +3,6 @@ export { default as SingleFamilyMobileMapListing } from './SingleFamilyMobileMap
 export { default as DesktopMapPinListing } from './DesktopMapPinListing'
 export { default as Listing } from './Listing'
 export { default as DesktopListing } from './DesktopListing'
-export { default as DesktopListingInfo } from './DesktopListingInfo'
 export { default as SingleFamilyDesktopListing } from './SingleFamilyDesktopListing'
 export { default as MobileListing } from './MobileListing'
-export { default as MobileListingInfo } from './MobileListingInfo'
 export { default as SingleFamilyMobileListing } from './SingleFamilyMobileListing'

@@ -1,55 +1,84 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
+import classnames from 'classnames'
+import { ListingComponents } from '@rentpath/react-ui-core'
 import Listing from './Listing'
-import DesktopListingInfo from './DesktopListingInfo'
 
-const buttonPropTypes = PropTypes.shape({
-  children: PropTypes.node,
-  onClick: PropTypes.func,
-  className: PropTypes.string,
-  valueLocation: PropTypes.string,
-})
+@themed([
+  'DesktopListing',
+  'BedsAndBaths',
+  'UnitLevelAvailabilityAndLastUpdated',
+  'LastUpdated',
+  'Phone',
+], { pure: true })
 
-@themed(['DesktopListing'])
-export default class DesktopListing extends Component {
+export default class DesktopListing extends PureComponent {
   static propTypes = {
-    index: PropTypes.number,
     listing: PropTypes.object,
     theme: PropTypes.object,
     className: PropTypes.string,
-    onClick: PropTypes.func,
-    photos: PropTypes.object,
     ratings: PropTypes.object,
-    ctaButtons: PropTypes.arrayOf(buttonPropTypes),
-    favoriteButton: buttonPropTypes,
-    lazyLoad: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.bool,
-    ]),
-    isActive: PropTypes.bool,
-    singleFamily: PropTypes.bool,
   }
 
   static defaultProps = {
-    isActive: true,
-    lazyLoad: true,
     theme: {},
     listing: {},
     ratings: {},
-    photos: {},
+  }
+
+  get renderInfo() {
+    const { theme, listing, ratings } = this.props
+    const { singleFamily, rating, lastUpdated, phone } = listing
+
+    return (
+      <React.Fragment>
+        <ListingComponents.Price />
+        <div className={theme.BedsAndBaths}>
+          <ListingComponents.Bedroom data-tid="bedroom" />
+          <ListingComponents.Bathroom />
+        </div>
+        {singleFamily ?
+          <ListingComponents.Availability /> :
+          (
+            <div className={theme.UnitLevelAvailabilityAndLastUpdated}>
+              <ListingComponents.UnitLevelAvailability />
+              {lastUpdated && <div className={theme.LastUpdated}>{lastUpdated}</div>}
+            </div>
+          )
+        }
+        {singleFamily ?
+          <ListingComponents.Address /> :
+          <ListingComponents.PropertyName />
+        }
+        {rating && !singleFamily &&
+          <ListingComponents.Ratings data-tid="ratings" {...ratings} />
+        }
+        {phone && !singleFamily &&
+          <div className={theme.Phone} data-tid="phone">{phone}</div>
+        }
+      </React.Fragment>
+    )
   }
 
   render() {
-    const { theme, ...props } = this.props
+    const {
+      theme,
+      className,
+      listing,
+      ratings,
+      ...props
+    } = this.props
 
     return (
       <Listing
-        {...this.props}
-        className={theme.DesktopListing}
-        listingInfoComponents={
-          <DesktopListingInfo {...props} />
-        }
+        listing={listing}
+        className={classnames(
+          className,
+          theme.DesktopListing
+        )}
+        listingInfoComponents={this.renderInfo}
+        {...props}
       />
     )
   }

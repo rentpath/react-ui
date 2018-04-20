@@ -1,61 +1,71 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
+import { ListingComponents } from '@rentpath/react-ui-core'
 import Listing from './Listing'
-import MobileListingInfo from './MobileListingInfo'
 
-const buttonPropTypes = PropTypes.shape({
-  children: PropTypes.node,
-  onClick: PropTypes.func,
-  className: PropTypes.string,
-  valueLocation: PropTypes.string,
-})
+@themed([
+  'MobileListing',
+  'MobileListingSingleFamily',
+  'BedsAndUla',
+], { pure: true })
 
-@themed(['MobileListing', 'MobileListingSingleFamily'])
-export default class MobileListing extends Component {
+export default class MobileListing extends PureComponent {
   static propTypes = {
-    index: PropTypes.number,
     listing: PropTypes.object,
     theme: PropTypes.object,
     className: PropTypes.string,
-    onClick: PropTypes.func,
-    photos: PropTypes.object,
     ratings: PropTypes.object,
-    propertyName: PropTypes.object,
-    ctaButtons: PropTypes.arrayOf(buttonPropTypes),
-    favoriteButton: buttonPropTypes,
-    lazyLoad: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.bool,
-    ]),
-    isActive: PropTypes.bool,
-    singleFamily: PropTypes.bool,
   }
 
   static defaultProps = {
-    isActive: true,
-    lazyLoad: true,
     theme: {},
-    listing: {},
     ratings: {},
-    photos: {},
+    listing: {},
+  }
+
+  get renderInfo() {
+    const { theme, listing, ratings } = this.props
+    const { singleFamily, rating } = listing
+
+    return (
+      <React.Fragment>
+        <ListingComponents.Price />
+        {singleFamily ?
+          <ListingComponents.Address /> :
+          <ListingComponents.PropertyName />
+        }
+        <div className={theme.BedsAndUla}>
+          <ListingComponents.Bedroom />
+          {!singleFamily && <ListingComponents.UnitLevelAvailability />}
+        </div>
+        {rating && !singleFamily &&
+          <ListingComponents.Ratings {...ratings} />
+        }
+        {singleFamily && <ListingComponents.Availability />}
+      </React.Fragment>
+    )
   }
 
   render() {
-    const { theme, ...props } = this.props
-    const { singleFamily } = this.props.listing
+    const {
+      theme,
+      className,
+      listing,
+      ratings,
+      ...props
+    } = this.props
 
     return (
       <Listing
-        {...this.props}
+        listing={listing}
         className={classnames(
           theme.MobileListing,
-          singleFamily ? theme.MobileListingSingleFamily : '',
+          this.props.listing ? theme.MobileListingSingleFamily : '',
         )}
-        listingInfoComponents={
-          <MobileListingInfo {...props} />
-        }
+        listingInfoComponents={this.renderInfo}
+        {...props}
       />
     )
   }
