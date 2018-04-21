@@ -7,8 +7,8 @@ import { setupMarker, removeMarker } from '../utils/markerHelpers'
 const MARKER = ({ properties, geometry }) => ({
   id: properties.id,
   position: {
-    lat: geometry.coordinates[0],
-    lng: geometry.coordinates[1],
+    lng: geometry.coordinates[0],
+    lat: geometry.coordinates[1],
   },
   title: properties.id,
   key: properties.id,
