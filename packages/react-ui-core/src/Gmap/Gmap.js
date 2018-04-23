@@ -108,9 +108,10 @@ export class Gmap extends PureComponent {
   get children() {
     const { map } = this.state
     const { children } = this.props
+    const props = { map }
 
-    return React.Children.map(React.Children.toArray(children), child =>
-      React.cloneElement(child, { map })
+    return React.Children.map(children, child =>
+      React.cloneElement(child, props)
     )
   }
 
