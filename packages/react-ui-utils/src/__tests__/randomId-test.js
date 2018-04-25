@@ -1,3 +1,4 @@
+import jsc from 'jsverify'
 import randomId from '../randomId'
 
 describe('utils/randomId', () => {
@@ -6,7 +7,14 @@ describe('utils/randomId', () => {
     expect(randomId()).not.toBe(randomId())
   })
 
-  it('uses a custom prefix', () => {
-    expect(randomId('prefix').substr(0, 6)).toBe('prefix')
+  jsc.property('first part of id is a mathematical subset of input', jsc.nestring, str => {
+    const prefix = randomId(str).split('-')[0]
+    return prefix.length <= str.length
+  })
+
+  it('starts the random ID with an alphanumiric/hyphenated/underscored prefix passed to the function', () => {
+    const validString = jsc.suchthat(jsc.string, '', str => str.match(/^[a-z0-9-_]*$/))
+    const idStartsWithInput = jsc.forall(validString, str => randomId(str).startsWith(str))
+    jsc.check(idStartsWithInput)
   })
 })
