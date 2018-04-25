@@ -14,3 +14,12 @@
   transform: translate(-50%, -50%);
   position: fixed;
 }
+
+.Gmap_OverlayView {
+  transform: translate(-50%, -50px);
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  white-space: nowrap;
+}

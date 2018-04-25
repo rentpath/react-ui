@@ -22,9 +22,28 @@ global.google = {
       getSouthWest: () => sw,
       getNorthEast: () => ne,
     }),
-    OverlayView: () => ({}),
-    InfoWindow: () => ({}),
-    Marker: () => ({}),
+    OverlayView: () => ({
+      setMap: () => {},
+      getPanes: () => ({
+        floatPane: {},
+        mapPane: {},
+        markerLayer: {},
+        overlayLayer: {},
+        overlayMouseTarget: {},
+      }),
+      getProjection: () => ({
+        fromLatLngToDivPixel: () => ({ x: 10, y: 50 }),
+      }),
+    }),
+    InfoWindow: () => ({
+      open: () => {},
+      close: () => {},
+      setContent: () => {},
+      addListener: () => {},
+    }),
+    Marker: () => ({
+      getPosition: () => ({}),
+    }),
     MarkerImage: () => ({}),
     Map: () => ({
       addListener: () => { },
