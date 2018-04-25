@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.1.0"></a>
+# [8.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@8.0.0...@rentpath/react-ui-core@8.1.0) (2018-04-25)
+
+
+### Bug Fixes
+
+* **google maps:** fix Marker events to match Google Maps API ([f7256ed](https://github.com/rentpath/react-ui/commit/f7256ed))
+* **google maps:** swap lat/lng to match geojson spec; efficiency tweaks ([3222a33](https://github.com/rentpath/react-ui/commit/3222a33))
+
+
+### Features
+
+* **google maps:** add Google Maps InfoWindow and OverlayView popups ([012461e](https://github.com/rentpath/react-ui/commit/012461e))
+
+
+
+
 <a name="8.0.0"></a>
 # [8.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@7.0.0...@rentpath/react-ui-core@8.0.0) (2018-04-20)
 
