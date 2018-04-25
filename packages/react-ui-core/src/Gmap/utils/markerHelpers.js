@@ -2,14 +2,27 @@ import omitBy from 'lodash/omitBy'
 import { setupEvents } from './mapEventHelpers'
 
 const EVENTS = {
+  onAnimationChanged: 'animation_changed',
   onClick: 'click',
+  onClickableChanged: 'clickable_changed',
+  onCursorChanged: 'cursor_changed',
   onDoubleClick: 'dblclick',
+  onDrag: 'drag',
   onDragEnd: 'dragend',
+  onDraggableChanged: 'draggable_changed',
+  onDragStart: 'dragstart',
+  onFlatChanged: 'flat_changed',
+  onIconChanged: 'icon_changed',
   onMouseDown: 'mousedown',
   onMouseOut: 'mouseout',
   onMouseOver: 'mouseover',
   onMouseUp: 'mouseup',
-  onRecenter: 'recenter',
+  onPositionChanged: 'position_changed',
+  onRightClick: 'rightclick',
+  onShapeChanged: 'shape_changed',
+  onTitleChanged: 'title_changed',
+  onVisibleChanged: 'visible_changed',
+  onZIndexChanged: 'zindex_changed',
 }
 
 export const removeMarker = marker => {
