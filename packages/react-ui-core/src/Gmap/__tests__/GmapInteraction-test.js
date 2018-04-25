@@ -57,7 +57,7 @@ describe('MarkerInteraction', () => {
     const result = GmapInteraction.MarkerInteraction.setupMarker({})
 
     expect(markerSpy).toHaveBeenCalled()
-    expect(result).toEqual({})
+    expect(typeof result.getPosition).toEqual('function')
   })
   it('removes a marker', () => {
     const setMap = jest.fn()

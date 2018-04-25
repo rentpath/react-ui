@@ -24,7 +24,7 @@ describe('markerHelpers', () => {
       const result = setupMarker({}, {})
 
       expect(markerSpy).toHaveBeenCalled()
-      expect(result).toEqual({})
+      expect(typeof result.getPosition).toBe('function')
       expect(setupEvents).toHaveBeenCalled()
     })
   })
