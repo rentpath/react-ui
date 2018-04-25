@@ -66,12 +66,14 @@ export class Gmap extends PureComponent {
       zoomControl: PropTypes.bool,
       streetViewControl: PropTypes.bool,
     }),
+    stylingFunction: PropTypes.func,
   }
 
   static defaultProps = {
     theme: {},
     zoom: DEFAULT_ZOOM,
     clickableIcons: false,
+    stylingFunction: () => ({}),
   }
 
   constructor(props) {
@@ -124,6 +126,7 @@ export class Gmap extends PureComponent {
       zoom,
       center,
       clickableIcons,
+      stylingFunction,
     } = this.props
 
     this.map = new window.google.maps.Map(this.googleMap.current, {
@@ -132,6 +135,8 @@ export class Gmap extends PureComponent {
       center: center || DEFAULT_CENTER,
       ...this.mapControls,
     })
+
+    this.map.data.setStyle(stylingFunction)
 
     setupEvents(this.map, EVENTS, this.props)
 
