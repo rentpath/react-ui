@@ -8,11 +8,20 @@ const randomStr = () => (
 )
 
 /**
+ * Generates a random number.
+ *
+ * @return {number}
+ */
+const randomNumber = () => (
+  Math.floor(Math.random() * 0xFFFF)
+)
+
+/**
  * Generates a random alphanumeric ID.
  *
  * @param {string} [prefix] An optional prefix.
  * @return {string}
  */
 export default prefix => (
-  `${prefix || randomStr()}-${Math.floor(Math.random() * 0xFFFF)}`.replace(/[^a-z0-9-_]/gi)
+  `${prefix || randomStr()}-${randomNumber()}`.replace(/[^a-z0-9-_]/gi, '')
 )
