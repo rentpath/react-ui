@@ -129,6 +129,7 @@ import {
   GmapWithSpinner,
   GmapWithSingleMarker,
   GmapWithMultipleMarkers,
+  GmapWithInfoWindow,
 } from './Gmap'
 
 import coreStories, { coreStoriesNoContainer } from './coreStories'
@@ -182,6 +183,7 @@ coreStoriesNoContainer('Gmap', module)
   .add('Gmap with spinner', () => GmapWithSpinner)
   .add('Gmap with marker', () => GmapWithSingleMarker)
   .add('Gmap with multiple markers', () => GmapWithMultipleMarkers)
+  .add('Gmap with infowindow', () => GmapWithInfoWindow)
 
 coreStories('Highlighter', module)
   .add('Default Highlighter', () => DefaultHighlighter)

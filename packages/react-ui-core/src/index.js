@@ -119,6 +119,7 @@ export {
   Gmap,
   GmapSpinner,
   GmapInteraction,
+  InfoWindow,
   Marker,
   Markers,
 } from './Gmap'

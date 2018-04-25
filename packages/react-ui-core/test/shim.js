@@ -23,7 +23,12 @@ global.google = {
       getNorthEast: () => ne,
     }),
     OverlayView: () => ({}),
-    InfoWindow: () => ({}),
+    InfoWindow: () => ({
+      open: () => {},
+      close: () => {},
+      setContent: () => {},
+      addListener: () => {},
+    }),
     Marker: () => ({}),
     MarkerImage: () => ({}),
     Map: () => ({
