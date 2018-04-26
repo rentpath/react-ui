@@ -28,6 +28,7 @@ export default class Carousel extends Component {
     lazyLoad: PropTypes.bool,
     selectedIndex: PropTypes.number,
     onSlide: PropTypes.func,
+    onImageClick: PropTypes.func,
     showNav: PropTypes.bool,
     navigation: PropTypes.shape({
       previous: PropTypes.oneOfType([
@@ -68,6 +69,12 @@ export default class Carousel extends Component {
     if (this.props.selectedIndex !== nextProps.selectedIndex) {
       this.slideToIndex(nextProps.selectedIndex)
     }
+  }
+
+  @autobind
+  onImageClick() {
+    this.props.onImageClick()
+    console.log('Inside carousel')
   }
 
   @autobind
@@ -191,6 +198,7 @@ export default class Carousel extends Component {
   render() {
     const {
       onSlide,
+      onImageClick,
       selectedIndex,
       className,
       theme,
@@ -222,6 +230,7 @@ export default class Carousel extends Component {
           {...rest}
           {...this.navigation}
           ref={carousel => { this.carousel = carousel }}
+          onClick={this.onImageClick}
         />
       </div>
     )
