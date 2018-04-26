@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.4"></a>
+## [3.0.4](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@3.0.3...@rentpath/react-ui-ag@3.0.4) (2018-04-26)
+
+
+### Bug Fixes
+
+* **react-ui-ag:** add PropertyName object to DesktopListing ([56db940](https://github.com/rentpath/react-ui/commit/56db940))
+
+
+
+
 <a name="3.0.3"></a>
 ## [3.0.3](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@3.0.2...@rentpath/react-ui-ag@3.0.3) (2018-04-25)
 
