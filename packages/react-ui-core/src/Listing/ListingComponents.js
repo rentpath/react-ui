@@ -67,7 +67,7 @@ Ratings.contextTypes = {
 }
 
 const Photos = (props, { photos }) => (
-  photos ? <PhotoCarousel {...props} items={photos} /> : null
+  photos ? <PhotoCarousel {...props} items={photos}/> : null
 )
 
 Photos.contextTypes = {

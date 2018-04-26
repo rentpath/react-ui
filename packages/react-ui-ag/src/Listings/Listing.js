@@ -40,6 +40,7 @@ export default class Listing extends Component {
     ]),
     isActive: PropTypes.bool,
     listingInfoComponents: PropTypes.node,
+    onImageClick: PropTypes.func,
   }
 
   static defaultProps = {
@@ -200,7 +201,7 @@ export default class Listing extends Component {
   }
 
   renderPhotoCarousel() {
-    const { listing, theme, photos, isActive } = this.props
+    const { listing, theme, photos, isActive, onImageClick } = this.props
     let { lazyLoad } = this.props
 
     if (lazyLoad && typeof lazyLoad === 'boolean') {
@@ -224,6 +225,7 @@ export default class Listing extends Component {
             lazyLoad={lazyLoad}
             className={theme.Listing_Photos}
             onSlide={this.handlePhotoCarouselSlide}
+            onImageClick={onImageClick}
           />
         }
         {this.renderPhoto(lazyLoad)}

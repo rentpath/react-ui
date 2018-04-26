@@ -95,6 +95,7 @@ export const ExampleDesktopListing = () => {
       {...props}
       listing={listing}
       isActive={isActive}
+      onImageClick={() => console.log('testing')}
     />
   )
 }
@@ -110,6 +111,7 @@ export const ExampleSingleFamilyDesktopListing = () => {
       {...singleFamilyProps}
       listing={listing}
       isActive={isActive}
+      onImageClick={() => console.log('testing')}
     />
   )
 }

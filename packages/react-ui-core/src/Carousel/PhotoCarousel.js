@@ -25,6 +25,7 @@ export default class PhotoCarousel extends PureComponent {
       PropTypes.bool,
       PropTypes.object,
     ]),
+    onImageClick: PropTypes.func,
   }
 
   static defaultProps = {
@@ -65,6 +66,7 @@ export default class PhotoCarousel extends PureComponent {
   renderCarousel() {
     const {
       className,
+      onImageClick,
       theme,
       items,
       lazyLoad,
@@ -82,6 +84,7 @@ export default class PhotoCarousel extends PureComponent {
           theme.PhotoCarousel,
           className,
         )}
+        onImageClick={onImageClick}
       />
     )
   }
