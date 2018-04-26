@@ -19,16 +19,18 @@ export default class DesktopListing extends PureComponent {
     theme: PropTypes.object,
     className: PropTypes.string,
     ratings: PropTypes.object,
+    propertyName: PropTypes.object,
   }
 
   static defaultProps = {
     theme: {},
     listing: {},
     ratings: {},
+    propertyName: {},
   }
 
   get renderInfo() {
-    const { theme, listing, ratings } = this.props
+    const { theme, listing, ratings, propertyName } = this.props
     const { singleFamily, rating, lastUpdated, phone } = listing
 
     return (
@@ -49,7 +51,7 @@ export default class DesktopListing extends PureComponent {
         }
         {singleFamily ?
           <ListingComponents.Address /> :
-          <ListingComponents.PropertyName />
+          <ListingComponents.PropertyName {...propertyName} />
         }
         {rating && !singleFamily &&
           <ListingComponents.Ratings data-tid="ratings" {...ratings} />
