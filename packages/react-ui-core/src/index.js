@@ -120,6 +120,7 @@ export {
   GmapSpinner,
   GmapInteraction,
   InfoWindow,
+  Layer,
   Marker,
   Markers,
   OverlayView,
