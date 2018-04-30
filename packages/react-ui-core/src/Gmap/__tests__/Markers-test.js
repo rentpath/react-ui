@@ -26,17 +26,17 @@ describe('Markers', () => {
   })
 
   describe('append', () => {
-    it('does not clear out existing markers if append is true', () => {
+    it('clears out all markers when append is false (default)', () => {
       const wrapper = shallow(<Markers map={{ google: 'map' }} geojson={geojson} />)
       removeMarker.mockClear()
-      wrapper.instance().render()
+      wrapper.setProps({ geojson: null })
       expect(removeMarker).toHaveBeenCalledTimes(3)
     })
 
-    it('clears out all markers when append is false (default)', () => {
-      const wrapper = shallow(<Markers map={{ google: 'map' }} geojson={geojson} append />)
+    it('does not clear out existing markers if append is true', () => {
+      const wrapper = shallow(<Markers map={{ google: 'map' }} append />)
       removeMarker.mockClear()
-      wrapper.instance().render()
+      wrapper.setProps({ geojson })
       expect(removeMarker).not.toHaveBeenCalled()
     })
   })
@@ -48,6 +48,13 @@ describe('Markers', () => {
     expect(removeMarker).toHaveBeenCalledTimes(3)
   })
 
+  it('calls onMarkersReady with empty object on unmount', () => {
+    const callback = jest.fn()
+    const wrapper = shallow(<Markers map={{ google: 'map' }} geojson={geojson} onMarkersReady={callback} />)
+    wrapper.unmount()
+    expect(callback).toHaveBeenCalledWith({})
+  })
+
   describe('render', () => {
     it('adds markers on render if map exists', () => {
       shallow(<Markers map={{ google: 'map' }} geojson={geojson} />)
@@ -57,6 +64,12 @@ describe('Markers', () => {
     it('does not add markers if map does not exist', () => {
       shallow(<Markers geojson={geojson} />)
       expect(setupMarker).not.toHaveBeenCalled()
+    })
+
+    it('calls onMarkersReady when markers are created', () => {
+      const callback = jest.fn()
+      shallow(<Markers map={{ google: 'map' }} geojson={geojson} onMarkersReady={callback} />)
+      expect(callback).toHaveBeenCalledTimes(1)
     })
   })
 
