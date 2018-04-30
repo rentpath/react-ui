@@ -17,4 +17,5 @@
   width: 300px;
   padding: 0 100px;
   overflow: hidden;
+  transform-style: preserve-3d;
 }

@@ -34,15 +34,14 @@ export default class ListingCarousel extends PureComponent {
 
   constructor(props) {
     super(props)
-    this.state = { selectedIndex: this.props.selectedIndex }
+    this.state = {
+      selectedIndex: this.props.selectedIndex,
+      selectedListingId: this.props.listings[this.props.selectedIndex].id,
+    }
   }
 
   componentDidMount() {
-    this.listingClickHandler = debounce(this.listingClickHandler, DEBOUNCE_WAIT, {
-      leading: true,
-      trailing: false,
-      maxWait: DEBOUNCE_WAIT,
-    })
+    this.listingClickHandler = this.listingClickHandler
   }
 
   componentWillReceiveProps(nextProps) {
@@ -54,30 +53,42 @@ export default class ListingCarousel extends PureComponent {
   @autobind
   updateSelectedIndex(selectedIndex) {
     const { onSlide, listings } = this.props
-    this.setState({ selectedIndex })
+    this.setState({ selectedIndex, selectedListingId: listings[selectedIndex].id })
     if (onSlide) onSlide(listings[selectedIndex], selectedIndex)
   }
 
   @autobind
-  listingClickHandler(index) {
+  listingClickHandler(foo, listing) {
+    console.log('listing', listing)
+    const index = this.props.listings.findIndex(l => {
+      console.log(l, listing)
+      return l.id === listing.id
+    })
+
+    console.log(foo, listing, index)
+
     if (index !== this.state.selectedIndex) {
       this.updateSelectedIndex(index)
     } else if (this.props.listingProps.onClick) {
       const { listings } = this.props
-      this.props.listingProps.onClick(index, listings[index])
+      this.props.listingProps.onClick(index, listings)
     }
   }
 
+  @autobind
   renderListing(listing, index) {
     const { listingProps, singleFamilyListingProps } = this.props
     const ListingComponent = listing.singleFamily ? SingleFamilyMobileMapListing : MobileMapListing
     const props = listing.singleFamily ? singleFamilyListingProps : listingProps
+
+    console.log(listing.id, this.state.selectedListingId)
+
     return (
       <ListingComponent
-        index={index}
+        index={listing.id}
         listing={listing}
         {...props}
-        isActive={index === this.state.selectedIndex}
+        isActive={listing.id === this.state.selectedListingId}
         onClick={this.listingClickHandler}
       />
     )
@@ -93,6 +104,8 @@ export default class ListingCarousel extends PureComponent {
       ...props
     } = this.props
 
+    console.log(this.props.listings)
+
     return (
       <Carousel
         className={classnames(
@@ -101,7 +114,8 @@ export default class ListingCarousel extends PureComponent {
         )}
         selectedIndex={this.state.selectedIndex}
         onSlide={this.updateSelectedIndex}
-        items={listings.map((listing, i) => this.renderListing(listing, i))}
+        renderItem={this.renderListing}
+        items={listings}
         {...props}
       />
     )

@@ -216,9 +216,10 @@ export default class Carousel extends Component {
           showPlayButton={false}
           showFullscreenButton={false}
           startIndex={selectedIndex}
-          infinite={false}
+          infinite
           swipeThreshold={10}
           preventDefaultTouchmoveEvent
+          useTranslate3D
           {...rest}
           {...this.navigation}
           ref={carousel => { this.carousel = carousel }}

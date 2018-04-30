@@ -58,14 +58,12 @@ export default class MobileMapListing extends Component {
 
   shouldComponentUpdate(nextProps) {
     return this.props.isActive !== nextProps.isActive ||
-    this.props.listing.id !== nextProps.listing.id ||
-    this.props.listing.isFavorited !== nextProps.listing.isFavorited
+      this.props.listing.id !== nextProps.listing.id ||
+      this.props.listing.isFavorited !== nextProps.listing.isFavorited
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.isActive !== prevProps.isActive && !prevProps.isActive) {
-      forceCheck()
-    }
+  componentDidUpdate() {
+    forceCheck()
   }
 
   get listingPhotos() {
@@ -75,6 +73,8 @@ export default class MobileMapListing extends Component {
   @autobind
   handleCardClick() {
     const { index, listing, onClick } = this.props
+
+    console.log('handleCardClick', index, listing)
 
     if (onClick) onClick(index, listing)
   }
