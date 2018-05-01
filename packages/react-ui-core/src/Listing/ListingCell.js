@@ -67,6 +67,7 @@ export default class ListingCell extends Component {
   shouldComponentUpdate(nextProps) {
     return !isEqual(nextProps.listing, this.props.listing)
       || this.props.isActive !== nextProps.isActive
+      || this.props.className !== nextProps.className
   }
 
   @autobind
