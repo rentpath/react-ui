@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="9.1.0"></a>
+# [9.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@9.0.0...@rentpath/react-ui-core@9.1.0) (2018-05-01)
+
+
+### Bug Fixes
+
+* **ListingCell:** -Allow rerender on classname change ([70bc301](https://github.com/rentpath/react-ui/commit/70bc301))
+
+
+### Features
+
+* **google maps:** add onMarkersReady event to access Google Markers by listing id ([e4c7f09](https://github.com/rentpath/react-ui/commit/e4c7f09))
+
+
+
+
 <a name="8.1.0"></a>
 # [8.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@8.0.0...@rentpath/react-ui-core@8.1.0) (2018-04-25)
 
