@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.7"></a>
+## [3.0.7](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@3.0.6...@rentpath/react-ui-ag@3.0.7) (2018-05-02)
+
+
+### Bug Fixes
+
+* **google maps:** children to array ([d748873](https://github.com/rentpath/react-ui/commit/d748873))
+
+
+
+
 <a name="3.0.6"></a>
 ## [3.0.6](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@3.0.5...@rentpath/react-ui-ag@3.0.6) (2018-05-01)
 
