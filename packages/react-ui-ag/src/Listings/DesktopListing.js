@@ -69,6 +69,7 @@ export default class DesktopListing extends PureComponent {
       className,
       listing,
       ratings,
+      propertyName,
       ...props
     } = this.props
 
