@@ -10,11 +10,13 @@ export default class OverlayView extends PureComponent {
     map: PropTypes.object,
     anchor: PropTypes.object,
     children: PropTypes.node.isRequired,
+    preventBubbleEvents: PropTypes.bool,
     className: PropTypes.string,
     theme: PropTypes.object,
   }
 
   static defaultProps = {
+    preventBubbleEvents: true,
     className: '',
     theme: {},
   }
@@ -52,12 +54,19 @@ export default class OverlayView extends PureComponent {
   }
 
   initOverlayView() {
-    const { map, theme, className } = this.props
+    const {
+      map,
+      theme,
+      className,
+      preventBubbleEvents,
+    } = this.props
 
     this.container = document.createElement('div')
     this.container.style.position = 'absolute'
     this.container.style.display = 'none'
+    this.container.style.cursor = 'auto'
     this.container.className = classnames(className, theme.Gmap_OverlayView)
+    if (preventBubbleEvents) this.preventBubbleEvents()
 
     this.overlay = new window.google.maps.OverlayView()
     this.overlay.onAdd = this.addChildren.bind(this)
@@ -65,6 +74,24 @@ export default class OverlayView extends PureComponent {
     this.overlay.draw = this.drawOverlay.bind(this)
 
     this.overlay.setMap(map)
+  }
+
+  preventBubbleEvents() {
+    const stopPropagation = e => e.stopPropagation()
+    const events = [
+      'click',
+      'dblclick',
+      'contextmenu',
+      'wheel',
+      'mousedown',
+      'mousemove',
+      'touchstart',
+      'pointerdown',
+    ]
+
+    events.forEach(event => (
+      this.container.addEventListener(event, stopPropagation, false)
+    ))
   }
 
   addChildren() {
