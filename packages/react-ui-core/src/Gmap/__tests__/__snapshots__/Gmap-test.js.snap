@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gmap clones children correctly renders no children when none defined 1`] = `
+<div
+  className=""
+  data-tid="google-map"
+/>
+`;
+
+exports[`Gmap clones children correctly renders only children that are not null / undefined and passes map as a prop  1`] = `
+<div
+  className=""
+  data-tid="google-map"
+>
+  <div
+    map={
+      Object {
+        "addListener": [Function],
+        "data": Object {
+          "addGeoJson": [Function],
+          "loadGeoJson": [Function],
+          "setStyle": [Function],
+        },
+      }
+    }
+  />
+  <div
+    map={
+      Object {
+        "addListener": [Function],
+        "data": Object {
+          "addGeoJson": [Function],
+          "loadGeoJson": [Function],
+          "setStyle": [Function],
+        },
+      }
+    }
+  />
+</div>
+`;

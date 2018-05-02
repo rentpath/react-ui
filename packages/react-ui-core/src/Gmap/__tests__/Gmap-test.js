@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import renderer from 'react-test-renderer'
 import { Gmap as ThemedGmap } from '../Gmap'
 
 const Gmap = ThemedGmap.WrappedComponent
@@ -65,5 +66,25 @@ describe('Gmap', () => {
     }
     wrapper.setProps({ center: testCenter })
     expect(setCenter).toHaveBeenCalledWith(testCenter)
+  })
+
+  describe('clones children correctly', () => {
+    it('renders only children that are not null / undefined and passes map as a prop ', () => {
+      const snap = renderer
+        .create(
+          <Gmap>
+            <div />
+            {null}
+            <div />
+          </Gmap>
+        )
+        .toJSON()
+      expect(snap).toMatchSnapshot()
+    })
+
+    it('renders no children when none defined', () => {
+      const snap = renderer.create(<Gmap />).toJSON()
+      expect(snap).toMatchSnapshot()
+    })
   })
 })
