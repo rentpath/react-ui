@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="9.1.1"></a>
+## [9.1.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@9.1.0...@rentpath/react-ui-core@9.1.1) (2018-05-02)
+
+
+### Bug Fixes
+
+* **google maps:** children to array ([d748873](https://github.com/rentpath/react-ui/commit/d748873))
+
+
+
+
 <a name="9.1.0"></a>
 # [9.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@9.0.0...@rentpath/react-ui-core@9.1.0) (2018-05-01)
 
