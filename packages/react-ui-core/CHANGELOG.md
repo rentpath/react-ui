@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="9.3.0"></a>
+# [9.3.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@9.1.1...@rentpath/react-ui-core@9.3.0) (2018-05-03)
+
+
+### Bug Fixes
+
+* **mapbox:** reverting mapbox due to crashing ([5399fce](https://github.com/rentpath/react-ui/commit/5399fce))
+
+
+### Features
+
+* **google maps:** add option to prevent bubbling events on overlay view ([3712b8d](https://github.com/rentpath/react-ui/commit/3712b8d))
+
+
+
+
 <a name="9.2.0"></a>
 # [9.2.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@9.1.1...@rentpath/react-ui-core@9.2.0) (2018-05-02)
 
