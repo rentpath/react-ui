@@ -46,6 +46,7 @@ import {
   LabeledRatingBar,
   MaxScoreTenRatingBar,
   PartialRatingBar,
+  HandleRatingClick,
 } from './RatingBar'
 
 import {
@@ -242,6 +243,7 @@ coreStories('RatingBar', module)
   .add('Labeled Rating Bar', () => LabeledRatingBar)
   .add('Max Score of 10 Bar', () => MaxScoreTenRatingBar)
   .add('Partial Rating Bar', () => PartialRatingBar)
+  .add('onClick for Rating Vote', () => HandleRatingClick)
 
 coreStories('Text', module)
   .add('Text', () => Text)
