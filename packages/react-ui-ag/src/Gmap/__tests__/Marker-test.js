@@ -11,7 +11,6 @@ describe('ag/Marker', () => {
   })
 
   it('applies an default `icon` to marker', () => {
-    const wrapper = shallow(<Marker map={map} />)
     const icon = {
       path: window.google.maps.SymbolPath.CIRCLE,
       fillColor: '#d42022',
@@ -21,7 +20,8 @@ describe('ag/Marker', () => {
       strokeWeight: 2,
       anchor: new window.google.maps.Point(0, 0),
     }
-
-    expect(wrapper.prop('icon')).toEqual(icon)
+    const marker = () => ({ icon })
+    const wrapper = shallow(<Marker map={map} marker={marker} />)
+    expect(wrapper.find('Marker').prop('marker')()).toHaveProperty('icon', icon)
   })
 })

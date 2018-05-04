@@ -1,1 +1,1 @@
-export { DefaultGmap, OneMarker, MultipleMarkers } from './Gmap'
+export { DefaultGmap, PdpMap, MultipleMarkers } from './Gmap'

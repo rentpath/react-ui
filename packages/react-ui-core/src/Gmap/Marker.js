@@ -14,27 +14,53 @@ const EVENTS = {
 }
 
 const EVENT_NAMES = Object.keys(EVENTS)
+const NOOP = () => ({})
 
 class Marker extends PureComponent {
   static propTypes = {
     map: PropTypes.object,
+    marker: PropTypes.func,
+  }
+
+  static defaultProps = {
+    marker: NOOP,
+  }
+
+  componentDidMount() {
+    this.setupMarker()
+  }
+
+  componentDidUpdate() {
+    this.clearMarker()
+    this.setupMarker()
   }
 
   componentWillUnmount() {
-    if (this.marker) {
-      removeMarker(this.marker)
-      this.marker = null
-    }
+    this.clearMarker()
   }
 
   setupMarker() {
-    const { map, ...rest } = this.props
-    this.marker = setupMarker(map, rest)
-    return null
+    const { map } = this.props
+    this.markerInstance = setupMarker(map, this.marker())
+  }
+
+  marker() {
+    const { map, marker, ...rest } = this.props
+    return {
+      ...rest,
+      ...marker(rest),
+    }
+  }
+
+  clearMarker() {
+    if (this.marker) {
+      removeMarker(this.marker)
+      this.markerInstance = null
+    }
   }
 
   render() {
-    return this.setupMarker()
+    return null
   }
 }
 

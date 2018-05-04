@@ -1,29 +1,45 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Markers as Gmarkers } from '@rentpath/react-ui-core'
-import { markerIcon, markerIconHover } from './markerIcons'
+import {
+  markerIcon as iconDefault,
+  markerIconHover as iconHoverDefault,
+} from './markerIcons'
 
 const NOOP = () => ({})
 
 export default class Markers extends PureComponent {
   static propTypes = {
     marker: PropTypes.func,
+    markerIcon: PropTypes.func,
+    markerIconHover: PropTypes.func,
+    onMouseOver: PropTypes.func,
+    onMouseOut: PropTypes.func,
   }
 
   static defaultProps = {
     marker: NOOP,
+    markerIcon: iconDefault,
+    markerIconHover: iconHoverDefault,
   }
 
   get marker() {
-    const originalIcon = markerIcon()
+    const {
+      markerIcon,
+      markerIconHover,
+      onMouseOver,
+      onMouseOut,
+    } = this.props
 
     return feature => ({ // eslint-disable-line no-unused-vars
-      icon: originalIcon,
+      icon: markerIcon(),
       onMouseOver: (event, props, marker) => {
-        marker.setIcon(markerIconHover())
+        if (markerIconHover) marker.setIcon(markerIconHover())
+        if (onMouseOver) onMouseOver(marker)
       },
       onMouseOut: (event, props, marker) => {
-        marker.setIcon(originalIcon)
+        marker.setIcon(markerIcon())
+        if (onMouseOut) onMouseOut(marker)
       },
       ...this.props.marker(),
     })

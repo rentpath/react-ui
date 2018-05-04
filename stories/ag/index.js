@@ -46,7 +46,7 @@ import {
 
 import {
   DefaultGmap,
-  OneMarker,
+  PdpMap,
   MultipleMarkers,
 } from './Gmap'
 
@@ -107,5 +107,5 @@ largeStories('Modals', module)
 
 largeStories('Gmap', module)
   .add('Map', DefaultGmap)
-  .add('Map with one marker', OneMarker)
+  .add('PDP Map', PdpMap)
   .add('Map with multiple markers', MultipleMarkers)
