@@ -15,14 +15,13 @@ const baseListing = {
   rating: {
     score: 4,
     label: '20',
-    uniqueId: '123',
   },
   phone: '555-867-5309',
 }
 
 const ratingProps = {
-  fillColor: 'yellow',
-  backgroundFillColor: '#ffffff',
+  score: 4,
+  label: '20',
 }
 
 export const DefaultListingCell = (

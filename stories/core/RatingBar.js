@@ -1,33 +1,24 @@
 import React from 'react'
 import { RatingBar } from 'react-ui-core/src'
-import { Square, Circle } from './SampleRatingItem'
+import theme from '../theme/core/RatingBar.css'
 
 export const DefaultRatingBar = (
   <RatingBar
-    uniqueId="default"
+    className={theme.themedRating_star}
     score={4}
-  />
-)
-
-export const SquareRatingBar = (
-  <RatingBar
-    uniqueId="square"
-    RatingItem={Square}
-    score={3}
   />
 )
 
 export const CircleRatingBar = (
   <RatingBar
-    uniqueId="circle"
-    RatingItem={Circle}
+    className={theme.themedRating_circle}
     score={4}
   />
 )
 
 export const LabeledRatingBar = (
   <RatingBar
-    uniqueId="three"
+    className={theme.themedRating_star}
     score={3}
     label="3 out of 5"
   />
@@ -35,7 +26,7 @@ export const LabeledRatingBar = (
 
 export const MaxScoreTenRatingBar = (
   <RatingBar
-    uniqueId="maxScore"
+    className={theme.themedRating_star10}
     maxScore={10}
     score={7}
     label="7 out of 10"
@@ -44,24 +35,7 @@ export const MaxScoreTenRatingBar = (
 
 export const PartialRatingBar = (
   <RatingBar
-    uniqueId="partial"
+    className={theme.themedRating_star}
     score={3.5}
-  />
-)
-
-export const ColorFilledRatingBar = (
-  <RatingBar
-    uniqueId="colorFilled"
-    score={3.5}
-    fillColor="royalblue"
-  />
-)
-
-export const TwoColoredRatingBar = (
-  <RatingBar
-    uniqueId="twoColor"
-    score={3.5}
-    fillColor="gold"
-    backgroundFillColor="black"
   />
 )
