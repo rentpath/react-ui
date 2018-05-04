@@ -42,6 +42,7 @@ global.google = {
       addListener: () => {},
     }),
     Marker: () => ({
+      setMap: () => { },
       getPosition: () => ({}),
     }),
     MarkerImage: () => ({}),
