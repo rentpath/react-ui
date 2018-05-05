@@ -32,7 +32,6 @@ width: 20px * 5 stars = 100px
   background-image: GrayStar;
   height: 20px;
   width: 100px;
-  max-width: 100px;
 }
 
 .themedRating_starAgMobile .RatingBar_Icons {
@@ -43,7 +42,6 @@ width: 20px * 5 stars = 100px
   background-image: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDUxIDQ4Ij48cGF0aCBmaWxsPSIjQ0VDRUNFIiBkPSJNMjUgMWw2IDE3aDE4TDM1IDI5bDUgMTctMTUtMTAtMTUgMTAgNS0xN0wxIDE4aDE4eiIvPjwvc3ZnPg==);
   height: 10px;
   width: 50px;
-  max-width: 50px;
 }
 
 .themedRating_starAgDesktop .RatingBar_Icons {
@@ -54,7 +52,6 @@ width: 20px * 5 stars = 100px
   background-image: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDUxIDQ4Ij48cGF0aCBmaWxsPSIjQ0VDRUNFIiBkPSJNMjUgMWw2IDE3aDE4TDM1IDI5bDUgMTctMTUtMTAtMTUgMTAgNS0xN0wxIDE4aDE4eiIvPjwvc3ZnPg==);
   height: 12px;
   width: 60px;
-  max-width: 60px;
 }
 
 .themedRating_starAgCarousel .RatingBar_Icons {
@@ -65,7 +62,6 @@ width: 20px * 5 stars = 100px
   background-image: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA1MSA0OCI+PHBhdGggZmlsbD0iI0NFQ0VDRSIgZD0iTTI1IDFsNiAxN2gxOEwzNSAyOWw1IDE3LTE1LTEwLTE1IDEwIDUtMTdMMSAxOGgxOHoiLz48L3N2Zz4=);
   height: 8px;
   width: 40px;
-  max-width: 40px;
 }
 
 .themedRating_star10 .RatingBar_Icons {
@@ -76,7 +72,6 @@ width: 20px * 5 stars = 100px
   background-image: GrayStar;
   width: 200px;
   height: 20px;
-  max-width: 200px;
 }
 
 .themedRating_circle .RatingBar_Icons {
@@ -86,5 +81,4 @@ width: 20px * 5 stars = 100px
 .themedRating_circle .RatingBar_Background {
   height: 20px;
   width: 100px;
-  max-width: 100px;
 }

@@ -23,23 +23,23 @@ export default class RatingBar extends PureComponent {
 
   get ratingItems() {
     const {
+      theme,
       score,
       maxScore,
-      theme,
-      className,
       ...props
     } = this.props
 
-    const scoreWidth = {
-      width: `${(score / maxScore) * 100}%`,
-    }
+    const calcScore = (score / maxScore)
+    const scorePercent = (calcScore > 1 ? 1 : calcScore) * 100
 
     return (
       <div
         className={theme.RatingBar_Background} {...props}
       >
         <div
-          className={theme.RatingBar_Icons} style={scoreWidth}
+          className={theme.RatingBar_Icons} style={{
+            width: `${scorePercent}%`,
+          }}
         />
       </div>
     )
