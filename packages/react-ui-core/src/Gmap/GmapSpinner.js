@@ -26,6 +26,8 @@ export default class MapSpinner extends PureComponent {
     this.state = {
       loading: this.props.loading,
     }
+
+    this.closeTimer = null
   }
 
   componentDidUpdate(nextProps) {
@@ -34,11 +36,15 @@ export default class MapSpinner extends PureComponent {
     }
   }
 
+  componentWillUnmount() {
+    window.clearTimeout(this.closeTimer)
+  }
+
   close() {
     const { closeDelay } = this.props
 
     // add timeout so the gray background isn't the only thing we see
-    setTimeout(() => {
+    this.closeTimer = window.setTimeout(() => {
       this.setState({ loading: false })
     }, closeDelay)
   }

@@ -37,7 +37,7 @@ export {
   Gmap,
   Markers,
   PdpMap,
-  markerIcon,
-  markerIconHover,
-  markerIconSelected,
+  markerRedDot,
+  markerBlackDotIcon,
+  markerBlackDotIconWithBalloon,
 } from './Gmap'
