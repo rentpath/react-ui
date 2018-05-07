@@ -14,6 +14,7 @@ export default class RatingBar extends PureComponent {
     maxScore: PropTypes.number,
     score: PropTypes.number,
     label: PropTypes.string,
+    onClick: PropTypes.func,
   }
   static defaultProps = {
     theme: {},
@@ -26,15 +27,20 @@ export default class RatingBar extends PureComponent {
       theme,
       score,
       maxScore,
-      ...props
+      onClick,
     } = this.props
 
     const calcScore = (score / maxScore)
     const scorePercent = (calcScore > 1 ? 1 : calcScore) * 100
 
+    // If an onClick was requested, add a handler here,
+    // but if no onClick was requested do not add a handler
+    const optProps = onClick ?
+      { onClick: event => this.handleClick(event) } : {}
+
     return (
       <div
-        className={theme.RatingBar_Background} {...props}
+        className={theme.RatingBar_Background} {...optProps}
       >
         <div
           className={theme.RatingBar_Icons} style={{
@@ -56,6 +62,20 @@ export default class RatingBar extends PureComponent {
         {label}
       </div>
     )
+  }
+
+  handleClick(event) {
+    const { onClick, maxScore } = this.props
+    const { pageX, currentTarget } = event
+
+    if (!onClick) return
+
+    const boundingClientRect = currentTarget.getBoundingClientRect()
+    const starValue =
+      Math.ceil(((pageX - boundingClientRect.left) / boundingClientRect.width) * maxScore)
+
+    // Call the user's click handler, but also pass the calculated rating value
+    onClick(event, starValue)
   }
 
   render() {
