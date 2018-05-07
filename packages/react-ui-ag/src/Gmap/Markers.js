@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Markers as Gmarkers } from '@rentpath/react-ui-core'
 import {
-  markerIcon as iconDefault,
-  markerIconHover as iconHoverDefault,
+  markerRedDotIcon,
+  markerBlackDotIcon,
 } from './markerIcons'
 
 const NOOP = () => ({})
@@ -19,8 +19,8 @@ export default class Markers extends PureComponent {
 
   static defaultProps = {
     marker: NOOP,
-    markerIcon: iconDefault,
-    markerIconHover: iconHoverDefault,
+    markerIcon: markerRedDotIcon,
+    markerIconHover: markerBlackDotIcon,
   }
 
   get marker() {
@@ -41,7 +41,7 @@ export default class Markers extends PureComponent {
         marker.setIcon(markerIcon())
         if (onMouseOut) onMouseOut(marker)
       },
-      ...this.props.marker(),
+      ...this.props.marker(feature),
     })
   }
 

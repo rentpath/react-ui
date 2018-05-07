@@ -41,7 +41,10 @@ class Marker extends PureComponent {
 
   setupMarker() {
     const { map } = this.props
-    this.markerInstance = setupMarker(map, this.marker())
+
+    if (map) {
+      this.markerInstance = setupMarker(map, this.marker())
+    }
   }
 
   marker() {
@@ -53,8 +56,8 @@ class Marker extends PureComponent {
   }
 
   clearMarker() {
-    if (this.marker) {
-      removeMarker(this.marker)
+    if (this.props.map && this.markerInstance) {
+      removeMarker(this.markerInstance)
       this.markerInstance = null
     }
   }

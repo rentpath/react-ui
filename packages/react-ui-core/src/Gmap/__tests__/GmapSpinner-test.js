@@ -34,6 +34,18 @@ describe('GmapSpinner', () => {
     jest.clearAllTimers()
   })
 
+  it('clears the timer on unmount', () => {
+    jest.useFakeTimers()
+    const clearTimeout = window.clearTimeout
+    window.clearTimeout = jest.fn()
+    const wrapper = shallow(<GmapSpinner loading />)
+    wrapper.setProps({ loading: false })
+    wrapper.unmount()
+    expect(window.clearTimeout).toHaveBeenCalled()
+    window.clearTimeout = clearTimeout
+    jest.clearAllTimers()
+  })
+
   describe('close', () => {
     jest.useFakeTimers()
 

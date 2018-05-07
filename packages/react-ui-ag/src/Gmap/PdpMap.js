@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 import Marker from './Marker'
 import Gmap from './Gmap'
-import { markerIconSelected } from './markerIcons'
+import { markerBlackDotIconWithBalloon } from './markerIcons'
 
 export default class PdpMap extends PureComponent {
   static propTypes = {
@@ -24,7 +24,7 @@ export default class PdpMap extends PureComponent {
     } = this.props
 
     return () => ({
-      icon: markerIconSelected(),
+      icon: markerBlackDotIconWithBalloon(),
       ...rest,
       position: this.position,
     })
