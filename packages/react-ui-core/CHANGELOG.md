@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="9.3.2"></a>
+## [9.3.2](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@9.3.1...@rentpath/react-ui-core@9.3.2) (2018-05-07)
+
+
+### Bug Fixes
+
+* **google maps:** single marker needs map check ([d38cf41](https://github.com/rentpath/react-ui/commit/d38cf41))
+
+
+
+
 <a name="9.3.1"></a>
 ## [9.3.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@9.3.0...@rentpath/react-ui-core@9.3.1) (2018-05-04)
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.11"></a>
+## [3.0.11](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@3.0.10...@rentpath/react-ui-ag@3.0.11) (2018-05-07)
+
+
+### Bug Fixes
+
+* **google maps:** single marker needs map check ([d38cf41](https://github.com/rentpath/react-ui/commit/d38cf41))
+
+
+
+
 <a name="3.0.10"></a>
 ## [3.0.10](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@3.0.9...@rentpath/react-ui-ag@3.0.10) (2018-05-04)
 
