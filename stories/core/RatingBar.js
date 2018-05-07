@@ -1,13 +1,13 @@
 import React from 'react'
 import { RatingBar } from 'react-ui-core/src'
+import { action } from '@storybook/addon-actions'
 import theme from '../theme/core/RatingBar.css'
 
 const handleRatingClick = ({ pageX, currentTarget }) => {
   const getBoundingClientRect = currentTarget.getBoundingClientRect()
   const starValue =
     Math.ceil(((pageX - getBoundingClientRect.left) / getBoundingClientRect.width) * 5)
-  // eslint-disable-next-line no-alert
-  window.alert(starValue)
+  action('Clicked star value')(starValue)
 }
 
 export const DefaultRatingBar = (
@@ -52,7 +52,7 @@ export const HandleRatingClick = (
   <RatingBar
     className={theme.themedRating_star}
     score={0}
-    onClick={handleRatingClick}
+    onClick={action('Clicked star')}
     label="Click a Star"
   />
 )
