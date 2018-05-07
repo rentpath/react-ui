@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@3.0.11...@rentpath/react-ui-ag@4.0.0) (2018-05-07)
+
+
+### Features
+
+* **RatingBar:** generates less HTML ([1cc1025](https://github.com/rentpath/react-ui/commit/1cc1025))
+
+
+### BREAKING CHANGES
+
+* **RatingBar:** RatingBar implmentation now expects a className to provide the background image, and will display
+nothing without it.
+
+
+
+
 <a name="3.0.11"></a>
 ## [3.0.11](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@3.0.10...@rentpath/react-ui-ag@3.0.11) (2018-05-07)
 
