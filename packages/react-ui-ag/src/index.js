@@ -36,6 +36,7 @@ export { EmailModal } from './Modals'
 export {
   Gmap,
   Markers,
+  Marker,
   PdpMap,
   markerRedDot,
   markerBlackDotIcon,
