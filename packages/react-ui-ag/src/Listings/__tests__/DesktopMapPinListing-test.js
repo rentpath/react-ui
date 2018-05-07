@@ -17,9 +17,6 @@ const baseListing = {
   rating: {
     score: 4,
     label: '20',
-    fillColor: 'yellow',
-    backgroundFillColor: '#ffffff',
-    uniqueId: '123',
   },
   photos: [
     {

@@ -42,13 +42,11 @@ import {
 
 import {
   DefaultRatingBar,
-  SquareRatingBar,
   CircleRatingBar,
   LabeledRatingBar,
   MaxScoreTenRatingBar,
   PartialRatingBar,
-  ColorFilledRatingBar,
-  TwoColoredRatingBar,
+  HandleRatingClick,
 } from './RatingBar'
 
 import {
@@ -241,13 +239,11 @@ coreStories('RangeSlider', module)
 
 coreStories('RatingBar', module)
   .add('RatingBar', () => DefaultRatingBar)
-  .add('Square Rating Bar', () => SquareRatingBar)
   .add('Circle Rating Bar', () => CircleRatingBar)
   .add('Labeled Rating Bar', () => LabeledRatingBar)
   .add('Max Score of 10 Bar', () => MaxScoreTenRatingBar)
   .add('Partial Rating Bar', () => PartialRatingBar)
-  .add('Color Filled Bar', () => ColorFilledRatingBar)
-  .add('Two Color Rating Bar', () => TwoColoredRatingBar)
+  .add('onClick for Rating Vote', () => HandleRatingClick)
 
 coreStories('Text', module)
   .add('Text', () => Text)

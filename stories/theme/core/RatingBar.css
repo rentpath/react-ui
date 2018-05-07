@@ -1,18 +1,90 @@
+@value GoldStar: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDUxIDQ4Ij48cGF0aCBmaWxsPSIjRkJCMTAwIiBkPSJNMjUgMWw2IDE3aDE4TDM1IDI5bDUgMTctMTUtMTAtMTUgMTAgNS0xN0wxIDE4aDE4eiIvPjwvc3ZnPg==);
+@value GrayStar: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDUxIDQ4Ij48cGF0aCBmaWxsPSIjQ0VDRUNFIiBkPSJNMjUgMWw2IDE3aDE4TDM1IDI5bDUgMTctMTUtMTAtMTUgMTAgNS0xN0wxIDE4aDE4eiIvPjwvc3ZnPg==);
+
 .RatingBar .Label {
   text-align: center;
   display: inline;
   margin-left: 8px;
 }
 
-.RatingBar_Items {
-  display: inline-block;
+.RatingBar_Icons {
+  overflow: hidden;
+  height: 100%;
+  width: 0;
+  background-repeat: repeat-x;
 }
 
-.RatingBar_Item {
-  display: inline-block;
+.RatingBar_Background {
+  overflow: hidden;
+  background-repeat: repeat-x;
 }
 
-.RatingBar_Item svg {
+.themedRating_star .RatingBar_Icons,
+.themedRating_starClickable .RatingBar_Icons {
+  background-image: GoldStar;
+}
+
+/*
+When implemented, this component assumes provided classes define a DIV width and height
+based on the actual dimensions of the icon, in this case the star is 20px x 20px, so:
+width: 20px * 5 stars = 100px
+*/
+.themedRating_star .RatingBar_Background,
+.themedRating_starClickable .RatingBar_Background {
+  background-image: GrayStar;
   height: 20px;
-  width: 20px;
+  width: 100px;
+}
+
+.themedRating_starClickable .RatingBar_Background {
+  cursor: pointer;
+}
+
+.themedRating_starAgMobile .RatingBar_Icons {
+  background-image: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDUxIDQ4Ij48cGF0aCBmaWxsPSIjRkJCMTAwIiBkPSJNMjUgMWw2IDE3aDE4TDM1IDI5bDUgMTctMTUtMTAtMTUgMTAgNS0xN0wxIDE4aDE4eiIvPjwvc3ZnPg==);
+}
+
+.themedRating_starAgMobile .RatingBar_Background {
+  background-image: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDUxIDQ4Ij48cGF0aCBmaWxsPSIjQ0VDRUNFIiBkPSJNMjUgMWw2IDE3aDE4TDM1IDI5bDUgMTctMTUtMTAtMTUgMTAgNS0xN0wxIDE4aDE4eiIvPjwvc3ZnPg==);
+  height: 10px;
+  width: 50px;
+}
+
+.themedRating_starAgDesktop .RatingBar_Icons {
+  background-image: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDUxIDQ4Ij48cGF0aCBmaWxsPSIjRkJCMTAwIiBkPSJNMjUgMWw2IDE3aDE4TDM1IDI5bDUgMTctMTUtMTAtMTUgMTAgNS0xN0wxIDE4aDE4eiIvPjwvc3ZnPg==);
+}
+
+.themedRating_starAgDesktop .RatingBar_Background {
+  background-image: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDUxIDQ4Ij48cGF0aCBmaWxsPSIjQ0VDRUNFIiBkPSJNMjUgMWw2IDE3aDE4TDM1IDI5bDUgMTctMTUtMTAtMTUgMTAgNS0xN0wxIDE4aDE4eiIvPjwvc3ZnPg==);
+  height: 12px;
+  width: 60px;
+}
+
+.themedRating_starAgCarousel .RatingBar_Icons {
+  background-image: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA1MSA0OCI+PHBhdGggZmlsbD0iI0ZCQjEwMCIgZD0iTTI1IDFsNiAxN2gxOEwzNSAyOWw1IDE3LTE1LTEwLTE1IDEwIDUtMTdMMSAxOGgxOHoiLz48L3N2Zz4=);
+}
+
+.themedRating_starAgCarousel .RatingBar_Background {
+  background-image: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA1MSA0OCI+PHBhdGggZmlsbD0iI0NFQ0VDRSIgZD0iTTI1IDFsNiAxN2gxOEwzNSAyOWw1IDE3LTE1LTEwLTE1IDEwIDUtMTdMMSAxOGgxOHoiLz48L3N2Zz4=);
+  height: 8px;
+  width: 40px;
+}
+
+.themedRating_star10 .RatingBar_Icons {
+  background-image: GoldStar;
+}
+
+.themedRating_star10 .RatingBar_Background {
+  background-image: GrayStar;
+  width: 200px;
+  height: 20px;
+}
+
+.themedRating_circle .RatingBar_Icons {
+  background-image: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDYwMCAzMDAiPjxjaXJjbGUgY3g9IjI1MCIgY3k9IjE1MCIgcj0iMTQ1IiBmaWxsPSIjMDE3NWQ3IiBzdHJva2U9IiNkYzE0M2MiLz48L3N2Zz4=);
+}
+
+.themedRating_circle .RatingBar_Background {
+  height: 20px;
+  width: 100px;
 }

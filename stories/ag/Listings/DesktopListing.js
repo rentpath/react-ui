@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { DesktopListing } from 'react-ui-ag/src'
 import { boolean } from '@storybook/addon-knobs'
+import ratingTheme from '../../theme/core/RatingBar.css'
 
 const baseListing = {
   banners: ['New Construction', 'Sponsored'],
@@ -30,7 +31,6 @@ const baseListing = {
   rating: {
     score: 4,
     label: '(20)',
-    uniqueId: '123',
   },
   phone: '(404) 770-5555',
 }
@@ -49,8 +49,8 @@ const props = {
     showIndex: true,
   },
   ratings: {
-    fillColor: '#d2232a',
-    backgroundFillColor: '#ffffff',
+    className: ratingTheme.themedRating_starAgDesktop,
+    theme: ratingTheme,
   },
   ctaButtons: [
     {

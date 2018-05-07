@@ -20,7 +20,6 @@ const baseListing = {
   rating: {
     score: 4,
     label: '20',
-    uniqueId: '123',
   },
   photo: {
     url: 'https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/100-100/',

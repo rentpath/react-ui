@@ -5,6 +5,7 @@ import { ListingCarousel } from 'react-ui-ag/src'
 import { Card } from 'react-ui-core/src'
 import themed from 'react-themed'
 import omit from 'lodash/omit'
+import ratingTheme from '../../theme/core/RatingBar.css'
 
 const listings = [
   {
@@ -18,7 +19,6 @@ const listings = [
     rating: {
       score: 4,
       label: '20',
-      uniqueId: '123',
     },
     phone: '404-378-1428',
     phoneNumber: {
@@ -50,7 +50,6 @@ const listings = [
     rating: {
       score: 1,
       label: '43,423',
-      uniqueId: '234',
     },
     phone: '555-867-5309',
     phoneNumber: {
@@ -83,7 +82,6 @@ const listings = [
     rating: {
       score: 3,
       label: '234',
-      uniqueId: '345',
     },
     phone: '800-777-9311',
     phoneNumber: {
@@ -115,7 +113,6 @@ const listings = [
     rating: {
       score: 2,
       label: '567',
-      uniqueId: '5678',
     },
     photos: [
       {
@@ -145,7 +142,6 @@ const listings = [
     rating: {
       score: 4,
       label: '20',
-      uniqueId: '123',
     },
     photos: [
       {
@@ -173,7 +169,6 @@ const listings = [
     rating: {
       score: 2,
       label: '567',
-      uniqueId: '5678',
     },
     photos: [
       {
@@ -218,9 +213,8 @@ const listingProps = {
     disableSwipe: true,
   },
   ratings: {
-    fillColor: '#fbb900',
-    backgroundFillColor: '#9b9b9b',
-    strokeWidth: '0',
+    className: ratingTheme.themedRating_starAgCarousel,
+    theme: ratingTheme,
   },
   lazyLoad: {
     offset: [250, -100],
