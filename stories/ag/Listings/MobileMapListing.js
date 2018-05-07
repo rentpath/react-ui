@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MobileMapListing, SingleFamilyMobileMapListing } from 'react-ui-ag/src'
 import { boolean } from '@storybook/addon-knobs'
+import ratingTheme from '../../theme/core/RatingBar.css'
 
 const baseListing = {
   bedrooms: '1-3 Beds',
@@ -17,7 +18,6 @@ const baseListing = {
   rating: {
     score: 4,
     label: '20',
-    uniqueId: '123',
   },
   photos: [
     {
@@ -48,8 +48,8 @@ const props = {
     dimensions: '280-120',
   },
   ratings: {
-    fillColor: 'yellow',
-    backgroundFillColor: '#ffffff',
+    className: ratingTheme.themedRating_starAgMobile,
+    theme: ratingTheme,
   },
 }
 

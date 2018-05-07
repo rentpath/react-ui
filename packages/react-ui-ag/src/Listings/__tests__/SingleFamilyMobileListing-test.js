@@ -22,7 +22,6 @@ const baseListing = {
   rating: {
     score: 4,
     label: '20',
-    uniqueId: '123',
   },
   photos: [
     {

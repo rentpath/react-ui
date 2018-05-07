@@ -22,7 +22,6 @@ const listings = [
     rating: {
       score: 4,
       label: '20',
-      uniqueId: '123',
     },
     photos: [
       {
@@ -49,7 +48,6 @@ const listings = [
     rating: {
       score: 1,
       label: '43,423',
-      uniqueId: '234',
     },
     phone: '972-555-8921',
     photos: [
@@ -77,7 +75,6 @@ const listings = [
     rating: {
       score: 3,
       label: '234',
-      uniqueId: '345',
     },
     phone: '800-555-5555',
     photos: [
@@ -105,7 +102,6 @@ const listings = [
     rating: {
       score: 2,
       label: '567',
-      uniqueId: '5678',
     },
     phone: '678-777-9311',
     photos: [
@@ -133,7 +129,6 @@ const listings = [
     rating: {
       score: 2,
       label: '567',
-      uniqueId: '5678',
     },
     phone: '555-867-5309',
     photos: [

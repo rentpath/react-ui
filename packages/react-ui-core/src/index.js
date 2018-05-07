@@ -43,8 +43,6 @@ export {
 
 export {
   RatingBar,
-  Star,
-  LinearGradient,
 } from './Ratings'
 
 export {

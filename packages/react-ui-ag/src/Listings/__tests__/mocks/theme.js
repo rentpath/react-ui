@@ -12,4 +12,5 @@ export default keyMirror([
   'Listing',
   'Listing-active',
   'Listing-inactive',
+  'themedRating_star',
 ])

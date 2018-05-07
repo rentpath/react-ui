@@ -4,6 +4,7 @@ import themed from 'react-themed'
 import { text, select, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { ListingCell, ListingComponents, Button } from 'react-ui-core/src'
+import ratingTheme from '../theme/core/RatingBar.css'
 
 const baseListing = {
   bedrooms: '1-3 Bedrooms',
@@ -15,14 +16,13 @@ const baseListing = {
   rating: {
     score: 4,
     label: '20',
-    uniqueId: '123',
   },
   phone: '555-867-5309',
 }
 
 const ratingProps = {
-  fillColor: 'yellow',
-  backgroundFillColor: '#ffffff',
+  score: 4,
+  label: '20',
 }
 
 export const DefaultListingCell = (
@@ -80,7 +80,8 @@ const SideBySideListingCell = ({ theme }) => {
 
   const sideBySideRatingProps = {
     ...ratingProps,
-    fillColor: text('listing.rating.fillColor', ratingProps.fillColor),
+    theme: ratingTheme,
+    className: ratingTheme.themedRating_star,
   }
 
   return (

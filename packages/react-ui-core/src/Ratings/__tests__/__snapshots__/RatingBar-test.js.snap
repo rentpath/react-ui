@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RatingBar ratings fills 1 of 5 rating items 1`] = `"<div class=\\"RatingBar\\"><div class=\\"RatingBar_Background\\"><div class=\\"RatingBar_Icons\\" style=\\"width:20%\\"></div></div></div>"`;
+
+exports[`RatingBar ratings fills 3.5 of 5 rating items 1`] = `"<div class=\\"RatingBar\\"><div class=\\"RatingBar_Background\\"><div class=\\"RatingBar_Icons\\" style=\\"width:70%\\"></div></div></div>"`;
+
+exports[`RatingBar ratings fills max when total is more than maxScore 1`] = `"<div class=\\"RatingBar\\"><div class=\\"RatingBar_Background\\"><div class=\\"RatingBar_Icons\\" style=\\"width:100%\\"></div></div></div>"`;
+
+exports[`RatingBar renders empty Ratings when rating is not provided 1`] = `"<div class=\\"RatingBar\\"><div class=\\"RatingBar_Background\\"></div></div>"`;

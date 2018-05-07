@@ -20,9 +20,6 @@ const baseListing = {
   rating: {
     score: 4,
     label: '20',
-    fillColor: 'yellow',
-    backgroundFillColor: '#ffffff',
-    uniqueId: '123',
   },
   photos: [
     {
@@ -41,8 +38,7 @@ const baseListing = {
 }
 
 const ratingsProp = {
-  fillColor: '#d2232a',
-  backgroundFillColor: '#ffffff',
+  className: theme.themedRating_star,
 }
 
 const props = {
