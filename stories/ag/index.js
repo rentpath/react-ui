@@ -48,6 +48,7 @@ import {
   DefaultGmap,
   PdpMap,
   MultipleMarkers,
+  SelectedMarker,
 } from './Gmap'
 
 exampleStories('Filters / FilterCard', module)
@@ -109,3 +110,4 @@ largeStories('Gmap', module)
   .add('Map', DefaultGmap)
   .add('PDP Map', PdpMap)
   .add('Map with multiple markers', MultipleMarkers)
+  .add('Map with selected marker', SelectedMarker)
