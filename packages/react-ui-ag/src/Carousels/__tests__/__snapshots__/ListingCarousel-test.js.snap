@@ -49,9 +49,33 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 className=""
                 data-tid="listing-cell"
                 index={0}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content={undefined}
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="postalCode"
+                  />
+                </span>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -189,10 +213,14 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $1 MILLION DOLLARS
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Awesome Property! - Also the longest line you've ever seen
+                      <div
+                        className=""
+                        data-tid="propertyname"
+                      >
+                        Awesome Property! - Also the longest line you've ever seen
+                      </div>
                     </div>
                     <div
                       className={undefined}
@@ -277,9 +305,33 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 className=""
                 data-tid="listing-cell"
                 index={1}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content={undefined}
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="postalCode"
+                  />
+                </span>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -312,10 +364,14 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $0.01 / month
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Terrible Property
+                      <div
+                        className=""
+                        data-tid="propertyname"
+                      >
+                        Terrible Property
+                      </div>
                     </div>
                     <div
                       className={undefined}
@@ -394,9 +450,33 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 className=""
                 data-tid="listing-cell"
                 index={2}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content={undefined}
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="postalCode"
+                  />
+                </span>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -429,10 +509,14 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $100 / month
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Mediocre Property
+                      <div
+                        className=""
+                        data-tid="propertyname"
+                      >
+                        Mediocre Property
+                      </div>
                     </div>
                     <div
                       className={undefined}
@@ -511,9 +595,33 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 className=""
                 data-tid="listing-cell"
                 index={3}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content={undefined}
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="postalCode"
+                  />
+                </span>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -546,10 +654,14 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $20 / day
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Shrug Property
+                      <div
+                        className=""
+                        data-tid="propertyname"
+                      >
+                        Shrug Property
+                      </div>
                     </div>
                     <div
                       className={undefined}
@@ -628,9 +740,33 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 className=""
                 data-tid="listing-cell"
                 index={4}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content={undefined}
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="postalCode"
+                  />
+                </span>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -663,10 +799,14 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $20 / day
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Shrug Property
+                      <div
+                        className=""
+                        data-tid="propertyname"
+                      >
+                        Shrug Property
+                      </div>
                     </div>
                     <div
                       className={undefined}
@@ -778,9 +918,33 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 className=""
                 data-tid="listing-cell"
                 index={0}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content={undefined}
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="postalCode"
+                  />
+                </span>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -926,10 +1090,14 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $1 MILLION DOLLARS
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Awesome Property! - Also the longest line you've ever seen
+                      <div
+                        className=""
+                        data-tid="propertyname"
+                      >
+                        Awesome Property! - Also the longest line you've ever seen
+                      </div>
                     </div>
                     <div
                       className={undefined}
@@ -1014,9 +1182,33 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 className=""
                 data-tid="listing-cell"
                 index={1}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content={undefined}
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="postalCode"
+                  />
+                </span>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -1049,10 +1241,14 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $0.01 / month
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Terrible Property
+                      <div
+                        className=""
+                        data-tid="propertyname"
+                      >
+                        Terrible Property
+                      </div>
                     </div>
                     <div
                       className={undefined}
@@ -1131,9 +1327,33 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 className=""
                 data-tid="listing-cell"
                 index={2}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content={undefined}
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="postalCode"
+                  />
+                </span>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -1166,10 +1386,14 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $100 / month
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Mediocre Property
+                      <div
+                        className=""
+                        data-tid="propertyname"
+                      >
+                        Mediocre Property
+                      </div>
                     </div>
                     <div
                       className={undefined}
@@ -1248,9 +1472,33 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 className=""
                 data-tid="listing-cell"
                 index={3}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content={undefined}
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="postalCode"
+                  />
+                </span>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -1283,10 +1531,14 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $20 / day
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Shrug Property
+                      <div
+                        className=""
+                        data-tid="propertyname"
+                      >
+                        Shrug Property
+                      </div>
                     </div>
                     <div
                       className={undefined}
@@ -1365,9 +1617,33 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 className=""
                 data-tid="listing-cell"
                 index={4}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content={undefined}
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content={undefined}
+                    itemProp="postalCode"
+                  />
+                </span>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -1400,10 +1676,14 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $20 / day
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Shrug Property
+                      <div
+                        className=""
+                        data-tid="propertyname"
+                      >
+                        Shrug Property
+                      </div>
                     </div>
                     <div
                       className={undefined}

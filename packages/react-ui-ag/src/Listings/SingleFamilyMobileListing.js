@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import autobind from 'autobind-decorator'
-import { ListingComponents } from '@rentpath/react-ui-core'
+import { ListingComponents, Schema } from '@rentpath/react-ui-core'
 import Listing from './Listing'
 
 const buttonPropTypes = PropTypes.shape({
@@ -42,10 +42,13 @@ export default class SingleFamilyMobileListing extends Component {
 
   @autobind
   getListingInfoComponents() {
+    const { listing } = this.props
     return (
       <React.Fragment>
         <ListingComponents.Price />
-        <ListingComponents.Address />
+        <Schema.NameAndUrl url={listing.url}>
+          <ListingComponents.Address />
+        </Schema.NameAndUrl>
         <ListingComponents.Bedroom />
         <ListingComponents.Availability />
       </React.Fragment>

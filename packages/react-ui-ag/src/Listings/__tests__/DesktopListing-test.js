@@ -16,10 +16,13 @@ const baseListing = {
   city: 'Great Town',
   state: 'YA',
   price: '$1170+',
-  phone: '678-907-1428',
+  phone: '(404) 770-5555',
   rating: {
     score: 4,
     label: '20',
+    uniqueId: '111',
+    count: 41,
+    reviews: 2,
   },
   photos: [
     {
@@ -35,6 +38,15 @@ const baseListing = {
       caption: '',
     },
   ],
+  location: {
+    addressLine1: '3921 Tugaloo River Drive Northside Park Washington Parkway',
+    city: 'Great Town',
+    latitude: 33.8362,
+    longitude: -84.3426,
+    state: 'Wyoming',
+    zip: '65548',
+  },
+  url: '/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/',
 }
 
 const ratingsProp = {
@@ -155,6 +167,20 @@ describe('DesktopListing', () => {
         const wrapper = mount(<DesktopListing {...props} />)
         expect(wrapper.find('.Phone').at(0).text())
           .toEqual(baseListing.phone)
+      })
+
+      it('renders ApartmentComplex structured data', () => {
+        const wrapper = mount(<DesktopListing {...props} />)
+        expect(wrapper
+          .find('[itemType="https://schema.org/ApartmentComplex"]').exists())
+          .toBeTruthy()
+      })
+
+      it('renders the structured Address info', () => {
+        const wrapper = mount(<DesktopListing {...props} />)
+        expect(wrapper
+          .find('[itemProp="streetAddress"]').exists())
+          .toBeTruthy()
       })
     })
 

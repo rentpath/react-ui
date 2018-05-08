@@ -58,6 +58,7 @@ const ctaButtons = [
     valueLocation: 'phone',
     onClick: () => action('click')('Phone CTA action'),
     className: 'phone',
+    itemProp: 'telephone',
   },
   {
     children: 'send an email',

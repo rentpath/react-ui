@@ -33,6 +33,7 @@ const baseListing = {
       caption: null,
     },
   ],
+  url: '/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/',
   phone: '404-378-1428',
 }
 
@@ -56,6 +57,7 @@ const props = {
       valueLocation: 'phone',
       onClick: () => action('click')('Phone CTA action'),
       className: 'phone',
+      itemProp: 'telephone',
     },
     {
       children: 'send an email',

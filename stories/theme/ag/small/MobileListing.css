@@ -190,3 +190,7 @@ a.MobileListing .Listing_CtaButton {
 .MobileListing :global(.image-gallery-right-nav) {
   padding: 10px 15px;
 }
+
+.MobileListing .PropertyLink {
+  text-decoration: none;
+}

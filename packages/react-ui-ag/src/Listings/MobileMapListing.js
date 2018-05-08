@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import autobind from 'autobind-decorator'
 import get from 'lodash/get'
 import LazyLoad, { forceCheck } from 'react-lazyload'
-import { Button, ToggleButton, ListingComponents, ListingCell } from '@rentpath/react-ui-core'
+import { Button, ToggleButton, ListingComponents, ListingCell, Schema } from '@rentpath/react-ui-core'
 import { Banner } from '../Banners'
 
 const buttonPropTypes = PropTypes.shape({
@@ -261,7 +261,9 @@ export default class MobileMapListing extends Component {
         <div className={theme.MobileMapListing_Bottom}>
           <div className={theme.MobileMapListing_Info}>
             <ListingComponents.Price />
-            <ListingComponents.PropertyName {...propertyName} />
+            <Schema.NameAndUrl url={listing.url}>
+              <ListingComponents.PropertyName {...propertyName} />
+            </Schema.NameAndUrl>
             <div className={theme.MobileMapListing_BedsAndUla}>
               <ListingComponents.Bedroom />
               <ListingComponents.UnitLevelAvailability />

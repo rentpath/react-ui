@@ -31,8 +31,19 @@ const baseListing = {
   rating: {
     score: 4,
     label: '(20)',
+    count: 62,
+    reviews: 9,
   },
   phone: '(404) 770-5555',
+  location: {
+    addressLine1: '3921 Tugaloo River Drive Northside Park Washington Parkway',
+    city: 'Beckwood',
+    latitude: 33.8362,
+    longitude: -84.3426,
+    state: 'Georgia',
+    zip: '30319',
+  },
+  url: '/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/',
 }
 
 const props = {

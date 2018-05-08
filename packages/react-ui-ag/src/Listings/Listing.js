@@ -65,7 +65,7 @@ export default class Listing extends Component {
     return isActive !== nextProps.isActive ||
     id !== nextProps.listing.id ||
     isFavorited !== nextProps.listing.isFavorited ||
-    className !== nextProps.classname
+    className !== nextProps.className
   }
 
   componentDidUpdate(prevProps) {
