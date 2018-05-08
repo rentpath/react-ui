@@ -34,4 +34,21 @@ describe('Layer', () => {
       expect(mockMap.data.remove).toHaveBeenCalledTimes(features.length)
     })
   })
+
+  describe('events', () => {
+    it('sets up only those events that have been passed as props', () => {
+      const dataSpy = jest.spyOn(window.google.maps.event, 'addListener')
+      shallow(
+        <Layer
+          map={mockMap}
+          geojson={geojson}
+          onClick={jest.fn()}
+          onMouseDown={jest.fn()}
+        />
+      )
+      expect(dataSpy).toHaveBeenCalledWith(expect.any(Object), 'click', expect.any(Function))
+      expect(dataSpy).toHaveBeenCalledWith(expect.any(Object), 'mousedown', expect.any(Function))
+      expect(dataSpy).not.toHaveBeenCalledWith(expect.any(Object), 'setgeometry', expect.any(Function))
+    })
+  })
 })
