@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="10.1.0"></a>
+# [10.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@10.0.0...@rentpath/react-ui-core@10.1.0) (2018-05-09)
+
+
+### Bug Fixes
+
+* **google maps:** check for valid projection from Google Maps API ([a3169fd](https://github.com/rentpath/react-ui/commit/a3169fd))
+* **google maps:** loader race condition ([f495073](https://github.com/rentpath/react-ui/commit/f495073))
+
+
+### Features
+
+* **google maps:** add data layer events to Layer component ([8d6c6fe](https://github.com/rentpath/react-ui/commit/8d6c6fe))
+
+
+
+
 <a name="10.0.0"></a>
 # [10.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@9.3.2...@rentpath/react-ui-core@10.0.0) (2018-05-07)
 
