@@ -5,6 +5,8 @@ import { parseArgs } from '@rentpath/react-ui-utils'
 import getDisplayName from './utils/getDisplayName'
 
 const API_BASE_URL = 'https://maps.googleapis.com/maps/api/js'
+const SCRIPT_ID = 'google-maps-api-script'
+const EVENT_NAME = 'googleMapsLoaded'
 
 export default function(BaseComponent) {
   class Container extends PureComponent {
@@ -22,6 +24,7 @@ export default function(BaseComponent) {
         PropTypes.object,
       ]),
       onScriptLoadError: PropTypes.func,
+      loaded: PropTypes.bool,
     }
 
     static defaultProps = {
@@ -33,20 +36,31 @@ export default function(BaseComponent) {
     }
 
     state = {
-      loaded: false,
+      loaded: this.props.loaded || false,
       spinner: this.props.spinner,
     }
 
     componentDidMount() {
-      if (this.isInitialized) {
-        this.scriptLoaded()
+      if (this.state.loaded || (this.hasExistingScript && this.isInitialized)) {
+        // no other place to put this due to SSR
+        this.setState({ loaded: true }) // eslint-disable-line react/no-did-mount-set-state
         return
       }
+
+      this.mapLoadedListener()
       this.loadScript()
     }
 
+    componentWillUnmount() {
+      this.removeLoadedListener()
+    }
+
     get isInitialized() {
-      return !!(window.google && window.google.maps)
+      return !!(window && window.google && window.google.maps)
+    }
+
+    get hasExistingScript() {
+      return !!(document && document.getElementById(SCRIPT_ID))
     }
 
     get spinner() {
@@ -66,20 +80,35 @@ export default function(BaseComponent) {
       return `${API_BASE_URL}?key=${apiKey}&version=${version}&libraries=${libraries.join()}&callback=google_map_initialize`
     }
 
+    removeLoadedListener() {
+      window.removeEventListener(EVENT_NAME, this.loadedHandler)
+    }
+
+    mapLoadedListener() {
+      this.loadedHandler = () => {
+        this.setState({ loaded: true })
+        this.removeLoadedListener()
+      }
+
+      window.addEventListener(EVENT_NAME, this.loadedHandler)
+    }
+
     @autobind
     scriptLoaded() {
-      this.setState({ loaded: true })
+      window.dispatchEvent(new Event(EVENT_NAME))
     }
 
     loadScript() {
-      const script = document.createElement('script')
-      window.google_map_initialize = this.scriptLoaded
-
-      script.async = true
-      script.defer = true
-      script.src = this.api
-      script.onerror = this.props.onScriptLoadError
-      document.head.appendChild(script)
+      if (!this.hasExistingScript) {
+        window.google_map_initialize = this.scriptLoaded
+        const script = document.createElement('script')
+        script.async = true
+        script.defer = true
+        script.id = SCRIPT_ID
+        script.src = this.api
+        script.onerror = this.props.onScriptLoadError
+        document.head.appendChild(script)
+      }
     }
 
     render() {
