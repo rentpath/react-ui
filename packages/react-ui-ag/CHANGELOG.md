@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.2"></a>
+## [4.0.2](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@4.0.1...@rentpath/react-ui-ag@4.0.2) (2018-05-09)
+
+
+### Bug Fixes
+
+* **google map:** lower anchor of selected icon ([57f35d9](https://github.com/rentpath/react-ui/commit/57f35d9))
+
+
+
+
 <a name="4.0.1"></a>
 ## [4.0.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@4.0.0...@rentpath/react-ui-ag@4.0.1) (2018-05-07)
 
