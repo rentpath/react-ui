@@ -1,13 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`withGoogleScript spinner does not use a spinner if none is passed 1`] = `<div />`;
+exports[`withGoogleScript spinner does not use a spinner if none is passed 1`] = `
+<div
+  loaded={true}
+/>
+`;
 
 exports[`withGoogleScript spinner uses the \`Spinner\` node passed with props 1`] = `
 Array [
   <span
     loading={false}
   />,
-  <div />,
+  <div
+    loaded={true}
+  />,
 ]
 `;
 
@@ -17,7 +23,9 @@ Array [
     data-tag_section="foo"
     loading={false}
   />,
-  <div />,
+  <div
+    loaded={true}
+  />,
 ]
 `;
 
@@ -28,6 +36,8 @@ Array [
   >
     spinner
   </div>,
-  <div />,
+  <div
+    loaded={true}
+  />,
 ]
 `;
