@@ -111,7 +111,12 @@ export default class OverlayView extends PureComponent {
     let display = 'none'
 
     if (position) {
-      const { x, y } = this.overlay.getProjection().fromLatLngToDivPixel(position)
+      const projection = this.overlay.getProjection()
+
+      // Projection is undefined if map has not yet initialized
+      if (!projection) return
+
+      const { x, y } = projection.fromLatLngToDivPixel(position)
 
       // Show overlay only when it is in view.
       if (Math.abs(x) < 4000 && Math.abs(y) < 4000) {
