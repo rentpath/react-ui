@@ -1,12 +1,34 @@
 import { GmapInteraction } from '../GmapInteraction'
 
-describe('GmapInteraction', () => {
-  const onZoom = jest.fn()
-  const setZoom = jest.fn()
-  const addGeoJson = jest.fn()
+const onZoom = jest.fn()
+const setZoom = jest.fn()
+const onPan = jest.fn()
+const addGeoJson = jest.fn()
 
+function Map() {
+  return {
+    onZoom,
+    setZoom,
+    data: {
+      addGeoJson,
+    },
+  }
+}
+
+function MapAlt() {
+  return {
+    onZoom,
+    setZoom,
+    onPan,
+    data: {
+      addGeoJson,
+    },
+  }
+}
+
+describe('GmapInteraction', () => {
   it('registers the map', () => {
-    const map = { setZoom, onZoom, data: { addGeoJson } }
+    const map = new Map()
     const registerSpy = jest.spyOn(GmapInteraction, 'registerMap')
     GmapInteraction.registerMap(map)
 
@@ -15,12 +37,11 @@ describe('GmapInteraction', () => {
   })
 
   it('cannot register map more than once', () => {
-    const onPan = jest.fn()
-    const map = { onPan }
+    const newMap = new MapAlt()
 
-    GmapInteraction.registerMap(map)
+    GmapInteraction.registerMap(newMap)
     GmapInteraction.call('onPan')
-    expect(map.onPan).not.toHaveBeenCalled()
+    expect(newMap.onPan).not.toHaveBeenCalled()
   })
 
   it('invokes call', () => {

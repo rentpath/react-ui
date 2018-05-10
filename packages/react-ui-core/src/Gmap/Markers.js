@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import difference from 'lodash/difference'
 import { setupMarker, removeMarker } from './utils/markerHelpers'
 
-const EMPTY_MARKERS = {}
-
 const MARKER = ({ properties, geometry }) => ({
   id: properties.id,
   position: {
@@ -31,7 +29,7 @@ export default class Markers extends PureComponent {
   }
 
   componentDidMount() {
-    this.markers = EMPTY_MARKERS
+    this.markers = {}
     this.renderMarkers()
     this.props.onMarkersReady(this.markers)
   }
@@ -52,7 +50,7 @@ export default class Markers extends PureComponent {
       removeMarker(this.markers[id])
     })
 
-    this.markers = EMPTY_MARKERS
+    this.markers = {}
   }
 
   clearUnusedMarkers() {
