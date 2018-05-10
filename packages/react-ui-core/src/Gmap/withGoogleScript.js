@@ -95,7 +95,8 @@ export default function(BaseComponent) {
 
     @autobind
     scriptLoaded() {
-      window.dispatchEvent(new Event(EVENT_NAME))
+      // NOTE: IE 11 needs a polyfill for CustomEvent
+      window.dispatchEvent(new CustomEvent(EVENT_NAME))
     }
 
     loadScript() {
