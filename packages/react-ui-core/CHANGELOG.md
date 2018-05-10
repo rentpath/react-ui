@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="10.2.0"></a>
+# [10.2.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@10.1.0...@rentpath/react-ui-core@10.2.0) (2018-05-10)
+
+
+### Features
+
+* **google maps:** add min and max zoom prop ([42384d6](https://github.com/rentpath/react-ui/commit/42384d6))
+
+
+
+
 <a name="10.1.0"></a>
 # [10.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@10.0.0...@rentpath/react-ui-core@10.1.0) (2018-05-09)
 
