@@ -9,6 +9,7 @@ import withGoogleScript from './withGoogleScript'
 import { setupEvents } from './utils/mapEventHelpers'
 
 const DEFAULT_ZOOM = 8
+const DEFAULT_MIN_ZOOM = 5
 const DEFAULT_CENTER = { // Atlanta, GA
   lat: 33.7490,
   lng: -84.3880,
@@ -59,6 +60,8 @@ export class Gmap extends PureComponent {
       lng: PropTypes.number,
     }),
     zoom: PropTypes.number,
+    minZoom: PropTypes.number,
+    maxZoom: PropTypes.number,
     clickableIcons: PropTypes.bool,
     mapControls: PropTypes.shape({
       fullscreenControl: PropTypes.bool,
@@ -72,6 +75,8 @@ export class Gmap extends PureComponent {
   static defaultProps = {
     theme: {},
     zoom: DEFAULT_ZOOM,
+    minZoom: DEFAULT_MIN_ZOOM,
+    center: DEFAULT_CENTER,
     clickableIcons: false,
     stylingFunction: () => ({}),
   }
@@ -124,6 +129,8 @@ export class Gmap extends PureComponent {
     const {
       zoom,
       center,
+      minZoom,
+      maxZoom,
       clickableIcons,
       stylingFunction,
     } = this.props
@@ -131,7 +138,9 @@ export class Gmap extends PureComponent {
     this.map = new window.google.maps.Map(this.googleMap.current, {
       zoom,
       clickableIcons,
-      center: center || DEFAULT_CENTER,
+      minZoom,
+      maxZoom,
+      center,
       ...this.mapControls,
     })
 
