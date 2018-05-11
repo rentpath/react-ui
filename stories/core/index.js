@@ -113,8 +113,6 @@ import {
   PhotoCarouselExample,
 } from './Carousel'
 
-import MapPage from './Mapbox'
-
 import {
   DefaultListingCell,
   ThemedListingCell,
@@ -206,9 +204,6 @@ coreStories('List', module)
 coreStories('ListingCell', module)
   .add('Default', () => DefaultListingCell)
   .add('Themed', () => ThemedListingCell)
-
-coreStories('Mapbox', module)
-  .add('Mapbox', () => MapPage)
 
 coreStories('Menu', module)
   .add('Menu', () => DefaultMenu)
