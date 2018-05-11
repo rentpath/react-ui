@@ -2,7 +2,6 @@ import once from 'lodash/once'
 import get from 'lodash/fp/get'
 import isArray from 'lodash/isArray'
 import bind from 'lodash/bind'
-import has from 'lodash/fp/has'
 import includes from 'lodash/fp/includes'
 import { setupMarker, removeMarker } from './utils/markerHelpers'
 
@@ -16,7 +15,7 @@ class GmapCallbackFactory {
 
     this.call = (f, args) => {
       // We need to bind non-nested functions, as google uses this.get internally
-      if (has(f)(map)) {
+      if (get(f)(map)) {
         const mapApiFunc = includes('.')(f) ? get(f)(map) : bind(get(f)(map), map)
 
         if (mapApiFunc && typeof mapApiFunc === 'function') {
