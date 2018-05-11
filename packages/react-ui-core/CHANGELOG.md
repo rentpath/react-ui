@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="11.0.0"></a>
+# [11.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@10.2.1...@rentpath/react-ui-core@11.0.0) (2018-05-11)
+
+
+### Bug Fixes
+
+* **@rentpath/react-ui-core:** has didn't work for google maps prototype, and needed to check with ge ([d6c0b7e](https://github.com/rentpath/react-ui/commit/d6c0b7e))
+* **react-ui-core:** Fix Marker removal and GMapInteraction Binding ([054411b](https://github.com/rentpath/react-ui/commit/054411b))
+
+
+### Features
+
+* **mapbox:** removal of mapbox ([5bc81f3](https://github.com/rentpath/react-ui/commit/5bc81f3))
+
+
+### BREAKING CHANGES
+
+* **mapbox:** removed mapbox from the code
+
+
+
+
 <a name="10.2.1"></a>
 ## [10.2.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@10.2.0...@rentpath/react-ui-core@10.2.1) (2018-05-10)
 
