@@ -94,13 +94,6 @@ export {
 } from './Carousel'
 
 export {
-  Mapbox,
-  MapLayerInteractions,
-  MapSource,
-  MapLayer,
-} from './Mapbox'
-
-export {
   ListingCell,
   ListingComponents,
 } from './Listing'

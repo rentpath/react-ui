@@ -28,7 +28,6 @@ import AutoSuggestField from './AutoSuggestField.css'
 import Highlighter from './Highlighter.css'
 import ToggleButton from './ToggleButton.css'
 import Carousel from './Carousel.css'
-import Mapbox from './Mapbox.css'
 import ListingCell from './ListingCell.css'
 import Drawer from './Drawer.css'
 import Gmap from './Gmap.css'
@@ -63,7 +62,6 @@ export default compose({},
   Highlighter,
   AutoSuggestField,
   ToggleButton,
-  Mapbox,
   ListingCell,
   Drawer,
   Gmap,
