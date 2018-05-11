@@ -13,6 +13,10 @@ export default class OverlayView extends PureComponent {
     preventBubbleEvents: PropTypes.bool,
     className: PropTypes.string,
     theme: PropTypes.object,
+    overlayPosition: PropTypes.shape({
+      top: PropTypes.number,
+      left: PropTypes.number,
+    }),
   }
 
   static defaultProps = {
@@ -26,9 +30,10 @@ export default class OverlayView extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    const { anchor, theme, className } = this.props
+    const { anchor, theme, className, overlayPosition } = this.props
 
-    if (this.overlay && anchor !== prevProps.anchor) {
+    if (this.overlay && (anchor !== prevProps.anchor
+        || overlayPosition !== prevProps.overlayPosition)) {
       this.drawOverlay()
     }
 
@@ -121,8 +126,14 @@ export default class OverlayView extends PureComponent {
       // Show overlay only when it is in view.
       if (Math.abs(x) < 4000 && Math.abs(y) < 4000) {
         display = 'block'
-        this.container.style.left = `${x}px`
-        this.container.style.top = `${y}px`
+        if (this.props.overlayPosition) {
+          const { left, top } = this.props.overlayPosition
+          this.container.style.left = `${left}px`
+          this.container.style.top = `${top}px`
+        } else {
+          this.container.style.left = `${x}px`
+          this.container.style.top = `${y}px`
+        }
       }
     }
 
