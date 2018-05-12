@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="11.0.1"></a>
+## [11.0.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@11.0.0...@rentpath/react-ui-core@11.0.1) (2018-05-12)
+
+
+### Bug Fixes
+
+* **Expande overlay blacklist:** ios fix ([d16f245](https://github.com/rentpath/react-ui/commit/d16f245))
+
+
+
+
 <a name="11.0.0"></a>
 # [11.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@10.2.1...@rentpath/react-ui-core@11.0.0) (2018-05-11)
 
