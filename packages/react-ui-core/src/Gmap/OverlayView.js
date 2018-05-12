@@ -43,6 +43,21 @@ export default class OverlayView extends PureComponent {
     }
   }
 
+  get eventBlacklist() {
+    return [
+      'click',
+      'contextmenu',
+      'dblclick',
+      'mousedown',
+      'mousemove',
+      'pointerdown',
+      'touchend',
+      'touchmove',
+      'touchstart',
+      'wheel',
+    ]
+  }
+
   get position() {
     const { anchor } = this.props
 
@@ -78,18 +93,7 @@ export default class OverlayView extends PureComponent {
 
   preventBubbleEvents() {
     const stopPropagation = e => e.stopPropagation()
-    const events = [
-      'click',
-      'dblclick',
-      'contextmenu',
-      'wheel',
-      'mousedown',
-      'mousemove',
-      'touchstart',
-      'pointerdown',
-    ]
-
-    events.forEach(event => (
+    this.eventBlacklist.forEach(event => (
       this.container.addEventListener(event, stopPropagation, false)
     ))
   }

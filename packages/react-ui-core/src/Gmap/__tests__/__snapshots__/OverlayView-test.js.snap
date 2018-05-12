@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OverlayView eventBlacklist 1`] = `
+Array [
+  "click",
+  "contextmenu",
+  "dblclick",
+  "mousedown",
+  "mousemove",
+  "pointerdown",
+  "touchend",
+  "touchmove",
+  "touchstart",
+  "wheel",
+]
+`;

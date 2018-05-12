@@ -42,4 +42,10 @@ describe('OverlayView', () => {
     wrapper.setProps({ anchor: null })
     expect(container.style.display).toBe('none')
   })
+
+  it('eventBlacklist', () => {
+    const wrapper = createOverlayView()
+    const expected = wrapper.instance().eventBlacklist
+    expect(expected).toMatchSnapshot()
+  })
 })
