@@ -49,9 +49,73 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 className=""
                 data-tid="listing-cell"
                 index={0}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={4}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -189,10 +253,22 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $1 MILLION DOLLARS
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Awesome Property! - Also the longest line you've ever seen
+                      <a
+                        className={undefined}
+                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
+                        itemProp="url"
+                        onClick={[Function]}
+                        target="_blank"
+                      >
+                        <div
+                          className=""
+                          data-tid="propertyname"
+                        >
+                          Awesome Property! - Also the longest line you've ever seen
+                        </div>
+                      </a>
                     </div>
                     <div
                       className={undefined}
@@ -212,6 +288,8 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                     </div>
                     <div
                       className=""
+                      count={62}
+                      reviews={9}
                     >
                       <div
                         className={undefined}
@@ -228,7 +306,7 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       <div
                         className={undefined}
                       >
-                        20
+                        (20)
                       </div>
                     </div>
                   </div>
@@ -277,9 +355,73 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 className=""
                 data-tid="listing-cell"
                 index={1}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={1}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -312,10 +454,22 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $0.01 / month
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Terrible Property
+                      <a
+                        className={undefined}
+                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
+                        itemProp="url"
+                        onClick={[Function]}
+                        target="_blank"
+                      >
+                        <div
+                          className=""
+                          data-tid="propertyname"
+                        >
+                          Terrible Property
+                        </div>
+                      </a>
                     </div>
                     <div
                       className={undefined}
@@ -329,6 +483,8 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                     </div>
                     <div
                       className=""
+                      count={62}
+                      reviews={9}
                     >
                       <div
                         className={undefined}
@@ -394,9 +550,73 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 className=""
                 data-tid="listing-cell"
                 index={2}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={3}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -429,10 +649,22 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $100 / month
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Mediocre Property
+                      <a
+                        className={undefined}
+                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
+                        itemProp="url"
+                        onClick={[Function]}
+                        target="_blank"
+                      >
+                        <div
+                          className=""
+                          data-tid="propertyname"
+                        >
+                          Mediocre Property
+                        </div>
+                      </a>
                     </div>
                     <div
                       className={undefined}
@@ -446,6 +678,8 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                     </div>
                     <div
                       className=""
+                      count={62}
+                      reviews={9}
                     >
                       <div
                         className={undefined}
@@ -511,9 +745,73 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 className=""
                 data-tid="listing-cell"
                 index={3}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={32.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 W Street Road"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Vinings"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30339"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={2}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -546,10 +844,22 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $20 / day
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Shrug Property
+                      <a
+                        className={undefined}
+                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
+                        itemProp="url"
+                        onClick={[Function]}
+                        target="_blank"
+                      >
+                        <div
+                          className=""
+                          data-tid="propertyname"
+                        >
+                          Shrug Property
+                        </div>
+                      </a>
                     </div>
                     <div
                       className={undefined}
@@ -563,6 +873,8 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                     </div>
                     <div
                       className=""
+                      count={62}
+                      reviews={9}
                     >
                       <div
                         className={undefined}
@@ -628,9 +940,73 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                 className=""
                 data-tid="listing-cell"
                 index={4}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-83.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={2}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={14}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={2}
+                    itemProp="reviewCount"
+                  />
+                </div>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -663,10 +1039,22 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $20 / day
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Shrug Property
+                      <a
+                        className={undefined}
+                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
+                        itemProp="url"
+                        onClick={[Function]}
+                        target="_blank"
+                      >
+                        <div
+                          className=""
+                          data-tid="propertyname"
+                        >
+                          Shrug Property
+                        </div>
+                      </a>
                     </div>
                     <div
                       className={undefined}
@@ -680,6 +1068,8 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                     </div>
                     <div
                       className=""
+                      count={14}
+                      reviews={2}
                     >
                       <div
                         className={undefined}
@@ -778,9 +1168,73 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 className=""
                 data-tid="listing-cell"
                 index={0}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={4}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -926,10 +1380,22 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $1 MILLION DOLLARS
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Awesome Property! - Also the longest line you've ever seen
+                      <a
+                        className={undefined}
+                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
+                        itemProp="url"
+                        onClick={[Function]}
+                        target="_blank"
+                      >
+                        <div
+                          className=""
+                          data-tid="propertyname"
+                        >
+                          Awesome Property! - Also the longest line you've ever seen
+                        </div>
+                      </a>
                     </div>
                     <div
                       className={undefined}
@@ -949,6 +1415,8 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                     </div>
                     <div
                       className=""
+                      count={62}
+                      reviews={9}
                     >
                       <div
                         className={undefined}
@@ -965,7 +1433,7 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       <div
                         className={undefined}
                       >
-                        20
+                        (20)
                       </div>
                     </div>
                   </div>
@@ -1014,9 +1482,73 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 className=""
                 data-tid="listing-cell"
                 index={1}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={1}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -1049,10 +1581,22 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $0.01 / month
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Terrible Property
+                      <a
+                        className={undefined}
+                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
+                        itemProp="url"
+                        onClick={[Function]}
+                        target="_blank"
+                      >
+                        <div
+                          className=""
+                          data-tid="propertyname"
+                        >
+                          Terrible Property
+                        </div>
+                      </a>
                     </div>
                     <div
                       className={undefined}
@@ -1066,6 +1610,8 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                     </div>
                     <div
                       className=""
+                      count={62}
+                      reviews={9}
                     >
                       <div
                         className={undefined}
@@ -1131,9 +1677,73 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 className=""
                 data-tid="listing-cell"
                 index={2}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={3}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -1166,10 +1776,22 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $100 / month
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Mediocre Property
+                      <a
+                        className={undefined}
+                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
+                        itemProp="url"
+                        onClick={[Function]}
+                        target="_blank"
+                      >
+                        <div
+                          className=""
+                          data-tid="propertyname"
+                        >
+                          Mediocre Property
+                        </div>
+                      </a>
                     </div>
                     <div
                       className={undefined}
@@ -1183,6 +1805,8 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                     </div>
                     <div
                       className=""
+                      count={62}
+                      reviews={9}
                     >
                       <div
                         className={undefined}
@@ -1248,9 +1872,73 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 className=""
                 data-tid="listing-cell"
                 index={3}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={32.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 W Street Road"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Vinings"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30339"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={2}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -1283,10 +1971,22 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $20 / day
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Shrug Property
+                      <a
+                        className={undefined}
+                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
+                        itemProp="url"
+                        onClick={[Function]}
+                        target="_blank"
+                      >
+                        <div
+                          className=""
+                          data-tid="propertyname"
+                        >
+                          Shrug Property
+                        </div>
+                      </a>
                     </div>
                     <div
                       className={undefined}
@@ -1300,6 +2000,8 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                     </div>
                     <div
                       className=""
+                      count={62}
+                      reviews={9}
                     >
                       <div
                         className={undefined}
@@ -1365,9 +2067,73 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                 className=""
                 data-tid="listing-cell"
                 index={4}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
                 onClick={[Function]}
                 role="presentation"
               >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-83.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={2}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={14}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={2}
+                    itemProp="reviewCount"
+                  />
+                </div>
                 <button
                   className=""
                   data-tid="toggle-button"
@@ -1400,10 +2166,22 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $20 / day
                     </div>
                     <div
-                      className=""
-                      data-tid="propertyname"
+                      itemProp="name"
                     >
-                      Shrug Property
+                      <a
+                        className={undefined}
+                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
+                        itemProp="url"
+                        onClick={[Function]}
+                        target="_blank"
+                      >
+                        <div
+                          className=""
+                          data-tid="propertyname"
+                        >
+                          Shrug Property
+                        </div>
+                      </a>
                     </div>
                     <div
                       className={undefined}
@@ -1417,6 +2195,8 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                     </div>
                     <div
                       className=""
+                      count={14}
+                      reviews={2}
                     >
                       <div
                         className={undefined}

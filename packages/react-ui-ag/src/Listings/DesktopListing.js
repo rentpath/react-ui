@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import { ListingComponents } from '@rentpath/react-ui-core'
+import { ListingComponents, Schema } from '@rentpath/react-ui-core'
 import Listing from './Listing'
 
 @themed([
@@ -12,7 +12,6 @@ import Listing from './Listing'
   'LastUpdated',
   'Phone',
 ], { pure: true })
-
 export default class DesktopListing extends PureComponent {
   static propTypes = {
     listing: PropTypes.object,
@@ -49,15 +48,18 @@ export default class DesktopListing extends PureComponent {
             </div>
           )
         }
-        {singleFamily ?
-          <ListingComponents.Address /> :
-          <ListingComponents.PropertyName {...propertyName} />
-        }
+        <Schema.NameAndUrl url={listing.url}>
+          {singleFamily ?
+            <ListingComponents.Address /> :
+            <ListingComponents.PropertyName {...propertyName} />
+          }
+        </Schema.NameAndUrl>
+
         {rating && !singleFamily &&
           <ListingComponents.Ratings data-tid="ratings" {...ratings} />
         }
         {phone && !singleFamily &&
-          <div className={theme.Phone} data-tid="phone">{phone}</div>
+          <div className={theme.Phone} data-tid="phone" itemProp="telephone">{phone}</div>
         }
       </React.Fragment>
     )

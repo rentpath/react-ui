@@ -2,3 +2,7 @@
 .Listing-inactive :global(.image-gallery-left-nav) {
   display: none;
 }
+
+.Listing .PropertyLink {
+  text-decoration: none;
+}

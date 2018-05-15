@@ -4,7 +4,7 @@ import themed from 'react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
 import get from 'lodash/get'
-import { Button, ToggleButton, ListingComponents, ListingCell } from '@rentpath/react-ui-core'
+import { Button, ToggleButton, ListingComponents, ListingCell, Schema } from '@rentpath/react-ui-core'
 
 const buttonPropTypes = PropTypes.shape({
   children: PropTypes.node,
@@ -135,7 +135,9 @@ export default class DesktopMapPinListing extends PureComponent {
           <div className={theme.DesktopMapPinListing_Top}>
             <ListingComponents.Price />
             {this.renderFavoriteButton()}
-            <ListingComponents.PropertyName {...propertyName} />
+            <Schema.NameAndUrl url={listing.url} >
+              <ListingComponents.PropertyName {...propertyName} />
+            </Schema.NameAndUrl>
           </div>
           <div className={theme.DesktopMapPinListing_Location}>
             <ListingComponents.Address />

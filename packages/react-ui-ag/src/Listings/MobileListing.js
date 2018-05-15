@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import { ListingComponents } from '@rentpath/react-ui-core'
+import { ListingComponents, Schema } from '@rentpath/react-ui-core'
 import Listing from './Listing'
 
 @themed([
@@ -32,10 +32,12 @@ export default class MobileListing extends PureComponent {
     return (
       <React.Fragment>
         <ListingComponents.Price />
-        {singleFamily ?
-          <ListingComponents.Address /> :
-          <ListingComponents.PropertyName />
-        }
+        <Schema.NameAndUrl url={listing.url}>
+          {singleFamily ?
+            <ListingComponents.Address /> :
+            <ListingComponents.PropertyName />
+          }
+        </Schema.NameAndUrl>
         <div className={theme.BedsAndUla}>
           <ListingComponents.Bedroom />
           {!singleFamily && <ListingComponents.UnitLevelAvailability />}
