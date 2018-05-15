@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="5.1.0"></a>
+# [5.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@5.0.2...@rentpath/react-ui-ag@5.1.0) (2018-05-15)
+
+
+### Features
+
+* **react-ui-ag:** add structured data for the all listings ([b1349bd](https://github.com/rentpath/react-ui/commit/b1349bd))
+
+
+
+
 <a name="5.0.2"></a>
 ## [5.0.2](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@5.0.1...@rentpath/react-ui-ag@5.0.2) (2018-05-12)
 
