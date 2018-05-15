@@ -21,8 +21,19 @@ const listings = [
     unitLevelAvailability: '• 8 units left - Come get you some!',
     rating: {
       score: 4,
-      label: '20',
+      label: '(20)',
+      count: 62,
+      reviews: 9,
     },
+    location: {
+      addressLine1: '3921 Tugaloo River Drive Northside Park Washington Parkway',
+      city: 'Beckwood',
+      latitude: 33.8362,
+      longitude: -84.3426,
+      state: 'Georgia',
+      zip: '30319',
+    },
+    url: '/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/',
     photos: [
       {
         path: 'imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/',
@@ -45,11 +56,22 @@ const listings = [
     city: 'Stupid Town',
     state: 'BZ',
     price: '$0.01 / month',
+    phone: '972-555-8921',
     rating: {
       score: 1,
       label: '43,423',
+      count: 62,
+      reviews: 9,
     },
-    phone: '972-555-8921',
+    location: {
+      addressLine1: '3921 Tugaloo River Drive Northside Park Washington Parkway',
+      city: 'Beckwood',
+      latitude: 33.8362,
+      longitude: -84.3426,
+      state: 'Georgia',
+      zip: '30319',
+    },
+    url: '/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/',
     photos: [
       {
         path: 'imgr/fd972eb03a0463c484580349ad5177b7/',
@@ -72,11 +94,22 @@ const listings = [
     city: 'Okay Town',
     state: 'GS',
     price: '$100 / month',
+    phone: '800-555-5555',
     rating: {
       score: 3,
       label: '234',
+      count: 62,
+      reviews: 9,
     },
-    phone: '800-555-5555',
+    location: {
+      addressLine1: '3921 Tugaloo River Drive Northside Park Washington Parkway',
+      city: 'Beckwood',
+      latitude: 33.8362,
+      longitude: -84.3426,
+      state: 'Georgia',
+      zip: '30319',
+    },
+    url: '/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/',
     photos: [
       {
         path: 'imgr/d56984e959a3feb1235f85ee202a0fc6/',
@@ -99,11 +132,22 @@ const listings = [
     city: 'Hello World Town',
     state: 'HD',
     price: '$20 / day',
+    phone: '678-777-9311',
     rating: {
       score: 2,
       label: '567',
+      count: 62,
+      reviews: 9,
     },
-    phone: '678-777-9311',
+    location: {
+      addressLine1: '3921 W Street Road',
+      city: 'Vinings',
+      latitude: 32.8362,
+      longitude: -84.3426,
+      state: 'Georgia',
+      zip: '30339',
+    },
+    url: '/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/',
     photos: [
       {
         path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
@@ -126,11 +170,22 @@ const listings = [
     city: 'Hello World Town',
     state: 'HD',
     price: '$20 / day',
+    phone: '555-867-5309',
     rating: {
       score: 2,
       label: '567',
+      count: 14,
+      reviews: 2,
     },
-    phone: '555-867-5309',
+    location: {
+      addressLine1: '3921 Tugaloo River Drive Northside Park Washington Parkway',
+      city: 'Beckwood',
+      latitude: 33.8362,
+      longitude: -83.3426,
+      state: 'Georgia',
+      zip: '30319',
+    },
+    url: '/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/',
     photos: [
       {
         path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
