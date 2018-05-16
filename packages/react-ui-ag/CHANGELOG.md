@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="5.1.1"></a>
+## [5.1.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@5.1.0...@rentpath/react-ui-ag@5.1.1) (2018-05-16)
+
+
+### Bug Fixes
+
+* **react-ui-ag:** add scaledSize to marker icons to support ie11 ([d712667](https://github.com/rentpath/react-ui/commit/d712667))
+
+
+
+
 <a name="5.1.0"></a>
 # [5.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@5.0.2...@rentpath/react-ui-ag@5.1.0) (2018-05-15)
 
