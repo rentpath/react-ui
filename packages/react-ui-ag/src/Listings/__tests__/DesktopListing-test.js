@@ -20,7 +20,6 @@ const baseListing = {
   rating: {
     score: 4,
     label: '20',
-    uniqueId: '111',
     count: 41,
     reviews: 2,
   },
