@@ -7,7 +7,6 @@ import autobind from 'autobind-decorator'
 @themed(/^Overlay/, {
   pure: true,
 })
-
 export default class Overlay extends PureComponent {
   static propTypes = {
     className: PropTypes.string,

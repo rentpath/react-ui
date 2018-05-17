@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalStack renders a modal correctly 1`] = `null`;
+
+exports[`ModalStack renders correctly 1`] = `null`;
