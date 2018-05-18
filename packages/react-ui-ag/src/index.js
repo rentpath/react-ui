@@ -38,7 +38,8 @@ export {
   Markers,
   Marker,
   PdpMap,
-  markerRedDot,
-  markerBlackDotIcon,
-  markerBlackDotIconWithBalloon,
+  greyDotIcon,
+  redDotIcon,
+  blackDotIcon,
+  blackDotIconWithBalloon,
 } from './Gmap'
