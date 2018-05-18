@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import get from 'lodash/get'
 import { Markers as Gmarkers } from '@rentpath/react-ui-core'
 import {
-  markerRedDotIcon,
-  markerBlackDotIcon,
+  redDotIcon,
+  greyDotIcon,
+  blackDotIcon,
 } from './markerIcons'
 
 const NOOP = () => ({})
@@ -12,6 +14,7 @@ export default class Markers extends PureComponent {
   static propTypes = {
     marker: PropTypes.func,
     markerIcon: PropTypes.func,
+    markerInactiveIcon: PropTypes.func,
     markerIconHover: PropTypes.func,
     onMouseOver: PropTypes.func,
     onMouseOut: PropTypes.func,
@@ -19,30 +22,37 @@ export default class Markers extends PureComponent {
 
   static defaultProps = {
     marker: NOOP,
-    markerIcon: markerRedDotIcon,
-    markerIconHover: markerBlackDotIcon,
+    markerIcon: redDotIcon,
+    markerInactiveIcon: greyDotIcon,
+    markerIconHover: blackDotIcon,
   }
 
   get marker() {
     const {
-      markerIcon,
       markerIconHover,
       onMouseOver,
       onMouseOut,
+      markerIcon,
+      markerInactiveIcon,
     } = this.props
 
-    return feature => ({ // eslint-disable-line no-unused-vars
-      icon: markerIcon(),
-      onMouseOver: (event, props, marker) => {
-        if (markerIconHover) marker.setIcon(markerIconHover())
-        if (onMouseOver) onMouseOver(marker)
-      },
-      onMouseOut: (event, props, marker) => {
-        marker.setIcon(markerIcon())
-        if (onMouseOut) onMouseOut(marker)
-      },
-      ...this.props.marker(feature),
-    })
+    return feature => {
+      const isActive = get(feature, 'properties.isActive', true)
+      const icon = isActive ? markerIcon : markerInactiveIcon
+
+      return {
+        icon: icon(),
+        onMouseOver: (event, props, marker) => {
+          if (markerIconHover) marker.setIcon(markerIconHover())
+          if (onMouseOver) onMouseOver(marker)
+        },
+        onMouseOut: (event, props, marker) => {
+          marker.setIcon(icon())
+          if (onMouseOut) onMouseOut(marker)
+        },
+        ...this.props.marker(feature),
+      }
+    }
   }
 
   render() {

@@ -4,7 +4,7 @@ import {
   PdpMap as Pdp,
   Marker,
   Markers,
-  markerBlackDotIconWithBalloon,
+  blackDotIconWithBalloon,
 } from 'react-ui-ag/src'
 import geojson from '../../dummyData/geojson.json'
 
@@ -40,7 +40,7 @@ export const SelectedMarker = () => (
     <Marker
       position={position}
       marker={() => ({
-        icon: markerBlackDotIconWithBalloon(),
+        icon: blackDotIconWithBalloon(),
       })}
       zIndex={1000}
     />
