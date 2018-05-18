@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-ag",
-  "version": "5.2.0",
+  "version": "6.0.0",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
