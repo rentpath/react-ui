@@ -4,7 +4,7 @@ import difference from 'lodash/difference'
 import { setupMarker, removeMarker } from './utils/markerHelpers'
 
 const MARKER = ({ properties, geometry }) => ({
-  id: properties.id,
+  ...properties,
   position: {
     lng: geometry.coordinates[0],
     lat: geometry.coordinates[1],
