@@ -56,7 +56,7 @@
     "prop-types": "^15.6.1",
     "react-basic-datepicker": "rentpath/react-basic-datepicker",
     "react-flexbox-grid": "https://github.com/rentpath/react-flexbox-grid",
-    "react-image-gallery": "0.8.7",
+    "react-image-gallery": "rentpath/react-image-gallery",
     "react-input-range": "1.3.0",
     "react-lazyload": "2.3.0",
     "react-motion": "^0.5.2",
