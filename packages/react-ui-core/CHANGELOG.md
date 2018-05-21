@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="11.3.0"></a>
+# [11.3.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@11.2.0...@rentpath/react-ui-core@11.3.0) (2018-05-21)
+
+
+### Bug Fixes
+
+* **react-image-gallery:** true lazy loading ([ff7d82f](https://github.com/rentpath/react-ui/commit/ff7d82f))
+
+
+### Features
+
+* **gmap:** splat properties into markers ([a6203c0](https://github.com/rentpath/react-ui/commit/a6203c0))
+
+
+
+
 <a name="11.2.0"></a>
 # [11.2.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@11.1.0...@rentpath/react-ui-core@11.2.0) (2018-05-17)
 
