@@ -90,12 +90,12 @@ export default class Markers extends PureComponent {
 
     if (!map || !geojson || !geojson.features) return
 
-    geojson.features.forEach(feature => {
+    geojson.features.forEach((feature, index) => {
       const id = feature.properties.id
 
       if (this.markers[id]) return
 
-      this.markers[id] = setupMarker(map, this.marker(feature))
+      this.markers[id] = setupMarker(map, this.marker(feature), index)
     })
   }
 

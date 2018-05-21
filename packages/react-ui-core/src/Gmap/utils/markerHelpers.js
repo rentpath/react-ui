@@ -32,12 +32,13 @@ export const removeMarker = marker => {
   }
 }
 
-export const setupMarker = (map, props) => {
+export const setupMarker = (map, props, index) => {
   if (map) {
     const propsWithoutEvents = omitBy(props, (key, val) => EVENTS[val])
     const marker = new window.google.maps.Marker({
       ...propsWithoutEvents,
       map,
+      index,
     })
 
     setupEvents(marker, EVENTS, props)
