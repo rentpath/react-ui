@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { ListingComponents } from '@rentpath/react-ui-core'
+import { ListingComponents, ToggleButton } from '@rentpath/react-ui-core'
 import ThemedMobileListing from '../MobileListing'
 import theme from './mocks/theme'
 
@@ -99,7 +99,6 @@ describe('MobileListing', () => {
     const wrapper = mount(
       <MobileListing
         {...props}
-        isActive
         data-tid="foo"
       />
     )
@@ -164,6 +163,98 @@ describe('MobileListing', () => {
           .find(ListingComponents.Availability).exists())
           .toBeTruthy()
       })
+    })
+  })
+
+  describe('ctaButtons', () => {
+    let wrapper
+    let ctaClick
+    let cardClick
+
+    beforeEach(() => {
+      ctaClick = jest.fn()
+      cardClick = jest.fn()
+      wrapper = mount(
+        <MobileListing
+          {...props}
+          ctaButtons={[{ children: 'foo', onClick: ctaClick }, { children: 'bar', onClick: ctaClick }]}
+          onClick={cardClick}
+        />
+      )
+    })
+
+    it('fire cta buttons on click action on click', () => {
+      wrapper.find('[data-tid="cta-button"]').at(0).simulate('click')
+      wrapper.find('[data-tid="cta-button"]').at(1).simulate('click')
+      expect(ctaClick.mock.calls).toHaveLength(2)
+    })
+  })
+
+  describe('events', () => {
+    it('fires favoriteButton click action on favorite button click', () => {
+      const favoriteClick = jest.fn()
+      const wrapper = mount(
+        <MobileListing
+          {...props}
+          favoriteButton={{ onClick: favoriteClick }}
+        />
+      )
+      wrapper.find(ToggleButton).simulate('click')
+      expect(favoriteClick).toHaveBeenCalledWith(baseListing, true)
+    })
+
+    it('does not fire cardClick on favorite button click', () => {
+      const cardClick = jest.fn()
+      const wrapper = mount(
+        <MobileListing
+          {...props}
+          onClick={cardClick}
+        />
+      )
+      wrapper.find(ToggleButton).simulate('click')
+      expect(cardClick).not.toHaveBeenCalled()
+    })
+
+    it('does not fire cardClick on carousel nav click', () => {
+      const cardClick = jest.fn()
+      const wrapper = mount(
+        <MobileListing
+          {...props}
+          onClick={cardClick}
+        />
+      )
+
+      wrapper
+        .find('[data-tid="carousel"]')
+        .find('[className="image-gallery-left-nav"]')
+        .simulate('click')
+      expect(cardClick).not.toHaveBeenCalled()
+    })
+
+    it('does not fire cardClick on cta click', () => {
+      const cardClick = jest.fn()
+      const wrapper = mount(
+        <MobileListing
+          {...props}
+          onClick={cardClick}
+        />
+      )
+      wrapper.find('[data-tid="cta-button"]').at(0).simulate('click')
+      expect(cardClick).not.toHaveBeenCalled()
+    })
+
+    it('fires onClick on card click', () => {
+      const cardClick = jest.fn()
+      const wrapper = mount(
+        <MobileListing
+          {...props}
+          index={0}
+          onClick={cardClick}
+        />
+      )
+      wrapper.simulate('click')
+      expect(cardClick).toHaveBeenCalled()
+      expect(cardClick.mock.calls).toEqual([[0, baseListing]])
     })
   })
 })

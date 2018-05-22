@@ -17,12 +17,11 @@ export { Banner } from './Banners'
 export {
   Listing,
   MobileMapListing,
+  MobileListing,
   SingleFamilyMobileMapListing,
   DesktopMapPinListing,
   DesktopListing,
   SingleFamilyDesktopListing,
-  MobileListing,
-  SingleFamilyMobileListing,
 } from './Listings'
 
 export {
