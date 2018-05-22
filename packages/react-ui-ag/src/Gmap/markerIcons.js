@@ -5,7 +5,7 @@ export const greyDotIcon = () => ({
 })
 
 export const redDotIcon = () => ({
-  url: "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='18px' height='19px' viewBox='0 0 18 19' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3Epin-red%3C/title%3E%3Cg id='v2-final' stroke='none' stroke-width='1'  fill-rule='evenodd'%3E%3Cg id='map-pins' transform='translate%28-57.000000, -69.000000%29' fill='red' stroke='%23FFFFFF' stroke-width='1.2'%3E%3Cg id='pin/sponsored/blue' transform='translate%2857.000000, 69.709999%29'%3E%3Cg id='pin-blue' transform='translate%280.820000, 0.820000%29'%3E%3Cg id='Group-21'%3E%3Ccircle id='pin-red' cx='8' cy='8' r='8'%3E%3C/circle%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E",
+  url: "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='18px' height='19px' viewBox='0 0 18 19' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3Epin-red%3C/title%3E%3Cg id='v2-final' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='map-pins' transform='translate%28-57.000000, -69.000000%29' fill='%23D32526' stroke='%23FFFFFF' stroke-width='1.2'%3E%3Cg id='pin/sponsored/blue' transform='translate%2857.000000, 69.709999%29'%3E%3Cg id='pin-blue' transform='translate%280.820000, 0.820000%29'%3E%3Cg id='Group-21'%3E%3Ccircle id='pin-red' cx='8' cy='8' r='8'%3E%3C/circle%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E",
   anchor: new window.google.maps.Point(9, 9),
   scaledSize: new window.google.maps.Size(19, 19),
 })
