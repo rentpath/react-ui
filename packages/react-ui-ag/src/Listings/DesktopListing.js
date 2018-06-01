@@ -11,6 +11,7 @@ import Listing from './Listing'
   'UnitLevelAvailabilityAndLastUpdated',
   'LastUpdated',
   'Phone',
+  'pdpRecommendations',
 ], { pure: true })
 export default class DesktopListing extends PureComponent {
   static propTypes = {
@@ -19,6 +20,7 @@ export default class DesktopListing extends PureComponent {
     className: PropTypes.string,
     ratings: PropTypes.object,
     propertyName: PropTypes.object,
+    pdpRecommendations: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -26,6 +28,7 @@ export default class DesktopListing extends PureComponent {
     listing: {},
     ratings: {},
     propertyName: {},
+    pdpRecommendations: false,
   }
 
   get renderInfo() {
@@ -72,6 +75,7 @@ export default class DesktopListing extends PureComponent {
       listing,
       ratings,
       propertyName,
+      pdpRecommendations,
       ...props
     } = this.props
 
@@ -80,7 +84,8 @@ export default class DesktopListing extends PureComponent {
         listing={listing}
         className={classnames(
           className,
-          theme.DesktopListing
+          theme.DesktopListing,
+          pdpRecommendations ? theme.pdpRecommendations : ''
         )}
         listingInfoComponents={this.renderInfo}
         {...props}
