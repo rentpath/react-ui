@@ -50,16 +50,12 @@ describe('ag/Markers', () => {
     })
 
     it('applies extra props correctly when passed as a `marker` prop', () => {
-      const markerProps = {
-        icon: blackDotIconWithBalloon(),
-        title: 'testId',
-      }
+      const markerProps = { icon: blackDotIconWithBalloon() }
       const wrapper = shallow(<Markers map={map} marker={() => (markerProps)} />)
       expect(wrapper.instance().marker()).toEqual({
         icon: blackDotIconWithBalloon(),
         onMouseOver: expect.any(Function),
         onMouseOut: expect.any(Function),
-        title: 'testId',
       })
     })
 
