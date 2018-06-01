@@ -10,7 +10,6 @@ const MARKER = ({ properties, geometry }) => ({
     lng: geometry.coordinates[0],
     lat: geometry.coordinates[1],
   },
-  title: properties.id,
   key: properties.id,
 })
 
