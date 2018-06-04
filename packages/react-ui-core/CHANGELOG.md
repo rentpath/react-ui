@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="12.0.0"></a>
+# [12.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@11.3.2...@rentpath/react-ui-core@12.0.0) (2018-06-04)
+
+
+### Code Refactoring
+
+* **react-ui-core:** remove grid and all dependencies ([77b0cb5](https://github.com/rentpath/react-ui/commit/77b0cb5))
+
+
+### BREAKING CHANGES
+
+* **react-ui-core:** removed grid from the code
+
+
+
+
 <a name="11.3.2"></a>
 ## [11.3.2](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@11.3.1...@rentpath/react-ui-core@11.3.2) (2018-06-01)
 
