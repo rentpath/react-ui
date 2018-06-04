@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.0.3...@rentpath/react-ui-ag@6.1.0) (2018-06-04)
+
+
+### Features
+
+* **react-ui-ag:** Modify MobileListing and stories, theme, and test for it ([1eddc8b](https://github.com/rentpath/react-ui/commit/1eddc8b))
+
+
+
+
 <a name="6.0.3"></a>
 ## [6.0.3](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.0.2...@rentpath/react-ui-ag@6.0.3) (2018-06-01)
 
