@@ -24,7 +24,7 @@ import {
   ExampleDesktopListing,
   ExampleSingleFamilyDesktopListing,
   ExampleMobileListing,
-  ExampleSingleFamilyMobileListing,
+  ExampleMobileListingSingleFamily,
 } from './Listings'
 
 import {
@@ -77,7 +77,7 @@ smallStories('Listings', module)
   .add('Mobile Map Listing', ExampleMobileMapListing)
   .add('Single Family Mobile Map Listing', ExampleSingleFamily)
   .add('Mobile Listing', ExampleMobileListing)
-  .add('Single Family Mobile Listing', ExampleSingleFamilyMobileListing)
+  .add('Single Family Mobile Listing', ExampleMobileListingSingleFamily)
 
 largeStories('Listings', module)
   .add('DesktopMapPinListing', () => ExampleDesktopMapPinListing)

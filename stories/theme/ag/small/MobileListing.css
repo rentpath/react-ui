@@ -7,14 +7,8 @@
 }
 
 .MobileListing {
-  width: 280px;
-  height: 200px;
-}
-
-.MobileListingSingleFamily .Listing_CTAs {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+  width: 351px;
+  height: 240px;
 }
 
 .MobileListing .Listing_Top {
@@ -22,18 +16,25 @@
 }
 
 .MobileListing .Listing_Bottom {
-  width: 264px;
+  width: 100%;
+  height: 80px;
   display: flex;
   justify-content: space-between;
-  margin: 5px 6px 11px 10px;
-  height: 80px;
+  margin: 8px 0 7px;
 }
 
 .MobileListing .Listing_CTAs {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 7px;
+  margin: 3px 12px 5px 0;
+}
+
+.MobileListing_Sponsored {
+  color: #ffffff;
+  font-size: 11px;
+  text-shadow: 0 1px 1px rgba(0,0,0, 0.4);
+  margin-top: 4px;
 }
 
 .MobileListing .Listing_CtaButton {
@@ -72,9 +73,13 @@ a.MobileListing .Listing_CtaButton {
 .MobileListing .Listing_Banner {
   position: absolute;
   z-index: 10;
-  left: calc(3% + 10px);
-  top: 4%;
+  left: 12px;
+  bottom: 87px;
   cursor: pointer;
+}
+
+.MobileListing .Banner {
+  background-color: #387ab5;
 }
 
 .MobileListing .Listing_FavoriteButton.ToggleButton-on {
@@ -88,7 +93,10 @@ a.MobileListing .Listing_CtaButton {
 .MobileListing .Listing_Info {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   overflow: hidden;
+  width: 195px;
+  margin-left: 12px;
 }
 
 .MobileListing .Listing_Info .Text {
@@ -96,21 +104,16 @@ a.MobileListing .Listing_CtaButton {
   text-overflow: ellipsis;
 }
 
+.MobileListing .MobileListing_RatingAndSponsored {
+  height: 15px;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+}
+
 .MobileListing .RatingBar {
   display: flex;
-  align-items: baseline;
-  height: 9px;
-}
-
-.ListingCell .RatingBar_Items {
-  display: flex;
-  flex-direction: row;
-}
-
-.RatingBar_Item svg {
-  width: 9.1px;
-  height: 8.9px;
-  margin-left: 1.5px;
+  align-items: flex-end;
 }
 
 .image-gallery,
@@ -122,68 +125,67 @@ a.MobileListing .Listing_CtaButton {
   min-height: 120px;
 }
 
+.MobileListing .Price,
+.MobileListing .PropertyName,
+.MobileListing .Address {
+  color: #4a4a4a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 264px;
+  font-weight: bold;
+}
+
 .MobileListing .Price {
   font-size: 16px;
-  font-weight: bolder;
-  color: #4a4a4a;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.MobileListing .PropertyName {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 13px;
-  color: #4a4a4a;
-}
-
+.MobileListing .PropertyName,
 .MobileListing .Address {
+  white-space: nowrap;
   overflow: hidden;
-  max-width: 264px;
+  text-overflow: ellipsis;
   font-size: 13px;
-  color: #4a4a4a;
 }
 
-.MobileListing .Availability {
-  color: #d32526;
-  margin-top: 2px;
-  font-size: 13px;
+.MobileListing .MobileListing_BedsAndBaths {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+.BedsAndBaths .Bedroom,
+.BedsAndBaths .Bathroom, {
+  white-space: nowrap;
+  color: #797979;
 }
 
 .MobileListing .Label {
-  font-size: 12px;
-  padding-left: 3px;
-}
-
-.MobileListing .Bedroom {
-  white-space: nowrap;
-  font-size: 13px;
-}
-
-.MobileListing .UnitLevelAvailability {
-  margin-left: 2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 13px;
+  text-align: center;
+  display: inline;
+  margin-left: 8px;
+  font-weight: 100;
+  letter-spacing: 0.1px;
+  font-size: 11px;
+  color: #ffffff;
 }
 
 .MobileListing .Bedroom,
-.MobileListing .UnitLevelAvailability,
-.MobileListing .Label {
+.MobileListing .Bathroom {
   color: #9b9b9b;
 }
 
-.MobileListing .BedsAndUla {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.MobileListing .BedsAndUla > Div {
-  margin-top: 2px;
+.MobileListing .UnitLevelAvailability,
+.MobileListing .Availability {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: #d32526;
 }
 
 .MobileListing :global(.image-gallery-left-nav),
