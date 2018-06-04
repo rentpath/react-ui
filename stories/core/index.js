@@ -7,7 +7,6 @@ import {
   SquareFootSlider,
   PriceSlider,
 } from './RangeSlider'
-import Grid from './Grid'
 import Text from './Text'
 import DefaultDateInput from './DefaultDateInput'
 
@@ -19,7 +18,6 @@ import {
   ToggleSVG,
 } from './Button'
 
-import ResponsiveTemplate from './ResponsiveTemplate'
 import {
   DefaultField,
   SelectField,
@@ -186,10 +184,6 @@ coreStoriesNoContainer('Gmap', module)
 coreStories('Highlighter', module)
   .add('Default Highlighter', () => DefaultHighlighter)
   .add('Highlighter with index', HighlighterWithIndex)
-
-coreStories('Layout', module)
-  .add('Grid', () => Grid)
-  .add('Responsive Template', () => ResponsiveTemplate)
 
 coreStories('Lead', module)
   .add('LeadForm', () => DefaultLeadForm)
