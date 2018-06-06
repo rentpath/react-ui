@@ -4,6 +4,7 @@ import themed from 'react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
 import get from 'lodash/get'
+import isEqual from 'lodash/isEqual'
 import LazyLoad, { forceCheck } from 'react-lazyload'
 import { Button, ToggleButton, ListingComponents, ListingCell } from '@rentpath/react-ui-core'
 import { Banner } from '../Banners'
@@ -34,12 +35,10 @@ export default class Listing extends Component {
     ratings: PropTypes.object,
     ctaButtons: PropTypes.arrayOf(buttonPropTypes),
     favoriteButton: buttonPropTypes,
-    lazyLoad: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.bool,
-    ]),
+    lazyLoad: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
     isActive: PropTypes.bool,
     listingInfoComponents: PropTypes.node,
+    onPhotoCarouselSlide: PropTypes.func,
   }
 
   static defaultProps = {
@@ -60,12 +59,15 @@ export default class Listing extends Component {
 
   shouldComponentUpdate(nextProps) {
     const { isActive, listing, className } = this.props
-    const { id, isFavorited } = listing
+    const { id, isFavorited, photos } = listing
 
-    return isActive !== nextProps.isActive ||
-    id !== nextProps.listing.id ||
-    isFavorited !== nextProps.listing.isFavorited ||
-    className !== nextProps.className
+    return (
+      isActive !== nextProps.isActive ||
+      id !== nextProps.listing.id ||
+      isFavorited !== nextProps.listing.isFavorited ||
+      className !== nextProps.className ||
+      !isEqual(photos, nextProps.listing.photos)
+    )
   }
 
   componentDidUpdate(prevProps) {
@@ -96,8 +98,7 @@ export default class Listing extends Component {
         this.props.onClick(this.props.index, listing)
       }
 
-      const shouldStopPropagation =
-        isActive && event && event.stopPropagation
+      const shouldStopPropagation = isActive && event && event.stopPropagation
 
       if (shouldStopPropagation) event.stopPropagation()
     }
@@ -122,7 +123,11 @@ export default class Listing extends Component {
   }
 
   @autobind
-  handlePhotoCarouselSlide() {
+  handlePhotoCarouselSlide(index) {
+    const { onPhotoCarouselSlide } = this.props
+
+    if (onPhotoCarouselSlide) onPhotoCarouselSlide(index)
+
     this.setState({
       loadedCarousel: true,
     })
@@ -135,13 +140,7 @@ export default class Listing extends Component {
 
   renderCtaButton(props, key) {
     const { theme, listing } = this.props
-    const {
-      className,
-      onClick,
-      valueLocation,
-      children,
-      ...rest
-    } = props
+    const { className, onClick, valueLocation, children, ...rest } = props
 
     const buttonText = get(listing, valueLocation, children)
     const buttonProps = { ...rest }
@@ -151,10 +150,7 @@ export default class Listing extends Component {
     return (
       <Button
         {...buttonProps}
-        className={classnames(
-          theme.Listing_CtaButton,
-          className,
-        )}
+        className={classnames(theme.Listing_CtaButton, className)}
         onClick={this.handleButtonClick(onClick)}
         key={key}
         data-tid="cta-button"
@@ -172,10 +168,7 @@ export default class Listing extends Component {
       <ToggleButton
         {...favoriteButton}
         value={listing.isFavorited}
-        className={classnames(
-          theme.Listing_FavoriteButton,
-          className,
-        )}
+        className={classnames(theme.Listing_FavoriteButton, className)}
         inactive={!isActive}
         onClick={this.handleFavoriteClick}
       />
@@ -187,14 +180,9 @@ export default class Listing extends Component {
 
     return (
       <div className={theme.Listing_Banner}>
-        {listing.banners.map((banner, index) =>
-          (
-            <Banner
-              key={`${banner}_${index}`}
-              name={banner}
-            />
-          )
-        )}
+        {listing.banners.map((banner, index) => (
+          <Banner key={`${banner}_${index}`} name={banner} />
+        ))}
       </div>
     )
   }
@@ -204,9 +192,7 @@ export default class Listing extends Component {
     let { lazyLoad } = this.props
 
     if (lazyLoad && typeof lazyLoad === 'boolean') {
-      lazyLoad = typeof lazyLoad === 'boolean'
-        ? REACT_LAZYLOAD_PROP_DEFAULTS
-        : lazyLoad
+      lazyLoad = typeof lazyLoad === 'boolean' ? REACT_LAZYLOAD_PROP_DEFAULTS : lazyLoad
     }
 
     if (!isActive) {
@@ -217,7 +203,7 @@ export default class Listing extends Component {
 
     return (
       <div className={theme.Listing_Top}>
-        {(isActive || this.state.loadedCarousel) &&
+        {(isActive || this.state.loadedCarousel) && (
           <ListingComponents.Photos
             showNav
             {...photos}
@@ -225,7 +211,7 @@ export default class Listing extends Component {
             className={theme.Listing_Photos}
             onSlide={this.handlePhotoCarouselSlide}
           />
-        }
+        )}
         {this.renderPhoto(lazyLoad)}
       </div>
     )
@@ -234,17 +220,13 @@ export default class Listing extends Component {
   renderPhoto(lazyLoad) {
     if (lazyLoad) {
       return (
-        <LazyLoad
-          {...lazyLoad}
-        >
+        <LazyLoad {...lazyLoad}>
           <ListingComponents.Photo />
         </LazyLoad>
       )
     }
 
-    return (
-      <ListingComponents.Photo />
-    )
+    return <ListingComponents.Photo />
   }
 
   render() {
@@ -260,6 +242,7 @@ export default class Listing extends Component {
       isActive,
       lazyLoad,
       listingInfoComponents,
+      onPhotoCarouselSlide,
       ...props
     } = this.props
 
@@ -270,7 +253,7 @@ export default class Listing extends Component {
         className={classnames(
           className,
           theme.Listing,
-          theme[`Listing-${isActive ? 'active' : 'inactive'}`],
+          theme[`Listing-${isActive ? 'active' : 'inactive'}`]
         )}
         isActive={isActive}
         {...props}
@@ -282,9 +265,7 @@ export default class Listing extends Component {
           <div className={theme.Listing_Info} data-tid="listing-info">
             {listingInfoComponents}
           </div>
-          <div className={theme.Listing_CTAs}>
-            {this.renderCtaButtons()}
-          </div>
+          <div className={theme.Listing_CTAs}>{this.renderCtaButtons()}</div>
         </div>
       </ListingCell>
     )

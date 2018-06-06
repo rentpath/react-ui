@@ -4,8 +4,15 @@ import themed from 'react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
 import get from 'lodash/get'
+import isEqual from 'lodash/isEqual'
 import LazyLoad, { forceCheck } from 'react-lazyload'
-import { Button, ToggleButton, ListingComponents, ListingCell, Schema } from '@rentpath/react-ui-core'
+import {
+  Button,
+  ToggleButton,
+  ListingComponents,
+  ListingCell,
+  Schema,
+} from '@rentpath/react-ui-core'
 import { Banner } from '../Banners'
 
 const buttonPropTypes = PropTypes.shape({
@@ -35,11 +42,10 @@ export default class MobileMapListing extends Component {
     propertyName: PropTypes.object,
     ctaButtons: PropTypes.arrayOf(buttonPropTypes),
     favoriteButton: buttonPropTypes,
-    lazyLoad: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.bool,
-    ]),
+    lazyLoad: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
     isActive: PropTypes.bool,
+    onPhotoCarouselSlide: PropTypes.func,
+    renderCustomControls: PropTypes.func,
   }
 
   static defaultProps = {
@@ -57,9 +63,13 @@ export default class MobileMapListing extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return this.props.isActive !== nextProps.isActive ||
-    this.props.listing.id !== nextProps.listing.id ||
-    this.props.listing.isFavorited !== nextProps.listing.isFavorited
+    const { listing } = this.props
+    return (
+      this.props.isActive !== nextProps.isActive ||
+      listing.id !== nextProps.listing.id ||
+      listing.isFavorited !== nextProps.listing.isFavorited ||
+      !isEqual(listing.photos, nextProps.listing.photos)
+    )
   }
 
   componentDidUpdate(prevProps) {
@@ -90,8 +100,7 @@ export default class MobileMapListing extends Component {
         this.props.onClick(this.props.index, listing)
       }
 
-      const shouldStopPropagation =
-        isActive && event && event.stopPropagation
+      const shouldStopPropagation = isActive && event && event.stopPropagation
 
       if (shouldStopPropagation) event.stopPropagation()
     }
@@ -108,8 +117,7 @@ export default class MobileMapListing extends Component {
       this.props.onClick(this.props.index, listing)
     }
 
-    const shouldStopPropagation =
-      isActive && event && event.stopPropagation
+    const shouldStopPropagation = isActive && event && event.stopPropagation
 
     if (shouldStopPropagation) {
       event.stopPropagation()
@@ -117,7 +125,11 @@ export default class MobileMapListing extends Component {
   }
 
   @autobind
-  handlePhotoCarouselSlide(index) { // eslint-disable-line no-unused-vars
+  handlePhotoCarouselSlide(index) {
+    const { onPhotoCarouselSlide } = this.props
+
+    if (onPhotoCarouselSlide) onPhotoCarouselSlide(index)
+
     this.loadedCarousel = true
   }
 
@@ -128,13 +140,7 @@ export default class MobileMapListing extends Component {
 
   renderCtaButton(props, key) {
     const { theme, listing } = this.props
-    const {
-      className,
-      onClick,
-      valueLocation,
-      children,
-      ...rest
-    } = props
+    const { className, onClick, valueLocation, children, ...rest } = props
 
     const buttonText = get(listing, valueLocation, children)
     const buttonProps = { ...rest }
@@ -144,10 +150,7 @@ export default class MobileMapListing extends Component {
     return (
       <Button
         {...buttonProps}
-        className={classnames(
-          theme.MobileMapListing_CtaButton,
-          className,
-        )}
+        className={classnames(theme.MobileMapListing_CtaButton, className)}
         onClick={this.handleButtonClick(onClick)}
         key={key}
         data-tid="cta-button"
@@ -164,10 +167,7 @@ export default class MobileMapListing extends Component {
       <ToggleButton
         {...favoriteButton}
         value={listing.isFavorited}
-        className={classnames(
-          theme.MobileMapListing_FavoriteButton,
-          className,
-        )}
+        className={classnames(theme.MobileMapListing_FavoriteButton, className)}
         inactive={!isActive}
         onClick={this.handleFavoriteClick}
       />
@@ -175,13 +175,11 @@ export default class MobileMapListing extends Component {
   }
 
   renderPhotoCarousel() {
-    const { listing, theme, photos, isActive } = this.props
+    const { listing, theme, photos, isActive, renderCustomControls } = this.props
     let { lazyLoad } = this.props
 
     if (lazyLoad && typeof lazyLoad === 'boolean') {
-      lazyLoad = typeof lazyLoad === 'boolean'
-        ? REACT_LAZYLOAD_PROP_DEFAULTS
-        : lazyLoad
+      lazyLoad = typeof lazyLoad === 'boolean' ? REACT_LAZYLOAD_PROP_DEFAULTS : lazyLoad
     }
 
     if (!isActive) {
@@ -192,15 +190,16 @@ export default class MobileMapListing extends Component {
 
     return (
       <div className={theme.MobileMapListing_Top}>
-        {(isActive || this.loadedCarousel) &&
+        {(isActive || this.loadedCarousel) && (
           <ListingComponents.Photos
             showNav
             {...photos}
             lazyLoad={lazyLoad}
             className={theme.MobileMapListing_Photos}
             onSlide={this.handlePhotoCarouselSlide}
+            renderCustomControls={renderCustomControls}
           />
-        }
+        )}
         {this.renderPhoto(lazyLoad)}
       </div>
     )
@@ -209,17 +208,13 @@ export default class MobileMapListing extends Component {
   renderPhoto(lazyLoad) {
     if (lazyLoad) {
       return (
-        <LazyLoad
-          {...lazyLoad}
-        >
+        <LazyLoad {...lazyLoad}>
           <ListingComponents.Photo />
         </LazyLoad>
       )
     }
 
-    return (
-      <ListingComponents.Photo />
-    )
+    return <ListingComponents.Photo />
   }
 
   render() {
@@ -235,6 +230,8 @@ export default class MobileMapListing extends Component {
       propertyName,
       isActive,
       lazyLoad,
+      onPhotoCarouselSlide,
+      renderCustomControls,
       ...props
     } = this.props
 
@@ -251,12 +248,9 @@ export default class MobileMapListing extends Component {
         {...props}
       >
         {this.renderFavoriteButton()}
-        {listing.banner &&
-          <Banner
-            name={listing.banner}
-            className={theme.MobileMapListing_Banner}
-          />
-        }
+        {listing.banner && (
+          <Banner name={listing.banner} className={theme.MobileMapListing_Banner} />
+        )}
         {this.renderPhotoCarousel()}
         <div className={theme.MobileMapListing_Bottom}>
           <div className={theme.MobileMapListing_Info}>
@@ -268,17 +262,16 @@ export default class MobileMapListing extends Component {
               <ListingComponents.Bedroom />
               <ListingComponents.UnitLevelAvailability />
             </div>
-            {listing.rating ?
-              <ListingComponents.Ratings {...ratings} /> :
+            {listing.rating ? (
+              <ListingComponents.Ratings {...ratings} />
+            ) : (
               <div
                 className={theme.MobileMapListing_RatingPlaceHolder}
                 data-tid="rating-placeholder"
               />
-            }
+            )}
           </div>
-          <div className={theme.MobileMapListing_CTAs}>
-            {this.renderCtaButtons()}
-          </div>
+          <div className={theme.MobileMapListing_CTAs}>{this.renderCtaButtons()}</div>
         </div>
       </ListingCell>
     )
