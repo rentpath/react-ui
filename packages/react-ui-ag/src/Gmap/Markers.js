@@ -51,6 +51,7 @@ export default class Markers extends PureComponent {
           if (onMouseOut) onMouseOut(marker)
         },
         ...this.props.marker(feature),
+        zIndex: isActive ? 2 : 1,
       }
     }
   }
