@@ -38,6 +38,7 @@ export default class Listing extends Component {
     lazyLoad: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
     isActive: PropTypes.bool,
     listingInfoComponents: PropTypes.node,
+    listingTopComponents: PropTypes.node,
     onPhotoCarouselSlide: PropTypes.func,
   }
 
@@ -202,7 +203,7 @@ export default class Listing extends Component {
     }
 
     return (
-      <div className={theme.Listing_Top}>
+      <React.Fragment>
         {(isActive || this.state.loadedCarousel) && (
           <ListingComponents.Photos
             showNav
@@ -213,7 +214,7 @@ export default class Listing extends Component {
           />
         )}
         {this.renderPhoto(lazyLoad)}
-      </div>
+      </React.Fragment>
     )
   }
 
@@ -242,6 +243,7 @@ export default class Listing extends Component {
       isActive,
       lazyLoad,
       listingInfoComponents,
+      listingTopComponents,
       onPhotoCarouselSlide,
       ...props
     } = this.props
@@ -260,12 +262,17 @@ export default class Listing extends Component {
       >
         {listing.banners && this.renderBanners()}
         {this.renderFavoriteButton()}
-        {this.renderPhotoCarousel()}
+        <div className={theme.Listing_Top}>
+          {this.renderPhotoCarousel()}
+          {listingTopComponents}
+        </div>
         <div className={theme.Listing_Bottom}>
           <div className={theme.Listing_Info} data-tid="listing-info">
             {listingInfoComponents}
           </div>
-          <div className={theme.Listing_CTAs}>{this.renderCtaButtons()}</div>
+          { ctaButtons &&
+            <div className={theme.Listing_CTAs}>{this.renderCtaButtons()}</div>
+          }
         </div>
       </ListingCell>
     )
