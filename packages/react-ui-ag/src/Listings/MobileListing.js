@@ -37,18 +37,22 @@ export default class MobileListing extends PureComponent {
       <div className={theme.MobileListing_LastUpdated}>{lastUpdated}</div>
   }
 
-  get renderInfo() {
+  get renderTopComponents() {
     const { theme, listing, ratings, sponsoredText } = this.props
     const { singleFamily, rating, sponsored } = listing
+    return !singleFamily && (
+      <div className={theme.MobileListing_RatingAndSponsored}>
+        {rating && <ListingComponents.Ratings data-tid="ratings" {...ratings} />}
+        {sponsored && <Text className={theme.MobileListing_Sponsored}>{sponsoredText}</Text>}
+      </div>
+    )
+  }
 
+  get renderInfo() {
+    const { theme, listing } = this.props
+    const { singleFamily } = listing
     return (
       <React.Fragment>
-        {!singleFamily &&
-          <div className={theme.MobileListing_RatingAndSponsored}>
-            {rating && <ListingComponents.Ratings data-tid="ratings" {...ratings} />}
-            {sponsored && <Text className={theme.MobileListing_Sponsored}>{sponsoredText}</Text>}
-          </div>
-        }
         <ListingComponents.Price />
 
         <Schema.NameAndUrl url={listing.url}>
@@ -84,6 +88,7 @@ export default class MobileListing extends PureComponent {
           className,
           theme.MobileListing
         )}
+        listingTopComponents={this.renderTopComponents}
         listingInfoComponents={this.renderInfo}
         {...props}
       />
