@@ -35,6 +35,12 @@ export default class DesktopListing extends PureComponent {
     return (
       <React.Fragment>
         <ListingComponents.Price />
+        <Schema.NameAndUrl url={listing.url}>
+          {singleFamily ?
+            <ListingComponents.Address /> :
+            <ListingComponents.PropertyName {...propertyName} />
+          }
+        </Schema.NameAndUrl>
         <div className={theme.BedsAndBaths}>
           <ListingComponents.Bedroom data-tid="bedroom" />
           <ListingComponents.Bathroom />
@@ -48,13 +54,6 @@ export default class DesktopListing extends PureComponent {
             </div>
           )
         }
-        <Schema.NameAndUrl url={listing.url}>
-          {singleFamily ?
-            <ListingComponents.Address /> :
-            <ListingComponents.PropertyName {...propertyName} />
-          }
-        </Schema.NameAndUrl>
-
         {rating && !singleFamily &&
           <ListingComponents.Ratings data-tid="ratings" {...ratings} />
         }
