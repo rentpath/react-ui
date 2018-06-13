@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="6.4.0"></a>
+# [6.4.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.3.0...@rentpath/react-ui-ag@6.4.0) (2018-06-13)
+
+
+### Features
+
+* **MobileListing:** refactor MobileListing component to allow for modifications ([aa155fc](https://github.com/rentpath/react-ui/commit/aa155fc))
+
+
+
+
 <a name="6.3.0"></a>
 # [6.3.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.2.0...@rentpath/react-ui-ag@6.3.0) (2018-06-13)
 
