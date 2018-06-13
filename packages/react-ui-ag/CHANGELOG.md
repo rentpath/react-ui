@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="6.3.0"></a>
+# [6.3.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.2.0...@rentpath/react-ui-ag@6.3.0) (2018-06-13)
+
+
+### Features
+
+* **listing:** move property name up ([c8863c5](https://github.com/rentpath/react-ui/commit/c8863c5))
+
+
+
+
 <a name="6.2.0"></a>
 # [6.2.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.1.0...@rentpath/react-ui-ag@6.2.0) (2018-06-12)
 
