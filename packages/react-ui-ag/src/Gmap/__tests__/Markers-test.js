@@ -20,10 +20,23 @@ describe('ag/Markers', () => {
         icon: redDotIcon(),
         onMouseOver: expect.any(Function),
         onMouseOut: expect.any(Function),
+        zIndex: 2,
       })
     })
 
-    it('uses a greyDotIcon for inactive properties', () => {
+    it('uses a redDotIcon with zIndex of 2 for active properties', () => {
+      const feature = {
+        properties: {
+          isActive: true,
+        },
+      }
+      const wrapper = shallow(<Markers map={map} markerIconHover={NOOP} />)
+      const instance = wrapper.instance()
+      expect(instance.marker(feature).icon).toEqual(redDotIcon())
+      expect(instance.marker(feature).zIndex).toEqual(2)
+    })
+
+    it('uses a greyDotIcon with zIndex of 1 for inactive properties', () => {
       const feature = {
         properties: {
           isActive: false,
@@ -32,6 +45,7 @@ describe('ag/Markers', () => {
       const wrapper = shallow(<Markers map={map} markerIconHover={NOOP} />)
       const instance = wrapper.instance()
       expect(instance.marker(feature).icon).toEqual(greyDotIcon())
+      expect(instance.marker(feature).zIndex).toEqual(1)
     })
 
     it('uses whatever icon is passed into markerInactiveIcon for inactive properties', () => {
@@ -47,6 +61,7 @@ describe('ag/Markers', () => {
       />)
       const instance = wrapper.instance()
       expect(instance.marker(feature).icon).toEqual(blackDotIcon())
+      expect(instance.marker(feature).zIndex).toEqual(1)
     })
 
     it('applies extra props correctly when passed as a `marker` prop', () => {
@@ -56,6 +71,7 @@ describe('ag/Markers', () => {
         icon: blackDotIconWithBalloon(),
         onMouseOver: expect.any(Function),
         onMouseOut: expect.any(Function),
+        zIndex: 2,
       })
     })
 
