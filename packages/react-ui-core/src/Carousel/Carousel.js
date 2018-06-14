@@ -5,6 +5,7 @@ import classnames from 'classnames'
 import autobind from 'autobind-decorator'
 import Slider from 'react-image-gallery'
 import { forceCheck } from 'react-lazyload'
+import isEqual from 'lodash/isEqual'
 import { randomId, parseArgs } from '@rentpath/react-ui-utils'
 import { Button } from '../Button'
 import CarouselNavigation from './CarouselNavigation'
@@ -67,6 +68,10 @@ export default class Carousel extends Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.selectedIndex !== nextProps.selectedIndex) {
       this.slideToIndex(nextProps.selectedIndex)
+    }
+
+    if (!isEqual(this.props.items, nextProps.items)) {
+      this.slideToIndex(0)
     }
   }
 

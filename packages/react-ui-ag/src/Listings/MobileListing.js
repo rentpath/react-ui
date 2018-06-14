@@ -13,12 +13,15 @@ export default class MobileListing extends PureComponent {
     className: PropTypes.string,
     ratings: PropTypes.object,
     sponsoredText: PropTypes.string,
+    categoryMatch: PropTypes.bool,
+    noMatchText: PropTypes.string,
   }
 
   static defaultProps = {
     theme: {},
     listing: {},
     ratings: {},
+    categoryMatch: true,
   }
 
   get availabilityOrUpdated() {
@@ -38,10 +41,11 @@ export default class MobileListing extends PureComponent {
   }
 
   get renderTopComponents() {
-    const { theme, listing, ratings, sponsoredText } = this.props
+    const { theme, listing, ratings, sponsoredText, categoryMatch, noMatchText } = this.props
     const { singleFamily, rating, sponsored } = listing
     return !singleFamily && (
       <div className={theme.MobileListing_RatingAndSponsored}>
+        {!categoryMatch && <div className={theme.MobileListing_NoMatch}>{noMatchText}</div>}
         {rating && <ListingComponents.Ratings data-tid="ratings" {...ratings} />}
         {sponsored && <Text className={theme.MobileListing_Sponsored}>{sponsoredText}</Text>}
       </div>
