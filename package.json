@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build:watch": "yarn run build -- --watch",
-    "build": "lerna run build",
+    "build": "lerna run build --parallel",
     "build-storybook": "build-storybook -c .storybook -s .storybook/dist -o build",
     "clean": "lerna run clean --yes",
     "lint": "yarn run lint:js && yarn run lint:css",
