@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="12.1.0"></a>
+# [12.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@12.0.0...@rentpath/react-ui-core@12.1.0) (2018-06-14)
+
+
+### Features
+
+* **react-ui-ag & react-ui-core:** reset carousel to initial index if it gets new photos ([0a4e44a](https://github.com/rentpath/react-ui/commit/0a4e44a))
+
+
+
+
 <a name="12.0.0"></a>
 # [12.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@11.3.2...@rentpath/react-ui-core@12.0.0) (2018-06-04)
 
