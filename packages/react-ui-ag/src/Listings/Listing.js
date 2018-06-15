@@ -40,6 +40,7 @@ export default class Listing extends Component {
     listingInfoComponents: PropTypes.node,
     listingTopComponents: PropTypes.node,
     onPhotoCarouselSlide: PropTypes.func,
+    renderCustomControls: PropTypes.func,
   }
 
   static defaultProps = {
@@ -189,7 +190,7 @@ export default class Listing extends Component {
   }
 
   renderPhotoCarousel() {
-    const { listing, theme, photos, isActive } = this.props
+    const { listing, theme, photos, isActive, renderCustomControls } = this.props
     let { lazyLoad } = this.props
 
     if (lazyLoad && typeof lazyLoad === 'boolean') {
@@ -211,6 +212,7 @@ export default class Listing extends Component {
             lazyLoad={lazyLoad}
             className={theme.Listing_Photos}
             onSlide={this.handlePhotoCarouselSlide}
+            renderCustomControls={renderCustomControls}
           />
         )}
         {this.renderPhoto(lazyLoad)}
@@ -245,6 +247,7 @@ export default class Listing extends Component {
       listingInfoComponents,
       listingTopComponents,
       onPhotoCarouselSlide,
+      renderCustomControls,
       ...props
     } = this.props
 
