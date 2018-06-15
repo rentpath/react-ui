@@ -4,9 +4,10 @@ import themed from 'react-themed'
 import classnames from 'classnames'
 import LazyLoad from 'react-lazyload'
 import autobind from 'autobind-decorator'
+import { Photo, BackgroundPhoto } from '../Photo'
 import Carousel from './Carousel'
 
-@themed(['PhotoCarousel', 'PhotoCarousel_Image', 'PhotoCarousel-empty'])
+@themed(['PhotoCarousel', 'PhotoCarousel-empty'])
 
 export default class PhotoCarousel extends PureComponent {
   static propTypes = {
@@ -15,12 +16,12 @@ export default class PhotoCarousel extends PureComponent {
     items: PropTypes.arrayOf(
       PropTypes.shape({
         caption: PropTypes.string,
-        path: PropTypes.string,
-        itemProps: PropTypes.object,
+        url: PropTypes.string,
       }),
     ),
     dimensions: PropTypes.string,
     server: PropTypes.string.isRequired,
+    isBackgroundImage: PropTypes.bool,
     lazyLoad: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.object,
@@ -29,12 +30,15 @@ export default class PhotoCarousel extends PureComponent {
 
   static defaultProps = {
     lazyLoad: false,
+    isBackgroundImage: false,
     theme: {},
   }
 
-  photo(path) {
+  photo(item) {
     const { server, dimensions } = this.props
-    return `${server}${path}${dimensions}`
+    const { url, path, id } = item
+
+    return url || `${server}${path || id}${dimensions}`
   }
 
   lazyLoad() {
@@ -52,12 +56,14 @@ export default class PhotoCarousel extends PureComponent {
 
   @autobind
   renderItem(item) {
+    const { isBackgroundImage } = this.props
+    const Component = isBackgroundImage ? BackgroundPhoto : Photo
+
     return (
-      <img
+      <Component
         alt={item.caption}
-        src={this.photo(item.path)}
-        className={this.props.theme.PhotoCarousel_Image}
-        {...item.itemProps}
+        url={this.photo(item)}
+        {...item}
       />
     )
   }

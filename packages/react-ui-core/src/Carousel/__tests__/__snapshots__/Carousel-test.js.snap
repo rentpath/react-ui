@@ -146,6 +146,7 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
             _owner={null}
             _store={Object {}}
             className=""
+            data-tag_item="left_arrow"
             data-tid="carousel-navigation-previous"
             disabled={true}
             onClick={[Function]}
@@ -165,6 +166,7 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
             _owner={null}
             _store={Object {}}
             className=""
+            data-tag_item="right_arrow"
             data-tid="carousel-navigation-next"
             disabled={false}
             onClick={[Function]}
@@ -308,6 +310,7 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
         <span>
           <button
             className=""
+            data-tag_item="left_arrow"
             data-tid="carousel-navigation-previous"
             disabled={true}
             onClick={[Function]}
@@ -318,6 +321,7 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
           </button>
           <button
             className=""
+            data-tag_item="right_arrow"
             data-tid="carousel-navigation-next"
             disabled={false}
             onClick={[Function]}

@@ -3,6 +3,7 @@
 exports[`Carousel Navigation renders passed children 1`] = `
 <button
   className="CarouselNavigation-next"
+  data-tag_item="right_arrow"
   data-tid="carousel-navigation-next"
   role="button"
   tabIndex={0}

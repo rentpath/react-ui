@@ -20,8 +20,6 @@ import {
   BannerWithNode,
 } from './Banners'
 
-import { DefaultListingCarousel } from './Carousels'
-
 import { ExampleGridViewHeader } from './GridView'
 
 import { OptionalEmailModal, MandatoryEmailModal } from './Modals'
@@ -48,9 +46,6 @@ largeStories('Listings', module)
   .add('DesktopMapPinListing', () => ExampleDesktopMapPinListing)
   .add('Desktop Listing', ExampleDesktopListing)
   .add('Single Family Desktop Listing', ExampleSingleFamilyDesktopListing)
-
-smallStories('Carousels', module)
-  .add('Listing Carousel', () => DefaultListingCarousel)
 
 largeStories('Filters / RadioGroupDropdown / large', module)
   .add('Beds', () => DesktopBedroomDropdown)

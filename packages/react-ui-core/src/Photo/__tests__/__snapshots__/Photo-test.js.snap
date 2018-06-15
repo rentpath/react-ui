@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Photo src sets a url 1`] = `
+<img
+  alt="foo alt text"
+  className=""
+  data-tid="photo"
+  onError={[Function]}
+  src="/foo"
+/>
+`;
