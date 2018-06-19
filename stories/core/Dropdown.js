@@ -1,9 +1,11 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { Dropdown, Text, Menu, Card } from 'react-ui-core/src'
-import DropdownButtonExample from './DropdownButtonExample'
-import DropdownInputExample from './DropdownInputExample'
-import DynamicDropdownExample from './DynamicDropdownExample'
+import {
+  DropdownButtonExample,
+  DropdownInputExample,
+  DynamicDropdownExample,
+} from './ExampleComponents'
 import StoryBookTheme from '../theme/Storybook.css'
 
 const inputProps = {

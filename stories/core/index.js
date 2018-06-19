@@ -125,7 +125,9 @@ import {
   GmapWithMultipleMarkers,
   GmapWithInfoWindow,
   GmapWithOverlayView,
-  GmapWithFreeDraw,
+  FreeDrawDefault,
+  WithExistingShape,
+  WithCustomDrawToolAndBanner,
 } from './Gmap'
 
 import coreStories, { coreStoriesNoContainer } from './coreStories'
@@ -174,14 +176,18 @@ coreStories('Field', module)
   .add('Select Field', () => SelectField)
   .add('Checkbox Field', () => CheckboxField)
 
-coreStoriesNoContainer('Gmap', module)
+coreStoriesNoContainer('Gmap ', module)
   .add('Gmap', () => DefaultGmap)
   .add('Gmap with spinner', () => GmapWithSpinner)
   .add('Gmap with marker', () => GmapWithSingleMarker)
   .add('Gmap with multiple markers', () => GmapWithMultipleMarkers)
   .add('Gmap with infowindow', () => GmapWithInfoWindow)
   .add('Gmap with overlay view', () => GmapWithOverlayView)
-  .add('Gmap with Free Draw', () => GmapWithFreeDraw)
+
+coreStoriesNoContainer('Gmap / FreeDraw', module)
+  .add('With Defaults', () => FreeDrawDefault)
+  .add('With Existing Shape', () => WithExistingShape)
+  .add('With a Custom Draw Tool and Banner', () => WithCustomDrawToolAndBanner)
 
 coreStories('Highlighter', module)
   .add('Default Highlighter', () => DefaultHighlighter)

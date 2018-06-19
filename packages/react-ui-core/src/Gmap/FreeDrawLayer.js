@@ -2,8 +2,11 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
 import themed from 'react-themed'
+import classnames from 'classnames'
 import { GMAP_EVENTS } from './utils/const'
 import { setupEvents, removeEvent } from './utils/mapEventHelpers'
+import FreeDrawTool from './FreeDrawTool'
+import FreeDrawBanner from './FreeDrawBanner'
 
 const enableControls = (enable = true) => ({
   draggable: enable,
@@ -12,27 +15,34 @@ const enableControls = (enable = true) => ({
   disableDoubleClickZoom: enable,
 })
 
-@themed(['Gmap_FreeDrawLayer'], { pure: true })
+@themed(/^Gmap_FreeDrawLayer/, { pure: true })
 export default class FreeDrawLayer extends PureComponent {
   static propTypes = {
+    theme: PropTypes.object,
     map: PropTypes.object,
     onMapDrawStart: PropTypes.func,
     onMapDrawEnd: PropTypes.func,
-    theme: PropTypes.object,
-    mapControls: PropTypes.object,
     shapes: PropTypes.object,
     multipleShapes: PropTypes.bool,
-    disabled: PropTypes.bool,
     dataStyle: PropTypes.object,
+    mapControls: PropTypes.object.isRequired,
+    freeDrawToolControls: PropTypes.object,
+    DrawTool: PropTypes.func,
+    className: PropTypes.string,
+    bannerControls: PropTypes.object,
+    Banner: PropTypes.func,
   }
 
   static defaultProps = {
     theme: {},
     map: {},
     multipleShapes: false,
-    disabled: false,
     shapes: {},
     dataStyle: {},
+    freeDrawToolControls: {},
+    DrawTool: FreeDrawTool,
+    bannerControls: {},
+    Banner: FreeDrawBanner,
   }
 
   constructor(props) {
@@ -160,17 +170,27 @@ export default class FreeDrawLayer extends PureComponent {
   }
 
   render() {
-    const { theme, disabled } = this.props
-    const { drawing } = this.state
-    // This button is temporary - will be replaced with the tool tip when built
+    const {
+      freeDrawToolControls,
+      DrawTool,
+      bannerControls,
+      Banner,
+      className,
+      theme,
+    } = this.props
+
     return (
-      <button
-        className={theme.Gmap_FreeDrawLayer}
-        onClick={this.enableMapDraw}
-        disabled={disabled || drawing}
-      >
-        Click to draw
-      </button>
+      <React.Fragment>
+        <Banner
+          className={classnames(className, theme.Gmap_FreeDrawLayer)}
+          {...bannerControls}
+        />
+        <DrawTool
+          className={classnames(className, theme.Gmap_FreeDrawLayer)}
+          handleClick={this.enableMapDraw}
+          {...freeDrawToolControls}
+        />
+      </React.Fragment>
     )
   }
 }

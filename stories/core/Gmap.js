@@ -1,11 +1,43 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { Gmap, GmapSpinner, Marker, Markers, FreeDrawLayer } from 'react-ui-core/src'
+import { Gmap, GmapSpinner, Marker, Markers } from 'react-ui-core/src'
 import InfoWindow from './InfoWindow'
 import OverlayView from './OverlayView'
 import geojson from '../dummyData/geojson.json'
+import {
+  CustomBannerExample,
+  CustomDrawToolExample,
+  FreeDrawExample,
+} from './ExampleComponents'
 
 const key = 'AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A'
+const dataStyle = {
+  polylineFill: {
+    strokeColor: '#d32526',
+    strokeOpacity: 0.8,
+    strokeWeight: 0,
+    fillColor: '#9b9b9b',
+    fillOpacity: 0.30,
+  },
+  polyline: {
+    strokeColor: '#d32526',
+    strokeOpacity: 1,
+    strokeWeight: 2,
+  },
+  polygon: {
+    strokeColor: '#d32526',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#9b9b9b',
+    fillOpacity: 0.30,
+  },
+}
+const mapControls = {
+  draggable: true,
+  zoomControl: true,
+  scrollwheel: true,
+  disableDoubleClickZoom: true,
+}
 
 export const DefaultGmap = (
   <Gmap
@@ -46,57 +78,60 @@ export const GmapWithOverlayView = (
   <OverlayView apiKey={key} />
 )
 
-class FreeDrawExample extends PureComponent {
-
-  constructor(props) {
-    super(props)
-    this.state = { shapes: { 0: [[-84.40399, 33.89503], [-84.70, 33.83], [-84.77, 33.15]] } }
-    this.handleAddShape = this.handleAddShape.bind(this)
-  }
-
-  handleAddShape(shape) {
-    this.setState({ shapes: { 0: shape } })
-  }
-
-  render() {
-    return (
-      <Gmap
-        apiKey={key}
-      >
-        <FreeDrawLayer
-          onMapDrawStart={action('Drawing shape')}
-          onMapDrawEnd={this.handleAddShape}
-          shapes={this.state.shapes}
-          dataStyle={
-            {
-              polylineFill: {
-                strokeColor: '#d32526',
-                strokeOpacity: 0.8,
-                strokeWeight: 0,
-                fillColor: '#9b9b9b',
-                fillOpacity: 0.30,
-              },
-              polyline: {
-                strokeColor: '#d32526',
-                strokeOpacity: 1,
-                strokeWeight: 2,
-              },
-              polygon: {
-                strokeColor: '#d32526',
-                strokeOpacity: 0.8,
-                strokeWeight: 2,
-                fillColor: '#9b9b9b',
-                fillOpacity: 0.30,
-              },
-            }
-          }
-        />
-      </Gmap >
-    )
-  }
-}
-
-export const GmapWithFreeDraw = (
-  <FreeDrawExample />
+export const FreeDrawDefault = (
+  <Gmap
+    apiKey={key}
+  >
+    <FreeDrawExample
+      key={key}
+      handleMapDrawStart={action('Drawing shape')}
+      dataStyle={dataStyle}
+      freeDrawToolControls={{
+        buttonText: 'Draw Search',
+        status: 'active',
+      }}
+      bannerControls={{
+        bannerText: 'Zoom in on map to use Draw Search function',
+        bannerType: 'zoomIn',
+      }}
+      mapControls={mapControls}
+    />
+  </Gmap>
 )
 
+export const WithExistingShape = (
+  <Gmap
+    apiKey={key}
+  >
+    <FreeDrawExample
+      key={key}
+      handleMapDrawStart={action('Drawing shape')}
+      shapes={{ 0: [[-84.40399, 33.89503], [-84.70, 33.83], [-84.77, 33.15]] }}
+      dataStyle={dataStyle}
+      freeDrawToolControls={{
+        buttonText: 'Draw Search',
+        status: 'active',
+      }}
+      bannerControls={{
+        bannerText: 'Click Draw Search to Erase Shape and Draw Again',
+        bannerType: 'zoomIn',
+      }}
+      mapControls={mapControls}
+    />
+  </Gmap>
+)
+
+export const WithCustomDrawToolAndBanner = (
+  <Gmap
+    apiKey={key}
+  >
+    <FreeDrawExample
+      key={key}
+      dataStyle={dataStyle}
+      onMapDrawStart={action('Drawing shape')}
+      mapControls={mapControls}
+      DrawTool={CustomDrawToolExample}
+      Banner={CustomBannerExample}
+    />
+  </Gmap>
+)
