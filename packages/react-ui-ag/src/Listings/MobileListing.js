@@ -86,6 +86,7 @@ export default class MobileListing extends PureComponent {
       listing,
       ratings,
       noMatchText,
+      categoryMatch,
       ...props
     } = this.props
 

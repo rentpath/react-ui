@@ -125,6 +125,7 @@ import {
   GmapWithMultipleMarkers,
   GmapWithInfoWindow,
   GmapWithOverlayView,
+  GmapWithFreeDraw,
 } from './Gmap'
 
 import coreStories, { coreStoriesNoContainer } from './coreStories'
@@ -180,6 +181,7 @@ coreStoriesNoContainer('Gmap', module)
   .add('Gmap with multiple markers', () => GmapWithMultipleMarkers)
   .add('Gmap with infowindow', () => GmapWithInfoWindow)
   .add('Gmap with overlay view', () => GmapWithOverlayView)
+  .add('Gmap with Free Draw', () => GmapWithFreeDraw)
 
 coreStories('Highlighter', module)
   .add('Default Highlighter', () => DefaultHighlighter)

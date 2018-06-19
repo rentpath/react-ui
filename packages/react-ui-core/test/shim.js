@@ -9,8 +9,10 @@ global.requestAnimationFrame = raf
 global.google = {
   maps: {
     event: {
-      addListener: () => {},
-      clearInstanceListeners: () => {},
+      addListener: (instance, eventName, handler) => handler,
+      clearInstanceListeners: () => { },
+      addListenerOnce: (instance, eventName, handler) => handler,
+      removeListener: () => { },
     },
     LatLng: (lat, lng) => ({
       latitude: parseFloat(lat),
@@ -23,7 +25,7 @@ global.google = {
       getNorthEast: () => ne,
     }),
     OverlayView: () => ({
-      setMap: () => {},
+      setMap: () => { },
       getPanes: () => ({
         floatPane: {},
         mapPane: {},
@@ -36,10 +38,10 @@ global.google = {
       }),
     }),
     InfoWindow: () => ({
-      open: () => {},
-      close: () => {},
-      setContent: () => {},
-      addListener: () => {},
+      open: () => { },
+      close: () => { },
+      setContent: () => { },
+      addListener: () => { },
     }),
     Marker: () => ({
       setMap: () => { },
@@ -49,12 +51,25 @@ global.google = {
     Map: () => ({
       addListener: () => { },
       data: {
-        setStyle: () => {},
-        loadGeoJson: () => {},
-        addGeoJson: () => {},
+        setStyle: () => { },
+        loadGeoJson: () => { },
+        addGeoJson: () => { },
       },
     }),
     Point: () => ({}),
+    Polygon: () => ({
+      setMap: () => { },
+      getPath: () => ({
+        getLength: () => { },
+      }),
+    }),
+    Polyline: () => ({
+      getPath: () => ({
+        getLength: () => { },
+      }),
+      setMap: () => { },
+    }),
+    setOptions: () => { },
     Size: () => ({}),
     SymbolPath: {
       CIRCLE: 'circle',
