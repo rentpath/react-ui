@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
 
-@themed(/^(RatingBar|Label)/, {
+@themed(/^(RatingBar|Label|Legend)/, {
   pure: true,
 })
 
@@ -19,6 +19,21 @@ export default class RatingBar extends PureComponent {
     theme: {},
     score: 0,
     maxScore: 5,
+  }
+
+  get ratingLegend(){
+    const {
+      theme, 
+      score,
+      ratingValue
+    } = this.props
+
+    return (
+      <div className={theme.Legend}>
+        <div className={theme.RatingBar_RatingValue}> {ratingValue} </div>
+        <div className={theme.RatingBar_LegendIcon}></div>
+      </div>
+    )
   }
 
   get ratingItems() {
@@ -43,7 +58,7 @@ export default class RatingBar extends PureComponent {
       </div>
     )
   }
-
+  
   render() {
     const {
       theme,
@@ -51,6 +66,7 @@ export default class RatingBar extends PureComponent {
       className,
       score,
       maxScore,
+      ratingValue,
       ...props
     } = this.props
 
@@ -64,8 +80,14 @@ export default class RatingBar extends PureComponent {
         }
         {...props}
       >
+        {ratingValue && this.ratingLegend}
         {this.ratingItems}
-        {label &&
+        {ratingValue && 
+          <div className={theme.Label}>
+            {score}
+          </div>
+        }
+        {label && 
           <div className={theme.Label}>
             {label}
           </div>
