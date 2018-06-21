@@ -45,6 +45,9 @@ import {
   MaxScoreTenRatingBar,
   PartialRatingBar,
   HandleRatingClick,
+  RatingSummary,
+  RatingSummaryGroup,
+  LabeledRatingSummary
 } from './RatingBar'
 
 import {
@@ -233,6 +236,9 @@ coreStories('RatingBar', module)
   .add('Max Score of 10 Bar', () => MaxScoreTenRatingBar)
   .add('Partial Rating Bar', () => PartialRatingBar)
   .add('onClick for Rating Vote', () => HandleRatingClick)
+  .add('Rating Summary', () => RatingSummary)
+  .add('Labeled Rating Summary', () => LabeledRatingSummary)
+  .add('Rating Summary Group', () => RatingSummaryGroup)
 
 coreStories('Text', module)
   .add('Text', () => Text)

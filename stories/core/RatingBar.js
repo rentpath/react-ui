@@ -57,3 +57,61 @@ export const HandleRatingClick = (
     label="Click a Star"
   />
 )
+
+export const RatingSummary = (
+  <RatingBar
+    className={theme.themedRating_summary}
+    ratingValue={5}
+    score={18}
+    maxScore={30}
+  />
+)
+
+export const LabeledRatingSummary = (
+  <RatingBar
+    className={theme.themedRating_summary}
+    ratingValue={5}
+    score={18}
+    maxScore={30}
+    label='of 30'
+  />
+)
+
+export const RatingSummaryGroup = (
+  <div>
+    <RatingBar
+      className={theme.themedRating_summary}
+      ratingValue={5}
+      score={18}
+      maxScore={30}
+    />
+
+    <RatingBar
+      className={theme.themedRating_summary}
+      ratingValue={4}
+      score={6}
+      maxScore={30}
+    />
+
+    <RatingBar
+      className={theme.themedRating_summary}
+      ratingValue={3}
+      score={3}
+      maxScore={30}
+    />
+
+    <RatingBar
+      className={theme.themedRating_summary}
+      ratingValue={2}
+      score={2}
+      maxScore={30}
+    />
+
+    <RatingBar
+      className={theme.themedRating_summary}
+      ratingValue={1}
+      score={1}
+      maxScore={30}
+    />
+  </div>
+)

@@ -1,5 +1,6 @@
 @value GoldStar: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDUxIDQ4Ij48cGF0aCBmaWxsPSIjRkJCMTAwIiBkPSJNMjUgMWw2IDE3aDE4TDM1IDI5bDUgMTctMTUtMTAtMTUgMTAgNS0xN0wxIDE4aDE4eiIvPjwvc3ZnPg==);
 @value GrayStar: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDUxIDQ4Ij48cGF0aCBmaWxsPSIjQ0VDRUNFIiBkPSJNMjUgMWw2IDE3aDE4TDM1IDI5bDUgMTctMTUtMTAtMTUgMTAgNS0xN0wxIDE4aDE4eiIvPjwvc3ZnPg==);
+@value BlueStar: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij4gICAgPHBhdGggZmlsbD0iIzAwM0JERSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNi45NTggMGwxLjg4OCA1LjM0N2g1LjA3bC00LjEzNyAzLjE0TDExLjI1OCAxNGwtNC4zLTMuMzA1TDIuNjU4IDE0bDEuNDc5LTUuNTEyTDAgNS4zNDhoNS4wN3oiLz48L3N2Zz4=);
 
 .RatingBar .Label {
   text-align: center;
@@ -17,6 +18,37 @@
 .RatingBar_Background {
   overflow: hidden;
   background-repeat: repeat-x;
+}
+
+.Legend{
+  padding:0;
+}
+
+.RatingBar .Legend {
+  margin-right: 9.1px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.RatingBar_LegendIcon{
+  width:14px;
+  height:14px;
+  background:BlueStar;
+  background-repeat: no-repeat;
+}
+
+.RatingBar_RatingValue{ 
+  font-size: 14px;
+  width:8px;
+  text-align: center;
+  margin-right:4px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #091540;
 }
 
 .themedRating_star .RatingBar_Icons,
@@ -87,4 +119,24 @@ width: 20px * 5 stars = 100px
 .themedRating_circle .RatingBar_Background {
   height: 20px;
   width: 100px;
+}
+
+.themedRating_summary{
+  display:flex;
+  height:14px;
+  align-items:center;
+  justify-content: space-around;
+  margin-bottom:21px;
+}
+
+.themedRating_summary .RatingBar_Icons {
+  border-radius: 2px;
+  background-color: #09bb3b;
+}
+
+.themedRating_summary .RatingBar_Background{
+  width: 267px;
+  height: 14px;
+  border-radius: 2px;
+  background-color: #ebebeb;
 }
