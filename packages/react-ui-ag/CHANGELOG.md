@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="6.5.1"></a>
+## [6.5.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.5.0...@rentpath/react-ui-ag@6.5.1) (2018-06-21)
+
+
+### Bug Fixes
+
+* **@rentpath/react-ui-ag:** fixes issue where mobile listing was not passing renderCustomControls th ([1aea52f](https://github.com/rentpath/react-ui/commit/1aea52f))
+
+
+
+
 <a name="6.5.0"></a>
 # [6.5.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.4.0...@rentpath/react-ui-ag@6.5.0) (2018-06-14)
 
