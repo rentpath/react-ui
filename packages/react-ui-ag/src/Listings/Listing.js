@@ -60,7 +60,7 @@ export default class Listing extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    const { isActive, listing, className } = this.props
+    const { isActive, listing, className, photos: photoConfig } = this.props
     const { id, isFavorited, photos } = listing
 
     return (
@@ -68,7 +68,8 @@ export default class Listing extends Component {
       id !== nextProps.listing.id ||
       isFavorited !== nextProps.listing.isFavorited ||
       className !== nextProps.className ||
-      !isEqual(photos, nextProps.listing.photos)
+      !isEqual(photos, nextProps.listing.photos) ||
+      !isEqual(photoConfig, nextProps.photos)
     )
   }
 

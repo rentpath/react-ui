@@ -12,7 +12,6 @@ export default class MobileListing extends PureComponent {
     theme: PropTypes.object,
     className: PropTypes.string,
     ratings: PropTypes.object,
-    sponsoredText: PropTypes.string,
     categoryMatch: PropTypes.bool,
     noMatchText: PropTypes.string,
   }
@@ -21,7 +20,6 @@ export default class MobileListing extends PureComponent {
     theme: {},
     listing: {},
     ratings: {},
-    categoryMatch: true,
   }
 
   get availabilityOrUpdated() {
@@ -41,14 +39,19 @@ export default class MobileListing extends PureComponent {
   }
 
   get renderTopComponents() {
-    const { theme, listing, ratings, sponsoredText, categoryMatch, noMatchText } = this.props
+    const { theme, listing, ratings, noMatchText } = this.props
     const { singleFamily, rating, sponsored } = listing
-    return !singleFamily && (
-      <div className={theme.MobileListing_RatingAndSponsored}>
-        {!categoryMatch && <div className={theme.MobileListing_NoMatch}>{noMatchText}</div>}
-        {rating && <ListingComponents.Ratings data-tid="ratings" {...ratings} />}
-        {sponsored && <Text className={theme.MobileListing_Sponsored}>{sponsoredText}</Text>}
-      </div>
+
+    return (
+      <React.Fragment>
+        {noMatchText && <Text className={theme.MobileListing_NoMatchText}>{noMatchText}</Text>}
+        {!singleFamily && (rating || sponsored) &&
+          <div className={theme.MobileListing_RatingAndSponsored}>
+            {rating && <ListingComponents.Ratings data-tid="ratings" {...ratings} />}
+            {sponsored && <Text className={theme.MobileListing_Sponsored}>{sponsored.text}</Text>}
+          </div>
+        }
+      </React.Fragment>
     )
   }
 
@@ -82,6 +85,7 @@ export default class MobileListing extends PureComponent {
       className,
       listing,
       ratings,
+      noMatchText,
       ...props
     } = this.props
 
