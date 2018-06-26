@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="6.6.0"></a>
+# [6.6.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.5.1...@rentpath/react-ui-ag@6.6.0) (2018-06-26)
+
+
+### Features
+
+* **react-ui-ag:** Allow MobileMapListing to display text on no match and check photo carousel component rerendering ([52b073a](https://github.com/rentpath/react-ui/commit/52b073a))
+
+
+
+
 <a name="6.5.1"></a>
 ## [6.5.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.5.0...@rentpath/react-ui-ag@6.5.1) (2018-06-21)
 
