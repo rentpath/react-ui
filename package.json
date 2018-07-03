@@ -34,8 +34,8 @@
       "packages/react-ui-tracking",
       "packages/react-ui-utils",
       "packages/react-ui-ag",
-      "packages/react-ui-rent",
-      "packages/react-ui-rentals"
+      "packages/react-ui-redux",
+      "packages/react-ui-rent"
     ]
   },
   "devDependencies": {
