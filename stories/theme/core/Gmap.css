@@ -23,3 +23,8 @@
   padding: 5px;
   white-space: nowrap;
 }
+
+.Gmap_FreeDrawLayer {
+  position: absolute;
+  z-index: 40;
+}

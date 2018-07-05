@@ -112,6 +112,7 @@ export {
   Marker,
   Markers,
   OverlayView,
+  FreeDrawLayer,
 } from './Gmap'
 
 export {

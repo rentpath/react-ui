@@ -46,6 +46,7 @@ const MAP_CONTROLS = {
   mapTypeControl: true,
   scaleControl: true,
   rotateControl: true,
+
 }
 
 @themed(/^Gmap/, { pure: true })
@@ -68,6 +69,11 @@ export class Gmap extends PureComponent {
       mapTypeControl: PropTypes.bool,
       zoomControl: PropTypes.bool,
       streetViewControl: PropTypes.bool,
+      scaleControl: PropTypes.bool,
+      rotateControl: PropTypes.bool,
+      draggable: PropTypes.bool,
+      scrollwheel: PropTypes.bool,
+      disableDoubleClickZoom: PropTypes.bool,
     }),
     stylingFunction: PropTypes.func,
   }
