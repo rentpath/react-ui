@@ -5,3 +5,30 @@
   height: 200px;
   max-width: 90%;
 }
+
+.InlineCard .Card_Body {
+  padding: 0 15px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.SearchFilter .Card_Body {
+  justify-content: center;
+}
+
+.SearchFilter.Card {
+  width: 379px;
+  max-width: unset;
+}
+
+.InlineCard.Card {
+  width: 343px;
+  max-width: unset;
+}
+
+.InlineCard .Card_Body,
+.SearchFilter .Card_Body {
+  height: 100%;
+  display: flex;
+  width: unset;
+}

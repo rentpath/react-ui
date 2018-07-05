@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import { action } from '@storybook/addon-actions'
-import { RadioGroupFilterCard } from 'react-ui-ag/src'
+import { RadioGroupFilterCard } from 'react-ui-core/src'
 
 const DesktopBedroomFilterCardComponent = ({ theme }) => (
   <RadioGroupFilterCard

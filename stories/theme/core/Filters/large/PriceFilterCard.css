@@ -1,0 +1,102 @@
+.SearchFilter.PriceFilterCard.Card {
+  padding: 0 25px;
+}
+
+.SearchFilter.PriceFilterCard .FilterCard_Body {
+  flex-grow: 1;
+}
+
+.SearchFilter.PriceFilterCard .RangeSlider {
+  width: 100%;
+}
+
+.SearchFilter.PriceFilterCard .RangeSlider_Text {
+  color: #787878;
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.SearchFilter.PriceFilterCard .slider {
+  appearance: none;
+  background: #d2232a;
+  border: 11px solid #d2232a;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  height: 11px;
+  width: 11px;
+  margin-top: -20px;
+  outline: none;
+  object-fit: contain;
+  top: 50%;
+}
+
+.SearchFilter.PriceFilterCard .slider:focus {
+  box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2);
+}
+
+.SearchFilter.PriceFilterCard .sliderContainer {
+  transition: left 0.3s ease-out;
+}
+
+.SearchFilter.PriceFilterCard .labelContainer {
+  position: relative;
+  white-space: nowrap;
+}
+
+.SearchFilter.PriceFilterCard .minLabel,
+.SearchFilter.PriceFilterCard .maxLabel {
+  display: none;
+}
+
+.SearchFilter.PriceFilterCard .maxLabel {
+  right: 0;
+}
+
+.SearchFilter.PriceFilterCard .minLabel .labelContainer,
+.SearchFilter.PriceFilterCard .maxLabel .labelContainer {
+  left: 0;
+}
+
+.SearchFilter.PriceFilterCard .valueLabel {
+  position: absolute;
+  top: -47px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.SearchFilter.PriceFilterCard .track {
+  background: #e6e7e9;
+  border-radius: 20px;
+  cursor: pointer;
+  display: block;
+  height: 6px;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  width: 100%;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+
+.SearchFilter.PriceFilterCard .activeTrack {
+  background: #d2232a;
+  height: 6px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  position: relative;
+  padding-right: 12px;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+
+.SearchFilter.PriceFilterCard .inputRange {
+  height: 1rem;
+  margin-right: 33px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.SearchFilter.PriceFilterCard .disabledInputRange {
+  background: #cccccc;
+  border: 1px solid #cccccc;
+  box-shadow: none;
+  transform: none;
+}

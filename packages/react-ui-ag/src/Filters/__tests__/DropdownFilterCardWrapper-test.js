@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import { RadioGroupFilterCard } from '@rentpath/react-ui-core'
 import theme from './mocks/theme'
 import DropdownFilterCardWrapper from '../DropdownFilterCardWrapper'
-import RadioGroupFilterCard from '../RadioGroupFilterCard'
 
 describe('DropdownFilterCardWrapper', () => {
   const radioGroupFilterProps = {

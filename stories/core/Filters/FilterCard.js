@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import { action } from '@storybook/addon-actions'
-import { FilterCard } from 'react-ui-ag/src'
+import { FilterCard } from 'react-ui-core/src'
 
 const DefaultFilterCard = (
   <FilterCard

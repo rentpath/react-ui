@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
 import { parseArgs } from '@rentpath/react-ui-utils'
-import { Card, Title, Text } from '@rentpath/react-ui-core'
+import { Title } from '../Title'
+import { Text } from '../Text'
+import { Card } from '../Card'
 import {
   CancelButton,
   ApplyButton,
-} from '../Buttons'
+} from '../Button'
 
 const buttonType = PropTypes.oneOfType([
   PropTypes.node,

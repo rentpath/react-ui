@@ -1,0 +1,31 @@
+.ApplyButton {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 100px;
+  padding: 9px;
+  text-align: center;
+}
+
+.InlineCard .ApplyButton:active {
+  background-color: #ffffff;
+  color: #0175d7;
+}
+
+.InlineCard .ApplyButton {
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 13px;
+  min-width: 16px;
+  border: solid 1px #ffffff;
+  padding: 9px 16px;
+  height: auto;
+  flex-basis: 48px;
+}
+
+.SearchFilter .ApplyButton {
+  font-size: 15px;
+  width: 100px;
+  background-color: #d2232a;
+  color: #ffffff;
+  outline: none;
+}

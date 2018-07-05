@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
-import { RadioGroup } from '@rentpath/react-ui-core'
 import isEqual from 'lodash/isEqual'
 import autobind from 'autobind-decorator'
+import { RadioGroup } from '../Form'
 import FilterCard from './FilterCard'
 
 @themed(/^RadioGroupFilterCard/)

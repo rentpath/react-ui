@@ -4,7 +4,7 @@ import classname from 'classnames'
 import themed from 'react-themed'
 import autobind from 'autobind-decorator'
 import { parseArgs } from '@rentpath/react-ui-utils'
-import { RangeSlider } from '@rentpath/react-ui-core'
+import { RangeSlider } from '../Form'
 import FilterCard from './FilterCard'
 
 @themed(/^PriceFilterCard/)

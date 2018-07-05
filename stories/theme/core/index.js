@@ -32,6 +32,24 @@ import ListingCell from './ListingCell.css'
 import Drawer from './Drawer.css'
 import Gmap from './Gmap.css'
 
+import {
+  LargeFilterCard,
+  LargePetFilterCard,
+  LargeBathroomFilterCard,
+  LargePriceFilterCard,
+  SmallFilterCard,
+  SmallBedroomFilterCard,
+  SmallPetFilterCard,
+  SmallRatingFilterCard,
+  SmallBathroomFilterCard,
+  SmallPriceFilterCard,
+} from './Filters'
+
+import {
+  ApplyButton,
+  CancelButton,
+} from './Buttons'
+
 export default compose({},
   Label,
   Field,
@@ -65,4 +83,16 @@ export default compose({},
   ListingCell,
   Drawer,
   Gmap,
+  LargeFilterCard,
+  LargePetFilterCard,
+  LargeBathroomFilterCard,
+  LargePriceFilterCard,
+  SmallFilterCard,
+  SmallBedroomFilterCard,
+  SmallPetFilterCard,
+  SmallRatingFilterCard,
+  SmallBathroomFilterCard,
+  SmallPriceFilterCard,
+  ApplyButton,
+  CancelButton,
 )

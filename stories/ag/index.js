@@ -1,16 +1,4 @@
 import {
-  DefaultFilterCard,
-  OneButtonFilterCard,
-  TwoButtonFilterCard,
-  DesktopBedroomFilterCard,
-  InlineBedroomFilterCard,
-  InlinePriceFilterCard,
-  DesktopPriceFilterCard,
-  DesktopPetFilterCard,
-  InlinePetFilterCard,
-  InlineRatingFilterCard,
-  InlineBathroomFilterCard,
-  DesktopBathroomFilterCard,
   DesktopBedroomDropdown,
   DesktopBathroomDropdown,
   DesktopPetDropdown,
@@ -41,7 +29,6 @@ import { OptionalEmailModal, MandatoryEmailModal } from './Modals'
 import {
   smallStories,
   largeStories,
-  exampleStories,
 } from './stories'
 
 import {
@@ -50,28 +37,6 @@ import {
   MultipleMarkers,
   SelectedMarker,
 } from './Gmap'
-
-exampleStories('Filters / FilterCard', module)
-  .add('Default', () => DefaultFilterCard)
-  .add('One Button FilterCard', () => OneButtonFilterCard)
-  .add('Two Button FilterCard', () => TwoButtonFilterCard)
-
-largeStories('Filters / RadioGroupFilterCard / large', module)
-  .add('Bedroom', () => DesktopBedroomFilterCard)
-  .add('Bathroom', () => DesktopBathroomFilterCard)
-  .add('Pet', () => DesktopPetFilterCard)
-
-smallStories('Filters / RadioGroupFilterCard / small', module)
-  .add('Bedroom', () => InlineBedroomFilterCard)
-  .add('Bathroom', () => InlineBathroomFilterCard)
-  .add('Pet', () => InlinePetFilterCard)
-  .add('Rating', () => InlineRatingFilterCard)
-
-largeStories('Filters / PriceFilterCard / large', module)
-  .add('Price Filter', () => DesktopPriceFilterCard)
-
-smallStories('Filters / PriceFilterCard / small', module)
-  .add('Price Filter', () => InlinePriceFilterCard)
 
 smallStories('Listings', module)
   .add('Mobile Map Listing', ExampleMobileMapListing)
