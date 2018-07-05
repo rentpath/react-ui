@@ -21,6 +21,7 @@ exports[`Gmap clones children correctly renders only children that are not null 
           "loadGeoJson": [Function],
           "setStyle": [Function],
         },
+        "setOptions": [Function],
       }
     }
   />
@@ -33,6 +34,7 @@ exports[`Gmap clones children correctly renders only children that are not null 
           "loadGeoJson": [Function],
           "setStyle": [Function],
         },
+        "setOptions": [Function],
       }
     }
   />
