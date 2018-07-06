@@ -1,6 +1,7 @@
 {
   "name": "@rentpath/react-ui-packages",
   "version": "0.0.1",
+  "main": "packages/react-ui-core/lib/index.js",
   "license": "MIT",
   "scripts": {
     "build:watch": "yarn run build -- --watch",
