@@ -87,6 +87,13 @@ describe('FreeDrawLayer', () => {
       expect(fakeListener).toHaveBeenCalledWith(instance.props.map, 'mousedown', expect.any(Function))
     })
 
+    it('calls the onEnableMapDraw prop when the mousedown event is triggered', () => {
+      const onEnableMapDraw = jest.fn()
+      const instance = setup({ onEnableMapDraw })
+      instance.enableMapDraw()
+      expect(onEnableMapDraw).toHaveBeenCalled()
+    })
+
     it('calls the drawFreeHand function when the mousedown event is triggered', () => {
       const instance = setup()
       const spy = jest.spyOn(instance, 'drawFreeHand')
