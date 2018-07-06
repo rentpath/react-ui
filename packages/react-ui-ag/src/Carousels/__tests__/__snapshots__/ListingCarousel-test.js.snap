@@ -1,0 +1,2127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListingCarousel maps the listings to the Carousel 1`] = `
+<div
+  className="ListingCarousel"
+  data-tid="carousel"
+>
+  <div
+    aria-live="polite"
+    className="image-gallery "
+  >
+    <div
+      className="image-gallery-content"
+    >
+      <div
+        className="image-gallery-slide-wrapper bottom"
+      >
+        <div
+          className="image-gallery-swipe"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="image-gallery-slides"
+          >
+            <div
+              className="image-gallery-slide center"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              role={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate3d(0%, 0, 0)",
+                  "OTransform": "translate3d(0%, 0, 0)",
+                  "WebkitTransform": "translate3d(0%, 0, 0)",
+                  "msTransform": "translate3d(0%, 0, 0)",
+                  "transform": "translate3d(0%, 0, 0)",
+                }
+              }
+            >
+              <div
+                banner="$ Coupon"
+                className=""
+                data-tid="listing-cell"
+                index={0}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
+                onClick={[Function]}
+                role="presentation"
+              >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={4}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
+                <button
+                  className=""
+                  data-tid="toggle-button"
+                  onClick={[Function]}
+                >
+                  ♥
+                </button>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className=""
+                    data-tid="carousel"
+                  >
+                    <div
+                      aria-live="polite"
+                      className="image-gallery "
+                    >
+                      <div
+                        className="image-gallery-content"
+                      >
+                        <div
+                          className="image-gallery-slide-wrapper bottom"
+                        >
+                          <span>
+                            <button
+                              aria-label="Previous Slide"
+                              className="image-gallery-left-nav"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            />
+                            <button
+                              aria-label="Next Slide"
+                              className="image-gallery-right-nav"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            />
+                          </span>
+                          <div
+                            className="image-gallery-slides"
+                          >
+                            <div
+                              className="image-gallery-slide center"
+                              onClick={undefined}
+                              onMouseLeave={undefined}
+                              onMouseOver={undefined}
+                              onTouchEnd={undefined}
+                              onTouchMove={undefined}
+                              onTouchStart={undefined}
+                              role={undefined}
+                              style={
+                                Object {
+                                  "MozTransform": "translate3d(0%, 0, 0)",
+                                  "OTransform": "translate3d(0%, 0, 0)",
+                                  "WebkitTransform": "translate3d(0%, 0, 0)",
+                                  "msTransform": "translate3d(0%, 0, 0)",
+                                  "transform": "translate3d(0%, 0, 0)",
+                                }
+                              }
+                            >
+                              <img
+                                alt={null}
+                                className={undefined}
+                                src="https://image.rent.com/imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/280-120"
+                              />
+                            </div>
+                            <div
+                              className="image-gallery-slide right"
+                              onClick={undefined}
+                              onMouseLeave={undefined}
+                              onMouseOver={undefined}
+                              onTouchEnd={undefined}
+                              onTouchMove={undefined}
+                              onTouchStart={undefined}
+                              role={undefined}
+                              style={
+                                Object {
+                                  "MozTransform": "translate3d(100%, 0, 0)",
+                                  "OTransform": "translate3d(100%, 0, 0)",
+                                  "WebkitTransform": "translate3d(100%, 0, 0)",
+                                  "msTransform": "translate3d(100%, 0, 0)",
+                                  "transform": "translate3d(100%, 0, 0)",
+                                }
+                              }
+                            >
+                              <img
+                                alt={null}
+                                className={undefined}
+                                src="https://image.rent.com/imgr/d13b78bff171be4a68ff576e036251ab/280-120"
+                              />
+                            </div>
+                            <div
+                              className="image-gallery-slide left"
+                              onClick={undefined}
+                              onMouseLeave={undefined}
+                              onMouseOver={undefined}
+                              onTouchEnd={undefined}
+                              onTouchMove={undefined}
+                              onTouchStart={undefined}
+                              role={undefined}
+                              style={
+                                Object {
+                                  "MozTransform": "translate3d(-100%, 0, 0)",
+                                  "OTransform": "translate3d(-100%, 0, 0)",
+                                  "WebkitTransform": "translate3d(-100%, 0, 0)",
+                                  "msTransform": "translate3d(-100%, 0, 0)",
+                                  "transform": "translate3d(-100%, 0, 0)",
+                                }
+                              }
+                            >
+                              <img
+                                alt={null}
+                                className={undefined}
+                                src="https://image.rent.com/imgr/d56984e959a3feb1235f85ee202a0fc6/280-120"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className={undefined}
+                  >
+                    <div
+                      className=""
+                      data-tid="price"
+                    >
+                      $1 MILLION DOLLARS
+                    </div>
+                    <div
+                      className=""
+                      data-tid="propertyname"
+                    >
+                      Awesome Property! - Also the longest line you've ever seen
+                    </div>
+                    <div
+                      className={undefined}
+                    >
+                      <div
+                        className=""
+                        data-tid="bedroom"
+                      >
+                        1-3 Bedrooms
+                      </div>
+                      <div
+                        className=""
+                        data-tid="unitlevelavailability"
+                      >
+                        • 8 units left - Come get you some!
+                      </div>
+                    </div>
+                    <div
+                      className=""
+                      count={62}
+                      reviews={9}
+                    >
+                      <div
+                        className={undefined}
+                      >
+                        <div
+                          className={undefined}
+                          style={
+                            Object {
+                              "width": "80%",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className={undefined}
+                      >
+                        (20)
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={undefined}
+                  >
+                    <button
+                      className="phone"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      404-378-1428
+                    </button>
+                    <button
+                      className="contact"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      send an email
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide right"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              role={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate3d(100%, 0, 0)",
+                  "OTransform": "translate3d(100%, 0, 0)",
+                  "WebkitTransform": "translate3d(100%, 0, 0)",
+                  "msTransform": "translate3d(100%, 0, 0)",
+                  "transform": "translate3d(100%, 0, 0)",
+                }
+              }
+            >
+              <div
+                banner="$ Coupon"
+                className=""
+                data-tid="listing-cell"
+                index={1}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
+                onClick={[Function]}
+                role="presentation"
+              >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={1}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
+                <button
+                  className=""
+                  data-tid="toggle-button"
+                  onClick={[Function]}
+                >
+                  ♥
+                </button>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/fd972eb03a0463c484580349ad5177b7/280-120)",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className={undefined}
+                  >
+                    <div
+                      className=""
+                      data-tid="price"
+                    >
+                      $0.01 / month
+                    </div>
+                    <div
+                      className=""
+                      data-tid="propertyname"
+                    >
+                      Terrible Property
+                    </div>
+                    <div
+                      className={undefined}
+                    >
+                      <div
+                        className=""
+                        data-tid="bedroom"
+                      >
+                        2-4 Bedrooms
+                      </div>
+                    </div>
+                    <div
+                      className=""
+                      count={62}
+                      reviews={9}
+                    >
+                      <div
+                        className={undefined}
+                      >
+                        <div
+                          className={undefined}
+                          style={
+                            Object {
+                              "width": "20%",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className={undefined}
+                      >
+                        43,423
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={undefined}
+                  >
+                    <button
+                      className="phone"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      972-555-8921
+                    </button>
+                    <button
+                      className="contact"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      send an email
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              role={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate3d(200%, 0, 0)",
+                  "OTransform": "translate3d(200%, 0, 0)",
+                  "WebkitTransform": "translate3d(200%, 0, 0)",
+                  "msTransform": "translate3d(200%, 0, 0)",
+                  "transform": "translate3d(200%, 0, 0)",
+                }
+              }
+            >
+              <div
+                banner="$ Coupon"
+                className=""
+                data-tid="listing-cell"
+                index={2}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
+                onClick={[Function]}
+                role="presentation"
+              >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={3}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
+                <button
+                  className=""
+                  data-tid="toggle-button"
+                  onClick={[Function]}
+                >
+                  ♥
+                </button>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/d56984e959a3feb1235f85ee202a0fc6/280-120)",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className={undefined}
+                  >
+                    <div
+                      className=""
+                      data-tid="price"
+                    >
+                      $100 / month
+                    </div>
+                    <div
+                      className=""
+                      data-tid="propertyname"
+                    >
+                      Mediocre Property
+                    </div>
+                    <div
+                      className={undefined}
+                    >
+                      <div
+                        className=""
+                        data-tid="bedroom"
+                      >
+                        1-4 Bedrooms
+                      </div>
+                    </div>
+                    <div
+                      className=""
+                      count={62}
+                      reviews={9}
+                    >
+                      <div
+                        className={undefined}
+                      >
+                        <div
+                          className={undefined}
+                          style={
+                            Object {
+                              "width": "60%",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className={undefined}
+                      >
+                        234
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={undefined}
+                  >
+                    <button
+                      className="phone"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      800-555-5555
+                    </button>
+                    <button
+                      className="contact"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      send an email
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              role={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate3d(300%, 0, 0)",
+                  "OTransform": "translate3d(300%, 0, 0)",
+                  "WebkitTransform": "translate3d(300%, 0, 0)",
+                  "msTransform": "translate3d(300%, 0, 0)",
+                  "transform": "translate3d(300%, 0, 0)",
+                }
+              }
+            >
+              <div
+                banner="$ Coupon"
+                className=""
+                data-tid="listing-cell"
+                index={3}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
+                onClick={[Function]}
+                role="presentation"
+              >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={32.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 W Street Road"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Vinings"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30339"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={2}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
+                <button
+                  className=""
+                  data-tid="toggle-button"
+                  onClick={[Function]}
+                >
+                  ♥
+                </button>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/280-120)",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className={undefined}
+                  >
+                    <div
+                      className=""
+                      data-tid="price"
+                    >
+                      $20 / day
+                    </div>
+                    <div
+                      className=""
+                      data-tid="propertyname"
+                    >
+                      Shrug Property
+                    </div>
+                    <div
+                      className={undefined}
+                    >
+                      <div
+                        className=""
+                        data-tid="bedroom"
+                      >
+                        2 Bedrooms
+                      </div>
+                    </div>
+                    <div
+                      className=""
+                      count={62}
+                      reviews={9}
+                    >
+                      <div
+                        className={undefined}
+                      >
+                        <div
+                          className={undefined}
+                          style={
+                            Object {
+                              "width": "40%",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className={undefined}
+                      >
+                        567
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={undefined}
+                  >
+                    <button
+                      className="phone"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      678-777-9311
+                    </button>
+                    <button
+                      className="contact"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      send an email
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              role={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate3d(400%, 0, 0)",
+                  "OTransform": "translate3d(400%, 0, 0)",
+                  "WebkitTransform": "translate3d(400%, 0, 0)",
+                  "msTransform": "translate3d(400%, 0, 0)",
+                  "transform": "translate3d(400%, 0, 0)",
+                }
+              }
+            >
+              <div
+                banner="$ Coupon"
+                className=""
+                data-tid="listing-cell"
+                index={4}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
+                onClick={[Function]}
+                role="presentation"
+              >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-83.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={2}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={14}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={2}
+                    itemProp="reviewCount"
+                  />
+                </div>
+                <button
+                  className=""
+                  data-tid="toggle-button"
+                  onClick={[Function]}
+                >
+                  ♥
+                </button>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/280-120)",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className={undefined}
+                  >
+                    <div
+                      className=""
+                      data-tid="price"
+                    >
+                      $20 / day
+                    </div>
+                    <div
+                      className=""
+                      data-tid="propertyname"
+                    >
+                      Shrug Property
+                    </div>
+                    <div
+                      className={undefined}
+                    >
+                      <div
+                        className=""
+                        data-tid="bedroom"
+                      >
+                        2 Bedrooms
+                      </div>
+                    </div>
+                    <div
+                      className=""
+                      count={14}
+                      reviews={2}
+                    >
+                      <div
+                        className={undefined}
+                      >
+                        <div
+                          className={undefined}
+                          style={
+                            Object {
+                              "width": "40%",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className={undefined}
+                      >
+                        567
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={undefined}
+                  >
+                    <button
+                      className="phone"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      555-867-5309
+                    </button>
+                    <button
+                      className="contact"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      send an email
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ListingCarousel maps the listings to the Carousel 2`] = `
+<div
+  className="ListingCarousel"
+  data-tid="carousel"
+>
+  <div
+    aria-live="polite"
+    className="image-gallery "
+  >
+    <div
+      className="image-gallery-content"
+    >
+      <div
+        className="image-gallery-slide-wrapper bottom"
+      >
+        <div
+          className="image-gallery-swipe"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="image-gallery-slides"
+          >
+            <div
+              className="image-gallery-slide center"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              role={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate3d(0%, 0, 0)",
+                  "OTransform": "translate3d(0%, 0, 0)",
+                  "WebkitTransform": "translate3d(0%, 0, 0)",
+                  "msTransform": "translate3d(0%, 0, 0)",
+                  "transform": "translate3d(0%, 0, 0)",
+                }
+              }
+            >
+              <div
+                banner="$ Coupon"
+                className=""
+                data-tid="listing-cell"
+                index={0}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
+                onClick={[Function]}
+                role="presentation"
+              >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={4}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
+                <button
+                  className=""
+                  data-tid="toggle-button"
+                  onClick={[Function]}
+                >
+                  ♥
+                </button>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className=""
+                    data-tid="carousel"
+                  >
+                    <div
+                      aria-live="polite"
+                      className="image-gallery "
+                    >
+                      <div
+                        className="image-gallery-content"
+                      >
+                        <div
+                          className="image-gallery-slide-wrapper bottom"
+                        >
+                          <span>
+                            <button
+                              aria-label="Previous Slide"
+                              className="image-gallery-left-nav"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            />
+                            <button
+                              aria-label="Next Slide"
+                              className="image-gallery-right-nav"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            />
+                          </span>
+                          <div
+                            className="image-gallery-slides"
+                          >
+                            <div
+                              className="image-gallery-slide center"
+                              onClick={undefined}
+                              onMouseLeave={undefined}
+                              onMouseOver={undefined}
+                              onTouchEnd={undefined}
+                              onTouchMove={undefined}
+                              onTouchStart={undefined}
+                              role={undefined}
+                              style={
+                                Object {
+                                  "MozTransform": "translate3d(0%, 0, 0)",
+                                  "OTransform": "translate3d(0%, 0, 0)",
+                                  "WebkitTransform": "translate3d(0%, 0, 0)",
+                                  "msTransform": "translate3d(0%, 0, 0)",
+                                  "transform": "translate3d(0%, 0, 0)",
+                                }
+                              }
+                            >
+                              <img
+                                alt={null}
+                                className={undefined}
+                                src="https://image.rent.com/imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/280-120"
+                              />
+                            </div>
+                            <div
+                              className="image-gallery-slide right"
+                              onClick={undefined}
+                              onMouseLeave={undefined}
+                              onMouseOver={undefined}
+                              onTouchEnd={undefined}
+                              onTouchMove={undefined}
+                              onTouchStart={undefined}
+                              role={undefined}
+                              style={
+                                Object {
+                                  "MozTransform": "translate3d(100%, 0, 0)",
+                                  "OTransform": "translate3d(100%, 0, 0)",
+                                  "WebkitTransform": "translate3d(100%, 0, 0)",
+                                  "msTransform": "translate3d(100%, 0, 0)",
+                                  "transform": "translate3d(100%, 0, 0)",
+                                }
+                              }
+                            >
+                              <img
+                                alt={null}
+                                className={undefined}
+                                src="https://image.rent.com/imgr/d13b78bff171be4a68ff576e036251ab/280-120"
+                              />
+                            </div>
+                            <div
+                              className="image-gallery-slide left"
+                              onClick={undefined}
+                              onMouseLeave={undefined}
+                              onMouseOver={undefined}
+                              onTouchEnd={undefined}
+                              onTouchMove={undefined}
+                              onTouchStart={undefined}
+                              role={undefined}
+                              style={
+                                Object {
+                                  "MozTransform": "translate3d(-100%, 0, 0)",
+                                  "OTransform": "translate3d(-100%, 0, 0)",
+                                  "WebkitTransform": "translate3d(-100%, 0, 0)",
+                                  "msTransform": "translate3d(-100%, 0, 0)",
+                                  "transform": "translate3d(-100%, 0, 0)",
+                                }
+                              }
+                            >
+                              <img
+                                alt={null}
+                                className={undefined}
+                                src="https://image.rent.com/imgr/d56984e959a3feb1235f85ee202a0fc6/280-120"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/280-120)",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className={undefined}
+                  >
+                    <div
+                      className=""
+                      data-tid="price"
+                    >
+                      $1 MILLION DOLLARS
+                    </div>
+                    <div
+                      className=""
+                      data-tid="propertyname"
+                    >
+                      Awesome Property! - Also the longest line you've ever seen
+                    </div>
+                    <div
+                      className={undefined}
+                    >
+                      <div
+                        className=""
+                        data-tid="bedroom"
+                      >
+                        1-3 Bedrooms
+                      </div>
+                      <div
+                        className=""
+                        data-tid="unitlevelavailability"
+                      >
+                        • 8 units left - Come get you some!
+                      </div>
+                    </div>
+                    <div
+                      className=""
+                      count={62}
+                      reviews={9}
+                    >
+                      <div
+                        className={undefined}
+                      >
+                        <div
+                          className={undefined}
+                          style={
+                            Object {
+                              "width": "80%",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className={undefined}
+                      >
+                        (20)
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={undefined}
+                  >
+                    <button
+                      className="phone"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      404-378-1428
+                    </button>
+                    <button
+                      className="contact"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      send an email
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide right"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              role={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate3d(100%, 0, 0)",
+                  "OTransform": "translate3d(100%, 0, 0)",
+                  "WebkitTransform": "translate3d(100%, 0, 0)",
+                  "msTransform": "translate3d(100%, 0, 0)",
+                  "transform": "translate3d(100%, 0, 0)",
+                }
+              }
+            >
+              <div
+                banner="$ Coupon"
+                className=""
+                data-tid="listing-cell"
+                index={1}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
+                onClick={[Function]}
+                role="presentation"
+              >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={1}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
+                <button
+                  className=""
+                  data-tid="toggle-button"
+                  onClick={[Function]}
+                >
+                  ♥
+                </button>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/fd972eb03a0463c484580349ad5177b7/280-120)",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className={undefined}
+                  >
+                    <div
+                      className=""
+                      data-tid="price"
+                    >
+                      $0.01 / month
+                    </div>
+                    <div
+                      className=""
+                      data-tid="propertyname"
+                    >
+                      Terrible Property
+                    </div>
+                    <div
+                      className={undefined}
+                    >
+                      <div
+                        className=""
+                        data-tid="bedroom"
+                      >
+                        2-4 Bedrooms
+                      </div>
+                    </div>
+                    <div
+                      className=""
+                      count={62}
+                      reviews={9}
+                    >
+                      <div
+                        className={undefined}
+                      >
+                        <div
+                          className={undefined}
+                          style={
+                            Object {
+                              "width": "20%",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className={undefined}
+                      >
+                        43,423
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={undefined}
+                  >
+                    <button
+                      className="phone"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      972-555-8921
+                    </button>
+                    <button
+                      className="contact"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      send an email
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              role={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate3d(200%, 0, 0)",
+                  "OTransform": "translate3d(200%, 0, 0)",
+                  "WebkitTransform": "translate3d(200%, 0, 0)",
+                  "msTransform": "translate3d(200%, 0, 0)",
+                  "transform": "translate3d(200%, 0, 0)",
+                }
+              }
+            >
+              <div
+                banner="$ Coupon"
+                className=""
+                data-tid="listing-cell"
+                index={2}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
+                onClick={[Function]}
+                role="presentation"
+              >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={3}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
+                <button
+                  className=""
+                  data-tid="toggle-button"
+                  onClick={[Function]}
+                >
+                  ♥
+                </button>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/d56984e959a3feb1235f85ee202a0fc6/280-120)",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className={undefined}
+                  >
+                    <div
+                      className=""
+                      data-tid="price"
+                    >
+                      $100 / month
+                    </div>
+                    <div
+                      className=""
+                      data-tid="propertyname"
+                    >
+                      Mediocre Property
+                    </div>
+                    <div
+                      className={undefined}
+                    >
+                      <div
+                        className=""
+                        data-tid="bedroom"
+                      >
+                        1-4 Bedrooms
+                      </div>
+                    </div>
+                    <div
+                      className=""
+                      count={62}
+                      reviews={9}
+                    >
+                      <div
+                        className={undefined}
+                      >
+                        <div
+                          className={undefined}
+                          style={
+                            Object {
+                              "width": "60%",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className={undefined}
+                      >
+                        234
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={undefined}
+                  >
+                    <button
+                      className="phone"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      800-555-5555
+                    </button>
+                    <button
+                      className="contact"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      send an email
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              role={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate3d(300%, 0, 0)",
+                  "OTransform": "translate3d(300%, 0, 0)",
+                  "WebkitTransform": "translate3d(300%, 0, 0)",
+                  "msTransform": "translate3d(300%, 0, 0)",
+                  "transform": "translate3d(300%, 0, 0)",
+                }
+              }
+            >
+              <div
+                banner="$ Coupon"
+                className=""
+                data-tid="listing-cell"
+                index={3}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
+                onClick={[Function]}
+                role="presentation"
+              >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={32.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-84.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 W Street Road"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Vinings"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30339"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={2}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={62}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={9}
+                    itemProp="reviewCount"
+                  />
+                </div>
+                <button
+                  className=""
+                  data-tid="toggle-button"
+                  onClick={[Function]}
+                >
+                  ♥
+                </button>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/280-120)",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className={undefined}
+                  >
+                    <div
+                      className=""
+                      data-tid="price"
+                    >
+                      $20 / day
+                    </div>
+                    <div
+                      className=""
+                      data-tid="propertyname"
+                    >
+                      Shrug Property
+                    </div>
+                    <div
+                      className={undefined}
+                    >
+                      <div
+                        className=""
+                        data-tid="bedroom"
+                      >
+                        2 Bedrooms
+                      </div>
+                    </div>
+                    <div
+                      className=""
+                      count={62}
+                      reviews={9}
+                    >
+                      <div
+                        className={undefined}
+                      >
+                        <div
+                          className={undefined}
+                          style={
+                            Object {
+                              "width": "40%",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className={undefined}
+                      >
+                        567
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={undefined}
+                  >
+                    <button
+                      className="phone"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      678-777-9311
+                    </button>
+                    <button
+                      className="contact"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      send an email
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="image-gallery-slide"
+              onClick={undefined}
+              onMouseLeave={undefined}
+              onMouseOver={undefined}
+              onTouchEnd={undefined}
+              onTouchMove={undefined}
+              onTouchStart={undefined}
+              role={undefined}
+              style={
+                Object {
+                  "MozTransform": "translate3d(400%, 0, 0)",
+                  "OTransform": "translate3d(400%, 0, 0)",
+                  "WebkitTransform": "translate3d(400%, 0, 0)",
+                  "msTransform": "translate3d(400%, 0, 0)",
+                  "transform": "translate3d(400%, 0, 0)",
+                }
+              }
+            >
+              <div
+                banner="$ Coupon"
+                className=""
+                data-tid="listing-cell"
+                index={4}
+                itemScope={true}
+                itemType="https://schema.org/ApartmentComplex"
+                onClick={[Function]}
+                role="presentation"
+              >
+                <div
+                  itemProp="geo"
+                  itemScope={true}
+                  itemType="https://schema.org/GeoCoordinates"
+                >
+                  <meta
+                    content={33.8362}
+                    itemProp="latitude"
+                  />
+                  <meta
+                    content={-83.3426}
+                    itemProp="longitude"
+                  />
+                </div>
+                <span
+                  itemProp="address"
+                  itemScope={true}
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <meta
+                    content="3921 Tugaloo River Drive Northside Park Washington Parkway"
+                    itemProp="streetAddress"
+                  />
+                  <meta
+                    content="Beckwood"
+                    itemProp="addressLocality"
+                  />
+                  <meta
+                    content="Georgia"
+                    itemProp="addressRegion"
+                  />
+                  <meta
+                    content="30319"
+                    itemProp="postalCode"
+                  />
+                </span>
+                <div
+                  itemProp="aggregateRating"
+                  itemScope={true}
+                  itemType="https://schema.org/AggregateRating"
+                >
+                  <meta
+                    content="1.0"
+                    itemProp="worstRating"
+                  />
+                  <meta
+                    content="5.0"
+                    itemProp="bestRating"
+                  />
+                  <meta
+                    content={2}
+                    itemProp="ratingValue"
+                  />
+                  <meta
+                    content={14}
+                    itemProp="ratingCount"
+                  />
+                  <meta
+                    content={2}
+                    itemProp="reviewCount"
+                  />
+                </div>
+                <button
+                  className=""
+                  data-tid="toggle-button"
+                  onClick={[Function]}
+                >
+                  ♥
+                </button>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "backgroundImage": "url(https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/280-120)",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className={undefined}
+                >
+                  <div
+                    className={undefined}
+                  >
+                    <div
+                      className=""
+                      data-tid="price"
+                    >
+                      $20 / day
+                    </div>
+                    <div
+                      className=""
+                      data-tid="propertyname"
+                    >
+                      Shrug Property
+                    </div>
+                    <div
+                      className={undefined}
+                    >
+                      <div
+                        className=""
+                        data-tid="bedroom"
+                      >
+                        2 Bedrooms
+                      </div>
+                    </div>
+                    <div
+                      className=""
+                      count={14}
+                      reviews={2}
+                    >
+                      <div
+                        className={undefined}
+                      >
+                        <div
+                          className={undefined}
+                          style={
+                            Object {
+                              "width": "40%",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className={undefined}
+                      >
+                        567
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={undefined}
+                  >
+                    <button
+                      className="phone"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      555-867-5309
+                    </button>
+                    <button
+                      className="contact"
+                      data-tid="cta-button"
+                      onClick={[Function]}
+                    >
+                      send an email
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

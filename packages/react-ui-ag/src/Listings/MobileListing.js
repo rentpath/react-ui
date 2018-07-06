@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import { ListingComponents, Schema, Text } from '@rentpath/react-ui-core'
+import { ListingComponents, Text } from '@rentpath/react-ui-core'
 import Listing from './Listing'
 
 @themed(/^MobileListing/, { pure: true })
@@ -59,18 +59,16 @@ export default class MobileListing extends PureComponent {
   }
 
   get renderInfo() {
-    const { theme, listing, propertyName, address } = this.props
+    const { theme, listing } = this.props
     const { singleFamily } = listing
     return (
       <React.Fragment>
         <ListingComponents.Price />
 
-        <Schema.NameAndUrl url={listing.url}>
-          {singleFamily ?
-            <ListingComponents.Address {...address} /> :
-            <ListingComponents.PropertyName {...propertyName} />
-          }
-        </Schema.NameAndUrl>
+        {singleFamily ?
+          <ListingComponents.Address /> :
+          <ListingComponents.PropertyName />
+        }
 
         <div className={theme.MobileListing_BedsAndBaths}>
           <ListingComponents.Bedroom data-tid="bedroom" />
