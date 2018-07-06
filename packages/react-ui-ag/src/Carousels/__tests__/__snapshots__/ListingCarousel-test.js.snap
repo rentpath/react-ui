@@ -253,22 +253,10 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $1 MILLION DOLLARS
                     </div>
                     <div
-                      itemProp="name"
+                      className=""
+                      data-tid="propertyname"
                     >
-                      <a
-                        className={undefined}
-                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
-                        itemProp="url"
-                        onClick={[Function]}
-                        target="_blank"
-                      >
-                        <div
-                          className=""
-                          data-tid="propertyname"
-                        >
-                          Awesome Property! - Also the longest line you've ever seen
-                        </div>
-                      </a>
+                      Awesome Property! - Also the longest line you've ever seen
                     </div>
                     <div
                       className={undefined}
@@ -454,22 +442,10 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $0.01 / month
                     </div>
                     <div
-                      itemProp="name"
+                      className=""
+                      data-tid="propertyname"
                     >
-                      <a
-                        className={undefined}
-                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
-                        itemProp="url"
-                        onClick={[Function]}
-                        target="_blank"
-                      >
-                        <div
-                          className=""
-                          data-tid="propertyname"
-                        >
-                          Terrible Property
-                        </div>
-                      </a>
+                      Terrible Property
                     </div>
                     <div
                       className={undefined}
@@ -649,22 +625,10 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $100 / month
                     </div>
                     <div
-                      itemProp="name"
+                      className=""
+                      data-tid="propertyname"
                     >
-                      <a
-                        className={undefined}
-                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
-                        itemProp="url"
-                        onClick={[Function]}
-                        target="_blank"
-                      >
-                        <div
-                          className=""
-                          data-tid="propertyname"
-                        >
-                          Mediocre Property
-                        </div>
-                      </a>
+                      Mediocre Property
                     </div>
                     <div
                       className={undefined}
@@ -844,22 +808,10 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $20 / day
                     </div>
                     <div
-                      itemProp="name"
+                      className=""
+                      data-tid="propertyname"
                     >
-                      <a
-                        className={undefined}
-                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
-                        itemProp="url"
-                        onClick={[Function]}
-                        target="_blank"
-                      >
-                        <div
-                          className=""
-                          data-tid="propertyname"
-                        >
-                          Shrug Property
-                        </div>
-                      </a>
+                      Shrug Property
                     </div>
                     <div
                       className={undefined}
@@ -1039,22 +991,10 @@ exports[`ListingCarousel maps the listings to the Carousel 1`] = `
                       $20 / day
                     </div>
                     <div
-                      itemProp="name"
+                      className=""
+                      data-tid="propertyname"
                     >
-                      <a
-                        className={undefined}
-                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
-                        itemProp="url"
-                        onClick={[Function]}
-                        target="_blank"
-                      >
-                        <div
-                          className=""
-                          data-tid="propertyname"
-                        >
-                          Shrug Property
-                        </div>
-                      </a>
+                      Shrug Property
                     </div>
                     <div
                       className={undefined}
@@ -1380,22 +1320,10 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $1 MILLION DOLLARS
                     </div>
                     <div
-                      itemProp="name"
+                      className=""
+                      data-tid="propertyname"
                     >
-                      <a
-                        className={undefined}
-                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
-                        itemProp="url"
-                        onClick={[Function]}
-                        target="_blank"
-                      >
-                        <div
-                          className=""
-                          data-tid="propertyname"
-                        >
-                          Awesome Property! - Also the longest line you've ever seen
-                        </div>
-                      </a>
+                      Awesome Property! - Also the longest line you've ever seen
                     </div>
                     <div
                       className={undefined}
@@ -1581,22 +1509,10 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $0.01 / month
                     </div>
                     <div
-                      itemProp="name"
+                      className=""
+                      data-tid="propertyname"
                     >
-                      <a
-                        className={undefined}
-                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
-                        itemProp="url"
-                        onClick={[Function]}
-                        target="_blank"
-                      >
-                        <div
-                          className=""
-                          data-tid="propertyname"
-                        >
-                          Terrible Property
-                        </div>
-                      </a>
+                      Terrible Property
                     </div>
                     <div
                       className={undefined}
@@ -1776,22 +1692,10 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $100 / month
                     </div>
                     <div
-                      itemProp="name"
+                      className=""
+                      data-tid="propertyname"
                     >
-                      <a
-                        className={undefined}
-                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
-                        itemProp="url"
-                        onClick={[Function]}
-                        target="_blank"
-                      >
-                        <div
-                          className=""
-                          data-tid="propertyname"
-                        >
-                          Mediocre Property
-                        </div>
-                      </a>
+                      Mediocre Property
                     </div>
                     <div
                       className={undefined}
@@ -1971,22 +1875,10 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $20 / day
                     </div>
                     <div
-                      itemProp="name"
+                      className=""
+                      data-tid="propertyname"
                     >
-                      <a
-                        className={undefined}
-                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
-                        itemProp="url"
-                        onClick={[Function]}
-                        target="_blank"
-                      >
-                        <div
-                          className=""
-                          data-tid="propertyname"
-                        >
-                          Shrug Property
-                        </div>
-                      </a>
+                      Shrug Property
                     </div>
                     <div
                       className={undefined}
@@ -2166,22 +2058,10 @@ exports[`ListingCarousel maps the listings to the Carousel 2`] = `
                       $20 / day
                     </div>
                     <div
-                      itemProp="name"
+                      className=""
+                      data-tid="propertyname"
                     >
-                      <a
-                        className={undefined}
-                        href="/apartments/Georgia/Lawrenceville/Sugarloaf-Summit/100029616/"
-                        itemProp="url"
-                        onClick={[Function]}
-                        target="_blank"
-                      >
-                        <div
-                          className=""
-                          data-tid="propertyname"
-                        >
-                          Shrug Property
-                        </div>
-                      </a>
+                      Shrug Property
                     </div>
                     <div
                       className={undefined}

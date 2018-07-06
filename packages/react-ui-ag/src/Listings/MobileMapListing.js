@@ -11,7 +11,6 @@ import {
   ToggleButton,
   ListingComponents,
   ListingCell,
-  Schema,
 } from '@rentpath/react-ui-core'
 import { Banner } from '../Banners'
 
@@ -255,9 +254,7 @@ export default class MobileMapListing extends Component {
         <div className={theme.MobileMapListing_Bottom}>
           <div className={theme.MobileMapListing_Info}>
             <ListingComponents.Price />
-            <Schema.NameAndUrl url={listing.url}>
-              <ListingComponents.PropertyName {...propertyName} />
-            </Schema.NameAndUrl>
+            <ListingComponents.PropertyName {...propertyName} />
             <div className={theme.MobileMapListing_BedsAndUla}>
               <ListingComponents.Bedroom />
               <ListingComponents.UnitLevelAvailability />
