@@ -5,9 +5,7 @@ import themed from 'react-themed'
 import isEqual from 'lodash/isEqual'
 import intersection from 'lodash/intersection'
 import pick from 'lodash/pick'
-import get from 'lodash/get'
 import autobind from 'autobind-decorator'
-import { Schema } from '../Schema'
 
 @themed(/^ListingCell/, { pure: true })
 
@@ -72,14 +70,6 @@ export default class ListingCell extends Component {
       || this.props.className !== nextProps.className
   }
 
-  get location() {
-    return get(this.props.listing, 'location', {})
-  }
-
-  get rating() {
-    return get(this.props.listing, 'rating', {})
-  }
-
   @autobind
   handleClick(event) {
     const { listing, onClick, isActive } = this.props
@@ -106,18 +96,15 @@ export default class ListingCell extends Component {
     } = this.props
 
     return (
-      <Schema.ApartmentComplex
+      <div
         className={classnames(theme.ListingCell, className)}
         data-tid="listing-cell"
         role="presentation"
         onClick={this.handleClick}
         {...props}
       >
-        <Schema.Geo {...this.location} />
-        <Schema.Address {...this.location} />
-        <Schema.AggregateRating {...this.rating} />
         {children}
-      </Schema.ApartmentComplex>
+      </div>
     )
   }
 }
