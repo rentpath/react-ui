@@ -45,3 +45,52 @@
 .RadioButton-hidden .Input {
   display: none;
 }
+
+.InlineCard .RadioButton {
+  background-color: transparent;
+}
+
+.InlineCard .RadioButton .Label {
+  font-size: 13px;
+  font-weight: normal;
+  display: inline-block;
+  min-width: 16px;
+  border: solid 1px #ffffff;
+  border-radius: 100px;
+  padding: 9px;
+  text-align: center;
+}
+
+.InlineCard .RadioButton-checked .Label {
+  background-color: #ffffff;
+  color: #0175d7;
+}
+
+.SearchFilter .RadioButton {
+  display: unset;
+  border-radius: 5px;
+  border: solid 1px #787878;
+  padding: 7px 0;
+  width: 80px;
+  height: 26px;
+}
+
+.SearchFilter .RadioButton .Label {
+  display: inline-flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 13px;
+  padding: 0;
+  width: 90%;
+  height: inherit;
+}
+
+.SearchFilter .RadioButton-checked {
+  border: solid 1px #5a5a5a;
+  background-color: #5a5a5a;
+}
+
+.SearchFilter .RadioButton-checked .Label {
+  color: #ffffff;
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
+import { PriceFilterCard } from '@rentpath/react-ui-core'
 import ThemedPriceFilterDropdown from '../PriceFilterDropdown'
-import PriceFilterCard from '../PriceFilterCard'
 import DropdownAnchorText from '../DropdownAnchorText'
 
 const PriceFilterDropdown = ThemedPriceFilterDropdown.WrappedComponent
@@ -18,7 +18,7 @@ describe('PriceFilterDropdown', () => {
     },
   }
 
-  it('changes the text of the dropdown anchor when value is set', () => {
+  it('changes the text of the dropdown anchor when the value is set', () => {
     const wrapper = mount(<PriceFilterDropdown {...props} />)
     const value = {
       min: 234,

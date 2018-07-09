@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { Button } from '@rentpath/react-ui-core'
+import Button from '../Button'
 
 import ThemedApplyButton from '../ApplyButton'
 

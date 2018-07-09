@@ -1,0 +1,12 @@
+.CancelButton {
+  cursor: pointer;
+}
+
+.SearchFilter .CancelButton {
+  font-size: 15px;
+  background-color: transparent;
+  color: grey;
+  border: 0;
+  box-shadow: unset;
+  outline: none;
+}

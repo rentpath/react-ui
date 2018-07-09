@@ -1,6 +1,7 @@
 import React from 'react'
+
 import { mount, shallow } from 'enzyme'
-import { RangeSlider as ThemedRangeSlider } from '@rentpath/react-ui-core'
+import { RangeSlider as ThemedRangeSlider } from '../../Form'
 import FilterCard from '../FilterCard'
 import theme from './mocks/theme'
 import ThemedPriceFilterCard from '../PriceFilterCard'

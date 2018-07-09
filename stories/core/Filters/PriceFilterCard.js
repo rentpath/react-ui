@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { action } from '@storybook/addon-actions'
 import themed from 'react-themed'
-import { PriceFilterCard } from 'react-ui-ag/src'
-import { RangeSlider } from 'react-ui-core/src'
+import { PriceFilterCard, RangeSlider } from 'react-ui-core/src'
 
 const rangeSliderProps = {
   formatLabel: val => `$${val}`,

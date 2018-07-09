@@ -20,3 +20,11 @@
 .Field .Label {
   padding-right: 10px;
 }
+
+.InlineCard .Field {
+  color: unset;
+  margin: unset;
+  display: unset;
+  max-width: unset;
+  align-items: unset;
+}

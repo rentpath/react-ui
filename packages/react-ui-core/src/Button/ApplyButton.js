@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
 import autobind from 'autobind-decorator'
-import { Button } from '@rentpath/react-ui-core'
+import Button from './Button'
 
-@themed(['CancelButton'], {
+@themed(['ApplyButton'], {
   pure: true,
 })
 
-export default class CancelButton extends PureComponent {
+export default class ApplyButton extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     onClick: PropTypes.func,
@@ -20,7 +20,7 @@ export default class CancelButton extends PureComponent {
 
   static defaultProps = {
     theme: {},
-    name: 'Cancel',
+    name: 'Apply',
   }
 
   @autobind
@@ -36,6 +36,7 @@ export default class CancelButton extends PureComponent {
       name,
       className,
       onClick,
+      value,
       ...props
     } = this.props
 
@@ -44,11 +45,11 @@ export default class CancelButton extends PureComponent {
     return (
       <Button
         className={classnames(
-          theme.CancelButton,
+          theme.ApplyButton,
           className,
         )}
         onClick={this.handleClick}
-        data-tid="cancel-button"
+        data-tid="apply-button"
         {...props}
       >
         {name}

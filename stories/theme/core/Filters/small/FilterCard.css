@@ -1,0 +1,34 @@
+.InlineCard {
+  background-color: #0175d7;
+  color: #ffffff;
+  width: 343px;
+  height: 200px;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.InlineCard .FilterCard_Title {
+  font-weight: normal;
+  font-size: 17px;
+  text-align: left;
+}
+
+.InlineCard .FilterCard_Description {
+  font-size: 14px;
+  font-weight: lighter;
+  max-width: 200px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.InlineCard .FilterCard_Header {
+  margin-top: 15px;
+}
+
+.InlineCard .FilterCard_Body {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  height: 34px;
+  display: flex;
+}

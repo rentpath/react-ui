@@ -1,6 +1,7 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
-import { Title, Text } from '@rentpath/react-ui-core'
+import { Title } from '../../Title'
+import { Text } from '../../Text'
 
 import ThemedFilterCard from '../FilterCard'
 

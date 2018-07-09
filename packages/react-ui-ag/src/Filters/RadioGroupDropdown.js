@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import autobind from 'autobind-decorator'
 import classnames from 'classnames'
-import { Dropdown, Text } from '@rentpath/react-ui-core'
-import RadioGroupFilterCard from './RadioGroupFilterCard'
+import { Dropdown, Text, RadioGroupFilterCard } from '@rentpath/react-ui-core'
 import DropdownFilterCardWrapper from './DropdownFilterCardWrapper'
 
 const nodeFuncOrObject = PropTypes.oneOfType([
