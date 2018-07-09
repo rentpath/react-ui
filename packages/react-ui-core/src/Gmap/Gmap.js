@@ -46,7 +46,6 @@ const MAP_CONTROLS = {
   mapTypeControl: true,
   scaleControl: true,
   rotateControl: true,
-
 }
 
 @themed(/^Gmap/, { pure: true })

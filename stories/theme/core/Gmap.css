@@ -1,3 +1,23 @@
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
 .Gmap {
   position: fixed !important; /* stylelint-disable-line declaration-no-important */
   z-index: 0;
@@ -27,4 +47,67 @@
 .Gmap_FreeDrawLayer {
   position: absolute;
   z-index: 40;
+  top: 12px;
+  right: 90px;
+  width: 46px;
+  height: 46px;
+  font-size: 12px;
+  padding: 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+
+.Gmap_FreeDrawTool-active {
+  background-color: #ffffff;
+  color: #4a4a4a;
+}
+
+.Gmap_FreeDrawTool-disabled {
+  background-color: #e6e7e8;
+  color: #777777;
+}
+
+.Gmap_FreeDrawTool-draw {
+  background-color: #4a4a4a;
+}
+
+.Gmap_FreeDrawTool-clear {
+  background-color: #4a4a4a;
+  color: #ffffff;
+}
+
+.Gmap_FreeDrawBanner-draw,
+.Gmap_FreeDrawBanner-zoomIn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: calc(50% - 250px);
+  width: 500px;
+  box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.15);
+  background-color: white;
+  max-width: 50%;
+  font-size: 12px;
+}
+
+.Gmap_FreeDrawBanner-zoomIn {
+  animation: fadeOut 3s ease-in 3s forwards;
+}
+
+.CustomDrawToolExample {
+  position: absolute;
+  z-index: 40;
+  top: 90px;
+  left: 10px;
+  width: 500px;
+}
+
+.CustomBannerExample {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: calc(50% - 250px);
+  width: 500px;
+  box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.15);
+  background-color: white;
 }
