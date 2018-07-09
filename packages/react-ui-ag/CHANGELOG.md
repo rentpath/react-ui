@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="6.6.1"></a>
+## [6.6.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.6.0...@rentpath/react-ui-ag@6.6.1) (2018-07-03)
+
+
+
+
+**Note:** Version bump only for package @rentpath/react-ui-ag
+
 <a name="6.6.0"></a>
 # [6.6.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.5.1...@rentpath/react-ui-ag@6.6.0) (2018-06-26)
 
