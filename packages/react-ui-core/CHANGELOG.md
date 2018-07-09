@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="13.0.0"></a>
+# [13.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@12.1.2...@rentpath/react-ui-core@13.0.0) (2018-07-09)
+
+
+### Features
+
+* **Inline Filters:** move Inline Filters to react-ui-core ([7be5719](https://github.com/rentpath/react-ui/commit/7be5719))
+
+
+### BREAKING CHANGES
+
+* **Inline Filters:** removed inline filters from react-ui-ag
+
+
+
+
 <a name="12.1.2"></a>
 ## [12.1.2](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@12.1.0...@rentpath/react-ui-core@12.1.2) (2018-07-09)
 
