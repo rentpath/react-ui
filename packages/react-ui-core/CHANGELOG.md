@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="14.0.0"></a>
+# [14.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@12.1.2...@rentpath/react-ui-core@14.0.0) (2018-07-10)
+
+
+### Bug Fixes
+
+* **Add banner and draw tool to index file:** add banner and draw tool to index file ([aed146c](https://github.com/rentpath/react-ui/commit/aed146c))
+
+
+### Features
+
+* **Inline Filters:** move Inline Filters to react-ui-core ([7be5719](https://github.com/rentpath/react-ui/commit/7be5719))
+
+
+### BREAKING CHANGES
+
+* **Inline Filters:** removed inline filters from react-ui-ag
+
+
+
+
 <a name="13.0.0"></a>
 # [13.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@12.1.2...@rentpath/react-ui-core@13.0.0) (2018-07-09)
 

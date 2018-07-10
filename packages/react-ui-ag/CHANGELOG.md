@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.0.0"></a>
+# [8.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.6.2...@rentpath/react-ui-ag@8.0.0) (2018-07-10)
+
+
+### Features
+
+* **Inline Filters:** move Inline Filters to react-ui-core ([7be5719](https://github.com/rentpath/react-ui/commit/7be5719))
+
+
+### BREAKING CHANGES
+
+* **Inline Filters:** removed inline filters from react-ui-ag
+
+
+
+
 <a name="7.0.0"></a>
 # [7.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.6.2...@rentpath/react-ui-ag@7.0.0) (2018-07-09)
 
