@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackgroundPhoto fallbackUrl renders 1 url when not set 1`] = `
+<div
+  className=""
+  data-tid="bg-photo"
+  style={
+    Object {
+      "backgroundImage": "url(/foo)",
+    }
+  }
+/>
+`;
+
+exports[`BackgroundPhoto fallbackUrl renders 2 urls when set 1`] = `
+<div
+  className=""
+  data-tid="bg-photo"
+  style={
+    Object {
+      "backgroundImage": "url(/foo), url(/bar)",
+    }
+  }
+/>
+`;

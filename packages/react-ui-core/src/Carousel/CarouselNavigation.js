@@ -21,6 +21,11 @@ export default class CarouselNavigation extends PureComponent {
     theme: {},
   }
 
+  get tagItem() {
+    const direction = this.props.direction === 'previous' ? 'left' : 'right'
+    return `${direction}_arrow`
+  }
+
   render() {
     const {
       direction,
@@ -33,6 +38,7 @@ export default class CarouselNavigation extends PureComponent {
     return (
       <Button
         data-tid={`carousel-navigation-${direction}`}
+        data-tag_item={this.tagItem}
         className={classnames(
           className,
           theme.CarouselNavigation,

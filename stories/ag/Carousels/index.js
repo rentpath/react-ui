@@ -1,1 +1,0 @@
-export { DefaultListingCarousel } from './ListingCarousel'

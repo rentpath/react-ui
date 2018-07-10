@@ -128,3 +128,8 @@ export {
   RadioGroupFilterCard,
   PriceFilterCard,
 } from './Filters'
+
+export {
+  Photo,
+  BackgroundPhoto,
+} from './Photo'
