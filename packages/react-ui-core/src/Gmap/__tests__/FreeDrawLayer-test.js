@@ -1,7 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import ThemedFreeDrawLayer from '../FreeDrawLayer'
-import '../../../test/google-maps-mock'
 
 const FreeDrawLayer = ThemedFreeDrawLayer.WrappedComponent
 
@@ -12,14 +11,7 @@ const shape = [
 ]
 
 const testMap = new window.google.maps.Map()
-const mvcArray = new window.google.maps.MVCArray(shape)
-const mockPolyline = new window.google.maps.Polyline({ map: testMap, path: mvcArray })
-const mockPolygon = new window.google.maps.Polygon({ map: testMap, path: mockPolyline.getPath() })
-
-FreeDrawLayer.prototype.polyline = mockPolyline
-FreeDrawLayer.prototype.createPolyline = () => mockPolyline
-FreeDrawLayer.prototype.polygon = mockPolygon
-FreeDrawLayer.prototype.createPolygon = () => mockPolygon
+const mockPolygon = new window.google.maps.Polygon({ path: shape })
 
 const expectedPoints = [
   [-84.56927, 33.90871],
@@ -54,9 +46,9 @@ describe('FreeDrawLayer', () => {
 
   it('clears previous shapes', () => {
     const instance = setup()
-    const polygonSpy = jest.spyOn(FreeDrawLayer.prototype.polygon, 'setMap')
+    const polygonSpy = jest.spyOn(window.google.maps.Polygon.prototype, 'setMap')
 
-    instance.polygons = [instance.polygon, instance.polygon]
+    instance.polygons = [mockPolygon, mockPolygon]
     instance.componentDidUpdate({})
     expect(polygonSpy).toHaveBeenCalledTimes(2)
     expect(polygonSpy).toHaveBeenLastCalledWith(null)
@@ -99,8 +91,8 @@ describe('FreeDrawLayer', () => {
   describe('drawFreeHand', () => {
     it('enables map controls again when user is finished drawing', () => {
       const enableMapControls = jest.fn()
-      const polygonSpy = jest.spyOn(FreeDrawLayer.prototype.polygon, 'setMap')
-      const polylineSpy = jest.spyOn(FreeDrawLayer.prototype.polyline, 'setMap')
+      const polygonSpy = jest.spyOn(window.google.maps.Polygon.prototype, 'setMap')
+      const polylineSpy = jest.spyOn(window.google.maps.Polyline.prototype, 'setMap')
 
       const instance = setup()
       instance.enableMapControls = enableMapControls
@@ -147,7 +139,7 @@ describe('FreeDrawLayer', () => {
   describe('clearAllShapes', () => {
     it('calls setMap with null on each polygon', () => {
       const instance = setup()
-      const polylineSpy = jest.spyOn(FreeDrawLayer.prototype.polygon, 'setMap')
+      const polylineSpy = jest.spyOn(window.google.maps.Polygon.prototype, 'setMap')
 
       instance.polygons = [mockPolygon, mockPolygon]
       instance.clearAllShapes()
