@@ -115,7 +115,8 @@ export {
   Markers,
   OverlayView,
   FreeDrawLayer,
-  FreeDrawControls,
+  FreeDrawBanner,
+  FreeDrawTool,
 } from './Gmap'
 
 export {
