@@ -4,11 +4,7 @@ import { Gmap, GmapSpinner, Marker, Markers } from 'react-ui-core/src'
 import InfoWindow from './InfoWindow'
 import OverlayView from './OverlayView'
 import geojson from '../dummyData/geojson.json'
-import {
-  CustomBannerExample,
-  CustomDrawToolExample,
-  FreeDrawExample,
-} from './ExampleComponents'
+import { FreeDrawExample } from './ExampleComponents'
 
 const key = 'AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A'
 const dataStyle = {
@@ -84,16 +80,8 @@ export const FreeDrawDefault = (
   >
     <FreeDrawExample
       key={key}
-      handleMapDrawStart={action('Drawing shape')}
+      onDrawBegin={action('Drawing shape')}
       dataStyle={dataStyle}
-      freeDrawToolControls={{
-        buttonText: 'Draw Search',
-        status: 'active',
-      }}
-      bannerControls={{
-        bannerText: 'Zoom in on map to use Draw Search function',
-        bannerType: 'zoomIn',
-      }}
       mapControls={mapControls}
     />
   </Gmap>
@@ -105,33 +93,10 @@ export const WithExistingShape = (
   >
     <FreeDrawExample
       key={key}
-      handleMapDrawStart={action('Drawing shape')}
+      onDrawBegin={action('Drawing shape')}
       shapes={{ 0: [[-84.40399, 33.89503], [-84.70, 33.83], [-84.77, 33.15]] }}
       dataStyle={dataStyle}
-      freeDrawToolControls={{
-        buttonText: 'Draw Search',
-        status: 'active',
-      }}
-      bannerControls={{
-        bannerText: 'Click Draw Search to Erase Shape and Draw Again',
-        bannerType: 'zoomIn',
-      }}
       mapControls={mapControls}
-    />
-  </Gmap>
-)
-
-export const WithCustomDrawToolAndBanner = (
-  <Gmap
-    apiKey={key}
-  >
-    <FreeDrawExample
-      key={key}
-      dataStyle={dataStyle}
-      onMapDrawStart={action('Drawing shape')}
-      mapControls={mapControls}
-      DrawTool={CustomDrawToolExample}
-      Banner={CustomBannerExample}
     />
   </Gmap>
 )

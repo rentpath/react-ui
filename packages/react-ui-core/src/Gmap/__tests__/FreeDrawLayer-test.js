@@ -1,8 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ThemedFreeDrawLayer from '../FreeDrawLayer'
-
-const FreeDrawLayer = ThemedFreeDrawLayer.WrappedComponent
+import FreeDrawLayer from '../FreeDrawLayer'
 
 const shape = [
   { lat: 33.90871, lng: -84.56927 },
@@ -33,8 +31,8 @@ describe('FreeDrawLayer', () => {
         scrollwheel: true,
         disableDoubleClickZoom: true,
       }}
-      onMapDrawStart={jest.fn()}
-      onMapDrawEnd={jest.fn()}
+      onDrawBegin={jest.fn()}
+      onDrawEnd={jest.fn()}
       shapes={{
         0: [
           [-84.56927, 33.90871], [-84.6297, 33.91783], [-84.64618, 33.92239],
@@ -64,25 +62,25 @@ describe('FreeDrawLayer', () => {
     expect(addShapesSpy).toHaveBeenCalled()
   })
 
-  describe('enableMapDraw', () => {
+  describe('enableDraw', () => {
     it('disables map controls', () => {
       const instance = setup()
       const spy = jest.spyOn(instance, 'disableMapControls')
-      instance.enableMapDraw()
+      instance.enableDraw()
       expect(spy).toHaveBeenCalled()
     })
 
     it('sets a mousedown event listener', () => {
       const instance = setup()
       const fakeListener = jest.spyOn(window.google.maps.event, 'addListenerOnce')
-      instance.enableMapDraw()
+      instance.enableDraw()
       expect(fakeListener).toHaveBeenCalledWith(instance.props.map, 'mousedown', expect.any(Function))
     })
 
     it('calls the drawFreeHand function when the mousedown event is triggered', () => {
       const instance = setup()
       const spy = jest.spyOn(instance, 'drawFreeHand')
-      instance.enableMapDraw()
+      instance.enableDraw()
       instance.events.onMouseDown()
       expect(spy).toHaveBeenCalled()
     })
@@ -119,16 +117,16 @@ describe('FreeDrawLayer', () => {
       expect(setOptions).toHaveBeenCalledWith(expected)
     })
 
-    it('calls the onMapDrawStart function if provided ', () => {
+    it('calls the onDrawBegin function if provided ', () => {
       const instance = setup()
-      const spy = jest.spyOn(instance.props, 'onMapDrawStart')
+      const spy = jest.spyOn(instance.props, 'onDrawBegin')
       instance.drawFreeHand()
       expect(spy).toHaveBeenCalled()
     })
 
-    it('calls the onMapDrawEnd function when the onMouseMove event is cleared if provided', () => {
+    it('calls the onDrawEnd function when the onMouseMove event is cleared if provided', () => {
       const instance = setup()
-      const spy = jest.spyOn(instance.props, 'onMapDrawEnd')
+      const spy = jest.spyOn(instance.props, 'onDrawEnd')
       spy.mockClear()
       instance.drawFreeHand()
       instance.events.onMouseUp()
