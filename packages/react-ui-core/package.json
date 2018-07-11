@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-core",
-  "version": "14.1.0",
+  "version": "14.2.0",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
@@ -48,7 +48,7 @@
     "react-test-renderer": "^16.4.1"
   },
   "dependencies": {
-    "@rentpath/react-ui-utils": "4.1.0",
+    "@rentpath/react-ui-utils": "4.2.0",
     "babel-runtime": "6.26.0",
     "classnames": "^2.2.6",
     "form-serialize": "0.7.2",

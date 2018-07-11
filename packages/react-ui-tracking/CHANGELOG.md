@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.2.0"></a>
+# [4.2.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-tracking@4.0.0...@rentpath/react-ui-tracking@4.2.0) (2018-07-11)
+
+
+### Features
+
+* **photos:** adding photo component ([de6895b](https://github.com/rentpath/react-ui/commit/de6895b))
+
+
+
+
 <a name="4.1.0"></a>
 # [4.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-tracking@4.0.0...@rentpath/react-ui-tracking@4.1.0) (2018-07-11)
 
