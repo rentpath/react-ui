@@ -1,12 +1,8 @@
-import React, { PureComponent } from 'react'
+import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
-import themed from 'react-themed'
-import classnames from 'classnames'
 import { GMAP_EVENTS } from './utils/const'
 import { setupEvents, removeEvent } from './utils/mapEventHelpers'
-import FreeDrawTool from './FreeDrawTool'
-import FreeDrawBanner from './FreeDrawBanner'
 
 const enableControls = (enable = true) => ({
   draggable: enable,
@@ -15,40 +11,33 @@ const enableControls = (enable = true) => ({
   disableDoubleClickZoom: enable,
 })
 
-@themed(/^Gmap_FreeDrawLayer/, { pure: true })
 export default class FreeDrawLayer extends PureComponent {
   static propTypes = {
-    theme: PropTypes.object,
     map: PropTypes.object,
-    onMapDrawStart: PropTypes.func,
-    onMapDrawEnd: PropTypes.func,
+    enabled: PropTypes.bool,
+    onDrawBegin: PropTypes.func,
+    onDrawEnd: PropTypes.func,
     shapes: PropTypes.object,
-    multipleShapes: PropTypes.bool,
     dataStyle: PropTypes.object,
-    mapControls: PropTypes.object.isRequired,
-    freeDrawToolControls: PropTypes.object,
-    DrawTool: PropTypes.func,
-    className: PropTypes.string,
-    bannerControls: PropTypes.object,
-    Banner: PropTypes.func,
+    mapControls: PropTypes.object,
   }
 
   static defaultProps = {
-    theme: {},
-    map: {},
-    multipleShapes: false,
     shapes: {},
     dataStyle: {},
-    freeDrawToolControls: {},
-    DrawTool: FreeDrawTool,
-    bannerControls: {},
-    Banner: FreeDrawBanner,
   }
 
-  constructor(props) {
-    super(props)
-    this.state = { drawing: false }
+  componentDidMount() {
     this.addShapes()
+    if (this.props.enabled) this.enableDraw()
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { enabled } = nextProps
+
+    if (this.enabled !== enabled) {
+      enabled ? this.enableDraw() : this.disableDraw() // eslint-disable-line no-unused-expressions
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -59,7 +48,7 @@ export default class FreeDrawLayer extends PureComponent {
   }
 
   getPolygonCoords(poly) {
-    return poly.getPath().getArray().map(path => [path.lng(), path.lat()])
+    return poly && poly.getPath().getArray().map(path => [path.lng(), path.lat()])
   }
 
   enableMapControls() {
@@ -68,28 +57,39 @@ export default class FreeDrawLayer extends PureComponent {
       ...enableControls(true),
       ...mapControls,
     })
-    this.setState({
-      drawing: false,
-    })
   }
 
   disableMapControls() {
     const { map } = this.props
     map.setOptions(enableControls(false))
-    this.setState({ drawing: true })
   }
 
-  @autobind
-  enableMapDraw() {
-    const { map, multipleShapes } = this.props
-    this.disableMapControls()
+  enableDraw() {
+    const { map } = this.props
+    this.enabled = true
 
-    if (!multipleShapes) {
-      this.clearAllShapes()
-    }
+    this.disableMapControls()
+    this.clearAllShapes()
+
     this.events = setupEvents(map, GMAP_EVENTS, {
       onMouseDown: this.drawFreeHand,
     }, true)
+  }
+
+  @autobind
+  disableDraw() {
+    const { onDrawEnd } = this.props
+    this.enabled = false
+
+    if (onDrawEnd) onDrawEnd(this.getPolygonCoords(this.polygon))
+
+    Object.keys(this.events).forEach(name => {
+      removeEvent(this.events[name])
+    })
+
+    if (this.polyline) this.polyline.setMap(null)
+    if (this.polygon) this.polygon.setMap(null)
+    this.enableMapControls()
   }
 
   createPolyline() {
@@ -103,10 +103,8 @@ export default class FreeDrawLayer extends PureComponent {
   }
 
   createPolygon(polyline, attributes) {
-    const { map } = this.props
-
     return new window.google.maps.Polygon({
-      map,
+      map: this.props.map,
       path: polyline,
       clickable: false,
       ...attributes,
@@ -115,46 +113,34 @@ export default class FreeDrawLayer extends PureComponent {
 
   @autobind
   drawFreeHand() {
-    const { map, dataStyle, onMapDrawStart, onMapDrawEnd } = this.props
-    const polyline = this.createPolyline()
-    const polygon = this.createPolygon(polyline.getPath(), dataStyle.polylineFill)
+    const { map, dataStyle, onDrawBegin } = this.props
 
-    if (onMapDrawStart) onMapDrawStart()
+    this.polyline = this.createPolyline()
+    this.polygon = this.createPolygon(this.polyline.getPath(), dataStyle.polylineFill)
 
-    const listener = setupEvents(map, GMAP_EVENTS, {
-      onMouseMove: e => polyline.getPath().push(e.latLng),
-      onTouchStart: e => polyline.getPath().push(e.latLng),
-    }, false)
+    if (onDrawBegin) onDrawBegin()
 
-    const onMouseUp = () => {
-      removeEvent(listener.onMouseMove)
-      polyline.setMap(null)
-      polygon.setMap(null)
-
-      if (onMapDrawEnd) onMapDrawEnd(this.getPolygonCoords(polygon))
-      this.enableMapControls()
+    this.events = {
+      ...setupEvents(map, GMAP_EVENTS, {
+        onMouseMove: e => this.polyline.getPath().push(e.latLng),
+        onTouchStart: e => this.polyline.getPath().push(e.latLng),
+      }, false),
+      ...setupEvents(map, GMAP_EVENTS, {
+        onMouseUp: this.disableDraw,
+        onTouchEnd: this.disableDraw,
+      }, true),
     }
-
-    this.events = setupEvents(map, GMAP_EVENTS, {
-      onMouseUp,
-      onTouchEnd: onMouseUp,
-    }, true)
   }
 
   addShapes() {
+    const { polyline, polygon } = this.props.dataStyle
     const shapes = this.formatLongLatToGmapsCoordinates()
+
     this.polygons = shapes.map(path =>
-      this.createPolygon(
-        path,
-        {
-          ...this.props.dataStyle.polyline,
-          ...this.props.dataStyle.polygon,
-        }
-      )
+      this.createPolygon(path, { ...polyline, ...polygon })
     )
   }
 
-  @autobind
   clearAllShapes() {
     this.polygons.forEach(poly => poly.setMap(null))
     this.polygons = []
@@ -170,27 +156,6 @@ export default class FreeDrawLayer extends PureComponent {
   }
 
   render() {
-    const {
-      freeDrawToolControls,
-      DrawTool,
-      bannerControls,
-      Banner,
-      className,
-      theme,
-    } = this.props
-
-    return (
-      <React.Fragment>
-        <Banner
-          className={classnames(className, theme.Gmap_FreeDrawLayer)}
-          {...bannerControls}
-        />
-        <DrawTool
-          className={classnames(className, theme.Gmap_FreeDrawLayer)}
-          handleClick={this.enableMapDraw}
-          {...freeDrawToolControls}
-        />
-      </React.Fragment>
-    )
+    return null
   }
 }

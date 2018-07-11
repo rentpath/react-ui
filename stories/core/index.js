@@ -127,7 +127,6 @@ import {
   GmapWithOverlayView,
   FreeDrawDefault,
   WithExistingShape,
-  WithCustomDrawToolAndBanner,
 } from './Gmap'
 
 import {
@@ -224,7 +223,6 @@ coreStoriesNoContainer('Gmap ', module)
 coreStoriesNoContainer('Gmap / FreeDraw', module)
   .add('With Defaults', () => FreeDrawDefault)
   .add('With Existing Shape', () => WithExistingShape)
-  .add('With a Custom Draw Tool and Banner', () => WithCustomDrawToolAndBanner)
 
 coreStories('Highlighter', module)
   .add('Default Highlighter', () => DefaultHighlighter)

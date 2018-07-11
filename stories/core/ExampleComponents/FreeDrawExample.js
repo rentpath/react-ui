@@ -1,42 +1,72 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { FreeDrawLayer } from 'react-ui-core/src'
+import autobind from 'autobind-decorator'
+import classnames from 'classnames'
+import themed from 'react-themed'
+import { FreeDrawLayer, Button } from 'react-ui-core/src'
 
+@themed(/^FreeDrawButton/, { pure: true })
 export default class FreeDrawExample extends PureComponent {
   static propTypes = {
-    existingShapes: PropTypes.object,
-    handleMapDrawStart: PropTypes.func,
+    shapes: PropTypes.object,
+    onDrawBegin: PropTypes.func,
     dataStyle: PropTypes.object,
+    theme: PropTypes.object,
   }
 
   static defaultProps = {
-    existingShapes: {},
+    theme: {},
+    shapes: {},
   }
 
   constructor(props) {
     super(props)
-    this.state = { shapes: this.props.existingShapes }
-    this.handleAddShape = this.handleAddShape.bind(this)
+    this.state = {
+      shapes: this.props.shapes,
+      enabled: false,
+    }
   }
 
-  handleAddShape(shape) {
-    this.setState({ shapes: { 0: shape } })
+  @autobind
+  handleOnDrawEnd(shape) {
+    this.setState({
+      shapes: shape && { 0: shape },
+      enabled: false,
+    })
+  }
+
+  @autobind
+  handleClick() {
+    this.setState({ enabled: !this.state.enabled })
   }
 
   render() {
     const {
-      handleMapDrawStart,
-      dataStyle,
+      theme,
+      shapes: _,
+      ...rest
     } = this.props
 
+    const { shapes, enabled } = this.state
+
     return (
-      <FreeDrawLayer
-        onMapDrawStart={handleMapDrawStart}
-        onMapDrawEnd={this.handleAddShape}
-        shapes={this.state.shapes}
-        dataStyle={dataStyle}
-        {...this.props}
-      />
+      <Fragment>
+        <Button
+          onClick={this.handleClick}
+          className={classnames(
+            theme.FreeDrawButton,
+            theme[`FreeDrawButton-${enabled}`],
+          )}
+        >
+          {enabled ? 'Drawing...' : 'Enable Free Draw'}
+        </Button>
+        <FreeDrawLayer
+          onDrawEnd={this.handleOnDrawEnd}
+          shapes={shapes}
+          enabled={enabled}
+          {...rest}
+        />
+      </Fragment>
     )
   }
 }

@@ -56,58 +56,18 @@
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);
 }
 
-.Gmap_FreeDrawTool-active {
+.FreeDrawButton {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+}
+
+.FreeDrawButton-active {
   background-color: #ffffff;
   color: #4a4a4a;
 }
 
-.Gmap_FreeDrawTool-disabled {
+.FreeDrawButton-disabled {
   background-color: #e6e7e8;
   color: #777777;
-}
-
-.Gmap_FreeDrawTool-draw {
-  background-color: #4a4a4a;
-}
-
-.Gmap_FreeDrawTool-clear {
-  background-color: #4a4a4a;
-  color: #ffffff;
-}
-
-.Gmap_FreeDrawBanner-draw,
-.Gmap_FreeDrawBanner-zoomIn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: calc(50% - 250px);
-  width: 500px;
-  box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.15);
-  background-color: white;
-  max-width: 50%;
-  font-size: 12px;
-}
-
-.Gmap_FreeDrawBanner-zoomIn {
-  animation: fadeOut 3s ease-in 3s forwards;
-}
-
-.CustomDrawToolExample {
-  position: absolute;
-  z-index: 40;
-  top: 90px;
-  left: 10px;
-  width: 500px;
-}
-
-.CustomBannerExample {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: calc(50% - 250px);
-  width: 500px;
-  box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.15);
-  background-color: white;
 }
