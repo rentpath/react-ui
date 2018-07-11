@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.1.0"></a>
+# [8.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@8.0.0...@rentpath/react-ui-ag@8.1.0) (2018-07-11)
+
+
+### Bug Fixes
+
+* **react-ui-ag:** pass propertyName props through, prevent passing them to ApartmentComplex ([622f366](https://github.com/rentpath/react-ui/commit/622f366))
+
+
+### Features
+
+* **photos:** adding photo component ([de6895b](https://github.com/rentpath/react-ui/commit/de6895b))
+
+
+
+
 <a name="8.0.0"></a>
 # [8.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@6.6.2...@rentpath/react-ui-ag@8.0.0) (2018-07-10)
 
