@@ -249,6 +249,7 @@ export default class Listing extends Component {
       listingTopComponents,
       onPhotoCarouselSlide,
       renderCustomControls,
+      index,
       ...props
     } = this.props
 

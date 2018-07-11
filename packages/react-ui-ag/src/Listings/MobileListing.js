@@ -14,12 +14,15 @@ export default class MobileListing extends PureComponent {
     ratings: PropTypes.object,
     categoryMatch: PropTypes.bool,
     noMatchText: PropTypes.string,
+    propertyName: PropTypes.object,
+    address: PropTypes.object,
   }
 
   static defaultProps = {
     theme: {},
     listing: {},
     ratings: {},
+    propertyName: {},
   }
 
   get availabilityOrUpdated() {
@@ -56,7 +59,7 @@ export default class MobileListing extends PureComponent {
   }
 
   get renderInfo() {
-    const { theme, listing } = this.props
+    const { theme, listing, propertyName, address } = this.props
     const { singleFamily } = listing
     return (
       <React.Fragment>
@@ -64,8 +67,8 @@ export default class MobileListing extends PureComponent {
 
         <Schema.NameAndUrl url={listing.url}>
           {singleFamily ?
-            <ListingComponents.Address /> :
-            <ListingComponents.PropertyName />
+            <ListingComponents.Address {...address} /> :
+            <ListingComponents.PropertyName {...propertyName} />
           }
         </Schema.NameAndUrl>
 
@@ -85,6 +88,8 @@ export default class MobileListing extends PureComponent {
       className,
       listing,
       ratings,
+      address,
+      propertyName,
       noMatchText,
       categoryMatch,
       ...props
