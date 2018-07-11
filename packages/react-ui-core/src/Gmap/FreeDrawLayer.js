@@ -21,6 +21,7 @@ export default class FreeDrawLayer extends PureComponent {
     theme: PropTypes.object,
     map: PropTypes.object,
     onMapDrawStart: PropTypes.func,
+    onEnableMapDraw: PropTypes.func,
     onMapDrawEnd: PropTypes.func,
     shapes: PropTypes.object,
     multipleShapes: PropTypes.bool,
@@ -81,12 +82,13 @@ export default class FreeDrawLayer extends PureComponent {
 
   @autobind
   enableMapDraw() {
-    const { map, multipleShapes } = this.props
+    const { map, multipleShapes, onEnableMapDraw } = this.props
     this.disableMapControls()
 
-    if (!multipleShapes) {
-      this.clearAllShapes()
-    }
+    if (onEnableMapDraw) onEnableMapDraw()
+
+    if (!multipleShapes) this.clearAllShapes()
+
     this.events = setupEvents(map, GMAP_EVENTS, {
       onMouseDown: this.drawFreeHand,
     }, true)
