@@ -42,3 +42,10 @@
   align-items: center;
   justify-content: center;
 }
+
+.Story_BackgroundPhoto {
+  height: 300px;
+  width: 300px;
+  background-size: cover;
+  background-position: center;
+}

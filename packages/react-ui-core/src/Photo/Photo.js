@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import autobind from 'autobind-decorator'
 import themed from 'react-themed'
 
 @themed(['Photo'], {
@@ -60,8 +61,11 @@ export default class Photo extends PureComponent {
   }
   */
 
+  @autobind
   fallback() {
-    this.setState({ error: true })
+    if (!this.state.error) {
+      this.setState({ error: true })
+    }
   }
 
   render() {
@@ -85,7 +89,7 @@ export default class Photo extends PureComponent {
           className,
           theme.Photo
         )}
-        onError={!error && this.fallback}
+        onError={this.fallback}
         {...rest}
       />
     )

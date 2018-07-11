@@ -144,6 +144,13 @@ import {
   DesktopBathroomFilterCard,
 } from './Filters'
 
+import {
+  DefaultPhoto,
+  PhotoWithFallback,
+  DefaultBackgroundPhoto,
+  BackgroundPhotoWithFallback,
+} from './Photo'
+
 import coreStories, { coreStoriesNoContainer } from './coreStories'
 
 coreStories('AutoSuggestField', module)
@@ -254,6 +261,12 @@ coreStories('Modal', module)
   .add('Modal With Close Button', CloseModal)
   .add('Modal No Close on Overlay', () => ModalNoOverlayClose)
   .add('Modal Open By Click', ModalPopup)
+
+coreStories('Photo', module)
+  .add('Photo', () => DefaultPhoto)
+  .add('Photo with fallback', () => PhotoWithFallback)
+  .add('Background photo', () => DefaultBackgroundPhoto)
+  .add('Background photo with fallback', () => BackgroundPhotoWithFallback)
 
 coreStories('RadioGroup', module)
   .add('Radiogroup', () => DefaultRadioGroup)
