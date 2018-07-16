@@ -28,6 +28,7 @@ export default class FreeDrawLayer extends PureComponent {
   }
 
   componentDidMount() {
+    this.enabled = false
     this.addShapes()
     if (this.props.enabled) this.enableDraw()
   }
@@ -78,18 +79,20 @@ export default class FreeDrawLayer extends PureComponent {
 
   @autobind
   disableDraw() {
-    const { onDrawEnd } = this.props
-    this.enabled = false
+    if (this.enabled) {
+      const { onDrawEnd } = this.props
 
-    if (onDrawEnd) onDrawEnd(this.getPolygonCoords(this.polygon))
+      if (onDrawEnd) onDrawEnd(this.getPolygonCoords(this.polygon))
 
-    Object.keys(this.events).forEach(name => {
-      removeEvent(this.events[name])
-    })
+      Object.keys(this.events).forEach(name => {
+        removeEvent(this.events[name])
+      })
 
-    if (this.polyline) this.polyline.setMap(null)
-    if (this.polygon) this.polygon.setMap(null)
-    this.enableMapControls()
+      if (this.polyline) this.polyline.setMap(null)
+      if (this.polygon) this.polygon.setMap(null)
+      this.enableMapControls()
+      this.enabled = false
+    }
   }
 
   createPolyline() {

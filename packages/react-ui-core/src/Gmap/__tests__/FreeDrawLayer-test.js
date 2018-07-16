@@ -86,13 +86,15 @@ describe('FreeDrawLayer', () => {
     })
   })
 
-  describe('drawFreeHand', () => {
-    it('enables map controls again when user is finished drawing', () => {
+  describe('disableDraw', () => {
+    it('enables map controls and removes poly shapes on mouse up', () => {
       const enableMapControls = jest.fn()
       const polygonSpy = jest.spyOn(window.google.maps.Polygon.prototype, 'setMap')
       const polylineSpy = jest.spyOn(window.google.maps.Polyline.prototype, 'setMap')
 
-      const instance = setup()
+      const instance = setup({
+        enabled: true,
+      })
       instance.enableMapControls = enableMapControls
       instance.drawFreeHand()
       instance.events.onMouseUp()
@@ -101,7 +103,7 @@ describe('FreeDrawLayer', () => {
       expect(enableMapControls).toHaveBeenCalled()
     })
 
-    it('prefers props over default map control values when enabling Map controls', () => {
+    it('restores default map controls correctly', () => {
       const setOptions = jest.fn()
       const instance = setup({
         map: { setOptions },
@@ -117,19 +119,31 @@ describe('FreeDrawLayer', () => {
       expect(setOptions).toHaveBeenCalledWith(expected)
     })
 
-    it('calls the onDrawBegin function if provided ', () => {
-      const instance = setup()
-      const spy = jest.spyOn(instance.props, 'onDrawBegin')
-      instance.drawFreeHand()
-      expect(spy).toHaveBeenCalled()
-    })
-
-    it('calls the onDrawEnd function when the onMouseMove event is cleared if provided', () => {
-      const instance = setup()
+    it('calls the onDrawEnd if provided', () => {
+      const instance = setup({
+        enabled: true,
+      })
       const spy = jest.spyOn(instance.props, 'onDrawEnd')
       spy.mockClear()
       instance.drawFreeHand()
       instance.events.onMouseUp()
+      expect(spy).toHaveBeenCalled()
+    })
+
+    it('does not executes logic if this.enabled is false', () => {
+      const enableMapControls = jest.fn()
+      const instance = setup()
+      instance.enableMapControls = enableMapControls
+      instance.disableDraw()
+      expect(enableMapControls).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('drawFreeHand', () => {
+    it('calls the onDrawBegin function if provided ', () => {
+      const instance = setup()
+      const spy = jest.spyOn(instance.props, 'onDrawBegin')
+      instance.drawFreeHand()
       expect(spy).toHaveBeenCalled()
     })
   })
