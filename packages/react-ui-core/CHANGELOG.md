@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="14.2.1"></a>
+## [14.2.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@14.2.0...@rentpath/react-ui-core@14.2.1) (2018-07-17)
+
+
+### Bug Fixes
+
+* **FreeDrawLayer:** disableDraw firing twice ([6022cc3](https://github.com/rentpath/react-ui/commit/6022cc3))
+
+
+
+
 <a name="14.2.0"></a>
 # [14.2.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@14.0.0...@rentpath/react-ui-core@14.2.0) (2018-07-11)
 
