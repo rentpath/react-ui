@@ -147,6 +147,7 @@ import {
 import {
   DefaultPhoto,
   PhotoWithFallback,
+  PhotoWithSrcSet,
   DefaultBackgroundPhoto,
   BackgroundPhotoWithFallback,
 } from './Photo'
@@ -265,6 +266,7 @@ coreStories('Modal', module)
 coreStories('Photo', module)
   .add('Photo', () => DefaultPhoto)
   .add('Photo with fallback', () => PhotoWithFallback)
+  .add('Photo with picture/srcset', () => PhotoWithSrcSet)
   .add('Background photo', () => DefaultBackgroundPhoto)
   .add('Background photo with fallback', () => BackgroundPhotoWithFallback)
 

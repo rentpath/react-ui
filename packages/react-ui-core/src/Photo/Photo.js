@@ -4,6 +4,12 @@ import classnames from 'classnames'
 import autobind from 'autobind-decorator'
 import themed from 'react-themed'
 
+const pictureSourcesPropTypes = PropTypes.shape({
+  type: PropTypes.string,
+  media: PropTypes.string,
+  srcset: PropTypes.string.isRequired,
+})
+
 @themed(['Photo'], {
   pure: true,
 })
@@ -11,7 +17,8 @@ import themed from 'react-themed'
 export default class Photo extends PureComponent {
   static propTypes = {
     url: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
+    sources: PropTypes.arrayOf(pictureSourcesPropTypes),
+    alt: PropTypes.string,
     fallbackUrl: PropTypes.string,
     theme: PropTypes.object,
     className: PropTypes.string,
@@ -61,6 +68,30 @@ export default class Photo extends PureComponent {
   }
   */
 
+  get sourceTags() {
+    const { sources } = this.props
+
+    if (!sources || !sources.length) return false
+
+    return (
+      <React.Fragment>
+        {sources.reduce((sourcesArr, { type, media, srcset }, index) => {
+          if (srcset) {
+            sourcesArr.push(
+              <source
+                type={type}
+                media={media}
+                srcSet={srcset}
+                key={`${index}${srcset}`}
+              />
+            )
+          }
+          return sourcesArr
+        }, [])}
+      </React.Fragment>
+    )
+  }
+
   @autobind
   fallback() {
     if (!this.state.error) {
@@ -75,23 +106,31 @@ export default class Photo extends PureComponent {
       url: _,
       alt,
       fallbackUrl,
+      sources,
       ...rest
     } = this.props
 
     const { url, error } = this.state
 
+    const imageTag = (<img
+      src={error ? fallbackUrl : url}
+      alt={alt}
+      data-tid="photo"
+      className={classnames(
+        className,
+        theme.Photo
+      )}
+      onError={this.fallback}
+      {...rest}
+    />)
+
+    if (error || !this.sourceTags) return imageTag
+
     return (
-      <img
-        src={error ? fallbackUrl : url}
-        alt={alt}
-        data-tid="photo"
-        className={classnames(
-          className,
-          theme.Photo
-        )}
-        onError={this.fallback}
-        {...rest}
-      />
+      <picture>
+        {this.sourceTags}
+        {imageTag}
+      </picture>
     )
   }
 }

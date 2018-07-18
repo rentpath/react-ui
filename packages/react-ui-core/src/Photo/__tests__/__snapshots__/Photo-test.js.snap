@@ -9,3 +9,20 @@ exports[`Photo src sets a url 1`] = `
   src="/foo"
 />
 `;
+
+exports[`Photo srcset creates a picture tag 1`] = `
+<picture>
+  <source
+    media="media query,"
+    srcSet="/srcseturl"
+    type="type/bar"
+  />
+  <img
+    alt="foo alt text"
+    className=""
+    data-tid="photo"
+    onError={[Function]}
+    src="/foo"
+  />
+</picture>
+`;
