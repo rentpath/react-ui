@@ -60,4 +60,24 @@ describe('Photo', () => {
       expect(wrapper.prop('src')).toEqual(fallbackUrl)
     })
   })
+
+  describe('srcset', () => {
+    it('creates a picture tag', () => {
+      const wrapper = setup()
+      expect(wrapper.prop('src')).toEqual(url)
+
+      const sources = [
+        {
+          srcset: '/srcseturl',
+          media: 'media query,',
+          type: 'type/bar',
+        },
+      ]
+
+      const snap = renderer
+        .create(<Photo url={url} alt="foo alt text" sources={sources} />)
+        .toJSON()
+      expect(snap).toMatchSnapshot()
+    })
+  })
 })

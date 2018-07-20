@@ -17,6 +17,24 @@ export const PhotoWithFallback = (
   />
 )
 
+export const PhotoWithSrcSet = (
+  <Photo
+    url="https://rentpath-res.cloudinary.com/c_fill,w_237,h_180,q_10,dpr_2.0/a4d8aac21c66727a3781953bbb0c807a"
+    fallbackUrl="http://www.neotechnocraft.com/images/NoImageFound.jpg"
+    sources={[
+      {
+        type: 'image/webp',
+        media: '(min-width: 1px)',
+        srcset: 'https://rentpath-res.cloudinary.com/c_fill,w_237,h_180,f_webp,q_10,dpr_2.0/a4d8aac21c66727a3781953bbb0c807a',
+      },
+      {
+        srcset: 'https://rentpath-res.cloudinary.com/c_fill,w_237,h_180,q_10,dpr_2.0/a4d8aac21c66727a3781953bbb0c807a',
+      },
+    ]}
+    alt="srcset sample"
+  />
+)
+
 export const DefaultBackgroundPhoto = (
   <BackgroundPhoto
     className={StoryBookTheme.Story_BackgroundPhoto}
