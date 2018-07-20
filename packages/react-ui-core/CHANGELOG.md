@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="14.3.0"></a>
+# [14.3.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@14.2.1...@rentpath/react-ui-core@14.3.0) (2018-07-20)
+
+
+### Features
+
+* **core:** adds Picture tag to Photo component ([d5c7039](https://github.com/rentpath/react-ui/commit/d5c7039))
+
+
+
+
 <a name="14.2.1"></a>
 ## [14.2.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@14.2.0...@rentpath/react-ui-core@14.2.1) (2018-07-17)
 
