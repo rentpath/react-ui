@@ -17,29 +17,30 @@ const expectedPoints = [
   [-84.64618, 33.92239],
 ]
 
+const props = {
+  map: testMap,
+  mapControls: {
+    draggable: true,
+    zoomControl: true,
+    scrollwheel: true,
+    disableDoubleClickZoom: true,
+  },
+  onDrawBegin: jest.fn(),
+  onDrawEnd: jest.fn(),
+  shapes: {
+    0: [
+      [-84.56927, 33.90871], [-84.6297, 33.91783], [-84.64618, 33.92239],
+    ],
+  },
+}
+
 describe('FreeDrawLayer', () => {
   beforeEach(() => {
     jest.restoreAllMocks()
   })
 
   const setup = rest => (
-    shallow(<FreeDrawLayer
-      map={testMap}
-      mapControls={{
-        draggable: true,
-        zoomControl: true,
-        scrollwheel: true,
-        disableDoubleClickZoom: true,
-      }}
-      onDrawBegin={jest.fn()}
-      onDrawEnd={jest.fn()}
-      shapes={{
-        0: [
-          [-84.56927, 33.90871], [-84.6297, 33.91783], [-84.64618, 33.92239],
-        ],
-      }}
-      {...rest}
-    />).instance()
+    shallow(<FreeDrawLayer {...props} {...rest} />).instance()
   )
 
   it('clears previous shapes', () => {
@@ -72,7 +73,7 @@ describe('FreeDrawLayer', () => {
 
     it('sets a mousedown event listener', () => {
       const instance = setup()
-      const fakeListener = jest.spyOn(window.google.maps.event, 'addListenerOnce')
+      const fakeListener = jest.spyOn(window.google.maps.event, 'addListener')
       instance.enableDraw()
       expect(fakeListener).toHaveBeenCalledWith(instance.props.map, 'mousedown', expect.any(Function))
     })
@@ -86,18 +87,15 @@ describe('FreeDrawLayer', () => {
     })
   })
 
-  describe('disableDraw', () => {
-    it('enables map controls and removes poly shapes on mouse up', () => {
-      const enableMapControls = jest.fn()
+  describe('finishDraw', () => {
+    it('enables map controls and removes poly shapes on enabled prop changed to false', () => {
       const polygonSpy = jest.spyOn(window.google.maps.Polygon.prototype, 'setMap')
       const polylineSpy = jest.spyOn(window.google.maps.Polyline.prototype, 'setMap')
 
-      const instance = setup({
-        enabled: true,
-      })
-      instance.enableMapControls = enableMapControls
-      instance.drawFreeHand()
-      instance.events.onMouseUp()
+      const wrapper = shallow(<FreeDrawLayer {...props} enabled />)
+      const instance = wrapper.instance()
+      const enableMapControls = jest.spyOn(instance, 'enableMapControls')
+      wrapper.setProps({ enabled: false })
       expect(polylineSpy).toHaveBeenCalledWith(null)
       expect(polygonSpy).toHaveBeenCalledWith(null)
       expect(enableMapControls).toHaveBeenCalled()
@@ -126,7 +124,7 @@ describe('FreeDrawLayer', () => {
       const spy = jest.spyOn(instance.props, 'onDrawEnd')
       spy.mockClear()
       instance.drawFreeHand()
-      instance.events.onMouseUp()
+      instance.finishDraw()
       expect(spy).toHaveBeenCalled()
     })
 
@@ -134,7 +132,7 @@ describe('FreeDrawLayer', () => {
       const enableMapControls = jest.fn()
       const instance = setup()
       instance.enableMapControls = enableMapControls
-      instance.disableDraw()
+      instance.finishDraw()
       expect(enableMapControls).not.toHaveBeenCalled()
     })
   })
