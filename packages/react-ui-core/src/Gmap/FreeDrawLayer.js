@@ -66,33 +66,38 @@ export default class FreeDrawLayer extends PureComponent {
   }
 
   enableDraw() {
-    const { map } = this.props
     this.enabled = true
 
     this.disableMapControls()
     this.clearAllShapes()
-
-    this.events = setupEvents(map, GMAP_EVENTS, {
-      onMouseDown: this.drawFreeHand,
-    }, true)
+    this.drawFreeHand()
   }
 
   @autobind
-  disableDraw() {
+  handleMouseUp() {
+    this.mouseDown = false
+    const polygonCoords = this.getPolygonCoords(this.polygon)
+
+    if (polygonCoords.length) this.finishDraw(polygonCoords)
+  }
+
+  finishDraw(polygonCoords) {
     if (this.enabled) {
       const { onDrawEnd } = this.props
 
-      if (onDrawEnd) onDrawEnd(this.getPolygonCoords(this.polygon))
-
-      Object.keys(this.events).forEach(name => {
-        removeEvent(this.events[name])
-      })
-
-      if (this.polyline) this.polyline.setMap(null)
-      if (this.polygon) this.polygon.setMap(null)
-      this.enableMapControls()
-      this.enabled = false
+      if (onDrawEnd) onDrawEnd(polygonCoords)
     }
+  }
+
+  disableDraw() {
+    Object.keys(this.events).forEach(name => {
+      removeEvent(this.events[name])
+    })
+
+    if (this.polyline) this.polyline.setMap(null)
+    if (this.polygon) this.polygon.setMap(null)
+    this.enableMapControls()
+    this.enabled = false
   }
 
   createPolyline() {
@@ -125,13 +130,20 @@ export default class FreeDrawLayer extends PureComponent {
 
     this.events = {
       ...setupEvents(map, GMAP_EVENTS, {
-        onMouseMove: e => this.polyline.getPath().push(e.latLng),
-        onTouchStart: e => this.polyline.getPath().push(e.latLng),
+        onMouseDown: () => { this.mouseDown = true },
+        onTouchStart: () => { this.mouseDown = true },
+        onMouseMove: e => this.handleMouseMove(e),
+        onTouchMove: e => this.handleMouseMove(e),
+        onMouseUp: this.handleMouseUp,
+        onTouchEnd: this.handleMouseUp,
       }, false),
-      ...setupEvents(map, GMAP_EVENTS, {
-        onMouseUp: this.disableDraw,
-        onTouchEnd: this.disableDraw,
-      }, true),
+    }
+  }
+
+  @autobind
+  handleMouseMove(e) {
+    if (this.mouseDown) {
+      this.polyline.getPath().push(e.latLng)
     }
   }
 
