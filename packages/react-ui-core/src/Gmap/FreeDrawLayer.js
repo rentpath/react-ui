@@ -130,14 +130,19 @@ export default class FreeDrawLayer extends PureComponent {
 
     this.events = {
       ...setupEvents(map, GMAP_EVENTS, {
-        onMouseDown: () => { this.mouseDown = true },
-        onTouchStart: () => { this.mouseDown = true },
+        onMouseDown: this.handleMouseDown,
+        onTouchStart: this.handleMouseDown,
         onMouseMove: this.handleMouseMove,
         onTouchMove: this.handleMouseMove,
         onMouseUp: this.handleMouseUp,
         onTouchEnd: this.handleMouseUp,
       }, false),
     }
+  }
+
+  @autobind
+  handleMouseDown() {
+    this.mouseDown = true
   }
 
   @autobind
