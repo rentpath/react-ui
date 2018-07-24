@@ -1,7 +1,5 @@
 import React from 'react'
 import { MoreOptionsModal } from 'react-ui-ag/src'
-import { boolean, text } from '@storybook/addon-knobs'
-import { action } from '@storybook/addon-actions'
 
 export const scrollableMoreOptionsModal = () => {
   const filters = (<div style={{height: '800px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
@@ -16,17 +14,15 @@ export const scrollableMoreOptionsModal = () => {
   </div>)
 
   const moreOptionsModalProps = {
-    header: 'X Properties Found',
-    showButtonProps: {
-      text: 'Show X Properties',
-    },
-    filters,
+    moreOptionsForm: filters,
+    isOpen: true,
+    total: 1500,
+    filterTotal: 800,
   }
 
   return (
     <MoreOptionsModal
       {...moreOptionsModalProps}
     />
-
   )
 }

@@ -1,46 +1,118 @@
-.MoreOptionsModal .ModalBody {
-  position: absolute;
+@value HeaderHeight 50px;
+@value MoreOptionsModalHeight calc(100vh - HeaderHeight - 10px);
+@value MoreOptionsWidth 1024px;
+
+.MoreOptionsModalOverlay {
+  position: fixed;
   top: 0;
+  left: 0;
   bottom: 0;
-  margin: 50px 0 20px;
-  width: 1024px;
+  right: 0;
+  justify-content: center;
+  z-index: 10;
+  display: inline-block;
+  align-items: center;
+  -webkit-box-pack: center;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.MoreOptionsModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  -webkit-box-pack: center;
+}
+
+.MoreOptionsModal .ModalBody {
+  align-self: flex-start;
+  z-index: 1;
+  /* Push down below the header */
+  margin-top: HeaderHeight;
+}
+
+.MoreOptionsModal .ModalBody_InnerBody {
+  width: 100%;
+  /* Override position absolute which is being set elsewhere */
+  position: static;
+  /* In case the modal is taller than window size */
+  overflow-y: auto;
+}
+
+.MoreOptionsModal_InnerContainer {
+  background: #FFF;
   display: flex;
   flex-direction: column;
+  min-height: 300px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
 }
 
-.MoreOptionsModal .Overlay {
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  background-color: #000000;
+.MoreOptionsModal .ModalBody > div {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  max-height: MoreOptionsModalHeight;
+  min-height: 300px;
+  overflow-x: hidden;
 }
 
-.MoreOptionsModal .CloseButton {
-  position: absolute;
-  right: 40px;
-  top: 28px;
-  color: #4a90e2;
-  font-size: 15px;
+.MoreOptionsModal .Modal-open {
+  display: block;
+}
+
+.MoreOptionsModal .Modal-close {
+  display: none;
+}
+
+.MoreOptionsModal_CloseButton {
+  float: right;
+  cursor: pointer;
   font-family: NunitoSans;
+  font-size: 15px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  cursor: pointer;
+  text-align: right;
+  color: #4a90e2;
+  margin-top: 28px;
+  margin-right: 40px;
 }
 
 .MoreOptionsModal_Header {
-  width: 1024px;
-  height: 75px;
-  background-color: #ffffff;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
   box-shadow: 0 1px 3px 0 rgba(170, 170, 170, 0.5);
 }
 
-.MoreOptionsModal_HeaderText {
-  position: absolute;
-  left: 40px;
-  top: 26px;
+.MoreOptionsModal_Content {
+  flex-grow: 1;
+  overflow-y: scroll;
+  /* Prevent scrollbar from affecting the width */
+  /* Prevent horizontal scrollbar when price slider floats right */
+  overflow-x: hidden;
+  padding: 0 40px;
+}
+
+.MoreOptionsModal_Content::-webkit-scrollbar {
+  width: 7px;
+  background: transparent;
+}
+
+.MoreOptionsModal_Content:hover::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: #d8d8d8;
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.MoreOptionsModal_PropertyCount {
   font-family: NunitoSans;
   font-size: 18px;
   font-weight: bold;
@@ -49,18 +121,23 @@
   line-height: normal;
   letter-spacing: normal;
   color: #4a4a4a;
+  margin-top: 26px;
+  margin-left: 40px;
 }
 
 .MoreOptionsModal_Footer {
-  position: absolute;
-  width: 100%;
-  height: 110px;
-  background-color: #ffffff;
   box-shadow: 0 -1px 3px 0 rgba(170, 170, 170, 0.5);
-  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: 110px;
+  padding: 0 40px;
 }
 
-.MoreOptionsModal_ResetButton {
+.MoreOptionsModal_ResetAll {
+  color: #4a90e2;
   font-family: NunitoSans;
   font-size: 15px;
   font-weight: bold;
@@ -68,30 +145,18 @@
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: #4a90e2;
-  background-color: transparent;
-  border-width: 0;
-  padding: 0;
-  margin-left: 40px;
-  position: absolute;
-  top: 37px;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
-.MoreOptionsModal_FooterButtonGroup {
-  position: absolute;
-  left: 560px;
-  top: 37px;
-}
-
-.MoreOptionsModal_CancelButton {
+.MoreOptionsModal_Cancel {
   width: 200px;
   height: 36px;
-  object-fit: contain;
+  background: none;
+  padding: 0;
   border-radius: 100px;
-  box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.15);
   border: solid 1px #4a90e2;
-  color: #4a90e2;
   font-family: NunitoSans;
   font-size: 15px;
   font-weight: bold;
@@ -100,17 +165,16 @@
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
-  margin-right: 24px;
+  color: #4a90e2;
   cursor: pointer;
+  margin-right: 32px;
 }
 
-.MoreOptionsModal_ShowButton {
+.MoreOptionsModal_ShowProps {
   width: 200px;
   height: 36px;
-  object-fit: contain;
   border-radius: 100px;
   background-color: #4a90e2;
-  box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.15);
   font-family: NunitoSans;
   font-size: 15px;
   font-weight: bold;
@@ -123,36 +187,13 @@
   cursor: pointer;
 }
 
-.MoreOptionsModal_FiltersBody {
-  position: absolute;
-  top: 75px;
-  bottom: 110px;
-  width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+.MoreOptionsModal_ShowProps:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .MoreOptionsModal_FiltersContainer {
-  width: 100%;
-  height: 415px;
-}
-
-.MoreOptionsModal_FiltersBody::-webkit-scrollbar {
-  width: 5px;
-  background-color: #f7f7f7;
-}
-
-.MoreOptionsModal_FiltersBody::-webkit-scrollbar-thumb {
-  background-color: #d8d8d8;
-  border-radius: 10px;
-}
-
-.MoreOptionsModal_Filters {
   display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 800px;
+  flex-direction: column;
+  flex: 1;
+  width: 1024px;
 }

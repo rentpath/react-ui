@@ -1,30 +1,29 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
-import ReactDOM from 'react-dom'
-import classnames from 'classnames'
-import { Modal, Button, Text } from '@rentpath/react-ui-core'
+import autobind from 'autobind-decorator'
+
+import { Modal, Button } from '@rentpath/react-ui-core'
 
 @themed(/^MoreOptionsModal/, { pure: true })
 
 export default class MoreOptionsModal extends PureComponent {
   static propTypes = {
-    className: PropTypes.string,
+    isOpen: PropTypes.bool,
     theme: PropTypes.object,
-    header: PropTypes.node,
-    showButtonProps: PropTypes.object,
-    filters: PropTypes.node,
-    resetButtonProps: PropTypes.object,
-    cancelButtonProps: PropTypes.object,
-    closeButtonProps: PropTypes.object,
+    moreOptionsForm: PropTypes.node,
+    total: PropTypes.number,
+    filterTotal: PropTypes.number,
+    onClose: PropTypes.func,
+    onSubmit: PropTypes.func,
+    restoreFilters: PropTypes.func,
+    clearFilters: PropTypes.func,
+    applyFilters: PropTypes.func,
   }
 
   static defaultProps = {
     theme: {},
-    showButtonProps: {},
-    resetButtonProps: {},
-    cancelButtonProps: {},
-    isOpen: true,
+    total: 0,
   }
 
   constructor(props) {
@@ -35,86 +34,234 @@ export default class MoreOptionsModal extends PureComponent {
     }
   }
 
-  get showButtonProps() {
-    const { showButtonProps } = this.props
+  @autobind
+  handleOutsideMouseDown(e) {
+    // If a click starts outside the modal, set the outside flag
+    // so when the click event occurs on the overlay,
+    // it will close the modal.
+    this.clickedOutside = (e.target === this.overlay)
+  }
 
-    return {
-      children: showButtonProps.text || 'Show Properties',
-      onClick: () => {
-        if (showButtonProps.onClick) showButtonProps.onClick()
-        this.setState({ isOpen: false })
-      },
-      ...showButtonProps,
+  @autobind
+  handleOutsideMouseUp(e) {
+    // If a click ends inside the modal, unset the outside flag
+    // so when the click event bubbles up to the overlay,
+    // it will not close the modal.
+    if (e.target !== this.overlay) {
+      this.clickedOutside = false
     }
   }
 
-  get cancelButtonProps() {
-    const { cancelButtonProps } = this.props
+  @autobind
+  handleOutsideClick(e) {
+    const { onClose, applyFilters } = this.props
 
-    return {
-      children: cancelButtonProps.text || 'Cancel',
-      onClick: () => {
-        if (cancelButtonProps.onClick) cancelButtonProps.onClick()
-        this.setState({ isOpen: false })
-      },
-      ...cancelButtonProps,
+    // Verify the click started on the overlay.
+    // This will handle the case of the user starting a click inside the modal,
+    // then dragging and releasing the button outside the modal.
+    if (!this.clickedOutside) {
+      return
+    }
+
+    // Clear the flag so it will not affect the next click
+    this.clickedOutside = null
+
+    // Verify the click ended on the overlay and did not bubble up
+    // from the modal
+    if (e.target !== this.overlay) {
+      return
+    }
+
+    if (onClose) {
+      onClose()
+      if (applyFilters) {
+        applyFilters()
+      }
     }
   }
 
-  get resetButtonProps() {
-    const { resetButtonProps } = this.props
+  @autobind
+  getShowPropertyButton() {
+    const { filterTotal, total } = this.props
 
-    return {
-      children: resetButtonProps.text || 'Reset All',
-      onClick: () => {
-        if (resetButtonProps.onClick) resetButtonProps.onClick()
-        this.setState({ isOpen: false })
-      },
-      ...resetButtonProps,
+    let count = (filterTotal !== null) ? filterTotal : total
+    let propertyCount = 'Show 0 Properties'
+
+    if (count > 1) {
+      count = this.formatNumberWithCommas(count)
+      propertyCount = `Show ${count} Properties`
+    } else if (count === 1) {
+      propertyCount = 'Show 1 Property'
     }
+
+    return propertyCount
+  }
+
+  @autobind
+  handleSubmit(e) {
+    const {
+      onSubmit,
+      onClose,
+    } = this.props
+
+    if (!onSubmit) {
+      e.preventDefault()
+    } else {
+      onSubmit()
+    }
+
+    if (onClose) {
+      onClose()
+    }
+  }
+
+  @autobind
+  handleCancel() {
+    const {
+      onClose,
+      restoreFilters,
+    } = this.props
+    restoreFilters()
+    onClose()
+  }
+
+  @autobind
+  getPropertyCount() {
+    const { filterTotal, total } = this.props
+    let count = (filterTotal !== null) ? filterTotal : total
+    let propertyCount = '0 Properties Found'
+
+    if (count > 1) {
+      count = this.formatNumberWithCommas(count)
+      propertyCount = `${count} Properties Found`
+    } else if (count === 1) {
+      propertyCount = '1 Property Found'
+    }
+
+    return propertyCount
+  }
+
+  formatNumberWithCommas(number) {
+    return String(number).replace(/(.)(?=(\d{3})+$)/g, '$1,')
+  }
+
+  renderHeader() {
+    const {
+      onClose,
+      theme,
+    } = this.props
+
+    const propertyCount = this.getPropertyCount()
+
+    return (
+      <div className={theme.MoreOptionsModal_Header}>
+        <h2
+          className={theme.MoreOptionsModal_PropertyCount}
+          data-tid="more-filters-props-count"
+        >
+          {propertyCount}
+        </h2>
+        <div
+          role="button"
+          tabIndex={0}
+          className={theme.MoreOptionsModal_CloseButton}
+          onClick={onClose}
+          data-tid="more-filters-close"
+          data-tag_item="close"
+        >
+          Close
+        </div>
+      </div>
+    )
+  }
+
+  renderFooter() {
+    const {
+      theme,
+      clearFilters,
+    } = this.props
+
+    const showPropertyButton = this.getShowPropertyButton()
+
+    return (
+      <div className={theme.MoreOptionsModal_Footer}>
+        <Button
+          className={theme.MoreOptionsModal_ResetAll}
+          onClick={clearFilters}
+        >
+          <span
+            data-tid="more-filters-reset-all"
+            data-tag_item="reset_all"
+          >
+            Reset All
+          </span>
+        </Button>
+        <div className={theme.MoreOptionsModal_FooterButtons}>
+          <Button
+            className={theme.MoreOptionsModal_Cancel}
+            onClick={this.handleCancel}
+          >
+            <span
+              data-tid="more-filters-cancel"
+              data-tag_item="close"
+            >
+              Cancel
+            </span>
+          </Button>
+          <Button
+            className={theme.MoreOptionsModal_ShowProps}
+            onClick={this.handleSubmit}
+            data-tid="more-filters-submit-link"
+          >
+            <span
+              data-tid="more-filters-show-props"
+              data-tag_item="show_properties_button"
+            >
+              {showPropertyButton}
+            </span>
+          </Button>
+        </div>
+      </div>
+    )
   }
 
   render() {
     const {
       theme,
-      header,
-      className,
-      filters,
-      ...props
+      moreOptionsForm,
+      onClose,
+      isOpen,
     } = this.props
 
-    const { isOpen } = this.state
-    console.log(isOpen, 'is open')
-
     return (
-      <Modal
-        isOpen={isOpen}
-        className={classnames(
-          className,
-          theme.MoreOptionsModal
-        )}
-        data-tid="more-options-modal"
-        CloseButton={{
-          children: 'Close',
-        }}
-        {...props}
+      <div
+        role="presentation"
+        className={theme.MoreOptionsModalOverlay}
+        ref={node => { this.overlay = node }}
+        onMouseDown={this.handleOutsideMouseDown}
+        onMouseUp={this.handleOutsideMouseUp}
+        onClick={this.handleOutsideClick}
+        key="overlay"
       >
-        <div className={theme.MoreOptionsModal_Header} data-tid="more-options-header">
-          <Text className={theme.MoreOptionsModal_HeaderText} >
-            {header}
-          </Text>
-        </div>
-        <div className={theme.MoreOptionsModal_FiltersBody}>
-          {filters}
-        </div>
-        <div className={theme.MoreOptionsModal_Footer} data-tid="more-options-footer">
-          <Button className={theme.MoreOptionsModal_ResetButton} {...this.resetButtonProps} />
-          <div className={theme.MoreOptionsModal_FooterButtonGroup}>
-            <Button className={theme.MoreOptionsModal_CancelButton} {...this.cancelButtonProps} />
-            <Button className={theme.MoreOptionsModal_ShowButton} {...this.showButtonProps} />
+        <Modal
+          className={theme.MoreOptionsModal}
+          key="modal"
+          data-tag_section="more_filters"
+          isOpen={isOpen}
+          onClose={onClose}
+          data-tid="more-filters-modal"
+        >
+          <div className={theme.MoreOptionsModal_InnerContainer}>
+            <div className={theme.MoreOptionsModal_FiltersContainer}>
+              {this.renderHeader()}
+              <div className={theme.MoreOptionsModal_Content}>
+                {moreOptionsForm}
+              </div>
+              {this.renderFooter()}
+            </div>
           </div>
-        </div>
-      </Modal>
+        </Modal>
+      </div>
     )
   }
 }
