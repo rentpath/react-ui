@@ -1,0 +1,199 @@
+@value HeaderHeight 50px;
+@value MoreOptionsModalHeight calc(100vh - HeaderHeight - 10px);
+@value MoreOptionsWidth 1024px;
+
+.MoreOptionsModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+  z-index: 10;
+  display: inline-block;
+  align-items: center;
+  -webkit-box-pack: center;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.MoreOptionsModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  -webkit-box-pack: center;
+}
+
+.MoreOptionsModal .ModalBody {
+  align-self: flex-start;
+  z-index: 1;
+  /* Push down below the header */
+  margin-top: HeaderHeight;
+}
+
+.MoreOptionsModal .ModalBody_InnerBody {
+  width: 100%;
+  /* Override position absolute which is being set elsewhere */
+  position: static;
+  /* In case the modal is taller than window size */
+  overflow-y: auto;
+}
+
+.MoreOptionsModal_InnerContainer {
+  background: #FFF;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+}
+
+.MoreOptionsModal .ModalBody > div {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  max-height: MoreOptionsModalHeight;
+  min-height: 300px;
+  overflow-x: hidden;
+}
+
+.MoreOptionsModal .Modal-open {
+  display: block;
+}
+
+.MoreOptionsModal .Modal-close {
+  display: none;
+}
+
+.MoreOptionsModal_CloseButton {
+  float: right;
+  cursor: pointer;
+  font-family: NunitoSans;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #4a90e2;
+  margin-top: 28px;
+  margin-right: 40px;
+}
+
+.MoreOptionsModal_Header {
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px 0 rgba(170, 170, 170, 0.5);
+}
+
+.MoreOptionsModal_Content {
+  flex-grow: 1;
+  overflow-y: scroll;
+  /* Prevent scrollbar from affecting the width */
+  /* Prevent horizontal scrollbar when price slider floats right */
+  overflow-x: hidden;
+  padding: 0 40px;
+}
+
+.MoreOptionsModal_Content::-webkit-scrollbar {
+  width: 7px;
+  background: transparent;
+}
+
+.MoreOptionsModal_Content:hover::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: #d8d8d8;
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.MoreOptionsModal_PropertyCount {
+  font-family: NunitoSans;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  margin-top: 26px;
+  margin-left: 40px;
+}
+
+.MoreOptionsModal_Footer {
+  box-shadow: 0 -1px 3px 0 rgba(170, 170, 170, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: 110px;
+  padding: 0 40px;
+}
+
+.MoreOptionsModal_ResetAll {
+  color: #4a90e2;
+  font-family: NunitoSans;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.MoreOptionsModal_Cancel {
+  width: 200px;
+  height: 36px;
+  background: none;
+  padding: 0;
+  border-radius: 100px;
+  border: solid 1px #4a90e2;
+  font-family: NunitoSans;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4a90e2;
+  cursor: pointer;
+  margin-right: 32px;
+}
+
+.MoreOptionsModal_ShowProps {
+  width: 200px;
+  height: 36px;
+  border-radius: 100px;
+  background-color: #4a90e2;
+  font-family: NunitoSans;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.MoreOptionsModal_ShowProps:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.MoreOptionsModal_FiltersContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 1024px;
+}
