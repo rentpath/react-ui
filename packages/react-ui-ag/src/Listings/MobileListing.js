@@ -59,7 +59,7 @@ export default class MobileListing extends PureComponent {
   }
 
   get renderInfo() {
-    const { theme, listing, propertyName, address } = this.props
+    const { theme, listing } = this.props
     const { singleFamily } = listing
     return (
       <React.Fragment>

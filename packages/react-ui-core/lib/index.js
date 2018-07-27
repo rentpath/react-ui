@@ -292,15 +292,6 @@ Object.defineProperty(exports, 'ListingComponents', {
   }
 });
 
-var _Schema = require('./Schema');
-
-Object.defineProperty(exports, 'Schema', {
-  enumerable: true,
-  get: function get() {
-    return _Schema.Schema;
-  }
-});
-
 var _Drawer = require('./Drawer');
 
 Object.defineProperty(exports, 'Drawer', {
