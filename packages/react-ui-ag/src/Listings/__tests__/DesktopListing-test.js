@@ -168,13 +168,6 @@ describe('DesktopListing', () => {
           .toEqual(baseListing.phone)
       })
 
-      it('renders ApartmentComplex structured data', () => {
-        const wrapper = mount(<DesktopListing {...props} />)
-        expect(wrapper
-          .find('[itemType="https://schema.org/ApartmentComplex"]').exists())
-          .toBeTruthy()
-      })
-
       it('renders the structured Address info', () => {
         const wrapper = mount(<DesktopListing {...props} />)
         expect(wrapper

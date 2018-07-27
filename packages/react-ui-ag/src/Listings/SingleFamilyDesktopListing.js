@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import autobind from 'autobind-decorator'
-import { ListingComponents, Schema } from '@rentpath/react-ui-core'
+import { ListingComponents } from '@rentpath/react-ui-core'
 import Listing from './Listing'
 
 const buttonPropTypes = PropTypes.shape({
@@ -54,9 +54,7 @@ export default class SingleFamilyDesktopListing extends Component {
           <ListingComponents.Bathroom />
         </div>
         <ListingComponents.Availability />
-        <Schema.NameAndUrl url={listing.url}>
-          <ListingComponents.Address />
-        </Schema.NameAndUrl>
+        <ListingComponents.Address />
         {phone &&
           <div className={theme.Phone} data-tid="phone">{phone}</div>
         }

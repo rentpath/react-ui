@@ -94,10 +94,6 @@ export {
 } from './Listing'
 
 export {
-  Schema,
-} from './Schema'
-
-export {
   Drawer,
 } from './Drawer'
 
