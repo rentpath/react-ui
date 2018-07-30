@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
-import { Button, ToggleButton, ListingComponents, ListingCell, Schema } from '@rentpath/react-ui-core'
+import { Button, ToggleButton, ListingComponents, ListingCell } from '@rentpath/react-ui-core'
 import { Banner } from '../Banners'
 
 const buttonPropTypes = PropTypes.shape({
@@ -178,9 +178,7 @@ export default class SingleFamilyMobileMapListing extends Component {
         <div className={theme.MobileMapListing_Bottom}>
           <div className={theme.MobileMapListing_Info}>
             <ListingComponents.Price />
-            <Schema.NameAndUrl url={listing.url}>
-              <ListingComponents.Address />
-            </Schema.NameAndUrl>
+            <ListingComponents.Address />
             <div className={theme.MobileMapListing_BedsAndCta}>
               <div>
                 <ListingComponents.Bedroom />

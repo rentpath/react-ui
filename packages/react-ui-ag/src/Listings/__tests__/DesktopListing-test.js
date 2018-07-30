@@ -167,20 +167,6 @@ describe('DesktopListing', () => {
         expect(wrapper.find('.Phone').at(0).text())
           .toEqual(baseListing.phone)
       })
-
-      it('renders ApartmentComplex structured data', () => {
-        const wrapper = mount(<DesktopListing {...props} />)
-        expect(wrapper
-          .find('[itemType="https://schema.org/ApartmentComplex"]').exists())
-          .toBeTruthy()
-      })
-
-      it('renders the structured Address info', () => {
-        const wrapper = mount(<DesktopListing {...props} />)
-        expect(wrapper
-          .find('[itemProp="streetAddress"]').exists())
-          .toBeTruthy()
-      })
     })
 
     describe('single family components render', () => {
