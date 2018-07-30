@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="8.2.4"></a>
+## [8.2.4](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@8.2.3...@rentpath/react-ui-ag@8.2.4) (2018-07-30)
+
+
+### Bug Fixes
+
+* ****/lib:** remove libs from tracking ([e2b782b](https://github.com/rentpath/react-ui/commit/e2b782b))
+* tests w/itemprop ([67f160e](https://github.com/rentpath/react-ui/commit/67f160e))
+
+
+
+
 <a name="8.2.3"></a>
 ## [8.2.3](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@8.2.1...@rentpath/react-ui-ag@8.2.3) (2018-07-20)
 
