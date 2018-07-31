@@ -182,9 +182,9 @@ export default class MobileMapListing extends Component {
     }
 
     if (!isActive) {
-      const { server, dimensions } = photos
+      const { server } = photos
       const firstPhoto = this.listingPhotos[0] || {}
-      listing.photo = { url: `${server}${firstPhoto.path}${dimensions}` }
+      listing.photo = { url: `${server}${firstPhoto.path}` }
     }
 
     return (

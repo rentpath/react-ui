@@ -89,23 +89,23 @@ export const CarouselNavigation = (
 
 const photoProps = [
   {
-    path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
+    path: 'c_fill,w_393,h_160,q_30,fl_progressive:semi,dpr_1.0/fc5b7d16d7ce9c82787883e3a9bc6c30',
     caption: 'test 1',
   },
   {
-    path: 'imgr/d56984e959a3feb1235f85ee202a0fc6/',
+    path: 'c_fill,w_393,h_160,q_30,fl_progressive:semi,dpr_1.0/d56984e959a3feb1235f85ee202a0fc6',
     caption: null,
   },
   {
-    path: 'imgr/fd972eb03a0463c484580349ad5177b7/',
+    path: 'c_fill,w_393,h_160,q_30,fl_progressive:semi,dpr_1.0/fd972eb03a0463c484580349ad5177b7',
     caption: null,
   },
   {
-    path: 'imgr/d9551cdeb8152c6ecafd96ccf0c9a5dc/',
+    path: 'c_fill,w_393,h_160,q_30,fl_progressive:semi,dpr_1.0/d9551cdeb8152c6ecafd96ccf0c9a5dc',
     caption: null,
   },
   {
-    path: 'imgr/d13b78bff171be4a68ff576e036251ab/',
+    path: 'c_fill,w_393,h_160,q_30,fl_progressive:semi,dpr_1.0/d13b78bff171be4a68ff576e036251ab',
     caption: null,
   },
 ]
@@ -113,8 +113,7 @@ const photoProps = [
 export const PhotoCarouselExample = (
   <PhotoCarousel
     items={photoProps}
-    server="https://image.rent.com/"
-    dimensions="400-200"
+    server="https://rentpath-res.cloudinary.com/"
     lazyLoad={{
       offset: 100,
       resize: true,

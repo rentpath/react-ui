@@ -72,8 +72,7 @@ const props = {
     children: '♥',
   },
   photos: {
-    server: 'https://image.rent.com/',
-    dimensions: '280-120',
+    server: 'https://rentpath-res.cloudinary.com/',
   },
   lazyLoad: false,
 }
