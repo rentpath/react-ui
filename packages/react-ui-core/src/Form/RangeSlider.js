@@ -65,11 +65,14 @@ export default class RangeSlider extends PureComponent {
     } = this.props
 
     return (
-      <div className={
-        classnames(
-          theme.RangeSlider,
-          className,
-        )}
+      <div
+        className={
+          classnames(
+            theme.RangeSlider,
+            className,
+          )
+        }
+        data-tid="range-slider"
       >
         {formatHeader && formatHeader(this.state.value)}
         <InputRange

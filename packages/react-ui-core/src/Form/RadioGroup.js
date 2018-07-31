@@ -123,6 +123,7 @@ export default class RadioGroup extends Component {
           className,
           theme.RadioGroup,
         )}
+        data-tid="radiogroup"
         {...props}
       >
         {this.fields.map((field, index) =>

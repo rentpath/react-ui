@@ -50,7 +50,6 @@ export default class PriceFilterCard extends Component {
       <Slider
         {...props}
         onChangeComplete={this.handlePriceSliderChange}
-        data-tid="price-filter-card-slider"
       />
     )
   }
