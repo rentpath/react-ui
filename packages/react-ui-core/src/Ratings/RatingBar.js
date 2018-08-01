@@ -37,7 +37,7 @@ export default class RatingBar extends PureComponent {
           <div
             className={theme.RatingBar_Icons} style={{
               width: `${scorePercent}%`,
-            }}
+            }} data-rating={score}
           />
         }
       </div>
