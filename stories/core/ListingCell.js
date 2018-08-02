@@ -63,15 +63,15 @@ const SideBySideListingCell = ({ theme }) => {
     },
     photos: [
       {
-        path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
+        path: 'c_fill,w_393,h_160,q_30,fl_progressive:semi,dpr_1.0/d13b78bff171be4a68ff576e036251ab/fc5b7d16d7ce9c82787883e3a9bc6c30',
         caption: 'test 1',
       },
       {
-        path: 'imgr/d56984e959a3feb1235f85ee202a0fc6/',
+        path: 'c_fill,w_393,h_160,q_30,fl_progressive:semi,dpr_1.0/d13b78bff171be4a68ff576e036251ab/d56984e959a3feb1235f85ee202a0fc6',
         caption: null,
       },
       {
-        path: 'imgr/fd972eb03a0463c484580349ad5177b7/',
+        path: 'c_fill,w_393,h_160,q_30,fl_progressive:semi,dpr_1.0/d13b78bff171be4a68ff576e036251ab/fd972eb03a0463c484580349ad5177b7',
         caption: null,
       },
     ],
@@ -93,7 +93,7 @@ const SideBySideListingCell = ({ theme }) => {
       <ListingComponents.Ratings {...sideBySideRatingProps} />
       {listing.hasCoupon && <div>Coupon!</div>}
       <Button onClick={() => action('click')('button click')}>Click me!</Button>
-      <ListingComponents.Photos server="https://image.rent.com/" dimensions="400-200" showNav />
+      <ListingComponents.Photos server="https://rentpath-res.cloudinary.com/" showNav />
     </ListingCell>
   )
 }

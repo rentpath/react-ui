@@ -14,8 +14,7 @@ const props = {
     children: '♥',
   },
   photos: {
-    server: 'https://image.rent.com/',
-    dimensions: '351-160',
+    server: 'https://rentpath-res.cloudinary.com/',
   },
   ratings: {
     className: ratingTheme.themedRating_starAgMobile,

@@ -16,10 +16,10 @@ export default class PhotoCarousel extends PureComponent {
     items: PropTypes.arrayOf(
       PropTypes.shape({
         caption: PropTypes.string,
+        path: PropTypes.string,
         url: PropTypes.string,
       }),
     ),
-    dimensions: PropTypes.string,
     server: PropTypes.string.isRequired,
     isBackgroundImage: PropTypes.bool,
     lazyLoad: PropTypes.oneOfType([
@@ -35,10 +35,10 @@ export default class PhotoCarousel extends PureComponent {
   }
 
   photo(item) {
-    const { server, dimensions } = this.props
+    const { server } = this.props
     const { url, path, id } = item
 
-    return url || `${server}${path || id}${dimensions}`
+    return url || `${server}${path || id}`
   }
 
   lazyLoad() {

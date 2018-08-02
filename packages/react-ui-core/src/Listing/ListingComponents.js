@@ -75,6 +75,7 @@ Photos.contextTypes = {
     PropTypes.shape({
       caption: PropTypes.string,
       path: PropTypes.string,
+      url: PropTypes.string,
     }),
   ),
 }

@@ -21,15 +21,15 @@ const baseListing = {
   },
   photos: [
     {
-      path: 'imgr/2576db62ffa153ebef00317a5c68a368/',
+      path: 'c_fill,w_393,h_160,q_30,fl_progressive:semi,dpr_1.0/fc5b7d16d7ce9c82787883e3a9bc6c30',
       caption: 'test 1',
     },
     {
-      path: 'imgr/d56984e959a3feb1235f85ee202a0fc6/',
+      path: 'c_fill,w_393,h_160,q_30,fl_progressive:semi,dpr_1.0/d56984e959a3feb1235f85ee202a0fc6',
       caption: null,
     },
     {
-      path: 'imgr/fd972eb03a0463c484580349ad5177b7/',
+      path: 'c_fill,w_393,h_160,q_30,fl_progressive:semi,dpr_1.0/fd972eb03a0463c484580349ad5177b7',
       caption: null,
     },
   ],
@@ -44,8 +44,7 @@ const props = {
     children: '♥',
   },
   photos: {
-    server: 'https://image.rent.com/',
-    dimensions: '280-120',
+    server: 'https://rentpath-res.cloudinary.com/',
   },
   ratings: {
     className: ratingTheme.themedRating_starAgMobile,

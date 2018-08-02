@@ -22,7 +22,7 @@ const baseListing = {
     label: '20',
   },
   photo: {
-    url: 'https://image.rent.com/imgr/2576db62ffa153ebef00317a5c68a368/100-100/',
+    url: 'https://rentpath-res.cloudinary.com/c_fill,w_110,h_110,q_30,fl_progressive:semi,dpr_1.0/fc5b7d16d7ce9c82787883e3a9bc6c30',
     title: 'test 1',
   },
   phone: '(404)378-1428',
