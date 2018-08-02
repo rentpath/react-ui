@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="9.0.0"></a>
+# [9.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@8.2.4...@rentpath/react-ui-ag@9.0.0) (2018-08-02)
+
+
+### feature
+
+* **listing:** updates for cloudinary support ([8dedad8](https://github.com/rentpath/react-ui/commit/8dedad8))
+
+
+### BREAKING CHANGES
+
+* **listing:** removed dimensions from photos
+
+[card](https://trello.com/c/fSH5wvm1/2-cloudinary-on-ag)
+- The URL being constructed here no longer works
+- Passing in the URL now instead
+
+
+
+
 <a name="8.2.4"></a>
 ## [8.2.4](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@8.2.3...@rentpath/react-ui-ag@8.2.4) (2018-07-30)
 
