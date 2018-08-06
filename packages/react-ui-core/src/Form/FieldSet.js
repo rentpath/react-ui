@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
-import classNames from 'classnames'
+import classnames from 'classnames'
 
 @themed(/^FieldSet/, {
   pure: true,
@@ -13,6 +13,7 @@ export default class FieldSet extends PureComponent {
     legend: PropTypes.string,
     theme: PropTypes.object,
     children: PropTypes.node,
+    variant: PropTypes.string,
   }
 
   static defaultProps = {
@@ -25,16 +26,19 @@ export default class FieldSet extends PureComponent {
       theme,
       className,
       children,
+      variant,
       ...props
     } = this.props
 
-    const classnames = classNames(
-      className,
-      theme.FieldSet,
-    )
-
     return (
-      <fieldset {...props} className={classnames}>
+      <fieldset
+        {...props}
+        className={classnames(
+          className,
+          theme.FieldSet,
+          variant && theme[`FieldSet-${variant}`],
+        )}
+      >
         {legend && (
           <legend className={theme.FieldSet_legend}>
             {legend}

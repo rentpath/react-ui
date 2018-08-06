@@ -16,6 +16,7 @@ export default class Select extends Component {
       value: PropTypes.string,
       label: PropTypes.string,
     })),
+    variant: PropTypes.string,
   }
 
   static defaultProps = {
@@ -23,25 +24,26 @@ export default class Select extends Component {
     options: [],
   }
 
+  get children() {
+    const { children, options } = this.props
+
+    if (children) return children
+
+    return options.map(opt => (
+      <option key={opt.value} value={opt.value}>
+        {opt.label}
+      </option>
+    ))
+  }
+
   render() {
     const {
       theme,
       options,
       className,
+      variant,
       ...props
     } = this.props
-
-    let children
-
-    if (props.children) {
-      children = props.children
-    } else {
-      children = options.map(opt => (
-        <option key={opt.value} value={opt.value}>
-          {opt.label}
-        </option>
-      ))
-    }
 
     return (
       <select
@@ -49,9 +51,10 @@ export default class Select extends Component {
         className={classNames(
           className,
           theme.Select,
+          variant && theme[`Select-${variant}`],
         )}
       >
-        {children}
+        {this.children}
       </select>
     )
   }

@@ -1,12 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
-import { Field } from '../../Form'
+import Field from '../Field'
 
-@themed(['Label_Textarea'], {
-  pure: true,
-})
-
+@themed(['Message', 'Label_Textarea'], { pure: true })
 export default class Message extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
@@ -26,8 +23,9 @@ export default class Message extends PureComponent {
   }
 
   render() {
+    const { theme, ...props } = this.props
     return (
-      <Field {...this.props} />
+      <Field className={theme.Message} {...props} />
     )
   }
 }

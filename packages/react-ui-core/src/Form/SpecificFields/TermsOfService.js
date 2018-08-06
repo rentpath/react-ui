@@ -4,10 +4,7 @@ import classnames from 'classnames'
 import themed from 'react-themed'
 import { Text } from '../../Text'
 
-@themed(/^TermsOfService/, {
-  pure: true,
-})
-
+@themed(/^TermsOfService/, { pure: true })
 export default class TermsOfService extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,

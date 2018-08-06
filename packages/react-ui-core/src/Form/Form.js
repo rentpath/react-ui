@@ -4,10 +4,7 @@ import themed from 'react-themed'
 import classNames from 'classnames'
 import serializeForm from 'form-serialize'
 
-@themed(['Form'], {
-  pure: true,
-})
-
+@themed(['Form'], { pure: true })
 export default class Form extends Component {
   static propTypes = {
     /**
@@ -53,29 +50,29 @@ export default class Form extends Component {
   }
 
   onSubmit = event => {
+    const { onSubmit, serialize } = this.props
     event.preventDefault()
 
-    if (this.props.onSubmit) {
-      const args = [event]
-
-      if (this.props.serialize) {
-        args.push(serializeForm(event.target, { hash: true }))
+    if (onSubmit) {
+      if (serialize) {
+        onSubmit(event, serializeForm(event.target, { hash: true }))
+      } else {
+        onSubmit(event)
       }
-
-      this.props.onSubmit(...args)
     }
   }
 
   render() {
     const {
       theme,
-      serialize, // eslint-disable-line no-unused-vars
+      serialize,
       className,
       ...props
     } = this.props
 
     return (
       <form
+        data-tid="form"
         {...props}
         onSubmit={this.onSubmit}
         className={classNames(

@@ -8,3 +8,15 @@ export { default as RangeSlider } from './RangeSlider'
 export { default as FieldSet } from './FieldSet'
 export { default as RadioButton } from './RadioButton'
 export { default as RadioGroup } from './RadioGroup'
+export { default as RequiredField } from './RequiredField'
+export { default as FormFields } from './FormFields'
+export {
+  Name,
+  Email,
+  Password,
+  Phone,
+  Message,
+  OptInNewsLetter,
+  TermsOfService,
+  Checkbox,
+} from './SpecificFields'
