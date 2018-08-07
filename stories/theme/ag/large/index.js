@@ -26,7 +26,9 @@ import {
 } from './GridView'
 import {
   EmailModal,
+  MoreOptionsModal,
 } from './Modals'
+
 import Banner from './Banner.css'
 
 export default compose({},
@@ -54,4 +56,5 @@ export default compose({},
   Banner,
   GridViewHeader,
   EmailModal,
+  MoreOptionsModal,
 )
