@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="9.1.0"></a>
+# [9.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@9.0.0...@rentpath/react-ui-ag@9.1.0) (2018-08-07)
+
+
+### Features
+
+* **react-ui-ag:** more Options Modal ([0423009](https://github.com/rentpath/react-ui/commit/0423009))
+
+
+
+
 <a name="9.0.0"></a>
 # [9.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@8.2.4...@rentpath/react-ui-ag@9.0.0) (2018-08-02)
 
