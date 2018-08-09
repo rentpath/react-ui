@@ -41,7 +41,7 @@ const validateField = (Component, fieldName) => {
   }
 
   ValidatedField.defaultProps = {
-    className: null,
+    theme: {},
   }
 
   return themed(/^ValidatedField/)(ValidatedField)
