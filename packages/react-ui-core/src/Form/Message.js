@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { Field } from '../../Form'
+import Field from './Field'
 
-export default class Email extends PureComponent {
+export default class Message extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
     type: PropTypes.string,
@@ -14,9 +14,8 @@ export default class Email extends PureComponent {
   }
 
   static defaultProps = {
-    name: 'opt_in_newsletter',
-    type: 'checkbox',
-    label: 'Simplify my search with helpful tips and rental recommendations.',
+    name: 'message',
+    type: 'textarea',
   }
 
   render() {

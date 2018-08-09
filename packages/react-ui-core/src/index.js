@@ -20,6 +20,16 @@ export {
   FieldSet,
   RadioButton,
   RadioGroup,
+  FormFields,
+  validateField,
+  Name,
+  Email,
+  Phone,
+  Message,
+  OptInNewsLetter,
+  TermsOfService,
+  Checkbox,
+  Password,
 } from './Form'
 
 export {
@@ -67,12 +77,6 @@ export {
 
 export {
   LeadForm,
-  Name,
-  Email,
-  Phone,
-  Message,
-  OptInNewsLetter,
-  TermsOfService,
 } from './LeadForm'
 
 export {

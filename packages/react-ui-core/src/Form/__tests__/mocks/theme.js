@@ -24,4 +24,6 @@ export default keyMirror([
   'RadioButton-hidden',
   'RadioButton-vertical',
   'RadioGroup',
+  'LabelHidingField',
+  'LabelHidingField_Label',
 ])

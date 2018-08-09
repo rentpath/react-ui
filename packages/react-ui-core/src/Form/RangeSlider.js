@@ -20,6 +20,7 @@ export default class RangeSlider extends PureComponent {
       PropTypes.number,
       PropTypes.object,
     ]),
+    variant: PropTypes.string,
   }
 
   static defaultProps = {
@@ -61,6 +62,7 @@ export default class RangeSlider extends PureComponent {
       className,
       onChange,
       formatHeader,
+      variant,
       ...props
     } = this.props
 
@@ -69,6 +71,7 @@ export default class RangeSlider extends PureComponent {
         classnames(
           theme.RangeSlider,
           className,
+          variant && theme[`RangeSlider-${variant}`],
         )}
       >
         {formatHeader && formatHeader(this.state.value)}

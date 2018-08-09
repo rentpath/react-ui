@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import classnames from 'classnames'
 import themed from 'react-themed'
 
 @themed(/^Input/, {
@@ -58,7 +58,7 @@ export default class Input extends Component {
     return (
       <input
         {...props}
-        className={classNames(
+        className={classnames(
           className,
           theme.Input,
           theme[`Input-${props.type}`],

@@ -1,17 +1,14 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { Field } from '../../Form'
+import Field from './Field'
 
-export default class Name extends PureComponent {
+export default class Checkbox extends PureComponent {
   static propTypes = {
-    name: PropTypes.string,
     type: PropTypes.string,
-    placeholder: PropTypes.string,
   }
 
   static defaultProps = {
-    name: 'name',
-    placeholder: 'Name',
+    type: 'checkbox',
   }
 
   render() {

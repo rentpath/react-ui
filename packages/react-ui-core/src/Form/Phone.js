@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { Field } from '../../Form'
+import Field from './Field'
 
-export default class MoveInDate extends PureComponent {
+export default class Phone extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
     type: PropTypes.string,
@@ -10,9 +10,9 @@ export default class MoveInDate extends PureComponent {
   }
 
   static defaultProps = {
-    name: 'date',
-    type: 'date',
-    placeholder: 'Move in date',
+    name: 'phone',
+    type: 'tel',
+    placeholder: 'Phone',
   }
 
   render() {

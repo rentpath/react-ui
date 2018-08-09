@@ -8,7 +8,7 @@ import omit from 'lodash/omit'
 import isEqual from 'lodash/isEqual'
 import RadioButton from './RadioButton'
 
-@themed('*')
+@themed(/^RadioGroup/)
 export default class RadioGroup extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
@@ -28,6 +28,7 @@ export default class RadioGroup extends Component {
     allowUnselect: PropTypes.bool,
     onChange: PropTypes.func,
     onUnselect: PropTypes.func,
+    variant: PropTypes.string,
   }
 
   static defaultProps = {
@@ -112,6 +113,7 @@ export default class RadioGroup extends Component {
       onChange,
       allowUnselect,
       onUnselect,
+      variant,
       ...props
     } = this.props
 
@@ -122,6 +124,7 @@ export default class RadioGroup extends Component {
         className={classnames(
           className,
           theme.RadioGroup,
+          variant && theme[`RadioGroup-${variant}`],
         )}
         {...props}
       >

@@ -1,17 +1,11 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import themed from 'react-themed'
-import { Field } from '../../Form'
+import Field from './Field'
 
-@themed(['Label_Textarea'], {
-  pure: true,
-})
-
-export default class Message extends PureComponent {
+export default class OptInNewsLetter extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
     type: PropTypes.string,
-    theme: PropTypes.object,
     label: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object,
@@ -20,9 +14,9 @@ export default class Message extends PureComponent {
   }
 
   static defaultProps = {
-    theme: {},
-    name: 'message',
-    type: 'textarea',
+    name: 'opt-in-newsletter',
+    type: 'checkbox',
+    label: 'Simplify my search with helpful tips and rental recommendations.',
   }
 
   render() {

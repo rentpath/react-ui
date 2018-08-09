@@ -1,18 +1,16 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { Field } from '../../Form'
+import Field from './Field'
 
-export default class Phone extends PureComponent {
+export default class Password extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
     type: PropTypes.string,
-    placeholder: PropTypes.string,
   }
 
   static defaultProps = {
-    name: 'phone',
-    type: 'tel',
-    placeholder: 'Phone',
+    name: 'password',
+    type: 'password',
   }
 
   render() {

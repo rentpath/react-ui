@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import themed from 'react-themed'
 import Field from './Field'
 
-@themed('*', {
+@themed(/^RadioButton/, {
   pure: true,
 })
 export default class RadioButton extends PureComponent {

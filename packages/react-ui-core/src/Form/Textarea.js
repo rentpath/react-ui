@@ -11,6 +11,7 @@ export default class Textarea extends Component {
   static propTypes = {
     theme: PropTypes.object,
     className: PropTypes.string,
+    variant: PropTypes.string,
   }
 
   static defaultProps = {
@@ -21,6 +22,7 @@ export default class Textarea extends Component {
     const {
       theme,
       className,
+      variant,
       ...props
     } = this.props
 
@@ -30,6 +32,7 @@ export default class Textarea extends Component {
         className={classNames(
           className,
           theme.Textarea,
+          variant && theme[`Textarea-${variant}`],
         )}
       />
     )

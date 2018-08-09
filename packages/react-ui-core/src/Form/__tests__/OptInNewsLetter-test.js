@@ -1,19 +1,17 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ThemedMessage from '../Message'
+import OptInNewsLetter from '../OptInNewsLetter'
 
-const Message = ThemedMessage.WrappedComponent
-
-describe('Message', () => {
+describe('OptInNewsLetter', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallow(<Message />, { lifecycleExperimental: true })
+    wrapper = shallow(<OptInNewsLetter />)
   })
 
   it('renders proper defaults if none passed', () => {
-    expect(wrapper.prop('name')).toEqual('message')
-    expect(wrapper.prop('type')).toEqual('textarea')
+    expect(wrapper.prop('name')).toEqual('opt-in-newsletter')
+    expect(wrapper.prop('type')).toEqual('checkbox')
   })
 
   it('assumes props passed', () => {
@@ -26,5 +24,13 @@ describe('Message', () => {
     expect(wrapper.prop('name')).toEqual('nameFoo')
     expect(wrapper.prop('type')).toEqual('typeFoo')
     expect(wrapper.prop('placeholder')).toEqual('Foo placeholder')
+  })
+
+  it('passes extra props', () => {
+    wrapper.setProps({
+      label: 'some label',
+    })
+
+    expect(wrapper.prop('label')).toEqual('some label')
   })
 })
