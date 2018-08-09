@@ -9,14 +9,12 @@ export { default as FieldSet } from './FieldSet'
 export { default as RadioButton } from './RadioButton'
 export { default as RadioGroup } from './RadioGroup'
 export { default as RequiredField } from './RequiredField'
+export { default as Name } from './Name'
+export { default as Email } from './Email'
+export { default as Password } from './Password'
+export { default as Phone } from './Phone'
+export { default as Message } from './Message'
+export { default as OptInNewsLetter } from './OptInNewsLetter'
+export { default as TermsOfService } from './TermsOfService'
+export { default as Checkbox } from './Checkbox'
 export { default as FormFields } from './FormFields'
-export {
-  Name,
-  Email,
-  Password,
-  Phone,
-  Message,
-  OptInNewsLetter,
-  TermsOfService,
-  Checkbox,
-} from './SpecificFields'

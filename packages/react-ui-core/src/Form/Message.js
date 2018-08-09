@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
-import Field from '../Field'
+import Field from './Field'
 
 @themed(['Message'], { pure: true })
 export default class Message extends PureComponent {

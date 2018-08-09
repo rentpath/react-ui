@@ -6,16 +6,14 @@ import Select from './Select'
 import RadioGroup from './RadioGroup'
 import RequiredField from './RequiredField'
 import RangeSlider from './RangeSlider'
-import {
-  Name,
-  Email,
-  Password,
-  Phone,
-  Message,
-  OptInNewsLetter,
-  TermsOfService,
-  Checkbox,
-} from './SpecificFields'
+import Name from './Name'
+import Email from './Email'
+import Password from './Password'
+import Phone from './Phone'
+import Message from './Message'
+import OptInNewsLetter from './OptInNewsLetter'
+import TermsOfService from './TermsOfService'
+import Checkbox from './Checkbox'
 
 export const ValidatedField = validateField(Field)
 export const ValidatedFieldSet = validateField(FieldSet)

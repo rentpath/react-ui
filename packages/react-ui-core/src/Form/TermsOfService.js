@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
-import { Text } from '../../Text'
+import { Text } from '../Text'
 
 @themed(/^TermsOfService/, { pure: true })
 export default class TermsOfService extends PureComponent {
