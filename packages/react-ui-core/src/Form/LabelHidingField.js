@@ -14,7 +14,11 @@ export default class LabelHidingField extends Component {
     value: PropTypes.string,
     defaultValue: PropTypes.string,
     onChange: PropTypes.func,
-    nodeType: PropTypes.any,
+    nodeType: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.func,
+      PropTypes.object,
+    ]),
   }
 
   static defaultProps = {

@@ -12,7 +12,6 @@ describe('validateField', () => {
 
   it('displays the validFieldIcon when the isValid prop is true', () => {
     const wrapper = mount(<ValidatedField validFieldIcon={<div data-tid="valid-field-icon" />} isValid />)
-    console.log('wrapper.instance().type.displayName', wrapper.instance())
     expect(wrapper.find('[data-tid="valid-field-icon"]')).toHaveLength(1)
   })
 
