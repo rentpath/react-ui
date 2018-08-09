@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="15.1.0"></a>
+# [15.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@15.0.0...@rentpath/react-ui-core@15.1.0) (2018-08-09)
+
+
+### Features
+
+* **Form:** core Form Tweaks ([964c937](https://github.com/rentpath/react-ui/commit/964c937))
+
+
+
+
 <a name="15.0.0"></a>
 # [15.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@14.4.1...@rentpath/react-ui-core@15.0.0) (2018-08-02)
 
