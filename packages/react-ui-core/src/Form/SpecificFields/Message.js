@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import Field from '../Field'
 
-@themed(['Message', 'Label_Textarea'], { pure: true })
+@themed(['Message'], { pure: true })
 export default class Message extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
