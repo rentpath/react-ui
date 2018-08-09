@@ -9,7 +9,7 @@ import Listing from './Listing'
   'DesktopListing',
   'BedsAndBaths',
   'UnitLevelAvailabilityAndLastUpdated',
-  'LastUpdated',
+  'UlaText',
   'Phone',
 ], { pure: true })
 export default class DesktopListing extends PureComponent {
@@ -47,7 +47,7 @@ export default class DesktopListing extends PureComponent {
           <ListingComponents.Availability /> :
           (
             <div className={theme.UnitLevelAvailabilityAndLastUpdated}>
-              {ulaText && <div className={theme.UlaText}>{ulaText}</div>}
+              {ulaText && <div className={theme.UlaText} data-tid="ulaText">{ulaText}</div>}
             </div>
           )
         }

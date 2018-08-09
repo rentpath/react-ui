@@ -11,6 +11,7 @@ const baseListing = {
   bedrooms: '1-3 Beds',
   bathrooms: '2 Baths',
   unitLevelAvailability: '12 Units Available',
+  ulaText: '9 units available',
   lastUpdated: '3hrs ago',
   name: 'Awesome Property!',
   city: 'Great Town',
@@ -134,17 +135,10 @@ describe('DesktopListing', () => {
         expect(wrapper.find(ListingComponents.Bathroom).exists()).toBeTruthy()
       })
 
-      it('renders UnitLevelAvailability component', () => {
+      it('renders ulaText div', () => {
         const wrapper = mount(<DesktopListing {...props} />)
-        expect(wrapper
-          .find(ListingComponents.UnitLevelAvailability).exists())
-          .toBeTruthy()
-      })
-
-      it('renders lastUpdated div', () => {
-        const wrapper = mount(<DesktopListing {...props} />)
-        expect(wrapper.find('.LastUpdated').at(0).text())
-          .toEqual(baseListing.lastUpdated)
+        expect(wrapper.find('.UlaText').at(0).text())
+            .toEqual(baseListing.ulaText || baseListing.lastUpdated)
       })
 
       it('renders PropertyName component', () => {
