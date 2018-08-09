@@ -1,8 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ThemedMessage from '../Message'
-
-const Message = ThemedMessage.WrappedComponent
+import Message from '../Message'
 
 describe('Message', () => {
   let wrapper
