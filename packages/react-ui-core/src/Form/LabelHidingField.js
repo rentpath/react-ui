@@ -4,20 +4,22 @@ import themed from 'react-themed'
 import autobind from 'autobind-decorator'
 import Field from './Field'
 
-@themed(['RequiredField'])
-export default class RequiredField extends Component {
+@themed(/^LabelHidingField/)
+export default class LabelHidingField extends Component {
   static propTypes = {
     theme: PropTypes.object,
     name: PropTypes.string,
     type: PropTypes.string,
-    placeholder: PropTypes.string,
+    label: PropTypes.string,
     value: PropTypes.string,
     defaultValue: PropTypes.string,
     onChange: PropTypes.func,
+    nodeType: PropTypes.any,
   }
 
   static defaultProps = {
     theme: {},
+    nodeType: Field,
   }
 
   constructor(props) {
@@ -42,12 +44,12 @@ export default class RequiredField extends Component {
   }
 
   get fieldLabel() {
-    const { placeholder, theme } = this.props
+    const { label, theme } = this.props
 
     if (this.state.labelVisible) {
       return {
-        text: placeholder,
-        className: theme.RequiredField_Label,
+        text: label,
+        className: theme.LabelHidingField_Label,
       }
     }
 
@@ -57,14 +59,15 @@ export default class RequiredField extends Component {
   render() {
     const {
       theme,
-      placeholder,
+      label,
       onChange,
+      nodeType: NodeType,
       ...props
     } = this.props
 
     return (
-      <Field
-        className={theme.RequiredField}
+      <NodeType
+        className={theme.LabelHidingField}
         onChange={this.onChange}
         label={this.fieldLabel}
         {...props}

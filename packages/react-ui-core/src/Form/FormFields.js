@@ -4,7 +4,7 @@ import FieldSet from './FieldSet'
 import Textarea from './Textarea'
 import Select from './Select'
 import RadioGroup from './RadioGroup'
-import RequiredField from './RequiredField'
+import LabelHidingField from './LabelHidingField'
 import RangeSlider from './RangeSlider'
 import Name from './Name'
 import Email from './Email'
@@ -20,7 +20,7 @@ export const ValidatedFieldSet = validateField(FieldSet)
 export const ValidatedTextarea = validateField(Textarea)
 export const ValidatedSelect = validateField(Select)
 export const ValidatedRadioGroup = validateField(RadioGroup)
-export const ValidatedRequiredField = validateField(RequiredField)
+export const ValidatedLabelHidingField = validateField(LabelHidingField)
 export const ValidatedRangeSlider = validateField(RangeSlider)
 export const ValidatedName = validateField(Name)
 export const ValidatedEmail = validateField(Email)
@@ -36,7 +36,7 @@ export default {
   Textarea,
   Select,
   RadioGroup,
-  RequiredField,
+  LabelHidingField,
   RangeSlider,
   Name,
   Email,
@@ -51,7 +51,7 @@ export default {
   ValidatedTextarea,
   ValidatedSelect,
   ValidatedRadioGroup,
-  ValidatedRequiredField,
+  ValidatedLabelHidingField,
   ValidatedRangeSlider,
   ValidatedName,
   ValidatedEmail,
