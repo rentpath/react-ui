@@ -28,6 +28,8 @@ export {
   Message,
   OptInNewsLetter,
   TermsOfService,
+  Checkbox,
+  Password,
 } from './Form'
 
 export {

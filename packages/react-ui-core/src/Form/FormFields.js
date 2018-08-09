@@ -15,20 +15,20 @@ import OptInNewsLetter from './OptInNewsLetter'
 import TermsOfService from './TermsOfService'
 import Checkbox from './Checkbox'
 
-export const ValidatedField = validateField(Field)
-export const ValidatedFieldSet = validateField(FieldSet)
-export const ValidatedTextarea = validateField(Textarea)
-export const ValidatedSelect = validateField(Select)
-export const ValidatedRadioGroup = validateField(RadioGroup)
-export const ValidatedLabelHidingField = validateField(LabelHidingField)
-export const ValidatedRangeSlider = validateField(RangeSlider)
-export const ValidatedName = validateField(Name)
-export const ValidatedEmail = validateField(Email)
-export const ValidatedPassword = validateField(Password)
-export const ValidatedPhone = validateField(Phone)
-export const ValidatedMessage = validateField(Message)
-export const ValidatedOptInNewsLetter = validateField(OptInNewsLetter)
-export const ValidatedTermsOfService = validateField(TermsOfService)
+export const ValidatedField = validateField(Field, 'Field')
+export const ValidatedFieldSet = validateField(FieldSet, 'FieldSet')
+export const ValidatedTextarea = validateField(Textarea, 'Textarea')
+export const ValidatedSelect = validateField(Select, 'Select')
+export const ValidatedRadioGroup = validateField(RadioGroup, 'RadioGroup')
+export const ValidatedLabelHidingField = validateField(LabelHidingField, 'LabelHidingField')
+export const ValidatedRangeSlider = validateField(RangeSlider, 'RangeSlider')
+export const ValidatedName = validateField(Name, 'Name')
+export const ValidatedEmail = validateField(Email, 'Email')
+export const ValidatedPassword = validateField(Password, 'Password')
+export const ValidatedPhone = validateField(Phone, 'Phone')
+export const ValidatedMessage = validateField(Message, 'Message')
+export const ValidatedOptInNewsLetter = validateField(OptInNewsLetter, 'OptInNewsLetter')
+export const ValidatedTermsOfService = validateField(TermsOfService, 'TermsOfService')
 
 export default {
   Field,
