@@ -216,7 +216,7 @@ a.DesktopListing .Listing_CtaButton {
   margin-top: 2px;
 }
 
-.DesktopListing .LastUpdated {
+.DesktopListing .UlaText {
   margin-left: 3px;
 }
 
@@ -227,7 +227,7 @@ a.DesktopListing .Listing_CtaButton {
 }
 
 .DesktopListing .UnitLevelAvailability,
-.DesktopListing .LastUpdated,
+.DesktopListing .UlaText,
 .DesktopListing .Availability {
   white-space: nowrap;
   overflow: hidden;

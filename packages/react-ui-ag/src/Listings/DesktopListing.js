@@ -9,7 +9,7 @@ import Listing from './Listing'
   'DesktopListing',
   'BedsAndBaths',
   'UnitLevelAvailabilityAndLastUpdated',
-  'LastUpdated',
+  'UlaText',
   'Phone',
 ], { pure: true })
 export default class DesktopListing extends PureComponent {
@@ -30,7 +30,7 @@ export default class DesktopListing extends PureComponent {
 
   get renderInfo() {
     const { theme, listing, ratings, propertyName } = this.props
-    const { singleFamily, rating, lastUpdated, phone } = listing
+    const { singleFamily, rating, ulaText, phone } = listing
 
     return (
       <React.Fragment>
@@ -47,8 +47,7 @@ export default class DesktopListing extends PureComponent {
           <ListingComponents.Availability /> :
           (
             <div className={theme.UnitLevelAvailabilityAndLastUpdated}>
-              <ListingComponents.UnitLevelAvailability />
-              {lastUpdated && <div className={theme.LastUpdated}>{lastUpdated}</div>}
+              {ulaText && <div className={theme.UlaText} data-tid="ulaText">{ulaText}</div>}
             </div>
           )
         }

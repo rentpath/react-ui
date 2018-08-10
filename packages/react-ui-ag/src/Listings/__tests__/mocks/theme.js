@@ -6,7 +6,7 @@ export default keyMirror([
   'MobileMapListing-inactive',
   'DesktopListing',
   'BedsAndBaths',
-  'LastUpdated',
+  'UlaText',
   'Phone',
   'MobileListing',
   'Listing',
