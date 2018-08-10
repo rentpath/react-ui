@@ -94,9 +94,25 @@ export const WithExistingShape = (
     <FreeDrawExample
       key={key}
       onDrawBegin={action('Drawing shape')}
+      onDrawEnd={coords => action('On draw end')(coords)}
       shapes={{ 0: [[-84.40399, 33.89503], [-84.70, 33.83], [-84.77, 33.15]] }}
       dataStyle={dataStyle}
       mapControls={mapControls}
+    />
+  </Gmap>
+)
+
+export const WithMultipleShapes = (
+  <Gmap
+    apiKey={key}
+  >
+    <FreeDrawExample
+      key={key}
+      onDrawBegin={action('Drawing shape')}
+      onDrawEnd={coords => action('On draw end')(coords)}
+      dataStyle={dataStyle}
+      mapControls={mapControls}
+      allowMultipleShapes
     />
   </Gmap>
 )

@@ -127,6 +127,7 @@ import {
   GmapWithOverlayView,
   FreeDrawDefault,
   WithExistingShape,
+  WithMultipleShapes,
 } from './Gmap'
 
 import {
@@ -231,6 +232,7 @@ coreStoriesNoContainer('Gmap ', module)
 coreStoriesNoContainer('Gmap / FreeDraw', module)
   .add('With Defaults', () => FreeDrawDefault)
   .add('With Existing Shape', () => WithExistingShape)
+  .add('With Multiple Shapes', () => WithMultipleShapes)
 
 coreStories('Highlighter', module)
   .add('Default Highlighter', () => DefaultHighlighter)

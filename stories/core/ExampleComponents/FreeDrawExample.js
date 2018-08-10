@@ -12,37 +12,48 @@ export default class FreeDrawExample extends PureComponent {
     onDrawBegin: PropTypes.func,
     dataStyle: PropTypes.object,
     theme: PropTypes.object,
+    onDrawEnd: PropTypes.func,
+    allowMultipleShapes: PropTypes.bool,
   }
 
   static defaultProps = {
     theme: {},
     shapes: {},
+    allowMultipleShapes: false,
   }
 
   constructor(props) {
     super(props)
     this.state = {
       shapes: this.props.shapes,
-      enabled: false,
+      enabled: this.props.allowMultipleShapes,
     }
   }
 
   @autobind
   handleOnDrawEnd(shape) {
+    const { shapes } = this.state
+
+    if (this.props.onDrawEnd) this.props.onDrawEnd(shape)
+    const shapeId = Object.keys(shapes).length
     this.setState({
-      shapes: shape && { 0: shape },
-      enabled: false,
+      shapes: shape && { ...shapes, [shapeId]: shape },
+      enabled: this.props.allowMultipleShapes,
     })
   }
 
   @autobind
   handleClick() {
-    this.setState({ enabled: !this.state.enabled })
+    const { shapes } = this.props
+    const { enabled } = this.state
+
+    this.setState({ shapes, enabled: !enabled })
   }
 
   render() {
     const {
       theme,
+      onDrawEnd,
       shapes: _,
       ...rest
     } = this.props
@@ -58,7 +69,7 @@ export default class FreeDrawExample extends PureComponent {
             theme[`FreeDrawButton-${enabled}`],
           )}
         >
-          {enabled ? 'Drawing...' : 'Enable Free Draw'}
+          {enabled ? 'Click to Disable' : 'Enable Free Draw'}
         </Button>
         <FreeDrawLayer
           onDrawEnd={this.handleOnDrawEnd}

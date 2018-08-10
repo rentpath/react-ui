@@ -79,6 +79,9 @@ export default class FreeDrawLayer extends PureComponent {
     const polygonCoords = this.getPolygonCoords(this.polygon)
 
     if (polygonCoords.length) this.finishDraw(polygonCoords)
+
+    this.endDraw()
+    this.drawFreeHand()
   }
 
   finishDraw(polygonCoords) {
@@ -89,13 +92,18 @@ export default class FreeDrawLayer extends PureComponent {
     }
   }
 
-  disableDraw() {
+  endDraw() {
     Object.keys(this.events).forEach(name => {
       removeEvent(this.events[name])
     })
 
     if (this.polyline) this.polyline.setMap(null)
     if (this.polygon) this.polygon.setMap(null)
+  }
+
+  disableDraw() {
+    this.endDraw()
+
     this.enableMapControls()
     this.enabled = false
   }
@@ -122,7 +130,6 @@ export default class FreeDrawLayer extends PureComponent {
   @autobind
   drawFreeHand() {
     const { map, dataStyle, onDrawBegin } = this.props
-
     this.polyline = this.createPolyline()
     this.polygon = this.createPolygon(this.polyline.getPath(), dataStyle.polylineFill)
 
