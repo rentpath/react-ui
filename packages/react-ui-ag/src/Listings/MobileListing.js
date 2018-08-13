@@ -64,11 +64,17 @@ export default class MobileListing extends PureComponent {
     return (
       <React.Fragment>
         <ListingComponents.Price />
-
-        {singleFamily ?
-          <ListingComponents.Address /> :
-          <ListingComponents.PropertyName />
-        }
+        <a
+          href={listing.url}
+          className={theme.PropertyLink}
+          target="_blank"
+          rel="noopener"
+        >
+          {singleFamily ?
+            <ListingComponents.Address /> :
+            <ListingComponents.PropertyName />
+          }
+        </a>
 
         <div className={theme.MobileListing_BedsAndBaths}>
           <ListingComponents.Bedroom data-tid="bedroom" />

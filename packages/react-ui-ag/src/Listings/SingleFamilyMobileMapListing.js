@@ -178,7 +178,14 @@ export default class SingleFamilyMobileMapListing extends Component {
         <div className={theme.MobileMapListing_Bottom}>
           <div className={theme.MobileMapListing_Info}>
             <ListingComponents.Price />
-            <ListingComponents.Address />
+            <a
+              href={listing.url}
+              className={theme.PropertyLink}
+              target="_blank"
+              rel="noopener"
+            >
+              <ListingComponents.Address />
+            </a>
             <div className={theme.MobileMapListing_BedsAndCta}>
               <div>
                 <ListingComponents.Bedroom />
