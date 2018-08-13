@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="10.0.0"></a>
+# [10.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@9.1.0...@rentpath/react-ui-ag@10.0.0) (2018-08-13)
+
+
+### Features
+
+* **ULA Text Refactor:** display ULA over lastupdated fallback to lastupdated ([b1017ea](https://github.com/rentpath/react-ui/commit/b1017ea)), closes [#4853](https://github.com/rentpath/react-ui/issues/4853)
+
+
+### BREAKING CHANGES
+
+* **ULA Text Refactor:** 
+
+
+
+
 <a name="9.1.1"></a>
 ## [9.1.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@9.1.0...@rentpath/react-ui-ag@9.1.1) (2018-08-09)
 
