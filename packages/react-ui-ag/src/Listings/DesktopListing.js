@@ -35,10 +35,18 @@ export default class DesktopListing extends PureComponent {
     return (
       <React.Fragment>
         <ListingComponents.Price />
-        {singleFamily ?
-          <ListingComponents.Address /> :
-          <ListingComponents.PropertyName {...propertyName} />
-        }
+        <a
+          href={listing.url}
+          className={theme.PropertyLink}
+          target="_blank"
+          rel="noopener"
+        >
+          {
+            singleFamily ?
+              <ListingComponents.Address /> :
+              <ListingComponents.PropertyName {...propertyName} />
+          }
+        </a>
         <div className={theme.BedsAndBaths}>
           <ListingComponents.Bedroom data-tid="bedroom" />
           <ListingComponents.Bathroom />

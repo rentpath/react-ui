@@ -54,7 +54,14 @@ export default class SingleFamilyDesktopListing extends Component {
           <ListingComponents.Bathroom />
         </div>
         <ListingComponents.Availability />
-        <ListingComponents.Address />
+        <a
+          href={listing.url}
+          className={theme.PropertyLink}
+          target="_blank"
+          rel="noopener"
+        >
+          <ListingComponents.Address />
+        </a>
         {phone &&
           <div className={theme.Phone} data-tid="phone">{phone}</div>
         }

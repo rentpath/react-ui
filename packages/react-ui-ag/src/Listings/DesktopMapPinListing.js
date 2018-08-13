@@ -138,7 +138,14 @@ export default class DesktopMapPinListing extends PureComponent {
             <ListingComponents.PropertyName {...propertyName} />
           </div>
           <div className={theme.DesktopMapPinListing_Location}>
-            <ListingComponents.Address />
+            <a
+              href={listing.url}
+              className={theme.PropertyLink}
+              target="_blank"
+              rel="noopener"
+            >
+              <ListingComponents.Address />
+            </a>
             <ListingComponents.Neighborhood />
           </div>
           <div className={theme.DesktopMapPinListing_CTAs}>

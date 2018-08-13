@@ -254,7 +254,14 @@ export default class MobileMapListing extends Component {
         <div className={theme.MobileMapListing_Bottom}>
           <div className={theme.MobileMapListing_Info}>
             <ListingComponents.Price />
-            <ListingComponents.PropertyName {...propertyName} />
+            <a
+              href={listing.url}
+              className={theme.PropertyLink}
+              target="_blank"
+              rel="noopener"
+            >
+              <ListingComponents.PropertyName {...propertyName} />
+            </a>
             <div className={theme.MobileMapListing_BedsAndUla}>
               <ListingComponents.Bedroom />
               <ListingComponents.UnitLevelAvailability />
