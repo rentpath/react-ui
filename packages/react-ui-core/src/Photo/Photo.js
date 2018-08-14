@@ -118,7 +118,8 @@ export default class Photo extends PureComponent {
       data-tid="photo"
       className={classnames(
         className,
-        theme.Photo
+        theme.Photo,
+        error && theme['Photo-error'],
       )}
       onError={this.fallback}
       {...rest}
