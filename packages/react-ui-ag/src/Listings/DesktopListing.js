@@ -11,6 +11,7 @@ import Listing from './Listing'
   'UnitLevelAvailabilityAndLastUpdated',
   'UlaText',
   'Phone',
+  'PropertyLink',
 ], { pure: true })
 export default class DesktopListing extends PureComponent {
   static propTypes = {

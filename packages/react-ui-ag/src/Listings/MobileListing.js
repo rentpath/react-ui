@@ -66,7 +66,7 @@ export default class MobileListing extends PureComponent {
         <ListingComponents.Price />
         <a
           href={listing.url}
-          className={theme.PropertyLink}
+          className={theme.MobileListing_PropertyLink}
           target="_blank"
           rel="noopener"
         >
