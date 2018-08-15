@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="10.0.1"></a>
+## [10.0.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@10.0.0...@rentpath/react-ui-ag@10.0.1) (2018-08-15)
+
+
+### Bug Fixes
+
+* **listing:** listing theme fix ([ca44dc1](https://github.com/rentpath/react-ui/commit/ca44dc1))
+
+
+
+
 <a name="10.0.0"></a>
 # [10.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@9.1.0...@rentpath/react-ui-ag@10.0.0) (2018-08-13)
 
