@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="15.2.1"></a>
+## [15.2.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@15.2.0...@rentpath/react-ui-core@15.2.1) (2018-08-15)
+
+
+### Bug Fixes
+
+* **Google Maps FreeDraw:** fixed issue where drawing had to be disabled before drawing multiple shap ([9ea5ade](https://github.com/rentpath/react-ui/commit/9ea5ade))
+* **listing:** listing theme fix ([ca44dc1](https://github.com/rentpath/react-ui/commit/ca44dc1))
+
+
+
+
 <a name="15.2.0"></a>
 # [15.2.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@15.0.0...@rentpath/react-ui-core@15.2.0) (2018-08-13)
 
