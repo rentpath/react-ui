@@ -63,6 +63,26 @@ describe('FreeDrawLayer', () => {
     expect(addShapesSpy).toHaveBeenCalled()
   })
 
+  describe('drawFreeHand', () => {
+    it('calls endDraw on mouse up', () => {
+      const instance = setup()
+      const endDrawSpy = jest.spyOn(instance, 'endDraw')
+      instance.polygon = mockPolygon
+      instance.drawFreeHand()
+      instance.handleMouseUp()
+      expect(endDrawSpy).toHaveBeenCalled()
+    })
+
+    it('calls drawFreeHand on mouse up', () => {
+      const instance = setup()
+      const drawFreeHandSpy = jest.spyOn(instance, 'drawFreeHand')
+      instance.polygon = mockPolygon
+      instance.drawFreeHand()
+      instance.handleMouseUp()
+      expect(drawFreeHandSpy).toHaveBeenCalled()
+    })
+  })
+
   describe('enableDraw', () => {
     it('disables map controls', () => {
       const instance = setup()
