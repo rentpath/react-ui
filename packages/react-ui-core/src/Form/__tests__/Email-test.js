@@ -12,7 +12,6 @@ describe('Email', () => {
   it('renders proper defaults if none passed', () => {
     expect(wrapper.prop('name')).toEqual('email')
     expect(wrapper.prop('type')).toEqual('email')
-    expect(wrapper.prop('placeholder')).toEqual('Email Address')
   })
 
   it('assumes props passed', () => {

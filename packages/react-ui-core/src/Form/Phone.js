@@ -12,7 +12,6 @@ export default class Phone extends PureComponent {
   static defaultProps = {
     name: 'phone',
     type: 'tel',
-    placeholder: 'Phone',
   }
 
   render() {

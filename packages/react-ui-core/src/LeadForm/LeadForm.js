@@ -13,6 +13,7 @@ import {
   Message,
   Email,
   Phone,
+  RadioGroup,
   OptInNewsLetter,
   TermsOfService,
 } from '../Form'
@@ -40,7 +41,7 @@ const FIELDS = [
   { name: 'terms_of_service' },
 ]
 
-@themed(/^LeadForm/)
+@themed(/^(LeadForm|Field)/)
 
 export default class LeadForm extends Component {
   static propTypes = {
@@ -55,6 +56,7 @@ export default class LeadForm extends Component {
         ]),
       }),
     ),
+    children: PropTypes.node,
   }
 
   static defaultProps = {
@@ -79,9 +81,9 @@ export default class LeadForm extends Component {
     const { fields } = this.props
 
     return fields.map(fieldComposition => {
-      const { field, ...props } = fieldComposition
+      const { field, className, ...props } = fieldComposition
       const name = props.name
-      const FormField = field || FIELD_MAPPING[name] || Field
+      const FormField = field || FIELD_MAPPING[name] || this.fallbackField(props.type)
 
       return (
         <FormField
@@ -97,11 +99,16 @@ export default class LeadForm extends Component {
     this.id = randomId('leadform')
   }
 
+  fallbackField(type) {
+    return type === 'radiogroup' ? RadioGroup : Field
+  }
+
   render() {
     const {
       className,
       theme,
       fields,
+      children,
       ...props
     } = this.props
 
@@ -114,6 +121,7 @@ export default class LeadForm extends Component {
         {...props}
       >
         {this.fields}
+        {children}
       </Form>
     )
   }

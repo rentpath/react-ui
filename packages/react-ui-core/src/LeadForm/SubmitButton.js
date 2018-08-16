@@ -15,15 +15,12 @@ export default class SubmitButton extends PureComponent {
 
   render() {
     const {
-      type,
       children,
       ...props
     } = this.props
 
     return (
       <Button
-        name={name}
-        type={type}
         data-tid="lead-form-submit"
         {...props}
       >

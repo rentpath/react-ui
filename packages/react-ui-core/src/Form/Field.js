@@ -64,6 +64,11 @@ export default class Field extends Component {
     disabled: PropTypes.bool,
 
     /**
+     * Required status.
+     */
+    required: PropTypes.bool,
+
+    /**
      * Configures the wrapping div element.
      */
     container: PropTypes.oneOfType([
@@ -158,6 +163,7 @@ export default class Field extends Component {
       container,
       children,
       className,
+      required,
       ...rest
     } = this.props
 
@@ -217,9 +223,11 @@ export default class Field extends Component {
         className,
         theme.Field,
         theme[`Field-${type}`],
+        theme[`Field-${this.props.name}`],
         focused && theme['Field-focused'],
         invalid && theme['Field-invalid'],
         disabled && theme['Field-disabled'],
+        required && theme['Field-required'],
       ),
     })
 

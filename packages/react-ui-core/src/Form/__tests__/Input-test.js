@@ -50,4 +50,44 @@ describe('Form/Input', () => {
     const wrapper = shallow(<Input variant="primary" theme={theme} />)
     expect(wrapper.prop('className')).toContain('Input-primary')
   })
+
+  describe('input mask', () => {
+    it('uses an InputMask component when `mask` is defined', () => {
+      const wrapper = shallow(<Input theme={theme} mask="somemask..." />)
+      expect(wrapper.find('InputElement')).toHaveLength(1)
+    })
+
+    it('uses the default input when `mask` is undefined', () => {
+      const wrapper = shallow(<Input theme={theme} />)
+      expect(wrapper.find('InputElement')).toHaveLength(0)
+    })
+  })
+
+  describe('`defaultValue` or `value` props', () => {
+    describe('defaultValue', () => {
+      it('is used before `value`', () => {
+        const wrapper = shallow(<Input theme={theme} defaultValue="foo" value="bar" />)
+        expect(wrapper.state('value')).toEqual('foo')
+      })
+
+      it('does not get used when value / property prop is updated', () => {
+        const wrapper = shallow(<Input theme={theme} defaultValue="foo" value="bar" />)
+        wrapper.setProps({ value: 'test' })
+        expect(wrapper.state('value')).toEqual('test')
+      })
+    })
+
+    describe('value', () => {
+      it('uses `value` when no `defaultValue` passed', () => {
+        const wrapper = shallow(<Input theme={theme} value="bar" />)
+        expect(wrapper.state('value')).toEqual('bar')
+      })
+
+      it('uses custom `property` as the value', () => {
+        const wrapper = shallow(<Input theme={theme} property="checked" checked="bar" />)
+        expect(wrapper.state('checked')).toEqual('bar')
+        expect(wrapper.state('value')).toBeUndefined()
+      })
+    })
+  })
 })
