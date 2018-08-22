@@ -12,15 +12,15 @@ import Button from './Button'
 export default class ApplyButton extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
+    children: PropTypes.node,
     onClick: PropTypes.func,
     theme: PropTypes.object,
-    name: PropTypes.node,
     value: PropTypes.any,
   }
 
   static defaultProps = {
+    children: 'Apply',
     theme: {},
-    name: 'Apply',
   }
 
   @autobind
@@ -33,9 +33,9 @@ export default class ApplyButton extends PureComponent {
   render() {
     const {
       theme,
-      name,
       className,
       onClick,
+      children,
       value,
       ...props
     } = this.props
@@ -52,7 +52,7 @@ export default class ApplyButton extends PureComponent {
         data-tid="apply-button"
         {...props}
       >
-        {name}
+        {children}
       </Button>
     )
   }

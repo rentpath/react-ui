@@ -137,7 +137,6 @@ describe('DesktopListing', () => {
 
       it('renders ulaText div', () => {
         const wrapper = mount(<DesktopListing {...props} />)
-        console.log(wrapper.find('.UlaText'))
         expect(wrapper.find('.UlaText').text())
             .toEqual(baseListing.ulaText || baseListing.lastUpdated)
       })

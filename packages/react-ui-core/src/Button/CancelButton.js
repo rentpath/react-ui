@@ -12,15 +12,15 @@ import Button from './Button'
 export default class CancelButton extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
+    children: PropTypes.node,
     onClick: PropTypes.func,
     theme: PropTypes.object,
-    name: PropTypes.node,
     value: PropTypes.any,
   }
 
   static defaultProps = {
+    children: 'Cancel',
     theme: {},
-    name: 'Cancel',
   }
 
   @autobind
@@ -33,9 +33,9 @@ export default class CancelButton extends PureComponent {
   render() {
     const {
       theme,
-      name,
       className,
       onClick,
+      children,
       ...props
     } = this.props
 
@@ -51,7 +51,7 @@ export default class CancelButton extends PureComponent {
         data-tid="cancel-button"
         {...props}
       >
-        {name}
+        {children}
       </Button>
     )
   }
