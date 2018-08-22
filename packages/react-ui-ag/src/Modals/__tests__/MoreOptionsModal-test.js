@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
-import { Button, Text } from '@rentpath/react-ui-core'
+import { Button, Text, ApplyButton, CancelButton } from '@rentpath/react-ui-core'
 import theme from './mocks/theme'
 import ThemedMoreOptionsModal from '../MoreOptionsModal'
 
@@ -42,7 +42,7 @@ describe('MoreOptionsModal', () => {
   describe('cancel button', () => {
     it('closes modal and restores filters on click', () => {
       const wrapper = mount(<MoreOptionsModal {...props} />)
-      const cancelButton = wrapper.find('.MoreOptionsModal_Cancel').at(0)
+      const cancelButton = wrapper.find(CancelButton)
       const cancelButtonText = cancelButton.text()
 
       cancelButton.simulate('click')
@@ -91,7 +91,7 @@ describe('MoreOptionsModal', () => {
   })
 
   describe('property count', () => {
-    const submit = wrapper => wrapper.find('.MoreOptionsModal_Submit').childAt(0)
+    const submit = wrapper => wrapper.find(ApplyButton).dive().childAt(0)
     const header = wrapper => wrapper.find(Text).dive().childAt(0)
 
     it('displays the total when there is no "filterTotal"', () => {

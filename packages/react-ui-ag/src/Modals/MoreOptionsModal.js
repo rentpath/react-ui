@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import autobind from 'autobind-decorator'
 import classnames from 'classnames'
-import { Modal, Button, Text } from '@rentpath/react-ui-core'
+import { Modal, Button, Text, ApplyButton, CancelButton } from '@rentpath/react-ui-core'
 
 @themed(/^MoreOptionsModal/, { pure: true })
 
@@ -119,18 +119,18 @@ export default class MoreOptionsModal extends PureComponent {
           Reset All
         </Button>
         <div className={theme.MoreOptionsModal_FooterButtons}>
-          <Button
+          <CancelButton
             className={theme.MoreOptionsModal_Cancel}
             onClick={this.handleCancel}
           >
             Cancel
-          </Button>
-          <Button
+          </CancelButton>
+          <ApplyButton
             className={theme.MoreOptionsModal_Submit}
             onClick={this.handleSubmit}
           >
             {submitButton}
-          </Button>
+          </ApplyButton>
         </div>
       </div>
     )
