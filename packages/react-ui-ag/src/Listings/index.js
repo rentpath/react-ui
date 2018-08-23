@@ -1,6 +1,5 @@
 export { default as MobileMapListing } from './MobileMapListing'
 export { default as SingleFamilyMobileMapListing } from './SingleFamilyMobileMapListing'
-export { default as MobileListing } from './MobileListing'
 export { default as DesktopMapPinListing } from './DesktopMapPinListing'
 export { default as Listing } from './Listing'
 export { default as DesktopListing } from './DesktopListing'

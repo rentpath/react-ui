@@ -9,7 +9,6 @@ export { Banner } from './Banners'
 export {
   Listing,
   MobileMapListing,
-  MobileListing,
   SingleFamilyMobileMapListing,
   DesktopMapPinListing,
   DesktopListing,

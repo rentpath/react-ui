@@ -22,7 +22,6 @@ import {
 import Banner from './Banner.css'
 
 import MobileMapListing from './MobileMapListing.css'
-import MobileListing from './MobileListing.css'
 import ListingCarousel from './ListingCarousel.css'
 
 export default compose({},
@@ -43,7 +42,6 @@ export default compose({},
   RadioGroup,
   RadioGroupBase,
   MobileMapListing,
-  MobileListing,
   ListingCarousel,
   Banner,
 )
