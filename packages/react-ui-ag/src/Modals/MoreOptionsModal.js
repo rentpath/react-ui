@@ -89,11 +89,12 @@ export default class MoreOptionsModal extends PureComponent {
     const propertyCount = this.getPropertyCount()
 
     return (
-      <div className={theme.MoreOptionsModal_Header}>
+      <div className={theme.MoreOptionsModal_Header} data-tid="more-options-header">
         <Text>
           {propertyCount}
         </Text>
         <Button
+          data-tid="more-options-cancel"
           onClick={this.handleCancel}
         >
           Close
@@ -111,9 +112,10 @@ export default class MoreOptionsModal extends PureComponent {
     const submitButton = this.getSubmitButton()
 
     return (
-      <div className={theme.MoreOptionsModal_Footer}>
+      <div data-tid="more-options-footer" className={theme.MoreOptionsModal_Footer}>
         <Button
           className={theme.MoreOptionsModal_ResetAll}
+          data-tid="more-options-reset"
           onClick={clearFilters}
         >
           Reset All
@@ -121,12 +123,14 @@ export default class MoreOptionsModal extends PureComponent {
         <div className={theme.MoreOptionsModal_FooterButtons}>
           <CancelButton
             className={theme.MoreOptionsModal_Cancel}
+            data-tid="more-options-cancel"
             onClick={this.handleCancel}
           >
             Cancel
           </CancelButton>
           <ApplyButton
             className={theme.MoreOptionsModal_Submit}
+            data-tid="more-options-submit"
             onClick={this.handleSubmit}
           >
             {submitButton}
@@ -153,7 +157,7 @@ export default class MoreOptionsModal extends PureComponent {
         isOpen={isOpen}
         onClose={this.handleCancel}
       >
-        <div className={theme.MoreOptionsModal_InnerContainer}>
+        <div data-tid="more-options-modal" className={theme.MoreOptionsModal_InnerContainer}>
           {this.renderHeader()}
           {moreOptionsForm}
           {this.renderFooter()}
