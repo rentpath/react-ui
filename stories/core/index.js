@@ -22,6 +22,7 @@ import {
   DefaultField,
   SelectField,
   CheckboxField,
+  MaskedField,
 } from './Field'
 
 import {
@@ -220,6 +221,7 @@ coreStories('Field', module)
   .add('Field', () => DefaultField)
   .add('Select Field', () => SelectField)
   .add('Checkbox Field', () => CheckboxField)
+  .add('Masked field (phone number)', () => MaskedField)
 
 coreStoriesNoContainer('Gmap ', module)
   .add('Gmap', () => DefaultGmap)

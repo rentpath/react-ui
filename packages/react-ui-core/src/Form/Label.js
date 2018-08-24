@@ -13,6 +13,7 @@ export default class Label extends Component {
     text: PropTypes.string,
     theme: PropTypes.object,
     children: PropTypes.node,
+    variant: PropTypes.string,
   }
 
   static defaultProps = {
@@ -24,6 +25,7 @@ export default class Label extends Component {
       text,
       theme,
       className,
+      variant,
       children,
       ...props
     } = this.props
@@ -31,6 +33,7 @@ export default class Label extends Component {
     const classnames = classNames(
       className,
       theme.Label,
+      variant && theme[`Label-${variant}`]
     )
 
     return (

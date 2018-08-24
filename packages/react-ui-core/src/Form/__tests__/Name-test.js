@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Name from '../Name'
 
-describe('Email', () => {
+describe('Name', () => {
   let wrapper
 
   beforeEach(() => {
@@ -11,7 +11,6 @@ describe('Email', () => {
 
   it('renders proper defaults if none passed', () => {
     expect(wrapper.prop('name')).toEqual('name')
-    expect(wrapper.prop('placeholder')).toEqual('Name')
   })
 
   it('assumes props passed', () => {

@@ -34,3 +34,10 @@ export const RadioField = (
     checked
   />
 )
+
+export const MaskedField = (
+  <Field
+    label="Phone"
+    mask="(999) 999-9999"
+  />
+)

@@ -9,6 +9,7 @@ export default class Checkbox extends PureComponent {
 
   static defaultProps = {
     type: 'checkbox',
+    property: 'checked',
   }
 
   render() {

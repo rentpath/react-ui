@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import Field from './Field'
+import Checkbox from './Checkbox'
 
 export default class OptInNewsLetter extends PureComponent {
   static propTypes = {
@@ -15,13 +15,12 @@ export default class OptInNewsLetter extends PureComponent {
 
   static defaultProps = {
     name: 'opt-in-newsletter',
-    type: 'checkbox',
     label: 'Simplify my search with helpful tips and rental recommendations.',
   }
 
   render() {
     return (
-      <Field {...this.props} />
+      <Checkbox {...this.props} />
     )
   }
 }

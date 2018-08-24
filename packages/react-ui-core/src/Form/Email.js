@@ -12,7 +12,6 @@ export default class Email extends PureComponent {
   static defaultProps = {
     name: 'email',
     type: 'email',
-    placeholder: 'Email Address',
   }
 
   render() {

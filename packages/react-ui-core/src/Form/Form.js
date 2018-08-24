@@ -40,6 +40,11 @@ export default class Form extends Component {
      * Serializes form data when true.
      */
     serialize: PropTypes.bool,
+
+    /**
+     * Serialize options when serialize is on
+     */
+    serializeOptions: PropTypes.object,
   }
 
   static defaultProps = {
@@ -47,15 +52,18 @@ export default class Form extends Component {
     action: '#',
     method: 'POST',
     noValidate: true,
+    serializeOptions: {
+      hash: true,
+    },
   }
 
   onSubmit = event => {
-    const { onSubmit, serialize } = this.props
+    const { onSubmit, serialize, serializeOptions } = this.props
     event.preventDefault()
 
     if (onSubmit) {
       if (serialize) {
-        onSubmit(event, serializeForm(event.target, { hash: true }))
+        onSubmit(event, serializeForm(event.target, serializeOptions))
       } else {
         onSubmit(event)
       }
@@ -66,6 +74,7 @@ export default class Form extends Component {
     const {
       theme,
       serialize,
+      serializeOptions,
       className,
       ...props
     } = this.props

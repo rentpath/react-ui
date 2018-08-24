@@ -11,7 +11,6 @@ export default class Name extends PureComponent {
 
   static defaultProps = {
     name: 'name',
-    placeholder: 'Name',
   }
 
   render() {

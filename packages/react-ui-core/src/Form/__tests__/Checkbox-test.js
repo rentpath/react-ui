@@ -11,6 +11,7 @@ describe('Checkbox', () => {
 
   it('renders proper defaults if none passed', () => {
     expect(wrapper.prop('type')).toEqual('checkbox')
+    expect(wrapper.prop('property')).toEqual('checked')
   })
 
   it('assumes props passed', () => {

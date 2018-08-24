@@ -7,81 +7,38 @@ import theme from './mocks/theme'
 const RadioGroup = ThemedRadioGroup.WrappedComponent
 
 describe('Form/RadioGroup', () => {
+  const setup = (props, mountType = shallow) => (
+    mountType(
+      <RadioGroup
+        name="fooRadioGroup"
+        fields={[
+          { label: 'One', checked: false, value: 'One' },
+          { label: 'Two', checked: true, value: 'Two' },
+        ]}
+        theme={theme}
+        onChange={event => event.target.value}
+        {...props}
+      />
+    )
+  )
+
   it('renders RadioButtons', () => {
-    const props = {
-      name: 'fooRadioGroup',
-      fields: [
-        { label: 'One', checked: false, value: 'One' },
-        { label: 'Two', checked: false, value: 'Two' },
-      ],
-      theme,
-      onChange: event => {
-        const { value } = event.target
-        return value
-      },
-    }
-    const wrapper = shallow(<RadioGroup {...props} />)
+    const wrapper = setup()
     expect(wrapper.find(RadioButton)).toHaveLength(2)
   })
 
   it('renders null if no fields are passed', () => {
-    const props = {
-      name: 'fooRadioGroup',
-      theme,
-      onChange: event => {
-        const { value } = event.target
-        return value
-      },
-    }
-    const wrapper = shallow(<RadioGroup {...props} />)
-    expect(wrapper.exists()).toBeTruthy()
-  })
-
-  it('renders null if null fields are passed', () => {
-    const props = {
-      name: 'fooRadioGroup',
-      fields: null,
-      theme,
-      onChange: event => {
-        const { value } = event.target
-        return value
-      },
-    }
-    const wrapper = shallow(<RadioGroup {...props} />)
-    expect(wrapper.exists()).toBeTruthy()
+    const wrapper = setup({ fields: null })
+    expect(wrapper.find('RadioButton')).toHaveLength(0)
   })
 
   it('sets the value upon creation', () => {
-    const props = {
-      name: 'fooRadioGroup',
-      fields: [
-        { label: 'One', checked: false, value: 'One' },
-        { label: 'Two', checked: true, value: 'Two' },
-      ],
-      theme,
-      onChange: event => {
-        const { value } = event.target
-        return value
-      },
-    }
-    const wrapper = shallow(<RadioGroup {...props} />)
+    const wrapper = setup()
     expect(wrapper.state('value')).toEqual('Two')
   })
 
   it('changes the value when clicking on another radio button', () => {
-    const props = {
-      name: 'fooRadioGroup',
-      fields: [
-        { label: 'One', checked: false, value: 'One' },
-        { label: 'Two', checked: true, value: 'Two' },
-      ],
-      theme,
-      onChange: event => {
-        const { value } = event.target
-        return value
-      },
-    }
-    const wrapper = mount(<RadioGroup {...props} />)
+    const wrapper = setup({}, mount)
     expect(wrapper.state('value')).toEqual('Two')
     wrapper.find('input[value="One"]').simulate('change')
     expect(wrapper.state('value')).toEqual('One')
@@ -89,19 +46,7 @@ describe('Form/RadioGroup', () => {
   })
 
   it('changes the value when the fields change', () => {
-    const props = {
-      name: 'fooRadioGroup',
-      fields: [
-        { label: 'One', checked: false, value: 'One' },
-        { label: 'Two', checked: true, value: 'Two' },
-      ],
-      theme,
-      onChange: event => {
-        const { value } = event.target
-        return value
-      },
-    }
-    const wrapper = shallow(<RadioGroup {...props} />)
+    const wrapper = setup()
     expect(wrapper.state('value')).toEqual('Two')
     wrapper.setProps({
       fields: [
@@ -113,19 +58,7 @@ describe('Form/RadioGroup', () => {
   })
 
   it('changes the random id when the fields change', () => {
-    const props = {
-      name: 'fooRadioGroup',
-      fields: [
-        { label: 'One', checked: false, value: 'One' },
-        { label: 'Two', checked: true, value: 'Two' },
-      ],
-      theme,
-      onChange: event => {
-        const { value } = event.target
-        return value
-      },
-    }
-    const wrapper = shallow(<RadioGroup {...props} />)
+    const wrapper = setup()
     const initialKey = wrapper.find(RadioButton).first().key()
     wrapper.setProps({
       fields: [
@@ -137,19 +70,7 @@ describe('Form/RadioGroup', () => {
   })
 
   it('does not change the random id if a non-field prop changes', () => {
-    const props = {
-      name: 'fooRadioGroup',
-      fields: [
-        { label: 'One', checked: false, value: 'One' },
-        { label: 'Two', checked: true, value: 'Two' },
-      ],
-      theme,
-      onChange: event => {
-        const { value } = event.target
-        return value
-      },
-    }
-    const wrapper = shallow(<RadioGroup {...props} />)
+    const wrapper = setup()
     const initialKey = wrapper.find(RadioButton).first().key()
     wrapper.setProps({
       className: 'newClassNameOfDoom',
@@ -158,50 +79,64 @@ describe('Form/RadioGroup', () => {
   })
 
   it('unselects the radio button when using allowUnselect', () => {
-    const spyOnChange = jest.fn()
-    const spyOnUnselect = jest.fn()
-    const props = {
-      name: 'fooRadioGroup',
-      fields: [
-        { label: 'One', checked: false, value: 'One' },
-        { label: 'Two', checked: true, value: 'Two' },
-      ],
-      theme,
-      onChange: spyOnChange,
-      onUnselect: spyOnUnselect,
+    const onChange = jest.fn()
+    const onUnselect = jest.fn()
+    const wrapper = setup({
+      onChange,
+      onUnselect,
       allowUnselect: true,
-    }
-    const wrapper = mount(<RadioGroup {...props} />)
+    }, mount)
+
     expect(wrapper.state('value')).toEqual('Two')
     wrapper.find('input[value="Two"]').simulate('click')
     expect(wrapper.state('value')).toEqual(null)
     expect(wrapper.find('input[value="Two"]').props()).not.toHaveProperty('checked', true)
     expect(wrapper.find('input[value="One"]').props()).not.toHaveProperty('checked', true)
-    expect(spyOnChange).not.toBeCalled()
-    expect(spyOnUnselect).toBeCalled()
+    expect(onChange).not.toBeCalled()
+    expect(onUnselect).toBeCalled()
   })
 
   it('does not unselect the radio button when allowUnselect is false', () => {
-    const spyOnChange = jest.fn()
-    const spyOnUnselect = jest.fn()
-    const props = {
-      name: 'fooRadioGroup',
-      fields: [
-        { label: 'One', checked: false, value: 'One' },
-        { label: 'Two', checked: true, value: 'Two' },
-      ],
-      theme,
-      onChange: spyOnChange,
-      onUnselect: spyOnUnselect,
+    const onChange = jest.fn()
+    const onUnselect = jest.fn()
+    const wrapper = setup({
+      onChange,
+      onUnselect,
       allowUnselect: false,
-    }
-    const wrapper = mount(<RadioGroup {...props} />)
+    }, mount)
     expect(wrapper.state('value')).toEqual('Two')
     wrapper.find('input[value="Two"]').simulate('click')
     expect(wrapper.state('value')).toEqual('Two')
     expect(wrapper.find('input[value="Two"]').props()).toHaveProperty('checked', true)
     expect(wrapper.find('input[value="One"]').props()).not.toHaveProperty('checked', true)
-    expect(spyOnChange).not.toBeCalled()
-    expect(spyOnUnselect).not.toBeCalled()
+    expect(onChange).not.toBeCalled()
+    expect(onUnselect).not.toBeCalled()
+  })
+
+  describe('`defaultValue` or `value` props', () => {
+    describe('defaultValue', () => {
+      it('is used before `value`', () => {
+        const wrapper = setup({ defaultValue: 'foo', value: 'bar' })
+        expect(wrapper.state('value')).toEqual('foo')
+      })
+
+      it('does not get used when value / property prop is updated', () => {
+        const wrapper = setup({ defaultValue: 'foo', value: 'bar' })
+        wrapper.setProps({ value: 'test' })
+        expect(wrapper.state('value')).toEqual('test')
+      })
+    })
+
+    describe('value', () => {
+      it('uses `value` when no `defaultValue` passed', () => {
+        const wrapper = setup({ value: 'bar' })
+        expect(wrapper.state('value')).toEqual('bar')
+      })
+
+      it('uses the fields `checked` when none passed', () => {
+        const wrapper = setup()
+        expect(wrapper.state('value')).toEqual('Two')
+      })
+    })
   })
 })
