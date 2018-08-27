@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import { BounceLoader } from 'react-spinners'
+import BounceLoader from './spinners/BounceLoader'
 
 @themed(['Gmap_Spinner'], { pure: true })
 
