@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-core",
-  "version": "16.0.1",
+  "version": "16.0.2",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
