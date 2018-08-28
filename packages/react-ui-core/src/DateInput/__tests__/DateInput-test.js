@@ -1,20 +1,35 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import DateInput from '../DateInput'
 
 describe('DateInput', () => {
-  it('renders a DateInput', () => {
-    const wrapper = mount(<DateInput />)
+  it('only renders `Datepicker` when state.visible', () => {
+    const wrapper = shallow(<DateInput />)
     expect(wrapper.find('Datepicker')).toHaveLength(1)
+    wrapper.setState({ visible: false })
+    expect(wrapper.find('Datepicker')).toHaveLength(0)
   })
 
-  it('passes through id', () => {
-    const wrapper = mount(<DateInput datepickerId="foo" />)
-    expect(wrapper.find('Datepicker input').prop('id')).toBe('foo')
+  it('sets the visible state to true when component is mounted', () => {
+    const wrapper = shallow(<DateInput />)
+    wrapper.setState({ visible: false })
+    expect(wrapper.state('visible')).toBe(false)
+    wrapper.instance().componentDidMount()
+    expect(wrapper.state('visible')).toBe(true)
   })
 
-  it('applies a custom className', () => {
-    const wrapper = mount(<DateInput className="DatePicker" />)
-    expect(wrapper.find('Datepicker input').prop('className')).toBe('DatePicker')
+  it('passes through `datePickerName`', () => {
+    const wrapper = shallow(<DateInput datePickerName="foo" />)
+    expect(wrapper.find('Datepicker').prop('datePickerName')).toBe('foo')
+  })
+
+  it('passes through `className` as `datepickerClassName`', () => {
+    const wrapper = shallow(<DateInput className="someClass" />)
+    expect(wrapper.find('Datepicker').prop('datepickerClassName')).toBe('someClass')
+  })
+
+  it('passes through extra props', () => {
+    const wrapper = shallow(<DateInput data-tid="foo" />)
+    expect(wrapper.find('Datepicker').prop('data-tid')).toBe('foo')
   })
 })
