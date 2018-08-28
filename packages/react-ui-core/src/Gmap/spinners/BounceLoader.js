@@ -23,7 +23,7 @@ class Loader extends Component {
     animation: defaultAnimationStyle,
   };
 
-  style(i) {
+  style(scale) {
     const { size, color, sizeUnit, animation } = this.props
 
     return {
@@ -36,7 +36,7 @@ class Loader extends Component {
       top: 0,
       left: 0,
       animationFillMode: 'both',
-      animation: animation(i),
+      animation: animation(scale),
     }
   }
 
@@ -49,13 +49,32 @@ class Loader extends Component {
       height: `${size}${sizeUnit}`,
     }
   }
+
   render() {
     const { loading, className } = this.props
 
     return loading ? (
-      <div style={this.wrapperStyles()} className={className}>
+      <div className={className}>
+        <div style={this.style(0)} />
         <div style={this.style(1)} />
-        <div style={this.style(2)} />
+        {/* eslint-disable-next-line */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes BOUNCELOADER {
+            0% {
+              transform: scale(0);
+              -webkit-transform: scale(0);
+            }
+            50% {
+              transform: scale(1);
+              -webkit-transform: scale(1);
+            }
+            100% {
+              transform: scale(0);
+              -webkit-transform: scale(0);
+            }
+          }
+        ` }}
+        />
       </div>
     ) : null
   }
