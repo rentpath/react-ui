@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="16.0.0"></a>
+# [16.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@15.2.1...@rentpath/react-ui-core@16.0.0) (2018-08-28)
+
+
+### Bug Fixes
+
+* **datepicker:** fixes broken ssr ([2a3d707](https://github.com/rentpath/react-ui/commit/2a3d707))
+* **MoreOptions:** replace generic buttons ([51a907e](https://github.com/rentpath/react-ui/commit/51a907e))
+* **react-ui-core:** fixes rent interaction with spinner ([c09dc90](https://github.com/rentpath/react-ui/commit/c09dc90))
+
+
+### Features
+
+* **form:** controlled / uncontrolled fields ([af25ce3](https://github.com/rentpath/react-ui/commit/af25ce3))
+* **react-ui-core:** porting bounceloader and removing react-spinners ([cba5ce7](https://github.com/rentpath/react-ui/commit/cba5ce7))
+
+
+### BREAKING CHANGES
+
+* **form:** removed placheholders for inputs
+* **MoreOptions:** Replaced `name` prop with `children` prop and passed as child, has default value of Apply and Cancel
+
+
+
+
 <a name="15.2.1"></a>
 ## [15.2.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@15.2.0...@rentpath/react-ui-core@15.2.1) (2018-08-15)
 

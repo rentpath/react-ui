@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="11.0.0"></a>
+# [11.0.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@10.0.1...@rentpath/react-ui-ag@11.0.0) (2018-08-28)
+
+
+### Bug Fixes
+
+* **MoreOptions:** replace generic buttons ([51a907e](https://github.com/rentpath/react-ui/commit/51a907e))
+
+
+### Features
+
+* **MoreOptions:** added dataTids ([4055625](https://github.com/rentpath/react-ui/commit/4055625))
+
+
+### BREAKING CHANGES
+
+* **MoreOptions:** Replaced `name` prop with `children` prop and passed as child, has default value of Apply and Cancel
+
+
+
+
 <a name="10.0.1"></a>
 ## [10.0.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@10.0.0...@rentpath/react-ui-ag@10.0.1) (2018-08-15)
 
