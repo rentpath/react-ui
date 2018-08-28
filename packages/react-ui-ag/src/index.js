@@ -19,7 +19,7 @@ export {
   GridViewHeader,
 } from './GridView'
 
-export { EmailModal, MoreOptionsModal } from './Modals'
+export { EmailModal } from './Modals'
 
 export {
   Gmap,

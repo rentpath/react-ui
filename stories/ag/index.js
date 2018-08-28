@@ -20,7 +20,7 @@ import {
 
 import { ExampleGridViewHeader } from './GridView'
 
-import { OptionalEmailModal, MandatoryEmailModal, scrollableMoreOptionsModal } from './Modals'
+import { OptionalEmailModal, MandatoryEmailModal } from './Modals'
 
 import {
   smallStories,
@@ -61,7 +61,6 @@ largeStories('GridView', module)
 largeStories('Modals', module)
   .add('Optional EmailModal', OptionalEmailModal)
   .add('Mandatory EmailModal', MandatoryEmailModal)
-  .add('More Options Modal', scrollableMoreOptionsModal)
 largeStories('Gmap', module)
   .add('Map', DefaultGmap)
   .add('PDP Map', PdpMap)
