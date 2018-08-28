@@ -12,7 +12,6 @@ describe('MoveInDate', () => {
   it('renders proper defaults if none passed', () => {
     expect(wrapper.prop('name')).toEqual('date')
     expect(wrapper.prop('type')).toEqual('date')
-    expect(wrapper.prop('placeholder')).toEqual('Move in date')
   })
 
   it('assumes props passed', () => {

@@ -12,7 +12,6 @@ export default class MoveInDate extends PureComponent {
   static defaultProps = {
     name: 'date',
     type: 'date',
-    placeholder: 'Move in date',
   }
 
   render() {
