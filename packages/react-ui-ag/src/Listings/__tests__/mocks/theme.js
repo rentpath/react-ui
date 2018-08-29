@@ -8,7 +8,6 @@ export default keyMirror([
   'BedsAndBaths',
   'UlaText',
   'Phone',
-  'MobileListing',
   'Listing',
   'Listing-active',
   'Listing-inactive',
