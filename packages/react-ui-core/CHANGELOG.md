@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="16.0.2"></a>
+## [16.0.2](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.0.1...@rentpath/react-ui-core@16.0.2) (2018-08-28)
+
+
+### Bug Fixes
+
+* **datepicker:** bump datepicker package ([af02ebf](https://github.com/rentpath/react-ui/commit/af02ebf))
+
+
+
+
 <a name="16.0.1"></a>
 ## [16.0.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.0.0...@rentpath/react-ui-core@16.0.1) (2018-08-28)
 
