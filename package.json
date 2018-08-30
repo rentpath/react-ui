@@ -73,12 +73,14 @@
     "jest": "^22.4.3",
     "jest-css-modules": "1.1.0",
     "lerna": "^2.9.1",
+    "node-sass": "^4.9.3",
     "postcss-loader": "^2.1.5",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-storybook-addon-chapters": "^2.1.5",
     "react-test-renderer": "^16.4.1",
+    "sass-loader": "^7.1.0",
     "stylelint": "^9.3.0"
   },
   "dependencies": {

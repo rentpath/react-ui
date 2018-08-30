@@ -15,12 +15,12 @@ export const createTextComponent = (name, contextItem) => {
       theme: PropTypes.object,
     }
 
-    static defaultProps = {
-      theme: {},
-    }
-
     static contextTypes = {
       [contextItem]: PropTypes.node,
+    }
+
+    static defaultProps = {
+      theme: {},
     }
 
     render() {

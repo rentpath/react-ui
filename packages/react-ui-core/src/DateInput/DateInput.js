@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import DatePicker from 'react-basic-datepicker'
+import DatePicker from '../DatePicker'
 
 export default class DateInput extends Component {
   static propTypes = {
