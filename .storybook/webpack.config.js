@@ -4,8 +4,8 @@ const webpack = require('webpack')
 module.exports = (storybookBaseConfig, configType) => {
   storybookBaseConfig.module.rules.push(
     {
-      test: /\.css$/,
-      exclude: /\.global\.css$/,
+      test: /\.(css|scss)$/,
+      exclude: /\.global\.(css|scss)$/,
       include: [
         path.resolve(__dirname, '../'),
       ],
@@ -27,11 +27,14 @@ module.exports = (storybookBaseConfig, configType) => {
               require('autoprefixer')(),
             ],
           },
-        }
+        },
+        {
+          loader: "sass-loader" // compiles Sass to CSS
+        },
       ]
     },
     {
-      test: /\.global\.css$/,
+      test: /\.global\.(css|scss)$/,
       include: [
         path.resolve(__dirname, '../'),
       ],
@@ -51,6 +54,9 @@ module.exports = (storybookBaseConfig, configType) => {
               require('autoprefixer')(),
             ],
           },
+        },
+        {
+          loader: "sass-loader" // compiles Sass to CSS
         },
       ],
     },
