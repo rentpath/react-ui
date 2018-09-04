@@ -37,8 +37,8 @@ export default class Markers extends PureComponent {
     } = this.props
 
     return feature => {
-      const isActive = get(feature, 'properties.isActive', true)
-      const icon = isActive ? markerIcon : markerInactiveIcon
+      const isBasic = get(feature, 'properties.isBasic', false)
+      const icon = !isBasic ? markerIcon : markerInactiveIcon
 
       return {
         icon: icon(),
@@ -51,7 +51,7 @@ export default class Markers extends PureComponent {
           if (onMouseOut) onMouseOut(marker)
         },
         ...this.props.marker(feature),
-        zIndex: isActive ? 2 : 1,
+        zIndex: !isBasic ? 2 : 1,
       }
     }
   }
