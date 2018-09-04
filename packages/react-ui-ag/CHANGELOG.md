@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="11.1.0"></a>
+# [11.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@11.0.3...@rentpath/react-ui-ag@11.1.0) (2018-09-04)
+
+
+### Features
+
+* **Markers:** grey pins for isBasic listings ([b224cf8](https://github.com/rentpath/react-ui/commit/b224cf8))
+
+
+
+
 <a name="11.0.3"></a>
 ## [11.0.3](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@11.0.2...@rentpath/react-ui-ag@11.0.3) (2018-08-30)
 
