@@ -24,10 +24,10 @@ describe('ag/Markers', () => {
       })
     })
 
-    it('uses a redDotIcon with zIndex of 2 for active properties', () => {
+    it('uses a redDotIcon with zIndex of 2 for non-basic properties', () => {
       const feature = {
         properties: {
-          isActive: true,
+          isBasic: false,
         },
       }
       const wrapper = shallow(<Markers map={map} markerIconHover={NOOP} />)
@@ -36,10 +36,10 @@ describe('ag/Markers', () => {
       expect(instance.marker(feature).zIndex).toEqual(2)
     })
 
-    it('uses a greyDotIcon with zIndex of 1 for inactive properties', () => {
+    it('uses a greyDotIcon with zIndex of 1 for isBasic properties', () => {
       const feature = {
         properties: {
-          isActive: false,
+          isBasic: true,
         },
       }
       const wrapper = shallow(<Markers map={map} markerIconHover={NOOP} />)
@@ -48,10 +48,10 @@ describe('ag/Markers', () => {
       expect(instance.marker(feature).zIndex).toEqual(1)
     })
 
-    it('uses whatever icon is passed into markerInactiveIcon for inactive properties', () => {
+    it('uses whatever icon is passed into markerInactiveIcon for isBasic properties', () => {
       const feature = {
         properties: {
-          isActive: false,
+          isBasic: true,
         },
       }
       const wrapper = shallow(<Markers
