@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="16.1.0"></a>
+# [16.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.0.2...@rentpath/react-ui-core@16.1.0) (2018-09-04)
+
+
+### Features
+
+* **datepicker:** clone into repo ([3b14cf8](https://github.com/rentpath/react-ui/commit/3b14cf8))
+
+
+
+
 <a name="16.0.2"></a>
 ## [16.0.2](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.0.1...@rentpath/react-ui-core@16.0.2) (2018-08-28)
 
