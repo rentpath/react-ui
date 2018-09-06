@@ -31,6 +31,7 @@ import Carousel from './Carousel.css'
 import ListingCell from './ListingCell.css'
 import Drawer from './Drawer.css'
 import Gmap from './Gmap.css'
+import Calendar from './Calendar.scss'
 
 import {
   LargeFilterCard,
@@ -57,6 +58,7 @@ export default compose({},
   RadioButton,
   RadioGroup,
   Button,
+  Calendar,
   Carousel,
   Checkbox,
   Counter,

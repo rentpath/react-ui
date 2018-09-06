@@ -8,7 +8,11 @@ import {
   PriceSlider,
 } from './RangeSlider'
 import Text from './Text'
-import DefaultDateInput from './DefaultDateInput'
+import {
+  DefaultDatePicker,
+  DatePickerReadOnly,
+  DatePickerCustomFormat,
+} from './DatePicker'
 
 import {
   DefaultButton,
@@ -299,8 +303,10 @@ coreStories('RatingBar', module)
 coreStories('Text', module)
   .add('Text', () => Text)
 
-coreStories('DateInput', module)
-    .add('DefaultDateInput', () => DefaultDateInput)
+coreStories('DatePicker', module)
+  .add('Default DatePicker', () => DefaultDatePicker)
+  .add('Read only', () => DatePickerReadOnly)
+  .add('Custom date format', () => DatePickerCustomFormat)
 
 coreStories('Title', module)
   .add('Title', () => DefaultTitle)
