@@ -2,7 +2,6 @@
 
 exports[`OverlayView eventBlacklist 1`] = `
 Array [
-  "click",
   "contextmenu",
   "dblclick",
   "mousedown",
