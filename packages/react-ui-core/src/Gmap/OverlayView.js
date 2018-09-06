@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
+import { setupEvents } from './utils/mapEventHelpers'
+
+const EVENTS = {
+  onClick: 'click',
+  onDoubleClick: 'dblclick',
+  onMouseDown: 'mousedown',
+  onMouseOut: 'mouseout',
+  onMouseOver: 'mouseover',
+  onMouseUp: 'mouseup',
+}
+
+const EVENT_NAMES = Object.keys(EVENTS)
 
 @themed(/^Gmap_OverlayView/, { pure: true })
 export default class OverlayView extends PureComponent {
@@ -45,7 +57,6 @@ export default class OverlayView extends PureComponent {
 
   get eventBlacklist() {
     return [
-      'click',
       'contextmenu',
       'dblclick',
       'mousedown',
@@ -87,6 +98,8 @@ export default class OverlayView extends PureComponent {
     this.overlay.onAdd = this.addChildren.bind(this)
     this.overlay.onRemove = this.removeChildren.bind(this)
     this.overlay.draw = this.drawOverlay.bind(this)
+
+    setupEvents(this.container, EVENTS, this.props, false, 'addDomListener')
 
     this.overlay.setMap(map)
   }
@@ -144,3 +157,7 @@ export default class OverlayView extends PureComponent {
     )
   }
 }
+
+EVENT_NAMES.forEach(name => {
+  OverlayView.propTypes[name] = PropTypes.func
+})

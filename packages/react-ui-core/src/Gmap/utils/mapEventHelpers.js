@@ -1,9 +1,9 @@
 export const handleEvent = (instance, name, props) =>
   event => props[name](event, props, instance)
 
-export const setupEvents = (instance, events, props, once) => {
+export const setupEvents = (instance, events, props, once = false, addListener = 'addListener') => {
   const eventNames = Object.keys(events)
-  const type = once ? 'addListenerOnce' : 'addListener'
+  const type = once ? `${addListener}Once` : addListener
   const eventHandlers = {}
   eventNames.forEach(name => {
     if (props[name] && typeof props[name] === 'function') {
