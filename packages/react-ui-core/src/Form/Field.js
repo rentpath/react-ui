@@ -1,6 +1,6 @@
 import React, { Component, createElement } from 'react'
 import PropTypes from 'prop-types'
-import themed from 'react-themed'
+import { themed } from 'react-themed-too'
 import classNames from 'classnames'
 import { parseArgs, randomId } from '@rentpath/react-ui-utils'
 import { Text } from '../Text'

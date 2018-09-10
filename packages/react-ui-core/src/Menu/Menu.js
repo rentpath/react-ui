@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
-import themed from 'react-themed'
+import { themed } from 'react-themed-too'
 import classnames from 'classnames'
 import { List } from '../List'
 

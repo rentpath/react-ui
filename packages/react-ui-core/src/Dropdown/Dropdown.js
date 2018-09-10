@@ -2,7 +2,7 @@ import React, { Component, cloneElement, createElement } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
 import { parseArgs } from '@rentpath/react-ui-utils'
-import themed from 'react-themed'
+import { themed } from 'react-themed-too'
 import classnames from 'classnames'
 import DropdownAnchor from './DropdownAnchor'
 

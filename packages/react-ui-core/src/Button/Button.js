@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import themed from 'react-themed'
+import { themed } from 'react-themed-too'
 
 @themed(/^Button/, {
   pure: true,
 })
-
 export default class Button extends Component {
   static propTypes = {
     className: PropTypes.string,

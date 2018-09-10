@@ -87,7 +87,8 @@
     "babel-runtime": "6.26.0",
     "classnames": "^2.2.6",
     "form-serialize": "0.7.2",
-    "react-themed": "3.2.1"
+    "react-themed": "3.2.1",
+    "react-themed-too": "^0.4.7"
   },
   "peerDependencies": {
     "react": "^16.3.0"

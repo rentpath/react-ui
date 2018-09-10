@@ -1,6 +1,6 @@
 import React, { Component, cloneElement } from 'react'
 import PropTypes from 'prop-types'
-import themed from 'react-themed'
+import { themed } from 'react-themed-too'
 import autobind from 'autobind-decorator'
 import classnames from 'classnames'
 import { Dropdown, Text, RadioGroupFilterCard } from '@rentpath/react-ui-core'

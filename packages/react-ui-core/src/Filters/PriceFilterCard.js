@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classname from 'classnames'
-import themed from 'react-themed'
+import { themed } from 'react-themed-too'
 import autobind from 'autobind-decorator'
 import { parseArgs } from '@rentpath/react-ui-utils'
 import { RangeSlider } from '../Form'

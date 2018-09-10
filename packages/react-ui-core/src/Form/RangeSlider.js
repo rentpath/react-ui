@@ -4,7 +4,7 @@ import InputRange from 'react-input-range'
 import classnames from 'classnames'
 import omit from 'lodash/omit'
 import isEqual from 'lodash/isEqual'
-import themed from 'react-themed'
+import { themed } from 'react-themed-too'
 
 @themed('*', {
   pure: true,

@@ -54,7 +54,7 @@
     "classnames": "^2.2.6",
     "prop-types": "^15.6.1",
     "react-lazyload": "2.3.0",
-    "react-themed": "3.2.1"
+    "react-themed-too": "^0.4.7"
   },
   "peerDependencies": {
     "react": "^16.4.1",

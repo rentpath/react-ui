@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import themed from 'react-themed'
+import { themed } from 'react-themed-too'
 import InputMask from 'react-input-mask'
 import autobind from 'autobind-decorator'
 
