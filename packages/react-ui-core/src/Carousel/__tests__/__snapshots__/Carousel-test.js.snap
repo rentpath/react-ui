@@ -27,13 +27,6 @@ exports[`Carousel navigation does not render navigation if none passed 1`] = `
           >
             <div
               className="image-gallery-slide center"
-              onClick={undefined}
-              onMouseLeave={undefined}
-              onMouseOver={undefined}
-              onTouchEnd={undefined}
-              onTouchMove={undefined}
-              onTouchStart={undefined}
-              role={undefined}
               style={
                 Object {
                   "MozTransform": "translate3d(0%, 0, 0)",
@@ -50,13 +43,6 @@ exports[`Carousel navigation does not render navigation if none passed 1`] = `
             </div>
             <div
               className="image-gallery-slide right"
-              onClick={undefined}
-              onMouseLeave={undefined}
-              onMouseOver={undefined}
-              onTouchEnd={undefined}
-              onTouchMove={undefined}
-              onTouchStart={undefined}
-              role={undefined}
               style={
                 Object {
                   "MozTransform": "translate3d(100%, 0, 0)",
@@ -73,13 +59,6 @@ exports[`Carousel navigation does not render navigation if none passed 1`] = `
             </div>
             <div
               className="image-gallery-slide"
-              onClick={undefined}
-              onMouseLeave={undefined}
-              onMouseOver={undefined}
-              onTouchEnd={undefined}
-              onTouchMove={undefined}
-              onTouchStart={undefined}
-              role={undefined}
               style={
                 Object {
                   "MozTransform": "translate3d(200%, 0, 0)",
@@ -96,13 +75,6 @@ exports[`Carousel navigation does not render navigation if none passed 1`] = `
             </div>
             <div
               className="image-gallery-slide"
-              onClick={undefined}
-              onMouseLeave={undefined}
-              onMouseOver={undefined}
-              onTouchEnd={undefined}
-              onTouchMove={undefined}
-              onTouchStart={undefined}
-              role={undefined}
               style={
                 Object {
                   "MozTransform": "translate3d(300%, 0, 0)",
@@ -194,13 +166,6 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
           >
             <div
               className="image-gallery-slide center"
-              onClick={undefined}
-              onMouseLeave={undefined}
-              onMouseOver={undefined}
-              onTouchEnd={undefined}
-              onTouchMove={undefined}
-              onTouchStart={undefined}
-              role={undefined}
               style={
                 Object {
                   "MozTransform": "translate3d(0%, 0, 0)",
@@ -217,13 +182,6 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
             </div>
             <div
               className="image-gallery-slide right"
-              onClick={undefined}
-              onMouseLeave={undefined}
-              onMouseOver={undefined}
-              onTouchEnd={undefined}
-              onTouchMove={undefined}
-              onTouchStart={undefined}
-              role={undefined}
               style={
                 Object {
                   "MozTransform": "translate3d(100%, 0, 0)",
@@ -240,13 +198,6 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
             </div>
             <div
               className="image-gallery-slide"
-              onClick={undefined}
-              onMouseLeave={undefined}
-              onMouseOver={undefined}
-              onTouchEnd={undefined}
-              onTouchMove={undefined}
-              onTouchStart={undefined}
-              role={undefined}
               style={
                 Object {
                   "MozTransform": "translate3d(200%, 0, 0)",
@@ -263,13 +214,6 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
             </div>
             <div
               className="image-gallery-slide"
-              onClick={undefined}
-              onMouseLeave={undefined}
-              onMouseOver={undefined}
-              onTouchEnd={undefined}
-              onTouchMove={undefined}
-              onTouchStart={undefined}
-              role={undefined}
               style={
                 Object {
                   "MozTransform": "translate3d(300%, 0, 0)",
@@ -343,13 +287,6 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
           >
             <div
               className="image-gallery-slide center"
-              onClick={undefined}
-              onMouseLeave={undefined}
-              onMouseOver={undefined}
-              onTouchEnd={undefined}
-              onTouchMove={undefined}
-              onTouchStart={undefined}
-              role={undefined}
               style={
                 Object {
                   "MozTransform": "translate3d(0%, 0, 0)",
@@ -366,13 +303,6 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
             </div>
             <div
               className="image-gallery-slide right"
-              onClick={undefined}
-              onMouseLeave={undefined}
-              onMouseOver={undefined}
-              onTouchEnd={undefined}
-              onTouchMove={undefined}
-              onTouchStart={undefined}
-              role={undefined}
               style={
                 Object {
                   "MozTransform": "translate3d(100%, 0, 0)",
@@ -389,13 +319,6 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
             </div>
             <div
               className="image-gallery-slide"
-              onClick={undefined}
-              onMouseLeave={undefined}
-              onMouseOver={undefined}
-              onTouchEnd={undefined}
-              onTouchMove={undefined}
-              onTouchStart={undefined}
-              role={undefined}
               style={
                 Object {
                   "MozTransform": "translate3d(200%, 0, 0)",
@@ -412,13 +335,6 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
             </div>
             <div
               className="image-gallery-slide"
-              onClick={undefined}
-              onMouseLeave={undefined}
-              onMouseOver={undefined}
-              onTouchEnd={undefined}
-              onTouchMove={undefined}
-              onTouchStart={undefined}
-              role={undefined}
               style={
                 Object {
                   "MozTransform": "translate3d(300%, 0, 0)",
