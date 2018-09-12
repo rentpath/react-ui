@@ -4,9 +4,7 @@ import classnames from 'classnames'
 import { themed } from 'react-themed-too'
 import autobind from 'autobind-decorator'
 
-@themed(/^Overlay/, {
-  pure: true,
-})
+@themed('*')
 export default class Overlay extends PureComponent {
   static propTypes = {
     className: PropTypes.string,

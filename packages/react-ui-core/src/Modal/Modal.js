@@ -6,10 +6,7 @@ import autobind from 'autobind-decorator'
 import ModalBody from './ModalBody'
 import Overlay from './Overlay'
 
-@themed(/^Modal/, {
-  pure: true,
-})
-
+@themed('*')
 export default class Modal extends PureComponent {
   static propTypes = {
     isOpen: PropTypes.bool,

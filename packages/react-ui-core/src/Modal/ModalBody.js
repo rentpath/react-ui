@@ -5,10 +5,7 @@ import classnames from 'classnames'
 import { parseArgs } from '@rentpath/react-ui-utils'
 import ModalCloseButton from './ModalCloseButton'
 
-@themed(/^ModalBody/, {
-  pure: true,
-})
-
+@themed('*')
 export default class ModalBody extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,

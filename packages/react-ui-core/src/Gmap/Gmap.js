@@ -49,7 +49,6 @@ const MAP_CONTROLS = {
 }
 
 @themed(/^Gmap/, { pure: true })
-
 export class Gmap extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,
@@ -192,8 +191,10 @@ export class Gmap extends PureComponent {
   }
 }
 
-EVENT_NAMES.forEach(name => {
-  Gmap.propTypes[name] = PropTypes.func
-})
+if (Gmap && Gmap.propTypes) {
+  EVENT_NAMES.forEach(name => {
+    Gmap.propTypes[name] = PropTypes.func
+  })
+}
 
 export default withGoogleScript(Gmap)

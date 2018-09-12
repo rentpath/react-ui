@@ -3,10 +3,7 @@ import PropTypes from 'prop-types'
 import { themed } from 'react-themed-too'
 import classnames from 'classnames'
 
-@themed(/^CloseButton/, {
-  pure: true,
-})
-
+@themed('*')
 export default class CloseButton extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,
