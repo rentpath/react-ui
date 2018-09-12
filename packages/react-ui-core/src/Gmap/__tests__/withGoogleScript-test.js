@@ -8,13 +8,7 @@ const key = 'AIzaSyDfjkBwG1XzdrC-ceFZqozEGBSQidllL8A'
 describe('withGoogleScript', () => {
   const setup = props => {
     const Component = withGoogleScript('div')
-    const wrapper = shallow(<Component apiKey={key} {...props} />)
-    const instance = wrapper.instance()
-    const scriptLoadedSpy = jest.spyOn(instance, 'scriptLoaded')
-    const loadScriptSpy = jest.spyOn(instance, 'loadScript')
-    const mapLoadedListenerSpy = jest.spyOn(instance, 'mapLoadedListener')
-
-    return { wrapper, instance, scriptLoadedSpy, loadScriptSpy, mapLoadedListenerSpy }
+    return shallow(<Component apiKey={key} {...props} />)
   }
 
   const removeScript = () => {
@@ -31,7 +25,9 @@ describe('withGoogleScript', () => {
     it('adds a loading listener and executes `loadScript` if loaded is false', () => {
       const maps = Object.assign({}, window.google.maps)
       window.google.maps = undefined
-      const { instance, scriptLoadedSpy, loadScriptSpy } = setup()
+      const instance = setup().instance()
+      const scriptLoadedSpy = jest.spyOn(instance, 'scriptLoaded')
+      const loadScriptSpy = jest.spyOn(instance, 'loadScript')
 
       instance.componentDidMount()
 
@@ -41,18 +37,14 @@ describe('withGoogleScript', () => {
     })
 
     describe('initial loaded state', () => {
-      it('returns without doing anything if the loaded is true', () => {
-        const { mapLoadedListenerSpy, loadScriptSpy } = setup({ loaded: true })
-
-        expect(mapLoadedListenerSpy).not.toHaveBeenCalled()
-        expect(loadScriptSpy).not.toHaveBeenCalled()
-      })
-
       describe('loaded: false', () => {
         it('adds a loading listener and executes `loadScript` if window.google.maps does not exist', () => {
           const maps = Object.assign({}, window.google.maps)
           window.google.maps = undefined
-          const { instance, mapLoadedListenerSpy, loadScriptSpy } = setup()
+          const instance = setup().instance()
+          const loadScriptSpy = jest.spyOn(instance, 'loadScript')
+          const mapLoadedListenerSpy = jest.spyOn(instance, 'mapLoadedListener')
+
           instance.componentDidMount()
 
           expect(mapLoadedListenerSpy).toHaveBeenCalled()
@@ -61,7 +53,10 @@ describe('withGoogleScript', () => {
         })
 
         it('adds a loading listener and does executes `loadScript` if window.google.maps exists', () => {
-          const { instance, mapLoadedListenerSpy, loadScriptSpy } = setup()
+          const instance = setup().instance()
+          const loadScriptSpy = jest.spyOn(instance, 'loadScript')
+          const mapLoadedListenerSpy = jest.spyOn(instance, 'mapLoadedListener')
+
           removeScript()
           instance.componentDidMount()
 
@@ -74,7 +69,9 @@ describe('withGoogleScript', () => {
 
   describe('unmount', () => {
     it('removes the listener', () => {
-      const { instance } = setup()
+      removeScript()
+
+      const instance = setup().instance()
       const removeListenerSpy = jest.spyOn(instance, 'removeLoadedListener')
       instance.componentWillUnmount()
 

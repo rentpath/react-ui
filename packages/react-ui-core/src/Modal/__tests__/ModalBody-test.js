@@ -21,17 +21,17 @@ describe('Modal/ModalBody', () => {
   describe('theme', () => {
     const theme = {
       ModalBody: 'foo',
-      Modal_InnerBody: 'body',
+      ModalBody_InnerBody: 'body',
     }
 
-    const wrapper = shallow(<ModalBody theme={theme} />)
-
     it('applies `ModalBody` to `className` on the root node', () => {
+      const wrapper = shallow(<ModalBody theme={theme} />)
       const className = wrapper.prop('className')
       expect(className).toContain('foo')
     })
 
     it('applies `Modal_InnerBody` to the `className` in the child body', () => {
+      const wrapper = shallow(<ModalBody theme={theme} />)
       expect(wrapper.find('div.body').first()).toHaveLength(1)
     })
   })
