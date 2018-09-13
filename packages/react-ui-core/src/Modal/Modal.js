@@ -56,12 +56,15 @@ export default class Modal extends PureComponent {
       ...props
     } = this.props
 
+    console.log('tnehente', theme)
+
     return (
       <Overlay
         onClick={this.overlayClose}
+        foo={'thenokteoh'}
         className={classnames(
           className,
-          theme[`Modal-${this.state.isOpen ? 'open' : 'close'}`],
+          theme[`Modal-close`],
           theme.Modal,
         )}
       >

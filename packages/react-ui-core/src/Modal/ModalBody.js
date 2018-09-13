@@ -44,6 +44,8 @@ export default class ModalBody extends PureComponent {
       ...props
     } = this.props
 
+    console.log('themeeii', theme)
+
     return (
       <div
         className={classnames(
