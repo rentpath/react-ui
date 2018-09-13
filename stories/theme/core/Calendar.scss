@@ -1,17 +1,15 @@
-:global {
-  .react-datepicker {
-    position: absolute;
-    font-size: 0.8rem;
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #aeaeae;
-    border-radius: 0.3rem;
-    left: 6px;
-    width: 230px;
-    top: calc(100% - 6px);
-  }
+.Calendar {
+  position: absolute;
+  font-size: 0.8rem;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #aeaeae;
+  border-radius: 0.3rem;
+  left: 6px;
+  width: 230px;
+  top: calc(100% - 6px);
 
-  .react-datepicker-controls {
+  .Calendar_Controls {
     text-align: center;
     border-bottom: 1px solid #aeaeae;
     border-top-left-radius: 0.3rem;
@@ -19,22 +17,21 @@
     padding: 8px;
     display: flex;
 
-    .react-datepicker-month {
+    .Calender_Month {
       color: #000;
       font-size: 13px;
       font-weight: 700;
       flex-basis: 100%;
     }
 
-    .react-datepicker-previous,
-    .react-datepicker-next {
+    .Calendar_Navigation {
       flex: 1;
       border: 8px solid transparent;
       line-height: 0;
     }
   }
 
-  .react-datepicker-date {
+  .Calendar_Date {
     margin: 0;
     padding: 0;
     font-size: 100%;
@@ -53,24 +50,24 @@
       border-radius: 0.3rem;
       background-color: #f0f0f0;
     }
-  }
 
-  .react-datepicker-date-active {
-    background-color: #216ba5;
-    border-radius: 4px;
-    color: #ccc;
+    &-active {
+      background-color: #216ba5;
+      border-radius: 4px;
+      color: #ccc;
 
-    &:hover {
-      background-color: #1d5d90;
+      &:hover {
+        background-color: #1d5d90;
+      }
     }
-  }
 
-  .react-datepicker-date-disabled {
-    cursor: default;
-    color: #ccc;
+    &-disabled {
+      cursor: default;
+      color: #ccc;
 
-    &:hover {
-      background-color: transparent;
+      &:hover {
+        background-color: transparent;
+      }
     }
   }
 }

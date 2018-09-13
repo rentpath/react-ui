@@ -102,8 +102,8 @@ export {
 } from './Drawer'
 
 export {
-  DateInput,
-} from './DateInput'
+  DatePicker,
+} from './DatePicker'
 
 export {
   Gmap,
