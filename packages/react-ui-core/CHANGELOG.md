@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="16.2.0"></a>
+# [16.2.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.1.0...@rentpath/react-ui-core@16.2.0) (2018-09-13)
+
+
+### Features
+
+* **date-fns:** upgrading package ([7952a39](https://github.com/rentpath/react-ui/commit/7952a39))
+
+
+
+
 <a name="16.1.0"></a>
 # [16.1.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.0.2...@rentpath/react-ui-core@16.1.0) (2018-09-04)
 
