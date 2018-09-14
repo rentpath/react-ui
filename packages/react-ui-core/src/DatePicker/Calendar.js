@@ -115,10 +115,12 @@ export default class Calendar extends PureComponent {
           className,
         )}
         style={{ display: 'inline-block' }}
+        data-tid="calendar"
       >
         <div className={theme.Calendar_Controls}>
           <button
             type="button"
+            data-tid="calendar-previous"
             className={classnames(
               theme.Calendar_Navigation,
               theme['Calendar_Navigation-previous'],
@@ -129,11 +131,15 @@ export default class Calendar extends PureComponent {
               {prevButtonLabel}
             </span>
           </button>
-          <div className={theme.Calendar_Month}>
+          <div
+            data-tid="calendar-month"
+            className={theme.Calendar_Month}
+          >
             {format(this.state.date, 'MMMM YYYY')}
           </div>
           <button
             type="button"
+            data-tid="calendar-next"
             className={classnames(
               theme.Calendar_Navigation,
               theme['Calendar_Navigation-next'],
