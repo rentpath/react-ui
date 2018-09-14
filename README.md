@@ -14,3 +14,49 @@ More Lerna [commands](https://github.com/lerna/lerna#commands). Please use `yarn
 | [`react-ui-ag`](/packages/react-ui-ag) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-ag.svg)](https://www.npmjs.com/package/@rentpath/react-ui-ag) | Apartmentguide.com specific components|
 | [`react-ui-tracking`](/packages/react-ui-tracking) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-tracking.svg)](https://www.npmjs.com/package/@rentpath/react-ui-tracking) | Tracking HOCs and components|
 | [`react-ui-utils`](/packages/react-ui-utils) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-utils.svg)](https://www.npmjs.com/package/@rentpath/react-ui-utils) | Utililty functions used to make things easier in all repos|
+
+## Working Locally
+
+Follow these steps to work with your local files instead of the published versions:
+
+1. cd into the react-ui package root folder, e.g. `packages/react-ui-core`
+1. run `yarn`
+1. run `yarn build:watch` (this will run through all files, then ony change what's needed thereafter)
+1. run `yarn link` (in `packages/react-ui-core`)
+1. in your project's root folder, run `yarn link @rentpath/react-ui-core`
+
+## react-themed
+
+All react components use [react-themed](https://github.com/babel/babel/blob/master/doc/design/monorepo.md) when needed. Please read the documenation if you're not familiar with it.
+
+### CEM (BEM) syntax and classnames
+
+For information on BEM, please [read](http://getbem.com/introduction/)
+
+All components should follow a CEM (Component Element Modifier) syntax.  The top level element in your component should usually have the component name as the className. Every child should use the Component className as a prefix _unless_ you are importing another component that has already been themed. A good rule of thumb to use:
+
+```
+import classnames from 'classnames'
+import Button from './Button'
+
+class SomeComponent extends PureComponent {
+  render() {
+    const { theme, className } = this.props
+
+    return (
+      <div
+        className={classnames(
+          theme.SomeComponent,
+          className,
+        )}
+      >
+        <span>My Component</span>
+        <Button>GenericButton</Button>
+        <Button className={theme[Button-red']}>Some red button</Button>
+      </div>
+    )
+  }
+}
+```
+
+Notice the above.  The top level component uses [classnames](https://github.com/JedWatson/classnames) to include the base class (`SomeComponent`) and the ability to pass in a custom `className` prop.  The first `<Button>` does not get a className because it is already themed.  The second `<Button className={theme[Button-red']}>` component takes in a className with a modifier that gets appended to button the same way the top level component uses classnames.
