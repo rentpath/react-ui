@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="16.2.2"></a>
+## [16.2.2](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.2.1...@rentpath/react-ui-core@16.2.2) (2018-09-14)
+
+
+### Bug Fixes
+
+* **@rentpath/react-ui-core:** if the Photo component was SSR, it would not update with onError ([c37bcb6](https://github.com/rentpath/react-ui/commit/c37bcb6))
+
+
+
+
 <a name="16.2.1"></a>
 ## [16.2.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.2.0...@rentpath/react-ui-core@16.2.1) (2018-09-14)
 
