@@ -78,7 +78,7 @@ Modifier is always prefixed with `-` and camelCased
 
 Examples
 
-| Name | C | E | M |
+| className | C | E | M |
 |--------------------|---|---|---|
 | .SomeComponent | X | | |
 | .SomeComponent_Navigation | X | X | |
