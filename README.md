@@ -15,6 +15,14 @@ More Lerna [commands](https://github.com/lerna/lerna#commands). Please use `yarn
 | [`react-ui-tracking`](/packages/react-ui-tracking) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-tracking.svg)](https://www.npmjs.com/package/@rentpath/react-ui-tracking) | Tracking HOCs and components|
 | [`react-ui-utils`](/packages/react-ui-utils) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-utils.svg)](https://www.npmjs.com/package/@rentpath/react-ui-utils) | Utililty functions used to make things easier in all repos|
 
+## Commitizen
+
+This project uses [commitizen](https://github.com/commitizen/cz-cli).  This allows us to automate CHANGLELOGs and version bumps in each repository.  It will include your commit in the changelog by using `git cz` when you commit
+
+Anything that is included in the `BREAKING_CHANGES` section of the prompt will automatically bump the package version for the repo to a major version.
+
+Also, please keep in mind your `scope` should be what you were working. It should be something like `form` or `listing` or `photo`.  The short description of change should be precise as it's what you will see in the CHANGELOG (along with the scope).  
+
 ## Working Locally
 
 Follow these steps to work with your local files instead of the published versions:
