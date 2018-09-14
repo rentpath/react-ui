@@ -68,3 +68,22 @@ class SomeComponent extends PureComponent {
 ```
 
 Notice the above.  The top level component uses [classnames](https://github.com/JedWatson/classnames) to include the base class (`SomeComponent`) and the ability to pass in a custom `className` prop.  The first `<Button>` does not get a className because it is already themed.  The second `<Button className={theme[Button-red']}>` component takes in a className with a modifier that gets appended to button the same way the top level component uses classnames.
+
+#### Naming conventions
+```
+.Component_Element-modifier
+```
+Element is always prefixed with `_` and [PascalCased](http://wiki.c2.com/?PascalCase)
+Modifier is always prefixed with `-` and camelCased
+
+Examples
+
+| Name | C | E | M |
+|--------------------|---|---|---|
+| .SomeComponent | X | | |
+| .SomeComponent_Navigation | X | X | |
+| .SomeComponent_NavigationControls | X | X | |
+| .SomeComponent-red | X | | X |
+| .SomeComponent-isActive | X | | X |
+| .SomeComponent_Navigation-next | X | X | X |
+| .SomeComponent_NavigationControls-invalidError | X | X | X |
