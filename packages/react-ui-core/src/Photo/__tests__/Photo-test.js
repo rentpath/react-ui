@@ -22,6 +22,23 @@ describe('Photo', () => {
     expect(wrapper.prop('data-tag_foo')).toEqual('testing')
   })
 
+  describe('componentDidMount()', () => {
+    it('sets state mounted to true and displays picture', () => {
+      const wrapper = setup()
+      wrapper.setState({ mounted: false })
+      const instance = wrapper.instance()
+      instance.componentDidMount()
+      expect(wrapper.state('mounted')).toEqual(true)
+    })
+
+    it('returns null if component has not mounted', () => {
+      const wrapper = setup()
+      wrapper.setState({ mounted: false })
+      expect(wrapper.state('mounted')).not.toEqual(true)
+      expect(wrapper.find('img')).toHaveLength(0)
+    })
+  })
+
   describe('componentWillReceiveProps', () => {
     it('resets the state with a new url when the url has changed', () => {
       const wrapper = setup()
