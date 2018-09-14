@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="16.2.1"></a>
+## [16.2.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.2.0...@rentpath/react-ui-core@16.2.1) (2018-09-14)
+
+
+### Bug Fixes
+
+* **datepicker:** adding data-tids to calendar ([b9be980](https://github.com/rentpath/react-ui/commit/b9be980))
+
+
+
+
 <a name="16.2.0"></a>
 # [16.2.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.1.0...@rentpath/react-ui-core@16.2.0) (2018-09-13)
 
