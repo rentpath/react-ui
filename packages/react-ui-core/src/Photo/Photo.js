@@ -38,6 +38,12 @@ export default class Photo extends PureComponent {
     }
   }
 
+  componentDidMount() {
+    /* eslint-disable react/no-did-mount-set-state */
+    this.setState({ mounted: true })
+    /* eslint-enable react/no-did-mount-set-state */
+  }
+
   componentWillReceiveProps(nextProps, nextState) {
     const { url } = nextState || {}
 
@@ -110,6 +116,7 @@ export default class Photo extends PureComponent {
       ...rest
     } = this.props
 
+    if (!this.state.mounted) return null
     const { url, error } = this.state
 
     const imageTag = (<img
