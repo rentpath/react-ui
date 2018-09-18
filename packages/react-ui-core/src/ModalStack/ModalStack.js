@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom'
 import autobind from 'autobind-decorator'
 import PropTypes from 'prop-types'
 import get from 'lodash/fp/get'
-import getOr from 'lodash/fp/getOr'
 import Overlay from '../Modal/Overlay'
 
 //
@@ -34,7 +33,7 @@ export default class ModalStack extends PureComponent {
   static defaultProps = {
     overlay: false,
     modalPortalId: 'region-modal',
-    onClose: () => { },
+    onClose: () => {},
   }
 
   constructor(props) {
@@ -50,8 +49,6 @@ export default class ModalStack extends PureComponent {
   }
 
   componentDidUpdate() {
-    // Change to didRecieveProps in future - though, in async rendering update,
-    // can resolve the correct component earlier
     const { currentModal: { id = null }, modalDefinitions } = this.props
 
     if (id && !this.getModalComponent(id)) {
@@ -59,15 +56,15 @@ export default class ModalStack extends PureComponent {
 
       if (modalDefinition) {
         this.loadModal(modalDefinition).then(modal => {
-          this.setState({
-            currentDefinition: modalDefinition,
-            modals: {
-              ...this.state.modals,
-              // Need to test this, but this should help in case we are in an app
-              // that doesn't do auto module export of default
-              [id]: getOr(modal, 'default')(modal),
-            },
-          })
+          if (modal) {
+            this.setState({
+              currentDefinition: modalDefinition,
+              modals: {
+                ...this.state.modals,
+                [id]: modal,
+              },
+            })
+          }
         })
       }
     }
@@ -114,7 +111,7 @@ export default class ModalStack extends PureComponent {
 
   async loadModal(definition) {
     const result = await definition.resolve()
-    return result[definition.name]
+    return result[definition.name] || result.default
   }
 
   @autobind
