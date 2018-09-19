@@ -4,7 +4,7 @@ import Gmap from '../Gmap'
 
 const key = 'api-key'
 
-describe('ag/Gmap', () => {
+describe('Gmap', () => {
   it('applies an `apiKey`', () => {
     const wrapper = shallow(<Gmap apiKey={key} />)
     expect(wrapper.prop('apiKey')).toEqual('api-key')

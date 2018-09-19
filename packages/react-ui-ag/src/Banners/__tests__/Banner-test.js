@@ -5,7 +5,7 @@ import ThemedBanner from '../Banner'
 
 const Banner = ThemedBanner.WrappedComponent
 
-describe('ag/Banners/Banner', () => {
+describe('Banner', () => {
   it('renders a banner using the Text component', () => {
     const wrapper = shallow(<Banner name="coupon" />)
     expect(wrapper.find('Themed(Text)')).toHaveLength(1)

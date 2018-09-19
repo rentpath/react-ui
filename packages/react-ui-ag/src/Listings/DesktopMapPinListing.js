@@ -142,7 +142,7 @@ export default class DesktopMapPinListing extends PureComponent {
               href={listing.url}
               className={theme.PropertyLink}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               <ListingComponents.Address />
             </a>

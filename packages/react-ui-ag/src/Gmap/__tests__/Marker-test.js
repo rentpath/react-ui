@@ -4,7 +4,7 @@ import Marker from '../Marker'
 
 const map = { google: 'map' }
 
-describe('ag/Marker', () => {
+describe('Marker', () => {
   it('applies extra props correctly', () => {
     const wrapper = shallow(<Marker map={map} data-tag_section="marker-tag" />)
     expect(wrapper.prop('data-tag_section')).toEqual('marker-tag')
