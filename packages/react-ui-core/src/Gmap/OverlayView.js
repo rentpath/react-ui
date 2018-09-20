@@ -21,6 +21,13 @@ export default class OverlayView extends PureComponent {
     theme: {},
   }
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      initialized: false,
+    }
+  }
+
   componentDidMount() {
     this.initOverlayView()
   }
@@ -89,6 +96,10 @@ export default class OverlayView extends PureComponent {
     this.overlay.draw = this.drawOverlay.bind(this)
 
     this.overlay.setMap(map)
+
+    this.setState({
+      initialized: true,
+    })
   }
 
   preventBubbleEvents() {
@@ -136,7 +147,7 @@ export default class OverlayView extends PureComponent {
   }
 
   render() {
-    if (!this.container) return null
+    if (!this.container || !this.state.initialized) return null
 
     return ReactDOM.createPortal(
       React.Children.only(this.props.children),

@@ -48,4 +48,10 @@ describe('OverlayView', () => {
     const expected = wrapper.instance().eventBlacklist
     expect(expected).toMatchSnapshot()
   })
+
+  it('updates state after setting up container', () => {
+    const wrapper = createOverlayView()
+    expect(wrapper.state().initialized).toEqual(true)
+    expect(wrapper.instance().container).toBeDefined()
+  })
 })
