@@ -15,10 +15,10 @@ export default class Overlay extends PureComponent {
     onClick: PropTypes.func,
     theme: PropTypes.object,
     children: PropTypes.node,
+    isOpen: PropTypes.bool,
   }
 
   static defaultProps = {
-    styles: {},
     theme: {},
   }
 
@@ -58,18 +58,20 @@ export default class Overlay extends PureComponent {
   }
 
   render() {
-    const { className, theme, children } = this.props
+    const { className, theme, children, isOpen, ...rest } = this.props
 
     return (
       <div
         ref={node => { this.overlay = node }}
         role="presentation"
+        {...rest}
         onMouseDown={this.handleMouseDown}
         onMouseUp={this.handleMouseUp}
         onClick={this.handleClick}
         className={classnames(
           className,
           theme.Overlay,
+          theme[`Overlay-${isOpen ? 'open' : 'close'}`],
         )}
       >
         {children}

@@ -6,7 +6,7 @@ import ThemedRadioGroupFilterCard from '../RadioGroupFilterCard'
 
 const RadioGroupFilterCard = ThemedRadioGroupFilterCard.WrappedComponent
 
-describe('ag/Filters/RadioGroupFilterCard', () => {
+describe('RadioGroupFilterCard', () => {
   const props = {
     title: 'cool title',
     description: 'awesome description',

@@ -258,7 +258,7 @@ export default class MobileMapListing extends Component {
               href={listing.url}
               className={theme.PropertyLink}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               <ListingComponents.PropertyName {...propertyName} />
             </a>

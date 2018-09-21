@@ -1,14 +1,18 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
+import { parseArgs } from '@rentpath/react-ui-utils'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
-import ModalBody from './ModalBody'
 import Overlay from './Overlay'
+import ModalCloseButton from './ModalCloseButton'
 
-@themed(/^Modal/, {
-  pure: true,
-})
+const dataAttrs = props => Object.keys(props).reduce((acc, key) => {
+  if (/data-tag/.test(key)) acc[key] = props[key]
+  return acc
+}, {})
+
+@themed(/^Modal/, { pure: true })
 
 export default class Modal extends PureComponent {
   static propTypes = {
@@ -18,12 +22,18 @@ export default class Modal extends PureComponent {
     closeOnOverlayClick: PropTypes.bool,
     className: PropTypes.string,
     children: PropTypes.any,
+    hasOverlay: PropTypes.bool,
+    CloseButton: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.node,
+      PropTypes.object,
+    ]),
   }
 
   static defaultProps = {
     isOpen: false,
     theme: {},
-    onClose: () => { },
+    hasOverlay: true,
     closeOnOverlayClick: true,
   }
 
@@ -43,6 +53,35 @@ export default class Modal extends PureComponent {
     return closeOnOverlayClick ? this.handleClose : undefined
   }
 
+  get closeButton() {
+    const { CloseButton } = this.props
+
+    if (CloseButton) {
+      const [Close, props] = parseArgs(CloseButton, ModalCloseButton)
+      return <Close {...props} onClick={this.overlayClose} />
+    }
+
+    return null
+  }
+
+  get wrapper() {
+    const { hasOverlay } = this.props
+    const { isOpen } = this.state
+
+    if (hasOverlay) {
+      return {
+        Component: Overlay,
+        props: {
+          onClick: this.overlayClose,
+          isOpen,
+          ...dataAttrs(this.props),
+        },
+      }
+    }
+
+    return { Component: Fragment, props: {} }
+  }
+
   @autobind
   handleClose() {
     this.setState({ isOpen: false })
@@ -55,23 +94,30 @@ export default class Modal extends PureComponent {
       theme,
       className,
       children,
+      onClose,
+      CloseButton,
+      hasOverlay,
       closeOnOverlayClick,
       ...props
     } = this.props
 
+    const Wrapper = this.wrapper
+
     return (
-      <Overlay
-        onClick={this.overlayClose}
-        className={classnames(
-          className,
-          theme[`Modal-${this.state.isOpen ? 'open' : 'close'}`],
-          theme.Modal,
-        )}
-      >
-        <ModalBody {...props} onClose={this.handleClose}>
+      <Wrapper.Component {...Wrapper.props}>
+        <div
+          data-tid="modal"
+          {...props}
+          className={classnames(
+            className,
+            theme[`Modal-${isOpen ? 'open' : 'close'}`],
+            theme.Modal
+          )}
+        >
+          {this.closeButton}
           {children}
-        </ModalBody>
-      </Overlay>
+        </div>
+      </Wrapper.Component>
     )
   }
 }

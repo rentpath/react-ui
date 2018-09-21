@@ -28,7 +28,6 @@ setOptions({
 const loadStories = () => {
   require('../stories/core')
   require('../stories/rent')
-  require('../stories/rentals')
   require('../stories/ag')
 }
 

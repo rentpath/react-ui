@@ -1,9 +1,9 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { PureComponent } from 'react'
 import { createPortal } from 'react-dom'
+import themed from 'react-themed'
 import autobind from 'autobind-decorator'
 import PropTypes from 'prop-types'
 import get from 'lodash/fp/get'
-import Overlay from '../Modal/Overlay'
 
 //
 // Expects currentModal to come in as an object that looks like
@@ -21,7 +21,7 @@ import Overlay from '../Modal/Overlay'
 //   },
 // }
 //
-
+@themed(['Overlay-lock'], { pure: true })
 export default class ModalStack extends PureComponent {
   static propTypes = {
     currentModal: PropTypes.object,
@@ -33,7 +33,8 @@ export default class ModalStack extends PureComponent {
   static defaultProps = {
     overlay: false,
     modalPortalId: 'region-modal',
-    onClose: () => {},
+    onClose: () => { },
+    theme: {},
   }
 
   constructor(props) {
@@ -92,26 +93,17 @@ export default class ModalStack extends PureComponent {
     }
   }
 
-  @autobind
-  getWrapperComponent(useOverlay) {
-    const { currentModal } = this.props
-    return useOverlay
-      ? {
-        Component: Overlay,
-        props: {
-          key: `overlay-${currentModal.id}`,
-          onClick: this.onClose,
-        },
-      }
-      : {
-        Component: Fragment,
-        props: {},
-      }
-  }
-
   async loadModal(definition) {
     const result = await definition.resolve()
     return result[definition.name] || result.default
+  }
+
+  toggleBodyClass(toggle) {
+    const { theme } = this.props
+
+    if (this.modalHost) {
+      document.body.classList.toggle(theme['Overlay-lock'], toggle)
+    }
   }
 
   @autobind
@@ -119,21 +111,21 @@ export default class ModalStack extends PureComponent {
     const { currentModal } = this.props
     const { currentDefinition } = this.state
     const ModalComponent = this.getModalComponent(currentModal.id)
-
-    const Wrapper = this.getWrapperComponent(currentDefinition.overlay)
+    const hasOverlay = currentDefinition.overlay
 
     if (ModalComponent) {
+      this.toggleBodyClass(true)
       return (
-        <Wrapper.Component {...Wrapper.props}>
-          <ModalComponent
-            key={`modal-${currentModal.id}`}
-            isOpen
-            onClose={this.onClose}
-            {...currentModal.props}
-          />
-        </Wrapper.Component>
+        <ModalComponent
+          key={`modal-${currentModal.id}`}
+          isOpen
+          hasOverlay={hasOverlay}
+          onClose={this.onClose}
+          {...currentModal.props}
+        />
       )
     }
+
     return null
   }
 
@@ -143,6 +135,8 @@ export default class ModalStack extends PureComponent {
     if (currentModal && currentModal.id && this.modalHost) {
       return createPortal(this.renderModals(), this.modalHost)
     }
+
+    this.toggleBodyClass(false)
     return null
   }
 }
