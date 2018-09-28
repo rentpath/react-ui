@@ -54,21 +54,25 @@ export default class Dropdown extends Component {
     const { onVisibilityChange, toggleOnSelect } = this.props
     const visible = toggleOnSelect ? !this.state.visible : true
 
-    this.setState({ visible })
     if (this.state.visible !== visible) {
       onVisibilityChange(visible)
+      this.setState({ visible })
     }
   }
 
   @autobind
-  changeVisibility(visible) {
-    this.props.onVisibilityChange(visible)
-    this.setState({ visible })
-  }
-
-  @autobind
   handleDocumentClick(event) {
-    if (this.state.visible && !this.dropdown.contains(event.target)) {
+    const eventTarget = event.target
+    const parentTarget = event.target.parentNode
+    const parentIsDropdown = this.dropdown.contains(parentTarget) &&
+      parentTarget.dataset.self === 'dropdown'
+
+    const targetIsDropdown = this.dropdown.contains(eventTarget) ||
+      parentIsDropdown
+
+    const shouldFireEvent = this.state.visible && !targetIsDropdown
+
+    if (shouldFireEvent) {
       this.setState({ visible: false })
       this.props.onVisibilityChange(false)
     }
@@ -115,6 +119,7 @@ export default class Dropdown extends Component {
           className
         )}
         {...props}
+        data-self="dropdown"
       >
         {this.renderAnchor()}
         {this.state.visible &&
