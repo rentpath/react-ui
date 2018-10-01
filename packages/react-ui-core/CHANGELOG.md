@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="16.2.4"></a>
+## [16.2.4](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.2.3...@rentpath/react-ui-core@16.2.4) (2018-10-01)
+
+
+### Bug Fixes
+
+* **Dropdown:** check event target and event parent with specific data for handleDocumentClick ([84e5ee9](https://github.com/rentpath/react-ui/commit/84e5ee9))
+
+
+
+
 <a name="16.2.3"></a>
 ## [16.2.3](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.2.2...@rentpath/react-ui-core@16.2.3) (2018-09-21)
 
