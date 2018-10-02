@@ -33,7 +33,7 @@ export default class CloseButton extends PureComponent {
           className,
           theme.CloseButton
         )}
-        data-tid="modal-close-button"
+        data-tid="close-modal"
         {...props}
       >
         {children}

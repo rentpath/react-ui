@@ -58,7 +58,13 @@ export default class Modal extends PureComponent {
 
     if (CloseButton) {
       const [Close, props] = parseArgs(CloseButton, ModalCloseButton)
-      return <Close {...props} onClick={this.overlayClose} />
+      return (
+        <Close
+          data-tid="close-modal"
+          {...props}
+          onClick={this.overlayClose}
+        />
+      )
     }
 
     return null
