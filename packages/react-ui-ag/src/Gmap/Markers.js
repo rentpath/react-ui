@@ -38,16 +38,17 @@ export default class Markers extends PureComponent {
 
     return feature => {
       const isBasic = get(feature, 'properties.isBasic', false)
+      const scale = get(feature, 'properties.iconScale', 1)
       const icon = !isBasic ? markerIcon : markerInactiveIcon
 
       return {
-        icon: icon(),
+        icon: icon(scale),
         onMouseOver: (event, props, marker) => {
-          if (markerIconHover) marker.setIcon(markerIconHover())
+          if (markerIconHover) marker.setIcon(markerIconHover(scale))
           if (onMouseOver) onMouseOver(marker)
         },
         onMouseOut: (event, props, marker) => {
-          marker.setIcon(icon())
+          marker.setIcon(icon(scale))
           if (onMouseOut) onMouseOut(marker)
         },
         ...this.props.marker(feature),
