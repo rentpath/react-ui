@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="16.2.5"></a>
+## [16.2.5](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.2.4...@rentpath/react-ui-core@16.2.5) (2018-10-02)
+
+
+### Bug Fixes
+
+* **modal:** add data-tid to modal close button ([a6ed1ce](https://github.com/rentpath/react-ui/commit/a6ed1ce))
+
+
+
+
 <a name="16.2.4"></a>
 ## [16.2.4](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.2.3...@rentpath/react-ui-core@16.2.4) (2018-10-01)
 
