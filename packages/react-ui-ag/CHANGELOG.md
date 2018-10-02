@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="11.2.0"></a>
+# [11.2.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@11.1.5...@rentpath/react-ui-ag@11.2.0) (2018-10-02)
+
+
+### Features
+
+* **Markers:** add ability to specify scale of marker icons ([66f3e7f](https://github.com/rentpath/react-ui/commit/66f3e7f))
+
+
+
+
 <a name="11.1.5"></a>
 ## [11.1.5](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@11.1.4...@rentpath/react-ui-ag@11.1.5) (2018-10-01)
 
