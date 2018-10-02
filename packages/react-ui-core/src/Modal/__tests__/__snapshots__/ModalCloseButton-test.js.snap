@@ -3,7 +3,7 @@
 exports[`ModalCloseButton renders children passed 1`] = `
 <div
   className=""
-  data-tid="modal-close-button"
+  data-tid="close-modal"
 >
   Close
 </div>
@@ -12,7 +12,7 @@ exports[`ModalCloseButton renders children passed 1`] = `
 exports[`ModalCloseButton renders default children if none passed 1`] = `
 <div
   className=""
-  data-tid="modal-close-button"
+  data-tid="close-modal"
 >
   X
 </div>
