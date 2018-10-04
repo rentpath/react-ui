@@ -102,7 +102,7 @@ export default class Dropdown extends Component {
   render() {
     const {
       theme,
-      visible,
+      visible: _,
       children,
       anchorField,
       className,
@@ -111,18 +111,21 @@ export default class Dropdown extends Component {
       ...props
     } = this.props
 
+    const { visible } = this.state
+
     return (
       <div
         ref={ref => { this.dropdown = ref }}
         className={classnames(
           theme.Dropdown,
-          className
+          className,
+          theme[`Dropdown-${visible ? 'expand' : 'collapse'}`]
         )}
         {...props}
         data-self="dropdown"
       >
         {this.renderAnchor()}
-        {this.state.visible &&
+        {visible &&
           <div data-tid="dropdown-body" className={theme.Dropdown_Body}>
             {this.renderChildren()}
           </div>
