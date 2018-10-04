@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="16.2.6"></a>
+## [16.2.6](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.2.5...@rentpath/react-ui-core@16.2.6) (2018-10-04)
+
+
+### Bug Fixes
+
+* **Dropdown:** add conditional CSS className for Dropdown ([b101a59](https://github.com/rentpath/react-ui/commit/b101a59))
+
+
+
+
 <a name="16.2.5"></a>
 ## [16.2.5](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.2.4...@rentpath/react-ui-core@16.2.5) (2018-10-02)
 
