@@ -20,20 +20,32 @@ describe('ag/Markers', () => {
         icon: redDotIcon(),
         onMouseOver: expect.any(Function),
         onMouseOut: expect.any(Function),
-        zIndex: 2,
+        zIndex: 1,
       })
     })
 
-    it('uses a redDotIcon with zIndex of 2 for non-basic properties', () => {
+    it('uses a redDotIcon with zIndex of 2 for aptguide properties', () => {
       const feature = {
         properties: {
-          isBasic: false,
+          source: 'aptguide',
         },
       }
       const wrapper = shallow(<Markers map={map} markerIconHover={NOOP} />)
       const instance = wrapper.instance()
       expect(instance.marker(feature).icon).toEqual(redDotIcon())
       expect(instance.marker(feature).zIndex).toEqual(2)
+    })
+
+    it('uses a redDotIcon with zIndex of 1 for non-aptguide properties', () => {
+      const feature = {
+        properties: {
+          source: 'foo',
+        },
+      }
+      const wrapper = shallow(<Markers map={map} markerIconHover={NOOP} />)
+      const instance = wrapper.instance()
+      expect(instance.marker(feature).icon).toEqual(redDotIcon())
+      expect(instance.marker(feature).zIndex).toEqual(1)
     })
 
     it('uses a greyDotIcon with zIndex of 1 for isBasic properties', () => {
@@ -124,7 +136,7 @@ describe('ag/Markers', () => {
         icon: blackDotIconWithBalloon(),
         onMouseOver: expect.any(Function),
         onMouseOut: expect.any(Function),
-        zIndex: 2,
+        zIndex: 1,
       })
     })
 
