@@ -39,6 +39,8 @@ export default class Markers extends PureComponent {
     return feature => {
       const isBasic = get(feature, 'properties.isBasic', false)
       const scale = get(feature, 'properties.iconScale', 1)
+      const source = get(feature, 'properties.source', '')
+      const zIndex = typeof source === 'string' && source.toLowerCase() === 'aptguide' ? 2 : 1
       const icon = !isBasic ? markerIcon : markerInactiveIcon
 
       return {
@@ -52,7 +54,7 @@ export default class Markers extends PureComponent {
           if (onMouseOut) onMouseOut(marker)
         },
         ...this.props.marker(feature),
-        zIndex: !isBasic ? 2 : 1,
+        zIndex,
       }
     }
   }
