@@ -1,6 +1,6 @@
 import React from 'react'
+import { Gmap } from 'react-ui-core/src'
 import {
-  Gmap,
   PdpMap as Pdp,
   Marker,
   Markers,

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
+import { Gmap } from '@rentpath/react-ui-core'
 import Marker from './Marker'
-import Gmap from './Gmap'
 import { blackDotIconWithBalloon } from './markerIcons'
 
 export default class PdpMap extends PureComponent {
