@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import { omit } from 'lodash'
+import omit from 'lodash/omit'
 import { Button, RatingBar, ToggleButton, ListingComponents } from '@rentpath/react-ui-core'
 import ThemedMobileMapListing from '../MobileMapListing'
 import theme from './mocks/theme'

@@ -1,6 +1,17 @@
 {
   "env": {
-    "production": {
+    "es": {
+      "presets": [
+        "react"
+      ],
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-class-properties",
+        "babel-plugin-transform-object-rest-spread",
+        "dynamic-import-webpack"
+      ]
+    },
+    "cjs": {
       "presets": [
         "env",
         "react"

@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import { omit } from 'lodash'
+import omit from 'lodash/omit'
 import { Button, ToggleButton, ListingComponents } from '@rentpath/react-ui-core'
 import ThemedSingleFamilyDesktopListing from '../Listing'
 import theme from './mocks/theme'
