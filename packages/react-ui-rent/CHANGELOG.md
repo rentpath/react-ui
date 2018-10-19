@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.3.0"></a>
+# [4.3.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-rent@4.2.19...@rentpath/react-ui-rent@4.3.0) (2018-10-19)
+
+
+### Features
+
+* **es:** adding es modules to package ([db502fa](https://github.com/rentpath/react-ui/commit/db502fa))
+
+
+
+
 <a name="4.2.19"></a>
 ## [4.2.19](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-rent@4.2.18...@rentpath/react-ui-rent@4.2.19) (2018-10-04)
 

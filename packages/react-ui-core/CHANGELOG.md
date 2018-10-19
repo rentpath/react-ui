@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="16.3.0"></a>
+# [16.3.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.2.6...@rentpath/react-ui-core@16.3.0) (2018-10-19)
+
+
+### Features
+
+* **es:** adding es modules to package ([db502fa](https://github.com/rentpath/react-ui/commit/db502fa))
+
+
+
+
 <a name="16.2.6"></a>
 ## [16.2.6](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@16.2.5...@rentpath/react-ui-core@16.2.6) (2018-10-04)
 

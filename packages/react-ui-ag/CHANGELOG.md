@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="11.3.0"></a>
+# [11.3.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@11.2.1...@rentpath/react-ui-ag@11.3.0) (2018-10-19)
+
+
+### Features
+
+* **es:** adding es modules to package ([db502fa](https://github.com/rentpath/react-ui/commit/db502fa))
+* **Markers:** zIndex aptguide map pins above other pins ([5a09b36](https://github.com/rentpath/react-ui/commit/5a09b36))
+
+
+
+
 <a name="11.2.1"></a>
 ## [11.2.1](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@11.2.0...@rentpath/react-ui-ag@11.2.1) (2018-10-04)
 
