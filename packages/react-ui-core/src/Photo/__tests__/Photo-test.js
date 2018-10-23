@@ -5,6 +5,7 @@ import ThemedPhoto from '../Photo'
 
 const Photo = ThemedPhoto.WrappedComponent
 const url = '/foo'
+const fallbackUrl = '/fallbackWah'
 
 describe('Photo', () => {
   const setup = props => (
@@ -23,19 +24,28 @@ describe('Photo', () => {
   })
 
   describe('componentDidMount()', () => {
-    it('sets state mounted to true and displays picture', () => {
-      const wrapper = setup()
-      wrapper.setState({ mounted: false })
+    it('sets state error to true if img src is the fallbackUrl', () => {
+      const wrapper = setup({ fallbackUrl })
+      wrapper.setState({ error: false })
       const instance = wrapper.instance()
+      instance.img = { current: { src: fallbackUrl } }
       instance.componentDidMount()
-      expect(wrapper.state('mounted')).toEqual(true)
+
+      expect(wrapper.state('error')).toEqual(true)
+      expect(wrapper.find('img')).toHaveLength(1)
+      expect(wrapper.find('img').prop('src')).toEqual(fallbackUrl)
     })
 
-    it('returns null if component has not mounted', () => {
-      const wrapper = setup()
-      wrapper.setState({ mounted: false })
-      expect(wrapper.state('mounted')).not.toEqual(true)
-      expect(wrapper.find('img')).toHaveLength(0)
+    it('returns null if img src is not the fallbackUrl', () => {
+      const wrapper = setup({ fallbackUrl })
+      wrapper.setState({ error: false })
+      const instance = wrapper.instance()
+      instance.img = { current: { src: '/foo' } }
+      instance.componentDidMount()
+
+      expect(wrapper.state('error')).not.toEqual(true)
+      expect(wrapper.find('img')).toHaveLength(1)
+      expect(wrapper.find('img').prop('src')).toEqual(url)
     })
   })
 
@@ -52,9 +62,12 @@ describe('Photo', () => {
 
   describe('fallback', () => {
     it('only sets the error to true', () => {
-      const wrapper = setup()
-      wrapper.instance().fallback()
+      const wrapper = setup({ fallbackUrl })
+      const instance = wrapper.instance()
+      instance.fallback({ target: { src: '/foo' } })
+
       expect(wrapper.state('error')).toEqual(true)
+      expect(wrapper.find('img').prop('src')).toEqual(url)
     })
   })
 
@@ -67,14 +80,6 @@ describe('Photo', () => {
         .create(<Photo url={url} alt="foo alt text" />)
         .toJSON()
       expect(snap).toMatchSnapshot()
-    })
-
-    it('uses the `fallbackUrl` when a loading error has happened', () => {
-      const fallbackUrl = '/wahwah'
-      const wrapper = setup({ fallbackUrl })
-
-      wrapper.setState({ error: true })
-      expect(wrapper.prop('src')).toEqual(fallbackUrl)
     })
   })
 

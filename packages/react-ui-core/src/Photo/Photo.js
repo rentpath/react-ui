@@ -32,15 +32,18 @@ export default class Photo extends PureComponent {
   constructor(props) {
     super(props)
 
+    this.img = React.createRef()
+
     this.state = {
       url: this.props.url,
-      error: false,
     }
   }
 
   componentDidMount() {
     /* eslint-disable react/no-did-mount-set-state */
-    this.setState({ mounted: true })
+    if (this.isFallback) {
+      this.setState({ error: true })
+    }
     /* eslint-enable react/no-did-mount-set-state */
   }
 
@@ -98,9 +101,20 @@ export default class Photo extends PureComponent {
     )
   }
 
+  get isFallback() {
+    return this.img.current && (this.img.current.src === this.props.fallbackUrl)
+  }
+
   @autobind
-  fallback() {
-    if (!this.state.error) {
+  fallback(e) {
+    const { fallbackUrl } = this.props
+
+    if (e.target.src !== fallbackUrl) {
+      e.target.src = fallbackUrl
+      // force a re-render
+      // this is done in case of race condtion in terms of
+      // being in limbo from ssr and client side state
+      // or this happening sometime after hte component has mounted
       this.setState({ error: true })
     }
   }
@@ -116,23 +130,23 @@ export default class Photo extends PureComponent {
       ...rest
     } = this.props
 
-    if (!this.state.mounted) return null
-    const { url, error } = this.state
+    const isFallback = this.isFallback
 
     const imageTag = (<img
-      src={error ? fallbackUrl : url}
+      src={isFallback ? fallbackUrl : this.state.url}
       alt={alt}
       data-tid="photo"
+      ref={this.img}
       className={classnames(
         className,
         theme.Photo,
-        error && theme['Photo-error'],
+        isFallback && theme['Photo-error'],
       )}
       onError={this.fallback}
       {...rest}
     />)
 
-    if (error || !this.sourceTags) return imageTag
+    if (isFallback || !this.sourceTags) return imageTag
 
     return (
       <picture>
