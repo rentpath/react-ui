@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-ag",
-  "version": "11.3.1",
+  "version": "11.3.2",
   "main": "lib/index.js",
   "module": "es/index.js",
   "license": "MIT",
@@ -54,7 +54,7 @@
     "react-test-renderer": "^16.5.2"
   },
   "dependencies": {
-    "@rentpath/react-ui-core": "16.3.1",
+    "@rentpath/react-ui-core": "16.3.2",
     "@rentpath/react-ui-utils": "4.2.2",
     "classnames": "2.2.6",
     "react-lazyload": "2.3.0",
