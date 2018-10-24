@@ -109,14 +109,22 @@ export default class Photo extends PureComponent {
   fallback(e) {
     const { fallbackUrl } = this.props
 
-    if (e.target.src !== fallbackUrl) {
-      e.target.src = fallbackUrl
-      // force a re-render
+    if (e.target.src !== fallbackUrl && !this.state.error) {
+      if (fallbackUrl) {
+        // only set the src to the fallbackUrl if we have one
+        e.target.src = fallbackUrl
+      }
       // this is done in case of race condtion in terms of
       // being in limbo from ssr and client side state
       // or this happening sometime after hte component has mounted
+      // a re-render needs to be forced and it also makes this conditional
+      // get disregarded next time
       this.setState({ error: true })
+      // return this for unit testing only
+      return e
     }
+
+    return undefined
   }
 
   render() {
