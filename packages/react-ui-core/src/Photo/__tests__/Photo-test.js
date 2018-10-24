@@ -69,6 +69,32 @@ describe('Photo', () => {
       expect(wrapper.state('error')).toEqual(true)
       expect(wrapper.find('img').prop('src')).toEqual(url)
     })
+
+    it('does not set the src when no fallbackUrl', () => {
+      let event = { target: { src: url } }
+      const wrapper = setup()
+      const instance = wrapper.instance()
+      event = instance.fallback(event)
+
+      expect(wrapper.state('error')).toEqual(true)
+      expect(event.target.src).toEqual(url)
+
+      event = instance.fallback(event)
+      expect(event).toBeUndefined()
+    })
+
+    it('does not get an an infinite loop with setting the src', () => {
+      let event = { target: { src: url } }
+      const wrapper = setup({ fallbackUrl })
+      const instance = wrapper.instance()
+      event = instance.fallback(event)
+
+      expect(wrapper.state('error')).toEqual(true)
+      expect(event.target.src).toEqual(fallbackUrl)
+
+      event = instance.fallback(event)
+      expect(event).toBeUndefined()
+    })
   })
 
   describe('src', () => {
