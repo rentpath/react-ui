@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
-import { parseArgs } from '@rentpath/react-ui-utils'
-import getDisplayName from './utils/getDisplayName'
+import { parseArgs, componentName } from '@rentpath/react-ui-utils'
 
 const API_BASE_URL = 'https://maps.googleapis.com/maps/api/js'
 const SCRIPT_ID = 'google-maps-api-script'
@@ -10,7 +9,7 @@ const EVENT_NAME = 'googleMapsLoaded'
 
 export default function(BaseComponent) {
   class Container extends PureComponent {
-    static displayName = `withGoogleScript(${getDisplayName(BaseComponent)})`
+    static displayName = `withGoogleScript(${componentName(BaseComponent)})`
 
     static propTypes = {
       apiKey: PropTypes.string.isRequired,

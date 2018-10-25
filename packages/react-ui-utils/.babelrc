@@ -1,8 +1,34 @@
 {
-  "presets": [
-    "env"
-  ],
-  "plugins": [
-    "babel-plugin-transform-object-rest-spread"
-  ]
+  "env": {
+    "es": {
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-class-properties",
+        "babel-plugin-transform-object-rest-spread",
+      ]
+    },
+    "cjs": {
+      "presets": [
+        "env"
+      ],
+      "plugins": [
+        "transform-runtime",
+        "transform-decorators-legacy",
+        "transform-class-properties",
+        "babel-plugin-transform-object-rest-spread"
+      ]
+    },
+    "test": {
+      "presets":[
+        "env",
+        "react"
+      ],
+      "plugins": [
+        "transform-runtime",
+        "transform-decorators-legacy",
+        "transform-class-properties",
+        "babel-plugin-transform-object-rest-spread"
+      ]
+    }
+  }
 }

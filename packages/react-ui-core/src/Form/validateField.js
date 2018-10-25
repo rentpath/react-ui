@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { themed } from 'react-themed'
 import classnames from 'classnames'
+import { componentName } from '@rentpath/react-ui-utils'
 
-const validateField = (Component, fieldName) => {
+const validateField = Component => {
   const ValidatedField = ({
     theme,
     isValid,
@@ -30,7 +31,7 @@ const validateField = (Component, fieldName) => {
     </div>
   )
 
-  ValidatedField.displayName = fieldName ? `Validated${fieldName}` : 'ValidatedField'
+  ValidatedField.displayName = `Validated(${componentName(Component, 'Field')})`
 
   ValidatedField.propTypes = {
     theme: PropTypes.object,

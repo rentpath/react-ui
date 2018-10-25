@@ -3,6 +3,7 @@
   "version": "11.3.2",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "sideEffects": false,
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib es",
@@ -56,13 +57,13 @@
   "dependencies": {
     "@rentpath/react-ui-core": "16.3.2",
     "@rentpath/react-ui-utils": "4.2.2",
-    "classnames": "2.2.6",
-    "react-lazyload": "2.3.0",
-    "react-themed": "3.2.1"
+    "react-lazyload": "2.3.0"
   },
   "peerDependencies": {
+    "classnames": "^2.2.6",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-themed": "^3.2.1"
   }
 }
