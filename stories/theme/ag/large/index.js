@@ -24,10 +24,6 @@ import {
 import {
   GridViewHeader,
 } from './GridView'
-import {
-  EmailModal,
-  MoreOptionsModal,
-} from './Modals'
 
 import Banner from './Banner.css'
 
@@ -55,6 +51,4 @@ export default compose({},
   DesktopListing,
   Banner,
   GridViewHeader,
-  EmailModal,
-  MoreOptionsModal,
 )

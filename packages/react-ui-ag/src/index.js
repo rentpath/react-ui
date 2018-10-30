@@ -19,8 +19,6 @@ export {
   GridViewHeader,
 } from './GridView'
 
-export { EmailModal } from './Modals'
-
 export {
   Gmap,
   Markers,
