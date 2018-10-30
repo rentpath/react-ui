@@ -1,12 +1,22 @@
 {
   "presets": [
-    "env",
-    "react"
+    "@babel/react",
+    ["@babel/env", {
+      "targets": {
+        "browsers": [">0.25%", "not op_mini all"],
+        "node": "current"
+      }
+    }]
   ],
   "plugins": [
-    "transform-runtime",
-    "transform-decorators-legacy",
-    "transform-class-properties",
-    "babel-plugin-transform-object-rest-spread"
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-export-default-from",
+    ["@babel/plugin-proposal-decorators", {
+      "legacy": true
+    }],
+    "@babel/plugin-proposal-class-properties",
+    ["@babel/proposal-object-rest-spread", {
+      "useBuiltIns": true
+    }]
   ]
 }
