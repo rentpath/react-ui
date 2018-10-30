@@ -44,14 +44,14 @@
     "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "6.24.1",
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
-    "eslint": "^5.6.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "eslint": "^5.8.0",
     "jest": "^23.6.0",
     "jest-css-modules": "1.1.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-test-renderer": "^16.5.2"
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-test-renderer": "^16.6.0"
   },
   "dependencies": {
     "@rentpath/react-ui-core": "16.3.3",
@@ -60,8 +60,8 @@
   "peerDependencies": {
     "classnames": "^2.2.6",
     "prop-types": "^15.6.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-themed": "^3.2.1"
   }
 }
