@@ -1,7 +1,13 @@
 {
   "env": {
     "es": {
+      "presets": [
+        ["es2015", {
+          "modules": false
+        }]
+      ],
       "plugins": [
+        "transform-runtime",
         "transform-decorators-legacy",
         "transform-class-properties",
         "babel-plugin-transform-object-rest-spread",
