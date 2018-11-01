@@ -8,7 +8,6 @@ import { RangeSlider } from '../Form'
 import FilterCard from './FilterCard'
 
 @themed(/^PriceFilterCard/)
-
 export default class PriceFilterCard extends Component {
   static propTypes = {
     className: PropTypes.string,

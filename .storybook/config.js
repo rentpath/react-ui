@@ -1,3 +1,4 @@
+import '@babel/polyfill'
 import { configure, addDecorator } from '@storybook/react'
 import { setOptions } from '@storybook/addon-options'
 import { setDefaults } from '@storybook/addon-info'

@@ -9,7 +9,6 @@ import themed from 'react-themed'
 @themed('*', {
   pure: true,
 })
-
 export default class RangeSlider extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,

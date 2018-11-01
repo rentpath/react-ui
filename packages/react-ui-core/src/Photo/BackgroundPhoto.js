@@ -19,7 +19,6 @@ const backgroundUrl = pipe(
 @themed(['BackgroundPhoto'], {
   pure: true,
 })
-
 export default class BackgroundPhoto extends PureComponent {
   static propTypes = {
     url: PropTypes.string,

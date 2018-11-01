@@ -11,7 +11,6 @@ import classnames from 'classnames'
 import DropdownAnchor from './DropdownAnchor'
 
 @themed(/^Dropdown/)
-
 export default class Dropdown extends Component {
   static propTypes = {
     className: PropTypes.string,

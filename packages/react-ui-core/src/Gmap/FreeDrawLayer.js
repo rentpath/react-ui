@@ -93,9 +93,11 @@ export default class FreeDrawLayer extends PureComponent {
   }
 
   endDraw() {
-    Object.keys(this.events).forEach(name => {
-      removeEvent(this.events[name])
-    })
+    if (this.events) {
+      Object.keys(this.events).forEach(name => {
+        removeEvent(this.events[name])
+      })
+    }
 
     if (this.polyline) this.polyline.setMap(null)
     if (this.polygon) this.polygon.setMap(null)
@@ -127,7 +129,6 @@ export default class FreeDrawLayer extends PureComponent {
     })
   }
 
-  @autobind
   drawFreeHand() {
     const {
       map,

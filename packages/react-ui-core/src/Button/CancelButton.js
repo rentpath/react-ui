@@ -8,7 +8,6 @@ import Button from './Button'
 @themed(['CancelButton'], {
   pure: true,
 })
-
 export default class CancelButton extends PureComponent {
   static propTypes = {
     className: PropTypes.string,

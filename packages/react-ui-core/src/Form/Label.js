@@ -6,7 +6,6 @@ import classNames from 'classnames'
 @themed(/^Label/, {
   pure: true,
 })
-
 export default class Label extends Component {
   static propTypes = {
     className: PropTypes.string,

@@ -13,7 +13,6 @@ const dataAttrs = props => Object.keys(props).reduce((acc, key) => {
 }, {})
 
 @themed(/^Modal/, { pure: true })
-
 export default class Modal extends PureComponent {
   static propTypes = {
     isOpen: PropTypes.bool,

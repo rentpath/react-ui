@@ -6,7 +6,6 @@ import themed from 'react-themed'
 @themed(/^Text/, {
   pure: true,
 })
-
 export default class Text extends PureComponent {
   static propTypes = {
     className: PropTypes.string,

@@ -15,7 +15,6 @@ const type = PropTypes.oneOfType([
 @themed(/^Collapsible/, {
   pure: true,
 })
-
 export default class Collapsible extends Component {
   static propTypes = {
     showableItems: type,

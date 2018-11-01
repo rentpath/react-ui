@@ -26,9 +26,11 @@ describe('withGoogleScript', () => {
       const maps = Object.assign({}, window.google.maps)
       window.google.maps = undefined
       const instance = setup().instance()
-      const scriptLoadedSpy = jest.spyOn(instance, 'scriptLoaded')
-      const loadScriptSpy = jest.spyOn(instance, 'loadScript')
+      const scriptLoadedSpy = jest.fn()
+      const loadScriptSpy = jest.fn()
 
+      instance.scriptLoaded = scriptLoadedSpy
+      instance.loadScript = loadScriptSpy
       instance.componentDidMount()
 
       expect(scriptLoadedSpy).not.toHaveBeenCalled()
@@ -42,9 +44,11 @@ describe('withGoogleScript', () => {
           const maps = Object.assign({}, window.google.maps)
           window.google.maps = undefined
           const instance = setup().instance()
-          const loadScriptSpy = jest.spyOn(instance, 'loadScript')
-          const mapLoadedListenerSpy = jest.spyOn(instance, 'mapLoadedListener')
+          const loadScriptSpy = jest.fn()
+          const mapLoadedListenerSpy = jest.fn()
 
+          instance.mapLoadedListener = mapLoadedListenerSpy
+          instance.loadScript = loadScriptSpy
           instance.componentDidMount()
 
           expect(mapLoadedListenerSpy).toHaveBeenCalled()

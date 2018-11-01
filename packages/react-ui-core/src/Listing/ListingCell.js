@@ -8,7 +8,6 @@ import pick from 'lodash/pick'
 import autobind from 'autobind-decorator'
 
 @themed(/^ListingCell/, { pure: true })
-
 export default class ListingCell extends Component {
   static propTypes = {
     listing: PropTypes.object,

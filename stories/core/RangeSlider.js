@@ -22,7 +22,7 @@ const wrapper = (props = {}) => {
   )
 }
 
-export const DefauldRangeSlider = wrapper({})
+export const DefaultRangeSlider = wrapper({})
 
 export const RangeSliderLabel = wrapper({
   formatLabel: val => `$${val}`,

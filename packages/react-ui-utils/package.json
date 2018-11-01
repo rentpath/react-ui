@@ -1,6 +1,7 @@
 {
   "name": "@rentpath/react-ui-utils",
   "version": "4.2.4",
+  "repository": "https://github.com/rentpath/react-ui/tree/master/packages/react-ui-utils",
   "main": "lib/index.js",
   "module": "es/index.js",
   "sideEffects": false,
@@ -13,20 +14,24 @@
     "build:es": "BABEL_ENV=es babel --ignore __tests__ -d es src",
     "build:es:watch": "yarn run build:es -- --watch",
     "build:watch": "yarn run build -- --watch",
-    "test": "NODE_ENV=test jest",
+    "test": "jest",
     "test:watch": "yarn run test -- --watch",
     "lint": "eslint src",
     "lint:fix": "yarn run lint -- --fix"
   },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/mocks/",
+      "./es",
+      "./lib"
+    ]
+  },
   "devDependencies": {
-    "@rentpath/eslint-config-rentpath": "3.0.1",
-    "babel-cli": "6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^9.0.0",
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "babel-core": "^7.0.0-bridge",
     "babel-jest": "^23.6.0",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
     "eslint": "^5.6.0",
     "jest": "^23.6.0",
     "jsverify": "^0.8.3",

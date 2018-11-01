@@ -9,7 +9,6 @@ import { Button } from '../Button'
 @themed(['DropdownAnchor-expand', 'DropdownAnchor-collapse', 'DropdownAnchor'], {
   pure: true,
 })
-
 export default class DropdownAnchor extends PureComponent {
   static propTypes = {
     onClick: PropTypes.func,

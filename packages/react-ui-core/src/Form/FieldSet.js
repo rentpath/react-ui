@@ -6,7 +6,6 @@ import classnames from 'classnames'
 @themed(/^FieldSet/, {
   pure: true,
 })
-
 export default class FieldSet extends PureComponent {
   static propTypes = {
     className: PropTypes.string,

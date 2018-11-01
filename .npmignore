@@ -1,7 +1,12 @@
 yarn.lock
 src
 __tests__
-packages/**/yarn.lock
-packages/**/package-lock.json
+.babelrc
+babel.config.js
 .coveralls.yml
 coverage
+packages/**/yarn.lock
+packages/**/package-lock.json
+packages/**/.babelrc
+packages/**/babel.config.js
+packages/**/__tests__

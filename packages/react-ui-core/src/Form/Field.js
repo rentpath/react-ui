@@ -10,7 +10,6 @@ import controls from './controls'
 @themed(/^Field/, {
   pure: true,
 })
-
 export default class Field extends Component {
   static propTypes = {
     /**

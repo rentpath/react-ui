@@ -8,7 +8,6 @@ import { Dropdown } from '../Dropdown'
 import MenuWrapper from './MenuWrapper'
 
 @themed(/^DropdownMenu/)
-
 export default class DropdownMenu extends Component {
   static propTypes = {
     theme: PropTypes.object,

@@ -49,7 +49,6 @@ const MAP_CONTROLS = {
 }
 
 @themed(/^Gmap/, { pure: true })
-
 export class Gmap extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,

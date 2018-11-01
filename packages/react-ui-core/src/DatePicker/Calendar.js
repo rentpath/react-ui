@@ -12,7 +12,6 @@ import isBefore from 'date-fns/isBefore'
 import isAfter from 'date-fns/isAfter'
 
 @themed(/^Calendar/, { pure: true })
-
 export default class Calendar extends PureComponent {
   static propTypes = {
     value: PropTypes.object,

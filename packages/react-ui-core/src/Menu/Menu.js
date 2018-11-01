@@ -12,7 +12,6 @@ const ARROW_DOWN = 40
 @themed(['Menu'], {
   pure: true,
 })
-
 export default class Menu extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,

@@ -42,7 +42,6 @@ const FIELDS = [
 ]
 
 @themed(/^(LeadForm|Field)/)
-
 export default class LeadForm extends Component {
   static propTypes = {
     theme: PropTypes.object,

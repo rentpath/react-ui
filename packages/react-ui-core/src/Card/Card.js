@@ -4,7 +4,6 @@ import cn from 'classnames'
 import themed from 'react-themed'
 
 @themed('*', { pure: true })
-
 export default class Card extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,

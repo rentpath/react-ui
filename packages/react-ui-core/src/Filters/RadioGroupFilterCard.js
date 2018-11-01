@@ -8,7 +8,6 @@ import { RadioGroup } from '../Form'
 import FilterCard from './FilterCard'
 
 @themed(/^RadioGroupFilterCard/)
-
 export default class RadioGroupFilterCard extends Component {
   static propTypes = {
     className: PropTypes.string,

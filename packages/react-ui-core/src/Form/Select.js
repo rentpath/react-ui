@@ -7,7 +7,6 @@ import autobind from 'autobind-decorator'
 @themed(/^Select/, {
   pure: true,
 })
-
 export default class Select extends Component {
   static propTypes = {
     theme: PropTypes.object,

@@ -139,8 +139,9 @@ describe('DatePicker', () => {
       const value = '11-11-2025'
       const event = { target: { value } }
       const wrapper = setup({ showCalendar: true })
-      const spy = jest.spyOn(wrapper.instance(), 'dateChange')
+      const spy = jest.fn()
 
+      wrapper.instance().dateChange = spy
       wrapper.instance().validateTextField(event)
       expect(spy).toHaveBeenCalledTimes(1)
     })
@@ -148,8 +149,9 @@ describe('DatePicker', () => {
     it('does not do anything if the date is valid', () => {
       const event = { target: { value: null } }
       const wrapper = setup({ isValidDate: true })
-      const spy = jest.spyOn(wrapper.instance(), 'dateChange')
+      const spy = jest.fn()
 
+      wrapper.instance().dateChange = spy
       wrapper.instance().validateTextField(event)
       expect(spy).toHaveBeenCalledTimes(0)
     })
@@ -158,8 +160,9 @@ describe('DatePicker', () => {
       const value = 'f00/11/200'
       const event = { target: { value } }
       const wrapper = setup({ isValidDate: false })
-      const spy = jest.spyOn(wrapper.instance(), 'dateChange')
+      const spy = jest.fn()
 
+      wrapper.instance().dateChange = spy
       wrapper.instance().validateTextField(event)
       expect(spy).toHaveBeenCalledTimes(0)
     })
@@ -171,8 +174,9 @@ describe('DatePicker', () => {
         const value = '11/11/2025'
         const event = { target: { value } }
         const wrapper = setup()
-        const spy = jest.spyOn(wrapper.instance(), 'validateTextField')
+        const spy = jest.fn()
 
+        wrapper.instance().validateTextField = spy
         wrapper.instance().handleChange(event)
         expect(spy).toHaveBeenCalledTimes(1)
         expect(spy).toHaveBeenCalledWith(event)
@@ -184,8 +188,9 @@ describe('DatePicker', () => {
         const value = '11-11-2025'
         const event = { target: { value } }
         const wrapper = setup({ showCalendar: true })
-        const spy = jest.spyOn(wrapper.instance(), 'validateTextField')
+        const spy = jest.fn()
 
+        wrapper.instance().validateTextField = spy
         wrapper.setState({
           isValidDate: true,
         }, () => {
