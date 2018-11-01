@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-utils",
-  "version": "4.2.3",
+  "version": "4.2.4",
   "main": "lib/index.js",
   "module": "es/index.js",
   "sideEffects": false,

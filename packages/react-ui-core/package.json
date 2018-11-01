@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-core",
-  "version": "16.3.3",
+  "version": "16.3.4",
   "main": "lib/index.js",
   "module": "es/index.js",
   "license": "MIT",
@@ -59,7 +59,7 @@
     "react-test-renderer": "^16.5.2"
   },
   "dependencies": {
-    "@rentpath/react-ui-utils": "4.2.3",
+    "@rentpath/react-ui-utils": "4.2.4",
     "babel-runtime": "6.26.0",
     "form-serialize": "0.7.2",
     "react-image-gallery": "rentpath/react-image-gallery",

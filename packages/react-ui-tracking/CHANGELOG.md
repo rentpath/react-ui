@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.2.4"></a>
+## [4.2.4](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-tracking@4.2.3...@rentpath/react-ui-tracking@4.2.4) (2018-11-01)
+
+
+### Bug Fixes
+
+* **es:** modules fail on ie11 ([6ed79f2](https://github.com/rentpath/react-ui/commit/6ed79f2))
+* **es:** wrong env preset ([0526df5](https://github.com/rentpath/react-ui/commit/0526df5))
+
+
+
+
 <a name="4.2.3"></a>
 ## [4.2.3](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-tracking@4.2.2...@rentpath/react-ui-tracking@4.2.3) (2018-10-30)
 
