@@ -2,8 +2,11 @@
   "env": {
     "es": {
       "presets": [
-        ["es2015", {
-          "modules": false
+        ["env", {
+          "modules": false,
+          "targets": {
+            "browsers": [">0.25%", "not op_mini all"]
+          }
         }],
         "react"
       ],
