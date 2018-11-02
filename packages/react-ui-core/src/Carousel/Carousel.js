@@ -29,6 +29,7 @@ export default class Carousel extends Component {
     selectedIndex: PropTypes.number,
     onSlide: PropTypes.func,
     showNav: PropTypes.bool,
+    showThumbs: PropTypes.bool,
     navigation: PropTypes.shape({
       previous: PropTypes.oneOfType([
         PropTypes.node,
@@ -60,6 +61,7 @@ export default class Carousel extends Component {
 
   static defaultProps = {
     showNav: false,
+    showThumbs: false,
     lazyLoad: false,
     theme: {},
   }
@@ -197,6 +199,7 @@ export default class Carousel extends Component {
       items,
       navigation,
       pagination,
+      showThumbs,
       ...rest
     } = this.props
 
@@ -212,11 +215,12 @@ export default class Carousel extends Component {
           items={this.items}
           renderItem={this.renderItem}
           onSlide={this.onSlide}
-          showThumbnails={false}
+          showThumbnails={showThumbs}
           showPlayButton={false}
           showFullscreenButton={false}
           startIndex={selectedIndex}
           infinite={false}
+          lastThumbnailOffset={showThumbs ? 3 : null}
           swipeThreshold={10}
           preventDefaultTouchmoveEvent
           {...rest}

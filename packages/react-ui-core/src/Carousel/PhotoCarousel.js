@@ -21,6 +21,7 @@ export default class PhotoCarousel extends PureComponent {
       }),
     ),
     server: PropTypes.string.isRequired,
+    showThumbs: PropTypes.bool,
     isBackgroundImage: PropTypes.bool,
     lazyLoad: PropTypes.oneOfType([
       PropTypes.bool,
@@ -74,6 +75,7 @@ export default class PhotoCarousel extends PureComponent {
       theme,
       items,
       lazyLoad,
+      showThumbs,
       ...rest
     } = this.props
 
@@ -83,6 +85,7 @@ export default class PhotoCarousel extends PureComponent {
         infinite
         renderItem={this.renderItem}
         lazyLoad={!!lazyLoad}
+        showThumbs={showThumbs}
         {...rest}
         className={classnames(
           theme.PhotoCarousel,
