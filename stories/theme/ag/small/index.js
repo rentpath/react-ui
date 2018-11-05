@@ -24,7 +24,8 @@ import Banner from './Banner.css'
 import MobileMapListing from './MobileMapListing.css'
 import ListingCarousel from './ListingCarousel.css'
 
-export default compose({},
+export default compose(
+  {},
   ApplyButtonBase,
   ApplyButton,
   CardBase,

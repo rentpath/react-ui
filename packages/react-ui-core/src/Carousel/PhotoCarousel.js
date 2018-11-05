@@ -36,7 +36,11 @@ export default class PhotoCarousel extends PureComponent {
 
   photo(item) {
     const { server } = this.props
-    const { url, path, id } = item
+    const {
+      url,
+      path,
+      id,
+    } = item
 
     return url || `${server}${path || id}`
   }

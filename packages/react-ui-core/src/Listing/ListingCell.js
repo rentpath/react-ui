@@ -72,7 +72,12 @@ export default class ListingCell extends Component {
 
   @autobind
   handleClick(event) {
-    const { listing, onClick, isActive } = this.props
+    const {
+      listing,
+      onClick,
+      isActive,
+    } = this.props
+
     const nonPropagationTargets = ['BUTTON', 'ANCHOR', 'USE', 'SVG']
 
     const { target, currentTarget } = event

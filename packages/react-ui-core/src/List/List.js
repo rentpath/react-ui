@@ -24,7 +24,9 @@ export default class List extends PureComponent {
         PropTypes.func,
         PropTypes.shape({
           label: PropTypes.node.isRequired,
-        })])),
+        }),
+      ])
+    ),
     orientation: PropTypes.string,
     highlightIndex: PropTypes.number,
     selectedIndex: PropTypes.number,
@@ -47,6 +49,7 @@ export default class List extends PureComponent {
       this.generateRandomId()
     }
   }
+
   generateRandomId() {
     this.id = randomId('listItem')
   }
@@ -63,9 +66,9 @@ export default class List extends PureComponent {
     if (item && typeof item === 'object' && !React.isValidElement(item)) {
       const { label, ...props } = item
       return [label, props]
-    } else if (typeof item === 'function') {
-      return [item()]
     }
+
+    if (typeof item === 'function') return [item()]
     return [item]
   }
 

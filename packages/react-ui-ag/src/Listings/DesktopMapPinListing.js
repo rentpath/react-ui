@@ -4,7 +4,12 @@ import themed from 'react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
 import get from 'lodash/get'
-import { Button, ToggleButton, ListingComponents, ListingCell } from '@rentpath/react-ui-core'
+import {
+  Button,
+  ToggleButton,
+  ListingComponents,
+  ListingCell,
+} from '@rentpath/react-ui-core'
 
 const buttonPropTypes = PropTypes.shape({
   children: PropTypes.node,
@@ -34,7 +39,11 @@ export default class DesktopMapPinListing extends PureComponent {
 
   @autobind
   handleCardClick() {
-    const { index, listing, onClick } = this.props
+    const {
+      index,
+      listing,
+      onClick,
+    } = this.props
 
     if (onClick) onClick(index, listing)
   }
@@ -92,8 +101,13 @@ export default class DesktopMapPinListing extends PureComponent {
   }
 
   renderFavoriteButton() {
-    const { theme, favoriteButton, listing } = this.props
+    const {
+      theme,
+      favoriteButton,
+      listing,
+    } = this.props
     const { className } = favoriteButton
+
     return (
       <ToggleButton
         {...favoriteButton}

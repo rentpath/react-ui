@@ -62,9 +62,11 @@ export default class SingleFamilyDesktopListing extends Component {
         >
           <ListingComponents.Address />
         </a>
-        {phone &&
-          <div className={theme.Phone} data-tid="phone">{phone}</div>
-        }
+        {phone && (
+          <div className={theme.Phone} data-tid="phone">
+            {phone}
+          </div>
+        )}
       </React.Fragment>
     )
   }

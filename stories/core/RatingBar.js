@@ -5,8 +5,9 @@ import theme from '../theme/core/RatingBar.css'
 
 const handleRatingClick = ({ pageX, currentTarget }) => {
   const getBoundingClientRect = currentTarget.getBoundingClientRect()
-  const starValue =
-    Math.ceil(((pageX - getBoundingClientRect.left) / getBoundingClientRect.width) * 5)
+  const starValue = Math.ceil(
+    ((pageX - getBoundingClientRect.left) / getBoundingClientRect.width) * 5
+  )
   action('Clicked star value')(starValue)
 }
 

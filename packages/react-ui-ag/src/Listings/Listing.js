@@ -6,7 +6,12 @@ import autobind from 'autobind-decorator'
 import get from 'lodash/get'
 import isEqual from 'lodash/isEqual'
 import LazyLoad, { forceCheck } from 'react-lazyload'
-import { Button, ToggleButton, ListingComponents, ListingCell } from '@rentpath/react-ui-core'
+import {
+  Button,
+  ToggleButton,
+  ListingComponents,
+  ListingCell,
+} from '@rentpath/react-ui-core'
 import { Banner } from '../Banners'
 
 const buttonPropTypes = PropTypes.shape({
@@ -60,16 +65,26 @@ export default class Listing extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    const { isActive, listing, className, photos: photoConfig } = this.props
-    const { id, isFavorited, photos } = listing
+    const {
+      isActive,
+      listing,
+      className,
+      photos: photoConfig,
+    } = this.props
+
+    const {
+      id,
+      isFavorited,
+      photos,
+    } = listing
 
     return (
-      isActive !== nextProps.isActive ||
-      id !== nextProps.listing.id ||
-      isFavorited !== nextProps.listing.isFavorited ||
-      className !== nextProps.className ||
-      !isEqual(photos, nextProps.listing.photos) ||
-      !isEqual(photoConfig, nextProps.photos)
+      isActive !== nextProps.isActive
+      || id !== nextProps.listing.id
+      || isFavorited !== nextProps.listing.isFavorited
+      || className !== nextProps.className
+      || !isEqual(photos, nextProps.listing.photos)
+      || !isEqual(photoConfig, nextProps.photos)
     )
   }
 
@@ -85,7 +100,11 @@ export default class Listing extends Component {
 
   @autobind
   handleCardClick() {
-    const { index, listing, onClick } = this.props
+    const {
+      index,
+      listing,
+      onClick,
+    } = this.props
 
     if (onClick) onClick(index, listing)
   }
@@ -109,7 +128,11 @@ export default class Listing extends Component {
 
   @autobind
   handleFavoriteClick(value, event) {
-    const { isActive, listing, favoriteButton } = this.props
+    const {
+      isActive,
+      listing,
+      favoriteButton,
+    } = this.props
     const { onClick } = favoriteButton
 
     if (isActive && onClick) {
@@ -143,7 +166,13 @@ export default class Listing extends Component {
 
   renderCtaButton(props, key) {
     const { theme, listing } = this.props
-    const { className, onClick, valueLocation, children, ...rest } = props
+    const {
+      className,
+      onClick,
+      valueLocation,
+      children,
+      ...rest
+    } = props
 
     const buttonText = get(listing, valueLocation, children)
     const buttonProps = { ...rest }
@@ -164,7 +193,12 @@ export default class Listing extends Component {
   }
 
   renderFavoriteButton() {
-    const { theme, favoriteButton, isActive, listing } = this.props
+    const {
+      theme,
+      favoriteButton,
+      isActive,
+      listing,
+    } = this.props
     const { className } = favoriteButton
 
     return (
@@ -191,7 +225,13 @@ export default class Listing extends Component {
   }
 
   renderPhotoCarousel() {
-    const { listing, theme, photos, isActive, renderCustomControls } = this.props
+    const {
+      listing,
+      theme,
+      photos,
+      isActive,
+      renderCustomControls,
+    } = this.props
     let { lazyLoad } = this.props
 
     if (lazyLoad && typeof lazyLoad === 'boolean') {
@@ -275,9 +315,11 @@ export default class Listing extends Component {
           <div className={theme.Listing_Info} data-tid="listing-info">
             {listingInfoComponents}
           </div>
-          { ctaButtons &&
-            <div className={theme.Listing_CTAs}>{this.renderCtaButtons()}</div>
-          }
+          { ctaButtons && (
+            <div className={theme.Listing_CTAs}>
+              {this.renderCtaButtons()}
+            </div>
+          )}
         </div>
       </ListingCell>
     )

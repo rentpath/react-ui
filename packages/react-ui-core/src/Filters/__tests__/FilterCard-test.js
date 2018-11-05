@@ -10,7 +10,11 @@ const FilterCard = ThemedFilterCard.WrappedComponent
 describe('ag/Filters/FilterCard', () => {
   it('renders children', () => {
     const children = <div data-tid="filter-card-children">Content of Children</div>
-    const wrapper = shallow(<FilterCard>{children}</FilterCard>)
+    const wrapper = shallow(
+      <FilterCard>
+        {children}
+      </FilterCard>
+    )
     expect(wrapper.find('div[data-tid="filter-card-children"]')).toHaveLength(1)
   })
 

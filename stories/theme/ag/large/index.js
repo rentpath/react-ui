@@ -3,7 +3,11 @@ import { ApplyButton, CancelButton } from './Buttons'
 import Card from './Card.css'
 import RadioButton from './RadioButton.css'
 import RadioGroup from './RadioGroup.css'
-import { DesktopMapPinListing, Listing, DesktopListing } from './Listings'
+import {
+  DesktopMapPinListing,
+  Listing,
+  DesktopListing,
+} from './Listings'
 import {
   RadioButton as RadioButtonBase,
   RadioGroup as RadioGroupBase,
@@ -21,13 +25,11 @@ import {
   PriceFilterCard,
   FilterDropdown,
 } from './Filters'
-import {
-  GridViewHeader,
-} from './GridView'
-
+import { GridViewHeader } from './GridView'
 import Banner from './Banner.css'
 
-export default compose({},
+export default compose(
+  {},
   ApplyButtonBase,
   ApplyButton,
   CancelButtonBase,

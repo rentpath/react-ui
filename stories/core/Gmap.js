@@ -1,6 +1,11 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { Gmap, GmapSpinner, Marker, Markers } from 'react-ui-core/src'
+import {
+  Gmap,
+  GmapSpinner,
+  Marker,
+  Markers,
+} from 'react-ui-core/src'
 import InfoWindow from './InfoWindow'
 import OverlayView from './OverlayView'
 import geojson from '../dummyData/geojson.json'

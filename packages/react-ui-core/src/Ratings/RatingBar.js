@@ -15,6 +15,7 @@ export default class RatingBar extends PureComponent {
     score: PropTypes.number,
     label: PropTypes.string,
   }
+
   static defaultProps = {
     theme: {},
     score: 0,
@@ -33,13 +34,13 @@ export default class RatingBar extends PureComponent {
 
     return (
       <div className={theme.RatingBar_Background}>
-        {!!scorePercent &&
+        {!!scorePercent && (
           <div
             className={theme.RatingBar_Icons} style={{
               width: `${scorePercent}%`,
             }}
           />
-        }
+        )}
       </div>
     )
   }
@@ -65,11 +66,11 @@ export default class RatingBar extends PureComponent {
         {...props}
       >
         {this.ratingItems}
-        {label &&
+        {label && (
           <div className={theme.Label}>
             {label}
           </div>
-        }
+        )}
       </div>
     )
   }

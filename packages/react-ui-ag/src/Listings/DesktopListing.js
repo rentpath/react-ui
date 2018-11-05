@@ -30,8 +30,19 @@ export default class DesktopListing extends PureComponent {
   }
 
   get renderInfo() {
-    const { theme, listing, ratings, propertyName } = this.props
-    const { singleFamily, rating, ulaText, phone } = listing
+    const {
+      theme,
+      listing,
+      ratings,
+      propertyName,
+    } = this.props
+
+    const {
+      singleFamily,
+      rating,
+      ulaText,
+      phone,
+    } = listing
 
     return (
       <React.Fragment>
@@ -42,30 +53,31 @@ export default class DesktopListing extends PureComponent {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {
-            singleFamily ?
-              <ListingComponents.Address /> :
-              <ListingComponents.PropertyName {...propertyName} />
-          }
+          { singleFamily ? <ListingComponents.Address /> : (
+            <ListingComponents.PropertyName {...propertyName} />
+          )}
         </a>
         <div className={theme.BedsAndBaths}>
           <ListingComponents.Bedroom data-tid="bedroom" />
           <ListingComponents.Bathroom />
         </div>
-        {singleFamily ?
-          <ListingComponents.Availability /> :
-          (
-            <div className={theme.UnitLevelAvailabilityAndLastUpdated}>
-              {ulaText && <div className={theme.UlaText} data-tid="ulaText">{ulaText}</div>}
-            </div>
-          )
-        }
-        {rating && !singleFamily &&
+        {singleFamily ? <ListingComponents.Availability /> : (
+          <div className={theme.UnitLevelAvailabilityAndLastUpdated}>
+            {ulaText && (
+              <div className={theme.UlaText} data-tid="ulaText">
+                {ulaText}
+              </div>
+            )}
+          </div>
+        )}
+        {rating && !singleFamily && (
           <ListingComponents.Ratings data-tid="ratings" {...ratings} />
-        }
-        {phone && !singleFamily &&
-          <div className={theme.Phone} data-tid="phone">{phone}</div>
-        }
+        )}
+        {phone && !singleFamily && (
+          <div className={theme.Phone} data-tid="phone">
+            {phone}
+          </div>
+        )}
       </React.Fragment>
     )
   }

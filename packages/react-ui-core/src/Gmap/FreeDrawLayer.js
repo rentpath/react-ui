@@ -129,7 +129,12 @@ export default class FreeDrawLayer extends PureComponent {
 
   @autobind
   drawFreeHand() {
-    const { map, dataStyle, onDrawBegin } = this.props
+    const {
+      map,
+      dataStyle,
+      onDrawBegin,
+    } = this.props
+
     this.polyline = this.createPolyline()
     this.polygon = this.createPolygon(this.polyline.getPath(), dataStyle.polylineFill)
 
@@ -163,9 +168,9 @@ export default class FreeDrawLayer extends PureComponent {
     const { polyline, polygon } = this.props.dataStyle
     const shapes = this.formatLongLatToGmapsCoordinates()
 
-    this.polygons = shapes.map(path =>
+    this.polygons = shapes.map(path => (
       this.createPolygon(path, { ...polyline, ...polygon })
-    )
+    ))
   }
 
   clearAllShapes() {

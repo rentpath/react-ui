@@ -74,7 +74,8 @@ describe('ag/Listing/SingleFamilyMobileMapListing', () => {
         ctaButtons={{ onClick: ctaClick }}
         onClick={cardClick}
         isActive={false}
-      />)
+      />
+    )
     wrapper.find('[data-tid="cta-button"]').at(0).simulate('click')
     expect(cardClick.mock.calls).toHaveLength(1)
   })

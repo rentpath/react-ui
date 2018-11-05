@@ -49,7 +49,7 @@ describe('PhotoCarousel', () => {
       <PhotoCarousel
         items={items}
         theme={theme}
-        className={'Foo'}
+        className="Foo"
         server="https://rentpath-res.cloudinary.com/"
       />
     )

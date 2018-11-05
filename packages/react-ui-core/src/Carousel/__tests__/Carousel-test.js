@@ -40,7 +40,11 @@ describe('Carousel', () => {
     const wrapper = mount(
       <Carousel
         items={items}
-        renderItem={item => <div className="TestItem">{item}</div>}
+        renderItem={item => (
+          <div className="TestItem">
+            {item}
+          </div>
+        )}
       />
     )
     expect(wrapper.find('.TestItem')).toHaveLength(4)

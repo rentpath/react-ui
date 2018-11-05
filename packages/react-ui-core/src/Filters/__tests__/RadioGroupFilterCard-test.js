@@ -26,10 +26,9 @@ describe('RadioGroupFilterCard', () => {
   it('changes the state value if a radio button is checked', () => {
     const wrapper = mount(<RadioGroupFilterCard {...props} />)
     expect(wrapper.state('value')).toBeFalsy()
-    const radioButtonInput =
-      wrapper.find('[name="radio-group-filter-card-radio-group"] input').at(2)
-    radioButtonInput.simulate('change')
-    expect(wrapper.state('value')).toEqual(radioButtonInput.prop('value'))
+    const input = wrapper.find('[name="radio-group-filter-card-radio-group"] input').at(2)
+    input.simulate('change')
+    expect(wrapper.state('value')).toEqual(input.prop('value'))
   })
 
   it('applies the noValue className by default if no value is checked', () => {
@@ -54,9 +53,8 @@ describe('RadioGroupFilterCard', () => {
   it('removes the noValue className when a value is checked', () => {
     const wrapper = mount(<RadioGroupFilterCard {...props} />)
     expect(wrapper.find(FilterCard).hasClass('RadioGroupFilterCard-noValue')).toBeTruthy()
-    const radioButtonInput =
-      wrapper.find('[name="radio-group-filter-card-radio-group"] input').at(2)
-    radioButtonInput.simulate('change')
+    const input = wrapper.find('[name="radio-group-filter-card-radio-group"] input').at(2)
+    input.simulate('change')
     expect(wrapper.find(FilterCard).hasClass('RadioGroupFilterCard-noValue')).toBeFalsy()
   })
 

@@ -75,7 +75,12 @@ export default function(BaseComponent) {
     }
 
     get api() {
-      const { apiKey, libraries, version } = this.props
+      const {
+        apiKey,
+        libraries,
+        version,
+      } = this.props
+
       return `${API_BASE_URL}?key=${apiKey}&v=${version}&libraries=${libraries.join()}&callback=google_map_initialize`
     }
 

@@ -22,7 +22,6 @@ export default class SubmitButton extends PureComponent {
 
     return (
       <Button
-        name={name}
         type={type}
         data-tid="lead-form-submit"
         {...props}

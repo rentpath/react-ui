@@ -1,7 +1,12 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import omit from 'lodash/omit'
-import { Button, RatingBar, ToggleButton, ListingComponents } from '@rentpath/react-ui-core'
+import {
+  Button,
+  RatingBar,
+  ToggleButton,
+  ListingComponents,
+} from '@rentpath/react-ui-core'
 import ThemedMobileMapListing from '../MobileMapListing'
 import theme from './mocks/theme'
 
@@ -117,7 +122,8 @@ describe('ag/Listing/MobileMapListing', () => {
           ctaButtons={[{ children: 'foo', onClick: ctaClick }, { children: 'bar', onClick: ctaClick }]}
           onClick={cardClick}
           isActive={false}
-        />)
+        />
+      )
       wrapper.find('[data-tid="cta-button"]').at(0).simulate('click')
       wrapper.find('[data-tid="cta-button"]').at(1).simulate('click')
       expect(cardClick.mock.calls).toHaveLength(2)

@@ -16,7 +16,11 @@ const LinkTitle = props => (
     nodeType="h3"
     className={props.theme['Title-yuge']}
   >
-    <a href="/">Hello! <br /> Click this text to go back home</a>
+    <a href="/">
+      Hello!
+      <br />
+      Click this text to go back home
+    </a>
   </Title>
 )
 

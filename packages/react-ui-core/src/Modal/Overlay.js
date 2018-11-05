@@ -58,7 +58,13 @@ export default class Overlay extends PureComponent {
   }
 
   render() {
-    const { className, theme, children, isOpen, ...rest } = this.props
+    const {
+      className,
+      theme,
+      children,
+      isOpen,
+      ...rest
+    } = this.props
 
     return (
       <div

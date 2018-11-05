@@ -51,7 +51,8 @@ import {
   CancelButton,
 } from './Buttons'
 
-export default compose({},
+export default compose(
+  {},
   Label,
   Field,
   Text,

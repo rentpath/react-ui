@@ -1,1 +1,6 @@
-export { DefaultGmap, PdpMap, MultipleMarkers, SelectedMarker } from './Gmap'
+export {
+  DefaultGmap,
+  PdpMap,
+  MultipleMarkers,
+  SelectedMarker,
+} from './Gmap'

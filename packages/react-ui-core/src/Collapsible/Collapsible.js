@@ -51,9 +51,10 @@ export default class Collapsible extends Component {
   }
 
   handleClick() {
+    const { display } = this.state
     this.props.handleClick()
     this.setState({
-      display: !this.state.display,
+      display: !display,
     })
   }
 
@@ -78,29 +79,27 @@ export default class Collapsible extends Component {
         )}
       >
         {showableItems}
-        {nonshowableItems &&
-          [
-            <div
-              key="collapsible-toggle"
-              className={classnames(
-                theme.Collapsible_Items,
-                theme[`Collapsible_Items-${toggle}`]
-              )}
-            >
-              {nonshowableItems}
-            </div>,
-            <Button
-              key="collapsible-button"
-              onClick={this.handleClick}
-              className={classnames(
-                theme[`Button-${toggle}`],
-                align && theme[`Button-${align}`],
-              )}
-            >
-              {this.state.display ? visibleText : hiddenText}
-            </Button>,
-          ]
-        }
+        {nonshowableItems && [
+          <div
+            key="collapsible-toggle"
+            className={classnames(
+              theme.Collapsible_Items,
+              theme[`Collapsible_Items-${toggle}`]
+            )}
+          >
+            {nonshowableItems}
+          </div>,
+          <Button
+            key="collapsible-button"
+            onClick={this.handleClick}
+            className={classnames(
+              theme[`Button-${toggle}`],
+              align && theme[`Button-${align}`],
+            )}
+          >
+            {this.state.display ? visibleText : hiddenText}
+          </Button>,
+        ]}
       </div>
     )
   }

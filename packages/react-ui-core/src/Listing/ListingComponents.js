@@ -10,6 +10,7 @@ export const createTextComponent = (name, contextItem) => {
   @themed([name])
   class TextComponent extends Component {
     static displayName = name
+
     static propTypes = {
       className: PropTypes.string,
       theme: PropTypes.object,
@@ -25,7 +26,11 @@ export const createTextComponent = (name, contextItem) => {
 
     render() {
       const item = this.context[contextItem]
-      const { theme, className, ...props } = this.props
+      const {
+        theme,
+        className,
+        ...props
+      } = this.props
 
       if (!item) return null
       return (
@@ -80,7 +85,11 @@ Photos.contextTypes = {
   ),
 }
 
-const Photo = ({ className, theme, ...props }, { photo }) => {
+const Photo = ({
+  className,
+  theme,
+  ...props
+}, { photo }) => {
   const { url, ...photoProps } = photo || {}
 
   if (!url) return null

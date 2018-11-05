@@ -37,8 +37,10 @@ describe('ListingComponents', () => {
     })
 
     it('returns a RatingBar if the rating context is not null', () => {
-      const wrapper =
-        shallow(<ListingComponents.Ratings />, { context: { rating: { score: 4 } } })
+      const wrapper = shallow(
+        <ListingComponents.Ratings />,
+        { context: { rating: { score: 4 } } }
+      )
       expect(wrapper.find(RatingBar).exists()).toBeTruthy()
     })
 
@@ -56,8 +58,10 @@ describe('ListingComponents', () => {
     })
 
     it('returns a PhotoCarousel if the photos context is not null', () => {
-      const wrapper =
-        shallow(<ListingComponents.Photos />, { context: { photos: [{ caption: 'foo', path: 'bar' }] } })
+      const wrapper = shallow(
+        <ListingComponents.Photos />,
+        { context: { photos: [{ caption: 'foo', path: 'bar' }] } }
+      )
       expect(wrapper.find(PhotoCarousel).exists()).toBeTruthy()
     })
 

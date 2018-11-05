@@ -1,6 +1,11 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { Dropdown, Text, Menu, Card } from 'react-ui-core/src'
+import {
+  Dropdown,
+  Text,
+  Menu,
+  Card,
+} from 'react-ui-core/src'
 import {
   DropdownButtonExample,
   DropdownInputExample,
@@ -13,7 +18,9 @@ const inputProps = {
 }
 
 const Content = props => (
-  <Card {...props}><h1>Hi</h1></Card>
+  <Card {...props}>
+    <h1>Hi</h1>
+  </Card>
 )
 
 const MenuExample = props => (

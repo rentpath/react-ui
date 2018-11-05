@@ -24,7 +24,11 @@ describe('ag/Buttons/ApplyButton', () => {
 
   it('allows an override of the name', () => {
     const children = 'Do not apply!!!'
-    const wrapper = shallow(<ApplyButton onClick={() => null}>{children}</ApplyButton>)
+    const wrapper = shallow(
+      <ApplyButton onClick={() => null}>
+        {children}
+      </ApplyButton>
+    )
     expect(wrapper.find(Button).children().text()).toEqual('Do not apply!!!')
   })
 

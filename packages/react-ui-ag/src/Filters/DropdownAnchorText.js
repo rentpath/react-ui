@@ -8,16 +8,25 @@ export default class DropdownAnchorText extends PureComponent {
     defaultText: PropTypes.string.isRequired,
     icon: PropTypes.node,
   }
+
   static defaultProps = {
     icon: '⌄',
   }
 
   render() {
-    const { text, defaultText, icon } = this.props
+    const {
+      text,
+      defaultText,
+      icon,
+    } = this.props
 
     return [
-      <Text key="dropdown-anchor-text">{text || defaultText}</Text>,
-      <span key="dropdown-anchor-icon">{icon}</span>,
+      <Text key="dropdown-anchor-text">
+        {text || defaultText}
+      </Text>,
+      <span key="dropdown-anchor-icon">
+        {icon}
+      </span>,
     ]
   }
 }

@@ -7,7 +7,8 @@ import {
 
 import LeadForm from './LeadForm.css'
 
-export default compose({},
+export default compose(
+  {},
   Overlay,
   Modal,
   ModalBody,

@@ -15,12 +15,17 @@ export default class DropdownButtonExample extends PureComponent {
   }
 
   static defaultProps = {
-    themed: {},
+    theme: {},
     buttonText: 'select',
   }
 
   render() {
-    const { theme, visible, buttonText, ...props } = this.props
+    const {
+      theme,
+      visible,
+      buttonText,
+      ...props
+    } = this.props
 
     return (
       <Button

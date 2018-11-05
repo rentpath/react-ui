@@ -12,6 +12,7 @@ export default class GmapSpinner extends PureComponent {
     theme: PropTypes.object,
     className: PropTypes.string,
     closeDelay: PropTypes.number,
+    color: PropTypes.string,
   }
 
   static defaultProps = {

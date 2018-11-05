@@ -3,8 +3,18 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import autobind from 'autobind-decorator'
 import classnames from 'classnames'
-import { Dropdown, Text, PriceFilterCard } from '@rentpath/react-ui-core'
+import {
+  Dropdown,
+  Text,
+  PriceFilterCard,
+} from '@rentpath/react-ui-core'
 import DropdownFilterCardWrapper from './DropdownFilterCardWrapper'
+
+const nodeFuncOrObject = PropTypes.oneOfType([
+  PropTypes.node,
+  PropTypes.func,
+  PropTypes.object,
+])
 
 @themed(['FilterDropdown'])
 export default class PriceFilterDropdown extends Component {
@@ -14,6 +24,11 @@ export default class PriceFilterDropdown extends Component {
     anchorText: PropTypes.node,
     applyButton: PropTypes.object,
     cancelButton: PropTypes.object,
+    fields: PropTypes.arrayOf(PropTypes.shape({
+      label: nodeFuncOrObject,
+      value: PropTypes.string,
+      anchorLabel: nodeFuncOrObject,
+    })),
   }
 
   static defaultProps = {
@@ -39,7 +54,12 @@ export default class PriceFilterDropdown extends Component {
     const text = value && `$${value.min}-$${value.max}`
 
     if (anchorText) return cloneElement(anchorText, { text })
-    return <Text>{text}</Text>
+
+    return (
+      <Text>
+        {text}
+      </Text>
+    )
   }
 
   render() {
