@@ -44,12 +44,21 @@ describe('Tracker', () => {
 
   describe('render', () => {
     it('renders a single child', () => {
-      const wrapper = shallow(<Tracker><span /></Tracker>)
+      const wrapper = shallow(
+        <Tracker>
+          <span />
+        </Tracker>
+      )
       expect(wrapper.find('span').length).toBe(1)
     })
 
     it('renders multiple children', () => {
-      const wrapper = shallow(<Tracker><span /><span /></Tracker>)
+      const wrapper = shallow(
+        <Tracker>
+          <span />
+          <span />
+        </Tracker>
+      )
       expect(wrapper.find('span').length).toBe(2)
     })
   })

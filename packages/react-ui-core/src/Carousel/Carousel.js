@@ -90,7 +90,12 @@ export default class Carousel extends Component {
   }
 
   get remainder() {
-    const { total, pageNumber, pageSize } = this.pageInfo
+    const {
+      total,
+      pageNumber,
+      pageSize,
+    } = this.pageInfo
+
     return total - (pageNumber * pageSize)
   }
 

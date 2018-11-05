@@ -33,7 +33,11 @@ export default class OverlayView extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    const { anchor, theme, className } = this.props
+    const {
+      anchor,
+      theme,
+      className,
+    } = this.props
 
     if (this.overlay && anchor !== prevProps.anchor) {
       this.drawOverlay()

@@ -43,7 +43,11 @@ export default class DropdownMenu extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const { options, selectedIndex, selectedValue } = this.props
+    const {
+      options,
+      selectedIndex,
+      selectedValue,
+    } = this.props
 
     return !isEqual(options, nextProps.options)
       || selectedIndex !== nextProps.selectedIndex

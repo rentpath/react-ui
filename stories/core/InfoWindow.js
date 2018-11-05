@@ -54,7 +54,9 @@ export default class InfoWindow extends PureComponent {
           anchor={marker}
           onPositionChanged={this.positionChanged}
         >
-          <div>Selected: {name}</div>
+          <div>
+            {`Selected: ${name}`}
+          </div>
         </GInfoWindow>
       </Gmap>
     )

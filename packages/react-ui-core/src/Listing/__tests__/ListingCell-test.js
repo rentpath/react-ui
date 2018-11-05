@@ -47,7 +47,7 @@ describe('ListingCell', () => {
     const cardClick = jest.fn()
     const wrapper = mount(
       <ListingCell listing={listing} onClick={cardClick}>
-        <button data-tid="fake-button" />
+        <button data-tid="fake-button" type="button" />
       </ListingCell>
     )
     wrapper.find('button[data-tid="fake-button"]').simulate('click')
@@ -61,7 +61,7 @@ describe('ListingCell', () => {
     const cardClick = jest.fn()
     const wrapper = mount(
       <ListingCell listing={listing} onClick={cardClick} isActive={false}>
-        <button data-tid="fake-button" />
+        <button data-tid="fake-button" type="button" />
       </ListingCell>
     )
     wrapper.find('button[data-tid="fake-button"]').simulate('click')

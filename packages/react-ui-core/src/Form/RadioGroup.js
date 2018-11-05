@@ -207,9 +207,7 @@ export default class RadioGroup extends PureComponent {
         role="group"
         {...rest}
       >
-        {this.fields.map((field, index) =>
-          this.renderRadioButton(index, field)
-        )}
+        {this.fields.map((field, index) => this.renderRadioButton(index, field))}
         {Object.values(props) }
       </div>
     )

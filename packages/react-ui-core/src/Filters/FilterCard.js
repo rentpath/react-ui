@@ -61,21 +61,28 @@ export default class FilterCard extends PureComponent {
         )}
         {...props}
       >
-        {(title || description) &&
+        {(title || description) && (
           <div className={theme.FilterCard_Header}>
-            {title && <Title className={theme.FilterCard_Title}>{title}</Title>}
-            {description && <Text className={theme.FilterCard_Description}>{description}</Text>}
+            {title && (
+              <Title className={theme.FilterCard_Title}>
+                {title}
+              </Title>
+            )}
+            {description && (
+              <Text className={theme.FilterCard_Description}>
+                {description}
+              </Text>
+            )}
           </div>
-        }
+        )}
         <div className={theme.FilterCard_Body}>
           {children}
-
-          { (applyButton || cancelButton) &&
+          { (applyButton || cancelButton) && (
             <div className={theme.FilterCard_Buttons}>
               {applyButton && this.renderButton('applyButton', ApplyButton)}
               {cancelButton && this.renderButton('cancelButton', CancelButton)}
             </div>
-          }
+          )}
         </div>
       </Card>
     )

@@ -3,7 +3,11 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import autobind from 'autobind-decorator'
 import classnames from 'classnames'
-import { Dropdown, Text, RadioGroupFilterCard } from '@rentpath/react-ui-core'
+import {
+  Dropdown,
+  Text,
+  RadioGroupFilterCard,
+} from '@rentpath/react-ui-core'
 import DropdownFilterCardWrapper from './DropdownFilterCardWrapper'
 
 const nodeFuncOrObject = PropTypes.oneOfType([
@@ -62,7 +66,12 @@ export default class RadioGroupDropdown extends Component {
     const text = anchorLabel || label
 
     if (anchorText) return cloneElement(anchorText, { text })
-    return <Text>{text}</Text>
+
+    return (
+      <Text>
+        {text}
+      </Text>
+    )
   }
 
   render() {

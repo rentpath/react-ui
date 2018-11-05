@@ -58,7 +58,12 @@ export default class Form extends Component {
   }
 
   onSubmit = event => {
-    const { onSubmit, serialize, serializeOptions } = this.props
+    const {
+      onSubmit,
+      serialize,
+      serializeOptions,
+    } = this.props
+
     event.preventDefault()
 
     if (onSubmit) {

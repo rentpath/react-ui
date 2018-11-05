@@ -3,7 +3,12 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
-import { Button, ToggleButton, ListingComponents, ListingCell } from '@rentpath/react-ui-core'
+import {
+  Button,
+  ToggleButton,
+  ListingComponents,
+  ListingCell,
+} from '@rentpath/react-ui-core'
 import { Banner } from '../Banners'
 
 const buttonPropTypes = PropTypes.shape({
@@ -46,8 +51,8 @@ export default class SingleFamilyMobileMapListing extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return this.props.isActive !== nextProps.isActive ||
-      this.props.listing.id !== nextProps.listing.id
+    const { isActive, listing } = this.props
+    return isActive !== nextProps.isActive || listing.id !== nextProps.listing.id
   }
 
   @autobind
@@ -68,8 +73,7 @@ export default class SingleFamilyMobileMapListing extends Component {
         this.props.onClick(this.props.index)
       }
 
-      const shouldStopPropagation =
-        isActive && event && event.stopPropagation
+      const shouldStopPropagation = isActive && event && event.stopPropagation
 
       if (shouldStopPropagation) event.stopPropagation()
     }
@@ -105,7 +109,12 @@ export default class SingleFamilyMobileMapListing extends Component {
   }
 
   renderFavoriteButton() {
-    const { theme, favoriteButton, isActive, listing } = this.props
+    const {
+      theme,
+      favoriteButton,
+      isActive,
+      listing,
+    } = this.props
     const { className } = favoriteButton
     return (
       <ToggleButton
@@ -168,12 +177,12 @@ export default class SingleFamilyMobileMapListing extends Component {
         {...props}
       >
         {this.renderFavoriteButton()}
-        {listing.banner &&
+        {listing.banner && (
           <Banner
             name={listing.banner}
             className={theme.MobileMapListing_Banner}
           />
-        }
+        )}
         {this.renderPhotoCarousel()}
         <div className={theme.MobileMapListing_Bottom}>
           <div className={theme.MobileMapListing_Info}>

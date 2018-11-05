@@ -35,7 +35,11 @@ export default class OverlayView extends PureComponent {
 
   render() {
     const { apiKey } = this.props
-    const { marker, id, name } = this.state
+    const {
+      marker,
+      id,
+      name,
+    } = this.state
 
     return (
       <Gmap
@@ -54,7 +58,7 @@ export default class OverlayView extends PureComponent {
             role="button"
             tabIndex="0"
           >
-            Selected: {name}
+            {`Selected: ${name}`}
           </div>
         </GOverlayView>
       </Gmap>

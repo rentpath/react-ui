@@ -117,10 +117,11 @@ describe('Form/Field', () => {
 
   describe('when "label" is a function', () => {
     it('renders a custom label element', () => {
-      /* eslint-disable jsx-a11y/label-has-for */
+      /* eslint-disable jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control */
       const label = jest.fn(() => <label id="label" />)
       const { wrapper } = setup({ label })
       expect(wrapper.find('label#label').length).toBe(1)
+      /* eslint-enable jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control */
     })
   })
 

@@ -5,6 +5,7 @@
     "global-require": 0,
     "jest/no-disabled-tests": "error",
     "jest/no-focused-tests": "error",
+    "jsx-a11y/click-events-have-key-events": 0
   },
   "plugins": [
     "react",

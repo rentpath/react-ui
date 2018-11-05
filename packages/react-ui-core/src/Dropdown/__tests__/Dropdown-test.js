@@ -28,7 +28,7 @@ class SampleAnchor extends PureComponent {
   }
 }
 
-const SampleChild = props => <button data-tid="child" {...props} />
+const SampleChild = props => <button data-tid="child" type="button" {...props} />
 
 SampleChild.propTypes = {
   onSelect: PropTypes.func,

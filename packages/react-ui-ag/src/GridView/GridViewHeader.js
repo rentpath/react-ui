@@ -37,7 +37,9 @@ export default class GridViewHeader extends PureComponent {
         data-tid="grid-view-header"
         {...props}
       >
-        <Text className={theme.GridViewHeader_Counter}>{counter}</Text>
+        <Text className={theme.GridViewHeader_Counter}>
+          {counter}
+        </Text>
         <DropdownMenu {...sortMenu} />
       </div>
     )

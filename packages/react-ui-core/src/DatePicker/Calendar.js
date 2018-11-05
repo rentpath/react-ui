@@ -46,12 +46,14 @@ export default class Calendar extends PureComponent {
 
   @autobind
   nextMonth() {
-    this.setState({ date: addMonths(this.state.date, 1) })
+    const { date } = this.state
+    this.setState({ date: addMonths(date, 1) })
   }
 
   @autobind
   previousMonth() {
-    this.setState({ date: subMonths(this.state.date, 1) })
+    const { date } = this.state
+    this.setState({ date: subMonths(date, 1) })
   }
 
   @autobind
@@ -105,7 +107,13 @@ export default class Calendar extends PureComponent {
   }
 
   render() {
-    const { className, theme, prevButtonLabel, nextButtonLabel } = this.props
+    const {
+      className,
+      theme,
+      prevButtonLabel,
+      nextButtonLabel,
+    } = this.props
+
     const days = this.daysOfMonth().map(d => d)
 
     return (

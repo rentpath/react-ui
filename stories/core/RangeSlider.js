@@ -42,7 +42,7 @@ export const MinMaxStepRangeSlider = wrapper({
 export const SquareFootSlider = wrapper({
   formatHeader: value => (
     <h4>
-      Square Foot {`${value.min} ft - ${value.max} ft+`}
+      {`Square Foot ${value.min} ft - ${value.max} ft+`}
     </h4>
   ),
   value: {
@@ -57,7 +57,7 @@ export const SquareFootSlider = wrapper({
 export const PriceSlider = wrapper({
   formatHeader: value => (
     <h4>
-      Price Range {`${value.min} - ${value.max}+`}
+      {`Price Range ${value.min} - ${value.max}+`}
     </h4>
   ),
   value: {

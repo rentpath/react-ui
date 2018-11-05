@@ -46,4 +46,8 @@ TwoButtonFilterCardComponent.propTypes = {
 const ThemedTwoButtonFilterCard = themed(['WithButtons'])(TwoButtonFilterCardComponent)
 const TwoButtonFilterCard = <ThemedTwoButtonFilterCard />
 
-export { DefaultFilterCard, OneButtonFilterCard, TwoButtonFilterCard }
+export {
+  DefaultFilterCard,
+  OneButtonFilterCard,
+  TwoButtonFilterCard,
+}

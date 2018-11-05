@@ -5,6 +5,7 @@ import Field from './Field'
 export default class Checkbox extends PureComponent {
   static propTypes = {
     type: PropTypes.string,
+    property: PropTypes.string,
   }
 
   static defaultProps = {

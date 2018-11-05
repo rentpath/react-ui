@@ -10,19 +10,19 @@ describe('ToggleButton', () => {
     const props = {
       theme,
       className: theme.ToggleButton,
-      children: <a href="#">Toggle</a>,
+      children: <a href="#toggle">Toggle</a>,
     }
 
     const wrapper = shallow(<ToggleButton {...props} />)
     expect(wrapper.hasClass('ToggleButton')).toBeTruthy()
-    expect(wrapper.contains([<a href="#">Toggle</a>])).toBeTruthy()
+    expect(wrapper.contains([<a href="#toggle">Toggle</a>])).toBeTruthy()
   })
 
   it('sets the default state to off', () => {
     const props = {
       theme,
       className: theme.ToggleButton,
-      children: <a href="#">Toggle</a>,
+      children: <a href="#toggle">Toggle</a>,
     }
 
     const wrapper = shallow(<ToggleButton {...props} />)
@@ -33,7 +33,7 @@ describe('ToggleButton', () => {
     const props = {
       theme,
       className: theme.ToggleButton,
-      children: <a href="#">Toggle</a>,
+      children: <a href="#toggle">Toggle</a>,
     }
 
     const wrapper = shallow(<ToggleButton {...props} />)
@@ -46,7 +46,7 @@ describe('ToggleButton', () => {
     const props = {
       theme,
       className: theme.ToggleButton,
-      children: <a href="#">Toggle</a>,
+      children: <a href="#toggle">Toggle</a>,
     }
 
     const wrapper = shallow(<ToggleButton {...props} value />)
@@ -59,7 +59,7 @@ describe('ToggleButton', () => {
     const props = {
       theme,
       className: theme.ToggleButton,
-      children: <a href="#">Toggle</a>,
+      children: <a href="#toggle">Toggle</a>,
     }
     const onClick = jest.fn()
 
@@ -76,7 +76,7 @@ describe('ToggleButton', () => {
     const props = {
       theme,
       className: theme.ToggleButton,
-      children: <a href="#">Toggle</a>,
+      children: <a href="#toggle">Toggle</a>,
     }
     const onClick = jest.fn()
 

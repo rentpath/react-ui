@@ -12,7 +12,7 @@ const rangeSliderProps = {
   step: 100,
 }
 
-const Slider = props => <RangeSlider {...rangeSliderProps}{...props} />
+const Slider = props => <RangeSlider {...rangeSliderProps} {...props} />
 
 const InlinePriceFilterCardComponent = ({ theme }) => (
   <PriceFilterCard

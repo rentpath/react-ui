@@ -81,7 +81,9 @@ export default class Tracker extends PureComponent {
 
   render() {
     return Array.isArray(this.props.children) ? (
-      <div>{this.props.children}</div>
+      <div>
+        {this.props.children}
+      </div>
     ) : this.props.children || null
   }
 }

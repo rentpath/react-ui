@@ -68,7 +68,11 @@ export default class AutoSuggestField extends Component {
 
   constructor(props) {
     super(props)
-    const { value, visible, onInput } = props
+    const {
+      value,
+      visible,
+      onInput,
+    } = props
 
     this.onInput = debounce(onInput, 300)
     this.state = {
@@ -118,12 +122,14 @@ export default class AutoSuggestField extends Component {
     if (!highlight) return { nodeType: 'div' }
     const indexHighlighted = highlight.indexHighlighted >= 0 ? highlight.indexHighlighted : 1
 
-    return { nodeType: props =>
-      (<Highlighter
-        indexHighlighted={indexHighlighted}
-        {...props}
-        pattern={this.state.value}
-      />),
+    return {
+      nodeType: props => (
+        <Highlighter
+          indexHighlighted={indexHighlighted}
+          {...props}
+          pattern={this.state.value}
+        />
+      ),
     }
   }
 

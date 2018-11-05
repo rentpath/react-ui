@@ -24,7 +24,11 @@ describe('ag/Buttons/CancelButton', () => {
 
   it('allows an override of the name', () => {
     const children = 'Do not cancel!!!'
-    const wrapper = shallow(<CancelButton onClick={() => null}>{children}</CancelButton>)
+    const wrapper = shallow(
+      <CancelButton onClick={() => null}>
+        {children}
+      </CancelButton>
+    )
     expect(wrapper.find(Button).children().text()).toEqual('Do not cancel!!!')
   })
 

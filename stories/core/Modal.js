@@ -51,6 +51,8 @@ export const ModalPopup = () => ([
     isOpen={boolean('isOpen', false)}
     key="modal"
   >
-    <div>{"I'm open! Woohoo!"}</div>
+    <div>
+      {"I'm open! Woohoo!"}
+    </div>
   </Modal>,
 ])

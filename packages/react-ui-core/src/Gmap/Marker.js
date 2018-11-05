@@ -48,7 +48,12 @@ class Marker extends PureComponent {
   }
 
   marker() {
-    const { map, marker, ...rest } = this.props
+    const {
+      map,
+      marker,
+      ...rest
+    } = this.props
+
     return {
       ...rest,
       ...marker(rest),
@@ -67,8 +72,10 @@ class Marker extends PureComponent {
   }
 }
 
+/* eslint-disable react/no-unused-prop-types, react/forbid-foreign-prop-types */
 EVENT_NAMES.forEach(name => {
   Marker.propTypes[name] = PropTypes.func
 })
+/* eslint-enable react/no-unused-prop-types, react/forbid-foreign-prop-types */
 
 export default Marker

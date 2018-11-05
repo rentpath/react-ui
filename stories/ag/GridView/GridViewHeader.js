@@ -32,7 +32,9 @@ const ExampleGridViewHeaderComponent = ({ theme }) => (
         ],
         createAnchorText: anchorText => [
           <div key="sort-label" className={theme.GridViewHeader_SortLabel}>Sort By:</div>,
-          <div key="anchor-text" className={theme.GridViewHeader_AnchorText}>{anchorText}</div>,
+          <div key="anchor-text" className={theme.GridViewHeader_AnchorText}>
+            {anchorText}
+          </div>,
           <div key="sort-chevron" className={theme.GridViewHeader_SortChevron}>⌄</div>,
         ],
         selectedValue: select(

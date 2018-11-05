@@ -79,8 +79,8 @@ export default class Layer extends PureComponent {
 /* NOTE: linter complains about Layer.propTypes.name never used,
  * but it's dynanic so "name" isn't a prop
  */
-/* eslint-disable react/no-unused-prop-types */
+/* eslint-disable react/no-unused-prop-types, react/forbid-foreign-prop-types */
 EVENT_NAMES.forEach(name => {
   Layer.propTypes[name] = PropTypes.func
 })
-/* eslint-enable react/no-unused-prop-types */
+/* eslint-enable react/no-unused-prop-types, react/forbid-foreign-prop-types */

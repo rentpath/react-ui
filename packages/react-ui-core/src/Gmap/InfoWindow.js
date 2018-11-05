@@ -77,8 +77,8 @@ export default class InfoWindow extends PureComponent {
 /* NOTE: linter complains about InfoWindow.propTypes.name never used,
  * but it's dynanic so "name" isn't a prop
  */
-/* eslint-disable react/no-unused-prop-types */
+/* eslint-disable react/no-unused-prop-types, react/forbid-foreign-prop-types */
 EVENT_NAMES.forEach(name => {
   InfoWindow.propTypes[name] = PropTypes.func
 })
-/* eslint-enable react/no-unused-prop-types */
+/* eslint-enable react/no-unused-prop-types, react/forbid-foreign-prop-types */

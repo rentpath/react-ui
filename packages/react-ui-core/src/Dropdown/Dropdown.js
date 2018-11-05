@@ -1,4 +1,8 @@
-import React, { Component, cloneElement, createElement } from 'react'
+import React, {
+  Component,
+  cloneElement,
+  createElement,
+} from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
 import { parseArgs } from '@rentpath/react-ui-utils'
@@ -64,11 +68,10 @@ export default class Dropdown extends Component {
   handleDocumentClick(event) {
     const eventTarget = event.target
     const parentTarget = event.target.parentNode
-    const parentIsDropdown = this.dropdown.contains(parentTarget) &&
-      parentTarget.dataset.self === 'dropdown'
+    const hasParentTarget = this.dropdown.contains(parentTarget)
+    const parentIsDropdown = hasParentTarget && parentTarget.dataset.self === 'dropdown'
 
-    const targetIsDropdown = this.dropdown.contains(eventTarget) ||
-      parentIsDropdown
+    const targetIsDropdown = this.dropdown.contains(eventTarget) || parentIsDropdown
 
     const shouldFireEvent = this.state.visible && !targetIsDropdown
 
@@ -125,11 +128,11 @@ export default class Dropdown extends Component {
         data-self="dropdown"
       >
         {this.renderAnchor()}
-        {visible &&
+        {visible && (
           <div data-tid="dropdown-body" className={theme.Dropdown_Body}>
             {this.renderChildren()}
           </div>
-        }
+        )}
       </div>
     )
   }

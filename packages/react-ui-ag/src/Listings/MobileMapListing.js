@@ -62,12 +62,13 @@ export default class MobileMapListing extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    const { listing } = this.props
+    const { listing, isActive } = this.props
+
     return (
-      this.props.isActive !== nextProps.isActive ||
-      listing.id !== nextProps.listing.id ||
-      listing.isFavorited !== nextProps.listing.isFavorited ||
-      !isEqual(listing.photos, nextProps.listing.photos)
+      isActive !== nextProps.isActive
+      || listing.id !== nextProps.listing.id
+      || listing.isFavorited !== nextProps.listing.isFavorited
+      || !isEqual(listing.photos, nextProps.listing.photos)
     )
   }
 
@@ -83,7 +84,11 @@ export default class MobileMapListing extends Component {
 
   @autobind
   handleCardClick() {
-    const { index, listing, onClick } = this.props
+    const {
+      index,
+      listing,
+      onClick,
+    } = this.props
 
     if (onClick) onClick(index, listing)
   }
@@ -107,7 +112,11 @@ export default class MobileMapListing extends Component {
 
   @autobind
   handleFavoriteClick(value, event) {
-    const { isActive, listing, favoriteButton } = this.props
+    const {
+      isActive,
+      listing,
+      favoriteButton,
+    } = this.props
     const { onClick } = favoriteButton
 
     if (isActive && onClick) {
@@ -139,7 +148,13 @@ export default class MobileMapListing extends Component {
 
   renderCtaButton(props, key) {
     const { theme, listing } = this.props
-    const { className, onClick, valueLocation, children, ...rest } = props
+    const {
+      className,
+      onClick,
+      valueLocation,
+      children,
+      ...rest
+    } = props
 
     const buttonText = get(listing, valueLocation, children)
     const buttonProps = { ...rest }
@@ -160,8 +175,14 @@ export default class MobileMapListing extends Component {
   }
 
   renderFavoriteButton() {
-    const { theme, favoriteButton, isActive, listing } = this.props
+    const {
+      theme,
+      favoriteButton,
+      isActive,
+      listing,
+    } = this.props
     const { className } = favoriteButton
+
     return (
       <ToggleButton
         {...favoriteButton}
@@ -174,7 +195,14 @@ export default class MobileMapListing extends Component {
   }
 
   renderPhotoCarousel() {
-    const { listing, theme, photos, isActive, renderCustomControls } = this.props
+    const {
+      listing,
+      theme,
+      photos,
+      isActive,
+      renderCustomControls,
+    } = this.props
+
     let { lazyLoad } = this.props
 
     if (lazyLoad && typeof lazyLoad === 'boolean') {
@@ -275,7 +303,9 @@ export default class MobileMapListing extends Component {
               />
             )}
           </div>
-          <div className={theme.MobileMapListing_CTAs}>{this.renderCtaButtons()}</div>
+          <div className={theme.MobileMapListing_CTAs}>
+            {this.renderCtaButtons()}
+          </div>
         </div>
       </ListingCell>
     )

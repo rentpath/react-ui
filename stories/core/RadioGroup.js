@@ -5,7 +5,7 @@ import { RadioGroup } from 'react-ui-core/src/Form'
 export const DefaultRadioGroup = (
   <RadioGroup
     data-tid="foobar"
-    name={'radio-group-1'}
+    name="radio-group-1"
     fields={[
       { label: 'One', checked: false, value: 'One' },
       { label: 'Two', checked: false, value: 'Two' },
@@ -16,7 +16,7 @@ export const DefaultRadioGroup = (
 
 export const ButtonRadioGroup = (
   <RadioGroup
-    name={'radio-group-2'}
+    name="radio-group-2"
     orientation="vertical"
     hideInputElement
     fields={[
@@ -29,7 +29,7 @@ export const ButtonRadioGroup = (
 
 export const VerticalRadioGroup = (
   <RadioGroup
-    name={'radio-group-3'}
+    name="radio-group-3"
     orientation="vertical"
     fields={[
       { label: 'Un', checked: false, value: 'Un' },
@@ -41,7 +41,7 @@ export const VerticalRadioGroup = (
 
 export const UnselectRadioGroup = (
   <RadioGroup
-    name={'radio-group-4'}
+    name="radio-group-4"
     orientation="vertical"
     hideInputElement
     fields={[

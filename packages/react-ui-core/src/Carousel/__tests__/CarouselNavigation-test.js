@@ -27,8 +27,8 @@ describe('Carousel Navigation', () => {
           direction="next"
         >
           {items}
-        </CarouselNavigation>)
-      .toJSON()
+        </CarouselNavigation>
+      ).toJSON()
     expect(snap).toMatchSnapshot()
   })
 

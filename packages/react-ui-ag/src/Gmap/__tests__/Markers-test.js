@@ -1,7 +1,12 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Markers from '../Markers'
-import { redDotIcon, greyDotIcon, blackDotIcon, blackDotIconWithBalloon } from '../markerIcons'
+import {
+  redDotIcon,
+  greyDotIcon,
+  blackDotIcon,
+  blackDotIconWithBalloon,
+} from '../markerIcons'
 
 const map = { google: 'map' }
 

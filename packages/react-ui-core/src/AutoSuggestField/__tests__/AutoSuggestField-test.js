@@ -4,7 +4,7 @@ import ThemedAutoSuggestField from '../AutoSuggestField'
 
 const AutoSuggestField = ThemedAutoSuggestField.WrappedComponent
 
-const TestButton = props => (<button {...props}>X</button>)
+const TestButton = props => (<button {...props} type="button">X</button>)
 
 const map = {}
 

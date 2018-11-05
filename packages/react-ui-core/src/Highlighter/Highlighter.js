@@ -13,6 +13,7 @@ export default class Highlighter extends Component {
     children: PropTypes.string,
     theme: PropTypes.object,
     indexHighlighted: PropTypes.number,
+    text: PropTypes.string,
   }
 
   static defaultProps = {

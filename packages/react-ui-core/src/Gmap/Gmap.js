@@ -122,8 +122,7 @@ export class Gmap extends PureComponent {
     const children = React.Children.toArray(this.props.children)
     const props = { map }
 
-    return React.Children.map(children, child =>
-      React.cloneElement(child, props))
+    return React.Children.map(children, child => React.cloneElement(child, props))
   }
 
   get mapControls() {
@@ -192,8 +191,10 @@ export class Gmap extends PureComponent {
   }
 }
 
+/* eslint-disable react/no-unused-prop-types, react/forbid-foreign-prop-types */
 EVENT_NAMES.forEach(name => {
   Gmap.propTypes[name] = PropTypes.func
 })
+/* eslint-enable react/no-unused-prop-types, react/forbid-foreign-prop-types */
 
 export default withGoogleScript(Gmap)

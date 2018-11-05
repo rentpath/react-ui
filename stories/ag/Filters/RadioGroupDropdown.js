@@ -81,4 +81,8 @@ DesktopPetDropdownComponent.propTypes = {
 const ThemedDesktopPetDropdown = themed(['SearchFilter', 'PetFilterCard'])(DesktopPetDropdownComponent)
 const DesktopPetDropdown = <ThemedDesktopPetDropdown />
 
-export { DesktopBedroomDropdown, DesktopBathroomDropdown, DesktopPetDropdown }
+export {
+  DesktopBedroomDropdown,
+  DesktopBathroomDropdown,
+  DesktopPetDropdown,
+}

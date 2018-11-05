@@ -1,9 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
-import { text, select, boolean } from '@storybook/addon-knobs'
+import {
+  text,
+  select,
+  boolean,
+} from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-import { ListingCell, ListingComponents, Button } from 'react-ui-core/src'
+import {
+  ListingCell,
+  ListingComponents,
+  Button,
+} from 'react-ui-core/src'
 import ratingTheme from '../theme/core/RatingBar.css'
 
 const baseListing = {

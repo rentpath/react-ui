@@ -28,6 +28,8 @@ export default class ModalStack extends PureComponent {
     modalDefinitions: PropTypes.object,
     onClose: PropTypes.func,
     modalPortalId: PropTypes.string,
+    overlay: PropTypes.bool,
+    theme: PropTypes.object,
   }
 
   static defaultProps = {
@@ -54,6 +56,7 @@ export default class ModalStack extends PureComponent {
 
     if (id && !this.getModalComponent(id)) {
       const modalDefinition = get(id)(modalDefinitions)
+      const { modals } = this.state
 
       if (modalDefinition) {
         this.loadModal(modalDefinition).then(modal => {
@@ -61,7 +64,7 @@ export default class ModalStack extends PureComponent {
             this.setState({
               currentDefinition: modalDefinition,
               modals: {
-                ...this.state.modals,
+                ...modals,
                 [id]: modal,
               },
             })

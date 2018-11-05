@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-const defaultAnimationStyle = i =>
-  `BOUNCELOADER 2.1s ${i === 1 ? '1s' : '0s'} infinite ease-in-out`
+const defaultAnimation = i => `BOUNCELOADER 2.1s ${i === 1 ? '1s' : '0s'} infinite ease-in-out`
 
 class Loader extends Component {
   static propTypes = {
@@ -20,11 +19,16 @@ class Loader extends Component {
     size: 60,
     sizeUnit: 'px',
     className: '',
-    animation: defaultAnimationStyle,
+    animation: defaultAnimation,
   };
 
   style(scale) {
-    const { size, color, sizeUnit, animation } = this.props
+    const {
+      size,
+      color,
+      sizeUnit,
+      animation,
+    } = this.props
 
     return {
       position: 'absolute',
@@ -58,22 +62,24 @@ class Loader extends Component {
         <div style={this.style(0)} />
         <div style={this.style(1)} />
         {/* eslint-disable-next-line */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          @keyframes BOUNCELOADER {
-            0% {
-              transform: scale(0);
-              -webkit-transform: scale(0);
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes BOUNCELOADER {
+              0% {
+                transform: scale(0);
+                -webkit-transform: scale(0);
+              }
+              50% {
+                transform: scale(1);
+                -webkit-transform: scale(1);
+              }
+              100% {
+                transform: scale(0);
+                -webkit-transform: scale(0);
+              }
             }
-            50% {
-              transform: scale(1);
-              -webkit-transform: scale(1);
-            }
-            100% {
-              transform: scale(0);
-              -webkit-transform: scale(0);
-            }
-          }
-        ` }}
+          `,
+        }}
         />
       </div>
     ) : null

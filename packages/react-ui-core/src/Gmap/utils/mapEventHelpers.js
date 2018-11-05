@@ -1,5 +1,6 @@
-export const handleEvent = (instance, name, props) =>
+export const handleEvent = (instance, name, props) => (
   event => props[name](event, props, instance)
+)
 
 export const setupEvents = (instance, events, props, once) => {
   const eventNames = Object.keys(events)

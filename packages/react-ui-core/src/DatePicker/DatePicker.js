@@ -80,8 +80,9 @@ export default class DatePicker extends PureComponent {
 
   @autobind
   handleCalendarVisibility() {
+    const { showCalendar } = this.state
     this.setState({
-      showCalendar: !this.state.showCalendar,
+      showCalendar: !showCalendar,
     })
   }
 
@@ -117,14 +118,18 @@ export default class DatePicker extends PureComponent {
     const {
       prevButtonLabel,
       nextButtonLabel,
-      showCalendar,
+      showCalendar: _,
       minDate,
       maxDate,
       dateFormat,
       ...rest
     } = this.props
 
-    const { value, isValidDate } = this.state
+    const {
+      value,
+      isValidDate,
+      showCalendar,
+    } = this.state
 
     return (
       <div ref={this.picker}>
@@ -136,7 +141,7 @@ export default class DatePicker extends PureComponent {
           onBlur={this.validateTextField}
         />
 
-        {this.state.showCalendar &&
+        {showCalendar && (
           <Calendar
             value={isValidDate ? new Date(value) : undefined}
             dateChange={this.dateChange}
@@ -144,7 +149,8 @@ export default class DatePicker extends PureComponent {
             maxDate={maxDate}
             prevButtonLabel={prevButtonLabel}
             nextButtonLabel={nextButtonLabel}
-          />}
+          />
+        )}
       </div>
     )
   }

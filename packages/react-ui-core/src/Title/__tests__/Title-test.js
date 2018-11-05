@@ -22,13 +22,13 @@ describe('Title', () => {
       theme,
       className: theme['Title-Yuge'],
       nodeType: 'h2',
-      children: <a href="#">Home</a>,
+      children: <a href="#home">Home</a>,
     }
 
     const wrapper = shallow(<Title {...props} />)
     expect(wrapper.find('h2').exists()).toBeTruthy()
     expect(wrapper.find('h2').hasClass('Title-Yuge')).toBeTruthy()
-    expect(wrapper.find('h2').contains([<a href="#">Home</a>])).toBeTruthy()
+    expect(wrapper.find('h2').contains([<a href="#home">Home</a>])).toBeTruthy()
   })
 
   it('has a default data-tid', () => {

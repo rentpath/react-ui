@@ -84,7 +84,13 @@ export default class Photo extends PureComponent {
 
     return (
       <React.Fragment>
-        {sources.reduce((sourcesArr, { type, media, srcset }, index) => {
+        {sources.reduce((sourcesArr, value, index) => {
+          const {
+            type,
+            media,
+            srcset,
+          } = value
+
           if (srcset) {
             sourcesArr.push(
               <source
@@ -140,19 +146,21 @@ export default class Photo extends PureComponent {
 
     const isFallback = this.isFallback
 
-    const imageTag = (<img
-      src={isFallback ? fallbackUrl : this.state.url}
-      alt={alt}
-      data-tid="photo"
-      ref={this.img}
-      className={classnames(
-        className,
-        theme.Photo,
-        isFallback && theme['Photo-error'],
-      )}
-      onError={this.fallback}
-      {...rest}
-    />)
+    const imageTag = (
+      <img
+        src={isFallback ? fallbackUrl : this.state.url}
+        alt={alt}
+        data-tid="photo"
+        ref={this.img}
+        className={classnames(
+          className,
+          theme.Photo,
+          isFallback && theme['Photo-error'],
+        )}
+        onError={this.fallback}
+        {...rest}
+      />
+    )
 
     if (isFallback || !this.sourceTags) return imageTag
 

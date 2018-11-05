@@ -1,7 +1,11 @@
 import React, { PureComponent } from 'react'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import { Dropdown, Menu, Card } from 'react-ui-core/src'
+import {
+  Dropdown,
+  Menu,
+  Card,
+} from 'react-ui-core/src'
 import PropTypes from 'prop-types'
 import DropdownButtonExample from './DropdownButtonExample'
 
@@ -17,7 +21,7 @@ export default class DynamicDropdownExample extends PureComponent {
   }
 
   static defaultProps = {
-    themed: {},
+    theme: {},
     buttonText: 'choose',
   }
 

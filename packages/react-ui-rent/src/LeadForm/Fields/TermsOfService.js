@@ -25,7 +25,8 @@ export default class TermsOfService extends PureComponent {
         {"By submitting this form, you agree to Rent.com's "}
         <a href="/company/legal/termsofservice/"> Terms of Service</a>
         {' and '}
-        <a href="/company/privacy-full/"> Privacy Policy</a>.
+        <a href="/company/privacy-full/"> Privacy Policy</a>
+        .
       </div>
     ),
   }

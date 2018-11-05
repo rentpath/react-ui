@@ -81,7 +81,12 @@ export default class LeadForm extends Component {
     const { fields } = this.props
 
     return fields.map(fieldComposition => {
-      const { field, className, ...props } = fieldComposition
+      const {
+        field,
+        className,
+        ...props
+      } = fieldComposition
+
       const name = props.name
       const FormField = field || FIELD_MAPPING[name] || this.fallbackField(props.type)
 

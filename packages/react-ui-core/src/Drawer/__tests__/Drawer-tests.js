@@ -24,7 +24,7 @@ describe('Drawer', () => {
     const props = {
       theme,
       className: theme.Drawer,
-      children: <a href="#">Toggle</a>,
+      children: <a href="#toggle">Toggle</a>,
     }
 
     const wrapper = mount(<Drawer {...props} />)
@@ -35,7 +35,7 @@ describe('Drawer', () => {
     const props = {
       theme,
       className: theme.Drawer,
-      children: <a href="#">Toggle</a>,
+      children: <a href="#toggle">Toggle</a>,
     }
 
     const wrapper = mount(<Drawer {...props} />)
@@ -48,7 +48,7 @@ describe('Drawer', () => {
     const props = {
       theme,
       className: theme.Drawer,
-      children: <a href="#">Toggle</a>,
+      children: <a href="#toggle">Toggle</a>,
     }
     const onClick = jest.fn()
 
@@ -65,7 +65,7 @@ describe('Drawer', () => {
     const props = {
       theme,
       className: theme.Drawer,
-      children: <a href="#">Toggle</a>,
+      children: <a href="#toggle">Toggle</a>,
       visible: false,
     }
 
