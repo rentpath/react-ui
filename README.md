@@ -21,7 +21,7 @@ This project uses [commitizen](https://github.com/commitizen/cz-cli).  This allo
 
 Anything that is included in the `BREAKING_CHANGES` section of the prompt will automatically bump the package version for the repo to a major version.
 
-Also, please keep in mind your `scope` should be what you were working. It should be something like `form` or `listing` or `photo`.  The short description of change should be precise as it's what you will see in the CHANGELOG (along with the scope).  
+Also, please keep in mind your `scope` should be what you were working on. It should be something like `form` or `listing` or `photo`.  The short description of change should be precise as it's what you will see in the CHANGELOG (along with the scope).  
 
 ## Working Locally
 
