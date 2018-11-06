@@ -5,7 +5,6 @@ import classnames from 'classnames'
 import BounceLoader from './spinners/BounceLoader'
 
 @themed(['Gmap_Spinner'], { pure: true })
-
 export default class GmapSpinner extends PureComponent {
   static propTypes = {
     loading: PropTypes.bool,

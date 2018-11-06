@@ -6,7 +6,6 @@ import classnames from 'classnames'
 @themed(/^(RatingBar|Label)/, {
   pure: true,
 })
-
 export default class RatingBar extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,

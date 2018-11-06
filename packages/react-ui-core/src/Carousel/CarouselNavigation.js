@@ -7,7 +7,6 @@ import { Button } from '../Button'
 @themed(/^CarouselNavigation/, {
   pure: true,
 })
-
 export default class CarouselNavigation extends PureComponent {
   static propTypes = {
     direction: PropTypes.oneOf(['previous', 'next']),

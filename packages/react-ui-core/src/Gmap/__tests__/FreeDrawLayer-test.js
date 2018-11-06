@@ -8,8 +8,9 @@ const shape = [
   { lat: 33.92239, lng: -84.64618 },
 ]
 
-const testMap = new window.google.maps.Map()
+const testMap = () => new window.google.maps.Map()
 const mockPolygon = new window.google.maps.Polygon({ path: shape })
+const mockPolyline = new window.google.maps.Polyline()
 
 const expectedPoints = [
   [-84.56927, 33.90871],
@@ -18,7 +19,7 @@ const expectedPoints = [
 ]
 
 const props = {
-  map: testMap,
+  map: testMap(),
   mapControls: {
     draggable: true,
     zoomControl: true,
@@ -75,7 +76,8 @@ describe('FreeDrawLayer', () => {
 
     it('calls drawFreeHand on mouse up', () => {
       const instance = setup()
-      const drawFreeHandSpy = jest.spyOn(instance, 'drawFreeHand')
+      const drawFreeHandSpy = jest.fn()
+      instance.drawFreeHand = drawFreeHandSpy
       instance.polygon = mockPolygon
       instance.drawFreeHand()
       instance.handleMouseUp()
@@ -86,7 +88,8 @@ describe('FreeDrawLayer', () => {
   describe('enableDraw', () => {
     it('disables map controls', () => {
       const instance = setup()
-      const spy = jest.spyOn(instance, 'disableMapControls')
+      const spy = jest.fn()
+      instance.disableMapControls = spy
       instance.enableDraw()
       expect(spy).toHaveBeenCalled()
     })
@@ -110,11 +113,15 @@ describe('FreeDrawLayer', () => {
   describe('finishDraw', () => {
     it('enables map controls and removes poly shapes on enabled prop changed to false', () => {
       const polygonSpy = jest.spyOn(window.google.maps.Polygon.prototype, 'setMap')
-      const polylineSpy = jest.spyOn(window.google.maps.Polyline.prototype, 'setMap')
 
       const wrapper = shallow(<FreeDrawLayer {...props} enabled />)
       const instance = wrapper.instance()
-      const enableMapControls = jest.spyOn(instance, 'enableMapControls')
+      const enableMapControls = jest.spyOn(FreeDrawLayer.prototype, 'enableMapControls')
+      const polylineSpy = jest.fn()
+
+      instance.polyline = mockPolyline
+      instance.polyline.setMap = polylineSpy
+
       wrapper.setProps({ enabled: false })
       expect(polylineSpy).toHaveBeenCalledWith(null)
       expect(polygonSpy).toHaveBeenCalledWith(null)

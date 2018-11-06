@@ -19,7 +19,6 @@ const ESCAPE = 27
 @themed(/^(AutoSuggestField|Button_Clear|Button_Submit)/, {
   pure: true,
 })
-
 export default class AutoSuggestField extends Component {
   static propTypes = {
     className: PropTypes.string,

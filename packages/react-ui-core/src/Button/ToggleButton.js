@@ -6,7 +6,6 @@ import autobind from 'autobind-decorator'
 import Button from './Button'
 
 @themed(/^ToggleButton/)
-
 export default class ToggleButton extends Component {
   static propTypes = {
     className: PropTypes.string,

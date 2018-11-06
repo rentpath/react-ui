@@ -6,7 +6,6 @@ import { Text } from '../Text'
 @themed(/^(Modal_Header|Modal_SubHeader)/, {
   pure: true,
 })
-
 export default class Header extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,

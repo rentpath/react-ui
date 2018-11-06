@@ -1,14 +1,21 @@
 {
   "presets": [
-    "env",
-    "react"
+    ["@babel/preset-env", {
+      "modules": false,
+      "targets": {
+        "browsers": [">0.25%", "not op_mini all"],
+        "node": "current"
+      }
+    }],
+    "@babel/preset-react"
   ],
   "plugins": [
-    "transform-runtime",
-    "transform-decorators-legacy",
-    "transform-class-properties",
-    "babel-plugin-transform-object-rest-spread",
+    ["@babel/plugin-proposal-decorators", {
+      "legacy": true
+    }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    "@babel/plugin-proposal-export-default-from",
     "dynamic-import-webpack"
   ],
-  "ignore": "node_modules"
+  "ignore": ["node_modules", "es"]
 }

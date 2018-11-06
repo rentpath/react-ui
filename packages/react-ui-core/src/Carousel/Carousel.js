@@ -13,7 +13,6 @@ const PAGE_SIZE = 30
 const FIRST_PAGE = 1
 
 @themed(['Carousel', 'Carousel-next', 'Carousel-previous'])
-
 export default class Carousel extends Component {
   static propTypes = {
     className: PropTypes.string,

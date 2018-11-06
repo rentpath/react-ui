@@ -5,7 +5,6 @@ import classnames from 'classnames'
 import { randomId } from '@rentpath/react-ui-utils'
 
 @themed(/^Highlighter/)
-
 export default class Highlighter extends Component {
   static propTypes = {
     className: PropTypes.string,

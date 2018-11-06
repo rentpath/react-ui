@@ -8,7 +8,6 @@ import autobind from 'autobind-decorator'
 @themed(/^Input/, {
   pure: true,
 })
-
 export default class Input extends Component {
   static propTypes = {
     /**

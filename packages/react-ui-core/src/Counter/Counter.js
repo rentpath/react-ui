@@ -7,7 +7,6 @@ import { Text } from '../Text'
 @themed(/^(Counter|Label|Text)/, {
   pure: true,
 })
-
 export default class Counter extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,

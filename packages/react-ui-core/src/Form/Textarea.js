@@ -3,10 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import themed from 'react-themed'
 
-@themed(/^Textarea/, {
-  pure: true,
-})
-
+@themed(/^Textarea/, { pure: true })
 export default class Textarea extends Component {
   static propTypes = {
     theme: PropTypes.object,

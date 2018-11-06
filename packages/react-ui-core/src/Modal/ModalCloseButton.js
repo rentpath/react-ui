@@ -6,7 +6,6 @@ import classnames from 'classnames'
 @themed(/^CloseButton/, {
   pure: true,
 })
-
 export default class CloseButton extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,

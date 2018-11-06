@@ -8,7 +8,6 @@ import Button from './Button'
 @themed(['ApplyButton'], {
   pure: true,
 })
-
 export default class ApplyButton extends PureComponent {
   static propTypes = {
     className: PropTypes.string,

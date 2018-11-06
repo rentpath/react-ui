@@ -7,7 +7,6 @@ import themed from 'react-themed'
 @themed(/^ListItem/, {
   pure: true,
 })
-
 export default class ListItem extends PureComponent {
 
   static propTypes = {

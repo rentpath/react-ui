@@ -8,7 +8,6 @@ import { ToggleButton } from '../Button'
 @themed(/^Drawer/, {
   pure: true,
 })
-
 export default class Drawer extends PureComponent {
 
   static propTypes = {

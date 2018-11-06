@@ -1,6 +1,15 @@
 {
-  "extends": "@rentpath/eslint-config-rentpath",
+  "extends": [
+    "@rentpath/eslint-config-rentpath",
+    "plugin:monorepo/recommended"
+  ],
   "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
+  },
   "rules": {
     "global-require": 0,
     "jest/no-disabled-tests": "error",

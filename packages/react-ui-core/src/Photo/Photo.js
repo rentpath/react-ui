@@ -13,7 +13,6 @@ const pictureSourcesPropTypes = PropTypes.shape({
 @themed(['Photo'], {
   pure: true,
 })
-
 export default class Photo extends PureComponent {
   static propTypes = {
     url: PropTypes.string.isRequired,

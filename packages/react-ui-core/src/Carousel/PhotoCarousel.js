@@ -8,7 +8,6 @@ import { Photo, BackgroundPhoto } from '../Photo'
 import Carousel from './Carousel'
 
 @themed(['PhotoCarousel', 'PhotoCarousel-empty'])
-
 export default class PhotoCarousel extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
