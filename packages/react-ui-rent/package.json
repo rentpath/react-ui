@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-rent",
-  "version": "4.3.4",
+  "version": "4.3.5",
   "repository": "https://github.com/rentpath/react-ui/tree/master/packages/react-ui-rent",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -56,8 +56,8 @@
     "react-themed": "^3.2.1"
   },
   "dependencies": {
-    "@rentpath/react-ui-core": "16.3.4",
-    "@rentpath/react-ui-utils": "4.2.4"
+    "@rentpath/react-ui-core": "16.3.5",
+    "@rentpath/react-ui-utils": "4.2.5"
   },
   "peerDependencies": {
     "classnames": "^2.2.6",

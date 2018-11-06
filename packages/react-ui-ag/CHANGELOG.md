@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.4.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-ag/compare/@rentpath/react-ui-ag@11.3.4...@rentpath/react-ui-ag@11.4.0) (2018-11-06)
+
+
+### Features
+
+* **markers:** Change the base marker sizes for ag map pins ([d850a74](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-ag/commit/d850a74))
+
+
+
+
+
 <a name="11.3.4"></a>
 ## [11.3.4](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-ag@11.3.3...@rentpath/react-ui-ag@11.3.4) (2018-11-01)
 
