@@ -51,9 +51,9 @@
     "jest-css-modules": "^1.1.0",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-test-renderer": "^16.6.0",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-test-renderer": "^16.6.1",
     "react-themed": "^3.2.1"
   },
   "dependencies": {
@@ -70,8 +70,8 @@
     "date-fns": "^2.0.0",
     "lodash": "^4.17.10",
     "prop-types": "15.6.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
     "react-themed": "^3.2.1"
   }
 }
