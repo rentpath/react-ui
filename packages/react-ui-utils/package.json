@@ -35,7 +35,7 @@
     "eslint": "^5.6.0",
     "jest": "^23.6.0",
     "jsverify": "^0.8.3",
-    "react": "^16.6.0"
+    "react": "^16.6.1"
   },
   "peerDependencies": {
     "classnames": "^2.2.6"
