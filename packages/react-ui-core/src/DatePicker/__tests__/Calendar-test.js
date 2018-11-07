@@ -10,7 +10,7 @@ const theme = {
 }
 
 const Calendar = ThemedCalendar.WrappedComponent
-const DATE_FORMAT = 'MM-dd-YYYY'
+const DATE_FORMAT = 'MM-dd-yyyy'
 
 describe('Calendar', () => {
   const setup = props => (
@@ -46,7 +46,7 @@ describe('Calendar', () => {
     })
 
     it('uses custom `dateFormat` when passed', () => {
-      const dateFormat = 'YYYY-MM-dd'
+      const dateFormat = 'yyyy-MM-dd'
       const wrapper = setup({ dateFormat })
       const date = wrapper.state().date
       expect(format(date, dateFormat)).toEqual(format(new Date(), dateFormat))

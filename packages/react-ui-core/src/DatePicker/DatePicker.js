@@ -23,7 +23,7 @@ export default class DatePicker extends PureComponent {
   }
 
   static defaultProps = {
-    dateFormat: 'MM/dd/YYYY',
+    dateFormat: 'MM/dd/yyyy',
     readOnly: false,
     showCalendar: false,
   }

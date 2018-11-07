@@ -26,7 +26,7 @@ export default class Calendar extends PureComponent {
   }
 
   static defaultProps = {
-    dateFormat: 'MM/dd/YYYY',
+    dateFormat: 'MM/dd/yyyy',
     value: new Date(),
     minDate: new Date(),
     prevButtonLabel: String.fromCharCode(8592),
@@ -142,7 +142,7 @@ export default class Calendar extends PureComponent {
             data-tid="calendar-month"
             className={theme.Calendar_Month}
           >
-            {format(this.state.date, 'MMMM YYYY')}
+            {format(this.state.date, 'MMMM yyyy')}
           </div>
           <button
             type="button"

@@ -5,7 +5,7 @@ import DatePicker from '../DatePicker'
 import Calendar from '../Calendar'
 import Input from '../../Form/Input'
 
-const DATE_FORMAT = 'MM-dd-YYYY'
+const DATE_FORMAT = 'MM-dd-yyyy'
 
 describe('DatePicker', () => {
   const setup = props => (
