@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-tracking",
-  "version": "4.2.5",
+  "version": "4.2.6",
   "repository": "https://github.com/rentpath/react-ui/tree/master/packages/react-ui-tracking",
   "main": "lib/index.js",
   "module": "es/index.js",
