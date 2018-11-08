@@ -9,15 +9,14 @@
   "scripts": {
     "clean": "rm -rf lib es",
     "build": "yarn run build:es && yarn run build:cjs",
-    "build:cjs": "BABEL_ENV=cjs babel --ignore __tests__ -d lib src",
-    "build:cjs:watch": "yarn run build:cjs -- --watch",
-    "build:es": "BABEL_ENV=es babel --ignore __tests__ -d es src",
-    "build:es:watch": "yarn run build:es -- --watch",
-    "build:watch": "yarn run build -- --watch",
+    "build:cjs": "BABEL_ENV=cjs babel -d lib src",
+    "build:cjs:watch": "yarn run build:cjs --watch --verbose",
+    "build:es": "BABEL_ENV=es babel -d es src",
+    "build:es:watch": "yarn run build:es --watch --verbose",
     "test": "jest",
-    "test:watch": "yarn run test -- --watch",
-    "lint": "BABEL_ENV=test eslint src",
-    "lint:fix": "yarn run lint -- --fix"
+    "test:watch": "yarn run test --watch",
+    "lint": "eslint src",
+    "lint:fix": "yarn run lint --fix"
   },
   "jest": {
     "setupFiles": [
@@ -32,28 +31,6 @@
       "./es",
       "./lib"
     ]
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@rentpath/eslint-config-rentpath": "^3.0.1",
-    "autobind-decorator": "2.1.0",
-    "babel-core": "^7.0.0-bridge",
-    "babel-eslint": "10.0.1",
-    "babel-jest": "^23.6.0",
-    "classnames": "^2.2.6",
-    "date-fns": "2.0.0-alpha.20",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0",
-    "eslint": "^5.5.0",
-    "jest": "^23.6.0",
-    "jest-css-modules": "^1.1.0",
-    "lodash": "^4.17.11",
-    "prop-types": "^15.6.2",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
-    "react-test-renderer": "^16.6.1",
-    "react-themed": "^3.2.1"
   },
   "dependencies": {
     "@rentpath/react-ui-core": "16.3.6",
