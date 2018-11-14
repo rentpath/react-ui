@@ -128,6 +128,7 @@ import {
   GmapWithSpinner,
   GmapWithSingleMarker,
   GmapWithMultipleMarkers,
+  GmapWithStyles,
   GmapWithInfoWindow,
   GmapWithOverlayView,
   FreeDrawDefault,
@@ -232,6 +233,7 @@ coreStoriesNoContainer('Gmap ', module)
   .add('Gmap with spinner', () => GmapWithSpinner)
   .add('Gmap with marker', () => GmapWithSingleMarker)
   .add('Gmap with multiple markers', () => GmapWithMultipleMarkers)
+  .add('Gmap with custom styles', () => GmapWithStyles)
   .add('Gmap with infowindow', () => GmapWithInfoWindow)
   .add('Gmap with overlay view', () => GmapWithOverlayView)
 

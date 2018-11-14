@@ -74,6 +74,7 @@ export class Gmap extends PureComponent {
       disableDoubleClickZoom: PropTypes.bool,
     }),
     stylingFunction: PropTypes.func,
+    mapStyles: PropTypes.array,
   }
 
   static defaultProps = {
@@ -136,6 +137,7 @@ export class Gmap extends PureComponent {
       maxZoom,
       clickableIcons,
       stylingFunction,
+      mapStyles: styles,
     } = this.props
 
     this.map = new window.google.maps.Map(this.googleMap.current, {
@@ -144,6 +146,7 @@ export class Gmap extends PureComponent {
       minZoom,
       maxZoom,
       center,
+      styles,
       ...this.mapControls,
     })
 
