@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-core",
-  "version": "16.3.6",
+  "version": "16.3.7",
   "repository": "https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@rentpath/react-ui-utils": "4.2.6",
+    "@rentpath/react-ui-utils": "4.2.7",
     "form-serialize": "0.7.2",
     "react-image-gallery": "rentpath/react-image-gallery",
     "react-input-mask": "2.0.4",
