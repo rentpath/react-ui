@@ -33,6 +33,27 @@ const dataStyle = {
     fillOpacity: 0.30,
   },
 }
+
+const mapStyles = [
+  {
+    elementType: 'geometry',
+    stylers: [
+      {
+        color: '#f5f5f5',
+      },
+    ],
+  },
+  {
+    elementType: 'geometry',
+    featureType: 'road',
+    stylers: [
+      {
+        color: '#ffffff',
+      },
+    ],
+  },
+]
+
 const mapControls = {
   draggable: true,
   zoomControl: true,
@@ -69,6 +90,10 @@ export const GmapWithMultipleMarkers = (
   <Gmap apiKey={key}>
     <Markers geojson={geojson} />
   </Gmap>
+)
+
+export const GmapWithStyles = (
+  <Gmap apiKey={key} mapStyles={mapStyles} />
 )
 
 export const GmapWithInfoWindow = (
