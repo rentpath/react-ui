@@ -1,16 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Markers from '../Markers'
-import {
-  redDotIcon,
-  greyDotIcon,
-  blackDotIcon,
-  blackDotIconWithBalloon,
-} from '../markerIcons'
+import MarkerIcons from '../markerIcons'
 
 const map = { google: 'map' }
-
-const NOOP = () => {}
 
 describe('ag/Markers', () => {
   it('applies extra props correctly', () => {
@@ -22,7 +15,7 @@ describe('ag/Markers', () => {
     it('uses a redDotIcon and default marker props when none passed', () => {
       const wrapper = shallow(<Markers map={map} />)
       expect(wrapper.instance().marker()).toEqual({
-        icon: redDotIcon(),
+        icon: MarkerIcons.redDotIcon(),
         onMouseOver: expect.any(Function),
         onMouseOut: expect.any(Function),
         zIndex: 1,
@@ -35,21 +28,21 @@ describe('ag/Markers', () => {
           source: 'aptguide',
         },
       }
-      const wrapper = shallow(<Markers map={map} markerIconHover={NOOP} />)
+      const wrapper = shallow(<Markers map={map} />)
       const instance = wrapper.instance()
-      expect(instance.marker(feature).icon).toEqual(redDotIcon())
+      expect(instance.marker(feature).icon).toEqual(MarkerIcons.redDotIcon())
       expect(instance.marker(feature).zIndex).toEqual(2)
     })
 
-    it('uses a redDotIcon with zIndex of 1 for non-aptguide properties', () => {
+    it('uses a redDotIconIcon with zIndex of 1 for non-aptguide properties', () => {
       const feature = {
         properties: {
           source: 'foo',
         },
       }
-      const wrapper = shallow(<Markers map={map} markerIconHover={NOOP} />)
+      const wrapper = shallow(<Markers map={map} />)
       const instance = wrapper.instance()
-      expect(instance.marker(feature).icon).toEqual(redDotIcon())
+      expect(instance.marker(feature).icon).toEqual(MarkerIcons.redDotIcon())
       expect(instance.marker(feature).zIndex).toEqual(1)
     })
 
@@ -59,9 +52,9 @@ describe('ag/Markers', () => {
           isBasic: true,
         },
       }
-      const wrapper = shallow(<Markers map={map} markerIconHover={NOOP} />)
+      const wrapper = shallow(<Markers map={map} />)
       const instance = wrapper.instance()
-      expect(instance.marker(feature).icon).toEqual(greyDotIcon())
+      expect(instance.marker(feature).icon).toEqual(MarkerIcons.greyDotIcon())
       expect(instance.marker(feature).zIndex).toEqual(1)
     })
 
@@ -73,11 +66,10 @@ describe('ag/Markers', () => {
       }
       const wrapper = shallow(<Markers
         map={map}
-        markerIconHover={NOOP}
-        markerInactiveIcon={blackDotIcon}
+        markerInactiveIcon="blackDotIcon"
       />)
       const instance = wrapper.instance()
-      expect(instance.marker(feature).icon).toEqual(blackDotIcon())
+      expect(instance.marker(feature).icon).toEqual(MarkerIcons.blackDotIcon())
       expect(instance.marker(feature).zIndex).toEqual(1)
     })
 
@@ -89,13 +81,13 @@ describe('ag/Markers', () => {
         },
       }
 
-      const markerIcon = jest.fn()
-      const wrapper = shallow(<Markers map={map} markerIcon={markerIcon} />)
+      MarkerIcons.redDotIcon = jest.fn()
+      const wrapper = shallow(<Markers map={map} markerIcon="redDotIcon" />)
 
       wrapper.instance().marker(feature)
 
-      expect(markerIcon).toHaveBeenCalledTimes(1)
-      expect(markerIcon).toHaveBeenCalledWith(scale)
+      expect(MarkerIcons.redDotIcon).toHaveBeenCalledTimes(1)
+      expect(MarkerIcons.redDotIcon).toHaveBeenCalledWith(scale)
     })
 
     it('uses the iconScale for isBasic properties', () => {
@@ -107,13 +99,13 @@ describe('ag/Markers', () => {
         },
       }
 
-      const markerInactiveIcon = jest.fn()
-      const wrapper = shallow(<Markers map={map} markerInactiveIcon={markerInactiveIcon} />)
+      MarkerIcons.greyDotIcon = jest.fn()
+      const wrapper = shallow(<Markers map={map} markerInactiveIcon="greyDotIcon" />)
 
       wrapper.instance().marker(feature)
 
-      expect(markerInactiveIcon).toHaveBeenCalledTimes(1)
-      expect(markerInactiveIcon).toHaveBeenCalledWith(scale)
+      expect(MarkerIcons.greyDotIcon).toHaveBeenCalledTimes(1)
+      expect(MarkerIcons.greyDotIcon).toHaveBeenCalledWith(scale)
     })
 
     it('uses the iconScale for hover', () => {
@@ -124,21 +116,21 @@ describe('ag/Markers', () => {
         },
       }
 
-      const markerIconHover = jest.fn()
-      const wrapper = shallow(<Markers map={map} markerIconHover={markerIconHover} />)
+      MarkerIcons.blackDotIcon = jest.fn()
+      const wrapper = shallow(<Markers map={map} markerIconHover="blackDotIcon" />)
       const marker = wrapper.instance().marker(feature)
 
       marker.onMouseOver('mouse_over', null, window.google.maps.Marker())
 
-      expect(markerIconHover).toHaveBeenCalledTimes(1)
-      expect(markerIconHover).toHaveBeenCalledWith(scale)
+      expect(MarkerIcons.blackDotIcon).toHaveBeenCalledTimes(1)
+      expect(MarkerIcons.blackDotIcon).toHaveBeenCalledWith(scale)
     })
 
     it('applies extra props correctly when passed as a `marker` prop', () => {
-      const markerProps = { icon: blackDotIconWithBalloon() }
+      const markerProps = { icon: MarkerIcons.blackDotIconWithBalloon() }
       const wrapper = shallow(<Markers map={map} marker={() => (markerProps)} />)
       expect(wrapper.instance().marker()).toEqual({
-        icon: blackDotIconWithBalloon(),
+        icon: MarkerIcons.blackDotIconWithBalloon(),
         onMouseOver: expect.any(Function),
         onMouseOut: expect.any(Function),
         zIndex: 1,
@@ -152,7 +144,7 @@ describe('ag/Markers', () => {
       const marker = wrapper.instance().marker()
 
       marker.onMouseOver('mouse_over', null, googleMarker)
-      expect(markerSpy).toHaveBeenCalledWith(blackDotIcon())
+      expect(markerSpy).toHaveBeenCalledWith(MarkerIcons.blackDotIcon())
     })
 
     it('changes icon `onMouseOut` back to the original', () => {
@@ -162,7 +154,7 @@ describe('ag/Markers', () => {
       const marker = wrapper.instance().marker()
 
       marker.onMouseOut('mouse_out', null, googleMarker)
-      expect(markerSpy).toHaveBeenCalledWith(redDotIcon())
+      expect(markerSpy).toHaveBeenCalledWith(MarkerIcons.redDotIcon())
     })
   })
 })

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Marker as Gmarker } from '@rentpath/react-ui-core'
-import { redDotIcon } from './markerIcons'
+import MarkerIcons from './markerIcons'
 
 const NOOP = () => ({})
 
@@ -16,7 +16,7 @@ export default class Marker extends PureComponent {
 
   get marker() {
     return props => ({
-      icon: redDotIcon(),
+      icon: MarkerIcons.redDotIcon(),
       ...this.props.marker(props),
     })
   }

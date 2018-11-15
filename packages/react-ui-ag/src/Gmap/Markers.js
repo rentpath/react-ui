@@ -1,30 +1,27 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import get from 'lodash/get'
+import keys from 'lodash/keys'
 import { Markers as Gmarkers } from '@rentpath/react-ui-core'
-import {
-  redDotIcon,
-  greyDotIcon,
-  blackDotIcon,
-} from './markerIcons'
+import MarkerIcons from './markerIcons'
 
 const NOOP = () => ({})
 
 export default class Markers extends PureComponent {
   static propTypes = {
     marker: PropTypes.func,
-    markerIcon: PropTypes.func,
-    markerInactiveIcon: PropTypes.func,
-    markerIconHover: PropTypes.func,
+    markerIcon: PropTypes.oneOf(keys(MarkerIcons)),
+    markerInactiveIcon: PropTypes.oneOf(keys(MarkerIcons)),
+    markerIconHover: PropTypes.oneOf(keys(MarkerIcons)),
     onMouseOver: PropTypes.func,
     onMouseOut: PropTypes.func,
   }
 
   static defaultProps = {
     marker: NOOP,
-    markerIcon: redDotIcon,
-    markerInactiveIcon: greyDotIcon,
-    markerIconHover: blackDotIcon,
+    markerIcon: 'redDotIcon',
+    markerInactiveIcon: 'greyDotIcon',
+    markerIconHover: 'blackDotIcon',
   }
 
   get marker() {
@@ -44,13 +41,13 @@ export default class Markers extends PureComponent {
       const icon = !isBasic ? markerIcon : markerInactiveIcon
 
       return {
-        icon: icon(scale),
+        icon: MarkerIcons[icon](scale),
         onMouseOver: (event, props, marker) => {
-          if (markerIconHover) marker.setIcon(markerIconHover(scale))
+          if (markerIconHover) marker.setIcon(MarkerIcons[markerIconHover](scale))
           if (onMouseOver) onMouseOver(marker)
         },
         onMouseOut: (event, props, marker) => {
-          marker.setIcon(icon(scale))
+          marker.setIcon(MarkerIcons[icon](scale))
           if (onMouseOut) onMouseOut(marker)
         },
         ...this.props.marker(feature),
