@@ -28,6 +28,7 @@ import {
 import {
   DefaultGmap,
   PdpMap,
+  PdpMapCustomMarker,
   MultipleMarkers,
   SelectedMarker,
 } from './Gmap'
@@ -59,5 +60,6 @@ largeStories('GridView', module)
 largeStories('Gmap', module)
   .add('Map', DefaultGmap)
   .add('PDP Map', PdpMap)
+  .add('PDP Map with Custom Marker', PdpMapCustomMarker)
   .add('Map with multiple markers', MultipleMarkers)
   .add('Map with selected marker', SelectedMarker)

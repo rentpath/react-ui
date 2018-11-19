@@ -4,7 +4,7 @@ import {
   PdpMap as Pdp,
   Marker,
   Markers,
-  blackDotIconWithBalloon,
+  MarkerIcons,
 } from 'react-ui-ag/src'
 import geojson from '../../dummyData/geojson.json'
 
@@ -28,6 +28,16 @@ export const PdpMap = () => (
   />
 )
 
+export const PdpMapCustomMarker = () => (
+  <Pdp
+    apiKey={key}
+    listing={{
+      location: { latitude: 33.7490, longitude: -84.3880 },
+    }}
+    mapMarkerStyle="redPdpMapBalloonWithBlackDot"
+  />
+)
+
 export const MultipleMarkers = () => (
   <Gmap apiKey={key} zoom={13}>
     <Markers geojson={geojson} />
@@ -40,7 +50,7 @@ export const SelectedMarker = () => (
     <Marker
       position={position}
       marker={() => ({
-        icon: blackDotIconWithBalloon(),
+        icon: MarkerIcons.blackDotIconWithBalloon(),
       })}
       zIndex={1000}
     />
