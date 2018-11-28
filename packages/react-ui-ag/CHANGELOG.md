@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [11.5.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-ag/compare/@rentpath/react-ui-ag@11.4.2...@rentpath/react-ui-ag@11.5.0) (2018-11-28)
+
+
+### Features
+
+* **Add new icon for gmap:** add an icon to use for the pdp map ([debd1d1](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-ag/commit/debd1d1))
+* **markerIcons:** update the color of map pins to new brand red ([85cec39](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-ag/commit/85cec39))
+
+
+
+
+
 ## [11.4.2](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-ag/compare/@rentpath/react-ui-ag@11.4.1...@rentpath/react-ui-ag@11.4.2) (2018-11-14)
 
 **Note:** Version bump only for package @rentpath/react-ui-ag

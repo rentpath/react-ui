@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-ag",
-  "version": "11.4.2",
+  "version": "11.5.0",
   "repository": "https://github.com/rentpath/react-ui/tree/master/packages/react-ui-ag",
   "main": "lib/index.js",
   "module": "es/index.js",
