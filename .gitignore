@@ -13,3 +13,4 @@ coverage
 build
 artifacts
 .idea
+.vscode
