@@ -68,6 +68,23 @@ export const DefaultGmap = (
   />
 )
 
+export const GmapWithZoomControls = (
+  <Gmap
+    apiKey={key}
+    zoomControlOptions={{ position: 'LEFT_BOTTOM' }}
+  />
+)
+
+export const GmapWithMapTypeControls = (
+  <Gmap
+    apiKey={key}
+    mapTypeControlOptions={{
+      position: 'TOP_CENTER',
+      style: 'DROPDOWN_MENU',
+    }}
+  />
+)
+
 export const GmapWithSpinner = (
   <Gmap
     apiKey={key}

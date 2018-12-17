@@ -125,6 +125,8 @@ import { DefaultDrawer } from './Drawer'
 
 import {
   DefaultGmap,
+  GmapWithZoomControls,
+  GmapWithMapTypeControls,
   GmapWithSpinner,
   GmapWithSingleMarker,
   GmapWithMultipleMarkers,
@@ -230,6 +232,8 @@ coreStories('Field', module)
 
 coreStoriesNoContainer('Gmap ', module)
   .add('Gmap', () => DefaultGmap)
+  .add('Gmap with zoom controls', () => GmapWithZoomControls)
+  .add('Gmap with map type controls', () => GmapWithMapTypeControls)
   .add('Gmap with spinner', () => GmapWithSpinner)
   .add('Gmap with marker', () => GmapWithSingleMarker)
   .add('Gmap with multiple markers', () => GmapWithMultipleMarkers)
