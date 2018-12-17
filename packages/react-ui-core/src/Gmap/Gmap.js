@@ -75,6 +75,13 @@ export class Gmap extends PureComponent {
     }),
     stylingFunction: PropTypes.func,
     mapStyles: PropTypes.array,
+    zoomControlOptions: PropTypes.shape({
+      position: PropTypes.string,
+    }),
+    mapTypeControlOptions: PropTypes.shape({
+      style: PropTypes.string,
+      position: PropTypes.string,
+    }),
   }
 
   static defaultProps = {
@@ -84,6 +91,13 @@ export class Gmap extends PureComponent {
     center: DEFAULT_CENTER,
     clickableIcons: false,
     stylingFunction: () => ({}),
+    zoomControlOptions: {
+      position: 'RIGHT_BOTTOM',
+    },
+    mapTypeControlOptions: {
+      style: 'HORIZONTAL_BAR',
+      position: 'TOP_LEFT',
+    },
   }
 
   constructor(props) {
@@ -129,6 +143,29 @@ export class Gmap extends PureComponent {
     return { ...MAP_CONTROLS, ...this.props.mapControls }
   }
 
+  zoomControlOptions() {
+    const { position } = this.props.zoomControlOptions
+
+    if (window.google.maps.ControlPosition) {
+      return {
+        position: window.google.maps.ControlPosition[position],
+      }
+    }
+    return null
+  }
+
+  mapTypeControlOptions() {
+    const { position, style } = this.props.mapTypeControlOptions
+
+    if (window.google.maps.ControlPosition && window.google.maps.MapTypeControlStyle) {
+      return {
+        position: window.google.maps.ControlPosition[position],
+        style: window.google.maps.MapTypeControlStyle[style],
+      }
+    }
+    return null
+  }
+
   initMap() {
     const {
       zoom,
@@ -139,6 +176,8 @@ export class Gmap extends PureComponent {
       stylingFunction,
       mapStyles: styles,
     } = this.props
+    const zoomControlOptions = this.zoomControlOptions()
+    const mapTypeControlOptions = this.mapTypeControlOptions()
 
     this.map = new window.google.maps.Map(this.googleMap.current, {
       zoom,
@@ -147,6 +186,8 @@ export class Gmap extends PureComponent {
       maxZoom,
       center,
       styles,
+      zoomControlOptions,
+      mapTypeControlOptions,
       ...this.mapControls,
     })
 
