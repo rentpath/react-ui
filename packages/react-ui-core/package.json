@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-core",
-  "version": "16.3.8",
+  "version": "16.3.9",
   "repository": "https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core",
   "main": "lib/index.js",
   "module": "es/index.js",

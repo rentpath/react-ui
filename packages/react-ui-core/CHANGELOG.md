@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [16.3.9](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@16.3.8...@rentpath/react-ui-core@16.3.9) (2019-01-10)
+
+
+### Bug Fixes
+
+* **RadioGroup:** fix bug where prop value would override state value without prop change ([3e21627](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/commit/3e21627))
+
+
+
+
+
 ## [16.3.8](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@16.3.7...@rentpath/react-ui-core@16.3.8) (2018-12-17)
 
 **Note:** Version bump only for package @rentpath/react-ui-core
