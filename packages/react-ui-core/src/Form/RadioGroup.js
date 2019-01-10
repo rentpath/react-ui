@@ -81,7 +81,9 @@ export default class RadioGroup extends PureComponent {
       this.generateRandomId()
     }
 
-    if (!isEqual(this.state.value, nextProps.value)) {
+    if ((!isEqual(this.state.value, nextProps.value) && this.props.value !== nextProps.value) ||
+      !isEqual(nextProps.fields, this.props.fields)
+    ) {
       this.setState({
         value: this.currentlyCheckedValue(nextProps.value, nextProps.fields),
       })
