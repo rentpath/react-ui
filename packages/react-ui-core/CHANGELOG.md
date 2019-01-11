@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [16.4.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@16.3.9...@rentpath/react-ui-core@16.4.0) (2019-01-11)
+
+
+### Features
+
+* **Filter Cards:** add support for onChange to RadioGroupFilterCard ([5099fde](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/commit/5099fde))
+
+
+
+
+
 ## [16.3.9](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@16.3.8...@rentpath/react-ui-core@16.3.9) (2019-01-10)
 
 
