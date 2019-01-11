@@ -20,6 +20,7 @@ export default class RadioGroupFilterCard extends Component {
       ]),
       value: PropTypes.string,
     })),
+    onChange: PropTypes.func,
   }
 
   static defaultProps = {
@@ -51,9 +52,11 @@ export default class RadioGroupFilterCard extends Component {
 
   @autobind
   handleRadioGroupSelection(event) {
-    this.setState({
-      value: event.target.value,
-    })
+    const { onChange } = this.props
+    const value = event.target.value
+
+    this.setState({ value })
+    if (onChange) onChange(value)
   }
 
   render() {
@@ -61,6 +64,7 @@ export default class RadioGroupFilterCard extends Component {
       className,
       theme,
       fields,
+      onChange,
       ...props
     } = this.props
 

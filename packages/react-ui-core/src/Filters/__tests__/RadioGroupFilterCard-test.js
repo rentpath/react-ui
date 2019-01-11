@@ -81,4 +81,17 @@ describe('RadioGroupFilterCard', () => {
     expect(wrapper.find('[data-tid="foo"]')).toHaveLength(1)
     expect(wrapper.find('[data-tid="radio-group-filter-card"]')).toHaveLength(0)
   })
+
+  it('calls onChange when a field is selected with the value of the field', () => {
+    const onChange = jest.fn()
+    const wrapper = mount(<RadioGroupFilterCard {...props} onChange={onChange} />)
+    wrapper.find('[name="radio-group-filter-card-radio-group"] input').at(2).simulate('change')
+    expect(onChange).toHaveBeenCalledWith('3')
+  })
+
+  it('does not pass onChange on to the filter card', () => {
+    const onChange = jest.fn()
+    const wrapper = mount(<RadioGroupFilterCard {...props} onChange={onChange} />)
+    expect(wrapper.find(FilterCard).prop('onChange')).toBeUndefined()
+  })
 })
