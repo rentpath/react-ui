@@ -12,8 +12,6 @@ export default class PriceFilterCard extends Component {
   static propTypes = {
     className: PropTypes.string,
     theme: PropTypes.object,
-    title: PropTypes.string,
-    description: PropTypes.string,
     priceSlider: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.func,
