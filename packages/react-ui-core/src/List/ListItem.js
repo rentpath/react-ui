@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import themed from 'react-themed'
 
 @themed(/^ListItem/, {
@@ -30,7 +30,7 @@ export default class ListItem extends PureComponent {
     nodeType: 'li',
   }
 
-  @autobind
+  @boundMethod
   handleMouseEnter() {
     const { onMouseEnter, index } = this.props
 

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import themed from 'react-themed'
 
 const pictureSourcesPropTypes = PropTypes.shape({
@@ -110,7 +110,7 @@ export default class Photo extends PureComponent {
     return this.img.current && (this.img.current.src === this.props.fallbackUrl)
   }
 
-  @autobind
+  @boundMethod
   fallback(e) {
     const { fallbackUrl } = this.props
 

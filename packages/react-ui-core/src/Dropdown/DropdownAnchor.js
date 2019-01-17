@@ -1,6 +1,6 @@
 import { createElement, PureComponent } from 'react'
 import { parseArgs } from '@rentpath/react-ui-utils'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
@@ -28,7 +28,7 @@ export default class DropdownAnchor extends PureComponent {
     theme: {},
   }
 
-  @autobind
+  @boundMethod
   handleClick() {
     const { onClick, visible } = this.props
 

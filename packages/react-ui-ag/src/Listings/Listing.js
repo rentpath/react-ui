@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import get from 'lodash/get'
 import isEqual from 'lodash/isEqual'
 import LazyLoad, { forceCheck } from 'react-lazyload'
@@ -103,7 +103,7 @@ export default class Listing extends Component {
     return get(this.props.listing, 'photos', [])
   }
 
-  @autobind
+  @boundMethod
   handleCardClick() {
     const {
       index,
@@ -114,7 +114,7 @@ export default class Listing extends Component {
     if (onClick) onClick(index, listing)
   }
 
-  @autobind
+  @boundMethod
   handleButtonClick(onClick) {
     const { isActive, listing } = this.props
 
@@ -131,7 +131,7 @@ export default class Listing extends Component {
     }
   }
 
-  @autobind
+  @boundMethod
   handleFavoriteClick(value, event) {
     const {
       isActive,
@@ -153,7 +153,7 @@ export default class Listing extends Component {
     }
   }
 
-  @autobind
+  @boundMethod
   handlePhotoCarouselSlide(index) {
     const { onPhotoCarouselSlide } = this.props
 

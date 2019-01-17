@@ -1,7 +1,7 @@
 import React, { Component, cloneElement } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import classnames from 'classnames'
 import {
   Dropdown,
@@ -43,7 +43,7 @@ export default class PriceFilterDropdown extends Component {
     }
   }
 
-  @autobind
+  @boundMethod
   handleValueChange(value) {
     this.setState({ value })
   }

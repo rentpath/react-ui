@@ -4,7 +4,7 @@ import React, {
   createElement,
 } from 'react'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import { parseArgs } from '@rentpath/react-ui-utils'
 import themed from 'react-themed'
 import classnames from 'classnames'
@@ -52,7 +52,7 @@ export default class Dropdown extends Component {
     document.removeEventListener('click', this.handleDocumentClick)
   }
 
-  @autobind
+  @boundMethod
   toggleVisibility() {
     const { onVisibilityChange, toggleOnSelect } = this.props
     const visible = toggleOnSelect ? !this.state.visible : true
@@ -63,7 +63,7 @@ export default class Dropdown extends Component {
     }
   }
 
-  @autobind
+  @boundMethod
   handleDocumentClick(event) {
     const eventTarget = event.target
     const parentTarget = event.target.parentNode

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 
 @themed(/^Overlay/, {
   pure: true,
@@ -22,7 +22,7 @@ export default class Overlay extends PureComponent {
     theme: {},
   }
 
-  @autobind
+  @boundMethod
   handleMouseDown(e) {
     // Verify that the click started on the overlay
     this.clickedOutside = (e.target === this.overlay)
@@ -32,7 +32,7 @@ export default class Overlay extends PureComponent {
     }
   }
 
-  @autobind
+  @boundMethod
   handleMouseUp(e) {
     // Verify that the click ended on the overlay
     if (e.target !== this.overlay) {
@@ -44,7 +44,7 @@ export default class Overlay extends PureComponent {
     }
   }
 
-  @autobind
+  @boundMethod
   handleClick(e) {
     // If the click did not start and end on the overlay do not register click
     if (!this.clickedOutside) {

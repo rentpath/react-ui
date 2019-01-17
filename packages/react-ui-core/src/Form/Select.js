@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import themed from 'react-themed'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 
 @themed(/^Select/, {
   pure: true,
@@ -75,7 +75,7 @@ export default class Select extends Component {
     this.setState({ value })
   }
 
-  @autobind
+  @boundMethod
   handleChange(event) {
     const { defaultValue, onChange } = this.props
 

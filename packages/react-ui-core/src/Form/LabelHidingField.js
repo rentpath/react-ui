@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import Field from './Field'
 
 @themed(/^LabelHidingField/)
@@ -33,7 +33,7 @@ export default class LabelHidingField extends Component {
     }
   }
 
-  @autobind
+  @boundMethod
   onChange(event) {
     if (event.target.value) {
       if (this.state.labelVisible) {

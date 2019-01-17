@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import {
   Button,
   ToggleButton,
@@ -57,14 +57,14 @@ export default class SingleFamilyMobileMapListing extends Component {
     return isActive !== nextProps.isActive || listing.id !== nextProps.listing.id
   }
 
-  @autobind
+  @boundMethod
   handleCardClick() {
     const { index, onClick } = this.props
 
     if (onClick) onClick(index)
   }
 
-  @autobind
+  @boundMethod
   handleButtonClick(onClick) {
     const { isActive } = this.props
 
@@ -81,7 +81,7 @@ export default class SingleFamilyMobileMapListing extends Component {
     }
   }
 
-  @autobind
+  @boundMethod
   handleFavoriteClick(value) {
     const { isActive, favoriteButton } = this.props
     const { onClick } = favoriteButton

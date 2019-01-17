@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import isEqual from 'lodash/isEqual'
@@ -68,7 +68,7 @@ export default class DropdownMenu extends Component {
     return index === -1 ? 0 : index
   }
 
-  @autobind
+  @boundMethod
   itemSelectionHandler(item, index) {
     const { onItemSelect } = this.props
 

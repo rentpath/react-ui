@@ -34,7 +34,7 @@
     ]
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "^7.2.0",
     "@rentpath/react-ui-utils": "4.2.7",
     "form-serialize": "0.7.2",
     "react-image-gallery": "rentpath/react-image-gallery",
@@ -47,8 +47,8 @@
     "date-fns": "^2.0.0",
     "lodash": "^4.17.10",
     "prop-types": "15.6.2",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-themed": "^3.2.1"
   }
 }

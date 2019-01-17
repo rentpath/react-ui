@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import classnames from 'classnames'
 import themed from 'react-themed'
 import { FreeDrawLayer, Button } from 'react-ui-core/src'
@@ -30,7 +30,7 @@ export default class FreeDrawExample extends PureComponent {
     }
   }
 
-  @autobind
+  @boundMethod
   handleOnDrawEnd(shape) {
     const { shapes } = this.state
 
@@ -42,7 +42,7 @@ export default class FreeDrawExample extends PureComponent {
     })
   }
 
-  @autobind
+  @boundMethod
   handleClick() {
     const { shapes } = this.props
     const { enabled } = this.state

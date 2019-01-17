@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import classnames from 'classnames'
 import isEqual from 'date-fns/isEqual'
 import format from 'date-fns/format'
@@ -43,19 +43,19 @@ export default class Calendar extends PureComponent {
     }
   }
 
-  @autobind
+  @boundMethod
   nextMonth() {
     const { date } = this.state
     this.setState({ date: addMonths(date, 1) })
   }
 
-  @autobind
+  @boundMethod
   previousMonth() {
     const { date } = this.state
     this.setState({ date: subMonths(date, 1) })
   }
 
-  @autobind
+  @boundMethod
   handleDateSelected(evt) {
     const { minDate, maxDate } = this.props
     const selectedDate = evt.target.dataset.date

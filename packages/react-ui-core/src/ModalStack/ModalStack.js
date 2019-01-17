@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { createPortal } from 'react-dom'
 import themed from 'react-themed'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import PropTypes from 'prop-types'
 import get from 'lodash/fp/get'
 
@@ -74,7 +74,7 @@ export default class ModalStack extends PureComponent {
     }
   }
 
-  @autobind
+  @boundMethod
   onClose() {
     const { currentModal, onClose } = this.props
 
@@ -109,7 +109,7 @@ export default class ModalStack extends PureComponent {
     }
   }
 
-  @autobind
+  @boundMethod
   renderModals() {
     const { currentModal } = this.props
     const { currentDefinition } = this.state

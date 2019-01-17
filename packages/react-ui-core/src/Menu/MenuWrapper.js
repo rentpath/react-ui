@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import Menu from './Menu'
 
 export default class MenuWrapper extends PureComponent {
@@ -10,7 +10,7 @@ export default class MenuWrapper extends PureComponent {
     onItemSelect: PropTypes.func,
   }
 
-  @autobind
+  @boundMethod
   handleSelection(item, index) {
     const { onSelect, onItemSelect } = this.props
 

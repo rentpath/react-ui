@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 
 export default class DropdownFilterCardWrapper extends PureComponent {
   static propTypes = {
@@ -24,12 +24,12 @@ export default class DropdownFilterCardWrapper extends PureComponent {
     if (button.onClick) button.onClick(value)
   }
 
-  @autobind
+  @boundMethod
   handleApplyClick(value) {
     this.handleButtonClick(value, this.props.applyButton)
   }
 
-  @autobind
+  @boundMethod
   handleCancelClick(value) {
     this.handleButtonClick(value, this.props.cancelButton)
   }

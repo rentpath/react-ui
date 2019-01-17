@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import { parseArgs, componentName } from '@rentpath/react-ui-utils'
 
 const API_BASE_URL = 'https://maps.googleapis.com/maps/api/js'
@@ -97,7 +97,7 @@ export default function(BaseComponent) {
       window.addEventListener(EVENT_NAME, this.loadedHandler)
     }
 
-    @autobind
+    @boundMethod
     scriptLoaded() {
       // NOTE: IE 11 needs a polyfill for CustomEvent
       window.dispatchEvent(new CustomEvent(EVENT_NAME))

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
 import InputMask from 'react-input-mask'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 
 @themed(/^Input/, {
   pure: true,
@@ -111,7 +111,7 @@ export default class Input extends Component {
     this.setState({ [this.props.property]: value })
   }
 
-  @autobind
+  @boundMethod
   handleChange(event) {
     const { changeEvent, property } = this.props
 

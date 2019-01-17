@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import { List } from '../List'
@@ -73,7 +73,7 @@ export default class Menu extends PureComponent {
     document.removeEventListener('keydown', this.onKeyDown)
   }
 
-  @autobind
+  @boundMethod
   onKeyDown(event) {
     const code = event.keyCode || event.key || event.keyIndentifier
 
@@ -101,7 +101,7 @@ export default class Menu extends PureComponent {
     return this.options[this.state.highlightIndex || 0]
   }
 
-  @autobind
+  @boundMethod
   handleSelection() {
     const { onItemSelect } = this.props
 
@@ -112,7 +112,7 @@ export default class Menu extends PureComponent {
     }
   }
 
-  @autobind
+  @boundMethod
   highlightOption(index) {
     const { onItemMouseOver } = this.props
 
@@ -124,7 +124,7 @@ export default class Menu extends PureComponent {
     })
   }
 
-  @autobind
+  @boundMethod
   highlightIndexedOption(index) {
     const { onItemMouseOver } = this.props
     const { indexedOptions } = this.state

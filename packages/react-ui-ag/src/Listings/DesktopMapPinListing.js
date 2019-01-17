@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import get from 'lodash/get'
 import {
   Button,
@@ -37,7 +37,7 @@ export default class DesktopMapPinListing extends PureComponent {
     listing: {},
   }
 
-  @autobind
+  @boundMethod
   handleCardClick() {
     const {
       index,
@@ -48,7 +48,7 @@ export default class DesktopMapPinListing extends PureComponent {
     if (onClick) onClick(index, listing)
   }
 
-  @autobind
+  @boundMethod
   handleButtonClick(onClick) {
     return event => {
       if (onClick) onClick(this.props.listing)
@@ -56,7 +56,7 @@ export default class DesktopMapPinListing extends PureComponent {
     }
   }
 
-  @autobind
+  @boundMethod
   handleFavoriteClick(value, event) {
     const { favoriteButton: { onClick } } = this.props
 

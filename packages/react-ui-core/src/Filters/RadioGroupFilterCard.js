@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
 import isEqual from 'lodash/isEqual'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import { RadioGroup } from '../Form'
 import FilterCard from './FilterCard'
 
@@ -50,7 +50,7 @@ export default class RadioGroupFilterCard extends Component {
     return (fields.find(f => f.checked) || {}).value
   }
 
-  @autobind
+  @boundMethod
   handleRadioGroupSelection(event) {
     const { onChange } = this.props
     const value = event.target.value

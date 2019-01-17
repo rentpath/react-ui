@@ -3,7 +3,7 @@ import { parseArgs } from '@rentpath/react-ui-utils'
 import debounce from 'lodash/debounce'
 import capitalize from 'lodash/capitalize'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import { Dropdown } from '../Dropdown'
@@ -96,7 +96,7 @@ export default class AutoSuggestField extends Component {
     document.removeEventListener('keydown', this.onKeyDown)
   }
 
-  @autobind
+  @boundMethod
   onKeyDown(event) {
     const { suggestions } = this.props
     const { visible } = this.state
@@ -139,7 +139,7 @@ export default class AutoSuggestField extends Component {
     }, cb)
   }
 
-  @autobind
+  @boundMethod
   handleInput(event) {
     const value = event.target.value
     this.setState({ value })
@@ -147,13 +147,13 @@ export default class AutoSuggestField extends Component {
     this.onInput(value)
   }
 
-  @autobind
+  @boundMethod
   handleSubmit() {
     this.props.onSubmit(this.state.value)
     this.updateValueAndClose(this.state.value)
   }
 
-  @autobind
+  @boundMethod
   handleSuggestionSelection(value) {
     const {
       onSubmit,
@@ -174,7 +174,7 @@ export default class AutoSuggestField extends Component {
     )
   }
 
-  @autobind
+  @boundMethod
   handleVisibilityChange(visible) {
     const onVisibilityChange = this.props.onVisibilityChange
     this.setState({
@@ -183,7 +183,7 @@ export default class AutoSuggestField extends Component {
     if (onVisibilityChange) onVisibilityChange(visible)
   }
 
-  @autobind
+  @boundMethod
   handleClear() {
     const { onAfterClear } = this.props
     this.updateValueAndClose('')

@@ -1,6 +1,6 @@
 import React, { PureComponent, createElement } from 'react'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import classnames from 'classnames'
 import themed from 'react-themed'
 import { parseArgs, randomId } from '@rentpath/react-ui-utils'
@@ -81,8 +81,8 @@ export default class RadioGroup extends PureComponent {
       this.generateRandomId()
     }
 
-    if ((!isEqual(this.state.value, nextProps.value) && this.props.value !== nextProps.value) ||
-      !isEqual(nextProps.fields, this.props.fields)
+    if ((!isEqual(this.state.value, nextProps.value) && this.props.value !== nextProps.value)
+      || !isEqual(nextProps.fields, this.props.fields)
     ) {
       this.setState({
         value: this.currentlyCheckedValue(nextProps.value, nextProps.fields),
@@ -107,7 +107,7 @@ export default class RadioGroup extends PureComponent {
     return value || ((fields || []).find(f => f.checked) || {}).value
   }
 
-  @autobind
+  @boundMethod
   handleValueChange(event) {
     this.setState({
       value: event.target.value,
@@ -118,7 +118,7 @@ export default class RadioGroup extends PureComponent {
     }
   }
 
-  @autobind
+  @boundMethod
   handleClick(event) {
     const { allowUnselect, onUnselect } = this.props
 

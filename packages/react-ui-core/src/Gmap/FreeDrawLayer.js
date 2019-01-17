@@ -1,6 +1,6 @@
 import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import { GMAP_EVENTS } from './utils/const'
 import { setupEvents, removeEvent } from './utils/mapEventHelpers'
 
@@ -73,7 +73,7 @@ export default class FreeDrawLayer extends PureComponent {
     this.drawFreeHand()
   }
 
-  @autobind
+  @boundMethod
   handleMouseUp() {
     this.mouseDown = false
     const polygonCoords = this.getPolygonCoords(this.polygon)
@@ -153,12 +153,12 @@ export default class FreeDrawLayer extends PureComponent {
     }
   }
 
-  @autobind
+  @boundMethod
   handleMouseDown() {
     this.mouseDown = true
   }
 
-  @autobind
+  @boundMethod
   handleMouseMove(e) {
     if (this.mouseDown) {
       this.polyline.getPath().push(e.latLng)

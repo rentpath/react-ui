@@ -2,7 +2,7 @@ import React, { Component, createElement } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import Slider from 'react-image-gallery'
 import { forceCheck } from 'react-lazyload'
 import { randomId, parseArgs } from '@rentpath/react-ui-utils'
@@ -69,7 +69,7 @@ export default class Carousel extends Component {
     }
   }
 
-  @autobind
+  @boundMethod
   onSlide(index) {
     const { onSlide } = this.props
 
@@ -130,7 +130,7 @@ export default class Carousel extends Component {
     }
   }
 
-  @autobind
+  @boundMethod
   previousPageClick(onClick) {
     const { pageNumber } = this.pageInfo
     const index = pageNumber > 2 ? 1 : 0
@@ -140,7 +140,7 @@ export default class Carousel extends Component {
     }
   }
 
-  @autobind
+  @boundMethod
   nextPageClick(onClick) {
     const { pageNumber, total } = this.pageInfo
     const added = pageNumber === 1 ? 1 : 2
@@ -187,7 +187,7 @@ export default class Carousel extends Component {
     )
   }
 
-  @autobind
+  @boundMethod
   renderItem(item) {
     return item
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from 'react-themed'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import { ListingComponents } from '@rentpath/react-ui-core'
 import Listing from './Listing'
 
@@ -37,7 +37,7 @@ export default class SingleFamilyDesktopListing extends Component {
     photos: {},
   }
 
-  @autobind
+  @boundMethod
   getListingInfoComponents() {
     const { theme, listing } = this.props
     const { phone } = listing

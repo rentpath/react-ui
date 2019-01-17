@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import Button from './Button'
 
 @themed(/^ToggleButton/)
@@ -37,7 +37,7 @@ export default class ToggleButton extends Component {
     }
   }
 
-  @autobind
+  @boundMethod
   toggle(event) {
     const { onClick, inactive } = this.props
 

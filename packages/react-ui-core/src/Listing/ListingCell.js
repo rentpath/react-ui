@@ -5,7 +5,7 @@ import themed from 'react-themed'
 import isEqual from 'lodash/isEqual'
 import intersection from 'lodash/intersection'
 import pick from 'lodash/pick'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 
 @themed(/^ListingCell/, { pure: true })
 export default class ListingCell extends Component {
@@ -69,7 +69,7 @@ export default class ListingCell extends Component {
       || this.props.className !== nextProps.className
   }
 
-  @autobind
+  @boundMethod
   handleClick(event) {
     const {
       listing,

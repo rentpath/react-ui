@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { parseArgs } from '@rentpath/react-ui-utils'
 import themed from 'react-themed'
 import classnames from 'classnames'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import Overlay from './Overlay'
 import ModalCloseButton from './ModalCloseButton'
 
@@ -87,7 +87,7 @@ export default class Modal extends PureComponent {
     return { Component: Fragment, props: {} }
   }
 
-  @autobind
+  @boundMethod
   handleClose() {
     this.setState({ isOpen: false })
     if (this.props.onClose) this.props.onClose()

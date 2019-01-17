@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import isAfter from 'date-fns/isAfter'
 import isBefore from 'date-fns/isBefore'
 import format from 'date-fns/format'
@@ -58,14 +58,14 @@ export default class DatePicker extends PureComponent {
     document.removeEventListener('click', this.onOutsideClick, false)
   }
 
-  @autobind
+  @boundMethod
   onOutsideClick(event) {
     if (!this.picker.current.contains(event.target) && this.state.showCalendar) {
       this.setState({ showCalendar: false })
     }
   }
 
-  @autobind
+  @boundMethod
   dateChange(selectedDate) {
     const { onChange, dateFormat } = this.props
 
@@ -78,7 +78,7 @@ export default class DatePicker extends PureComponent {
     })
   }
 
-  @autobind
+  @boundMethod
   handleCalendarVisibility() {
     const { showCalendar } = this.state
     this.setState({
@@ -86,7 +86,7 @@ export default class DatePicker extends PureComponent {
     })
   }
 
-  @autobind
+  @boundMethod
   validateTextField(e) {
     const value = e.target.value
     const { minDate, maxDate } = this.props
@@ -99,7 +99,7 @@ export default class DatePicker extends PureComponent {
     }
   }
 
-  @autobind
+  @boundMethod
   handleChange(e) {
     const value = e.target.value
 

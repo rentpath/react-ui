@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from 'react-themed'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import Button from './Button'
 
 @themed(['CancelButton'], {
@@ -22,7 +22,7 @@ export default class CancelButton extends PureComponent {
     theme: {},
   }
 
-  @autobind
+  @boundMethod
   handleClick() {
     const { onClick } = this.props
 

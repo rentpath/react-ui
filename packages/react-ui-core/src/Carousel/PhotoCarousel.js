@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import themed from 'react-themed'
 import classnames from 'classnames'
 import LazyLoad from 'react-lazyload'
-import autobind from 'autobind-decorator'
+import { boundMethod } from 'autobind-decorator'
 import { Photo, BackgroundPhoto } from '../Photo'
 import Carousel from './Carousel'
 
@@ -59,7 +59,7 @@ export default class PhotoCarousel extends PureComponent {
     )
   }
 
-  @autobind
+  @boundMethod
   renderItem(item) {
     const { isBackgroundImage } = this.props
     const Component = isBackgroundImage ? BackgroundPhoto : Photo
