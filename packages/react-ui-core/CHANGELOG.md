@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [17.0.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@16.5.0...@rentpath/react-ui-core@17.0.0) (2019-01-28)
+
+
+### Bug Fixes
+
+* **Impacts PhotoCarousel component:** improve flexibility by separating lazyload props ([6347ee0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/commit/6347ee0))
+
+
+### BREAKING CHANGES
+
+* **Impacts PhotoCarousel component:** Those who wish to continue lazy loading the gallery will need to use prop.lazyLoadGallery=true
+
+ISSUES CLOSED: TIDE-542
+
+
+
+
+
 # [16.5.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@16.3.8...@rentpath/react-ui-core@16.5.0) (2019-01-14)
 
 
