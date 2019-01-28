@@ -4,6 +4,7 @@ import LazyLoad from 'react-lazyload'
 import renderer from 'react-test-renderer'
 import theme from './mocks/theme'
 import ThemedPhotoCarousel from '../PhotoCarousel'
+import ThemedCarousel from '../Carousel'
 
 const PhotoCarousel = ThemedPhotoCarousel.WrappedComponent
 const items = [
@@ -101,9 +102,22 @@ describe('PhotoCarousel', () => {
         theme={theme}
         items={items}
         server="https://rentpath-res.cloudinary.com/"
-        lazyLoad={{ once: true, height: 400, width: 300, offset: 200 }}
+        lazyLoad
       />
     )
-    expect(wrapper.find(<LazyLoad />)).toBeTruthy()
+    expect(wrapper.find(ThemedCarousel).prop('lazyLoad')).toEqual(true)
+    expect(wrapper.find(LazyLoad).length).toBeFalsy()
+  })
+
+  it('lazyLoads gallery if required', () => {
+    const wrapper = shallow(
+      <PhotoCarousel
+        theme={theme}
+        items={items}
+        server="https://rentpath-res.cloudinary.com/"
+        lazyLoadGallery={{ once: true, height: 400, width: 300, offset: 200 }}
+      />
+    )
+    expect(wrapper.find(LazyLoad).length).toBeTruthy()
   })
 })
