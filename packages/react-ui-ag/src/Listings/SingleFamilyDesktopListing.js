@@ -24,10 +24,7 @@ export default class SingleFamilyDesktopListing extends Component {
     ratings: PropTypes.object,
     ctaButtons: PropTypes.arrayOf(buttonPropTypes),
     favoriteButton: buttonPropTypes,
-    lazyLoad: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.bool,
-    ]),
+    lazyLoad: PropTypes.bool,
     isActive: PropTypes.bool,
   }
 

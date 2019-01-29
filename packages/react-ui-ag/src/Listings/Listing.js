@@ -40,7 +40,11 @@ export default class Listing extends Component {
     ratings: PropTypes.object,
     ctaButtons: PropTypes.arrayOf(buttonPropTypes),
     favoriteButton: buttonPropTypes,
-    lazyLoad: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+    lazyLoad: PropTypes.bool,
+    lazyLoadGallery: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.object,
+    ]),
     isActive: PropTypes.bool,
     listingInfoComponents: PropTypes.node,
     listingTopComponents: PropTypes.node,
@@ -55,6 +59,7 @@ export default class Listing extends Component {
     listing: {},
     ratings: {},
     photos: {},
+    lazyLoadGallery: REACT_LAZYLOAD_PROP_DEFAULTS,
   }
 
   constructor(props) {
@@ -231,12 +236,9 @@ export default class Listing extends Component {
       photos,
       isActive,
       renderCustomControls,
+      lazyLoad,
+      lazyLoadGallery,
     } = this.props
-    let { lazyLoad } = this.props
-
-    if (lazyLoad && typeof lazyLoad === 'boolean') {
-      lazyLoad = typeof lazyLoad === 'boolean' ? REACT_LAZYLOAD_PROP_DEFAULTS : lazyLoad
-    }
 
     if (!isActive) {
       const { server } = photos
@@ -251,12 +253,13 @@ export default class Listing extends Component {
             showNav
             {...photos}
             lazyLoad={lazyLoad}
+            lazyLoadGallery={lazyLoadGallery}
             className={theme.Listing_Photos}
             onSlide={this.handlePhotoCarouselSlide}
             renderCustomControls={renderCustomControls}
           />
         )}
-        {this.renderPhoto(lazyLoad)}
+        {this.renderPhoto(lazyLoadGallery)}
       </React.Fragment>
     )
   }
@@ -285,6 +288,7 @@ export default class Listing extends Component {
       favoriteButton,
       isActive,
       lazyLoad,
+      lazyLoadGallery,
       listingInfoComponents,
       listingTopComponents,
       onPhotoCarouselSlide,

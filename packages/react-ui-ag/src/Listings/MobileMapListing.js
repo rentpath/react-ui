@@ -41,7 +41,11 @@ export default class MobileMapListing extends Component {
     propertyName: PropTypes.object,
     ctaButtons: PropTypes.arrayOf(buttonPropTypes),
     favoriteButton: buttonPropTypes,
-    lazyLoad: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+    lazyLoad: PropTypes.bool,
+    lazyLoadGallery: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.bool,
+    ]),
     isActive: PropTypes.bool,
     onPhotoCarouselSlide: PropTypes.func,
     renderCustomControls: PropTypes.func,
@@ -50,6 +54,7 @@ export default class MobileMapListing extends Component {
   static defaultProps = {
     isActive: true,
     lazyLoad: true,
+    lazyLoadGallery: REACT_LAZYLOAD_PROP_DEFAULTS,
     theme: {},
     listing: {},
     ratings: {},
@@ -201,13 +206,9 @@ export default class MobileMapListing extends Component {
       photos,
       isActive,
       renderCustomControls,
+      lazyLoad,
+      lazyLoadGallery,
     } = this.props
-
-    let { lazyLoad } = this.props
-
-    if (lazyLoad && typeof lazyLoad === 'boolean') {
-      lazyLoad = typeof lazyLoad === 'boolean' ? REACT_LAZYLOAD_PROP_DEFAULTS : lazyLoad
-    }
 
     if (!isActive) {
       const { server } = photos
@@ -222,20 +223,21 @@ export default class MobileMapListing extends Component {
             showNav
             {...photos}
             lazyLoad={lazyLoad}
+            lazyLoadGallery={lazyLoadGallery}
             className={theme.MobileMapListing_Photos}
             onSlide={this.handlePhotoCarouselSlide}
             renderCustomControls={renderCustomControls}
           />
         )}
-        {this.renderPhoto(lazyLoad)}
+        {this.renderPhoto(lazyLoadGallery)}
       </div>
     )
   }
 
-  renderPhoto(lazyLoad) {
-    if (lazyLoad) {
+  renderPhoto(lazyLoadGallery) {
+    if (lazyLoadGallery) {
       return (
-        <LazyLoad {...lazyLoad}>
+        <LazyLoad {...lazyLoadGallery}>
           <ListingComponents.Photo />
         </LazyLoad>
       )
@@ -257,6 +259,7 @@ export default class MobileMapListing extends Component {
       propertyName,
       isActive,
       lazyLoad,
+      lazyLoadGallery,
       onPhotoCarouselSlide,
       renderCustomControls,
       ...props

@@ -35,7 +35,8 @@ export default class SingleFamilyMobileMapListing extends Component {
     photos: PropTypes.object,
     ctaButton: buttonPropTypes,
     favoriteButton: buttonPropTypes,
-    lazyLoad: PropTypes.oneOfType([
+    lazyLoad: PropTypes.bool,
+    lazyLoadGallery: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.object,
     ]),
@@ -48,6 +49,7 @@ export default class SingleFamilyMobileMapListing extends Component {
     ctaButton: {},
     isActive: true,
     lazyLoad: true,
+    lazyLoadGallery: REACT_LAZYLOAD_PROP_DEFAULTS,
   }
 
   shouldComponentUpdate(nextProps) {
@@ -131,12 +133,7 @@ export default class SingleFamilyMobileMapListing extends Component {
   }
 
   renderPhotoCarousel() {
-    const { theme, photos } = this.props
-    let { lazyLoad } = this.props
-
-    if (lazyLoad && typeof lazyLoad === 'boolean') {
-      lazyLoad = REACT_LAZYLOAD_PROP_DEFAULTS
-    }
+    const { theme, photos, lazyLoad, lazyLoadGallery } = this.props
 
     return (
       <div className={theme.MobileMapListing_Top}>
@@ -144,6 +141,7 @@ export default class SingleFamilyMobileMapListing extends Component {
           showNav
           {...photos}
           lazyLoad={lazyLoad}
+          lazyLoadGallery={lazyLoadGallery}
           className={theme.MobileMapListing_Photos}
         />
       </div>
@@ -161,6 +159,7 @@ export default class SingleFamilyMobileMapListing extends Component {
       favoriteButton,
       isActive,
       lazyLoad,
+      lazyLoadGallery,
       ...props
     } = this.props
 
