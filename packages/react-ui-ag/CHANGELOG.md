@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.5.6](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-ag/compare/@rentpath/react-ui-ag@11.5.5...@rentpath/react-ui-ag@11.5.6) (2019-01-29)
+
+
+### Bug Fixes
+
+* **Listing.js:** backwards compatibility for Listing PhotosCarousel ([9d909cb](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-ag/commit/9d909cb))
+
+
+
+
+
 ## [11.5.5](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-ag/compare/@rentpath/react-ui-ag@11.5.4...@rentpath/react-ui-ag@11.5.5) (2019-01-28)
 
 **Note:** Version bump only for package @rentpath/react-ui-ag
