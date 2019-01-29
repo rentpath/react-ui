@@ -71,6 +71,7 @@ const props = {
     server: 'https://rentpath-res.cloudinary.com/',
   },
   lazyLoad: false,
+  lazyLoadGallery: false,
   listingInfoComponents: <div>Listing Info generated component</div>,
 }
 
@@ -241,10 +242,11 @@ describe('ag/Listings/Listing', () => {
   })
 
   describe('photos', () => {
-    it('renders a component with a PhotoCarousel if active', () => {
+    it('renders a component with a PhotoCarousel with defaults if active', () => {
       const wrapper = shallow(<Listing {...props} />)
 
       expect(wrapper.find(ListingComponents.Photos)).toHaveLength(1)
+      expect(wrapper.find(ListingComponents.Photos).props()).toMatchSnapshot()
       expect(wrapper.find(ListingComponents.Photo)).toHaveLength(1)
     })
 

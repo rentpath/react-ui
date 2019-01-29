@@ -74,6 +74,7 @@ const props = {
     server: 'https://rentpath-res.cloudinary.com/',
   },
   lazyLoad: false,
+  lazyLoadGallery: false,
 }
 
 describe('ag/Listings/SingleFamilyDesktopListing', () => {
