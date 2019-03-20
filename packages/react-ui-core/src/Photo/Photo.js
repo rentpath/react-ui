@@ -30,9 +30,7 @@ export default class Photo extends PureComponent {
   // don't need the constructor once we fix the getDerivedStateFromProps
   constructor(props) {
     super(props)
-
     this.img = React.createRef()
-
     this.state = {
       url: this.props.url || this.props.fallbackUrl,
     }
