@@ -95,6 +95,12 @@ describe('Photo', () => {
       event = instance.fallback(event)
       expect(event).toBeUndefined()
     })
+
+    it('should use fallbackUrl if url is empty string', () => {
+      const wrapper = setup({ url: '', fallbackUrl: '/fallbackWah' })
+
+      expect(wrapper.state('url')).toEqual(fallbackUrl)
+    })
   })
 
   describe('src', () => {
