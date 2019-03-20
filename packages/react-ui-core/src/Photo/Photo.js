@@ -34,7 +34,7 @@ export default class Photo extends PureComponent {
     this.img = React.createRef()
 
     this.state = {
-      url: this.props.url,
+      url: this.props.url || this.props.fallbackUrl,
     }
   }
 
