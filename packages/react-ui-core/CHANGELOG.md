@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.1](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@17.0.0...@rentpath/react-ui-core@17.0.1) (2019-03-20)
+
+
+### Bug Fixes
+
+* **Photos.js:** add fallback image url to url set in constructor ([d495436](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/commit/d495436))
+
+
+
+
+
 # [17.0.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@16.5.0...@rentpath/react-ui-core@17.0.0) (2019-01-28)
 
 
