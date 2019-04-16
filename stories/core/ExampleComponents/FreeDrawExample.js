@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
 import classnames from 'classnames'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import { FreeDrawLayer, Button } from 'react-ui-core/src'
 
 @themed(/^FreeDrawButton/, { pure: true })

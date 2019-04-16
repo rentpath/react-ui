@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import { Text } from '../Text'
 
 @themed(/^(Modal_Header|Modal_SubHeader)/, {

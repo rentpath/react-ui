@@ -1,4 +1,4 @@
-import { compose } from 'react-themed'
+import { compose } from '@rentpath/react-themed'
 import { FilterCard } from './Filters'
 import Card from './Card.css'
 

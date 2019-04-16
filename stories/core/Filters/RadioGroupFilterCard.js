@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import classnames from 'classnames'
 import { action } from '@storybook/addon-actions'
 import { RadioGroupFilterCard } from 'react-ui-core/src'

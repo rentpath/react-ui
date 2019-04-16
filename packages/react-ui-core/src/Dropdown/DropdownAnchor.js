@@ -3,7 +3,7 @@ import { parseArgs } from '@rentpath/react-ui-utils'
 import autobind from 'autobind-decorator'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import { Button } from '../Button'
 
 @themed(['DropdownAnchor-expand', 'DropdownAnchor-collapse', 'DropdownAnchor'], {

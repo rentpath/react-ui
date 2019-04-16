@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Field } from '@rentpath/react-ui-core'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 
 const DEFAULT_TEXT = 'Message'
 

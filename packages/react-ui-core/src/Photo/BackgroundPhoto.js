@@ -6,7 +6,7 @@ import filter from 'lodash/fp/filter'
 import map from 'lodash/fp/map'
 import join from 'lodash/fp/join'
 import flatten from 'lodash/flatten'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 
 const backgroundUrl = pipe(
   (...urls) => ([...urls]),

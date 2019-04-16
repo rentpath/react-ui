@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import { parseArgs } from '@rentpath/react-ui-utils'
 import { Title } from '../Title'
 import { Text } from '../Text'

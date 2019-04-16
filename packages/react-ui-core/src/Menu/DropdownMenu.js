@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import classnames from 'classnames'
 import isEqual from 'lodash/isEqual'
 import { Dropdown } from '../Dropdown'

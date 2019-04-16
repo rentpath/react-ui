@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import { boolean } from '@storybook/addon-knobs'
 import { LeadModal } from 'react-ui-rent/src'
 

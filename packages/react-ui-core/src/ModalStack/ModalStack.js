@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { createPortal } from 'react-dom'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import autobind from 'autobind-decorator'
 import PropTypes from 'prop-types'
 import get from 'lodash/fp/get'

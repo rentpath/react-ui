@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import classnames from 'classnames'
 
 @themed(/^Gmap_OverlayView/, { pure: true })

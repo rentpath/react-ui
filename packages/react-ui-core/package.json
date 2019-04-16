@@ -43,12 +43,12 @@
     "react-lazyload": "2.3.0"
   },
   "peerDependencies": {
+    "@rentpath/react-themed": "^4.1.0",
     "classnames": "^2.2.6",
     "date-fns": "^2.0.0",
     "lodash": "^4.17.10",
     "prop-types": "15.6.2",
     "react": "^16.6.1",
-    "react-dom": "^16.6.1",
-    "react-themed": "^3.2.1"
+    "react-dom": "^16.6.1"
   }
 }

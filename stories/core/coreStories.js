@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
-import { Theme } from 'react-themed'
+import { Theme } from '@rentpath/react-themed'
 import Container from '../Container'
 import { CoreTheme } from '../theme'
 

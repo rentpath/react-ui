@@ -6,7 +6,7 @@ import React, {
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
 import { parseArgs } from '@rentpath/react-ui-utils'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import classnames from 'classnames'
 import DropdownAnchor from './DropdownAnchor'
 
