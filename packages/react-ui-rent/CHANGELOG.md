@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-rent/compare/@rentpath/react-ui-rent@4.3.14...@rentpath/react-ui-rent@5.0.0) (2019-04-16)
+
+
+### Features
+
+* **theming:** migrate to [@rentpath](https://github.com/rentpath)/react-themed ([45d88c1](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-rent/commit/45d88c1))
+
+
+### BREAKING CHANGES
+
+* **theming:** consumers of these packages need to switch from `react-themed` to `@rentpath/react-themed`
+
+
+
+
+
 ## [4.3.14](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-rent/compare/@rentpath/react-ui-rent@4.3.13...@rentpath/react-ui-rent@4.3.14) (2019-03-20)
 
 **Note:** Version bump only for package @rentpath/react-ui-rent
