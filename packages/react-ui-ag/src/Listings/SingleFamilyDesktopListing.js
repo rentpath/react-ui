@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import autobind from 'autobind-decorator'
 import { ListingComponents } from '@rentpath/react-ui-core'
 import Listing from './Listing'

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { GridViewHeader } from 'react-ui-ag/src'
 import { text, select } from '@storybook/addon-knobs'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 
 const ExampleGridViewHeaderComponent = ({ theme }) => (
   <div className={theme.GridViewHeaderCard}>

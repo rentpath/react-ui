@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { parseArgs } from '@rentpath/react-ui-utils'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'
 import Overlay from './Overlay'

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import { Button } from 'react-ui-core/src'
 import PropTypes from 'prop-types'
 

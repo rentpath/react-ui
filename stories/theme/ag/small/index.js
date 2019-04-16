@@ -1,4 +1,4 @@
-import { compose } from 'react-themed'
+import { compose } from '@rentpath/react-themed'
 import { ApplyButton } from './Buttons'
 import RadioButton from './RadioButton.css'
 import RadioGroup from './RadioGroup.css'

@@ -1,4 +1,4 @@
-import { compose } from 'react-themed'
+import { compose } from '@rentpath/react-themed'
 import Label from './Label.css'
 import Field from './Field.css'
 import Text from './Text.css'

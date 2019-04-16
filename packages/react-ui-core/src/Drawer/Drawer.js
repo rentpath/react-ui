@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import autobind from 'autobind-decorator'

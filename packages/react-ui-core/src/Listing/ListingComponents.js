@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import { Text } from '../Text'
 import { RatingBar } from '../Ratings'
 import { PhotoCarousel } from '../Carousel'

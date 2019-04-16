@@ -1,7 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
-import BackgroundPhoto from '../BackgroundPhoto'
+import ThemedBackgroundPhoto from '../BackgroundPhoto'
+
+const BackgroundPhoto = ThemedBackgroundPhoto.WrappedComponent
 
 describe('BackgroundPhoto', () => {
   it('passes extra props through', () => {
@@ -10,8 +12,7 @@ describe('BackgroundPhoto', () => {
         data-tag_foo="testing"
       />
     )
-
-    expect(wrapper.prop('data-tag_foo')).toEqual('testing')
+    expect(wrapper.find('[data-tid="bg-photo"]').prop('data-tag_foo')).toEqual('testing')
   })
 
   describe('fallbackUrl', () => {

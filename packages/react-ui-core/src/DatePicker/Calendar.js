@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import autobind from 'autobind-decorator'
 import classnames from 'classnames'
 import isEqual from 'date-fns/isEqual'

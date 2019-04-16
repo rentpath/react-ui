@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import isEqual from 'lodash/isEqual'
 import cn from 'classnames'
 import { randomId, parseArgs } from '@rentpath/react-ui-utils'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import DefaultListItem from './ListItem'
 
 @themed('*', { pure: true })

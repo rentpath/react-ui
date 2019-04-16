@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import classnames from 'classnames'
 import {
   Dropdown,

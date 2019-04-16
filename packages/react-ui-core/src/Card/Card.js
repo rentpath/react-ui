@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 
 @themed('*', { pure: true })
 export default class Card extends PureComponent {

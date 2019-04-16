@@ -35,7 +35,7 @@ Follow these steps to work with your local files instead of the published versio
 
 ## react-themed
 
-All react components use [react-themed](https://github.com/babel/babel/blob/master/doc/design/monorepo.md) when needed. Please read the documenation if you're not familiar with it.
+Many react components use [react-themed](https://github.com/rentpath/react-themed) when needed. Please read the documenation if you're not familiar with it.
 
 ### CEM (BEM) syntax and classnames
 

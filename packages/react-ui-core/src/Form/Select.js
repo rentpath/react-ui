@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import themed from 'react-themed'
+import themed from '@rentpath/react-themed'
 import autobind from 'autobind-decorator'
 
 @themed(/^Select/, {
