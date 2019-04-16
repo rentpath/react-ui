@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [18.0.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@17.0.2...@rentpath/react-ui-core@18.0.0) (2019-04-16)
+
+
+### Features
+
+* **theming:** migrate to [@rentpath](https://github.com/rentpath)/react-themed ([45d88c1](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/commit/45d88c1))
+
+
+### BREAKING CHANGES
+
+* **theming:** consumers of these packages need to switch from `react-themed` to `@rentpath/react-themed`
+
+
+
+
+
 ## [17.0.2](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@17.0.1...@rentpath/react-ui-core@17.0.2) (2019-03-20)
 
 **Note:** Version bump only for package @rentpath/react-ui-core
