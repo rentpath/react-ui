@@ -1,51 +1,56 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
 import classnames from 'classnames'
 import { randomId } from '@rentpath/react-ui-utils'
 
 @themed(/^Highlighter/)
-export default class Highlighter extends Component {
+export default class Highlighter extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     pattern: PropTypes.string.isRequired,
-    children: PropTypes.string,
+    ignoreCase: PropTypes.bool,
+    children: PropTypes.string.isRequired,
     theme: PropTypes.object,
     indexHighlighted: PropTypes.number,
-    text: PropTypes.string,
+    renderer: PropTypes.func,
   }
 
   static defaultProps = {
-    text: '',
-    children: '',
     theme: {},
+    renderer: node => node,
   }
 
-  get indexHighlighted() {
-    return this.props.indexHighlighted + 1
+  get pattern() {
+    // make characters literal instead of interpretting symbols as valid regex instructions
+    // AKA sanitize input
+    const pattern = this.props.pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    return RegExp(`(${pattern})`, this.props.ignoreCase ? 'i' : '')
   }
 
   renderHighlightedText() {
     const { pattern, children } = this.props
 
     if (!pattern) return children
-
-    const segments = children.split(pattern)
-
-    return segments.reduce((prev, curr, index) => [prev,
-      this.renderHighlightedSegment(index),
-      curr])
+    let highlightedIndex = 0
+    return children.split(this.pattern).map(string => {
+      if (pattern.toLowerCase() === string.toLowerCase()) {
+        const segment = this.renderHighlightedSegment(string, highlightedIndex)
+        highlightedIndex += 1
+        return segment
+      }
+      return string
+    })
   }
 
-  renderHighlightedSegment(index) {
+  renderHighlightedSegment(string, index) {
     const {
-      pattern,
       theme,
       indexHighlighted,
       className,
     } = this.props
 
-    if (!indexHighlighted || index === indexHighlighted) {
+    if (isNaN(indexHighlighted) || index === indexHighlighted) {
       return (
         <span
           data-tid={`highlighter-match-${index}`}
@@ -55,11 +60,11 @@ export default class Highlighter extends Component {
           )}
           key={randomId()}
         >
-          {pattern}
+          {string}
         </span>
       )
     }
-    return pattern
+    return string
   }
 
   render() {
@@ -68,10 +73,12 @@ export default class Highlighter extends Component {
       className,
       indexHighlighted,
       pattern,
+      ignoreCase,
+      renderer,
       ...props
     } = this.props
 
-    return (
+    return renderer(
       <div
         className={classnames(
           theme.Highlighter,

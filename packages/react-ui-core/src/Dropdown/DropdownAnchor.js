@@ -1,6 +1,5 @@
 import { createElement, PureComponent } from 'react'
 import { parseArgs } from '@rentpath/react-ui-utils'
-import autobind from 'autobind-decorator'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import themed from '@rentpath/react-themed'
@@ -28,14 +27,13 @@ export default class DropdownAnchor extends PureComponent {
     theme: {},
   }
 
-  @autobind
-  handleClick() {
+  handleClick = () => {
     const { onClick, visible } = this.props
 
     if (onClick) onClick(visible)
   }
 
-  renderAnchor() {
+  render() {
     const {
       anchor,
       className,
@@ -54,9 +52,5 @@ export default class DropdownAnchor extends PureComponent {
       onClick: this.handleClick,
       ...props,
     }))
-  }
-
-  render() {
-    return this.renderAnchor()
   }
 }
