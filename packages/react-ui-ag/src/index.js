@@ -7,15 +7,6 @@ export {
 export { Banner } from './Banners'
 
 export {
-  Listing,
-  MobileMapListing,
-  SingleFamilyMobileMapListing,
-  DesktopMapPinListing,
-  DesktopListing,
-  SingleFamilyDesktopListing,
-} from './Listings'
-
-export {
   GridViewHeader,
 } from './GridView'
 

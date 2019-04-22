@@ -6,14 +6,6 @@ import {
 } from './Filters'
 
 import {
-  ExampleMobileMapListing,
-  ExampleSingleFamily,
-  ExampleDesktopMapPinListing,
-  ExampleDesktopListing,
-  ExampleSingleFamilyDesktopListing,
-} from './Listings'
-
-import {
   DefaultBanner,
   BannerWithNode,
 } from './Banners'
@@ -32,15 +24,6 @@ import {
   MultipleMarkers,
   SelectedMarker,
 } from './Gmap'
-
-smallStories('Listings', module)
-  .add('Mobile Map Listing', ExampleMobileMapListing)
-  .add('Single Family Mobile Map Listing', ExampleSingleFamily)
-
-largeStories('Listings', module)
-  .add('DesktopMapPinListing', () => ExampleDesktopMapPinListing)
-  .add('Desktop Listing', ExampleDesktopListing)
-  .add('Single Family Desktop Listing', ExampleSingleFamilyDesktopListing)
 
 largeStories('Filters / RadioGroupDropdown / large', module)
   .add('Beds', () => DesktopBedroomDropdown)
