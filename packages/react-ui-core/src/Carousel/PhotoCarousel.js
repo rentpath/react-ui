@@ -7,18 +7,25 @@ import autobind from 'autobind-decorator'
 import { Photo, BackgroundPhoto } from '../Photo'
 import Carousel from './Carousel'
 
+const carouselPhoto = PropTypes.arrayOf(
+  PropTypes.shape({
+    caption: PropTypes.string,
+    path: PropTypes.string,
+    url: PropTypes.string,
+  }),
+)
+
 @themed(['PhotoCarousel', 'PhotoCarousel-empty'])
 export default class PhotoCarousel extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     theme: PropTypes.object,
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        caption: PropTypes.string,
-        path: PropTypes.string,
-        url: PropTypes.string,
-      }),
-    ),
+    items: PropTypes.oneOfType([
+      PropTypes.arrayOf(
+        carouselPhoto
+      ),
+      carouselPhoto,
+    ]),
     server: PropTypes.string.isRequired,
     isBackgroundImage: PropTypes.bool,
     lazyLoad: PropTypes.bool,
