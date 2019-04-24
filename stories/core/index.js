@@ -116,11 +116,6 @@ import {
   PhotoCarouselExample,
 } from './Carousel'
 
-import {
-  DefaultListingCell,
-  ThemedListingCell,
-} from './ListingCell'
-
 import { DefaultDrawer } from './Drawer'
 
 import {
@@ -259,10 +254,6 @@ coreStories('List', module)
   .add('Horizontal List', () => HorizontalList)
   .add('Custom Node Type List', () => ListWithPassedNodeTypes)
   .add('Custom ListItem List', () => ListWithOwnItemComponent)
-
-coreStories('ListingCell', module)
-  .add('Default', () => DefaultListingCell)
-  .add('Themed', () => ThemedListingCell)
 
 coreStories('Menu', module)
   .add('Menu', () => DefaultMenu)

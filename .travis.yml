@@ -1,7 +1,6 @@
 language: node_js
 node_js:
-  - "node"
-  - "lts/*"
+  - "11.9.0"
 cache: yarn
 
 env:
@@ -14,7 +13,7 @@ script:
   - yarn run build-storybook
 
 after_success:
-  - mkdir artifacts && cp -R build artifacts/$TRAVIS_BRANCH-${TRAVIS_COMMIT:0:7} && cp -R .storybook/dist/* artifacts/ 
+  - mkdir artifacts && cp -R build artifacts/$TRAVIS_BRANCH-${TRAVIS_COMMIT:0:7} && cp -R .storybook/dist/* artifacts/
 
 deploy:
   - provider: s3
