@@ -12,12 +12,12 @@ import CarouselNavigation from './CarouselNavigation'
 const PAGE_SIZE = 30
 const FIRST_PAGE = 1
 
-const carouselPhoto = PropTypes.arrayOf(
-  PropTypes.shape({
-    caption: PropTypes.string,
-    path: PropTypes.string,
-    url: PropTypes.string,
-  }),
+const carouselItems = PropTypes.arrayOf(
+  PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.func,
+    PropTypes.object,
+  ]),
 )
 
 @themed(['Carousel', 'Carousel-next', 'Carousel-previous'])
@@ -27,9 +27,9 @@ export default class Carousel extends Component {
     theme: PropTypes.object,
     items: PropTypes.oneOfType([
       PropTypes.arrayOf(
-        carouselPhoto
+        carouselItems
       ),
-      carouselPhoto,
+      carouselItems,
     ]),
     lazyLoad: PropTypes.bool,
     selectedIndex: PropTypes.number,
