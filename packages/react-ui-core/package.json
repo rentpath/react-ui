@@ -30,7 +30,8 @@
       "/node_modules/",
       "/mocks/",
       "./es",
-      "./lib"
+      "./lib",
+      "^.*__tests__/__helpers__.*"
     ]
   },
   "dependencies": {

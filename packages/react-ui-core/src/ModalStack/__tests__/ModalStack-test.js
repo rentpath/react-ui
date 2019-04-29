@@ -2,10 +2,14 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import ModalStack from '../ModalStack'
 
+jest.mock('react-dom', () => ({
+  createPortal: node => node,
+}))
+
 const modalDefinitions = {
   1: {
     name: 'TestModal',
-    resolve: () => import('../../LeadModal/LeadModal'),
+    resolve: () => import('./__helpers__/TestModal'),
     overlay: true,
   },
 }
@@ -30,10 +34,15 @@ describe('ModalStack', () => {
       .toJSON()
     expect(snap).toMatchSnapshot()
   })
-  it('renders a modal correctly', () => {
+
+  it('renders a modal correctly', done => {
     const snap = renderer
       .create(<ModalStack currentModal={currentModal} modalDefinitions={modalDefinitions} />)
-      .toJSON()
-    expect(snap).toMatchSnapshot()
+
+    // flush JavaScript message queue, to pick up the async import() in resolve()
+    setTimeout(() => {
+      expect(snap.toJSON()).toMatchSnapshot()
+      done()
+    })
   })
 })
