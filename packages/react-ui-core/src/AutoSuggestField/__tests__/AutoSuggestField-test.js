@@ -1,5 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
+import { Menu } from '../../Menu'
 import ThemedAutoSuggestField from '../AutoSuggestField'
 
 const AutoSuggestField = ThemedAutoSuggestField.WrappedComponent
@@ -77,6 +78,7 @@ describe('AutoSuggestField', () => {
 
     const thirdListItem = wrapper.find('[data-tid="list-item-2"]').at(1)
     expect(wrapper.find('[data-tid="card-body"]')).toHaveLength(1)
+    thirdListItem.simulate('mouseenter')
     thirdListItem.simulate('click')
     expect(wrapper.find('[data-tid="card-body"]')).toHaveLength(0)
   })
@@ -176,5 +178,29 @@ describe('AutoSuggestField', () => {
     it('fires onSubmit on click', () => {
       expect(onSubmit.mock.calls).toHaveLength(1)
     })
+  })
+
+  it('passes the highlight object to Menu if provided', () => {
+    const { wrapper } = setup({
+      visible: true,
+      highlight: {
+        foo: 'bar',
+      },
+    })
+
+    expect(wrapper.find(Menu).prop('listItem').ignoreCase).toEqual(true)
+    expect(wrapper.find(Menu).prop('listItem').foo).toEqual('bar')
+  })
+
+  it('sets the input to the selected item if showSelectionInInputField is enabled', () => {
+    const { wrapper } = setup({
+      suggestions: [1, 2, 3],
+      visible: true,
+      showSelectionInInputField: true,
+    })
+
+    const thirdListItem = wrapper.find('div[data-tid="list-item-1"]')
+    thirdListItem.simulate('mouseenter')
+    expect(wrapper.find('input').prop('value')).toEqual(2)
   })
 })

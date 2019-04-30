@@ -1,9 +1,7 @@
-import React, { Component, createElement } from 'react'
+import React, { PureComponent, createElement } from 'react'
 import { parseArgs } from '@rentpath/react-ui-utils'
-import debounce from 'lodash/debounce'
 import capitalize from 'lodash/capitalize'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
 import themed from '@rentpath/react-themed'
 import classnames from 'classnames'
 import { Dropdown } from '../Dropdown'
@@ -16,10 +14,8 @@ import { Field } from '../Form'
 const ENTER = 13
 const ESCAPE = 27
 
-@themed(/^(AutoSuggestField|Button_Clear|Button_Submit)/, {
-  pure: true,
-})
-export default class AutoSuggestField extends Component {
+@themed(/^AutoSuggestField/, { pure: true })
+export default class AutoSuggestField extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     theme: PropTypes.object,
@@ -47,18 +43,22 @@ export default class AutoSuggestField extends Component {
     submitOnSelection: PropTypes.bool,
     visible: PropTypes.bool,
     onVisibilityChange: PropTypes.func,
-    suggestions: PropTypes.node,
+    suggestions: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.object),
+      PropTypes.node,
+    ]),
     value: PropTypes.string,
     valueSelector: PropTypes.func,
+    showSelectionInInputField: PropTypes.bool,
   }
 
   static defaultProps = {
     theme: {},
     anchorField: {},
     value: '',
-    onSubmit: () => { },
-    onInput: () => { },
-    onSelection: () => { },
+    onSubmit: () => {},
+    onInput: () => {},
+    onSelection: () => {},
     valueSelector: value => value,
     submitOnSelection: true,
     visible: false,
@@ -70,13 +70,12 @@ export default class AutoSuggestField extends Component {
     const {
       value,
       visible,
-      onInput,
     } = props
 
-    this.onInput = debounce(onInput, 300)
     this.state = {
       value,
       visible,
+      mousedOverSelection: null,
     }
   }
 
@@ -85,9 +84,10 @@ export default class AutoSuggestField extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!(this.props.value === nextProps.value)) {
+    if (this.props.value !== nextProps.value) {
       this.setState({
         value: nextProps.value,
+        mousedOverSelection: null,
       })
     }
   }
@@ -96,10 +96,7 @@ export default class AutoSuggestField extends Component {
     document.removeEventListener('keydown', this.onKeyDown)
   }
 
-  @autobind
-  onKeyDown(event) {
-    const { suggestions } = this.props
-    const { visible } = this.state
+  onKeyDown = event => {
     const code = event.keyCode || event.key || event.keyIndentifier
 
     switch (code) {
@@ -107,54 +104,67 @@ export default class AutoSuggestField extends Component {
         this.handleClear()
         break
       case ENTER:
-        if (!visible || !suggestions || !suggestions.length) {
-          this.handleSubmit(this.state.value)
-        }
+        this.handleSubmit(this.state.value)
         break
       default:
     }
+  }
+
+  onChange = event => {
+    const { valueSelector } = this.props
+    const { mousedOverSelection } = this.state
+
+    if (mousedOverSelection) {
+      this.setState({ mousedOverSelection: null, value: valueSelector(mousedOverSelection) })
+    }
+    const value = event.target.value
+    this.setState({ value })
+    this.handleVisibilityChange(true)
+    this.props.onInput(value)
+  }
+
+  onItemMouseOver = value => {
+    const { onItemMouseOver } = this.props
+    this.setState({ mousedOverSelection: value })
+    if (onItemMouseOver) onItemMouseOver(value)
   }
 
   get highlightedListItem() {
     const { highlight } = this.props
 
     if (!highlight) return { nodeType: 'div' }
-    const indexHighlighted = highlight.indexHighlighted >= 0 ? highlight.indexHighlighted : 1
+    const indexHighlighted = highlight.indexHighlighted >= 0 ? highlight.indexHighlighted : 0
 
     return {
-      nodeType: props => (
-        <Highlighter
-          indexHighlighted={indexHighlighted}
-          {...props}
-          pattern={this.state.value}
-        />
-      ),
+      nodeType: Highlighter,
+      indexHighlighted,
+      ignoreCase: true,
+      pattern: this.state.value,
+      ...(typeof highlight === 'object' ? highlight : {}),
     }
   }
 
-  updateValueAndClose(value, cb = () => { }) {
+  get inputValue() {
+    const { value, mousedOverSelection } = this.state
+    const { showSelectionInInputField, valueSelector } = this.props
+
+    if (!showSelectionInInputField) return value
+    return valueSelector(mousedOverSelection) || value
+  }
+
+  updateValueAndClose(value, callback = () => {}) {
     this.handleVisibilityChange(false)
     this.setState({
       value,
-    }, cb)
+    }, callback)
   }
 
-  @autobind
-  handleInput(event) {
-    const value = event.target.value
-    this.setState({ value })
-    this.handleVisibilityChange(true)
-    this.onInput(value)
-  }
-
-  @autobind
-  handleSubmit() {
+  handleSubmit = () => {
     this.props.onSubmit(this.state.value)
     this.updateValueAndClose(this.state.value)
   }
 
-  @autobind
-  handleSuggestionSelection(value) {
+  handleSuggestionSelection = value => {
     const {
       onSubmit,
       onSelection,
@@ -165,7 +175,6 @@ export default class AutoSuggestField extends Component {
 
     onInput(value)
     onSelection(value)
-
     this.updateValueAndClose(
       valueSelector(value),
       () => {
@@ -174,8 +183,7 @@ export default class AutoSuggestField extends Component {
     )
   }
 
-  @autobind
-  handleVisibilityChange(visible) {
+  handleVisibilityChange = visible => {
     const onVisibilityChange = this.props.onVisibilityChange
     this.setState({
       visible,
@@ -183,8 +191,7 @@ export default class AutoSuggestField extends Component {
     if (onVisibilityChange) onVisibilityChange(visible)
   }
 
-  @autobind
-  handleClear() {
+  handleClear = () => {
     const { onAfterClear } = this.props
     this.updateValueAndClose('')
     if (onAfterClear) onAfterClear()
@@ -200,16 +207,16 @@ export default class AutoSuggestField extends Component {
       ...props,
       onClick: this[`handle${name}`],
       'data-tid': `autosuggest-${type}-button`,
-      className: theme[`Button_${name}`],
+      className: theme[`AutoSuggestField_Button${name}`],
     }))
   }
 
   renderAnchorField() {
     return {
       ...this.props.anchorField,
-      value: this.state.value,
+      value: this.inputValue,
       anchor: Field,
-      onChange: this.handleInput,
+      onChange: this.onChange,
     }
   }
 
@@ -221,9 +228,9 @@ export default class AutoSuggestField extends Component {
       anchorField,
       suggestions,
       className,
-      onSubmit, // eslint-disable-line no-unused-vars
+      onSubmit,
       onItemMouseOver,
-      onSelection, // eslint-disable-line no-unused-vars
+      onSelection,
       highlight,
       valueSelector,
       value,
@@ -232,6 +239,7 @@ export default class AutoSuggestField extends Component {
       visible,
       onInput,
       onVisibilityChange,
+      showSelectionInInputField,
       ...props
     } = this.props
 
@@ -245,7 +253,7 @@ export default class AutoSuggestField extends Component {
       >
         <Dropdown
           anchorField={this.renderAnchorField()}
-          value={this.state.value}
+          value={this.inputValue}
           visible={this.state.visible}
           onVisibilityChange={this.handleVisibilityChange}
           {...props}
@@ -255,7 +263,7 @@ export default class AutoSuggestField extends Component {
               listItem={this.highlightedListItem}
               options={suggestions}
               onItemSelect={this.handleSuggestionSelection}
-              onItemMouseOver={onItemMouseOver}
+              onItemMouseOver={this.onItemMouseOver}
             />
           </Card>
         </Dropdown>

@@ -1,17 +1,15 @@
 import React, { PureComponent } from 'react'
+import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
-import autobind from 'autobind-decorator'
 import themed from '@rentpath/react-themed'
 import classnames from 'classnames'
 import { List } from '../List'
 
-const ENTER = 13
-const ARROW_UP = 38
-const ARROW_DOWN = 40
+export const ENTER = 13
+export const ARROW_UP = 38
+export const ARROW_DOWN = 40
 
-@themed(['Menu'], {
-  pure: true,
-})
+@themed(['Menu'], { pure: true })
 export default class Menu extends PureComponent {
   static propTypes = {
     theme: PropTypes.object,
@@ -48,13 +46,12 @@ export default class Menu extends PureComponent {
     this.state = {
       highlightIndex: -1,
       indexedOptionIndex: -1,
-      indexedOptions: this.generateIndexedOptions(),
     }
   }
 
   componentDidMount() {
     document.addEventListener('keydown', this.onKeyDown)
-    this.highlightIndexedOption(0)
+    if (!this.props.highlightIndex) this.resetHighlightedIndex()
   }
 
   componentWillReceiveProps(nextProps) {
@@ -62,10 +59,8 @@ export default class Menu extends PureComponent {
       this.setState({ highlightIndex: nextProps.highlightIndex })
     }
 
-    if (this.props.options !== nextProps.options) {
-      this.setState({
-        indexedOptions: this.generateIndexedOptions(),
-      }, this.highlightIndexedOption(0))
+    if (!isEqual(this.props.options, nextProps.options)) {
+      this.resetHighlightedIndex()
     }
   }
 
@@ -73,17 +68,17 @@ export default class Menu extends PureComponent {
     document.removeEventListener('keydown', this.onKeyDown)
   }
 
-  @autobind
-  onKeyDown(event) {
+  onKeyDown = event => {
     const code = event.keyCode || event.key || event.keyIndentifier
 
     switch (code) {
       case ARROW_DOWN:
-        this.highlightIndexedOption(this.state.indexedOptionIndex + 1)
+        event.preventDefault()
+        this.highlightOptionAtIndex(this.state.indexedOptionIndex + 1)
         break
       case ARROW_UP:
         event.preventDefault()
-        this.highlightIndexedOption(this.state.indexedOptionIndex - 1)
+        this.highlightOptionAtIndex(this.state.indexedOptionIndex - 1)
         break
       case ENTER:
         event.preventDefault()
@@ -98,11 +93,16 @@ export default class Menu extends PureComponent {
   }
 
   get highlightedOption() {
-    return this.options[this.state.highlightIndex || 0]
+    return this.options[this.state.highlightIndex]
   }
 
-  @autobind
-  handleSelection() {
+  get indexedOptions() {
+    return this.options.reduce((options, { disabled }, index) => (
+      disabled !== true ? [...options, { disabled, index }] : options
+    ), [])
+  }
+
+  handleSelection = () => {
     const { onItemSelect } = this.props
 
     const option = this.highlightedOption
@@ -112,8 +112,7 @@ export default class Menu extends PureComponent {
     }
   }
 
-  @autobind
-  highlightOption(index) {
+  highlightOption = index => {
     const { onItemMouseOver } = this.props
 
     if (index < 0 || index >= this.options.length) return
@@ -124,10 +123,16 @@ export default class Menu extends PureComponent {
     })
   }
 
-  @autobind
-  highlightIndexedOption(index) {
+  resetHighlightedIndex() {
+    this.setState({
+      highlightIndex: -1,
+      indexedOptionIndex: -1,
+    })
+  }
+
+  highlightOptionAtIndex(index) {
     const { onItemMouseOver } = this.props
-    const { indexedOptions } = this.state
+    const indexedOptions = this.indexedOptions
 
     if (index < 0 || index >= indexedOptions.length) return
     this.setState({
@@ -138,14 +143,6 @@ export default class Menu extends PureComponent {
     })
   }
 
-  generateIndexedOptions() {
-    return this.options.map((option, index) => ({
-      disabled: option.disabled,
-      index,
-    }))
-      .filter(option => option.disabled !== true)
-  }
-
   render() {
     const {
       theme,
@@ -153,6 +150,7 @@ export default class Menu extends PureComponent {
       className,
       onItemSelect,
       selectedIndex,
+      options,
       ...props
     } = this.props
 
@@ -163,7 +161,7 @@ export default class Menu extends PureComponent {
           className,
           theme.Menu
         )}
-        items={this.options || []}
+        items={this.options}
         highlightIndex={this.state.highlightIndex}
         selectedIndex={selectedIndex}
         onClick={this.handleSelection}

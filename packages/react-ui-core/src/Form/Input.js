@@ -70,6 +70,11 @@ export default class Input extends Component {
      * Used to determine if InputMask required
      */
     mask: PropTypes.string,
+
+    /**
+     * Adds ability to pass ref down to the actual DOM node
+     */
+    componentRef: PropTypes.func,
   }
 
   static defaultProps = {
@@ -128,6 +133,7 @@ export default class Input extends Component {
       className,
       changeEvent,
       property,
+      componentRef,
       value,
       ...props
     } = this.props
@@ -144,6 +150,7 @@ export default class Input extends Component {
           invalid && theme['Input-invalid'],
           variant && theme[`Input-${variant}`],
         )}
+        ref={componentRef}
         {...props}
         {...this.controlledProps}
       />

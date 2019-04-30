@@ -13,6 +13,7 @@ export default class Button extends Component {
     color: PropTypes.string,
     theme: PropTypes.object,
     nodeType: PropTypes.string,
+    componentRef: PropTypes.func,
   }
 
   static defaultProps = {
@@ -27,6 +28,7 @@ export default class Button extends Component {
       theme,
       className,
       nodeType: NodeType,
+      componentRef,
       ...props
     } = this.props
 
@@ -34,6 +36,7 @@ export default class Button extends Component {
       <NodeType
         data-tid="button"
         {...props}
+        ref={componentRef}
         className={
           classnames(
             className,
