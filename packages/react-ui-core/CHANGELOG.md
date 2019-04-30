@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [18.2.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@18.1.0...@rentpath/react-ui-core@18.2.0) (2019-04-30)
+
+
+### Features
+
+* **AutoSuggestField:** fixes and new features for Rent implementation of AutoSuggestField ([9b24dfc](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/commit/9b24dfc))
+
+
+
+
+
 # [18.1.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@18.0.0...@rentpath/react-ui-core@18.1.0) (2019-04-30)
 
 
