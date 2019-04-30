@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalStack renders a modal correctly 1`] = `null`;
+exports[`ModalStack renders a modal correctly 1`] = `
+<div>
+  This is a test modal
+</div>
+`;
 
 exports[`ModalStack renders correctly 1`] = `null`;

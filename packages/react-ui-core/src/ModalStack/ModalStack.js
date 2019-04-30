@@ -49,29 +49,11 @@ export default class ModalStack extends PureComponent {
 
   componentDidMount() {
     this.setupWrapperHost()
+    this.loadCurrentModal()
   }
 
   componentDidUpdate() {
-    const { currentModal: { id = null }, modalDefinitions } = this.props
-
-    if (id && !this.getModalComponent(id)) {
-      const modalDefinition = get(id)(modalDefinitions)
-      const { modals } = this.state
-
-      if (modalDefinition) {
-        this.loadModal(modalDefinition).then(modal => {
-          if (modal) {
-            this.setState({
-              currentDefinition: modalDefinition,
-              modals: {
-                ...modals,
-                [id]: modal,
-              },
-            })
-          }
-        })
-      }
-    }
+    this.loadCurrentModal()
   }
 
   @autobind
@@ -93,6 +75,30 @@ export default class ModalStack extends PureComponent {
       this.modalHost = document.createElement('section')
       this.modalHost.id = modalPortalId
       document.body.appendChild(this.modalHost)
+    }
+  }
+
+  loadCurrentModal() {
+    const { currentModal, modalDefinitions } = this.props
+    const id = currentModal && currentModal.id
+
+    if (id && !this.getModalComponent(id)) {
+      const modalDefinition = get(id)(modalDefinitions)
+      const { modals } = this.state
+
+      if (modalDefinition) {
+        this.loadModal(modalDefinition).then(modal => {
+          if (modal) {
+            this.setState({
+              currentDefinition: modalDefinition,
+              modals: {
+                ...modals,
+                [id]: modal,
+              },
+            })
+          }
+        })
+      }
     }
   }
 
