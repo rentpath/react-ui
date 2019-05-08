@@ -29,9 +29,10 @@ Follow these steps to work with your local files instead of the published versio
 
 1. cd into the react-ui package root folder, e.g. `packages/react-ui-core`
 1. run `yarn`
-1. run `yarn build:watch` (this will run through all files, then ony change what's needed thereafter)
 1. run `yarn link` (in `packages/react-ui-core`)
-1. in your project's root folder, run `yarn link @rentpath/react-ui-core`
+1. cd back up to the react-ui root folder
+1. run `yarn build:cjs:watch` (or `yarn build:es:watch` if you are using es modules in your client project). This will compile all files, including dependencies in react-ui-utils, then only change what's needed thereafter.
+1. in your client project's root folder, run `yarn link @rentpath/react-ui-core`
 
 ## react-themed
 
@@ -87,3 +88,7 @@ Examples
 | .SomeComponent-isActive | X | | X |
 | .SomeComponent_Navigation-next | X | X | X |
 | .SomeComponent_NavigationControls-invalidError | X | X | X |
+
+#### ModalStack
+
+Documentation on using ModalStack can be found [here](packages/react-ui-core/docs/ModalStack/README.md).
