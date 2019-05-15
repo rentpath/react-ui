@@ -22,6 +22,7 @@ export default class Modal extends PureComponent {
     className: PropTypes.string,
     children: PropTypes.any,
     hasOverlay: PropTypes.bool,
+    overlayClassName: PropTypes.string,
     CloseButton: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.node,
@@ -70,13 +71,14 @@ export default class Modal extends PureComponent {
   }
 
   get wrapper() {
-    const { hasOverlay } = this.props
+    const { hasOverlay, overlayClassName } = this.props
     const { isOpen } = this.state
 
     if (hasOverlay) {
       return {
         Component: Overlay,
         props: {
+          className: overlayClassName || '',
           onClick: this.overlayClose,
           isOpen,
           ...dataAttrs(this.props),

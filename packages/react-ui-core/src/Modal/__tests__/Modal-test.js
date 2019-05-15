@@ -51,6 +51,12 @@ describe('Modal', () => {
     expect(wrapper.childAt(0).prop('className')).toContain(className)
   })
 
+  it('adds `overlayClassName` prop to the overlay if passed in', () => {
+    const overlayClassName = 'overlayClass'
+    const wrapper = setup({ overlayClassName })
+    expect(wrapper.prop('className')).toContain(overlayClassName)
+  })
+
   it('adds Modal `theme` prop to the first child (modal)', () => {
     const wrapper = setup()
     expect(wrapper.childAt(0).prop('className')).toContain('Modal-base')
