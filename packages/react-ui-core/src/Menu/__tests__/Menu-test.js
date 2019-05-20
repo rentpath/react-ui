@@ -48,45 +48,42 @@ describe('Menu', () => {
     })
   })
 
-  const setup = props => {
-    const wrapper = mount(
+  const setup = props => (
+    mount(
       <Menu
         theme={theme}
         options={options}
         {...props}
       />,
     )
-    return {
-      wrapper,
-    }
-  }
+  )
 
   it('does not barf if passed null options', () => {
-    const { wrapper } = setup({ theme, options: null })
+    const wrapper = setup({ theme, options: null })
     expect(wrapper.find('ListItem')).toHaveLength(0)
   })
 
   it('passes options to List component', () => {
-    const { wrapper } = setup({ theme, options })
+    const wrapper = setup({ theme, options })
     expect(wrapper.find('ListItem')).toHaveLength(3)
   })
 
   it('uses element type specified by nodeType', () => {
-    const { wrapper } = setup({ theme, options })
+    const wrapper = setup({ theme, options })
     expect(wrapper.find('section')).toHaveLength(0)
     wrapper.setProps({ nodeType: 'section' })
     expect(wrapper.find('section')).toHaveLength(1)
   })
 
   it('applies props from listItem prop object to each option', () => {
-    const { wrapper } = setup({ theme, options })
+    const wrapper = setup({ theme, options })
     expect(wrapper.find('section')).toHaveLength(0)
     wrapper.setProps({ listItem: { nodeType: 'section' } })
     expect(wrapper.find('section')).toHaveLength(3)
   })
 
   it('uses listItem prop component if passed', () => {
-    const { wrapper } = setup({ theme, options })
+    const wrapper = setup({ theme, options })
     expect(wrapper.find(testListItem)).toHaveLength(0)
     wrapper.setProps({ listItem: testListItem })
     expect(wrapper.find(testListItem)).toHaveLength(3)
@@ -99,7 +96,7 @@ describe('Menu', () => {
 
     const onItemSelect = jest.fn()
 
-    const { wrapper } = setup({
+    const wrapper = setup({
       theme,
       options,
       onItemSelect,
@@ -111,7 +108,7 @@ describe('Menu', () => {
   })
 
   it('changes highlighted index on up or down keydown', () => {
-    const { wrapper } = setup({ options })
+    const wrapper = setup({ options })
     expect(wrapper.state('highlightIndex')).toEqual(-1)
 
     map.keydown({ keyCode: ARROW_DOWN, preventDefault: () => {} })
@@ -140,25 +137,33 @@ describe('Menu', () => {
 
   it('performs on mouseover functionality ', () => {
     const onItemSelect = jest.fn()
-    const wrapper = mount(<Menu options={options} onItemSelect={onItemSelect} />)
+    const onItemKeyOver = jest.fn()
+    const onItemMouseOver = jest.fn()
+    const wrapper = mount(
+      <Menu
+        options={options}
+        onItemSelect={onItemSelect}
+        onItemKeyOver={onItemKeyOver}
+        onItemMouseOver={onItemMouseOver}
+      />
+    )
     wrapper.find('ListItem').at(1).simulate('mouseenter').simulate('click')
     expect(onItemSelect).toHaveBeenCalledWith(options[1], 1)
+    expect(onItemKeyOver).not.toHaveBeenCalled()
+    expect(onItemMouseOver).toHaveBeenCalled()
   })
 
-  describe('highlightOption', () => {
+  describe('onMouseEnter', () => {
     it('highlights valid indices', () => {
       const wrapper = shallow(<Menu options={options} />)
-      const wrapperInst = wrapper.instance()
-      wrapperInst.highlightOption(1)
-      expect(wrapperInst.state.highlightIndex).toEqual(1)
+      wrapper.instance().onMouseEnter(1)
+      expect(wrapper.state('highlightIndex')).toEqual(1)
     })
 
     it('does not highlight invalid indices', () => {
       const wrapper = shallow(<Menu options={options} />)
-      map.keydown({ keyCode: ARROW_DOWN, preventDefault: () => {} })
-      const wrapperInst = wrapper.instance()
-      wrapperInst.highlightOption(20)
-      expect(wrapperInst.state.highlightIndex).toEqual(0)
+      wrapper.instance().onMouseEnter(20)
+      expect(wrapper.state('highlightIndex')).toEqual(-1)
     })
   })
 
@@ -191,7 +196,7 @@ describe('Menu', () => {
     it('does not highlight disabed option indices by default', () => {
       const wrapper = shallow(<Menu options={[{ disabled: true }, { disabled: true }]} />)
       const wrapperInst = wrapper.instance()
-      wrapperInst.highlightOption(20)
+      wrapperInst.onMouseEnter(20)
       expect(wrapperInst.state.highlightIndex).toEqual(-1)
     })
 
@@ -200,7 +205,7 @@ describe('Menu', () => {
         value: -1,
       }
 
-      const { wrapper } = setup({
+      const wrapper = setup({
         theme,
         options: objectOptionsWithLabel,
         onItemSelect: value => {
@@ -216,7 +221,7 @@ describe('Menu', () => {
     })
 
     it('skips an object index on up or down keydown', () => {
-      const { wrapper } = setup({ options: objectOptionsWithLabel })
+      const wrapper = setup({ options: objectOptionsWithLabel })
       map.keydown({ keyCode: ARROW_DOWN, preventDefault: () => {} })
       expect(wrapper.state('highlightIndex')).toEqual(0)
 
@@ -224,6 +229,28 @@ describe('Menu', () => {
       map.keydown({ keyCode: ARROW_DOWN, preventDefault: () => {} })
       expect(wrapper.state('highlightIndex')).toEqual(1)
     })
+  })
+
+  it('calls onItemKeyOver when the arrow down key is hit', () => {
+    const onItemKeyOver = jest.fn()
+    const onItemMouseOver = jest.fn()
+    setup({ onItemKeyOver, onItemMouseOver })
+    map.keydown({ keyCode: ARROW_DOWN, preventDefault: () => {} })
+    expect(onItemKeyOver).toHaveBeenCalledWith(1)
+    expect(onItemMouseOver).not.toHaveBeenCalled()
+  })
+
+  it('calls onItemKeyOver when the arrow up key is hit', () => {
+    const onItemKeyOver = jest.fn()
+    const onItemMouseOver = jest.fn()
+    const wrapper = setup({ onItemKeyOver, onItemMouseOver })
+    map.keydown({ keyCode: ARROW_DOWN, preventDefault: () => {} })
+    map.keydown({ keyCode: ARROW_DOWN, preventDefault: () => {} })
+    onItemKeyOver.mockReset() // ignore key down pushes
+    map.keydown({ keyCode: ARROW_UP, preventDefault: () => {} })
+    wrapper.update()
+    expect(onItemKeyOver).toHaveBeenCalledWith(1)
+    expect(onItemMouseOver).not.toHaveBeenCalled()
   })
 
   it('resets the index to -1 when new options come in', () => {

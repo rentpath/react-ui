@@ -11,8 +11,8 @@ import { Menu } from '../Menu'
 import { Button } from '../Button'
 import { Field } from '../Form'
 
-const ENTER = 13
-const ESCAPE = 27
+export const ENTER = 13
+export const ESCAPE = 27
 
 @themed(/^AutoSuggestField/, { pure: true })
 export default class AutoSuggestField extends PureComponent {
@@ -39,6 +39,7 @@ export default class AutoSuggestField extends PureComponent {
     onSubmit: PropTypes.func,
     onSelection: PropTypes.func,
     onItemMouseOver: PropTypes.func,
+    onItemKeyOver: PropTypes.func,
     onInput: PropTypes.func,
     submitOnSelection: PropTypes.bool,
     visible: PropTypes.bool,
@@ -75,7 +76,7 @@ export default class AutoSuggestField extends PureComponent {
     this.state = {
       value,
       visible,
-      mousedOverSelection: null,
+      keyedOverSelection: null,
     }
   }
 
@@ -87,7 +88,7 @@ export default class AutoSuggestField extends PureComponent {
     if (this.props.value !== nextProps.value) {
       this.setState({
         value: nextProps.value,
-        mousedOverSelection: null,
+        keyedOverSelection: null,
       })
     }
   }
@@ -112,10 +113,10 @@ export default class AutoSuggestField extends PureComponent {
 
   onChange = event => {
     const { valueSelector } = this.props
-    const { mousedOverSelection } = this.state
+    const { keyedOverSelection } = this.state
 
-    if (mousedOverSelection) {
-      this.setState({ mousedOverSelection: null, value: valueSelector(mousedOverSelection) })
+    if (keyedOverSelection) {
+      this.setState({ keyedOverSelection: null, value: valueSelector(keyedOverSelection) })
     }
     const value = event.target.value
     this.setState({ value })
@@ -123,9 +124,15 @@ export default class AutoSuggestField extends PureComponent {
     this.props.onInput(value)
   }
 
+  onItemKeyOver = value => {
+    const { onItemKeyOver } = this.props
+    this.setState({ keyedOverSelection: value })
+    if (onItemKeyOver) onItemKeyOver(value)
+  }
+
   onItemMouseOver = value => {
     const { onItemMouseOver } = this.props
-    this.setState({ mousedOverSelection: value })
+
     if (onItemMouseOver) onItemMouseOver(value)
   }
 
@@ -145,11 +152,11 @@ export default class AutoSuggestField extends PureComponent {
   }
 
   get inputValue() {
-    const { value, mousedOverSelection } = this.state
+    const { value, keyedOverSelection } = this.state
     const { showSelectionInInputField, valueSelector } = this.props
 
     if (!showSelectionInInputField) return value
-    return valueSelector(mousedOverSelection) || value
+    return valueSelector(keyedOverSelection) || value
   }
 
   updateValueAndClose(value, callback = () => {}) {
@@ -230,6 +237,7 @@ export default class AutoSuggestField extends PureComponent {
       className,
       onSubmit,
       onItemMouseOver,
+      onItemKeyOver,
       onSelection,
       highlight,
       valueSelector,
@@ -264,6 +272,7 @@ export default class AutoSuggestField extends PureComponent {
               options={suggestions}
               onItemSelect={this.handleSuggestionSelection}
               onItemMouseOver={this.onItemMouseOver}
+              onItemKeyOver={this.onItemKeyOver}
             />
           </Card>
         </Dropdown>
