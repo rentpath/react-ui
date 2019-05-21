@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import { Menu } from '../../Menu'
-import ThemedAutoSuggestField from '../AutoSuggestField'
+import ThemedAutoSuggestField, { ENTER, ESCAPE } from '../AutoSuggestField'
 
 const AutoSuggestField = ThemedAutoSuggestField.WrappedComponent
 
@@ -91,7 +91,7 @@ describe('AutoSuggestField', () => {
       visible: true,
     })
 
-    map.keydown({ keyCode: 27 })
+    map.keydown({ keyCode: ESCAPE })
     expect(onAfterClear.mock.calls).toHaveLength(1)
   })
 
@@ -115,7 +115,7 @@ describe('AutoSuggestField', () => {
       onSubmit,
     })
 
-    map.keydown({ keyCode: 13 })
+    map.keydown({ keyCode: ENTER })
     expect(onSubmit.mock.calls).toHaveLength(1)
   })
 
@@ -198,9 +198,20 @@ describe('AutoSuggestField', () => {
       visible: true,
       showSelectionInInputField: true,
     })
-
-    const thirdListItem = wrapper.find('div[data-tid="list-item-1"]')
-    thirdListItem.simulate('mouseenter')
+    wrapper.instance().onItemKeyOver(2)
+    wrapper.update()
     expect(wrapper.find('input').prop('value')).toEqual(2)
+  })
+
+  it('does not set the input to the selected item on a mouse over if showSelectionInInputField is enabled', () => {
+    const { wrapper } = setup({
+      suggestions: [1, 2, 3],
+      visible: true,
+      showSelectionInInputField: true,
+    })
+
+    const secondListItem = wrapper.find('div[data-tid="list-item-1"]')
+    secondListItem.simulate('mouseenter')
+    expect(wrapper.find('input').prop('value')).toEqual('')
   })
 })

@@ -24,6 +24,7 @@ export default class Menu extends PureComponent {
     ])),
     onItemSelect: PropTypes.func,
     onItemMouseOver: PropTypes.func,
+    onItemKeyOver: PropTypes.func,
     nodeType: PropTypes.string,
     listItem: PropTypes.oneOfType([
       PropTypes.node,
@@ -88,6 +89,17 @@ export default class Menu extends PureComponent {
     }
   }
 
+  onMouseEnter = index => {
+    const { onItemMouseOver } = this.props
+
+    if (index < 0 || index >= this.options.length) return
+    this.setState({
+      highlightIndex: index,
+    }, () => {
+      if (onItemMouseOver) onItemMouseOver(this.highlightedOption)
+    })
+  }
+
   get options() {
     return this.props.options || []
   }
@@ -112,17 +124,6 @@ export default class Menu extends PureComponent {
     }
   }
 
-  highlightOption = index => {
-    const { onItemMouseOver } = this.props
-
-    if (index < 0 || index >= this.options.length) return
-    this.setState({
-      highlightIndex: index,
-    }, () => {
-      if (onItemMouseOver) onItemMouseOver(this.highlightedOption)
-    })
-  }
-
   resetHighlightedIndex() {
     this.setState({
       highlightIndex: -1,
@@ -131,7 +132,7 @@ export default class Menu extends PureComponent {
   }
 
   highlightOptionAtIndex(index) {
-    const { onItemMouseOver } = this.props
+    const { onItemKeyOver } = this.props
     const indexedOptions = this.indexedOptions
 
     if (index < 0 || index >= indexedOptions.length) return
@@ -139,7 +140,7 @@ export default class Menu extends PureComponent {
       highlightIndex: indexedOptions[index].index,
       indexedOptionIndex: index,
     }, () => {
-      if (onItemMouseOver) onItemMouseOver(this.highlightedOption)
+      if (onItemKeyOver) onItemKeyOver(this.highlightedOption)
     })
   }
 
@@ -147,6 +148,7 @@ export default class Menu extends PureComponent {
     const {
       theme,
       onItemMouseOver,
+      onItemKeyOver,
       className,
       onItemSelect,
       selectedIndex,
@@ -165,7 +167,7 @@ export default class Menu extends PureComponent {
         highlightIndex={this.state.highlightIndex}
         selectedIndex={selectedIndex}
         onClick={this.handleSelection}
-        onMouseEnter={this.highlightOption}
+        onMouseEnter={this.onMouseEnter}
         {...props}
       />
     )
