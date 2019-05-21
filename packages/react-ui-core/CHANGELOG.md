@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [18.3.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@18.2.0...@rentpath/react-ui-core@18.3.0) (2019-05-21)
+
+
+### Features
+
+* **AutoSuggestField:** show Selection in Input on Arrow Keys and Not Mouseover ([c68909b](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/commit/c68909b))
+
+
+
+
+
 # [18.2.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@18.1.0...@rentpath/react-ui-core@18.2.0) (2019-04-30)
 
 
