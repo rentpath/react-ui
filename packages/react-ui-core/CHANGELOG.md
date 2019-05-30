@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.3.1](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@18.3.0...@rentpath/react-ui-core@18.3.1) (2019-05-30)
+
+**Note:** Version bump only for package @rentpath/react-ui-core
+
+
+
+
+
 # [18.3.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@18.2.0...@rentpath/react-ui-core@18.3.0) (2019-05-21)
 
 
