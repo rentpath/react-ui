@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.5](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-rent/compare/@rentpath/react-ui-rent@5.0.4...@rentpath/react-ui-rent@5.0.5) (2019-07-24)
+
+**Note:** Version bump only for package @rentpath/react-ui-rent
+
+
+
+
+
 ## [5.0.4](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-rent/compare/@rentpath/react-ui-rent@5.0.3...@rentpath/react-ui-rent@5.0.4) (2019-05-30)
 
 **Note:** Version bump only for package @rentpath/react-ui-rent
