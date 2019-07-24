@@ -36,6 +36,12 @@ describe('Carousel', () => {
     expect(wrapper.find('[data-tid="carousel"]')).toHaveLength(1)
   })
 
+  it('allows an override of the data-tid', () => {
+    const wrapper = shallow(<Carousel data-tid="foo" />)
+    expect(wrapper.find('[data-tid="foo"]')).toHaveLength(1)
+    expect(wrapper.find('[data-tid="carousel"]')).toHaveLength(0)
+  })
+
   it('renders using a custom renderItem prop', () => {
     const wrapper = mount(
       <Carousel

@@ -24,6 +24,7 @@ const carouselItems = PropTypes.arrayOf(
 export default class Carousel extends Component {
   static propTypes = {
     className: PropTypes.string,
+    'data-tid': PropTypes.string,
     theme: PropTypes.object,
     items: PropTypes.oneOfType([
       PropTypes.arrayOf(
@@ -68,6 +69,7 @@ export default class Carousel extends Component {
     showNav: false,
     lazyLoad: false,
     theme: {},
+    'data-tid': 'carousel',
   }
 
   componentWillReceiveProps(nextProps) {
@@ -208,6 +210,7 @@ export default class Carousel extends Component {
       items,
       navigation,
       pagination,
+      'data-tid': dataTid,
       ...rest
     } = this.props
 
@@ -217,7 +220,7 @@ export default class Carousel extends Component {
           className,
           theme.Carousel,
         )}
-        data-tid="carousel"
+        data-tid={dataTid}
       >
         <Slider
           items={this.items}
