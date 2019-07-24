@@ -37,9 +37,26 @@ export default class Photo extends PureComponent {
   }
 
   componentDidMount() {
+    const { fallbackUrl } = this.props
+
     /* eslint-disable react/no-did-mount-set-state */
     if (this.isFallback) {
       this.setState({ error: true })
+    }
+
+    /**
+     * SSR Race Condition Fix
+     * Handle 404 error that happens before hydration, but caught after hydration
+     */
+    if (this.img && this.img.current) {
+      const { complete, naturalHeight } = this.img.current
+      const errorLoadingImgBeforeHydration = complete && naturalHeight === 0
+
+      if (errorLoadingImgBeforeHydration) {
+        // @ts-ignore
+        this.img.current.src = fallbackUrl
+        this.setState({ error: true })
+      }
     }
     /* eslint-enable react/no-did-mount-set-state */
   }

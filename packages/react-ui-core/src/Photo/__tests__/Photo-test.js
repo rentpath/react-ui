@@ -47,6 +47,18 @@ describe('Photo', () => {
       expect(wrapper.find('img')).toHaveLength(1)
       expect(wrapper.find('img').prop('src')).toEqual(url)
     })
+
+    it('sets fallbackUrl when image natual height is zero', () => {
+      const wrapper = setup({ url, fallbackUrl })
+      wrapper.setState({ error: false })
+      const instance = wrapper.instance()
+      instance.img = { current: { src: url, complete: true, naturalHeight: 0 } }
+      instance.componentDidMount()
+
+      expect(wrapper.state('error')).toEqual(true)
+      expect(wrapper.find('img')).toHaveLength(1)
+      expect(wrapper.find('img').prop('src')).toEqual(fallbackUrl)
+    })
   })
 
   describe('componentWillReceiveProps', () => {
