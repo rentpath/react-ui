@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [18.4.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@18.3.2...@rentpath/react-ui-core@18.4.0) (2019-08-14)
+
+
+### Features
+
+* **react-ui-core image galler:** bump version of react-image-gallery to support pre-load divs ([72e6a0f](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/commit/72e6a0f))
+
+
+
+
+
 ## [18.3.2](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@18.3.1...@rentpath/react-ui-core@18.3.2) (2019-07-24)
 
 **Note:** Version bump only for package @rentpath/react-ui-core
