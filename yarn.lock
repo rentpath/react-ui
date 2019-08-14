@@ -12031,9 +12031,9 @@ react-icons@^2.2.7:
   dependencies:
     react-icon-base "2.1.0"
 
-react-image-gallery@rentpath/react-image-gallery:
-  version "0.8.7"
-  resolved "https://codeload.github.com/rentpath/react-image-gallery/tar.gz/c6034ab83a54bc0b43abd8a424c367edeca77c21"
+react-image-gallery@rentpath/react-image-gallery#0.8.9:
+  version "0.8.9"
+  resolved "https://codeload.github.com/rentpath/react-image-gallery/tar.gz/979d1186dfe27bb0dc86ea84288ee3594e2023c9"
   dependencies:
     lodash.debounce "^4.0.8"
     lodash.throttle "^4.1.1"
@@ -12124,9 +12124,9 @@ react-style-proptype@^3.0.0:
     prop-types "^15.5.4"
 
 react-swipeable@^4.0.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-4.3.0.tgz#818c0818ac565f5b169348f442153f343abff8bc"
-  integrity sha512-L21VMbcDvG+AOVF4ZIbQ8sICGIgiKB/plGKWBMw6dkxt5neS7x74ZlTbJ39U8slz798MZBv/uIoE9Vzgp3PODQ==
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-4.3.2.tgz#8bacfd17f74bd24bdd770fc522739dbdc9a9d493"
+  integrity sha512-DPZ5FbefHk2XtbLIMqa7LKwqDPHRezPrcBVg4M2beeRohlmEK2hGsYj81lReEnX6AChOJZtYBvBSxGIIwpG38A==
   dependencies:
     detect-passive-events "^1.0.4"
     prop-types "^15.5.8"
