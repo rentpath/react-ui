@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [19.0.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@18.4.0...@rentpath/react-ui-core@19.0.0) (2019-09-06)
+
+
+### chore
+
+* **upgrades:** upgrading packages ([5131e8b](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/commit/5131e8b))
+
+
+### BREAKING CHANGES
+
+* **upgrades:** date-fns needs to be upgraded in the repo using it
+
+
+
+
+
 # [18.4.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@18.3.2...@rentpath/react-ui-core@18.4.0) (2019-08-14)
 
 

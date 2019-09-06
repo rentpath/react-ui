@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-tracking/compare/@rentpath/react-ui-tracking@4.2.7...@rentpath/react-ui-tracking@5.0.0) (2019-09-06)
+
+
+### chore
+
+* **upgrades:** upgrading packages ([5131e8b](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-tracking/commit/5131e8b))
+
+
+### BREAKING CHANGES
+
+* **upgrades:** date-fns needs to be upgraded in the repo using it
+
+
+
+
+
 ## [4.2.7](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-tracking/compare/@rentpath/react-ui-tracking@4.2.6...@rentpath/react-ui-tracking@4.2.7) (2018-11-14)
 
 **Note:** Version bump only for package @rentpath/react-ui-tracking
