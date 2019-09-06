@@ -71,11 +71,11 @@ export default class DatePicker extends PureComponent {
 
     if (onChange) onChange(selectedDate)
 
-    this.setState({
+    this.setState(state => ({
       showCalendar: false,
       isValidDate: true,
-      value: format(selectedDate, dateFormat),
-    })
+      value: selectedDate ? format(selectedDate, dateFormat) : state.value,
+    }))
   }
 
   @autobind
