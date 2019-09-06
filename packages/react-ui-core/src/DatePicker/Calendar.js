@@ -75,14 +75,16 @@ export default class Calendar extends PureComponent {
     const daysOfMonth = []
     const daysInMonth = getDaysInMonth(this.state.date) + 1
     const minDate = new Date(format(this.props.minDate, dateFormat))
-    const maxDate = new Date(format(this.props.maxDate, dateFormat))
+
+    const maxDate = this.props.maxDate && new Date(format(this.props.maxDate, dateFormat))
     const startDate = new Date(format(this.state.selectedDate, dateFormat))
 
     for (let dateIndex = 1; dateIndex < daysInMonth; dateIndex += 1) {
       const day = dateIndex < 10 ? `0${dateIndex}` : dateIndex
       const dayFormat = dateFormat.replace(/d+/ig, day)
       const dayDate = new Date(format(this.state.date, dayFormat))
-      const isDisabled = isBefore(dayDate, minDate) || isAfter(dayDate, maxDate)
+      const isMaxDateAfter = maxDate ? isAfter(dayDate, maxDate) : false
+      const isDisabled = isBefore(dayDate, minDate) || isMaxDateAfter
       const isActive = isEqual(dayDate, startDate)
 
       daysOfMonth.push(
