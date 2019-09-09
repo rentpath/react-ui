@@ -9,7 +9,6 @@ More Lerna [commands](https://github.com/lerna/lerna#commands). Please use `yarn
 | Package | Version | Description |
 |---------|---------|-------------|
 | [`react-ui-core`](/packages/react-ui-core) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-core.svg)](https://www.npmjs.com/package/@rentpath/react-ui-core) | Core components for generic usage|
-| [`react-ui-rentals`](/packages/react-ui-rentals) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-rentals.svg)](https://www.npmjs.com/package/@rentpath/react-ui-rentals) | Rentals.com specific components|
 | [`react-ui-tracking`](/packages/react-ui-tracking) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-tracking.svg)](https://www.npmjs.com/package/@rentpath/react-ui-tracking) | Tracking HOCs and components|
 | [`react-ui-utils`](/packages/react-ui-utils) | [![npm](https://img.shields.io/npm/v/@rentpath/react-ui-utils.svg)](https://www.npmjs.com/package/@rentpath/react-ui-utils) | Utililty functions used to make things easier in all repos|
 
