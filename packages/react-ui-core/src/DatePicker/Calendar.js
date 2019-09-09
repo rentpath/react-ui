@@ -58,7 +58,7 @@ export default class Calendar extends PureComponent {
   @autobind
   handleDateSelected(evt) {
     const { minDate, maxDate } = this.props
-    const selectedDate = evt.target.dataset.date
+    const selectedDate = new Date(evt.target.dataset.date)
     const notBeforeMin = !isBefore(selectedDate, minDate)
     const notAfterMax = maxDate ? !isAfter(selectedDate, maxDate) : true
 
