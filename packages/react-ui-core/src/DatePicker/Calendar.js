@@ -5,11 +5,16 @@ import autobind from 'autobind-decorator'
 import classnames from 'classnames'
 import isEqual from 'date-fns/isEqual'
 import format from 'date-fns/format'
-import getDaysInMonth from 'date-fns/getDaysInMonth'
 import addMonths from 'date-fns/addMonths'
 import subMonths from 'date-fns/subMonths'
 import isBefore from 'date-fns/isBefore'
 import isAfter from 'date-fns/isAfter'
+import startOfMonth from 'date-fns/startOfMonth'
+import getDay from 'date-fns/getDay'
+import subDays from 'date-fns/subDays'
+import addDays from 'date-fns/addDays'
+import getMonth from 'date-fns/getMonth'
+import getDate from 'date-fns/getDate'
 
 @themed(/^Calendar/, { pure: true })
 export default class Calendar extends PureComponent {
@@ -43,6 +48,34 @@ export default class Calendar extends PureComponent {
     }
   }
 
+  get daysOfWeek() {
+    const daysOfWeek = []
+    const monthStart = startOfMonth(this.state.date)
+    const dow = getDay(startOfMonth(this.state.date))
+    const firstDate = subDays(monthStart, dow)
+
+    for (let i = 0; i <= 6; i += 1) {
+      daysOfWeek.push(<span key={`dow-${i}`}>{format(addDays(firstDate, i), 'EEEEEE')}</span>)
+    }
+
+    return daysOfWeek
+  }
+
+  get daysOfMonth() {
+    const days = []
+
+    // NOTE: consitently create 5 rows so the calendar pads shorter months
+    for (let i = 0; i <= 5; i += 1) {
+      days.push(
+        <div key={`date-row-${i}`}>
+          {this.days(i)}
+        </div>
+      )
+    }
+
+    return days
+  }
+
   @autobind
   nextMonth() {
     const { date } = this.state
@@ -70,41 +103,56 @@ export default class Calendar extends PureComponent {
     }
   }
 
-  daysOfMonth() {
-    const { dateFormat, theme } = this.props
+  days(row) {
+    const {
+      dateFormat,
+      theme,
+    } = this.props
+
     const daysOfMonth = []
-    const daysInMonth = getDaysInMonth(this.state.date) + 1
-    const minDate = new Date(format(this.props.minDate, dateFormat))
+    const monthStart = startOfMonth(this.state.date)
+    const month = getMonth(this.state.date)
+    const startDate = new Date(this.state.selectedDate)
+    const dow = getDay(startOfMonth(this.state.date))
+    const firstDate = subDays(monthStart, dow)
+    const indexStart = row * 7
 
-    const maxDate = this.props.maxDate && new Date(format(this.props.maxDate, dateFormat))
-    const startDate = new Date(format(this.state.selectedDate, dateFormat))
-
-    for (let dateIndex = 1; dateIndex < daysInMonth; dateIndex += 1) {
-      const day = dateIndex < 10 ? `0${dateIndex}` : dateIndex
-      const dayFormat = dateFormat.replace(/d+/ig, day)
-      const dayDate = new Date(format(this.state.date, dayFormat))
-      const isMaxDateAfter = maxDate ? isAfter(dayDate, maxDate) : false
-      const isDisabled = isBefore(dayDate, minDate) || isMaxDateAfter
-      const isActive = isEqual(dayDate, startDate)
+    for (let i = indexStart; i < (indexStart + 7); i += 1) {
+      const currentDate = addDays(firstDate, i)
+      const disabled = this.isBeforeMinDate(currentDate) || this.isAfterMaxDate(currentDate)
+      const active = isEqual(currentDate, startDate)
+      const currentMonth = month === getMonth(currentDate)
 
       daysOfMonth.push(
         <button
-          type="button"
-          key={dayFormat}
           className={classnames(
             theme.Calendar_Date,
-            isActive && theme['Calendar_Date-active'],
-            isDisabled && theme['Calendar_Date-disabled'],
+            !currentMonth && theme['Calendar_Date-notCurrentMonth'],
+            active && theme['Calendar_Date-active'],
+            disabled && theme['Calendar_Date-disabled']
           )}
-          onClick={isDisabled ? null : this.handleDateSelected}
-          data-date={format(this.state.date, dayFormat)}
+          data-date={format(currentDate, dateFormat)}
+          disabled={disabled}
+          key={currentDate.toString()}
+          onClick={this.handleDateSelected}
+          type="button"
         >
-          {dateIndex}
+          {getDate(currentDate)}
         </button>
       )
     }
 
     return daysOfMonth
+  }
+
+  isBeforeMinDate(date) {
+    const { minDate } = this.props
+    return minDate ? isBefore(date, minDate) : false
+  }
+
+  isAfterMaxDate(date) {
+    const { maxDate } = this.props
+    return maxDate ? isAfter(date, maxDate) : false
   }
 
   render() {
@@ -114,8 +162,6 @@ export default class Calendar extends PureComponent {
       prevButtonLabel,
       nextButtonLabel,
     } = this.props
-
-    const days = this.daysOfMonth().map(d => d)
 
     return (
       <div
@@ -160,8 +206,11 @@ export default class Calendar extends PureComponent {
             </span>
           </button>
         </div>
+        <div className={theme.Calendar_DaysOfWeek}>
+          {this.daysOfWeek}
+        </div>
         <div data-tid="calendar-dates" className={theme.Calendar_Dates}>
-          {days}
+          {this.daysOfMonth}
         </div>
       </div>
     )

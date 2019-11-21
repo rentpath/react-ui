@@ -9,6 +9,17 @@
   width: 230px;
   top: calc(100% - 6px);
 
+  .Calendar_DaysOfWeek {
+    span {
+      width: 1.7rem;
+      line-height: 1.7rem;
+      margin: 0.166rem;
+      display: inline-block;
+      text-align: center;
+      color: #adb0b3;
+    }
+  }
+
   .Calendar_Controls {
     text-align: center;
     border-bottom: 1px solid #aeaeae;
