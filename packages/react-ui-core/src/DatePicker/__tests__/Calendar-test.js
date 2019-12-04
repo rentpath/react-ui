@@ -117,42 +117,42 @@ describe('Calendar', () => {
       const minDate = new Date('11/04/2025')
       const value = new Date('11/12/2025')
       const wrapper = setup({ minDate, value })
-      const buttons = wrapper.find('[data-tid="calendar-dates"]')
+      const buttons = wrapper.find('[data-tid="calendar-dates"] > div')
 
-      expect(buttons.childAt(0).prop('className')).toContain(disabledCls)
-      expect(buttons.childAt(1).prop('className')).toContain(disabledCls)
-      expect(buttons.childAt(2).prop('className')).toContain(disabledCls)
-      expect(buttons.childAt(3).prop('className')).not.toContain(disabledCls)
+      expect(buttons.find('button').at(0).prop('className')).toContain(disabledCls)
+      expect(buttons.find('button').at(1).prop('className')).toContain(disabledCls)
+      expect(buttons.find('button').at(2).prop('className')).toContain(disabledCls)
+      expect(buttons.find('[data-date="11/04/2025"]').prop('className')).not.toContain(disabledCls)
 
       wrapper.instance().previousMonth()
       wrapper.update()
 
       const previousMonthButtons = wrapper.find('[data-tid="calendar-dates"]')
-      expect(previousMonthButtons.children().last().prop('className')).toContain(disabledCls)
+      expect(previousMonthButtons.find('[data-date="11/03/2025"]').prop('className')).toContain(disabledCls)
     })
 
     it('sets the correct disabled max days', () => {
       const value = new Date('11/12/2025')
       const maxDate = new Date('11/28/2025')
       const wrapper = setup({ maxDate, value })
-      const buttons = wrapper.find('[data-tid="calendar-dates"]')
+      const buttons = wrapper.find('[data-tid="calendar-dates"] > div')
 
-      expect(buttons.childAt(27).prop('className')).not.toContain(disabledCls)
-      expect(buttons.childAt(28).prop('className')).toContain(disabledCls)
-      expect(buttons.childAt(29).prop('className')).toContain(disabledCls)
+      expect(buttons.find('[data-date="11/28/2025"]').prop('className')).not.toContain(disabledCls)
+      expect(buttons.find('[data-date="11/29/2025"]').prop('className')).toContain(disabledCls)
+      expect(buttons.find('[data-date="11/30/2025"]').prop('className')).toContain(disabledCls)
 
       wrapper.instance().nextMonth()
       wrapper.update()
 
       const nextMonthButtons = wrapper.find('[data-tid="calendar-dates"]')
-      expect(nextMonthButtons.children().first().prop('className')).toContain(disabledCls)
+      expect(nextMonthButtons.find('button').at(0).prop('className')).toContain(disabledCls)
     })
 
     it('sets the `data-date` based on the `dateFormat`', () => {
       const value = new Date('11/1/2025')
       const wrapper = setup({ value })
       const dateFormat = wrapper.instance().props.dateFormat
-      const button = wrapper.find('[data-tid="calendar-dates"]').childAt(0)
+      const button = wrapper.find('[data-tid="calendar-dates"] > div').find('button').at(6)
       expect(button.prop('data-date')).toEqual(format(value, dateFormat))
     })
   })
