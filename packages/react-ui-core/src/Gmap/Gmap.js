@@ -37,8 +37,6 @@ const EVENTS = {
   onZoomChanged: 'zoom_changed',
 }
 
-const EVENT_NAMES = Object.keys(EVENTS)
-
 const MAP_CONTROLS = {
   fullscreenControl: false,
   streetViewControl: false,
@@ -58,6 +56,25 @@ export class Gmap extends PureComponent {
       lat: PropTypes.number,
       lng: PropTypes.number,
     }),
+    onBoundsChanged: PropTypes.func,
+    onCenterChanged: PropTypes.func,
+    onClick: PropTypes.func,
+    onDoubleClick: PropTypes.func,
+    onDrag: PropTypes.func,
+    onDragEnd: PropTypes.func,
+    onDragStart: PropTypes.func,
+    onHeadingChanged: PropTypes.func,
+    onIdle: PropTypes.func,
+    onMaptypeIdChanged: PropTypes.func,
+    onMouseMove: PropTypes.func,
+    onMouseOut: PropTypes.func,
+    onMouseOver: PropTypes.func,
+    onProjectionChanged: PropTypes.func,
+    onResize: PropTypes.func,
+    onRightClick: PropTypes.func,
+    onTilesLoaded: PropTypes.func,
+    onTiltChanged: PropTypes.func,
+    onZoomChanged: PropTypes.func,
     zoom: PropTypes.number,
     minZoom: PropTypes.number,
     maxZoom: PropTypes.number,
@@ -233,11 +250,5 @@ export class Gmap extends PureComponent {
     )
   }
 }
-
-/* eslint-disable react/no-unused-prop-types, react/forbid-foreign-prop-types */
-EVENT_NAMES.forEach(name => {
-  Gmap.propTypes[name] = PropTypes.func
-})
-/* eslint-enable react/no-unused-prop-types, react/forbid-foreign-prop-types */
 
 export default withGoogleScript(Gmap)
