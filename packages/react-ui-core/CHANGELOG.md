@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.0.3](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@19.0.2...@rentpath/react-ui-core@19.0.3) (2019-12-13)
+
+
+### Bug Fixes
+
+* **core:** gmap needs to use conventional props ([c4fdba9](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/commit/c4fdba9))
+
+
+
+
+
 ## [19.0.2](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core/compare/@rentpath/react-ui-core@19.1.0...@rentpath/react-ui-core@19.0.2) (2019-12-04)
 
 **Note:** Version bump only for package @rentpath/react-ui-core
