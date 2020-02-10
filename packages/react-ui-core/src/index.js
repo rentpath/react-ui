@@ -58,8 +58,8 @@ export {
 } from './Card'
 
 export {
-  Bard,
-} from './Bard'
+  ScrollListener,
+} from './ScrollListener'
 
 export {
   Title,

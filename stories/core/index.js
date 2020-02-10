@@ -64,7 +64,7 @@ import {
 } from './Card'
 
 import {
-  ScrollListener,
+  DefaultScrollListener,
 } from './ScrollListener'
 
 import {
@@ -178,7 +178,7 @@ coreStories('Card', module)
   .add('Card', () => DefaultCard)
 
 coreStories('ScrollListener', module)
-  .add('ScrollListener', () => ScrollListener)
+  .add('Default ScrollListener', () => DefaultScrollListener)
 
 coreStories('Carousel', module)
   .add('Carousel', () => DefaultCarousel)

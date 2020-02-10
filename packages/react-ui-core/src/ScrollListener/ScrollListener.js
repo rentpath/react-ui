@@ -22,9 +22,9 @@ export default class ScrollListener extends PureComponent {
     const currentScrollHeight = window.pageYOffset
 
     if ((currentScrollHeight < this.previousScrollHeight) || currentScrollHeight <= 0) {
-      onScrollUp()
+      onScrollUp && onScrollUp()
     } else {
-      onScrollDown()
+      onScrollDown && onScrollDown()
     }
 
     this.previousScrollHeight = currentScrollHeight
