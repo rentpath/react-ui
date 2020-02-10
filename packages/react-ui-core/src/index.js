@@ -58,6 +58,10 @@ export {
 } from './Card'
 
 export {
+  Bard,
+} from './Bard'
+
+export {
   Title,
 } from './Title'
 

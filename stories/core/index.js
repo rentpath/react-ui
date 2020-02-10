@@ -64,6 +64,10 @@ import {
 } from './Card'
 
 import {
+  ScrollListener,
+} from './ScrollListener'
+
+import {
   DefaultRadioGroup,
   ButtonRadioGroup,
   VerticalRadioGroup,
@@ -172,6 +176,9 @@ coreStories('Button', module)
 
 coreStories('Card', module)
   .add('Card', () => DefaultCard)
+
+coreStories('ScrollListener', module)
+  .add('ScrollListener', () => ScrollListener)
 
 coreStories('Carousel', module)
   .add('Carousel', () => DefaultCarousel)
