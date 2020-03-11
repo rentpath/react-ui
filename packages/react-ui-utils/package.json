@@ -1,7 +1,11 @@
 {
   "name": "@rentpath/react-ui-utils",
   "version": "4.2.7",
-  "repository": "https://github.com/rentpath/react-ui/tree/master/packages/react-ui-utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rentpath/react-ui.git",
+    "directory": "packages/react-ui-utils"
+  },
   "main": "lib/index.js",
   "module": "es/index.js",
   "sideEffects": false,

@@ -5,5 +5,11 @@
     "packages/*"
   ],
   "version": "independent",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "npmClient": "npm",
+      "registry": "https://npm.pkg.github.com"
+    }
+  }
 }

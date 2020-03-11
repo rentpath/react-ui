@@ -1,7 +1,11 @@
 {
   "name": "@rentpath/react-ui-core",
   "version": "19.0.3",
-  "repository": "https://github.com/rentpath/react-ui/tree/master/packages/react-ui-core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rentpath/react-ui.git",
+    "directory": "packages/react-ui-core"
+  },
   "main": "lib/index.js",
   "module": "es/index.js",
   "license": "MIT",
