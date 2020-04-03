@@ -6,6 +6,10 @@
   "module": "es/index.js",
   "license": "MIT",
   "sideEffects": false,
+  "files": [
+    "es/",
+    "lib/"
+  ],
   "scripts": {
     "clean": "rm -rf lib es",
     "build": "yarn run build:es && yarn run build:cjs",
