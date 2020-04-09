@@ -107,11 +107,20 @@ export default class ModalStack extends PureComponent {
     return result[definition.name] || result.default
   }
 
+  forceReflow(element) {
+    if (element) {
+      console.log('***', 'FORCING REFLOW')
+      return void(element.offsetHeight)
+    }
+    return null
+  }
+
   toggleBodyClass(toggle) {
-    const { theme } = this.props
+    const { currentModal, theme } = this.props
 
     if (this.modalHost) {
       document.body.classList.toggle(theme['Overlay-lock'], toggle)
+      this.forceReflow(document.getElementById('react-view'))
     }
   }
 
