@@ -126,6 +126,4 @@ export {
   BackgroundPhoto,
 } from './Photo'
 
-export {
-  SmoothScrollGalleryWrapper,
-} from './SmoothScrollGalleryWrapper'
+export { SmoothScrollGalleryWrapper } from './SmoothScrollGalleryWrapper'
