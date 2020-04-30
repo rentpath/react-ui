@@ -1,0 +1,64 @@
+name: Publish Packages
+on:
+  repository_dispatch:
+    types: [semantic-release]
+jobs:
+  publish_packages:
+    runs-on: 'ubuntu-latest'
+    steps:
+    - name: 'clone repo with full history for lerna'
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        ref: ${{ github.event.client_payload.ref }}
+
+    - name: 'setup node.js'
+      uses: actions/setup-node@v1
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
+      with:
+        node-version: '12.x'
+        registry-url: https://npm.pkg.github.com
+        scope: '@rentpath'
+
+    - name: 'get all the tags'
+      run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+
+    - name: get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+
+    - uses: actions/cache@v1
+      id: yarn-cache
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+
+    - name: 'install dependencies'
+      run: yarn install
+
+    - name: 'build packages'
+      run: yarn run prepublish
+
+    - name: 'lint'
+      run: yarn run lint
+
+    - name: 'test'
+      run: yarn run test:coverage
+
+    - name: 'configure git for lerna'
+      run: |
+        git remote set-url origin https://$DEPLOY_ACTOR:$DEPLOY_TOKEN@github.com/rentpath/react-ui
+        git config --global user.email "gha_bot@rentpath.com"
+        git config --global user.name "GHA Bot"
+        git config --global http.http.https://github.com/.extraheader "AUTHORIZATION: bearer ${DEPLOY_TOKEN}"
+      env:
+        DEPLOY_ACTOR: ${{ secrets.GH_ACTOR }}
+        DEPLOY_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    - name: 'publish packages'
+      run: yarn publish-packages
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
