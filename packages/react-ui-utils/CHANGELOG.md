@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.10](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-utils@4.2.9...@rentpath/react-ui-utils@4.2.10) (2020-05-01)
+
+**Note:** Version bump only for package @rentpath/react-ui-utils
+
+
+
+
+
 ## [4.2.9](https://github.com/rentpath/react-ui/tree/master/packages/react-ui-utils/compare/@rentpath/react-ui-utils@4.2.7...@rentpath/react-ui-utils@4.2.9) (2020-05-01)
 
 **Note:** Version bump only for package @rentpath/react-ui-utils
