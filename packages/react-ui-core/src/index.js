@@ -109,6 +109,8 @@ export {
   Markers,
   OverlayView,
   FreeDrawLayer,
+  setupMarker,
+  removeMarker,
 } from './Gmap'
 
 export {
