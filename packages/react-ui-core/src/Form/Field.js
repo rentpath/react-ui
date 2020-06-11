@@ -108,6 +108,11 @@ export default class Field extends Component {
       PropTypes.object,
       PropTypes.func,
     ]),
+
+    /**
+     * Ignore tracking on label element.
+     */
+    ignoreAction: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -156,6 +161,7 @@ export default class Field extends Component {
       input,
       error,
       hint,
+      ignoreAction,
       onBlur, // eslint-disable-line no-unused-vars
       onFocus, // eslint-disable-line no-unused-vars
       disabled,
@@ -199,6 +205,7 @@ export default class Field extends Component {
         key: `label-${inputId}`,
         htmlFor: inputId,
         className: theme.Label,
+        ...(ignoreAction && { 'data-tag_action': 'ignore' }),
       }))
     }
 
