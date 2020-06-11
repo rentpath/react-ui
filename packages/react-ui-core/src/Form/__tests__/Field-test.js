@@ -135,6 +135,21 @@ describe('Form/Field', () => {
       const { wrapper } = setup({ theme, label: 'label' })
       expect(wrapper.find('label').prop('className')).toBe('Label')
     })
+
+    it('renders data-tag_action when it receives an ignore flag of true', () => {
+      const { wrapper } = setup({ theme, label: 'label', ignoreAction: true })
+      expect(wrapper.find('label').prop('data-tag_action')).toBe('ignore')
+    })
+
+    it('does not render data-tag_action when it receives an ignore flag of false', () => {
+      const { wrapper } = setup({ theme, label: 'label', ignoreAction: false })
+      expect(wrapper.find('label').prop('data-tag_action')).toBeUndefined()
+    })
+
+    it('does not render data-tag_action when it receives an ignore flag of undefined', () => {
+      const { wrapper } = setup({ theme, label: 'label', ignoreAction: undefined })
+      expect(wrapper.find('label').prop('data-tag_action')).toBeUndefined()
+    })
   })
 
   describe('when there is no "label"', () => {
