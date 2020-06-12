@@ -46,7 +46,7 @@ jobs:
       run: yarn run lint
 
     - name: 'test'
-      run: yarn run test:coverage
+      run: yarn run test
 
     - name: 'configure git for lerna'
       run: |
