@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [19.3.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@19.1.3...@rentpath/react-ui-core@19.3.0) (2020-06-12)
+
+
+### Features
+
+* **core field label:** allow for ignoreAction boolean to flag data-tag_action ([3cf3cf4](https://github.com/rentpath/react-ui/commit/3cf3cf4))
+* **Gmap:** exposes removeMarker and setupMarker functions ([cfa0106](https://github.com/rentpath/react-ui/commit/cfa0106))
+
+
+
+
+
 # [19.2.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@19.1.3...@rentpath/react-ui-core@19.2.0) (2020-06-11)
 
 
