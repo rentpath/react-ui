@@ -19,6 +19,7 @@ export default class DatePicker extends PureComponent {
     onChange: PropTypes.func,
     minDate: PropTypes.object,
     maxDate: PropTypes.object,
+    shouldThrowDateError: PropTypes.func,
     showCalendar: PropTypes.bool,
   }
 
@@ -33,7 +34,7 @@ export default class DatePicker extends PureComponent {
 
     this.picker = React.createRef()
     this.outsideHandler = null
-    this.formatRegex = new RegExp(props.dateFormat.replace('/', '\\/').replace(/[mdy]/ig, '\\d'))
+    this.formatRegex = /^\d\d\/\d\d\/\d\d\d\d$/
 
     const value = props.value
     const isValidDate = VALID_DT_REGEX.test(value)
@@ -67,9 +68,14 @@ export default class DatePicker extends PureComponent {
 
   @autobind
   dateChange(selectedDate) {
-    const { onChange, dateFormat } = this.props
+    const {
+      onChange,
+      dateFormat,
+      shouldThrowDateError,
+    } = this.props
 
     if (onChange) onChange(selectedDate)
+    if (shouldThrowDateError) shouldThrowDateError(false)
 
     this.setState(state => ({
       showCalendar: false,
@@ -102,10 +108,13 @@ export default class DatePicker extends PureComponent {
   @autobind
   handleChange(e) {
     const value = e.target.value
+    const { shouldThrowDateError } = this.props
 
     if (this.formatRegex.test(value)) {
       this.validateTextField(e)
+      if (shouldThrowDateError) shouldThrowDateError(false)
     } else {
+      if (shouldThrowDateError) shouldThrowDateError(true)
       this.setState({
         showCalendar: false,
         isValidDate: false,
