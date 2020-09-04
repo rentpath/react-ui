@@ -83,7 +83,7 @@ export default class Menu extends PureComponent {
         break
       case ENTER:
         event.preventDefault()
-        this.handleSelection()
+        this.handleSelection(event)
         break
       default:
     }
@@ -114,13 +114,13 @@ export default class Menu extends PureComponent {
     ), [])
   }
 
-  handleSelection = () => {
+  handleSelection = event => {
     const { onItemSelect } = this.props
 
     const option = this.highlightedOption
 
     if (onItemSelect && option && !option.disabled) {
-      onItemSelect(option, this.state.highlightIndex)
+      onItemSelect(option, this.state.highlightIndex, event.type || 'keydown')
     }
   }
 

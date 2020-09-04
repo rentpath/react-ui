@@ -105,7 +105,7 @@ export default class AutoSuggestField extends PureComponent {
         this.handleClear()
         break
       case ENTER:
-        this.handleSubmit(this.state.value)
+        this.handleSubmit(event)
         break
       default:
     }
@@ -166,12 +166,12 @@ export default class AutoSuggestField extends PureComponent {
     }, callback)
   }
 
-  handleSubmit = () => {
-    this.props.onSubmit(this.state.value)
+  handleSubmit = event => {
+    this.props.onSubmit(this.state.value, event.type)
     this.updateValueAndClose(this.state.value)
   }
 
-  handleSuggestionSelection = value => {
+  handleSuggestionSelection = (value, _index, eventType) => {
     const {
       onSubmit,
       onSelection,
@@ -185,7 +185,7 @@ export default class AutoSuggestField extends PureComponent {
     this.updateValueAndClose(
       valueSelector(value),
       () => {
-        if (submitOnSelection) onSubmit(this.state.value)
+        if (submitOnSelection) onSubmit(this.state.value, eventType)
       }
     )
   }
