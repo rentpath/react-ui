@@ -104,7 +104,7 @@ describe('Menu', () => {
 
     expect(testObject.value).toEqual(-1)
     wrapper.find('ListItem').at(1).simulate('mouseenter').simulate('click')
-    expect(onItemSelect).toHaveBeenCalledWith(options[1], 1)
+    expect(onItemSelect).toHaveBeenCalledWith(options[1], 1, 'click')
   })
 
   it('changes highlighted index on up or down keydown', () => {
@@ -132,7 +132,7 @@ describe('Menu', () => {
 
     map.keydown({ keyCode: ARROW_DOWN, preventDefault: () => {} })
     map.keydown({ keyCode: ENTER, preventDefault: () => {} })
-    expect(onItemSelect).toHaveBeenCalledWith(1, 0)
+    expect(onItemSelect).toHaveBeenCalledWith(1, 0, 'keydown')
   })
 
   it('performs on mouseover functionality ', () => {
@@ -148,7 +148,7 @@ describe('Menu', () => {
       />
     )
     wrapper.find('ListItem').at(1).simulate('mouseenter').simulate('click')
-    expect(onItemSelect).toHaveBeenCalledWith(options[1], 1)
+    expect(onItemSelect).toHaveBeenCalledWith(options[1], 1, 'click')
     expect(onItemKeyOver).not.toHaveBeenCalled()
     expect(onItemMouseOver).toHaveBeenCalled()
   })
@@ -177,7 +177,7 @@ describe('Menu', () => {
       const onItemSelect = jest.fn()
       const wrapper = mount(<Menu options={objectOptions} onItemSelect={onItemSelect} />)
       wrapper.find('ListItem').at(1).simulate('mouseenter').simulate('click')
-      expect(onItemSelect).toHaveBeenCalledWith(objectOptions[1], 1)
+      expect(onItemSelect).toHaveBeenCalledWith(objectOptions[1], 1, 'click')
     })
 
     it('passes objects that do not have label key to List', () => {
