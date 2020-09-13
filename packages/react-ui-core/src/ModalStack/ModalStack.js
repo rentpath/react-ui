@@ -108,10 +108,15 @@ export default class ModalStack extends PureComponent {
   }
 
   toggleBodyClass(toggle) {
-    const { theme } = this.props
-
     if (this.modalHost) {
-      document.body.classList.toggle(theme['Overlay-lock'], toggle)
+      // TODO - does anything still rely on this theme prop? If not remove
+      const overlayLockCssClass = this.props.theme['Overlay-lock']
+
+      if (overlayLockCssClass) {
+        document.body.classList.toggle(overlayLockCssClass, toggle)
+      }
+
+      document.body.classList.toggle('overflow-hidden', toggle)
     }
   }
 
