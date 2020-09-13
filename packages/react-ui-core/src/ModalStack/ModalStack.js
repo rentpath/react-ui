@@ -108,10 +108,9 @@ export default class ModalStack extends PureComponent {
   }
 
   toggleBodyClass(toggle) {
-    const { theme } = this.props
-
     if (this.modalHost) {
-      document.body.classList.toggle(theme['Overlay-lock'], toggle)
+      document.body.classList.toggle('overflow-y-hidden', toggle)
+      // document.body.classList.toggle(theme['Overlay-lock'], toggle)
     }
   }
 
