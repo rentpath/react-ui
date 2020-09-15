@@ -15,3 +15,5 @@ artifacts
 .idea
 .vscode
 .cache
+.tool-versions
+.actrc
