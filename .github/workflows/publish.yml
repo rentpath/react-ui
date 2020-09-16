@@ -51,13 +51,10 @@ jobs:
 
       - name: 'configure git for lerna'
         run: |
-          git remote set-url origin https://$DEPLOY_ACTOR:$DEPLOY_TOKEN@github.com/rentpath/react-ui
+          git remote set-url origin https://${{ secrets.GH_ACTOR }}:${{ secrets.GH_TOKEN }}@github.com/rentpath/react-ui
           git config --global user.email "gha_bot@rentpath.com"
           git config --global user.name "GHA Bot"
-          git config --global http.http.https://github.com/.extraheader "AUTHORIZATION: bearer ${DEPLOY_TOKEN}"
-        env:
-          DEPLOY_ACTOR: ${{ secrets.GH_ACTOR }}
-          DEPLOY_TOKEN: ${{ secrets.GH_TOKEN }}
+          git config --global http.https://github.com/.extraHeader "Authorization: bearer ${{ secrets.GH_TOKEN }}"
 
       - name: 'publish packages'
         run: yarn publish-packages

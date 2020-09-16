@@ -9,4 +9,8 @@ jobs:
     steps:
     - name: publish
       run: |
-        curl -X POST -H "Accept: application/vnd.github.everest-preview+json" -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/dispatches -d '{"event_type":"semantic-release","client_payload":{"ref":"${{ github.ref }}","sha":"${{ github.sha }}"}}'
+        curl -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" \
+          https://api.github.com/repos/${{ github.repository }}/dispatches \
+          -d '{"event_type":"semantic-release","client_payload":{"ref":"${{ github.ref }}","sha":"${{ github.sha }}"}}'
