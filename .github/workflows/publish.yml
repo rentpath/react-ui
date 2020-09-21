@@ -1,70 +1,61 @@
-name: Publish Packages
+name: publish
 on:
-  repository_dispatch:
-    types: [semantic-release]
+  pull_request:
+    types: [closed]
 jobs:
   publish_packages:
-    runs-on: 'ubuntu-latest'
+    if: github.event.action == 'closed' && github.event.pull_request.merged
+    runs-on: ubuntu-latest
     steps:
-      - name: 'clone repo with full history for lerna'
+      - name: check out latest commit
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
-          ref: ${{ github.event.client_payload.ref }}
+          ref: ${{ github.head_ref || github.ref }}
+          token: ${{ secrets.GH_TOKEN }}
 
-      - name: 'setup node.js'
+      - name: get node version
+        id: node-version
+        run: echo "::set-output name=value::$( cat .node-version )"
+
+      - name: set up node
         uses: actions/setup-node@v1
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          node-version: '12.x'
+          node-version: ${{ steps.node-version.outputs.value }}
           registry-url: https://npm.pkg.github.com
           scope: '@rentpath'
+          token: ${{ secrets.GH_GPR_TOKEN }}
 
-      - name: 'get all the tags'
-        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-
-      - name: get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: cache dependencies
-        uses: actions/cache@v1
-        id: yarn-cache
+      - name: cache node_modules
+        uses: actions/cache@v2
+        id: cache-node-modules
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          path: node_modules/
+          key: reactui-modules-${{ hashFiles('yarn.lock') }}
 
-      - name: 'install dependencies'
-        run: yarn install
+      - name: install dependencies
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_GPR_TOKEN }}
+        run: |
+          yarn config set @rentpath:registry https://npm.pkg.github.com
+          # yarn --frozen-lockfile --production=false
+          yarn install
 
-      - name: 'build packages'
-        run: yarn run prepublish
-
-      - name: 'lint'
-        run: yarn run lint
-
-      - name: 'test'
-        run: yarn run test
+      - name: get bin path
+        id: yarn-bin
+        run: echo "::set-output name=value::$( yarn bin )"
 
       - name: 'configure git for lerna'
         run: |
-          git remote set-url origin https://${{ secrets.GH_ACTOR }}:${{ secrets.GH_TOKEN }}@github.com/rentpath/react-ui
           git config --global user.email "gha_bot@rentpath.com"
           git config --global user.name "GHA Bot"
-          git config --global http.https://github.com/.extraHeader "Authorization: bearer ${{ secrets.GH_TOKEN }}"
 
-      - name: 'publish packages'
-        run: yarn publish-packages
+      - name: lerna clean
+        run: ${{ steps.yarn-bin.outputs.value }}/lerna run clean
+
+      - name: lerna build
+        run: ${{ steps.yarn-bin.outputs.value }}/lerna run build
+
+      - name: lerna publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
-
-      - name: 'push to gh-pages'
-        uses: JamesIves/github-pages-deploy-action@3.6.1
-        with:
-          BRANCH: gh-pages
-          CLEAN: true
-          FOLDER: build
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GH_GPR_TOKEN }}
+        run: ${{ steps.yarn-bin.outputs.value }}/lerna publish --exact --conventional-commits --registry=https://npm.pkg.github.com --yes
