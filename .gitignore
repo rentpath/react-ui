@@ -15,5 +15,10 @@ artifacts
 .idea
 .vscode
 .cache
-.tool-versions
+
+*.code-workspace
+*.swp
 .actrc
+.autoenv.zsh
+.swp
+.tool-versions

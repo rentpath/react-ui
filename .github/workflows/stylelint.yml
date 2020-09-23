@@ -1,0 +1,24 @@
+name: stylelint
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  stylelint:
+    name: stylelint
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out latest commit
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref || github.ref }}
+          token: ${{ github.token }}
+
+      - name: stylelint @rentpath/react-themed
+        uses: rentpath/action-stylelint@v2
+        with:
+          github_token: ${{ github.token }}
+          name: 'react-themed'
+          stylelint_input: '[packages/**/*.{css,scss}'
