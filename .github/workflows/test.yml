@@ -1,4 +1,4 @@
-name: lint
+name: test
 on:
   push:
     branches:
@@ -6,15 +6,15 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  lint:
-    name: lint
+  test:
+    name: test
     runs-on: ubuntu-latest
     steps:
       - name: check out latest commit
         uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref || github.ref }}
-          token: ${{ github.token }}
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: cache node_modules
         uses: actions/cache@v2
@@ -54,5 +54,12 @@ jobs:
           yarn config set @rentpath:registry https://npm.pkg.github.com
           yarn --frozen-lockfile --production=false
 
-      - name: lint
-        run: yarn run lint:js
+      - name: unit tests
+        run: |
+          yarn run test --maxWorkers=2
+
+      # enable as soon as coveralls is working
+      # or move to its own job?
+      # - name: test code coverage
+      #   run: |
+      #     yarn run report-coverage
