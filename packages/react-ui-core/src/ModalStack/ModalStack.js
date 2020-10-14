@@ -56,6 +56,11 @@ export default class ModalStack extends PureComponent {
     this.loadCurrentModal()
   }
 
+  componentWillUnmount() {
+    this.toggleBodyClass(false)
+    this.modalHost = undefined
+  }
+
   @autobind
   onClose() {
     const { currentModal, onClose } = this.props
@@ -109,10 +114,7 @@ export default class ModalStack extends PureComponent {
 
   toggleBodyClass(toggle) {
     const { theme } = this.props
-
-    if (this.modalHost) {
-      document.body.classList.toggle(theme['Overlay-lock'], toggle)
-    }
+    document.body.classList.toggle(theme['Overlay-lock'], toggle)
   }
 
   @autobind
@@ -145,7 +147,6 @@ export default class ModalStack extends PureComponent {
       return createPortal(this.renderModals(), this.modalHost)
     }
 
-    this.toggleBodyClass(false)
     return null
   }
 }
