@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import isEqual from 'lodash/isEqual'
 import { Dropdown } from '../Dropdown'
 import MenuWrapper from './MenuWrapper'
@@ -98,7 +98,7 @@ export default class DropdownMenu extends Component {
 
     return (
       <Dropdown
-        className={classnames(className, theme.DropdownMenu)}
+        className={clsx(className, theme.DropdownMenu)}
         anchorField={{ children: this.renderAnchorFieldText() }}
         {...props}
       >

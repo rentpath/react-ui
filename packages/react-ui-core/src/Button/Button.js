@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 
 @themed(/^Button/, {
@@ -38,7 +38,7 @@ export default class Button extends Component {
         {...props}
         ref={componentRef}
         className={
-          classnames(
+          clsx(
             className,
             theme.Button,
             color && theme[`Button-${color}`],

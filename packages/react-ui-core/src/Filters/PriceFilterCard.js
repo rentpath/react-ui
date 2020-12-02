@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classname from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import autobind from 'autobind-decorator'
 import { parseArgs } from '@rentpath/react-ui-utils'
@@ -63,7 +63,7 @@ export default class PriceFilterCard extends Component {
 
     return (
       <FilterCard
-        className={classname(
+        className={clsx(
           theme.PriceFilterCard,
           className,
           !this.state.value && theme['PriceFilterCard-noValue']

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 
 @themed(/^(RatingBar|Label)/, {
   pure: true,
@@ -57,7 +57,7 @@ export default class RatingBar extends PureComponent {
     return (
       <div
         className={
-          classnames(
+          clsx(
             theme.RatingBar,
             className,
           )

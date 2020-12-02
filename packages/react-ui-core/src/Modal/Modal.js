@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { parseArgs } from '@rentpath/react-ui-utils'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import autobind from 'autobind-decorator'
 import Overlay from './Overlay'
 import ModalCloseButton from './ModalCloseButton'
@@ -113,7 +113,7 @@ export default class Modal extends PureComponent {
         <div
           data-tid="modal"
           {...props}
-          className={classnames(
+          className={clsx(
             className,
             theme[`Modal-${isOpen ? 'open' : 'close'}`],
             theme.Modal

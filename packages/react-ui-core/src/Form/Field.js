@@ -1,7 +1,7 @@
 import React, { Component, createElement } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { parseArgs, randomId } from '@rentpath/react-ui-utils'
 import { Text } from '../Text'
 import Label from './Label'
@@ -225,7 +225,7 @@ export default class Field extends Component {
       FieldType,
       fieldProps,
     ] = parseArgs(container, null, {
-      className: classNames(
+      className: clsx(
         className,
         theme.Field,
         theme[`Field-${type}`],

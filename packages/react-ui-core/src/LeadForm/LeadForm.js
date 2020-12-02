@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import isEqual from 'lodash/isEqual'
 import { randomId } from '@rentpath/react-ui-utils'
 import SubmitButton from './SubmitButton'
@@ -118,7 +118,7 @@ export default class LeadForm extends Component {
 
     return (
       <Form
-        className={classnames(
+        className={clsx(
           theme.LeadForm,
           className,
         )}

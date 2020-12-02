@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import Field from './Field'
 
@@ -32,7 +32,7 @@ export default class RadioButton extends PureComponent {
 
       return (
         <Field
-          className={classnames(
+          className={clsx(
             className,
             theme.RadioButton,
             this.props.checked && theme['RadioButton-checked'],

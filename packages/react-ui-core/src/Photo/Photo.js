@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import autobind from 'autobind-decorator'
 import themed from '@rentpath/react-themed'
 
@@ -166,7 +166,7 @@ export default class Photo extends PureComponent {
         alt={alt}
         data-tid="photo"
         ref={this.img}
-        className={classnames(
+        className={clsx(
           className,
           theme.Photo,
           isFallback && theme['Photo-error'],

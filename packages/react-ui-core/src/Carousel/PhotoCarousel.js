@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import LazyLoad from 'react-lazyload'
 import autobind from 'autobind-decorator'
 import { Photo, BackgroundPhoto } from '../Photo'
@@ -95,7 +95,7 @@ export default class PhotoCarousel extends PureComponent {
         infinite
         renderItem={this.renderItem}
         {...rest}
-        className={classnames(
+        className={clsx(
           theme.PhotoCarousel,
           className,
         )}

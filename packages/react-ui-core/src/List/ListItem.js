@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 import autobind from 'autobind-decorator'
 import themed from '@rentpath/react-themed'
 
@@ -52,7 +52,7 @@ export default class ListItem extends PureComponent {
 
     return (
       <NodeType
-        className={cn(
+        className={clsx(
           theme.ListItem,
           className,
           highlight && theme['ListItem-highlight'],

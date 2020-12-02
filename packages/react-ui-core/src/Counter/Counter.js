@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import { Text } from '../Text'
 
 @themed(/^(Counter|Label|Text)/, {
@@ -105,7 +105,7 @@ export default class Counter extends PureComponent {
     return (
       <div
         className={
-          classnames(
+          clsx(
             theme.Counter,
             className
           )}
@@ -117,7 +117,7 @@ export default class Counter extends PureComponent {
             role="presentation"
             onClick={this.decrement}
             className={
-              classnames(
+              clsx(
                 theme.Counter_Button,
                 theme.Counter_Decrement,
               )
@@ -133,7 +133,7 @@ export default class Counter extends PureComponent {
             role="presentation"
             onClick={this.increment}
             className={
-              classnames(
+              clsx(
                 theme.Counter_Button,
                 theme.Counter_Increment,
               )

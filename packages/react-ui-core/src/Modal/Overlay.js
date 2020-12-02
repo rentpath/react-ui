@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import autobind from 'autobind-decorator'
 
@@ -74,7 +74,7 @@ export default class Overlay extends PureComponent {
         onMouseDown={this.handleMouseDown}
         onMouseUp={this.handleMouseUp}
         onClick={this.handleClick}
-        className={classnames(
+        className={clsx(
           className,
           theme.Overlay,
           theme[`Overlay-${isOpen ? 'open' : 'close'}`],

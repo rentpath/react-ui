@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import { parseArgs } from '@rentpath/react-ui-utils'
 import { Title } from '../Title'
@@ -55,7 +55,7 @@ export default class FilterCard extends PureComponent {
 
     return (
       <Card
-        className={classnames(
+        className={clsx(
           theme.FilterCard,
           className,
         )}

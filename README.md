@@ -18,7 +18,7 @@ This project uses [commitizen](https://github.com/commitizen/cz-cli).  This allo
 
 Anything that is included in the `BREAKING_CHANGES` section of the prompt will automatically bump the package version for the repo to a major version.
 
-Also, please keep in mind your `scope` should be what you were working on. It should be something like `form` or `listing` or `photo`.  The short description of change should be precise as it's what you will see in the CHANGELOG (along with the scope).  
+Also, please keep in mind your `scope` should be what you were working on. It should be something like `form` or `listing` or `photo`.  The short description of change should be precise as it's what you will see in the CHANGELOG (along with the scope).
 
 ## Working Locally
 
@@ -35,14 +35,14 @@ Follow these steps to work with your local files instead of the published versio
 
 Many react components use [react-themed](https://github.com/rentpath/react-themed) when needed. Please read the documenation if you're not familiar with it.
 
-### CEM (BEM) syntax and classnames
+### CEM (BEM) syntax and clsx
 
 For information on BEM, please [read](http://getbem.com/introduction/)
 
 All components should follow a CEM (Component Element Modifier) syntax.  The top level element in your component should usually have the component name as the className. Every child should use the Component className as a prefix _unless_ you are importing another component that has already been themed. A good rule of thumb to use:
 
 ```
-import classnames from 'classnames'
+import clsx from 'clsx'
 import Button from './Button'
 
 class SomeComponent extends PureComponent {
@@ -51,7 +51,7 @@ class SomeComponent extends PureComponent {
 
     return (
       <div
-        className={classnames(
+        className={clsx(
           theme.SomeComponent,
           className,
         )}
@@ -65,7 +65,7 @@ class SomeComponent extends PureComponent {
 }
 ```
 
-Notice the above.  The top level component uses [classnames](https://github.com/JedWatson/classnames) to include the base class (`SomeComponent`) and the ability to pass in a custom `className` prop.  The first `<Button>` does not get a className because it is already themed.  The second `<Button className={theme[Button-red']}>` component takes in a className with a modifier that gets appended to button the same way the top level component uses classnames.
+Notice the above.  The top level component uses [clsx](https://github.com/lukeed/clsx) to include the base class (`SomeComponent`) and the ability to pass in a custom `className` prop.  The first `<Button>` does not get a className because it is already themed.  The second `<Button className={theme[Button-red']}>` component takes in a className with a modifier that gets appended to button the same way the top level component uses clsx.
 
 #### Naming conventions
 ```

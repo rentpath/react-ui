@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import { Button } from '../Button'
 
 const type = PropTypes.oneOfType([
@@ -72,7 +72,7 @@ export default class Collapsible extends Component {
 
     return (
       <div
-        className={classnames(
+        className={clsx(
           className,
           theme.Collapsible,
         )}
@@ -81,7 +81,7 @@ export default class Collapsible extends Component {
         {nonshowableItems && [
           <div
             key="collapsible-toggle"
-            className={classnames(
+            className={clsx(
               theme.Collapsible_Items,
               theme[`Collapsible_Items-${toggle}`]
             )}
@@ -91,7 +91,7 @@ export default class Collapsible extends Component {
           <Button
             key="collapsible-button"
             onClick={this.handleClick}
-            className={classnames(
+            className={clsx(
               theme[`Button-${toggle}`],
               align && theme[`Button-${align}`],
             )}

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import InputRange from 'react-input-range'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import omit from 'lodash/omit'
 import isEqual from 'lodash/isEqual'
 import themed from '@rentpath/react-themed'
@@ -67,7 +67,7 @@ export default class RangeSlider extends PureComponent {
 
     return (
       <div className={
-        classnames(
+        clsx(
           theme.RangeSlider,
           className,
           variant && theme[`RangeSlider-${variant}`],

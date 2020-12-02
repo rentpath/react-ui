@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 
 @themed('*', { pure: true })
@@ -25,7 +25,7 @@ export default class Card extends PureComponent {
 
     return (
       <div
-        className={cn(
+        className={clsx(
           theme.Card,
           className,
         )}

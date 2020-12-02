@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import pipe from 'lodash/fp/pipe'
 import filter from 'lodash/fp/filter'
 import map from 'lodash/fp/map'
@@ -47,7 +47,7 @@ export default class BackgroundPhoto extends PureComponent {
         style={{
           backgroundImage: backgroundUrl(url, fallbackUrl),
         }}
-        className={classnames(
+        className={clsx(
           className,
           theme.BackgroundPhoto
         )}

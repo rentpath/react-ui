@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import autobind from 'autobind-decorator'
 import Button from './Button'
@@ -43,7 +43,7 @@ export default class ApplyButton extends PureComponent {
 
     return (
       <Button
-        className={classnames(
+        className={clsx(
           theme.ApplyButton,
           className,
         )}

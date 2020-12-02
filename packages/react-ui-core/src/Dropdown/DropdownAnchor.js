@@ -1,7 +1,7 @@
 import { createElement, PureComponent } from 'react'
 import { parseArgs } from '@rentpath/react-ui-utils'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import { Button } from '../Button'
 
@@ -44,7 +44,7 @@ export default class DropdownAnchor extends PureComponent {
 
     return createElement(...parseArgs(anchor, Button, {
       'data-tid': 'dropdown-anchor',
-      className: classnames(
+      className: clsx(
         className,
         theme.DropdownAnchor,
         theme[`DropdownAnchor-${visible ? 'expand' : 'collapse'}`]

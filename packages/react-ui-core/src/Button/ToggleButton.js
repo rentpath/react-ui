@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import autobind from 'autobind-decorator'
 import Button from './Button'
@@ -66,7 +66,7 @@ export default class ToggleButton extends Component {
     return (
       <Button
         onClick={this.toggle}
-        className={classnames(
+        className={clsx(
           theme.ToggleButton,
           className,
           theme[this.state.value ? 'ToggleButton-on' : 'ToggleButton-off'],

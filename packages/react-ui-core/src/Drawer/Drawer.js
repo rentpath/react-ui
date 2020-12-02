@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import themed from '@rentpath/react-themed'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import autobind from 'autobind-decorator'
 import { ToggleButton } from '../Button'
 
@@ -71,7 +71,7 @@ export default class Drawer extends PureComponent {
 
     return (
       <div
-        className={classnames(
+        className={clsx(
           theme.Drawer,
           theme[visible ? 'Drawer-on' : 'Drawer-off'],
           className,
@@ -80,7 +80,7 @@ export default class Drawer extends PureComponent {
         data-tid="drawer"
       >
         <ToggleButton
-          className={classnames(
+          className={clsx(
             theme[visible ? 'Drawer-Button-on' : 'Drawer-Button-off'],
           )}
           theme={theme}
