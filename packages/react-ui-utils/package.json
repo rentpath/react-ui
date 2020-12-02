@@ -35,6 +35,6 @@
     ]
   },
   "peerDependencies": {
-    "clsx": "*"
+    "clsx": "1.x"
   }
 }
