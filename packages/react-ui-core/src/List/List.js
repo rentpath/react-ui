@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import isEqual from 'lodash/isEqual'
-import cn from 'classnames'
+import clsx from 'clsx'
 import { randomId, parseArgs } from '@rentpath/react-ui-utils'
 import themed from '@rentpath/react-themed'
 import DefaultListItem from './ListItem'
@@ -88,7 +88,7 @@ export default class List extends PureComponent {
 
     return (
       <NodeType
-        className={cn(
+        className={clsx(
           theme.List,
           orientation && theme[`List-${orientation}`],
           className,

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import autobind from 'autobind-decorator'
 
@@ -99,7 +99,7 @@ export default class Select extends Component {
       <select
         {...props}
         {...this.controlledProps}
-        className={classNames(
+        className={clsx(
           className,
           theme.Select,
           variant && theme[`Select-${variant}`],

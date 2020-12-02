@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import { Text } from '../Text'
 
@@ -30,7 +30,7 @@ export default class TermsOfService extends PureComponent {
 
     return (
       <Text
-        className={classnames(
+        className={clsx(
           className,
           theme.TermsOfService,
         )}

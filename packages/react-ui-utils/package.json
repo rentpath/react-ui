@@ -35,6 +35,6 @@
     ]
   },
   "peerDependencies": {
-    "classnames": "^2.2.6"
+    "clsx": "*"
   }
 }

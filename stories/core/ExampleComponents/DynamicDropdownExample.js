@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import {
   Dropdown,
   Menu,
@@ -22,6 +22,7 @@ export default class DynamicDropdownExample extends PureComponent {
 
   static defaultProps = {
     theme: {},
+
     buttonText: 'choose',
   }
 
@@ -40,7 +41,7 @@ export default class DynamicDropdownExample extends PureComponent {
 
     return (
       <Dropdown
-        className={classnames(
+        className={clsx(
           theme['Story-padding'],
           theme.Story_Menu,
         )}

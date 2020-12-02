@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 
 @themed(/^CloseButton/, {
   pure: true,
@@ -28,7 +28,7 @@ export default class CloseButton extends PureComponent {
 
     return (
       <div
-        className={classnames(
+        className={clsx(
           className,
           theme.CloseButton
         )}

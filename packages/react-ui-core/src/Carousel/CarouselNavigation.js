@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import { Button } from '../Button'
 
@@ -38,7 +38,7 @@ export default class CarouselNavigation extends PureComponent {
       <Button
         data-tid={`carousel-navigation-${direction}`}
         data-tag_item={this.tagItem}
-        className={classnames(
+        className={clsx(
           className,
           theme.CarouselNavigation,
           theme[`CarouselNavigation-${direction}`]

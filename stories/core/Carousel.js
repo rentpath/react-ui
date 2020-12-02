@@ -1,11 +1,11 @@
 import React from 'react'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import { Carousel, PhotoCarousel } from 'react-ui-core/src'
 import StoryBookTheme from '../theme/Storybook.css'
 
 const Item = ({ children }) => ( // eslint-disable-line react/prop-types
   <div
-    className={classnames(
+    className={clsx(
       StoryBookTheme.Story_CarouselItem,
       StoryBookTheme['Story_CarouselItem-center'],
     )}

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import BounceLoader from './spinners/BounceLoader'
 
 @themed(['Gmap_Spinner'], { pure: true })
@@ -59,7 +59,7 @@ export default class GmapSpinner extends PureComponent {
     } = this.props
 
     return (
-      <div className={classnames(
+      <div className={clsx(
         className,
         theme.Gmap_Spinner,
       )}

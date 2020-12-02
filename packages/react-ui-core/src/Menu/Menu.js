@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import { List } from '../List'
 
 export const ENTER = 13
@@ -159,7 +159,7 @@ export default class Menu extends PureComponent {
     return (
       <List
         role="button"
-        className={classnames(
+        className={clsx(
           className,
           theme.Menu
         )}

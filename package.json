@@ -101,7 +101,7 @@
   "dependencies": {
     "@babel/runtime": "^7.1.5",
     "@rentpath/react-themed": "^4.1.4",
-    "classnames": "^2.2.6",
+    "clsx": "^1.1.1",
     "form-serialize": "0.7.2"
   },
   "peerDependencies": {

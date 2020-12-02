@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import { FreeDrawLayer, Button } from 'react-ui-core/src'
 
@@ -64,7 +64,7 @@ export default class FreeDrawExample extends PureComponent {
       <Fragment>
         <Button
           onClick={this.handleClick}
-          className={classnames(
+          className={clsx(
             theme.FreeDrawButton,
             theme[`FreeDrawButton-${enabled}`],
           )}

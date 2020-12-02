@@ -1,7 +1,7 @@
 import React, { Component, createElement } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import autobind from 'autobind-decorator'
 import Slider from 'react-image-gallery'
 import { forceCheck } from 'react-lazyload'
@@ -213,7 +213,7 @@ export default class Carousel extends Component {
 
     return (
       <div
-        className={classnames(
+        className={clsx(
           className,
           theme.Carousel,
         )}

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import { randomId } from '@rentpath/react-ui-utils'
 
 @themed(/^Highlighter/)
@@ -54,7 +54,7 @@ export default class Highlighter extends PureComponent {
       return (
         <span
           data-tid={`highlighter-match-${index}`}
-          className={classnames(
+          className={clsx(
             theme['Highlighter-Match'],
             className,
           )}
@@ -80,7 +80,7 @@ export default class Highlighter extends PureComponent {
 
     return renderer(
       <div
-        className={classnames(
+        className={clsx(
           theme.Highlighter,
           className,
         )}

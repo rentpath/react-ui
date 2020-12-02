@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import isEqual from 'lodash/isEqual'
 import autobind from 'autobind-decorator'
@@ -70,7 +70,7 @@ export default class RadioGroupFilterCard extends Component {
 
     return (
       <FilterCard
-        className={classnames(
+        className={clsx(
           theme.RadioGroupFilterCard,
           className,
           !this.state.value && theme['RadioGroupFilterCard-noValue']

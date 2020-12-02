@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
 import autobind from 'autobind-decorator'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import isEqual from 'date-fns/isEqual'
 import format from 'date-fns/format'
 import addMonths from 'date-fns/addMonths'
@@ -125,7 +125,7 @@ export default class Calendar extends PureComponent {
 
       daysOfMonth.push(
         <button
-          className={classnames(
+          className={clsx(
             theme.Calendar_Date,
             !currentMonth && theme['Calendar_Date-notCurrentMonth'],
             active && theme['Calendar_Date-active'],
@@ -165,7 +165,7 @@ export default class Calendar extends PureComponent {
 
     return (
       <div
-        className={classnames(
+        className={clsx(
           theme.Calendar,
           className,
         )}
@@ -176,7 +176,7 @@ export default class Calendar extends PureComponent {
           <button
             type="button"
             data-tid="calendar-previous"
-            className={classnames(
+            className={clsx(
               theme.Calendar_Navigation,
               theme['Calendar_Navigation-previous'],
             )}
@@ -195,7 +195,7 @@ export default class Calendar extends PureComponent {
           <button
             type="button"
             data-tid="calendar-next"
-            className={classnames(
+            className={clsx(
               theme.Calendar_Navigation,
               theme['Calendar_Navigation-next'],
             )}

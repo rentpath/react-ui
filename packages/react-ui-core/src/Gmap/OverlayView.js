@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 
 @themed(/^Gmap_OverlayView/, { pure: true })
 export default class OverlayView extends PureComponent {
@@ -44,7 +44,7 @@ export default class OverlayView extends PureComponent {
     }
 
     if (this.container && (theme !== prevProps.theme || className !== prevProps.className)) {
-      this.container.className = classnames(className, theme.Gmap_OverlayView)
+      this.container.className = clsx(className, theme.Gmap_OverlayView)
     }
   }
 
@@ -91,7 +91,7 @@ export default class OverlayView extends PureComponent {
     this.container.style.position = 'absolute'
     this.container.style.display = 'none'
     this.container.style.cursor = 'auto'
-    this.container.className = classnames(className, theme.Gmap_OverlayView)
+    this.container.className = clsx(className, theme.Gmap_OverlayView)
     if (preventBubbleEvents) this.preventBubbleEvents()
 
     this.overlay = new window.google.maps.OverlayView()

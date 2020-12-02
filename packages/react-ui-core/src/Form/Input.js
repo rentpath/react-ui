@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import InputMask from 'react-input-mask'
 import autobind from 'autobind-decorator'
@@ -142,7 +142,7 @@ export default class Input extends Component {
 
     return (
       <InputComponent
-        className={classnames(
+        className={clsx(
           className,
           theme.Input,
           theme[`Input-${props.type}`],

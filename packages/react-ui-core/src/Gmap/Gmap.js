@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import startsWith from 'lodash/startsWith'
 import pickBy from 'lodash/pickBy'
 import { GmapInteraction } from './GmapInteraction'
@@ -238,7 +238,7 @@ export class Gmap extends PureComponent {
     return (
       <div
         ref={this.googleMap}
-        className={classnames(
+        className={clsx(
           theme.Gmap,
           className,
         )}

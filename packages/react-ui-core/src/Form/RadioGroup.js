@@ -1,7 +1,7 @@
 import React, { PureComponent, createElement } from 'react'
 import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 import { parseArgs, randomId } from '@rentpath/react-ui-utils'
 import pick from 'lodash/pick'
@@ -198,7 +198,7 @@ export default class RadioGroup extends PureComponent {
 
     return (
       <div
-        className={classnames(
+        className={clsx(
           className,
           theme.RadioGroup,
           theme[`Field-${this.props.name}`],

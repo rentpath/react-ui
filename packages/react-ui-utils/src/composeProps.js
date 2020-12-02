@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import clsx from 'clsx'
 
 /**
  * Merges react component props, using regular
@@ -31,7 +31,7 @@ export default (target, ...items) => {
   }, target)
 
   if (classnames.length > 1) {
-    target.className = classNames(...classnames) // eslint-disable-line no-param-reassign
+    target.className = clsx(...classnames) // eslint-disable-line no-param-reassign
   }
 
   return target

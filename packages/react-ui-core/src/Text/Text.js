@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 
 @themed(/^Text/, {
@@ -31,7 +31,7 @@ export default class Text extends PureComponent {
         data-tid="text"
         {...props}
         className={
-          classnames(
+          clsx(
             className,
             theme.Text,
           )

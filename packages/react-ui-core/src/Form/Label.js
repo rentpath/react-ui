@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classNames from 'classnames'
+import clsx from 'clsx'
 
 @themed(/^Label/, {
   pure: true,
@@ -29,7 +29,7 @@ export default class Label extends Component {
       ...props
     } = this.props
 
-    const classnames = classNames(
+    const classNames = clsx(
       className,
       theme.Label,
       variant && theme[`Label-${variant}`]
@@ -40,7 +40,7 @@ export default class Label extends Component {
       <label
         data-tid="label"
         {...props}
-        className={classnames}
+        className={classNames}
       >
         {text}
         {children}

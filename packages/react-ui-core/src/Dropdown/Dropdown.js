@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import autobind from 'autobind-decorator'
 import { parseArgs } from '@rentpath/react-ui-utils'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import DropdownAnchor from './DropdownAnchor'
 
 @themed(/^Dropdown/)
@@ -118,7 +118,7 @@ export default class Dropdown extends Component {
     return (
       <div
         ref={ref => { this.dropdown = ref }}
-        className={classnames(
+        className={clsx(
           theme.Dropdown,
           className,
           theme[`Dropdown-${visible ? 'expand' : 'collapse'}`]

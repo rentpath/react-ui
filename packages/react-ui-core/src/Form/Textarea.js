@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import themed from '@rentpath/react-themed'
 
 @themed(/^Textarea/, { pure: true })
@@ -26,7 +26,7 @@ export default class Textarea extends Component {
     return (
       <textarea
         {...props}
-        className={classNames(
+        className={clsx(
           className,
           theme.Textarea,
           variant && theme[`Textarea-${variant}`],

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import serializeForm from 'form-serialize'
 
 @themed(['Form'], { pure: true })
@@ -89,7 +89,7 @@ export default class Form extends Component {
         data-tid="form"
         {...props}
         onSubmit={this.onSubmit}
-        className={classNames(
+        className={clsx(
           className,
           theme.Form,
         )}

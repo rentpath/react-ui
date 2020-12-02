@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { themed } from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import { componentName } from '@rentpath/react-ui-utils'
 
 const validateField = Component => {
@@ -13,7 +13,7 @@ const validateField = Component => {
     validFieldIcon,
     ...props
   }) => (
-    <div className={classnames(theme.ValidatedField, className)}>
+    <div className={clsx(theme.ValidatedField, className)}>
       <Component
         theme={theme}
         {...props}

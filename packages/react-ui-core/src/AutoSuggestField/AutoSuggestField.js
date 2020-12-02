@@ -3,7 +3,7 @@ import { parseArgs } from '@rentpath/react-ui-utils'
 import capitalize from 'lodash/capitalize'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import { Dropdown } from '../Dropdown'
 import { Card } from '../Card'
 import { Highlighter } from '../Highlighter'
@@ -253,7 +253,7 @@ export default class AutoSuggestField extends PureComponent {
 
     return (
       <div
-        className={classnames(
+        className={clsx(
           theme.AutoSuggestField,
           className
         )}

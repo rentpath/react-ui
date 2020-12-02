@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 
 @themed(/^FieldSet/, {
   pure: true,
@@ -32,7 +32,7 @@ export default class FieldSet extends PureComponent {
     return (
       <fieldset
         {...props}
-        className={classnames(
+        className={clsx(
           className,
           theme.FieldSet,
           variant && theme[`FieldSet-${variant}`],

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import themed from '@rentpath/react-themed'
-import classnames from 'classnames'
+import clsx from 'clsx'
 import { action } from '@storybook/addon-actions'
 import { RadioGroupFilterCard } from 'react-ui-core/src'
 
@@ -56,7 +56,7 @@ const InlineBedroomFilterCard = <ThemedInlineBedroomFilterCard />
 
 const InlineBathroomFilterCardComponent = ({ theme }) => (
   <RadioGroupFilterCard
-    className={classnames(theme.InlineCard, theme.BathroomFilterCard)}
+    className={clsx(theme.InlineCard, theme.BathroomFilterCard)}
     title="Filter by bathrooms"
     description="View properties with desired number of bathrooms."
     fields={[
@@ -75,7 +75,7 @@ const InlineBathroomFilterCard = <ThemedInlineBathroomFilterCard />
 
 const DesktopBathroomFilterCardComponent = ({ theme }) => (
   <RadioGroupFilterCard
-    className={classnames(theme.SearchFilter, theme.BathroomFilterCard)}
+    className={clsx(theme.SearchFilter, theme.BathroomFilterCard)}
     title=""
     description=""
     fields={[
@@ -96,7 +96,7 @@ const DesktopBathroomFilterCard = <ThemedDesktopBathroomFilterCard />
 
 const DesktopPetFilterCardComponent = ({ theme }) => (
   <RadioGroupFilterCard
-    className={classnames(theme.SearchFilter, theme.PetFilterCard)}
+    className={clsx(theme.SearchFilter, theme.PetFilterCard)}
     title=""
     description=""
     fields={[
@@ -122,7 +122,7 @@ const InlinePetFilterCardComponent = ({ theme }) => (
   <RadioGroupFilterCard
     title="Find pet friendly rentals"
     description="See apartments that are pet friendly and find your pets a lovely home."
-    className={classnames(theme.InlineCard, theme.PetFilterCard)}
+    className={clsx(theme.InlineCard, theme.PetFilterCard)}
     fields={[
       { label: 'Both', value: 'both', checked: true },
     ]}
@@ -142,7 +142,7 @@ const InlineRatingFilterCardComponent = ({ theme }) => (
   <RadioGroupFilterCard
     title="View 4+ stars units in Atlanta"
     description="Filter and only view properties that have a 4+ star rating from other renters."
-    className={classnames(theme.InlineCard, theme.RatingFilterCard)}
+    className={clsx(theme.InlineCard, theme.RatingFilterCard)}
     fields={[
       { label: '4+ stars', value: '4', checked: true },
     ]}
