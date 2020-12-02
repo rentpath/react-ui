@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-core",
-  "version": "19.3.0",
+  "version": "19.4.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/rentpath/react-ui.git",
@@ -53,7 +53,7 @@
   },
   "peerDependencies": {
     "@rentpath/react-themed": "^4.1.0",
-    "clsx": "1.x",
+    "clsx": "*",
     "date-fns": "^2.0.0",
     "lodash": "^4.17.10",
     "prop-types": "15.7.2",
