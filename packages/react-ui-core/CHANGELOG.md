@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 19.3.1 (2020-12-02)
+
+
+### Bug Fixes
+
+* don’t supply our own token ([750274a](https://github.com/rentpath/react-ui/commit/750274a))
+
+
+
+
+
 # [19.3.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@19.1.3...@rentpath/react-ui-core@19.3.0) (2020-06-12)
 
 
