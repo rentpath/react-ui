@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.2.11 (2020-12-02)
+
+
+### Bug Fixes
+
+* don’t supply our own token ([750274a](https://github.com/rentpath/react-ui/commit/750274a))
+
+
+
+
+
 ## [4.2.10](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-utils@4.2.9...@rentpath/react-ui-utils@4.2.10) (2020-05-01)
 
 **Note:** Version bump only for package @rentpath/react-ui-utils
