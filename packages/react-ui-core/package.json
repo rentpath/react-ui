@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@rentpath/react-ui-utils": "4.3.0",
+    "@rentpath/react-ui-utils": "4.3.1",
     "form-serialize": "0.7.2",
     "react-image-gallery": "rentpath/react-image-gallery#0.8.9",
     "react-input-mask": "2.0.4",
@@ -53,7 +53,7 @@
   },
   "peerDependencies": {
     "@rentpath/react-themed": "^4.1.0",
-    "clsx": "1.x",
+    "clsx": "*",
     "date-fns": "^2.0.0",
     "lodash": "^4.17.10",
     "prop-types": "15.7.2",
