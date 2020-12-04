@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-core",
-  "version": "19.4.1",
+  "version": "19.4.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/rentpath/react-ui.git",
@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@rentpath/react-ui-utils": "4.3.1",
+    "@rentpath/react-ui-utils": "4.3.2",
     "form-serialize": "0.7.2",
     "react-image-gallery": "rentpath/react-image-gallery#0.8.9",
     "react-input-mask": "2.0.4",
