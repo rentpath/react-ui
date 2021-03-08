@@ -1851,6 +1851,16 @@
     eslint-plugin-jsx-a11y "^6.0.2"
     eslint-plugin-react "^7.3.0"
 
+"@rentpath/react-image-gallery@0.8.9":
+  version "0.8.9"
+  resolved "https://npm.pkg.github.com/download/@rentpath/react-image-gallery/0.8.9/173dd39a50422e68b5a45b2a6514270ab3648a419c202892d04b9dc6f14b8a19#893464cd07ab355a737adb207d0de29cae6223fb"
+  integrity sha512-Qn1UzvhUXka5IQtgDGJmcj29HcW9aeTvcH2nh3Im4IPixbDcYsa+d6LkNZefVxuCPJN3NCRLGpxF7J3YNIEc5w==
+  dependencies:
+    lodash.debounce "^4.0.8"
+    lodash.throttle "^4.1.1"
+    prop-types "^15.5.8"
+    react-swipeable "^4.0.0"
+
 "@rentpath/react-themed@^4.1.4":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@rentpath/react-themed/-/react-themed-4.1.4.tgz#e385d50e5e8d5b481ba1a0b13eebdc2443fee18a"
@@ -12781,15 +12791,6 @@ react-icons@^2.2.7:
   integrity sha512-0n4lcGqzJFcIQLoQytLdJCE0DKSA9dkwEZRYoGrIDJZFvIT6Hbajx5mv9geqhqFiNjUgtxg8kPyDfjlhymbGFg==
   dependencies:
     react-icon-base "2.1.0"
-
-react-image-gallery@rentpath/react-image-gallery#0.8.9:
-  version "0.8.9"
-  resolved "https://codeload.github.com/rentpath/react-image-gallery/tar.gz/979d1186dfe27bb0dc86ea84288ee3594e2023c9"
-  dependencies:
-    lodash.debounce "^4.0.8"
-    lodash.throttle "^4.1.1"
-    prop-types "^15.5.8"
-    react-swipeable "^4.0.0"
 
 react-input-mask@2.0.4:
   version "2.0.4"
