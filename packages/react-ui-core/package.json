@@ -1,6 +1,6 @@
 {
   "name": "@rentpath/react-ui-core",
-  "version": "19.4.3",
+  "version": "19.4.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/rentpath/react-ui.git",
@@ -49,7 +49,7 @@
     "@rentpath/react-image-gallery": "0.8.9",
     "react-input-mask": "2.0.4",
     "react-input-range": "1.3.0",
-    "react-lazyload": "2.3.0"
+    "react-lazyload": "2.6.7"
   },
   "peerDependencies": {
     "@rentpath/react-themed": "^4.1.0",
