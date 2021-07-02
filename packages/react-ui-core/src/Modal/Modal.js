@@ -22,6 +22,7 @@ export default class Modal extends PureComponent {
     className: PropTypes.string,
     children: PropTypes.any,
     hasOverlay: PropTypes.bool,
+    lockBodyScrolling: PropTypes.bool,
     CloseButton: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.node,
@@ -34,6 +35,7 @@ export default class Modal extends PureComponent {
     theme: {},
     hasOverlay: true,
     closeOnOverlayClick: true,
+    lockBodyScrolling: true,
   }
 
   constructor(props) {
@@ -41,10 +43,20 @@ export default class Modal extends PureComponent {
     this.state = { isOpen: props.isOpen }
   }
 
+  componentDidMount() {
+    if (this.props.lockBodyScrolling) {
+      this.toggleBodyClass(true)
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.isOpen !== this.props.isOpen) {
       this.setState({ isOpen: nextProps.isOpen })
     }
+  }
+
+  componentWillUnmount() {
+    this.toggleBodyClass(false)
   }
 
   get overlayClose() {
@@ -91,6 +103,12 @@ export default class Modal extends PureComponent {
   handleClose() {
     this.setState({ isOpen: false })
     if (this.props.onClose) this.props.onClose()
+  }
+
+  toggleBodyClass = toggle => {
+    const { theme } = this.props
+
+    document.body.classList.toggle(theme['Overlay-lock'], toggle)
   }
 
   render() {

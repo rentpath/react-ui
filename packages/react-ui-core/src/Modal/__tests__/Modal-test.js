@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import ThemedModal from '../Modal'
 import Overlay from '../Overlay'
 import CloseButton from '../ModalCloseButton'
@@ -25,7 +25,7 @@ describe('Modal', () => {
 
   it('calls the onClose prop when the close button is pressed', () => {
     const onClose = jest.fn()
-    const wrapper = mount(<Modal theme={theme} onClose={onClose} CloseButton={{}} />)
+    const wrapper = shallow(<Modal theme={theme} onClose={onClose} CloseButton={{}} />)
     wrapper.find(CloseButton).simulate('click')
     expect(onClose).toHaveBeenCalled()
   })
