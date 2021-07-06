@@ -2,15 +2,17 @@ name: publish
 on:
   pull_request:
     types: [closed]
+  workflow_dispatch:
 jobs:
   publish_packages:
-    if: github.event.action == 'closed' && github.event.pull_request.merged
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged
     runs-on: ubuntu-latest
     steps:
-      - name: check out latest commit
+      - name: clone repo with full history for lerna
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.head_ref || github.ref }}
+          ref: main
+          fetch-depth: 0
 
       - name: get node version
         id: node-version
