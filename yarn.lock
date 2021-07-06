@@ -1870,6 +1870,11 @@
     hoist-non-react-statics "^3.3.0"
     prop-types "^15.7.2"
 
+"@rentpath/react-ui-utils@4.3.1":
+  version "4.3.1"
+  resolved "https://npm.pkg.github.com/download/@rentpath/react-ui-utils/4.3.1/23134ffdbf443277dc1cee854ebb44108f1bddf146067963701060cae8ee08d4#b08b4cec130e818cf1b853ff8f5d2106c0372c27"
+  integrity sha512-UP+bEIdlssYDU8D6+IBdeTvt79vVdQriN3HLMI+fZti3uv3Bbsz70KQlde2UjjeOcawhofpVMumuUXb7PSCw+A==
+
 "@semantic-release/commit-analyzer@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-2.0.0.tgz#924d1e2c30167c6a472bed9f66ee8f8e077489b2"
