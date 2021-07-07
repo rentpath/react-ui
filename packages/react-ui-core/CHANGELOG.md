@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [19.5.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@19.3.0...@rentpath/react-ui-core@19.5.0) (2021-07-07)
+
+
+### Bug Fixes
+
+* **pkg:** fixing the package ref to react-image-gallery ([1301a48](https://github.com/rentpath/react-ui/commit/1301a48))
+
+
+### Features
+
+* **RENT-3592:** passing through event type on AutoSuggestField actions ([b9f57a0](https://github.com/rentpath/react-ui/commit/b9f57a0))
+
+
+
+
+
 ## 19.3.1 (2020-12-02)
 
 

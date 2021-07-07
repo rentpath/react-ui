@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.4](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-tracking@5.0.3...@rentpath/react-ui-tracking@5.1.4) (2021-07-07)
+
+**Note:** Version bump only for package @rentpath/react-ui-tracking
+
+
+
+
+
 ## 5.0.4 (2020-12-02)
 
 
