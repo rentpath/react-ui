@@ -2,6 +2,7 @@
 
 exports[`Carousel Navigation renders passed children 1`] = `
 <button
+  aria-label="next image"
   className="CarouselNavigation-next"
   data-tag_item="right_arrow"
   data-tid="carousel-navigation-next"

@@ -45,6 +45,7 @@ export default class CarouselNavigation extends PureComponent {
         )}
         role="button"
         tabIndex={0}
+        aria-label={`${direction} image`}
         {...rest}
       >
         {children}

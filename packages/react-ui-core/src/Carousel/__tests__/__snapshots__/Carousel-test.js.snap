@@ -117,6 +117,7 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
             $$typeof={Symbol(react.element)}
             _owner={null}
             _store={Object {}}
+            aria-label="previous image"
             className=""
             data-tag_item="left_arrow"
             data-tid="carousel-navigation-previous"
@@ -137,6 +138,7 @@ exports[`Carousel navigation renders navigation buttons based on custom node 1`]
             $$typeof={Symbol(react.element)}
             _owner={null}
             _store={Object {}}
+            aria-label="next image"
             className=""
             data-tag_item="right_arrow"
             data-tid="carousel-navigation-next"
@@ -253,6 +255,7 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
       >
         <span>
           <button
+            aria-label="previous image"
             className=""
             data-tag_item="left_arrow"
             data-tid="carousel-navigation-previous"
@@ -264,6 +267,7 @@ exports[`Carousel navigation renders navigation buttons based on object 1`] = `
             Previous
           </button>
           <button
+            aria-label="next image"
             className=""
             data-tag_item="right_arrow"
             data-tid="carousel-navigation-next"
