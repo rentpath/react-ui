@@ -125,12 +125,14 @@ export default class Modal extends PureComponent {
     } = this.props
 
     const Wrapper = this.wrapper
+    const domProps = { ...props }
+    delete domProps.lockBodyScrolling
 
     return (
       <Wrapper.Component {...Wrapper.props}>
         <div
           data-tid="modal"
-          {...props}
+          {...domProps}
           className={clsx(
             className,
             theme[`Modal-${isOpen ? 'open' : 'close'}`],
