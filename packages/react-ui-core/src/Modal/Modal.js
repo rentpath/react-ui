@@ -44,7 +44,7 @@ export default class Modal extends PureComponent {
   }
 
   componentDidMount() {
-    if (this.props.lockBodyScrolling) {
+    if (this.props.lockBodyScrolling && this.props.isOpen) {
       this.toggleBodyClass(true)
     }
   }
