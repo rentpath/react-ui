@@ -87,6 +87,8 @@ export default function(BaseComponent) {
 
       if (apiOptions && typeof apiOptions.channel === 'string') {
         src = `${src}&channel=${encodeURIComponent(apiOptions.channel)}`
+      } else {
+        src = `${src}&channel=rentpath-unknown`
       }
 
       return src
