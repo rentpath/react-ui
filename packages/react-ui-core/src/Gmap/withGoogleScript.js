@@ -13,6 +13,7 @@ export default function(BaseComponent) {
 
     static propTypes = {
       apiKey: PropTypes.string.isRequired,
+      apiOptions: PropTypes.object,
       version: PropTypes.string,
       libraries: PropTypes.arrayOf(
         PropTypes.string,
@@ -77,11 +78,18 @@ export default function(BaseComponent) {
     get api() {
       const {
         apiKey,
+        apiOptions,
         libraries,
         version,
       } = this.props
 
-      return `${API_BASE_URL}?key=${apiKey}&v=${version}&libraries=${libraries.join()}&callback=google_map_initialize`
+      let src = `${API_BASE_URL}?key=${apiKey}&v=${version}&libraries=${libraries.join()}&callback=google_map_initialize`
+
+      if (apiOptions && typeof apiOptions.channel === 'string') {
+        src = `${src}&channel=${encodeURIComponent(apiOptions.channel)}`
+      }
+
+      return src
     }
 
     removeLoadedListener() {
