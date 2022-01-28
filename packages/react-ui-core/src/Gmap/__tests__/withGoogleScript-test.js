@@ -68,6 +68,26 @@ describe('withGoogleScript', () => {
           expect(loadScriptSpy).toHaveBeenCalled()
         })
       })
+
+      describe('apiOptions prop', () => {
+        it('adds channel param if apiOptions.channel is a string', () => {
+          setup({ apiOptions: { channel: 'foo' } })
+          const script = document.getElementById('google-maps-api-script')
+          expect(script.src).toContain('&channel=foo')
+        })
+
+        it('does not add channel param if apiOptions does not exist', () => {
+          setup()
+          const script = document.getElementById('google-maps-api-script')
+          expect(script.src).not.toContain('&channel=')
+        })
+
+        it('does not add channel param if apiOptions.channel is not a string', () => {
+          setup({ apiOptions: { channel: 1 } })
+          const script = document.getElementById('google-maps-api-script')
+          expect(script.src).not.toContain('&channel=')
+        })
+      })
     })
   })
 
