@@ -76,16 +76,16 @@ describe('withGoogleScript', () => {
           expect(script.src).toContain('&channel=foo')
         })
 
-        it('does not add channel param if apiOptions does not exist', () => {
+        it('adds the default channel param if apiOptions does not exist', () => {
           setup()
           const script = document.getElementById('google-maps-api-script')
-          expect(script.src).not.toContain('&channel=')
+          expect(script.src).toContain('&channel=rentpath-unknown')
         })
 
-        it('does not add channel param if apiOptions.channel is not a string', () => {
+        it('adds the default channel param if apiOptions.channel is not a string', () => {
           setup({ apiOptions: { channel: 1 } })
           const script = document.getElementById('google-maps-api-script')
-          expect(script.src).not.toContain('&channel=')
+          expect(script.src).toContain('&channel=rentpath-unknown')
         })
       })
     })
