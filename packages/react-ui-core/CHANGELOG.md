@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [19.7.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@19.6.0...@rentpath/react-ui-core@19.7.0) (2022-01-31)
+
+
+### Features
+
+* **gmaps:** add default channel param ([a22de31](https://github.com/rentpath/react-ui/commit/a22de31))
+
+
+
+
+
 # [19.6.0](https://github.com/rentpath/react-ui/compare/@rentpath/react-ui-core@19.5.3...@rentpath/react-ui-core@19.6.0) (2022-01-28)
 
 
