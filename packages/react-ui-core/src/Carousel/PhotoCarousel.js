@@ -37,9 +37,13 @@ export default class PhotoCarousel extends PureComponent {
 
   static defaultProps = {
     lazyLoad: false,
-    lazyLoadGallery: false,
+    disableLazyLoadGallery: false,
     isBackgroundImage: false,
     theme: {},
+  }
+
+  get shouldLazyLoadGallery() {
+    return !this.props.disableLazyLoadGallery && this.props.lazyLoad
   }
 
   photo(item) {
@@ -54,8 +58,8 @@ export default class PhotoCarousel extends PureComponent {
   }
 
   lazyLoadGallery() {
-    const { lazyLoadGallery } = this.props
-    const props = typeof lazyLoadGallery === 'object' ? lazyLoadGallery : {}
+    const { shouldLazyLoadGallery } = this
+    const props = typeof shouldLazyLoadGallery === 'object' ? shouldLazyLoadGallery : {}
 
     return (
       <LazyLoad
@@ -85,7 +89,7 @@ export default class PhotoCarousel extends PureComponent {
       className,
       theme,
       items,
-      lazyLoadGallery,
+      disableLazyLoadGallery,
       ...rest
     } = this.props
 
@@ -107,8 +111,8 @@ export default class PhotoCarousel extends PureComponent {
     const {
       theme,
       items,
-      lazyLoadGallery,
     } = this.props
+    const { shouldLazyLoadGallery } = this
 
     if (!items || !items.length) {
       return (
@@ -116,6 +120,6 @@ export default class PhotoCarousel extends PureComponent {
       )
     }
 
-    return lazyLoadGallery ? this.lazyLoadGallery() : this.renderCarousel()
+    return shouldLazyLoadGallery ? this.lazyLoadGallery() : this.renderCarousel()
   }
 }
