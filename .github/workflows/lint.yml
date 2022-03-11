@@ -49,7 +49,7 @@ jobs:
 
       - name: install dependencies
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GPR_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GH_GPR_TOKEN }}
         run: |
           yarn config set @rentpath:registry https://npm.pkg.github.com
           yarn --frozen-lockfile --production=false
