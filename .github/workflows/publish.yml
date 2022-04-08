@@ -11,8 +11,7 @@ jobs:
       - name: check out repo with full history
         uses: actions/checkout@v2
         with:
-          ref: master
-          fetch-depth: 0
+          ref: ${{ github.head_ref || github.ref }}
           token: ${{ github.token }}
 
       - name: cache node_modules
