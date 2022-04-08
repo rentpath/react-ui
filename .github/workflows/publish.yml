@@ -14,6 +14,7 @@ jobs:
           ref: master
           fetch-depth: 0
           token: ${{ secrets.GPR_TOKEN }}
+
       - name: get node version
         id: node-version
         run: echo "::set-output name=value::$( cat .node-version )"
