@@ -13,7 +13,14 @@ jobs:
         with:
           ref: master
           fetch-depth: 0
-          token: ${{ secrets.GPR_TOKEN }}
+          token: ${{ github.token }}
+
+      - name: cache node_modules
+        uses: actions/cache@v2
+        id: cache-node-modules
+        with:
+          path: node_modules/
+          key: reactui-modules-${{ hashFiles('yarn.lock') }}
 
       - name: get node version
         id: node-version
@@ -25,14 +32,19 @@ jobs:
           node-version: ${{ steps.node-version.outputs.value }}
           registry-url: https://npm.pkg.github.com
           scope: "@rentpath"
-          token: ${{ secrets.GPR_TOKEN }}
 
-      - name: cache node_modules
-        uses: actions/cache@v2
-        id: cache-node-modules
+      - name: get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: cache dependencies
+        uses: actions/cache@v1
+        id: yarn-cache
         with:
-          path: node_modules/
-          key: reactui-modules-${{ hashFiles('yarn.lock') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
       - name: install dependencies
         env:
