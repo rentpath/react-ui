@@ -8,7 +8,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged
     runs-on: ubuntu-latest
     steps:
-      - name: clone repo with full history for lerna
+      - name: check out repo with full history
         uses: actions/checkout@v2
         with:
           ref: master
@@ -51,8 +51,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GPR_TOKEN }}
         run: |
           yarn config set @rentpath:registry https://npm.pkg.github.com
-          # yarn --frozen-lockfile --production=false
-          yarn install
+          yarn --frozen-lockfile --production=false install
+          # yarn install
 
       - name: get bin path
         id: yarn-bin

@@ -52,7 +52,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GPR_TOKEN }}
         run: |
           yarn config set @rentpath:registry https://npm.pkg.github.com
-          yarn --frozen-lockfile --production=false
+          yarn --frozen-lockfile --production=false install
 
       - name: unit tests
         run: |
