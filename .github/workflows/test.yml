@@ -11,13 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check out latest commit
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref || github.ref }}
           token: ${{ secrets.GH_TOKEN }}
 
       - name: cache node_modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         id: cache-node-modules
         with:
           path: node_modules/
@@ -28,7 +28,7 @@ jobs:
         run: echo "::set-output name=value::$( cat .node-version )"
 
       - name: set up node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ steps.node-version.outputs.value }}
           registry-url: https://npm.pkg.github.com
@@ -39,7 +39,7 @@ jobs:
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
       - name: cache dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}

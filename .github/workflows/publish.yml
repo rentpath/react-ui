@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: clone repo with full history for lerna
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: master
           fetch-depth: 0
@@ -19,7 +19,7 @@ jobs:
         run: echo "::set-output name=value::$( cat .node-version )"
 
       - name: set up node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ steps.node-version.outputs.value }}
           registry-url: https://npm.pkg.github.com
@@ -27,7 +27,7 @@ jobs:
           token: ${{ secrets.GH_GPR_TOKEN }}
 
       - name: cache node_modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         id: cache-node-modules
         with:
           path: node_modules/
