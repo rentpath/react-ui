@@ -115,7 +115,19 @@ describe('PhotoCarousel', () => {
         theme={theme}
         items={items}
         server="https://rentpath-res.cloudinary.com/"
-        lazyLoadGallery={{ once: true, height: 400, width: 300, offset: 200 }}
+        lazyLoad={{ once: true, height: 400, width: 300, offset: 200 }}
+      />
+    )
+    expect(wrapper.find(LazyLoad).length).toBeTruthy()
+  })
+  it('doesnt lazyload gallery if disabled', () => {
+    const wrapper = shallow(
+      <PhotoCarousel
+        theme={theme}
+        items={items}
+        server="https://rentpath-res.cloudinary.com/"
+        lazyLoad={{ once: true, height: 400, width: 300, offset: 200 }}
+        disableLazyLoadGallery
       />
     )
     expect(wrapper.find(LazyLoad).length).toBeTruthy()
