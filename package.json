@@ -96,7 +96,7 @@
     "react-storybook-addon-chapters": "^2.1.9",
     "react-test-renderer": "^16.9.0",
     "sass-loader": "^7.1.0",
-    "stylelint": "^9.7.1"
+    "stylelint": "^15.10.1"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
